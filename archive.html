@@ -438,32 +438,32 @@
             // Video data for each city
             const videoData = {
                 paris: {
-                    image: '../images/archive/634c75fd78b3aa6acf4aee9ff3e8bede6f224649.png',
+                    image: 'images/archive/634c75fd78b3aa6acf4aee9ff3e8bede6f224649.png',
                     title: 'Paris Tribe Gathering 2024',
                     description: 'Experience the magic of Paris as hundreds of yogis gathered for an unforgettable weekend of practice, connection, and transformation in the heart of the City of Light.'
                 },
                 barcelona: {
-                    image: '../images/archive/db9dbf040566f8cba1a77b8f33835e4b411baaa1.png',
+                    image: 'images/archive/db9dbf040566f8cba1a77b8f33835e4b411baaa1.png',
                     title: 'Barcelona Tribe Gathering 2024',
                     description: 'Join us in Barcelona where the Mediterranean spirit met the power of yoga. A vibrant celebration of community, practice, and joy along the beautiful Catalan coast.'
                 },
                 berlin: {
-                    image: '../images/archive/7daed26c9efac9c483a5692dcacb5545bffe955f.png',
+                    image: 'images/archive/7daed26c9efac9c483a5692dcacb5545bffe955f.png',
                     title: 'Berlin Tribe Gathering 2024',
                     description: 'Berlin\'s creative energy combined with the transformative power of yoga created an extraordinary experience. Discover the highlights of this powerful gathering in Germany\'s capital.'
                 },
                 munich: {
-                    image: '../images/archive/96713e170504cc80e94ca625c77c15f088c6303a.png',
+                    image: 'images/archive/96713e170504cc80e94ca625c77c15f088c6303a.png',
                     title: 'Munich Tribe Gathering 2023',
                     description: 'The traditional Bavarian charm of Munich provided the perfect backdrop for our tribe to gather, practice, and grow together in this memorable weekend celebration.'
                 },
                 newyork: {
-                    image: '../images/archive/514f1859f38c01030ff1fc01dca113c16df7f313.png',
+                    image: 'images/archive/514f1859f38c01030ff1fc01dca113c16df7f313.png',
                     title: 'New York Tribe Gathering 2023',
                     description: 'In the city that never sleeps, our tribe gathered for an awakening experience. Relive the energy, practice, and connection of our New York gathering.'
                 },
                 london: {
-                    image: '../images/archive/c234703ee3bfb11a60390c0d6794ddcdabdae215.png',
+                    image: 'images/archive/c234703ee3bfb11a60390c0d6794ddcdabdae215.png',
                     title: 'London Tribe Gathering 2023',
                     description: 'London\'s rich cultural heritage met the ancient practice of yoga in this extraordinary gathering. Experience the highlights of our UK tribe celebration.'
                 }
@@ -484,15 +484,28 @@
                         videoDetailContent.style.display = 'none';
                     } else {
                         // Hide grid, show detail with specific video
+                        console.log('Switching to detail view for:', filter);
                         videoGridContent.style.display = 'none';
                         videoDetailContent.style.display = 'block';
 
                         // Update detail view with video data
                         const data = videoData[filter];
                         if (data) {
-                            document.getElementById('detailVideoImage').src = data.image;
-                            document.getElementById('detailVideoTitle').textContent = data.title;
-                            document.getElementById('detailVideoDescription').textContent = data.description;
+                            console.log('Updating detail view with:', data);
+                            const imageEl = document.getElementById('detailVideoImage');
+                            const titleEl = document.getElementById('detailVideoTitle');
+                            const descEl = document.getElementById('detailVideoDescription');
+                            
+                            console.log('Found elements:', {imageEl, titleEl, descEl});
+                            
+                            if (imageEl) {
+                                imageEl.src = data.image;
+                                console.log('Image src set to:', data.image);
+                            }
+                            if (titleEl) titleEl.textContent = data.title;
+                            if (descEl) descEl.textContent = data.description;
+                        } else {
+                            console.error('No data found for filter:', filter);
                         }
                     }
                 });
