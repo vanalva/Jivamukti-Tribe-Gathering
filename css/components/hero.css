@@ -1,0 +1,489 @@
+/* ============================================
+   HERO COLLAGE COMPONENT
+   Rome Tribe Gathering - Webflow/Lumos
+   
+   5 VARIANTS EXTRACTED - LOOK FOR DUPLICATIONS!
+   ============================================ */
+
+/* ============================================
+   VARIANT 1: BASE HERO (Home Page)
+   Lines 1543-1654 in original file
+   Layout: Title left, Image center, Logo right, Title bottom
+   ============================================ */
+
+/* Container */
+.hero-collage_content {
+  padding: var(--_spacing---section-space--main) var(--site--margin);  /* 🔁 SHARED WITH ALL */
+  display: grid;  /* 🔁 SHARED WITH ALL */
+  grid-template-columns: auto 1fr auto;  /* ⚡ UNIQUE TO BASE */
+  grid-template-rows: auto auto;  /* ⚡ UNIQUE TO BASE */
+  gap: var(--_spacing---space--3);  /* ⚠️ DIFFERENT - About uses space--6 */
+  align-items: start;  /* ⚠️ DIFFERENT - About uses stretch */
+  position: relative;  /* 🔁 SHARED WITH ALL */
+  min-height: 100vh;  /* 🔁 SHARED WITH ALL */
+}
+
+/* Top Title */
+.hero-collage_title-top {
+  grid-column: 1;  /* ⚡ UNIQUE TO BASE */
+  grid-row: 1;  /* 🔁 SHARED */
+  font-family: var(--_typography---font--primary-family);  /* 🔁 SHARED WITH ALL */
+  font-size: clamp(8rem, 15vw, 15.18rem);  /* 🔁 SHARED WITH ALL (except schedule) */
+  font-weight: var(--_typography---font--primary-extrabold);  /* 🔁 SHARED WITH ALL */
+  line-height: var(--_typography---line-height--small);  /* 🔁 SHARED WITH ALL */
+  letter-spacing: var(--_typography---letter-spacing--tight);  /* 🔁 SHARED WITH ALL */
+  text-transform: uppercase;  /* 🔁 SHARED WITH ALL */
+  color: var(--swatch--dark-900);  /* 🔁 SHARED WITH ALL */
+  margin: 0;  /* 🔁 SHARED WITH ALL */
+  align-self: start;  /* ⚡ UNIQUE TO BASE */
+}
+
+/* Center Image */
+.hero-collage_image-wrap {
+  grid-column: 2;  /* ⚡ UNIQUE TO BASE */
+  grid-row: 1;  /* ⚠️ VARIES BY VARIANT */
+  width: 100%;  /* 🔁 SHARED WITH ALL */
+  max-width: 900px;  /* ⚠️ VARIES BY VARIANT */
+  justify-self: center;  /* ⚠️ VARIES BY VARIANT */
+}
+
+.hero-collage_image {
+  width: 100%;  /* 🔁 SHARED WITH ALL */
+  height: auto;  /* 🔁 SHARED WITH ALL */
+  display: block;  /* 🔁 SHARED WITH ALL */
+  object-fit: contain;  /* ⚠️ DIFFERENT - Some use cover */
+}
+
+/* Logo Branding */
+.hero-collage_logo-wrap {
+  grid-column: 3;  /* ⚡ UNIQUE TO BASE */
+  grid-row: 1;  /* 🔁 SHARED */
+  display: flex;  /* 🔁 SHARED WITH ALL */
+  flex-direction: column;  /* 🔁 SHARED WITH ALL */
+  align-items: flex-end;  /* ⚠️ VARIES BY VARIANT */
+  justify-content: flex-start;  /* ⚠️ VARIES BY VARIANT */
+}
+
+/* Bottom Title */
+.hero-collage_title-bottom {
+  grid-column: 1 / -1;  /* ⚠️ VARIES BY VARIANT */
+  grid-row: 2;  /* ⚠️ VARIES BY VARIANT */
+  font-family: var(--_typography---font--primary-family);  /* 🔁 SHARED WITH ALL */
+  font-size: clamp(8rem, 15vw, 15.18rem);  /* ⚠️ VARIES - Schedule uses 10-25rem */
+  font-weight: var(--_typography---font--primary-extrabold);  /* 🔁 SHARED WITH ALL */
+  line-height: var(--_typography---line-height--small);  /* 🔁 SHARED WITH ALL */
+  letter-spacing: var(--_typography---letter-spacing--tight);  /* 🔁 SHARED WITH ALL */
+  text-transform: uppercase;  /* 🔁 SHARED WITH ALL */
+  color: var(--swatch--dark-900);  /* 🔁 SHARED WITH ALL */
+  margin: 0;  /* 🔁 SHARED WITH ALL */
+  text-align: center;  /* ⚠️ VARIES BY VARIANT */
+  margin-top: calc(-1 * var(--_spacing---space--6));  /* ⚠️ VARIES BY VARIANT */
+}
+
+/* Responsive - Mobile/Tablet */
+@media (max-width: 991px) {
+  .hero-collage_content {
+    grid-template-columns: 1fr;  /* 🔁 SHARED WITH ALL MOBILE */
+    grid-template-rows: auto auto auto auto;  /* 🔁 SHARED WITH ALL MOBILE */
+    gap: var(--_spacing---space--4);  /* 🔁 SHARED WITH ALL MOBILE */
+    min-height: auto;  /* 🔁 SHARED WITH ALL MOBILE */
+  }
+  
+  .hero-collage_title-top {
+    grid-column: 1;  /* 🔁 SHARED WITH ALL MOBILE */
+    grid-row: 1;  /* 🔁 SHARED WITH ALL MOBILE */
+    font-size: clamp(4rem, 12vw, 8rem);  /* 🔁 SHARED WITH ALL MOBILE */
+  }
+  
+  .hero-collage_image-wrap {
+    grid-column: 1;  /* 🔁 SHARED WITH ALL MOBILE */
+    grid-row: 2;  /* 🔁 SHARED WITH ALL MOBILE */
+    max-width: 100%;  /* 🔁 SHARED WITH ALL MOBILE */
+  }
+  
+  .hero-collage_title-bottom {
+    grid-column: 1;  /* 🔁 SHARED WITH ALL MOBILE */
+    grid-row: 3;  /* 🔁 SHARED WITH ALL MOBILE */
+    font-size: clamp(4rem, 12vw, 8rem);  /* 🔁 SHARED WITH ALL MOBILE */
+    margin-top: 0;  /* 🔁 SHARED WITH ALL MOBILE */
+  }
+  
+  .hero-collage_logo-wrap {
+    grid-column: 1;  /* 🔁 SHARED WITH ALL MOBILE */
+    grid-row: 4;  /* 🔁 SHARED WITH ALL MOBILE */
+    align-items: center;  /* 🔁 SHARED WITH ALL MOBILE */
+    text-align: center;  /* 🔁 SHARED WITH ALL MOBILE */
+    justify-content: center;  /* 🔁 SHARED WITH ALL MOBILE */
+  }
+}
+
+/* ============================================
+   VARIANT 2: ABOUT PAGE HERO
+   Lines 1656-1750 in original file
+   Layout: Logo top-left, Image right, Title bottom-left
+   ============================================ */
+
+.hero-collage_content--about {
+  grid-template-columns: 1fr 1fr;  /* ⚡ UNIQUE (but SAME as schedule!) */
+  grid-template-rows: auto 1fr;  /* ⚡ UNIQUE */
+  min-height: 100vh;  /* 🔁 DUPLICATE - already in base */
+  gap: var(--_spacing---space--6);  /* ⚡ UNIQUE */
+  align-items: stretch;  /* ⚡ UNIQUE */
+}
+
+/* Logo positioned above title */
+.hero-collage_content--about .hero-collage_logo-wrap {
+  grid-column: 1;  /* ⚡ UNIQUE */
+  grid-row: 1;  /* 🔁 DUPLICATE */
+  align-items: flex-end;  /* ⚡ UNIQUE */
+  justify-content: center;  /* ⚠️ SAME AS MOBILE */
+  display: flex;  /* 🔁 DUPLICATE - already in base */
+  padding-bottom: var(--_spacing---space--4);  /* ⚡ UNIQUE */
+}
+
+/* Image positioned at right, spanning both rows */
+.hero-collage_content--about .hero-collage_image-wrap {
+  grid-column: 2;  /* ⚡ UNIQUE */
+  grid-row: 1 / -1;  /* ⚡ UNIQUE */
+  justify-self: end;  /* ⚡ UNIQUE */
+  align-self: center;  /* ⚡ UNIQUE */
+  max-width: 100%;  /* 🔁 DUPLICATE */
+  width: 100%;  /* 🔁 DUPLICATE - already in base */
+}
+
+.hero-collage_content--about .hero-collage_image {
+  width: 100%;  /* 🔁 DUPLICATE - already in base */
+  height: auto;  /* 🔁 DUPLICATE - already in base */
+  max-height: 70vh;  /* ⚡ UNIQUE */
+  object-fit: cover;  /* ⚠️ DIFFERENT from base (contain) */
+  object-position: center;  /* ⚡ UNIQUE */
+}
+
+/* Title positioned at bottom-left */
+.hero-collage_content--about .hero-collage_title-bottom {
+  grid-column: 1;  /* ⚡ UNIQUE */
+  grid-row: 2;  /* ⚡ UNIQUE */
+  text-align: left;  /* ⚡ UNIQUE */
+  align-self: end;  /* ⚡ UNIQUE */
+  margin-top: 0;  /* 🔁 DUPLICATE */
+  font-size: clamp(6rem, 12vw, 12.5rem);  /* ⚡ UNIQUE SIZE */
+  line-height: 0.8;  /* 🔁 DUPLICATE - same as base */
+  z-index: 1;  /* ⚡ UNIQUE */
+  position: relative;  /* 🔁 DUPLICATE */
+}
+
+/* Hide the top title in about variant */
+.hero-collage_content--about .hero-collage_title-top {
+  display: none;  /* ⚡ UNIQUE */
+}
+
+/* Responsive - Mobile/Tablet */
+@media (max-width: 991px) {
+  .hero-collage_content--about {
+    grid-template-columns: 1fr;  /* 🔁 DUPLICATE - same as base mobile */
+    grid-template-rows: auto auto auto;  /* ⚡ UNIQUE (3 rows instead of 4) */
+    min-height: auto;  /* 🔁 DUPLICATE - same as base mobile */
+    gap: var(--_spacing---space--4);  /* 🔁 DUPLICATE - same as base mobile */
+  }
+
+  .hero-collage_content--about .hero-collage_logo-wrap {
+    grid-column: 1;  /* 🔁 DUPLICATE */
+    grid-row: 1;  /* 🔁 DUPLICATE */
+    max-width: 100%;  /* 🔁 DUPLICATE */
+    justify-content: center;  /* 🔁 DUPLICATE */
+    align-items: center;  /* 🔁 DUPLICATE */
+  }
+
+  .hero-collage_content--about .hero-collage_image-wrap {
+    grid-column: 1;  /* 🔁 DUPLICATE */
+    grid-row: 2;  /* 🔁 DUPLICATE */
+    max-width: 100%;  /* 🔁 DUPLICATE */
+  }
+
+  .hero-collage_content--about .hero-collage_image {
+    max-height: 50vh;  /* ⚡ UNIQUE */
+  }
+
+  .hero-collage_content--about .hero-collage_title-bottom {
+    grid-column: 1;  /* 🔁 DUPLICATE */
+    grid-row: 3;  /* 🔁 DUPLICATE */
+    text-align: center;  /* 🔁 DUPLICATE */
+    font-size: clamp(4rem, 12vw, 8rem);  /* 🔁 DUPLICATE */
+  }
+}
+
+/* ============================================
+   VARIANT 3: SCHEDULE PAGE HERO
+   Lines 1752-1848 in original file
+   Layout: Logo top-right, Image center-left behind text, Title bottom
+   ============================================ */
+
+.hero-collage_content--schedule {
+  display: grid;  /* 🔁 DUPLICATE - already in base */
+  grid-template-columns: minmax(0, 1fr);  /* ⚡ UNIQUE */
+  grid-template-rows: auto 1fr;  /* ⚡ UNIQUE */
+  min-height: 100vh;  /* 🔁 DUPLICATE - already in base */
+  gap: 0;  /* ⚡ UNIQUE (no gap!) */
+  position: relative;  /* 🔁 DUPLICATE - already in base */
+  overflow: hidden;  /* ⚡ UNIQUE */
+}
+
+/* Logo positioned at top right */
+.hero-collage_content--schedule .hero-collage_logo-wrap {
+  grid-column: 1;  /* ⚡ UNIQUE */
+  grid-row: 1;  /* 🔁 DUPLICATE */
+  align-self: start;  /* ⚡ UNIQUE */
+  justify-self: end;  /* ⚡ UNIQUE */
+  z-index: 3;  /* ⚡ UNIQUE */
+  max-width: clamp(250px, 30vw, 450px);  /* ⚡ UNIQUE */
+  margin-right: 0;  /* ⚡ UNIQUE */
+}
+
+/* Image behind text */
+.hero-collage_content--schedule .hero-collage_image-wrap {
+  grid-column: 1;  /* ⚡ UNIQUE */
+  grid-row: 2;  /* ⚡ UNIQUE */
+  align-self: center;  /* ⚡ UNIQUE */
+  justify-self: start;  /* ⚡ UNIQUE */
+  z-index: 1;  /* ⚡ UNIQUE */
+  max-width: 50%;  /* ⚡ UNIQUE */
+  width: 100%;  /* 🔁 DUPLICATE */
+  margin-top: 0;  /* 🔁 DUPLICATE */
+}
+
+.hero-collage_content--schedule .hero-collage_image {
+  width: 100%;  /* 🔁 DUPLICATE */
+  height: auto;  /* 🔁 DUPLICATE */
+  object-fit: cover;  /* 🔁 DUPLICATE */
+}
+
+/* Title at bottom, massive */
+.hero-collage_content--schedule .hero-collage_title-bottom {
+  grid-column: 1;  /* 🔁 DUPLICATE */
+  grid-row: 2;  /* ⚡ UNIQUE (overlaps with image) */
+  align-self: end;  /* ⚡ UNIQUE */
+  text-align: left;  /* ⚡ UNIQUE */
+  margin: 0;  /* 🔁 DUPLICATE */
+  padding: 0;  /* ⚡ UNIQUE */
+  font-size: clamp(10rem, 20vw, 25rem);  /* ⚡ UNIQUE (much bigger!) */
+  line-height: 0.8;  /* 🔁 DUPLICATE - same as base */
+  z-index: 2;  /* ⚡ UNIQUE */
+  max-width: 100%;  /* 🔁 DUPLICATE */
+  overflow: hidden;  /* ⚡ UNIQUE */
+  white-space: nowrap;  /* ⚡ UNIQUE */
+}
+
+/* Hide the top title */
+.hero-collage_content--schedule .hero-collage_title-top {
+  display: none;  /* 🔁 DUPLICATE - same as about */
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .hero-collage_content--schedule {
+    grid-template-columns: 1fr;  /* 🔁 DUPLICATE - same as base & about mobile */
+    grid-template-rows: auto auto auto;  /* 🔁 DUPLICATE - same as about mobile */
+    min-height: auto;  /* 🔁 DUPLICATE - same as base mobile */
+    gap: var(--_spacing---space--4);  /* 🔁 DUPLICATE - same as base mobile */
+  }
+
+  .hero-collage_content--schedule .hero-collage_image-wrap {
+    grid-column: 1;  /* 🔁 DUPLICATE */
+    grid-row: 1;  /* 🔁 DUPLICATE */
+    max-width: 100%;  /* 🔁 DUPLICATE */
+  }
+
+  .hero-collage_content--schedule .hero-collage_image {
+    max-width: 100%;  /* ⚡ UNIQUE */
+  }
+
+  .hero-collage_content--schedule .hero-collage_logo-wrap {
+    grid-column: 1;  /* 🔁 DUPLICATE */
+    grid-row: 2;  /* ⚡ UNIQUE */
+    justify-content: center;  /* 🔁 DUPLICATE */
+    align-items: center;  /* 🔁 DUPLICATE */
+  }
+
+  .hero-collage_content--schedule .hero-collage_title-bottom {
+    grid-column: 1;  /* 🔁 DUPLICATE */
+    grid-row: 3;  /* 🔁 DUPLICATE */
+    text-align: center;  /* 🔁 DUPLICATE */
+    font-size: clamp(4rem, 12vw, 8rem);  /* 🔁 DUPLICATE - same as base & about mobile */
+  }
+}
+
+/* ============================================
+   VARIANT 4: ABOUT ROME PAGE HERO
+   Lines 1851-1971 in original file
+   Layout: "ABOUT" overlapping image, Script logo center-left, "ROME" bottom
+   ============================================ */
+
+.hero-collage_content--about-rome {
+  display: grid;  /* 🔁 DUPLICATE */
+  grid-template-columns: minmax(0, 1fr);  /* ⚡ UNIQUE (single column layout) */
+  grid-template-rows: 1fr;  /* ⚡ UNIQUE */
+  min-height: 100vh;  /* 🔁 DUPLICATE */
+  gap: 0;  /* 🔁 DUPLICATE (same as schedule) */
+  position: relative;  /* 🔁 DUPLICATE */
+  overflow: hidden;  /* 🔁 DUPLICATE (same as schedule) */
+}
+
+/* "ABOUT" text overlapping image */
+.hero-collage_content--about-rome .hero-collage_title-top {
+  grid-column: 1;  /* 🔁 DUPLICATE */
+  grid-row: 1;  /* 🔁 DUPLICATE */
+  align-self: start;  /* ⚡ UNIQUE */
+  justify-self: center;  /* ⚡ UNIQUE */
+  margin-left: -5%;  /* ⚡ UNIQUE */
+  margin-top: clamp(8rem, 15vh, 12rem);  /* ⚡ UNIQUE */
+  z-index: 2;  /* 🔁 DUPLICATE (same as schedule) */
+  font-size: clamp(8rem, 19vw, 17rem);  /* ⚡ UNIQUE SIZE */
+  line-height: 0.8;  /* 🔁 DUPLICATE */
+  padding: 0;  /* 🔁 DUPLICATE */
+}
+
+/* "ROME" text at bottom */
+.hero-collage_content--about-rome .hero-collage_title-bottom {
+  grid-column: 1;  /* 🔁 DUPLICATE */
+  grid-row: 1;  /* ⚡ UNIQUE (overlapping layout) */
+  align-self: end;  /* ⚡ UNIQUE */
+  justify-self: start;  /* ⚡ UNIQUE */
+  margin-left: var(--_spacing---space--6);  /* ⚡ UNIQUE */
+  margin-bottom: var(--_spacing---space--6);  /* ⚡ UNIQUE */
+  z-index: 2;  /* 🔁 DUPLICATE */
+  font-size: clamp(8rem, 19vw, 17rem);  /* 🔁 DUPLICATE (same as title-top) */
+  line-height: 0.8;  /* 🔁 DUPLICATE */
+  padding: 0;  /* 🔁 DUPLICATE */
+}
+
+/* Image in center-right */
+.hero-collage_content--about-rome .hero-collage_image-wrap {
+  grid-column: 1;  /* 🔁 DUPLICATE */
+  grid-row: 1;  /* ⚡ UNIQUE (overlapping) */
+  align-self: center;  /* ⚡ UNIQUE */
+  justify-self: end;  /* ⚡ UNIQUE */
+  margin-right: 0;  /* ⚡ UNIQUE */
+  margin-top: clamp(2rem, 5vh, 4rem);  /* ⚡ UNIQUE */
+  z-index: 1;  /* 🔁 DUPLICATE (same as schedule) */
+  max-width: 55%;  /* ⚡ UNIQUE */
+  width: 100%;  /* 🔁 DUPLICATE */
+}
+
+.hero-collage_content--about-rome .hero-collage_image {
+  width: 100%;  /* 🔁 DUPLICATE */
+  height: auto;  /* 🔁 DUPLICATE */
+  object-fit: cover;  /* 🔁 DUPLICATE */
+  object-position: center;  /* 🔁 DUPLICATE */
+}
+
+/* Script logo in left-center */
+.hero-collage_content--about-rome .hero-collage_logo-wrap {
+  grid-column: 1;  /* 🔁 DUPLICATE */
+  grid-row: 1;  /* 🔁 DUPLICATE */
+  align-self: center;  /* ⚡ UNIQUE */
+  justify-self: start;  /* ⚡ UNIQUE */
+  margin-left: clamp(4rem, 9vw, 8rem);  /* ⚡ UNIQUE */
+  margin-top: clamp(2rem, 5vh, 4rem);  /* ⚡ UNIQUE */
+  z-index: 3;  /* 🔁 DUPLICATE (same as schedule) */
+  max-width: clamp(200px, 22vw, 320px);  /* ⚡ UNIQUE */
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .hero-collage_content--about-rome {
+    grid-template-columns: 1fr;  /* 🔁 DUPLICATE - SAME AS ALL OTHER MOBILE */
+    grid-template-rows: auto auto auto auto;  /* 🔁 DUPLICATE - SAME AS BASE MOBILE */
+    min-height: auto;  /* 🔁 DUPLICATE - SAME AS ALL MOBILE */
+    gap: var(--_spacing---space--4);  /* 🔁 DUPLICATE - SAME AS ALL MOBILE */
+  }
+
+  .hero-collage_content--about-rome .hero-collage_title-top {
+    grid-column: 1;  /* 🔁 DUPLICATE */
+    grid-row: 1;  /* 🔁 DUPLICATE */
+    text-align: center;  /* 🔁 DUPLICATE */
+    justify-self: center;  /* ⚡ UNIQUE */
+    margin-left: 0;  /* 🔁 DUPLICATE */
+    margin-top: 0;  /* 🔁 DUPLICATE */
+    font-size: clamp(4rem, 12vw, 8rem);  /* 🔁 DUPLICATE - SAME AS ALL MOBILE */
+  }
+
+  .hero-collage_content--about-rome .hero-collage_image-wrap {
+    grid-column: 1;  /* 🔁 DUPLICATE */
+    grid-row: 2;  /* 🔁 DUPLICATE */
+    max-width: 100%;  /* 🔁 DUPLICATE */
+    justify-self: center;  /* ⚡ UNIQUE */
+    margin: 0;  /* 🔁 DUPLICATE */
+  }
+
+  .hero-collage_content--about-rome .hero-collage_image {
+    max-height: 50vh;  /* 🔁 DUPLICATE (same as about) */
+  }
+
+  .hero-collage_content--about-rome .hero-collage_logo-wrap {
+    grid-column: 1;  /* 🔁 DUPLICATE */
+    grid-row: 3;  /* ⚡ UNIQUE */
+    justify-self: center;  /* 🔁 DUPLICATE */
+    margin: 0;  /* 🔁 DUPLICATE */
+  }
+
+  .hero-collage_content--about-rome .hero-collage_title-bottom {
+    grid-column: 1;  /* 🔁 DUPLICATE */
+    grid-row: 4;  /* 🔁 DUPLICATE */
+    text-align: center;  /* 🔁 DUPLICATE */
+    justify-self: center;  /* 🔁 DUPLICATE */
+    margin: 0;  /* 🔁 DUPLICATE */
+    font-size: clamp(4rem, 12vw, 8rem);  /* 🔁 DUPLICATE - SAME AS ALL MOBILE */
+  }
+}
+
+/* ============================================
+   VARIANT 5: BOOKING PAGE HERO
+   Lines 1974-1989 in original file
+   NOTE: Mostly empty - just uses base classes!
+   ============================================ */
+
+/* This variant uses base hero classes with minimal customization */
+/* Image on left, centered title, logo bottom-right */
+
+/* ============================================
+   DUPLICATION ANALYSIS
+   ============================================
+   
+   🔁 = DUPLICATE (appears in multiple variants)
+   ⚡ = UNIQUE (only in this variant)
+   ⚠️ = VARIES (similar but slightly different)
+   
+   FINDINGS:
+   
+   1. ALL variants share:
+      - padding: var(--_spacing---section-space--main) var(--site--margin)
+      - display: grid
+      - min-height: 100vh
+      - position: relative
+      
+   2. ALL title elements share:
+      - font-family, font-weight (8+ properties)
+      - line-height: 0.8
+      - letter-spacing, text-transform, color
+      - margin: 0
+      
+   3. ALL images share:
+      - width: 100%, height: auto
+      - display: block
+      
+   4. ALL mobile breakpoints share:
+      - grid-template-columns: 1fr
+      - gap: var(--_spacing---space--4)
+      - min-height: auto
+      - font-size: clamp(4rem, 12vw, 8rem) for titles
+      
+   5. Grid layouts that are THE SAME:
+      - About & Schedule both use: grid-template-columns: 1fr 1fr
+      
+   RECOMMENDATION:
+   Create 1 base class with shared properties, then modifiers
+   for only what's different (grid-template-columns, positioning)
+   
+   ESTIMATED SAVINGS: 260+ lines (59% reduction)
+   ============================================ */
+
