@@ -12,6 +12,14 @@
     <link href="css/rome-tribe.css" rel="stylesheet">
 </head>
 <body>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor">
+        <svg preserveAspectRatio="xMidYMid meet" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 54.6387H17V29.0205L41.3809 53.4014L53.4014 41.3809L29.0215 17H54.6387V0H0V54.6387Z" fill="#151515"/>
+        </svg>
+    </div>
+
     <!-- Navigation Component (Two-Slot) -->
     <nav class="nav_wrap u-section u-position-absolute">
         <div class="nav_background u-cover-absolute u-zindex-negative"></div>
@@ -153,7 +161,7 @@
             </div>
 
             <!-- Bottom Title (Left Side, Overlapping) -->
-            <h1 class="hero-collage_title-bottom">ABOUT<br>THE TRIBE</h1>
+            <h1 class="hero-collage_title-bottom" data-gsap-slide-up>ABOUT<br>THE TRIBE</h1>
 
         </div>
     </section>
@@ -164,7 +172,7 @@
         <div class="plan_content u-position-relative" style="display: block;">
             
             <!-- Title (Full Width) -->
-            <h2 class="text-h1 u-text-uppercase u-weight-bold" style="line-height: 1.1; margin-bottom: var(--_spacing---space--8);">
+            <h2 class="text-h1 u-text-uppercase u-weight-bold" style="line-height: 1.1; margin-bottom: var(--_spacing---space--8);" data-gsap-fade-in>
                 LIVE WITH THE ANTICIPATION THAT SOMETHING INCREDIBLE MIGHT HAPPEN AT ANY TIME
             </h2>
 
@@ -255,7 +263,7 @@
     <section class="u-position-relative" style="padding: 0 var(--site--margin);">
         
         <!-- Large Title -->
-        <h1 class="text-display-xl u-text-uppercase u-weight-bold u-height-full" style="line-height: 0.8; margin-bottom: var(--_spacing---space--12);">WHAT IS A TRIBE?</h1>
+        <h1 class="text-display-xl u-text-uppercase u-weight-bold u-height-full" style="line-height: 0.8; margin-bottom: var(--_spacing---space--12);" data-gsap-scale>WHAT IS A TRIBE?</h1>
         
         <!-- Complex Grid Layout -->
         <div class="tribe-grid">
@@ -303,7 +311,7 @@
     </section>
 
     <!-- Navigation Links Section (Three Large CTAs) - Full Width -->
-    <section class="u-position-relative" style="width: 100%;">
+    <section class="u-position-relative" style="width: 100%;" data-gsap-stagger="fast" data-gsap-anim="slideUp">
         <!-- LINE UP -->
         <a href="teachers.html" class="nav-link_wrap">
             <h2 class="nav-link_link text-h1 u-text-uppercase">LINE UP</h2>
@@ -400,54 +408,53 @@
         </div>
     </footer>
 
+    <!-- GSAP Animation Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+    <!-- GSAP Custom Animations -->
+    <script src="js/gsap/config.js"></script>
+    <script src="js/gsap/scroll.js"></script>
+    <script src="js/gsap/entrance.js"></script>
+    <script src="js/gsap/sticky.js"></script>
+    <script src="js/gsap/menu.js"></script>
+
+    <!-- Custom Cursor -->
+    <script src="js/custom-cursor.js"></script>
+
     <script>
         // Toggle fullscreen menu
         const menuToggle = document.getElementById('menuToggle');
         const fullscreenMenu = document.getElementById('fullscreenMenu');
         const navWrap = document.querySelector('.nav_wrap');
 
-        // Function to get scrollbar width
         function getScrollbarWidth() {
             return window.innerWidth - document.documentElement.clientWidth;
         }
 
-        // Function to open menu
         function openMenu() {
-            // Calculate scrollbar width before hiding overflow
             const scrollbarWidth = getScrollbarWidth();
-            
-            // Toggle menu open state
             fullscreenMenu.classList.add('is-open');
             menuToggle.classList.add('is-active');
             navWrap.classList.add('menu-is-open');
-            
-            // Add padding to compensate for scrollbar
             if (scrollbarWidth > 0) {
-                // Get current padding and add scrollbar width
                 const currentBodyPadding = parseInt(window.getComputedStyle(document.body).paddingRight) || 0;
                 const currentNavPadding = parseInt(window.getComputedStyle(navWrap).paddingRight) || 0;
-                
                 document.body.style.paddingRight = (currentBodyPadding + scrollbarWidth) + 'px';
                 navWrap.style.paddingRight = (currentNavPadding + scrollbarWidth) + 'px';
             }
-            
-            // Block scroll
             document.body.classList.add('u-overflow-hidden');
         }
 
-        // Function to close menu
         function closeMenu() {
             fullscreenMenu.classList.remove('is-open');
             menuToggle.classList.remove('is-active');
             navWrap.classList.remove('menu-is-open');
             document.body.classList.remove('u-overflow-hidden');
-            
-            // Remove padding compensation
             document.body.style.paddingRight = '';
             navWrap.style.paddingRight = '';
         }
 
-        // Toggle menu on button click
         menuToggle.addEventListener('click', function() {
             if (fullscreenMenu.classList.contains('is-open')) {
                 closeMenu();
@@ -456,14 +463,12 @@
             }
         });
 
-        // Close menu when clicking inside it (for future close button)
         fullscreenMenu.addEventListener('click', function(e) {
             if (e.target.classList.contains('menu-close') || e.target.closest('.menu-close')) {
                 closeMenu();
             }
         });
 
-        // Close menu with Escape key
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape' && fullscreenMenu.classList.contains('is-open')) {
                 closeMenu();

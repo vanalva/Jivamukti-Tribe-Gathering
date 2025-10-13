@@ -12,6 +12,13 @@
     <link href="css/rome-tribe.css" rel="stylesheet">
 </head>
 <body>
+    <!-- Custom Cursor -->
+    <div class="custom-cursor">
+        <svg preserveAspectRatio="xMidYMid meet" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 54.6387H17V29.0205L41.3809 53.4014L53.4014 41.3809L29.0215 17H54.6387V0H0V54.6387Z" fill="#151515"/>
+        </svg>
+    </div>
+
     <!-- Global Navigation Component -->
     <div id="navbar-placeholder"></div>
     <!-- Navigation Section (Two-Slot) -->
@@ -612,6 +619,17 @@
         </div>
     </footer>
 
+    <!-- GSAP Animation Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+    <!-- GSAP Custom Animations -->
+    <script src="js/gsap/config.js"></script>
+    <script src="js/gsap/scroll.js"></script>
+    <script src="js/gsap/entrance.js"></script>
+    <script src="js/gsap/sticky.js"></script>
+    <script src="js/gsap/menu.js"></script>
+
     <script>
         // Toggle fullscreen menu
         const menuToggle = document.getElementById('menuToggle');
@@ -791,5 +809,8 @@
             });
         });
     </script>
+
+    <!-- Custom Cursor -->
+    <script src="js/custom-cursor.js"></script>
 </body>
 </html>
