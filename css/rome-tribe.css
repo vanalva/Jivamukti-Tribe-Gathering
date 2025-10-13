@@ -219,6 +219,7 @@ img {
   --_typography---font-size--h1: clamp(3 * 1rem, ((3 - ((5 - 3) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((5 - 3) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 5 * 1rem);
   --_typography---font-size--display: clamp(4 * 1rem, ((4 - ((7 - 4) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((7 - 4) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 7 * 1rem);
   --_typography---font-size--display-xl: clamp(10 * 1rem, ((10 - ((15.18 - 10) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((15.18 - 10) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 15.18 * 1rem);
+  --_typography---font-size--menu: clamp(2.5 * 1rem, ((2.5 - ((5 - 2.5) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((5 - 2.5) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 5 * 1rem);
   --_typography---font-size--nav: clamp(1 * 1rem, ((1 - ((1.32 - 1) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((1.32 - 1) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 1.32 * 1rem);
   --_typography---font-size--button: clamp(.875 * 1rem, ((.875 - ((1.25 - .875) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((1.25 - .875) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 1.25 * 1rem);
   --_typography---text-transform--none: var(--text-transform, none);
@@ -2989,7 +2990,7 @@ strong {
   color: var(--swatch--dark-900);
   text-decoration: none;
   font-family: var(--_typography---font--primary-family);
-  font-size: var(--_typography---font-size--display);
+  font-size: var(--_typography---font-size--menu);
   line-height: var(--_typography---line-height--small);
   letter-spacing: var(--_typography---letter-spacing--tight);
   transition: color 0.3s ease, transform 0.3s ease;
@@ -3136,7 +3137,7 @@ strong {
   }
 
   .menu-fullscreen_link {
-    font-size: var(--_typography---font-size--h2);
+    /* Mobile: variable already scales down properly via Lumos clamp formula */
     line-height: 1.1;
   }
 
