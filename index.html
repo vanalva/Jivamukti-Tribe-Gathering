@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rome Tribe Gathering - Home</title>
+    <link rel="stylesheet" href="css/rome-tribe.css">
+</head>
+<body>
+
+    <!-- Navigation Component (Two-Slot) -->
+    <nav class="nav_wrap u-section u-position-absolute">
+        <div class="nav_background u-cover-absolute u-zindex-negative"></div>
+        <div class="nav_content u-position-relative u-zindex-high">
+            <div class="nav_menu">
+                <a href="about-tribe.html" class="link text-nav u-text-uppercase">About</a>
+                <a href="schedule.html" class="link text-nav u-text-uppercase">Schedule</a>
+                <a href="booking.html" class="link text-nav u-text-uppercase">Register</a>
+            </div>
+
+            <div class="nav_logo">
+                <a href="index.html">
+                    <img src="images/home/b8ea7887be24e71c0719f0d0ca144381006d6ee5.png" alt="Jivamukti Tribe Gathering" class="image image-contain">
+                </a>
+            </div>
+
+            <div class="nav_menu">
+                <button class="nav_hamburger" id="menuToggle" aria-label="Toggle menu">
+                    <svg class="hamburger-icon" width="24" height="14" viewBox="0 0 24 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="0" y1="2" x2="24" y2="2" stroke="currentColor" stroke-width="3" stroke-linecap="square"/>
+                        <line x1="0" y1="12" x2="24" y2="12" stroke="currentColor" stroke-width="3" stroke-linecap="square"/>
+                    </svg>
+                    <svg class="close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="4" y1="4" x2="20" y2="20" stroke="currentColor" stroke-width="3" stroke-linecap="square"/>
+                        <line x1="20" y1="4" x2="4" y2="20" stroke="currentColor" stroke-width="3" stroke-linecap="square"/>
+                    </svg>
+                </button>
+                <a href="archive.html" class="link text-nav u-text-uppercase">Archive</a>
+                <a href="about-rome.html" class="link text-nav u-text-uppercase">Useful Info</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Full Screen Menu Overlay -->
+    <div class="fullscreen-menu" id="fullscreenMenu">
+        <div class="menu-fullscreen_background u-cover-absolute"></div>
+        <div class="menu-fullscreen_content u-position-relative">
+            <div class="menu-fullscreen_grid">
+                <nav class="menu-fullscreen_nav">
+                    <a href="index.html" class="menu-fullscreen_link text-display-xl u-text-uppercase">
+                        HOME
+                        <img src="images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg" alt="" class="menu-fullscreen_arrow-icon">
+                    </a>
+                    <a href="about-tribe.html" class="menu-fullscreen_link text-display-xl u-text-uppercase">
+                        ABOUT
+                        <img src="images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg" alt="" class="menu-fullscreen_arrow-icon">
+                    </a>
+                    <a href="schedule.html" class="menu-fullscreen_link text-display-xl u-text-uppercase">
+                        SCHEDULE
+                        <img src="images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg" alt="" class="menu-fullscreen_arrow-icon">
+                    </a>
+                    <a href="teachers.html" class="menu-fullscreen_link text-display-xl u-text-uppercase">
+                        TEACHERS
+                        <img src="images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg" alt="" class="menu-fullscreen_arrow-icon">
+                    </a>
+                    <a href="booking.html" class="menu-fullscreen_link menu-fullscreen_link--primary text-display-xl u-text-uppercase">
+                        REGISTER
+                        <img src="images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg" alt="" class="menu-fullscreen_arrow-icon">
+                    </a>
+                    <a href="about-rome.html" class="menu-fullscreen_link text-display-xl u-text-uppercase">
+                        USEFUL INFO
+                        <img src="images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg" alt="" class="menu-fullscreen_arrow-icon">
+                    </a>
+                    <a href="archive.html" class="menu-fullscreen_link text-display-xl u-text-uppercase">
+                        ARCHIVE
+                        <img src="images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg" alt="" class="menu-fullscreen_arrow-icon">
+                    </a>
+                </nav>
+                <div class="menu-fullscreen_image-wrap">
+                    <div class="menu-fullscreen_image-container">
+                        <img src="images/menu/6892fb9a88690f30225eb6d19e7d30458d5c3662.png" alt="Rome Tribe Gathering" class="menu-fullscreen_hero-image">
+                        <div class="menu-fullscreen_badge">
+                            <img src="images/menu/a87419272b02566dee78c9b44f7b15b686eb8ba2.svg" alt="Rome Tribe Gathering 25" class="menu-fullscreen_badge-image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-fullscreen_footer">
+                <div class="menu-fullscreen_footer-left">
+                    <img src="images/menu/0020438c96462729a00595340c6a4efd7b8f7a52.svg" alt="Jivamukti Yoga" class="menu-fullscreen_footer-logo">
+                    <p class="text-legal menu-fullscreen_copyright">© 2024 Jivamukti Yoga. All rights reserved.</p>
+                </div>
+                <div class="menu-fullscreen_footer-right">
+                    <a href="#" class="menu-fullscreen_social-link" aria-label="YouTube">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="menu-fullscreen_social-link" aria-label="Instagram">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="menu-fullscreen_social-link" aria-label="Facebook">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="link text-legal menu-fullscreen_footer-link">Terms</a>
+                    <a href="#" class="link text-legal menu-fullscreen_footer-link">Privacy</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section (Two-Slot Pattern) -->
+    <section class="hero_wrap u-section u-position-relative">
+        
+        <!-- Background Slot -->
+        <div class="hero_background u-cover-absolute u-zindex-negative"></div>
+
+        <!-- Content Slot -->
+        <div class="hero_content u-position-relative">
+
+            <!-- Main Centered Hero Logo -->
+            <div class="hero_logo_wrap image-wrap image-wrap--freeform u-position-absolute u-overflow-hidden">
+                <img src="images/home/ed9b9c3fcc51c4325c0addf99d3f7c2333f96a00.png" alt="Rome Tribe Gathering main logo" class="image-wrap__img image-wrap__img--contain">
+            </div>
+
+            <!-- Floating Image - Top Left -->
+            <div class="hero_floating_image hero_floating_image-topleft image-wrap image-wrap--freeform u-position-absolute u-overflow-hidden u-breakout-left">
+                <img src="images/home/2da02ff94df3cd60517f142332eb30b6507f41a7.png" alt="Decorative image" class="image-wrap__img">
+            </div>
+
+            <!-- Floating Image - Bottom Right -->
+            <div class="hero_floating_image hero_floating_image-bottomright image-wrap image-wrap--freeform u-position-absolute u-overflow-hidden u-breakout-right">
+                <img src="images/home/a0ae6d2cf367288b9d878ec5a791313fc7726b61.png" alt="Decorative image" class="image-wrap__img">
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- About Section (Two-Slot Pattern) -->
+    <section class="about_wrap u-section u-position-relative">
+        <div class="about_background u-cover-absolute u-zindex-negative"></div>
+        <div class="about_content u-position-relative u-padding-inline-sitemargin">
+
+            <!-- Top Grid: Image + Title Block -->
+            <div class="home-about_hero-grid">
+                <!-- Left: Full-bleed Hero Image -->
+                <div class="home-about_hero-image-wrap u-breakout-left">
+                    <img src="images/home/06ea1ba9c542368e72407fdb4c53018a67ea6dcb.png" alt="Yoga Festival" class="home-about_hero-image">
+                </div>
+
+                <!-- Right: Title Stack -->
+                <div class="home-about_hero-titles">
+                    <p class="text-h4 home-about_date u-text-uppercase">SEPT<br>2026</p>
+                    <h2 class="text-display-xl home-about_main-title u-text-uppercase"><span class="home-about_main-title-word">LET'S</span><span class="home-about_main-title-word">EXPLORE</span><span class="home-about_main-title-word">ROME</span></h2>
+                    <p class="text-h1 home-about_subtitle u-text-uppercase">WITH THE TRIBE</p>
+                </div>
+            </div>
+
+            <!-- Bottom Grid: Heading + Content -->
+            <div class="home-about_content-grid">
+                <!-- Left: Large Heading -->
+                <h3 class="text-h1 home-about_heading">Jivamukti Tribe Gathering is a four-day yoga festival</h3>
+
+                <!-- Right: Description + CTA -->
+                <div class="home-about_text-wrap">
+                    <p class="text-body-lg home-about_description">celebrating life and expressing our love and devotion through collective yoga practice, chanting, meditation and satsang. For the first time ever, Stavanger welcomes the worldwide yoga community to join us at our annual gathering, featuring classes with top Jivamukti Yoga teachers from around the world.</p>
+                    <a href="booking.html" class="button button--brand">JOIN US</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Schedule Section (Two-Slot) - Using schedule component -->
+    <section class="schedule_wrap u-section u-position-relative">
+        <div class="schedule_background u-cover-absolute u-zindex-negative"></div>
+        <div class="schedule_content u-position-relative">
+
+            <!-- Day 1 -->
+            <div class="day_wrap">
+                <div class="day_header">
+                    <h2 class="text-h1 u-text-uppercase">SEPT 09</h2>
+                    <h2 class="text-h1 u-text-uppercase">FRIDAY</h2>
+                </div>
+
+                <div class="day_table">
+                    <!-- Row 1: Masterclass -->
+                    <div class="day_row-item">
+                        <div class="day_row" data-image="images/home/b2a1fb87cf82c5e5870cd73a5814f50c99da688d.png">
+                            <div class="text-body-lg">10:00 | 11:30</div>
+                            <div class="text-h4 u-text-center">Masterclass</div>
+                            <div class="text-body-lg u-text-right">Moritz Camilla</div>
+                        </div>
+                        <div class="day_row-content">
+                            <div class="day_row-content-grid">
+                                <div class="day_row-content-image image-wrap image-wrap--portrait-tall u-overflow-hidden">
+                                    <img src="images/home/b2a1fb87cf82c5e5870cd73a5814f50c99da688d.png" alt="Masterclass" class="image-wrap__img">
+                                </div>
+                                <div class="day_row-content-text">
+                                    <div class="day_row-content-main">
+                                        <h3 class="text-h1">Masterclass</h3>
+                                        <div class="day_row-content-description">
+                                            <p class="text-body-md">Join us for an intensive masterclass session where you'll deepen your practice and explore advanced techniques with experienced teachers. This session is designed to challenge and inspire practitioners of all levels.</p>
+                                        </div>
+                                    </div>
+                                    <div class="day_row-content-details">
+                                        <p class="text-body-sm"><strong>Date & Time:</strong><br>September 09, 2025<br>10:00 - 11:30</p>
+                                        <p class="text-body-sm"><strong>Location:</strong><br>Main Studio<br>Via dei Coronari, 42</p>
+                                    </div>
+                                </div>
+                                <a href="booking.html" class="button day_row-buy-button">BUY TICKETS</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Row 2: Open Class -->
+                    <div class="day_row-item">
+                        <div class="day_row" data-image="images/home/06ea1ba9c542368e72407fdb4c53018a67ea6dcb.png">
+                            <div class="text-body-lg">12:00 | 13:30</div>
+                            <div class="text-h4 u-text-center">Open Class</div>
+                            <div class="text-body-lg u-text-right">Moritz Camilla</div>
+                        </div>
+                        <div class="day_row-content">
+                            <div class="day_row-content-grid">
+                                <div class="day_row-content-image image-wrap image-wrap--portrait-tall u-overflow-hidden">
+                                    <img src="images/home/06ea1ba9c542368e72407fdb4c53018a67ea6dcb.png" alt="Open Class" class="image-wrap__img">
+                                </div>
+                                <div class="day_row-content-text">
+                                    <div class="day_row-content-main">
+                                        <h3 class="text-h1">Open Class</h3>
+                                        <div class="day_row-content-description">
+                                            <p class="text-body-md">Experience a welcoming and dynamic open class suitable for all levels. Connect with the community and enjoy a flowing practice that energizes body and mind.</p>
+                                        </div>
+                                    </div>
+                                    <div class="day_row-content-details">
+                                        <p class="text-body-sm"><strong>Date & Time:</strong><br>September 09, 2025<br>12:00 - 13:30</p>
+                                        <p class="text-body-sm"><strong>Location:</strong><br>Main Studio<br>Via dei Coronari, 42</p>
+                                    </div>
+                                </div>
+                                <a href="booking.html" class="button day_row-buy-button">BUY TICKETS</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Row 3: Lecture -->
+                    <div class="day_row-item">
+                        <div class="day_row" data-image="images/home/7daed26c9efac9c483a5692dcacb5545bffe955f.png">
+                            <div class="text-body-lg">14:00 | 15:30</div>
+                            <div class="text-h4 u-text-center">Lecture</div>
+                            <div class="text-body-lg u-text-right">Moritz Camilla</div>
+                        </div>
+                        <div class="day_row-content">
+                            <div class="day_row-content-grid">
+                                <div class="day_row-content-image image-wrap image-wrap--portrait-tall u-overflow-hidden">
+                                    <img src="images/home/7daed26c9efac9c483a5692dcacb5545bffe955f.png" alt="Lecture" class="image-wrap__img">
+                                </div>
+                                <div class="day_row-content-text">
+                                    <div class="day_row-content-main">
+                                        <h3 class="text-h1">Lecture</h3>
+                                        <div class="day_row-content-description">
+                                            <p class="text-body-md">Dive deep into the philosophy and wisdom of yoga through engaging lectures that explore ancient teachings and their relevance in modern life.</p>
+                                        </div>
+                                    </div>
+                                    <div class="day_row-content-details">
+                                        <p class="text-body-sm"><strong>Date & Time:</strong><br>September 09, 2025<br>14:00 - 15:30</p>
+                                        <p class="text-body-sm"><strong>Location:</strong><br>Main Studio<br>Via dei Coronari, 42</p>
+                                    </div>
+                                </div>
+                                <a href="booking.html" class="button day_row-buy-button">BUY TICKETS</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Row 4: Workshop -->
+                    <div class="day_row-item">
+                        <div class="day_row" data-image="images/home/2da02ff94df3cd60517f142332eb30b6507f41a7.png">
+                            <div class="text-body-lg">16:00 | 17:30</div>
+                            <div class="text-h4 u-text-center">Workshop</div>
+                            <div class="text-body-lg u-text-right">Moritz Camilla</div>
+                        </div>
+                        <div class="day_row-content">
+                            <div class="day_row-content-grid">
+                                <div class="day_row-content-image image-wrap image-wrap--portrait-tall u-overflow-hidden">
+                                    <img src="images/home/2da02ff94df3cd60517f142332eb30b6507f41a7.png" alt="Workshop" class="image-wrap__img">
+                                </div>
+                                <div class="day_row-content-text">
+                                    <div class="day_row-content-main">
+                                        <h3 class="text-h1">Workshop</h3>
+                                        <div class="day_row-content-description">
+                                            <p class="text-body-md">Participate in hands-on workshops designed to refine your technique, explore specific aspects of practice, and gain practical skills you can take home.</p>
+                                        </div>
+                                    </div>
+                                    <div class="day_row-content-details">
+                                        <p class="text-body-sm"><strong>Date & Time:</strong><br>September 09, 2025<br>16:00 - 17:30</p>
+                                        <p class="text-body-sm"><strong>Location:</strong><br>Main Studio<br>Via dei Coronari, 42</p>
+                                    </div>
+                                </div>
+                                <a href="booking.html" class="button day_row-buy-button">BUY TICKETS</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Row 5: Open Class -->
+                    <div class="day_row-item">
+                        <div class="day_row" data-image="images/home/a0ae6d2cf367288b9d878ec5a791313fc7726b61.png">
+                            <div class="text-body-lg">18:00 | 19:30</div>
+                            <div class="text-h4 u-text-center">Open Class</div>
+                            <div class="text-body-lg u-text-right">Moritz Camilla</div>
+                        </div>
+                        <div class="day_row-content">
+                            <div class="day_row-content-grid">
+                                <div class="day_row-content-image image-wrap image-wrap--portrait-tall u-overflow-hidden">
+                                    <img src="images/home/a0ae6d2cf367288b9d878ec5a791313fc7726b61.png" alt="Open Class" class="image-wrap__img">
+                                </div>
+                                <div class="day_row-content-text">
+                                    <div class="day_row-content-main">
+                                        <h3 class="text-h1">Open Class</h3>
+                                        <div class="day_row-content-description">
+                                            <p class="text-body-md">Join our evening open class for a rejuvenating practice that helps you unwind and connect with your inner self after a full day.</p>
+                                        </div>
+                                    </div>
+                                    <div class="day_row-content-details">
+                                        <p class="text-body-sm"><strong>Date & Time:</strong><br>September 09, 2025<br>18:00 - 19:30</p>
+                                        <p class="text-body-sm"><strong>Location:</strong><br>Main Studio<br>Via dei Coronari, 42</p>
+                                    </div>
+                                </div>
+                                <a href="booking.html" class="button day_row-buy-button">BUY TICKETS</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Row 6: Concert -->
+                    <div class="day_row-item">
+                        <div class="day_row" data-image="images/home/7722cfd11034b26e6d4969dcb62baf1375e5a951.png">
+                            <div class="text-body-lg">20:00 | 21:30</div>
+                            <div class="text-h4 u-text-center">Concert</div>
+                            <div class="text-body-lg u-text-right">Moritz Camilla</div>
+                        </div>
+                        <div class="day_row-content">
+                            <div class="day_row-content-grid">
+                                <div class="day_row-content-image image-wrap image-wrap--portrait-tall u-overflow-hidden">
+                                    <img src="images/home/7722cfd11034b26e6d4969dcb62baf1375e5a951.png" alt="Concert" class="image-wrap__img">
+                                </div>
+                                <div class="day_row-content-text">
+                                    <div class="day_row-content-main">
+                                        <h3 class="text-h1">Concert</h3>
+                                        <div class="day_row-content-description">
+                                            <p class="text-body-md">End your day with an inspiring concert featuring live music that celebrates the spirit of yoga and community. Let the sounds transport you to a place of peace and joy.</p>
+                                        </div>
+                                    </div>
+                                    <div class="day_row-content-details">
+                                        <p class="text-body-sm"><strong>Date & Time:</strong><br>September 09, 2025<br>20:00 - 21:30</p>
+                                        <p class="text-body-sm"><strong>Location:</strong><br>Grand Hall<br>Via dei Coronari, 42</p>
+                                    </div>
+                                </div>
+                                <a href="booking.html" class="button day_row-buy-button">BUY TICKETS</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="day_image image-wrap image-wrap--square u-overflow-hidden">
+                    <img src="images/home/7722cfd11034b26e6d4969dcb62baf1375e5a951.png" alt="Day 1" class="image-wrap__img">
+                </div>
+
+                <div class="day_cta">
+                    <a href="schedule.html" class="button button--outline">VIEW ALL DAYS SCHEDULE</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Line Up Section (Two-Slot) - Using Teachers Component -->
+    <section class="teachers_wrap u-section u-position-relative">
+        <div class="teachers_background u-cover-absolute u-zindex-negative"></div>
+        
+        <!-- Section Title - Full Width Above Content -->
+        <h2 class="text-display-xl u-text-center teachers_title">LINE UP</h2>
+
+        <div class="teachers_content teachers_content--reversed u-position-relative">
+
+            <!-- Left Column: Teacher Links -->
+            <div class="teachers_list">
+                <!-- Teacher Item 1: Sharon Gannon -->
+                <div class="teacher_item" data-teacher-image="images/teachers/Sharon Gannon/_MG_8528_WEB.JPG">
+                    <div class="teacher_info">
+                        <p class="text-body-md teacher_eyebrow">Open Class</p>
+                        <h3 class="text-h1 u-text-uppercase">SHARON GANNON</h3>
+                    </div>
+                    <a href="teachers.html" class="teacher_arrow" aria-label="View Sharon Gannon profile">
+                        <img src="images/home/a6a9d170229ebfdceff4645f9c57d5ba83f93601.svg" alt="" class="teacher_arrow-icon">
+                    </a>
+                </div>
+
+                <!-- Teacher Item 2: Yogeswari -->
+                <div class="teacher_item" data-teacher-image="images/teachers/Yogeswari/2018.02.27_Jivamukti_TT_Yogeswari-051.jpg">
+                    <div class="teacher_info teacher_info--offset">
+                        <p class="text-body-md teacher_eyebrow">Open Class</p>
+                        <h3 class="text-h1 u-text-uppercase">YOGESWARI</h3>
+                    </div>
+                    <a href="teachers.html" class="teacher_arrow" aria-label="View Yogeswari profile">
+                        <img src="images/home/a6a9d170229ebfdceff4645f9c57d5ba83f93601.svg" alt="" class="teacher_arrow-icon">
+                    </a>
+                </div>
+
+                <!-- Teacher Item 3: Hachi Yu -->
+                <div class="teacher_item" data-teacher-image="images/teachers/Hachi/2023.05.18_JYTribe_Day_01_0335.jpg">
+                    <div class="teacher_info teacher_info--offset-large">
+                        <p class="text-body-md teacher_eyebrow">Masterclass</p>
+                        <h3 class="text-h1 u-text-uppercase">HACHI YU</h3>
+                    </div>
+                    <a href="teachers.html" class="teacher_arrow" aria-label="View Hachi Yu profile">
+                        <img src="images/home/a6a9d170229ebfdceff4645f9c57d5ba83f93601.svg" alt="" class="teacher_arrow-icon">
+                    </a>
+                </div>
+
+                <!-- Teacher Item 4: Jules Febre -->
+                <div class="teacher_item" data-teacher-image="images/home/b2a1fb87cf82c5e5870cd73a5814f50c99da688d.png">
+                    <div class="teacher_info teacher_info--offset-medium">
+                        <p class="text-body-md teacher_eyebrow">Lecture</p>
+                        <h3 class="text-h1 u-text-uppercase">JULES FEBRE</h3>
+                    </div>
+                    <a href="teachers.html" class="teacher_arrow" aria-label="View Jules Febre profile">
+                        <img src="images/home/a6a9d170229ebfdceff4645f9c57d5ba83f93601.svg" alt="" class="teacher_arrow-icon">
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Column: Fixed Hero Image -->
+            <div class="teachers_image-wrap">
+                <img src="images/home/b2a1fb87cf82c5e5870cd73a5814f50c99da688d.png" alt="" class="teachers_hero-image">
+            </div>
+
+            <!-- Hover Following Pink Circle -->
+            <div class="teachers_hover-badge">
+                <img src="images/home/e75d6dcce06d035f84bcec81be9c4072fcbdea02.svg" alt="" class="teachers_hover-badge-bg">
+                <p class="teachers_hover-badge-text">PROFILE &<br>CLASSES</p>
+            </div>
+
+        </div>
+
+        <!-- View All Button - Full Width Below Content -->
+        <div class="teachers_cta">
+            <a href="teachers.html" class="button button--outline">VIEW ALL LINE UP</a>
+        </div>
+
+    </section>
+
+    <!-- Looking Back Section (Two-Slot Pattern) -->
+    <section class="lookback_wrap u-section u-position-relative">
+        <div class="lookback_background u-cover-absolute u-zindex-negative"></div>
+        <div class="lookback_content u-position-relative">
+            
+            <h2 class="text-display-lg home-lookback_title u-text-uppercase">LOOKING BACK AT THE</h2>
+            
+            <div class="home-lookback_image-wrap image-wrap image-wrap--portrait-tall u-overflow-hidden">
+                <img src="images/home/7daed26c9efac9c483a5692dcacb5545bffe955f.png" alt="Tribe Gathering 2025" class="image-wrap__img">
+            </div>
+            
+            <h3 class="text-display-lg home-lookback_subtitle u-text-uppercase">TRIBE GATHERING 2025</h3>
+
+        </div>
+    </section>
+
+    <!-- Rome Section (Two-Slot Pattern) -->
+    <section class="rome_wrap u-section u-position-relative">
+        <div class="rome_background u-cover-absolute u-zindex-negative"></div>
+        <div class="rome_content u-position-relative home-rome_content">
+
+            <!-- Video with Play Button -->
+            <div class="home-rome_video-wrap">
+                <img src="images/home/316df861ded7b263ef32eb137a4493c780bc65b8.png" alt="Rome Architecture" class="home-rome_video-image">
+                <button class="home-rome_play-button" aria-label="Play video">
+                    <img src="images/home/784c6eb6959d89300ded47aa5c49463892148c55.svg" alt="" class="home-rome_play-icon">
+                </button>
+            </div>
+
+            <!-- ITALY Text -->
+            <h2 class="home-rome_title u-text-uppercase">ITALY</h2>
+
+        </div>
+    </section>
+
+    <!-- Footer Section (Two-Slot) -->
+    <footer class="footer_wrap u-section u-position-relative">
+        <div class="footer_background u-cover-absolute u-zindex-negative"></div>
+        <div class="footer_content u-position-relative">
+            <!-- Large ROME Logo -->
+            <div class="footer_logo-wrap">
+                <img src="images/da7ac17cfdfdad8ef6b54ab2ee41154de842cf3d.svg" alt="ROME" class="footer_logo-image">
+            </div>
+
+            <!-- Two Column Layout -->
+            <div class="footer_columns">
+                <div class="footer_column">
+                    <h3 class="footer_column-title text-h5">Navigate</h3>
+                    <ul class="footer_links footer_links--two-col">
+                        <li><a href="index.html" class="link link--light footer_link text-body-md">Home</a></li>
+                        <li><a href="about-tribe.html" class="link link--light footer_link text-body-md">About Tribe</a></li>
+                        <li><a href="schedule.html" class="link link--light footer_link text-body-md">Schedule</a></li>
+                        <li><a href="teachers.html" class="link link--light footer_link text-body-md">Teachers</a></li>
+                        <li><a href="booking.html" class="link link--light footer_link text-body-md">Register</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer_column footer_column--right">
+                    <h3 class="footer_column-title text-h5">Explore</h3>
+                    <ul class="footer_links">
+                        <li><a href="about-rome.html" class="link link--light footer_link text-body-md">Useful Info</a></li>
+                        <li><a href="archive.html" class="link link--light footer_link text-body-md">Archive</a></li>
+                        <li><a href="https://jivamuktiyoga.com" target="_blank" class="link link--light footer_link text-body-md">The Jivamukti Method</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="footer_bottom">
+                <p class="footer_copyright text-legal">© 2024 Jivamukti Yoga. All rights reserved.</p>
+
+                <div class="footer_social">
+                    <a href="#" class="footer_social-link" aria-label="YouTube">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" fill="currentColor"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="footer_social-link" aria-label="Instagram">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" fill="currentColor"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="footer_social-link" aria-label="Facebook">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" fill="currentColor"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="footer_legal">
+                    <a href="#" class="link link--light text-legal">Terms</a>
+                    <a href="#" class="link link--light text-legal">Privacy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // TWO INTERACTIVE EFFECTS ON THIS PAGE:
+        // 1. Schedule section - cursor-following hover images
+        // 2. Teachers lineup - pink badge + image switching
+
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // ===== EFFECT 1: Schedule hover images + Expandable rows =====
+            const dayWraps = document.querySelectorAll('.day_wrap');
+
+            dayWraps.forEach(day => {
+                const table = day.querySelector('.day_table');
+                const rowItems = day.querySelectorAll('.day_row-item');
+                const rows = day.querySelectorAll('.day_row[data-image]');
+                const image = day.querySelector('.day_image');
+                const imageElement = image ? image.querySelector('img') : null;
+
+                if (!table || !image || !imageElement) return;
+
+                let mouseX = 0;
+                let mouseY = 0;
+                let currentX = 0;
+                let currentY = 0;
+                let isHovering = false;
+                let animationFrame = null;
+
+                function animate() {
+                    if (!isHovering) return;
+
+                    const ease = 0.15;
+                    currentX += (mouseX - currentX) * ease;
+                    currentY += (mouseY - currentY) * ease;
+
+                    image.style.left = currentX + 'px';
+                    image.style.top = currentY + 'px';
+
+                    animationFrame = requestAnimationFrame(animate);
+                }
+
+                table.addEventListener('mouseenter', function(e) {
+                    isHovering = true;
+                    mouseX = e.clientX;
+                    mouseY = e.clientY;
+                    currentX = mouseX;
+                    currentY = mouseY;
+
+                    image.classList.add('is-visible');
+                    animate();
+                });
+
+                table.addEventListener('mouseleave', function() {
+                    isHovering = false;
+                    image.classList.remove('is-visible');
+                    if (animationFrame) {
+                        cancelAnimationFrame(animationFrame);
+                    }
+                });
+
+                table.addEventListener('mousemove', function(e) {
+                    mouseX = e.clientX;
+                    mouseY = e.clientY;
+                });
+
+                // Switch image on row hover
+                rows.forEach(row => {
+                    row.addEventListener('mouseenter', function() {
+                        const newImageSrc = this.getAttribute('data-image');
+                        if (newImageSrc && imageElement.src !== newImageSrc) {
+                            imageElement.style.opacity = '0.5';
+                            setTimeout(() => {
+                                imageElement.src = newImageSrc;
+                                imageElement.style.opacity = '1';
+                            }, 150);
+                        }
+                    });
+                });
+
+                // NEW: Toggle row expansion (accordion behavior)
+                rows.forEach(row => {
+                    row.addEventListener('click', function(e) {
+                        const parentItem = this.parentElement;
+                        const isActive = parentItem.classList.contains('is-active');
+
+                        // Close all other rows in this day
+                        rowItems.forEach(item => {
+                            if (item !== parentItem) {
+                                item.classList.remove('is-active');
+                            }
+                        });
+
+                        // Toggle current row
+                        if (isActive) {
+                            parentItem.classList.remove('is-active');
+                        } else {
+                            parentItem.classList.add('is-active');
+                        }
+                    });
+                });
+            });
+
+            // ===== EFFECT 2: Teachers lineup hover effects =====
+            const teachersSection = document.querySelector('.teachers_wrap');
+
+            if (teachersSection) {
+                const teacherItems = teachersSection.querySelectorAll('.teacher_item');
+                const hoverBadge = teachersSection.querySelector('.teachers_hover-badge');
+                const heroImage = teachersSection.querySelector('.teachers_hero-image');
+
+                if (hoverBadge && heroImage) {
+                    let mouseX = 0;
+                    let mouseY = 0;
+                    let currentX = 0;
+                    let currentY = 0;
+                    let isHoveringTeacher = false;
+                    let animationFrameTeacher = null;
+
+                    function animateTeacher() {
+                        if (!isHoveringTeacher) return;
+
+                        const ease = 0.15;
+                        currentX += (mouseX - currentX) * ease;
+                        currentY += (mouseY - currentY) * ease;
+
+                        hoverBadge.style.left = currentX + 'px';
+                        hoverBadge.style.top = currentY + 'px';
+
+                        animationFrameTeacher = requestAnimationFrame(animateTeacher);
+                    }
+
+                    teacherItems.forEach(item => {
+                        item.addEventListener('mouseenter', function(e) {
+                            // EFFECT 1: Show pink circle badge following cursor
+                            isHoveringTeacher = true;
+                            mouseX = e.clientX;
+                            mouseY = e.clientY;
+                            currentX = mouseX;
+                            currentY = mouseY;
+
+                            hoverBadge.classList.add('is-visible');
+                            animateTeacher();
+
+                            // EFFECT 2: Change fixed hero image on right
+                            const newImageSrc = item.getAttribute('data-teacher-image');
+                            if (newImageSrc) {
+                                heroImage.src = newImageSrc;
+                            }
+                        });
+
+                        item.addEventListener('mouseleave', function() {
+                            isHoveringTeacher = false;
+                            hoverBadge.classList.remove('is-visible');
+                            if (animationFrameTeacher) {
+                                cancelAnimationFrame(animationFrameTeacher);
+                            }
+                        });
+
+                        item.addEventListener('mousemove', function(e) {
+                            mouseX = e.clientX;
+                            mouseY = e.clientY;
+                        });
+                    });
+                }
+            }
+        });
+    </script>
+
+    <script>
+        // Toggle fullscreen menu
+        const menuToggle = document.getElementById('menuToggle');
+        const fullscreenMenu = document.getElementById('fullscreenMenu');
+        const navWrap = document.querySelector('.nav_wrap');
+
+        function getScrollbarWidth() {
+            return window.innerWidth - document.documentElement.clientWidth;
+        }
+
+        function openMenu() {
+            const scrollbarWidth = getScrollbarWidth();
+            fullscreenMenu.classList.add('is-open');
+            menuToggle.classList.add('is-active');
+            navWrap.classList.add('menu-is-open');
+            if (scrollbarWidth > 0) {
+                const currentBodyPadding = parseInt(window.getComputedStyle(document.body).paddingRight) || 0;
+                const currentNavPadding = parseInt(window.getComputedStyle(navWrap).paddingRight) || 0;
+                document.body.style.paddingRight = (currentBodyPadding + scrollbarWidth) + 'px';
+                navWrap.style.paddingRight = (currentNavPadding + scrollbarWidth) + 'px';
+            }
+            document.body.classList.add('u-overflow-hidden');
+        }
+
+        function closeMenu() {
+            fullscreenMenu.classList.remove('is-open');
+            menuToggle.classList.remove('is-active');
+            navWrap.classList.remove('menu-is-open');
+            document.body.classList.remove('u-overflow-hidden');
+            document.body.style.paddingRight = '';
+            navWrap.style.paddingRight = '';
+        }
+
+        menuToggle.addEventListener('click', function() {
+            if (fullscreenMenu.classList.contains('is-open')) {
+                closeMenu();
+            } else {
+                openMenu();
+            }
+        });
+
+        fullscreenMenu.addEventListener('click', function(e) {
+            if (e.target.classList.contains('menu-close') || e.target.closest('.menu-close')) {
+                closeMenu();
+            }
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && fullscreenMenu.classList.contains('is-open')) {
+                closeMenu();
+            }
+        });
+    </script>
+</body>
+</html>
+

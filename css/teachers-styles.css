@@ -1,0 +1,294 @@
+/* ============================================
+   TEACHERS PAGE - NEW COMPONENT STYLES
+   ============================================
+
+   This file documents new custom classes created for the Teachers/Line Up page.
+   These classes follow the Lumos framework naming conventions:
+   - Custom classes use underscore (_) naming
+   - Follow pattern: type_variation_element
+   - Two-slot pattern: _wrap contains _background and _content
+
+   ============================================ */
+
+/* --------------------------------------------
+   Hero Section (Reuses existing hero_wrap)
+   -------------------------------------------- */
+
+/* New: Background image styling for hero */
+.hero_background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    opacity: 0.3;
+}
+
+/* --------------------------------------------
+   Intro Section (NEW COMPONENT)
+   Two-slot pattern for introductory content
+   -------------------------------------------- */
+
+.intro_wrap {
+    width: 100%;
+    padding: var(--_spacing---space--8) var(--site--margin);
+}
+
+.intro_background {
+    background-color: var(--swatch--light-100);
+}
+
+.intro_content {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--site--gutter);
+}
+
+/* Text group spans 7 columns on left */
+.intro_text-group {
+    grid-column: 1 / 8;
+    display: flex;
+    flex-direction: column;
+    gap: var(--_spacing---space--3);
+}
+
+.intro_subtitle {
+    color: var(--swatch--dark-900);
+    margin-top: var(--_spacing---space--4);
+}
+
+/* Description group spans 5 columns on right */
+.intro_description-group {
+    grid-column: 8 / 13;
+    display: flex;
+    flex-direction: column;
+    gap: var(--_spacing---space--4);
+}
+
+.intro_description-group p {
+    color: var(--swatch--dark-900);
+}
+
+.intro_description-group .button {
+    align-self: flex-start;
+    margin-top: var(--_spacing---space--4);
+}
+
+/* --------------------------------------------
+   Teachers List Section (NEW COMPONENT)
+   Displays list of teachers with hover image
+   -------------------------------------------- */
+
+.teachers_wrap {
+    width: 100%;
+    padding: var(--_spacing---space--7) var(--site--margin);
+    position: relative;
+}
+
+.teachers_background {
+    background-color: var(--swatch--light-100);
+}
+
+.teachers_content {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--_spacing---space--8);
+}
+
+/* Left column: List of teachers */
+.teachers_list {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Right column: Fixed hero image - REMOVED, using main CSS from rome-tribe.css */
+
+/* --------------------------------------------
+   Teacher Item (NEW COMPONENT)
+   Individual teacher row with stacked label/name on left, arrow on right
+   -------------------------------------------- */
+
+.teacher_item {
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-end;  /* Push content to the right */
+    gap: var(--_spacing---space--4);
+    padding-block: var(--_spacing---space--6);
+    border-bottom: 1px solid var(--swatch--dark-900-o20);
+    position: relative;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.teacher_item:hover {
+    opacity: 0.8;
+}
+
+/* Teacher info - stacks label above name */
+.teacher_info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--_spacing---space--2);
+    text-align: left;  /* Text stays left-aligned inside container */
+}
+
+/* Eyebrow label above name */
+.teacher_eyebrow {
+    color: var(--swatch--dark-900);
+    font-size: var(--_typography---font-size--text-large);
+    margin: 0;
+}
+
+/* Teacher name */
+.teacher_info h3 {
+    color: var(--swatch--dark-900);
+    font-weight: var(--_typography---font--primary-extrabold);
+    line-height: var(--_typography---line-height--medium);
+    letter-spacing: var(--_typography---letter-spacing--tight);
+    margin: 0;
+}
+
+/* Offset variations for visual rhythm */
+.teacher_info--offset {
+    margin-right: var(--_spacing---space--8);
+}
+
+.teacher_info--offset-large {
+    margin-right: var(--_spacing---space--10);
+}
+
+.teacher_info--offset-medium {
+    margin-right: var(--_spacing---space--6);
+}
+
+/* Arrow icon - maintains natural SVG size, no stretching */
+.teacher_arrow {
+    display: block;  /* Simple block - NO flex that stretches */
+    flex-shrink: 0;
+    transform: rotate(180deg);
+    transition: transform 0.3s ease;
+}
+
+.teacher_item:hover .teacher_arrow {
+    transform: rotate(180deg) translateX(8px);
+}
+
+.teacher_arrow-icon {
+    width: 56px;  /* Natural SVG width */
+    height: 55px;  /* Natural SVG height - FIXED, no auto */
+    display: block;
+}
+
+/* --------------------------------------------
+   Teacher Hover Badge (Pink Circle - RESTORED!)
+   Follows cursor with scale(0.7→1) + fade animation
+   -------------------------------------------- */
+
+.teachers_hover-badge {
+    width: 12.5rem;  /* 200px - circular badge */
+    height: 12.5rem; /* 200px - circular badge */
+    border-radius: 50%;
+    overflow: hidden;
+    position: fixed;
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.7);
+    transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform, opacity;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.teachers_hover-badge.is-visible {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.teachers_hover-badge-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.teachers_hover-badge-text {
+    position: relative;
+    z-index: 2;
+    color: var(--swatch--light-100);
+    font-size: 16px;
+    font-weight: var(--_typography---font--primary-bold);
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 1.3;
+}
+
+/* --------------------------------------------
+   Responsive Adjustments
+   -------------------------------------------- */
+
+@media (max-width: 991px) {
+    /* Intro section stacks on tablet */
+    .intro_text-group {
+        grid-column: 1 / 13;
+    }
+
+    .intro_description-group {
+        grid-column: 1 / 13;
+    }
+
+    /* Stack teachers content on tablet */
+    .teachers_content {
+        grid-template-columns: 1fr;
+    }
+
+    /* Hide fixed image on tablet */
+    .teachers_image-wrap {
+        display: none;
+    }
+
+    /* Reduce teacher info offsets on tablet */
+    .teacher_info--offset,
+    .teacher_info--offset-large,
+    .teacher_info--offset-medium {
+        padding-left: var(--_spacing---space--4);
+    }
+
+    /* Smaller hover badge on tablet */
+    .teachers_hover-badge {
+        width: 9.375rem;  /* 150px */
+        height: 9.375rem; /* 150px */
+    }
+}
+
+@media (max-width: 767px) {
+    /* Remove offsets on mobile */
+    .teacher_info--offset,
+    .teacher_info--offset-large,
+    .teacher_info--offset-medium {
+        padding-left: 0;
+    }
+
+    .teacher_info h3 {
+        font-size: var(--_typography---font-size--h2);
+    }
+
+    /* Hide hover badge on mobile */
+    .teachers_hover-badge {
+        display: none;
+    }
+
+    /* Intro description button full width */
+    .intro_description-group .button {
+        width: 100%;
+    }
+}
+
+/* ============================================
+   END OF TEACHERS PAGE STYLES
+   ============================================ */

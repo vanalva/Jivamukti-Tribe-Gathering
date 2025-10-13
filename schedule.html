@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule - Jivamukti Tribe Gathering Rome 2026 (Lumos Strict)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Inter:wght@400&display=swap" rel="stylesheet">
+
+    <!-- Rome Tribe Design System (self-contained, no dependencies) -->
+    <link href="css/rome-tribe.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Section (Two-Slot) -->
+    <nav class="nav_wrap u-section u-position-absolute">
+        <div class="nav_background u-cover-absolute u-zindex-negative"></div>
+        <div class="nav_content u-position-relative u-zindex-high">
+            <div class="nav_menu">
+                <a href="about-tribe.html" class="link text-nav u-text-uppercase">About</a>
+                <a href="schedule.html" class="link text-nav u-text-uppercase">Schedule</a>
+                <a href="booking.html" class="link text-nav u-text-uppercase">Register</a>
+            </div>
+
+            <div class="nav_logo">
+                <a href="index.html">
+                    <img src="images/schedule/logo.png" alt="Jivamukti Tribe Gathering" class="image image-contain">
+                </a>
+            </div>
+
+            <div class="nav_menu">
+                <button class="nav_hamburger" id="menuToggle" aria-label="Toggle menu">
+                    <svg class="hamburger-icon" width="24" height="14" viewBox="0 0 24 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="0" y1="2" x2="24" y2="2" stroke="currentColor" stroke-width="3" stroke-linecap="square"/>
+                        <line x1="0" y1="12" x2="24" y2="12" stroke="currentColor" stroke-width="3" stroke-linecap="square"/>
+                    </svg>
+                    <svg class="close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="4" y1="4" x2="20" y2="20" stroke="currentColor" stroke-width="3" stroke-linecap="square"/>
+                        <line x1="20" y1="4" x2="4" y2="20" stroke="currentColor" stroke-width="3" stroke-linecap="square"/>
+                    </svg>
+                </button>
+                <a href="archive.html" class="link text-nav u-text-uppercase">Archive</a>
+                <a href="about-rome.html" class="link text-nav u-text-uppercase">Useful Info</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Full Screen Menu Overlay -->
+    <div class="fullscreen-menu" id="fullscreenMenu">
+        <div class="menu-fullscreen_background u-cover-absolute"></div>
+        <div class="menu-fullscreen_content u-position-relative">
+            <div class="menu-fullscreen_grid">
+                <nav class="menu-fullscreen_nav">
+                    <a href="index.html" class="menu-fullscreen_link text-display-xl u-text-uppercase">
+                        HOME
+                        <img src="images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg" alt="" class="menu-fullscreen_arrow-icon">
+                    </a>
+                    <a href="about-tribe.html" class="menu-fullscreen_link text-display-xl u-text-uppercase">
+                        ABOUT
+                        <img src="images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg" alt="" class="menu-fullscreen_arrow-icon">
+                    </a>
+                    <a href="schedule.html" class="menu-fullscreen_link text-display-xl u-text-uppercase">
+                        SCHEDULE
+                        <img src="images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg" alt="" class="menu-fullscreen_arrow-icon">
+                    </a>
+                    <a href="teachers.html" class="menu-fullscreen_link text-display-xl u-text-uppercase">
+                        TEACHERS
+                        <img src="images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg" alt="" class="menu-fullscreen_arrow-icon">
+                    </a>
+                    <a href="booking.html" class="menu-fullscreen_link menu-fullscreen_link--primary text-display-xl u-text-uppercase">
+                        REGISTER
+                        <img src="images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg" alt="" class="menu-fullscreen_arrow-icon">
+                    </a>
+                    <a href="about-rome.html" class="menu-fullscreen_link text-display-xl u-text-uppercase">
+                        USEFUL INFO
+                        <img src="images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg" alt="" class="menu-fullscreen_arrow-icon">
+                    </a>
+                    <a href="archive.html" class="menu-fullscreen_link text-display-xl u-text-uppercase">
+                        ARCHIVE
+                        <img src="images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg" alt="" class="menu-fullscreen_arrow-icon">
+                    </a>
+                </nav>
+                <div class="menu-fullscreen_image-wrap">
+                    <div class="menu-fullscreen_image-container">
+                        <img src="images/menu/6892fb9a88690f30225eb6d19e7d30458d5c3662.png" alt="Rome Tribe Gathering" class="menu-fullscreen_hero-image">
+                        <div class="menu-fullscreen_badge">
+                            <img src="images/menu/a87419272b02566dee78c9b44f7b15b686eb8ba2.svg" alt="Rome Tribe Gathering 25" class="menu-fullscreen_badge-image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-fullscreen_footer">
+                <div class="menu-fullscreen_footer-left">
+                    <img src="images/menu/0020438c96462729a00595340c6a4efd7b8f7a52.svg" alt="Jivamukti Yoga" class="menu-fullscreen_footer-logo">
+                    <p class="text-legal menu-fullscreen_copyright">© 2024 Jivamukti Yoga. All rights reserved.</p>
+                </div>
+                <div class="menu-fullscreen_footer-right">
+                    <a href="#" class="menu-fullscreen_social-link" aria-label="YouTube">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="menu-fullscreen_social-link" aria-label="Instagram">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="menu-fullscreen_social-link" aria-label="Facebook">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="link text-legal menu-fullscreen_footer-link">Terms</a>
+                    <a href="#" class="link text-legal menu-fullscreen_footer-link">Privacy</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section with Collage (Two-Slot) - Schedule Variant -->
+    <section class="hero_wrap u-section u-position-relative">
+        <div class="hero_background u-cover-absolute u-zindex-negative"></div>
+        <div class="hero_content u-position-relative hero-collage_content hero-collage_content--schedule u-navbar-offset">
+
+            <!-- Hero Image (Center-Left) -->
+            <div class="hero-collage_image-wrap">
+                <img src="images/schedule/a442d6830fad7ef1ff33d36fa9a2b8092d9650d2.png" alt="Schedule planning with notebook" class="hero-collage_image">
+            </div>
+
+            <!-- Logo Branding (Right) -->
+            <div class="hero-collage_logo-wrap">
+                <img src="images/schedule/821d07c9b05ecd9f6e4aab2c38222c2d7868b925.svg" alt="Jivamukti Yoga The Tribe Gathering" class="hero-collage_logo">
+            </div>
+
+            <!-- Bottom Title (Full Width) -->
+            <h1 class="hero-collage_title-bottom">SCHEDULE</h1>
+
+        </div>
+    </section>
+
+    <!-- CTA Section (Two-Slot) -->
+    <div class="cta_wrap u-section u-position-relative">
+        <div class="cta_background u-cover-absolute"></div>
+        <div class="cta_content u-position-relative">
+            <p class="text-h4 u-text-uppercase u-text-center" style="color: var(--swatch--light-100);">Download our entire schedule</p>
+            <div class="flex flex-wrap gap-3">
+                <a href="#" class="button button--primary">Digital Version</a>
+                <a href="#" class="button button--secondary">PDF Version</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Schedule Section (Two-Slot) -->
+    <section class="schedule_wrap u-section u-position-relative">
+        <div class="schedule_background u-cover-absolute u-zindex-negative"></div>
+        <div class="schedule_content u-position-relative">
+
+            <!-- Day 1 -->
+            <div class="day_wrap">
+                <div class="day_header">
+                    <h2 class="text-h1 u-text-uppercase">SEPT 09</h2>
+                    <h2 class="text-h1 u-text-uppercase">FRIDAY</h2>
+                </div>
+
+                <div class="day_table">
+                    <!-- Row 1: Masterclass -->
+                    <div class="day_row-item">
+                        <div class="day_row" data-image="images/schedule/friday-photo.png">
+                            <div class="text-body-lg">10:00 | 11:30</div>
+                            <div class="text-h4 u-text-center">Masterclass</div>
+                            <div class="text-body-lg u-text-right">Olga Oskorbina</div>
+                        </div>
+                        <div class="day_row-content">
+                            <div class="day_row-content-grid">
+                                <div class="day_row-content-image image-wrap image-wrap--portrait-tall u-overflow-hidden">
+                                    <img src="images/schedule/friday-photo.png" alt="Masterclass" class="image-wrap__img">
+                                </div>
+                                <div class="day_row-content-text">
+                                    <div class="day_row-content-main">
+                                        <h3 class="text-h1">Masterclass</h3>
+                                        <div class="day_row-content-description">
+                                            <p class="text-body-md">Join us for an intensive masterclass session where you'll deepen your practice and explore advanced techniques with experienced teachers. This session is designed to challenge and inspire practitioners of all levels.</p>
+                                        </div>
+                                    </div>
+                                    <div class="day_row-content-details">
+                                        <p class="text-body-sm"><strong>Date & Time:</strong><br>September 09, 2025<br>10:00 - 11:30</p>
+                                        <p class="text-body-sm"><strong>Location:</strong><br>Main Studio<br>Via dei Coronari, 42</p>
+                                    </div>
+                                </div>
+                                <a href="booking.html" class="button day_row-buy-button">BUY TICKETS</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Row 2: Open Class -->
+                    <div class="day_row-item">
+                        <div class="day_row" data-image="images/schedule/saturday-photo.png">
+                            <div class="text-body-lg">12:00 | 13:30</div>
+                            <div class="text-h4 u-text-center">Open Class</div>
+                            <div class="text-body-lg u-text-right">Jules Fbre</div>
+                        </div>
+                        <div class="day_row-content">
+                            <div class="day_row-content-grid">
+                                <div class="day_row-content-image image-wrap image-wrap--portrait-tall u-overflow-hidden">
+                                    <img src="images/schedule/saturday-photo.png" alt="Open Class" class="image-wrap__img">
+                                </div>
+                                <div class="day_row-content-text">
+                                    <div class="day_row-content-main">
+                                        <h3 class="text-h1">Open Class</h3>
+                                        <div class="day_row-content-description">
+                                            <p class="text-body-md">Experience a welcoming and dynamic open class suitable for all levels. Connect with the community and enjoy a flowing practice that energizes body and mind.</p>
+                                        </div>
+                                    </div>
+                                    <div class="day_row-content-details">
+                                        <p class="text-body-sm"><strong>Date & Time:</strong><br>September 09, 2025<br>12:00 - 13:30</p>
+                                        <p class="text-body-sm"><strong>Location:</strong><br>Main Studio<br>Via dei Coronari, 42</p>
+                                    </div>
+                                </div>
+                                <a href="booking.html" class="button day_row-buy-button">BUY TICKETS</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Row 3: Lecture -->
+                    <div class="day_row-item">
+                        <div class="day_row" data-image="images/schedule/friday-photo.png">
+                            <div class="text-body-lg">14:00 | 15:30</div>
+                            <div class="text-h4 u-text-center">Lecture</div>
+                            <div class="text-body-lg u-text-right">Sharon Gannon</div>
+                        </div>
+                        <div class="day_row-content">
+                            <div class="day_row-content-grid">
+                                <div class="day_row-content-image image-wrap image-wrap--portrait-tall u-overflow-hidden">
+                                    <img src="images/schedule/friday-photo.png" alt="Lecture" class="image-wrap__img">
+                                </div>
+                                <div class="day_row-content-text">
+                                    <div class="day_row-content-main">
+                                        <h3 class="text-h1">Lecture</h3>
+                                        <div class="day_row-content-description">
+                                            <p class="text-body-md">Dive deep into the philosophy and wisdom of yoga through engaging lectures that explore ancient teachings and their relevance in modern life.</p>
+                                        </div>
+                                    </div>
+                                    <div class="day_row-content-details">
+                                        <p class="text-body-sm"><strong>Date & Time:</strong><br>September 09, 2025<br>14:00 - 15:30</p>
+                                        <p class="text-body-sm"><strong>Location:</strong><br>Main Studio<br>Via dei Coronari, 42</p>
+                                    </div>
+                                </div>
+                                <a href="booking.html" class="button day_row-buy-button">BUY TICKETS</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Row 4: Workshop -->
+                    <div class="day_row-item">
+                        <div class="day_row" data-image="images/schedule/saturday-photo.png">
+                            <div class="text-body-lg">16:00 | 17:30</div>
+                            <div class="text-h4 u-text-center">Workshop</div>
+                            <div class="text-body-lg u-text-right">Anna Lunegova</div>
+                        </div>
+                        <div class="day_row-content">
+                            <div class="day_row-content-grid">
+                                <div class="day_row-content-image image-wrap image-wrap--portrait-tall u-overflow-hidden">
+                                    <img src="images/schedule/saturday-photo.png" alt="Workshop" class="image-wrap__img">
+                                </div>
+                                <div class="day_row-content-text">
+                                    <div class="day_row-content-main">
+                                        <h3 class="text-h1">Workshop</h3>
+                                        <div class="day_row-content-description">
+                                            <p class="text-body-md">Participate in hands-on workshops designed to refine your technique, explore specific aspects of practice, and gain practical skills you can take home.</p>
+                                        </div>
+                                    </div>
+                                    <div class="day_row-content-details">
+                                        <p class="text-body-sm"><strong>Date & Time:</strong><br>September 09, 2025<br>16:00 - 17:30</p>
+                                        <p class="text-body-sm"><strong>Location:</strong><br>Main Studio<br>Via dei Coronari, 42</p>
+                                    </div>
+                                </div>
+                                <a href="booking.html" class="button day_row-buy-button">BUY TICKETS</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Row 5: Open Class -->
+                    <div class="day_row-item">
+                        <div class="day_row" data-image="images/schedule/friday-photo.png">
+                            <div class="text-body-lg">18:00 | 19:30</div>
+                            <div class="text-h4 u-text-center">Open Class</div>
+                            <div class="text-body-lg u-text-right">Andrea Kwiatkowski</div>
+                        </div>
+                        <div class="day_row-content">
+                            <div class="day_row-content-grid">
+                                <div class="day_row-content-image image-wrap image-wrap--portrait-tall u-overflow-hidden">
+                                    <img src="images/schedule/friday-photo.png" alt="Open Class" class="image-wrap__img">
+                                </div>
+                                <div class="day_row-content-text">
+                                    <div class="day_row-content-main">
+                                        <h3 class="text-h1">Open Class</h3>
+                                        <div class="day_row-content-description">
+                                            <p class="text-body-md">Join our evening open class for a rejuvenating practice that helps you unwind and connect with your inner self after a full day.</p>
+                                        </div>
+                                    </div>
+                                    <div class="day_row-content-details">
+                                        <p class="text-body-sm"><strong>Date & Time:</strong><br>September 09, 2025<br>18:00 - 19:30</p>
+                                        <p class="text-body-sm"><strong>Location:</strong><br>Main Studio<br>Via dei Coronari, 42</p>
+                                    </div>
+                                </div>
+                                <a href="booking.html" class="button day_row-buy-button">BUY TICKETS</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Row 6: Concert -->
+                    <div class="day_row-item">
+                        <div class="day_row" data-image="images/schedule/saturday-photo.png">
+                            <div class="text-body-lg">20:00 | 21:30</div>
+                            <div class="text-h4 u-text-center">Concert</div>
+                            <div class="text-body-lg u-text-right">Magali Lehners</div>
+                        </div>
+                        <div class="day_row-content">
+                            <div class="day_row-content-grid">
+                                <div class="day_row-content-image image-wrap image-wrap--portrait-tall u-overflow-hidden">
+                                    <img src="images/schedule/saturday-photo.png" alt="Concert" class="image-wrap__img">
+                                </div>
+                                <div class="day_row-content-text">
+                                    <div class="day_row-content-main">
+                                        <h3 class="text-h1">Concert</h3>
+                                        <div class="day_row-content-description">
+                                            <p class="text-body-md">End your day with an inspiring concert featuring live music that celebrates the spirit of yoga and community. Let the sounds transport you to a place of peace and joy.</p>
+                                        </div>
+                                    </div>
+                                    <div class="day_row-content-details">
+                                        <p class="text-body-sm"><strong>Date & Time:</strong><br>September 09, 2025<br>20:00 - 21:30</p>
+                                        <p class="text-body-sm"><strong>Location:</strong><br>Grand Hall<br>Via dei Coronari, 42</p>
+                                    </div>
+                                </div>
+                                <a href="booking.html" class="button day_row-buy-button">BUY TICKETS</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="day_image image-wrap image-wrap--square u-overflow-hidden">
+                    <img src="images/schedule/friday-photo.png" alt="Day 1" class="image-wrap__img">
+                </div>
+
+                <div class="day_cta">
+                    <a href="booking.html" class="button button--outline">JOIN US</a>
+                </div>
+            </div>
+
+            <!-- Day 2 -->
+            <div class="day_wrap">
+                <div class="day_header">
+                    <h2 class="text-h1 u-text-uppercase">SEPT 10</h2>
+                    <h2 class="text-h1 u-text-uppercase">SATURDAY</h2>
+                </div>
+
+                <div class="day_table">
+                    <!-- Row 1: Masterclass -->
+                    <div class="day_row-item">
+                        <div class="day_row" data-image="images/schedule/saturday-photo.png">
+                            <div class="text-body-lg">10:00 | 11:30</div>
+                            <div class="text-h4 u-text-center">Masterclass</div>
+                            <div class="text-body-lg u-text-right">Rima Rabbath</div>
+                        </div>
+                        <div class="day_row-content">
+                            <div class="day_row-content-grid">
+                                <div class="day_row-content-image image-wrap image-wrap--portrait-tall u-overflow-hidden">
+                                    <img src="images/schedule/saturday-photo.png" alt="Masterclass" class="image-wrap__img">
+                                </div>
+                                <div class="day_row-content-text">
+                                    <div class="day_row-content-main">
+                                        <h3 class="text-h1">Masterclass</h3>
+                                        <div class="day_row-content-description">
+                                            <p class="text-body-md">Join us for an intensive masterclass session where you'll deepen your practice and explore advanced techniques with experienced teachers. This session is designed to challenge and inspire practitioners of all levels.</p>
+                                        </div>
+                                    </div>
+                                    <div class="day_row-content-details">
+                                        <p class="text-body-sm"><strong>Date & Time:</strong><br>September 10, 2025<br>10:00 - 11:30</p>
+                                        <p class="text-body-sm"><strong>Location:</strong><br>Main Studio<br>Via dei Coronari, 42</p>
+                                    </div>
+                                </div>
+                                <a href="booking.html" class="button day_row-buy-button">BUY TICKETS</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Row 2: Open Class -->
+                    <div class="day_row-item">
+                        <div class="day_row" data-image="images/schedule/friday-photo.png">
+                            <div class="text-body-lg">12:00 | 13:30</div>
+                            <div class="text-h4 u-text-center">Open Class</div>
+                            <div class="text-body-lg u-text-right">Dana Sertel</div>
+                        </div>
+                        <div class="day_row-content">
+                            <div class="day_row-content-grid">
+                                <div class="day_row-content-image image-wrap image-wrap--portrait-tall u-overflow-hidden">
+                                    <img src="images/schedule/friday-photo.png" alt="Open Class" class="image-wrap__img">
+                                </div>
+                                <div class="day_row-content-text">
+                                    <div class="day_row-content-main">
+                                        <h3 class="text-h1">Open Class</h3>
+                                        <div class="day_row-content-description">
+                                            <p class="text-body-md">Experience a welcoming and dynamic open class suitable for all levels. Connect with the community and enjoy a flowing practice that energizes body and mind.</p>
+                                        </div>
+                                    </div>
+                                    <div class="day_row-content-details">
+                                        <p class="text-body-sm"><strong>Date & Time:</strong><br>September 10, 2025<br>12:00 - 13:30</p>
+                                        <p class="text-body-sm"><strong>Location:</strong><br>Main Studio<br>Via dei Coronari, 42</p>
+                                    </div>
+                                </div>
+                                <a href="booking.html" class="button day_row-buy-button">BUY TICKETS</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Row 3: Lecture -->
+                    <div class="day_row-item">
+                        <div class="day_row" data-image="images/schedule/saturday-photo.png">
+                            <div class="text-body-lg">14:00 | 15:30</div>
+                            <div class="text-h4 u-text-center">Lecture</div>
+                            <div class="text-body-lg u-text-right">Moritz Camilla</div>
+                        </div>
+                        <div class="day_row-content">
+                            <div class="day_row-content-grid">
+                                <div class="day_row-content-image image-wrap image-wrap--portrait-tall u-overflow-hidden">
+                                    <img src="images/schedule/saturday-photo.png" alt="Lecture" class="image-wrap__img">
+                                </div>
+                                <div class="day_row-content-text">
+                                    <div class="day_row-content-main">
+                                        <h3 class="text-h1">Lecture</h3>
+                                        <div class="day_row-content-description">
+                                            <p class="text-body-md">Dive deep into the philosophy and wisdom of yoga through engaging lectures that explore ancient teachings and their relevance in modern life.</p>
+                                        </div>
+                                    </div>
+                                    <div class="day_row-content-details">
+                                        <p class="text-body-sm"><strong>Date & Time:</strong><br>September 10, 2025<br>14:00 - 15:30</p>
+                                        <p class="text-body-sm"><strong>Location:</strong><br>Main Studio<br>Via dei Coronari, 42</p>
+                                    </div>
+                                </div>
+                                <a href="booking.html" class="button day_row-buy-button">BUY TICKETS</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Row 4: Workshop -->
+                    <div class="day_row-item">
+                        <div class="day_row" data-image="images/schedule/friday-photo.png">
+                            <div class="text-body-lg">16:00 | 17:30</div>
+                            <div class="text-h4 u-text-center">Workshop</div>
+                            <div class="text-body-lg u-text-right">Juan Sierra</div>
+                        </div>
+                        <div class="day_row-content">
+                            <div class="day_row-content-grid">
+                                <div class="day_row-content-image image-wrap image-wrap--portrait-tall u-overflow-hidden">
+                                    <img src="images/schedule/friday-photo.png" alt="Workshop" class="image-wrap__img">
+                                </div>
+                                <div class="day_row-content-text">
+                                    <div class="day_row-content-main">
+                                        <h3 class="text-h1">Workshop</h3>
+                                        <div class="day_row-content-description">
+                                            <p class="text-body-md">Participate in hands-on workshops designed to refine your technique, explore specific aspects of practice, and gain practical skills you can take home.</p>
+                                        </div>
+                                    </div>
+                                    <div class="day_row-content-details">
+                                        <p class="text-body-sm"><strong>Date & Time:</strong><br>September 10, 2025<br>16:00 - 17:30</p>
+                                        <p class="text-body-sm"><strong>Location:</strong><br>Main Studio<br>Via dei Coronari, 42</p>
+                                    </div>
+                                </div>
+                                <a href="booking.html" class="button day_row-buy-button">BUY TICKETS</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Row 5: Open Class -->
+                    <div class="day_row-item">
+                        <div class="day_row" data-image="images/schedule/saturday-photo.png">
+                            <div class="text-body-lg">18:00 | 19:30</div>
+                            <div class="text-h4 u-text-center">Open Class</div>
+                            <div class="text-body-lg u-text-right">Magali Lehners</div>
+                        </div>
+                        <div class="day_row-content">
+                            <div class="day_row-content-grid">
+                                <div class="day_row-content-image image-wrap image-wrap--portrait-tall u-overflow-hidden">
+                                    <img src="images/schedule/saturday-photo.png" alt="Open Class" class="image-wrap__img">
+                                </div>
+                                <div class="day_row-content-text">
+                                    <div class="day_row-content-main">
+                                        <h3 class="text-h1">Open Class</h3>
+                                        <div class="day_row-content-description">
+                                            <p class="text-body-md">Join our evening open class for a rejuvenating practice that helps you unwind and connect with your inner self after a full day.</p>
+                                        </div>
+                                    </div>
+                                    <div class="day_row-content-details">
+                                        <p class="text-body-sm"><strong>Date & Time:</strong><br>September 10, 2025<br>18:00 - 19:30</p>
+                                        <p class="text-body-sm"><strong>Location:</strong><br>Main Studio<br>Via dei Coronari, 42</p>
+                                    </div>
+                                </div>
+                                <a href="booking.html" class="button day_row-buy-button">BUY TICKETS</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Row 6: Concert -->
+                    <div class="day_row-item">
+                        <div class="day_row" data-image="images/schedule/friday-photo.png">
+                            <div class="text-body-lg">20:00 | 21:30</div>
+                            <div class="text-h4 u-text-center">Concert</div>
+                            <div class="text-body-lg u-text-right">Andrea Kwiatkowski</div>
+                        </div>
+                        <div class="day_row-content">
+                            <div class="day_row-content-grid">
+                                <div class="day_row-content-image image-wrap image-wrap--portrait-tall u-overflow-hidden">
+                                    <img src="images/schedule/friday-photo.png" alt="Concert" class="image-wrap__img">
+                                </div>
+                                <div class="day_row-content-text">
+                                    <div class="day_row-content-main">
+                                        <h3 class="text-h1">Concert</h3>
+                                        <div class="day_row-content-description">
+                                            <p class="text-body-md">End your day with an inspiring concert featuring live music that celebrates the spirit of yoga and community. Let the sounds transport you to a place of peace and joy.</p>
+                                        </div>
+                                    </div>
+                                    <div class="day_row-content-details">
+                                        <p class="text-body-sm"><strong>Date & Time:</strong><br>September 10, 2025<br>20:00 - 21:30</p>
+                                        <p class="text-body-sm"><strong>Location:</strong><br>Grand Hall<br>Via dei Coronari, 42</p>
+                                    </div>
+                                </div>
+                                <a href="booking.html" class="button day_row-buy-button">BUY TICKETS</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="day_image image-wrap image-wrap--square u-overflow-hidden">
+                    <img src="images/schedule/saturday-photo.png" alt="Day 2" class="image-wrap__img">
+                </div>
+
+                <div class="day_cta">
+                    <a href="booking.html" class="button button--outline">JOIN US</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer Component (Two-Slot) -->
+    <!-- USAGE: Copy this entire block into your page -->
+    <!-- NOTE: Adjust image paths based on your page location (e.g., from pages/ use ../images/) -->
+    <footer class="footer_wrap u-section u-position-relative">
+        <div class="footer_background u-cover-absolute u-zindex-negative"></div>
+        <div class="footer_content u-position-relative">
+            <!-- Large ROME Logo -->
+            <div class="footer_logo-wrap">
+                <img src="images/da7ac17cfdfdad8ef6b54ab2ee41154de842cf3d.svg" alt="ROME" class="footer_logo-image">
+            </div>
+
+            <!-- Two Column Layout -->
+            <div class="footer_columns">
+                <div class="footer_column">
+                    <h3 class="footer_column-title text-h5">Navigate</h3>
+                    <ul class="footer_links footer_links--two-col">
+                        <li><a href="index.html" class="link link--light footer_link text-body-md">Home</a></li>
+                        <li><a href="about-tribe.html" class="link link--light footer_link text-body-md">About Tribe</a></li>
+                        <li><a href="schedule.html" class="link link--light footer_link text-body-md">Schedule</a></li>
+                        <li><a href="teachers.html" class="link link--light footer_link text-body-md">Teachers</a></li>
+                        <li><a href="booking.html" class="link link--light footer_link text-body-md">Register</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer_column footer_column--right">
+                    <h3 class="footer_column-title text-h5">Explore</h3>
+                    <ul class="footer_links">
+                        <li><a href="about-rome.html" class="link link--light footer_link text-body-md">Useful Info</a></li>
+                        <li><a href="archive.html" class="link link--light footer_link text-body-md">Archive</a></li>
+                        <li><a href="https://jivamuktiyoga.com" target="_blank" class="link link--light footer_link text-body-md">The Jivamukti Method</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="footer_bottom">
+                <p class="footer_copyright text-legal">© 2024 Jivamukti Yoga. All rights reserved.</p>
+
+                <div class="footer_social">
+                    <a href="#" class="footer_social-link" aria-label="YouTube">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" fill="currentColor"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="footer_social-link" aria-label="Instagram">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" fill="currentColor"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="footer_social-link" aria-label="Facebook">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" fill="currentColor"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="footer_legal">
+                    <a href="#" class="link link--light text-legal">Terms</a>
+                    <a href="#" class="link link--light text-legal">Privacy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Schedule hover images + Expandable rows (accordion behavior)
+        document.addEventListener('DOMContentLoaded', function() {
+            const dayWraps = document.querySelectorAll('.day_wrap');
+
+            dayWraps.forEach(day => {
+                const table = day.querySelector('.day_table');
+                const rowItems = day.querySelectorAll('.day_row-item');
+                const rows = day.querySelectorAll('.day_row[data-image]');
+                const image = day.querySelector('.day_image');
+                const imageElement = image ? image.querySelector('img') : null;
+
+                if (!table || !image || !imageElement) return;
+
+                let mouseX = 0;
+                let mouseY = 0;
+                let currentX = 0;
+                let currentY = 0;
+                let isHovering = false;
+                let animationFrame = null;
+
+                function animate() {
+                    if (!isHovering) return;
+
+                    const ease = 0.15;
+                    currentX += (mouseX - currentX) * ease;
+                    currentY += (mouseY - currentY) * ease;
+
+                    image.style.left = currentX + 'px';
+                    image.style.top = currentY + 'px';
+
+                    animationFrame = requestAnimationFrame(animate);
+                }
+
+                table.addEventListener('mouseenter', function(e) {
+                    isHovering = true;
+                    mouseX = e.clientX;
+                    mouseY = e.clientY;
+                    currentX = mouseX;
+                    currentY = mouseY;
+
+                    image.classList.add('is-visible');
+                    animate();
+                });
+
+                table.addEventListener('mouseleave', function() {
+                    isHovering = false;
+                    image.classList.remove('is-visible');
+                    if (animationFrame) {
+                        cancelAnimationFrame(animationFrame);
+                    }
+                });
+
+                table.addEventListener('mousemove', function(e) {
+                    mouseX = e.clientX;
+                    mouseY = e.clientY;
+                });
+
+                // Switch image on row hover
+                rows.forEach(row => {
+                    row.addEventListener('mouseenter', function() {
+                        const newImageSrc = this.getAttribute('data-image');
+                        if (newImageSrc && imageElement.src !== newImageSrc) {
+                            imageElement.style.opacity = '0.5';
+                            setTimeout(() => {
+                                imageElement.src = newImageSrc;
+                                imageElement.style.opacity = '1';
+                            }, 150);
+                        }
+                    });
+                });
+
+                // NEW: Toggle row expansion (accordion behavior)
+                rows.forEach(row => {
+                    row.addEventListener('click', function(e) {
+                        const parentItem = this.parentElement;
+                        const isActive = parentItem.classList.contains('is-active');
+
+                        // Close all other rows in this day
+                        rowItems.forEach(item => {
+                            if (item !== parentItem) {
+                                item.classList.remove('is-active');
+                            }
+                        });
+
+                        // Toggle current row
+                        if (isActive) {
+                            parentItem.classList.remove('is-active');
+                        } else {
+                            parentItem.classList.add('is-active');
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+
+    <script>
+        // Toggle fullscreen menu
+        const menuToggle = document.getElementById('menuToggle');
+        const fullscreenMenu = document.getElementById('fullscreenMenu');
+        const navWrap = document.querySelector('.nav_wrap');
+
+        // Function to get scrollbar width
+        function getScrollbarWidth() {
+            return window.innerWidth - document.documentElement.clientWidth;
+        }
+
+        // Function to open menu
+        function openMenu() {
+            const scrollbarWidth = getScrollbarWidth();
+            fullscreenMenu.classList.add('is-open');
+            menuToggle.classList.add('is-active');
+            navWrap.classList.add('menu-is-open');
+            if (scrollbarWidth > 0) {
+                const currentBodyPadding = parseInt(window.getComputedStyle(document.body).paddingRight) || 0;
+                const currentNavPadding = parseInt(window.getComputedStyle(navWrap).paddingRight) || 0;
+                document.body.style.paddingRight = (currentBodyPadding + scrollbarWidth) + 'px';
+                navWrap.style.paddingRight = (currentNavPadding + scrollbarWidth) + 'px';
+            }
+            document.body.classList.add('u-overflow-hidden');
+        }
+
+        // Function to close menu
+        function closeMenu() {
+            fullscreenMenu.classList.remove('is-open');
+            menuToggle.classList.remove('is-active');
+            navWrap.classList.remove('menu-is-open');
+            document.body.classList.remove('u-overflow-hidden');
+            document.body.style.paddingRight = '';
+            navWrap.style.paddingRight = '';
+        }
+
+        menuToggle.addEventListener('click', function() {
+            if (fullscreenMenu.classList.contains('is-open')) {
+                closeMenu();
+            } else {
+                openMenu();
+            }
+        });
+
+        fullscreenMenu.addEventListener('click', function(e) {
+            if (e.target.classList.contains('menu-close') || e.target.closest('.menu-close')) {
+                closeMenu();
+            }
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && fullscreenMenu.classList.contains('is-open')) {
+                closeMenu();
+            }
+        });
+    </script>
+</body>
+</html>

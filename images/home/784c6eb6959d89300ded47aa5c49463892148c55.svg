@@ -1,0 +1,6 @@
+<svg preserveAspectRatio="xMidYMid meet" width="166" height="166" overflow="visible" style="display: block;" viewBox="0 0 166 166" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="play-button">
+<path d="M82.69 165.38C128.358 165.38 165.38 128.358 165.38 82.6899C165.38 37.0215 128.358 0 82.69 0C37.0216 0 0 37.0215 0 82.6899C0 128.358 37.0216 165.38 82.69 165.38Z" fill="#1E1E1E"/>
+<path d="M123.51 85.9902L60.61 44.8701L56.45 119.9L123.51 85.9902Z" fill="var(--fill-0, white)"/>
+</g>
+</svg>
