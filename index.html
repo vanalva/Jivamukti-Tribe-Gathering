@@ -12,6 +12,13 @@
 </head>
 <body>
 
+    <!-- Custom Cursor -->
+    <div class="custom-cursor">
+        <svg preserveAspectRatio="xMidYMid meet" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 54.6387H17V29.0205L41.3809 53.4014L53.4014 41.3809L29.0215 17H54.6387V0H0V54.6387Z" fill="#151515"/>
+        </svg>
+    </div>
+
     <!-- Navigation Component (Two-Slot) -->
     <nav class="nav_wrap u-section u-position-absolute">
         <div class="nav_background u-cover-absolute u-zindex-negative"></div>
@@ -553,13 +560,16 @@
         </div>
     </footer>
 
+    <!-- Custom Cursor -->
+    <script src="js/custom-cursor.js"></script>
+
     <script>
         // TWO INTERACTIVE EFFECTS ON THIS PAGE:
         // 1. Schedule section - cursor-following hover images
         // 2. Teachers lineup - pink badge + image switching
 
         document.addEventListener('DOMContentLoaded', function() {
-            
+
             // ===== EFFECT 1: Schedule hover images + Expandable rows =====
             const dayWraps = document.querySelectorAll('.day_wrap');
 
@@ -630,7 +640,7 @@
                     });
                 });
 
-                // NEW: Toggle row expansion (accordion behavior)
+                // Toggle row expansion (accordion behavior)
                 rows.forEach(row => {
                     row.addEventListener('click', function(e) {
                         const parentItem = this.parentElement;

@@ -145,19 +145,15 @@ body * {
 
 .sticky-scroll_images-container {
   position: relative;
-  /* Images positioned absolutely so GSAP can pin them individually */
 }
 
 .sticky-scroll_image-block {
-  position: absolute;
+  position: sticky;
   top: 0;
-  left: 0;
-  width: 100%;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  /* GSAP ScrollTrigger will handle pinning */
 }
 
 .sticky-scroll_image-block .image-wrap {
