@@ -12,7 +12,15 @@
       "Bash(if [ -f \"$file\" ])",
       "Bash(then)",
       "Bash(fi)",
-      "Bash(for file in about-rome.html booking.html archive.html)"
+      "Bash(for file in about-rome.html booking.html archive.html)",
+      "Bash(npm --version)",
+      "Bash(git checkout:*)",
+      "Bash(node --version)",
+      "Bash(npx create-next-app@latest . --typescript --tailwind=false --eslint --app --src-dir=false --import-alias=\"@/*\" --no-git)",
+      "Bash(npm run dev:*)",
+      "Bash(npm run build:*)",
+      "Bash(taskkill:*)",
+      "Bash(git add:*)"
     ],
     "deny": [],
     "ask": []
