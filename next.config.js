@@ -1,12 +1,15 @@
 /** @type {import('next').NextConfig} */
+const isProd = process.env.NODE_ENV === 'production'
+
 const nextConfig = {
   output: 'export',
   images: {
     unoptimized: true,
   },
   trailingSlash: true,
-  // Base path for GitHub Pages deployment (update if needed)
-  basePath: '/Jivamukti-Tribe-Gathering',
+  // Only use basePath in production (GitHub Pages)
+  basePath: isProd ? '/Jivamukti-Tribe-Gathering' : '',
+  assetPrefix: isProd ? '/Jivamukti-Tribe-Gathering' : '',
 }
 
 module.exports = nextConfig
