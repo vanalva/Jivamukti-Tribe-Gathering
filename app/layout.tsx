@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import '../public/css/rome-tribe.css'
 import CustomCursor from './components/CustomCursor'
 import MenuToggle from './components/MenuToggle'
 
