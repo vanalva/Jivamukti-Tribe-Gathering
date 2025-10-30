@@ -42,7 +42,7 @@ export default function FullscreenMenu() {
             <div className="menu-fullscreen_image-container">
               <img src="/images/menu/6892fb9a88690f30225eb6d19e7d30458d5c3662.png" alt="Rome Tribe Gathering" className="menu-fullscreen_hero-image" />
               <div className="menu-fullscreen_badge">
-                <img src="/images/menu/a87419272b02566dee78c9b44f7b15b686eb8ba2.svg" alt="Rome Tribe Gathering 25" className="menu-fullscreen_badge-image" />
+                <img src="/images/tribe-circular-stamp.svg" alt="Rome Tribe Gathering 25" className="menu-fullscreen_badge-image" />
               </div>
             </div>
           </div>

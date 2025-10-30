@@ -4,117 +4,39 @@ import PageTemplate from './components/PageTemplate'
 import Script from 'next/script'
 import { useEffect } from 'react'
 import Link from 'next/link'
+import { useScheduleInteractions } from './hooks/useScheduleInteractions'
 
 export default function Home() {
+  // Use the reusable schedule interactions hook
+  useScheduleInteractions()
+
   useEffect(() => {
-    // Schedule hover and accordion functionality
-    const dayWraps = document.querySelectorAll('.day_wrap')
-
-    dayWraps.forEach(day => {
-      const table = day.querySelector('.day_table')
-      const rowItems = day.querySelectorAll('.day_row-item')
-      const rows = day.querySelectorAll('.day_row[data-image]')
-      const image = day.querySelector('.day_image')
-      const imageElement = image ? image.querySelector('img') : null
-
-      if (!table || !image || !imageElement) return
-
-      let mouseX = 0
-      let mouseY = 0
-      let currentX = 0
-      let currentY = 0
-      let isHovering = false
-      let animationFrame: number | null = null
-
-      function animate() {
-        if (!isHovering) return
-
-        const ease = 0.15
-        currentX += (mouseX - currentX) * ease
-        currentY += (mouseY - currentY) * ease
-
-        ;(image as HTMLElement).style.left = currentX + 'px'
-        ;(image as HTMLElement).style.top = currentY + 'px'
-
-        animationFrame = requestAnimationFrame(animate)
-      }
-
-      table.addEventListener('mouseenter', function(e: MouseEvent) {
-        isHovering = true
-        mouseX = e.clientX
-        mouseY = e.clientY
-        currentX = mouseX
-        currentY = mouseY
-
-        image?.classList.add('is-visible')
-        animate()
-      })
-
-      table.addEventListener('mouseleave', function() {
-        isHovering = false
-        image?.classList.remove('is-visible')
-        if (animationFrame) {
-          cancelAnimationFrame(animationFrame)
-        }
-      })
-
-      table.addEventListener('mousemove', function(e: MouseEvent) {
-        mouseX = e.clientX
-        mouseY = e.clientY
-      })
-
-      rows.forEach(row => {
-        row.addEventListener('mouseenter', function() {
-          const newImageSrc = this.getAttribute('data-image')
-          if (newImageSrc && imageElement && (imageElement as HTMLImageElement).src !== newImageSrc) {
-            ;(imageElement as HTMLElement).style.opacity = '0.5'
-            setTimeout(() => {
-              ;(imageElement as HTMLImageElement).src = newImageSrc
-              ;(imageElement as HTMLElement).style.opacity = '1'
-            }, 150)
-          }
-        })
-      })
-
-      rows.forEach(row => {
-        row.addEventListener('click', function() {
-          const parentItem = this.parentElement
-          const isActive = parentItem?.classList.contains('is-active')
-
-          rowItems.forEach(item => {
-            if (item !== parentItem) {
-              item.classList.remove('is-active')
-            }
-          })
-
-          if (isActive) {
-            parentItem?.classList.remove('is-active')
-          } else {
-            parentItem?.classList.add('is-active')
-          }
-        })
-      })
-    })
 
     // Teachers hover effect
     const teachersSection = document.querySelector('.teachers_wrap')
     if (teachersSection) {
       const teacherItems = teachersSection.querySelectorAll('.teacher_item')
+      const teachersList = teachersSection.querySelector('.teachers_list')
       const hoverBadge = teachersSection.querySelector('.teachers_hover-badge')
+      const badgeText = teachersSection.querySelector('.teachers_hover-badge-text')
       const heroImage = teachersSection.querySelector('.teachers_hero-image')
+      const heroImageWrap = teachersSection.querySelector('.teachers_image-wrap')
 
-      if (hoverBadge && heroImage) {
+      if (hoverBadge && heroImage && badgeText && teachersList) {
         let mouseX = 0
         let mouseY = 0
         let currentX = 0
         let currentY = 0
         let isHovering = false
         let animationFrame: number | null = null
+        let currentTeacherName = ''
+
+        const defaultBadgeText = 'PROFILE &<br/>CLASSES'
 
         function animate() {
           if (!isHovering) return
 
-          const ease = 0.15
+          const ease = 0.15 // Match schedule section for smooth following
           currentX += (mouseX - currentX) * ease
           currentY += (mouseY - currentY) * ease
 
@@ -124,36 +46,77 @@ export default function Home() {
           animationFrame = requestAnimationFrame(animate)
         }
 
+        // Listen to entire teachers list container (like schedule table)
+        teachersList.addEventListener('mouseenter', function(e: MouseEvent) {
+          isHovering = true
+          mouseX = e.clientX
+          mouseY = e.clientY
+          currentX = mouseX
+          currentY = mouseY
+
+          hoverBadge.classList.add('is-visible')
+          badgeText.innerHTML = defaultBadgeText
+          animate()
+        })
+
+        teachersList.addEventListener('mouseleave', function() {
+          isHovering = false
+          hoverBadge.classList.remove('is-visible')
+          if (animationFrame) {
+            cancelAnimationFrame(animationFrame)
+          }
+        })
+
+        teachersList.addEventListener('mousemove', function(e: MouseEvent) {
+          mouseX = e.clientX
+          mouseY = e.clientY
+        })
+
+        // Individual teacher item hover - just update image and name
         teacherItems.forEach(item => {
-          item.addEventListener('mouseenter', function(e: MouseEvent) {
-            isHovering = true
-            mouseX = e.clientX
-            mouseY = e.clientY
-            currentX = mouseX
-            currentY = mouseY
-
-            hoverBadge.classList.add('is-visible')
-            animate()
-
+          item.addEventListener('mouseenter', function() {
             const teacherImageUrl = item.getAttribute('data-teacher-image')
+            const teacherName = item.getAttribute('data-teacher-name')
+
             if (teacherImageUrl) {
               ;(heroImage as HTMLImageElement).src = teacherImageUrl
             }
+            if (teacherName) {
+              currentTeacherName = teacherName
+            }
+          })
+        })
+
+        // Hero image hover - show badge with teacher name
+        if (heroImageWrap) {
+          heroImageWrap.addEventListener('mouseenter', function(e: MouseEvent) {
+            if (currentTeacherName) {
+              isHovering = true
+              mouseX = e.clientX
+              mouseY = e.clientY
+              currentX = mouseX
+              currentY = mouseY
+
+              hoverBadge.classList.add('is-visible')
+              badgeText.innerHTML = currentTeacherName
+              animate()
+            }
           })
 
-          item.addEventListener('mouseleave', function() {
+          heroImageWrap.addEventListener('mouseleave', function() {
             isHovering = false
             hoverBadge.classList.remove('is-visible')
+            badgeText.innerHTML = defaultBadgeText
             if (animationFrame) {
               cancelAnimationFrame(animationFrame)
             }
           })
 
-          item.addEventListener('mousemove', function(e: MouseEvent) {
+          heroImageWrap.addEventListener('mousemove', function(e: MouseEvent) {
             mouseX = e.clientX
             mouseY = e.clientY
           })
-        })
+        }
       }
     }
   }, [])
@@ -168,14 +131,14 @@ export default function Home() {
   )
 
   return (
-    <PageTemplate logoPath="/images/home/b8ea7887be24e71c0719f0d0ca144381006d6ee5.png" additionalScripts={additionalScripts}>
+    <PageTemplate logoPath="/images/tribe-isotype.svg" additionalScripts={additionalScripts}>
       {/* Hero Section (Two-Slot Pattern) */}
       <section className="hero_wrap u-section u-position-relative">
         <div className="hero_background u-cover-absolute u-zindex-negative"></div>
         <div className="hero_content u-position-relative">
           {/* Main Centered Hero Logo */}
           <div className="hero_logo_wrap image-wrap image-wrap--freeform u-position-absolute u-overflow-hidden">
-            <img src="/images/home/ed9b9c3fcc51c4325c0addf99d3f7c2333f96a00.png" alt="Rome Tribe Gathering main logo" className="image-wrap__img image-wrap__img--contain" />
+            <img src="/images/tribe-full-logotype.svg" alt="Rome Tribe Gathering main logo" className="image-wrap__img image-wrap__img--contain" />
           </div>
 
           {/* Floating Image - Top Left */}
@@ -268,9 +231,6 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Additional rows would follow the same pattern */}
-              {/* I'll add just one more for brevity - you can add the rest */}
-
               {/* Row 2: Open Class */}
               <div className="day_row-item">
                 <div className="day_row" data-image="/images/home/06ea1ba9c542368e72407fdb4c53018a67ea6dcb.png">
@@ -293,6 +253,122 @@ export default function Home() {
                       <div className="day_row-content-details">
                         <p className="text-body-sm"><strong>Date & Time:</strong><br/>September 09, 2025<br/>12:00 - 13:30</p>
                         <p className="text-body-sm"><strong>Location:</strong><br/>Main Studio<br/>Via dei Coronari, 42</p>
+                      </div>
+                    </div>
+                    <Link href="/booking" className="button day_row-buy-button">BUY TICKETS</Link>
+                  </div>
+                </div>
+              </div>
+
+              {/* Row 3: Lecture */}
+              <div className="day_row-item">
+                <div className="day_row" data-image="/images/home/7daed26c9efac9c483a5692dcacb5545bffe955f.png">
+                  <div className="text-body-lg">14:00 | 15:30</div>
+                  <div className="text-h4 u-text-center">Lecture</div>
+                  <div className="text-body-lg u-text-right">Moritz Camilla</div>
+                </div>
+                <div className="day_row-content">
+                  <div className="day_row-content-grid">
+                    <div className="day_row-content-image image-wrap image-wrap--portrait-tall u-overflow-hidden">
+                      <img src="/images/home/7daed26c9efac9c483a5692dcacb5545bffe955f.png" alt="Lecture" className="image-wrap__img" />
+                    </div>
+                    <div className="day_row-content-text">
+                      <div className="day_row-content-main">
+                        <h3 className="text-h1">Lecture</h3>
+                        <div className="day_row-content-description">
+                          <p className="text-body-md">Dive deep into the philosophy and wisdom of yoga through engaging lectures that explore ancient teachings and their relevance in modern life.</p>
+                        </div>
+                      </div>
+                      <div className="day_row-content-details">
+                        <p className="text-body-sm"><strong>Date & Time:</strong><br/>September 09, 2025<br/>14:00 - 15:30</p>
+                        <p className="text-body-sm"><strong>Location:</strong><br/>Main Studio<br/>Via dei Coronari, 42</p>
+                      </div>
+                    </div>
+                    <Link href="/booking" className="button day_row-buy-button">BUY TICKETS</Link>
+                  </div>
+                </div>
+              </div>
+
+              {/* Row 4: Workshop */}
+              <div className="day_row-item">
+                <div className="day_row" data-image="/images/home/2da02ff94df3cd60517f142332eb30b6507f41a7.png">
+                  <div className="text-body-lg">16:00 | 17:30</div>
+                  <div className="text-h4 u-text-center">Workshop</div>
+                  <div className="text-body-lg u-text-right">Moritz Camilla</div>
+                </div>
+                <div className="day_row-content">
+                  <div className="day_row-content-grid">
+                    <div className="day_row-content-image image-wrap image-wrap--portrait-tall u-overflow-hidden">
+                      <img src="/images/home/2da02ff94df3cd60517f142332eb30b6507f41a7.png" alt="Workshop" className="image-wrap__img" />
+                    </div>
+                    <div className="day_row-content-text">
+                      <div className="day_row-content-main">
+                        <h3 className="text-h1">Workshop</h3>
+                        <div className="day_row-content-description">
+                          <p className="text-body-md">Participate in hands-on workshops designed to refine your technique, explore specific aspects of practice, and gain practical skills you can take home.</p>
+                        </div>
+                      </div>
+                      <div className="day_row-content-details">
+                        <p className="text-body-sm"><strong>Date & Time:</strong><br/>September 09, 2025<br/>16:00 - 17:30</p>
+                        <p className="text-body-sm"><strong>Location:</strong><br/>Main Studio<br/>Via dei Coronari, 42</p>
+                      </div>
+                    </div>
+                    <Link href="/booking" className="button day_row-buy-button">BUY TICKETS</Link>
+                  </div>
+                </div>
+              </div>
+
+              {/* Row 5: Open Class */}
+              <div className="day_row-item">
+                <div className="day_row" data-image="/images/home/a0ae6d2cf367288b9d878ec5a791313fc7726b61.png">
+                  <div className="text-body-lg">18:00 | 19:30</div>
+                  <div className="text-h4 u-text-center">Open Class</div>
+                  <div className="text-body-lg u-text-right">Moritz Camilla</div>
+                </div>
+                <div className="day_row-content">
+                  <div className="day_row-content-grid">
+                    <div className="day_row-content-image image-wrap image-wrap--portrait-tall u-overflow-hidden">
+                      <img src="/images/home/a0ae6d2cf367288b9d878ec5a791313fc7726b61.png" alt="Open Class" className="image-wrap__img" />
+                    </div>
+                    <div className="day_row-content-text">
+                      <div className="day_row-content-main">
+                        <h3 className="text-h1">Open Class</h3>
+                        <div className="day_row-content-description">
+                          <p className="text-body-md">Join our evening open class for a rejuvenating practice that helps you unwind and connect with your inner self after a full day.</p>
+                        </div>
+                      </div>
+                      <div className="day_row-content-details">
+                        <p className="text-body-sm"><strong>Date & Time:</strong><br/>September 09, 2025<br/>18:00 - 19:30</p>
+                        <p className="text-body-sm"><strong>Location:</strong><br/>Main Studio<br/>Via dei Coronari, 42</p>
+                      </div>
+                    </div>
+                    <Link href="/booking" className="button day_row-buy-button">BUY TICKETS</Link>
+                  </div>
+                </div>
+              </div>
+
+              {/* Row 6: Concert */}
+              <div className="day_row-item">
+                <div className="day_row" data-image="/images/home/7722cfd11034b26e6d4969dcb62baf1375e5a951.png">
+                  <div className="text-body-lg">20:00 | 21:30</div>
+                  <div className="text-h4 u-text-center">Concert</div>
+                  <div className="text-body-lg u-text-right">Moritz Camilla</div>
+                </div>
+                <div className="day_row-content">
+                  <div className="day_row-content-grid">
+                    <div className="day_row-content-image image-wrap image-wrap--portrait-tall u-overflow-hidden">
+                      <img src="/images/home/7722cfd11034b26e6d4969dcb62baf1375e5a951.png" alt="Concert" className="image-wrap__img" />
+                    </div>
+                    <div className="day_row-content-text">
+                      <div className="day_row-content-main">
+                        <h3 className="text-h1">Concert</h3>
+                        <div className="day_row-content-description">
+                          <p className="text-body-md">End your day with an inspiring concert featuring live music that celebrates the spirit of yoga and community. Let the sounds transport you to a place of peace and joy.</p>
+                        </div>
+                      </div>
+                      <div className="day_row-content-details">
+                        <p className="text-body-sm"><strong>Date & Time:</strong><br/>September 09, 2025<br/>20:00 - 21:30</p>
+                        <p className="text-body-sm"><strong>Location:</strong><br/>Grand Hall<br/>Via dei Coronari, 42</p>
                       </div>
                     </div>
                     <Link href="/booking" className="button day_row-buy-button">BUY TICKETS</Link>
@@ -323,7 +399,7 @@ export default function Home() {
           {/* Left Column: Teacher Links */}
           <div className="teachers_list">
             {/* Teacher Item 1: Sharon Gannon */}
-            <div className="teacher_item" data-teacher-image="/images/teachers/Sharon Gannon/_MG_8528_WEB.JPG">
+            <div className="teacher_item" data-teacher-image="/images/teachers/Sharon Gannon/_MG_8528_WEB.JPG" data-teacher-name="SHARON GANNON">
               <div className="teacher_info">
                 <p className="text-body-md teacher_eyebrow">Open Class</p>
                 <h3 className="text-h1 u-text-uppercase">SHARON GANNON</h3>
@@ -334,7 +410,7 @@ export default function Home() {
             </div>
 
             {/* Teacher Item 2: Yogeswari */}
-            <div className="teacher_item" data-teacher-image="/images/teachers/Yogeswari/2018.02.27_Jivamukti_TT_Yogeswari-051.jpg">
+            <div className="teacher_item" data-teacher-image="/images/teachers/Yogeswari/2018.02.27_Jivamukti_TT_Yogeswari-051.jpg" data-teacher-name="YOGESWARI">
               <div className="teacher_info teacher_info--offset">
                 <p className="text-body-md teacher_eyebrow">Open Class</p>
                 <h3 className="text-h1 u-text-uppercase">YOGESWARI</h3>
@@ -345,7 +421,7 @@ export default function Home() {
             </div>
 
             {/* Teacher Item 3: Hachi Yu */}
-            <div className="teacher_item" data-teacher-image="/images/teachers/Hachi/2023.05.18_JYTribe_Day_01_0335.jpg">
+            <div className="teacher_item" data-teacher-image="/images/teachers/Hachi/2023.05.18_JYTribe_Day_01_0335.jpg" data-teacher-name="HACHI YU">
               <div className="teacher_info teacher_info--offset-large">
                 <p className="text-body-md teacher_eyebrow">Masterclass</p>
                 <h3 className="text-h1 u-text-uppercase">HACHI YU</h3>
@@ -356,7 +432,7 @@ export default function Home() {
             </div>
 
             {/* Teacher Item 4: Jules Febre */}
-            <div className="teacher_item" data-teacher-image="/images/home/b2a1fb87cf82c5e5870cd73a5814f50c99da688d.png">
+            <div className="teacher_item" data-teacher-image="/images/home/b2a1fb87cf82c5e5870cd73a5814f50c99da688d.png" data-teacher-name="JULES FEBRE">
               <div className="teacher_info teacher_info--offset-medium">
                 <p className="text-body-md teacher_eyebrow">Lecture</p>
                 <h3 className="text-h1 u-text-uppercase">JULES FEBRE</h3>
@@ -403,18 +479,18 @@ export default function Home() {
       <section className="rome_wrap u-section u-position-relative">
         <div className="rome_background u-cover-absolute u-zindex-negative"></div>
         <div className="rome_content u-position-relative home-rome_content">
-          <div className="home-rome_text-group">
-            <h2 className="text-display-lg home-rome_title u-text-uppercase">DISCOVER ROME</h2>
-            <p className="text-body-lg home-rome_description">
-              Explore the eternal city with our curated guide to the best cafés, restaurants, and cultural sites.
-              Make the most of your Tribe experience in Rome.
-            </p>
-            <Link href="/about-rome" className="button button--primary">EXPLORE ROME</Link>
+
+          {/* Video with Play Button */}
+          <div className="home-rome_video-wrap">
+            <img src="/images/home/316df861ded7b263ef32eb137a4493c780bc65b8.png" alt="Rome Architecture" className="home-rome_video-image" />
+            <button className="home-rome_play-button" aria-label="Play video">
+              <img src="/images/home/784c6eb6959d89300ded47aa5c49463892148c55.svg" alt="" className="home-rome_play-icon" />
+            </button>
           </div>
 
-          <div className="home-rome_image-wrap">
-            <img src="/images/home/2da02ff94df3cd60517f142332eb30b6507f41a7.png" alt="Rome" className="home-rome_image" />
-          </div>
+          {/* ITALY Text */}
+          <h2 className="home-rome_title u-text-uppercase">ITALY</h2>
+
         </div>
       </section>
     </PageTemplate>

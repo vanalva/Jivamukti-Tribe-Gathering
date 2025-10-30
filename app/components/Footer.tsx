@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="footer_background u-cover-absolute u-zindex-negative"></div>
       <div className="footer_content u-position-relative">
         <div className="footer_logo-wrap">
-          <img src="/images/da7ac17cfdfdad8ef6b54ab2ee41154de842cf3d.svg" alt="ROME" className="footer_logo-image" />
+          <img src="/images/somple-rome-logotype.svg" alt="ROME" className="footer_logo-image" />
         </div>
 
         <div className="footer_columns">

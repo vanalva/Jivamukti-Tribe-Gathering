@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import CustomCursor from './components/CustomCursor'
+import MenuToggle from './components/MenuToggle'
 
 export const metadata: Metadata = {
   title: 'Jivamukti Tribe Gathering Rome 2026',
@@ -21,7 +23,11 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body>{children}</body>
+      <body>
+        <CustomCursor />
+        <MenuToggle />
+        {children}
+      </body>
     </html>
   )
 }

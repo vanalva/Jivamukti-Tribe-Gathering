@@ -30,9 +30,19 @@ We've successfully converted the Jivamukti Tribe Gathering website to Next.js wi
 
 ---
 
-## How to Test (After Restarting Your Computer)
+## CRITICAL: Windows File Lock Issue
 
-The `.next` folder has file lock issues on Windows. After restarting:
+**⚠️ CURRENT STATUS:** The `.next` folder has persistent Windows file lock issues that REQUIRE a computer restart.
+
+### What's Happening:
+- Windows is locking files in the `.next` folder
+- Error: `EPERM: operation not permitted, open '.next\trace'`
+- This prevents the dev server from starting properly
+- This is a **known Next.js + Windows issue**, not a code problem
+
+### THE SOLUTION (Required):
+
+**YOU MUST RESTART YOUR COMPUTER** to release the file locks. After restarting:
 
 1. **Delete the .next folder:**
    ```bash
@@ -48,6 +58,9 @@ The `.next` folder has file lock issues on Windows. After restarting:
    ```
    http://localhost:3000
    ```
+
+### Alternative (If You Cannot Restart):
+Wait 10-15 minutes for Windows to release the file locks automatically, then try again.
 
 ---
 

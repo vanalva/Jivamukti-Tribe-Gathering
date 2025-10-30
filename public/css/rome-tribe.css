@@ -840,6 +840,53 @@ strong {
   align-items: flex-end;
 }
 
+/* Navigation link styles with arrow */
+.nav_link {
+  position: relative;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.nav_arrow-icon {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  right: -20px;
+  top: 50%;
+  transform: translateY(-50%) rotate(180deg);
+  visibility: hidden;
+}
+
+/* Left menu: links don't move on hover */
+.nav_content > .nav_menu:first-of-type .nav_link:hover {
+  transform: none;
+}
+
+/* Right menu: links shift left on hover (pushed by arrow) */
+.nav_content > .nav_menu:last-of-type .nav_link:hover {
+  transform: translateX(-20px);
+}
+
+/* On hover: show arrow instantly */
+.nav_link:hover .nav_arrow-icon {
+  visibility: visible;
+}
+
+/* Active state: show arrow and change to red color */
+.nav_link--active {
+  color: var(--swatch--accent-500) !important;
+}
+
+.nav_link--active .nav_arrow-icon {
+  visibility: visible;
+  content: url('/images/menu/arrow-red.svg');
+}
+
+/* Active state for right menu: keep shifted left */
+.nav_content > .nav_menu:last-of-type .nav_link--active {
+  transform: translateX(-20px);
+}
+
 /* Hide navigation links on tablet and mobile - show only hamburger menu */
 @media (max-width: 991px) {
   .nav_menu > a {
@@ -3241,4 +3288,157 @@ strong {
 
 .menu-fullscreen_copyright {
   margin: 0;
+}
+
+/* === MONOLINK VARIANT - Clean Single Row Layout === */
+.day_row-item--monolink {
+  position: relative;
+  display: flex;
+  gap: var(--_spacing---space--6);
+  padding: var(--_spacing---space--4) var(--_spacing---space--6);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Remove hover effect for monolink items */
+.day_row-item--monolink:hover {
+  background-color: transparent !important;
+}
+
+.day_row-item--monolink.is-hovered {
+  background-color: transparent !important;
+}
+
+.day_row-image-inline {
+  width: 160px;
+  height: 90px;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 4px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.day_row-image-inline__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Content wrapper - contains both title row and expanded content */
+.day_row-item--monolink-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.day_row--monolink {
+  display: flex;
+  align-items: center;
+  gap: var(--_spacing---space--4);
+  cursor: pointer;
+  padding-bottom: var(--_spacing---space--4);
+}
+
+.day_row-title {
+  flex: 1;
+}
+
+.day_row-title h3 {
+  margin: 0;
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: inherit;
+}
+
+.day_row-cta {
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+/* Expanded State */
+.day_row-content--monolink {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.3s ease;
+}
+
+.day_row-item--monolink.is-active .day_row-content--monolink {
+  max-height: 500px;
+  opacity: 1;
+  padding-top: var(--_spacing---space--4);
+}
+
+/* Image expands to portrait 4:5 ratio when active */
+.day_row-item--monolink.is-active .day_row-image-inline {
+  width: 200px;
+  height: 250px;
+}
+
+.day_row-content--monolink .day_row-content-text p {
+  margin: 0 0 var(--_spacing---space--4) 0;
+  line-height: 1.6;
+}
+
+.day_row-content-meta {
+  display: flex;
+  gap: var(--_spacing---space--8);
+  margin-top: var(--_spacing---space--4);
+  padding-top: var(--_spacing---space--4);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  flex-wrap: wrap;
+}
+
+.day_row-content-meta p {
+  margin: 0;
+  font-size: 0.875rem;
+  opacity: 0.8;
+}
+
+.button--icon {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--_spacing---space--2);
+}
+
+.button--icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+@media (max-width: 768px) {
+  .day_row--monolink {
+    padding: var(--_spacing---space--3) var(--_spacing---space--4);
+    gap: var(--_spacing---space--3);
+  }
+  
+  .day_row-image-inline {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .day_row-title h3 {
+    font-size: 1rem;
+  }
+  
+  .day_row-cta .button {
+    font-size: 0.75rem;
+    padding: var(--_spacing---space--2) var(--_spacing---space--3);
+  }
+  
+  .day_row-content--monolink .day_row-content-text {
+    padding-left: 0;
+  }
+  
+  .day_row-item--monolink.is-active .day_row-image-inline {
+    width: 60px;
+    height: 150px;
+  }
+  
+  .day_row-content-meta {
+    flex-direction: column;
+    gap: var(--_spacing---space--3);
+  }
 }

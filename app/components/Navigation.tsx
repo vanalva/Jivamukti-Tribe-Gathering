@@ -2,20 +2,39 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
+import { usePathname } from 'next/navigation'
 
 interface NavigationProps {
   logoPath?: string
 }
 
-export default function Navigation({ logoPath = '/images/home/b8ea7887be24e71c0719f0d0ca144381006d6ee5.png' }: NavigationProps) {
+export default function Navigation({ logoPath = '/images/tribe-isotype.svg' }: NavigationProps) {
+  const pathname = usePathname()
+
+  const isActive = (path: string) => {
+    // Remove trailing slashes for comparison
+    const cleanPathname = pathname.endsWith('/') && pathname !== '/' ? pathname.slice(0, -1) : pathname
+    const cleanPath = path.endsWith('/') && path !== '/' ? path.slice(0, -1) : path
+    return cleanPathname === cleanPath ? 'nav_link--active' : ''
+  }
+
   return (
     <nav className="nav_wrap u-section u-position-absolute">
       <div className="nav_background u-cover-absolute u-zindex-negative"></div>
       <div className="nav_content u-position-relative u-zindex-high">
         <div className="nav_menu">
-          <Link href="/about-tribe" className="link text-nav u-text-uppercase">About</Link>
-          <Link href="/schedule" className="link text-nav u-text-uppercase">Schedule</Link>
-          <Link href="/booking" className="link text-nav u-text-uppercase">Register</Link>
+          <Link href="/about-tribe" className={`nav_link link text-nav u-text-uppercase ${isActive('/about-tribe')}`}>
+            About
+            <img src="/images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg" alt="" className="nav_arrow-icon" />
+          </Link>
+          <Link href="/schedule" className={`nav_link link text-nav u-text-uppercase ${isActive('/schedule')}`}>
+            Schedule
+            <img src="/images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg" alt="" className="nav_arrow-icon" />
+          </Link>
+          <Link href="/booking" className={`nav_link link text-nav u-text-uppercase ${isActive('/booking')}`}>
+            Register
+            <img src="/images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg" alt="" className="nav_arrow-icon" />
+          </Link>
         </div>
 
         <div className="nav_logo">
@@ -39,8 +58,14 @@ export default function Navigation({ logoPath = '/images/home/b8ea7887be24e71c07
               <line x1="20" y1="4" x2="4" y2="20" stroke="currentColor" strokeWidth="3" strokeLinecap="square"/>
             </svg>
           </button>
-          <Link href="/archive" className="link text-nav u-text-uppercase">Archive</Link>
-          <Link href="/about-rome" className="link text-nav u-text-uppercase">Useful Info</Link>
+          <Link href="/archive" className={`nav_link link text-nav u-text-uppercase ${isActive('/archive')}`}>
+            Archive
+            <img src="/images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg" alt="" className="nav_arrow-icon" />
+          </Link>
+          <Link href="/about-rome" className={`nav_link link text-nav u-text-uppercase ${isActive('/about-rome')}`}>
+            Useful Info
+            <img src="/images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg" alt="" className="nav_arrow-icon" />
+          </Link>
         </div>
       </div>
     </nav>
