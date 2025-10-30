@@ -6,7 +6,7 @@ const nextConfig = {
   },
   trailingSlash: true,
   // Base path for GitHub Pages deployment (update if needed)
-  // basePath: '/your-repo-name',
+  basePath: '/Jivamukti-Tribe-Gathering',
 }
 
 module.exports = nextConfig
