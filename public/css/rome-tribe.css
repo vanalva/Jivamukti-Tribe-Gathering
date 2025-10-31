@@ -1686,6 +1686,11 @@ strong {
   width: 100%;
   max-width: 900px;
   justify-self: center;
+  align-self: start;
+  max-height: calc(100vh - (var(--_spacing---space--4) * 2 + var(--_spacing---space--6)));
+  display: flex;
+  align-items: flex-start;
+  overflow: hidden;
 }
 
 /* Tall screens and mobile: allow taller images */
