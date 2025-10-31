@@ -1647,15 +1647,15 @@ strong {
 
 /* Container */
 .hero-collage_content {
-  padding: calc(var(--_spacing---space--4) * 2 + var(--_spacing---space--6)) var(--site--margin) 0 var(--site--margin);
+  padding: calc(var(--_spacing---space--4) * 2 + var(--_spacing---space--6)) var(--site--margin);
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
   gap: var(--_spacing---space--6);
   align-items: stretch;
   position: relative;
-  min-height: calc(100vh - (var(--_spacing---space--4) * 2 + var(--_spacing---space--6)));
-  max-height: calc(100vh - (var(--_spacing---space--4) * 2 + var(--_spacing---space--6)));
+  min-height: calc(100vh - ((var(--_spacing---space--4) * 2 + var(--_spacing---space--6)) * 2));
+  max-height: calc(100vh - ((var(--_spacing---space--4) * 2 + var(--_spacing---space--6)) * 2));
   overflow: hidden;
 }
 
