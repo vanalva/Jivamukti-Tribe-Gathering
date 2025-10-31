@@ -9,16 +9,16 @@ export default function BookingPage() {
       <Navigation />
       <FullscreenMenu />
 
-      {/* Hero Section - Booking Variant */}
+      {/* Hero Section - Unified Layout */}
       <section className="hero_wrap u-section u-position-relative">
         <div className="hero_background u-cover-absolute u-zindex-negative"></div>
         <div className="hero_content u-position-relative hero-collage_content hero-collage_content--schedule u-navbar-offset">
-          {/* Center Image (behind text on left) */}
+          {/* Hero Image (Left) */}
           <div className="hero-collage_image-wrap">
             <img src={getAssetPath("/images/booking/4a713401a3c5003f4d6d0eb078f7211df90acebd.png")} alt="Yoga practice" className="hero-collage_image" />
           </div>
 
-          {/* Main Title */}
+          {/* Bottom Title (Overlapping with image) */}
           <h1 className="hero-collage_title-bottom">BOOKING</h1>
         </div>
       </section>

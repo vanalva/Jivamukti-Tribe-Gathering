@@ -312,6 +312,10 @@ strong {
   font-size: var(--_typography---font-size--display-xl);
   line-height: var(--_typography---line-height--small);
   letter-spacing: var(--_typography---letter-spacing--tight);
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
 }
 
 .text-h1 {
@@ -319,6 +323,10 @@ strong {
   font-weight: var(--_typography---font--primary-extrabold);
   font-size: var(--_typography---font-size--h1);
   line-height: var(--_typography---line-height--medium);
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
 }
 
 .text-h2 {
@@ -326,6 +334,10 @@ strong {
   font-weight: var(--_typography---font--primary-extrabold);
   font-size: var(--_typography---font-size--h2);
   line-height: var(--_typography---line-height--medium);
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
 }
 
 .text-h4 {
@@ -333,6 +345,10 @@ strong {
   font-weight: var(--_typography---font--primary-extrabold);
   font-size: var(--_typography---font-size--h4);
   line-height: var(--_typography---line-height--huge);
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
 }
 
 .text-body-lg {
@@ -1646,7 +1662,7 @@ strong {
   grid-column: 1;
   grid-row: 1;
   font-family: var(--_typography---font--primary-family);
-  font-size: clamp(8rem, 15vw, 15.18rem);
+  font-size: clamp(4rem, 12vw, 15.18rem);
   font-weight: var(--_typography---font--primary-extrabold);
   line-height: var(--_typography---line-height--small);
   letter-spacing: var(--_typography---letter-spacing--tight);
@@ -1654,6 +1670,11 @@ strong {
   color: var(--swatch--dark-900);
   margin: 0;
   align-self: start;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+  box-sizing: border-box;
 }
 
 /* Center Image */
@@ -1665,11 +1686,33 @@ strong {
   justify-self: center;
 }
 
+/* Tall screens and mobile: allow taller images */
+@media (min-height: 800px), (max-width: 991px) {
+  .hero-collage_image-wrap {
+    display: flex;
+    align-items: stretch;
+    min-height: 500px;
+  }
+}
+
 .hero-collage_image {
   width: 100%;
   height: auto;
+  max-height: none;
   display: block;
   object-fit: contain;
+  object-position: center;
+}
+
+/* Tall screens and mobile: force portrait orientation and vertical growth */
+@media (min-height: 800px), (max-width: 991px) {
+  .hero-collage_image {
+    height: 100%;
+    min-height: 500px;
+    max-height: 70vh;
+    object-fit: cover;
+    aspect-ratio: 3 / 4;
+  }
 }
 
 /* Logo Branding */
@@ -1689,7 +1732,7 @@ strong {
   grid-column: 1 / -1;
   grid-row: 2;
   font-family: var(--_typography---font--primary-family);
-  font-size: clamp(8rem, 15vw, 15.18rem);
+  font-size: clamp(4rem, 12vw, 15.18rem);
   font-weight: var(--_typography---font--primary-extrabold);
   line-height: var(--_typography---line-height--small);
   letter-spacing: var(--_typography---letter-spacing--tight);
@@ -1698,6 +1741,11 @@ strong {
   margin: 0;
   text-align: center;
   margin-top: calc(-1 * var(--_spacing---space--6));
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+  box-sizing: border-box;
 }
 
 /* Responsive - Mobile/Tablet */
@@ -1712,7 +1760,10 @@ strong {
   .hero-collage_title-top {
     grid-column: 1;
     grid-row: 1;
-    font-size: clamp(4rem, 12vw, 8rem);
+    font-size: clamp(3rem, 10vw, 8rem);
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-break: break-word;
   }
   
   .hero-collage_image-wrap {
@@ -1724,8 +1775,11 @@ strong {
   .hero-collage_title-bottom {
     grid-column: 1;
     grid-row: 3;
-    font-size: clamp(4rem, 12vw, 8rem);
+    font-size: clamp(3rem, 10vw, 8rem);
     margin-top: 0;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-break: break-word;
   }
   
   .hero-collage_logo-wrap {
@@ -1770,6 +1824,18 @@ strong {
   align-self: center;
   max-width: 100%;
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Tall screens and mobile: allow taller images */
+@media (min-height: 800px), (max-width: 991px) {
+  .hero-collage_content--about .hero-collage_image-wrap {
+    align-self: stretch;
+    align-items: stretch;
+    min-height: 600px;
+  }
 }
 
 .hero-collage_content--about .hero-collage_image {
@@ -1780,6 +1846,16 @@ strong {
   object-position: center;
 }
 
+/* Tall screens and mobile: force portrait orientation and vertical growth */
+@media (min-height: 800px), (max-width: 991px) {
+  .hero-collage_content--about .hero-collage_image {
+    height: auto;
+    max-height: 80vh;
+    min-height: 500px;
+    aspect-ratio: 3 / 4;
+  }
+}
+
 /* Title positioned at bottom-left */
 .hero-collage_content--about .hero-collage_title-bottom {
   grid-column: 1;
@@ -1787,10 +1863,15 @@ strong {
   text-align: left;
   align-self: end;
   margin-top: 0;
-  font-size: clamp(6rem, 12vw, 12.5rem);
+  font-size: clamp(4rem, 10vw, 12.5rem);
   line-height: 0.8;
   z-index: 1;
   position: relative;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+  box-sizing: border-box;
 }
 
 /* Hide the top title in about variant */
@@ -1822,14 +1903,19 @@ strong {
   }
 
   .hero-collage_content--about .hero-collage_image {
-    max-height: 50vh;
+    max-height: none;
+    aspect-ratio: 3 / 4;
+    min-height: 400px;
   }
 
   .hero-collage_content--about .hero-collage_title-bottom {
     grid-column: 1;
     grid-row: 3;
     text-align: center;
-    font-size: clamp(4rem, 12vw, 8rem);
+    font-size: clamp(3rem, 10vw, 8rem);
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-break: break-word;
   }
 }
 
@@ -1874,7 +1960,19 @@ strong {
 .hero-collage_content--schedule .hero-collage_image {
   width: 100%;
   height: auto;
+  max-height: 70vh;
   object-fit: cover;
+  object-position: center;
+}
+
+/* Tall screens and mobile: force portrait orientation and vertical growth */
+@media (min-height: 800px), (max-width: 991px) {
+  .hero-collage_content--schedule .hero-collage_image {
+    height: auto;
+    max-height: 80vh;
+    min-height: 500px;
+    aspect-ratio: 3 / 4;
+  }
 }
 
 /* Title at bottom, on top of image */
@@ -1885,12 +1983,14 @@ strong {
   text-align: left;
   margin: 0;
   padding: 0;
-  font-size: clamp(10rem, 20vw, 25rem);
+  font-size: clamp(6rem, 15vw, 20rem);
   line-height: 0.8;
   z-index: 2;
   max-width: 100%;
-  overflow: hidden;
-  white-space: nowrap;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+  box-sizing: border-box;
 }
 
 /* Hide the top title in schedule variant */
@@ -1915,6 +2015,8 @@ strong {
 
   .hero-collage_content--schedule .hero-collage_image {
     max-width: 100%;
+    aspect-ratio: 3 / 4;
+    min-height: 400px;
   }
 
   .hero-collage_content--schedule .hero-collage_logo-wrap {
@@ -1928,7 +2030,10 @@ strong {
     grid-column: 1;
     grid-row: 3;
     text-align: center;
-    font-size: clamp(4rem, 12vw, 8rem);
+    font-size: clamp(3rem, 10vw, 8rem);
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-break: break-word;
   }
 }
 
@@ -1939,7 +2044,7 @@ strong {
 
 .hero-collage_content--about-rome {
   display: grid;
-  grid-template-columns: minmax(0, 1fr);
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
   min-height: 100vh;
   gap: 0;
@@ -1947,21 +2052,26 @@ strong {
   overflow: hidden;
 }
 
-/* "ABOUT" text at top, positioned to overlap with image */
+/* "ABOUT" text at top, on left side, can overlap image */
 .hero-collage_content--about-rome .hero-collage_title-top {
-  grid-column: 1;
+  grid-column: 1 / -1;
   grid-row: 1;
   align-self: start;
-  justify-self: center;
-  margin-left: -5%;
+  justify-self: start;
+  margin-left: var(--_spacing---space--6);
   margin-top: clamp(8rem, 15vh, 12rem);
   z-index: 2;
-  font-size: clamp(8rem, 19vw, 17rem);
+  font-size: clamp(5rem, 14vw, 17rem);
   line-height: 0.8;
   padding: 0;
+  max-width: 60%;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+  box-sizing: border-box;
 }
 
-/* "ROME" text at bottom */
+/* "ROME" text at bottom, on left side */
 .hero-collage_content--about-rome .hero-collage_title-bottom {
   grid-column: 1;
   grid-row: 1;
@@ -1970,41 +2080,60 @@ strong {
   margin-left: var(--_spacing---space--6);
   margin-bottom: var(--_spacing---space--6);
   z-index: 2;
-  font-size: clamp(8rem, 19vw, 17rem);
+  font-size: clamp(5rem, 14vw, 17rem);
   line-height: 0.8;
   padding: 0;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+  box-sizing: border-box;
 }
 
-/* Image in center-right, overlapping with "ABOUT" text, behind it */
+/* Image on right side, full height */
 .hero-collage_content--about-rome .hero-collage_image-wrap {
-  grid-column: 1;
+  grid-column: 2;
   grid-row: 1;
-  align-self: center;
-  justify-self: end;
+  align-self: stretch;
+  justify-self: stretch;
   margin-right: 0;
-  margin-top: clamp(2rem, 5vh, 4rem);
   z-index: 1;
-  max-width: 55%;
   width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+}
+
+/* Tall screens and mobile: allow taller images */
+@media (min-height: 800px), (max-width: 991px) {
+  .hero-collage_content--about-rome .hero-collage_image-wrap {
+    align-items: stretch;
+    min-height: 600px;
+    max-width: 100%;
+  }
 }
 
 .hero-collage_content--about-rome .hero-collage_image {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
   object-position: center;
 }
 
-/* Script logo in left-center area, in front of "ABOUT" and "ROME" text */
+/* Tall screens and mobile: force portrait orientation and vertical growth */
+@media (min-height: 800px), (max-width: 991px) {
+  .hero-collage_content--about-rome .hero-collage_image {
+    height: auto;
+    max-height: 80vh;
+    min-height: 500px;
+    aspect-ratio: 3 / 4;
+  }
+}
+
+/* Script logo hidden by default for about-rome layout */
 .hero-collage_content--about-rome .hero-collage_logo-wrap {
-  grid-column: 1;
-  grid-row: 1;
-  align-self: center;
-  justify-self: start;
-  margin-left: clamp(4rem, 9vw, 8rem);
-  margin-top: clamp(2rem, 5vh, 4rem);
-  z-index: 3;
-  max-width: clamp(200px, 22vw, 320px);
+  display: none;
 }
 
 /* Responsive - Mobile/Tablet */
@@ -2023,7 +2152,10 @@ strong {
     justify-self: center;
     margin-left: 0;
     margin-top: 0;
-    font-size: clamp(4rem, 12vw, 8rem);
+    font-size: clamp(3rem, 10vw, 8rem);
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-break: break-word;
   }
 
   .hero-collage_content--about-rome .hero-collage_image-wrap {
@@ -2035,7 +2167,9 @@ strong {
   }
 
   .hero-collage_content--about-rome .hero-collage_image {
-    max-height: 50vh;
+    max-height: none;
+    aspect-ratio: 3 / 4;
+    min-height: 400px;
   }
 
   .hero-collage_content--about-rome .hero-collage_logo-wrap {
@@ -2051,7 +2185,10 @@ strong {
     text-align: center;
     justify-self: center;
     margin: 0;
-    font-size: clamp(4rem, 12vw, 8rem);
+    font-size: clamp(3rem, 10vw, 8rem);
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-break: break-word;
   }
 }
 
@@ -2489,6 +2626,11 @@ strong {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+  box-sizing: border-box;
 }
 
 .home-about_subtitle {
@@ -2755,6 +2897,11 @@ strong {
   margin: 0;
   font-size: clamp(3rem, 6vw, 6rem);
   max-width: 600px;
+  max-width: min(600px, 100%);
+  overflow-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+  box-sizing: border-box;
 }
 
 .home-lookback_image-wrap {
@@ -2765,6 +2912,11 @@ strong {
 }
 
 .home-lookback_subtitle {
+  max-width: min(600px, 100%);
+  overflow-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+  box-sizing: border-box;
   text-align: right;
   align-self: flex-end;
   font-weight: var(--_typography---font--primary-extrabold);
@@ -2772,7 +2924,6 @@ strong {
   letter-spacing: var(--_typography---letter-spacing--tight);
   margin: 0;
   font-size: clamp(3rem, 6vw, 6rem);
-  max-width: 600px;
 }
 
 /* Home Rome Section */

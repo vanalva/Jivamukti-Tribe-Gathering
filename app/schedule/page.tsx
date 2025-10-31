@@ -15,21 +15,16 @@ export default function SchedulePage() {
       <Navigation />
       <FullscreenMenu />
 
-      {/* Hero Section with Collage (Two-Slot) - Schedule Variant */}
+      {/* Hero Section - Unified Layout */}
       <section className="hero_wrap u-section u-position-relative">
         <div className="hero_background u-cover-absolute u-zindex-negative"></div>
         <div className="hero_content u-position-relative hero-collage_content hero-collage_content--schedule u-navbar-offset">
-          {/* Hero Image (Center-Left) */}
+          {/* Hero Image (Left) */}
           <div className="hero-collage_image-wrap">
             <img src={getAssetPath("/images/schedule/a442d6830fad7ef1ff33d36fa9a2b8092d9650d2.png")} alt="Schedule planning with notebook" className="hero-collage_image" />
           </div>
 
-          {/* Logo Branding (Right) */}
-          <div className="hero-collage_logo-wrap">
-            <img src={getAssetPath("/images/tribe-short-logotype-currentcolor.svg")} alt="Jivamukti Yoga The Tribe Gathering" className="hero-collage_logo" />
-          </div>
-
-          {/* Bottom Title (Full Width) */}
+          {/* Bottom Title (Overlapping with image) */}
           <h1 className="hero-collage_title-bottom">SCHEDULE</h1>
         </div>
       </section>

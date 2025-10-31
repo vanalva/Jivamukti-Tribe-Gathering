@@ -9,7 +9,15 @@
       "Bash(do sed -i \"2a import ClientScripts from ''@/app/components/ClientScripts''\" \"$file\")",
       "Bash(done)",
       "Bash(do sed -i \"/import ClientScripts/d; /<ClientScripts \\/>/d\" \"$file\")",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(cat:*)",
+      "Bash(git checkout:*)",
+      "Bash(git merge:*)",
+      "Bash(git stash:*)",
+      "Bash(tasklist:*)",
+      "Bash(taskkill:*)"
     ],
     "deny": [],
     "ask": []
