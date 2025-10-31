@@ -8,11 +8,7 @@ export default function Footer() {
     <footer className="footer_wrap u-section u-position-relative">
       <div className="footer_background u-cover-absolute u-zindex-negative"></div>
       <div className="footer_content u-position-relative">
-        <div className="footer_logo-wrap">
-          <img src={getAssetPath("/images/somple-rome-logotype.svg")} alt="ROME" className="footer_logo-image" />
-        </div>
-
-        <div className="footer_columns">
+        <div className="footer_columns" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%', position: 'relative' }}>
           <div className="footer_column">
             <h3 className="footer_column-title text-h5">Navigate</h3>
             <ul className="footer_links footer_links--two-col">
@@ -22,6 +18,21 @@ export default function Footer() {
               <li><Link href="/teachers" className="link link--light footer_link text-body-md">Teachers</Link></li>
               <li><Link href="/booking" className="link link--light footer_link text-body-md">Register</Link></li>
             </ul>
+          </div>
+
+          <div className="footer_logo-wrap" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexShrink: 0, position: 'absolute', left: '50%', transform: 'translateX(-50%)' }}>
+            <img 
+              src={getAssetPath("/images/rome-short-block-logotype.svg")} 
+              alt="ROME" 
+              className="footer_logo-image" 
+              style={{ 
+                width: 'auto', 
+                height: '120px', 
+                color: 'inherit',
+                filter: 'brightness(0) invert(1)',
+                display: 'block'
+              }}
+            />
           </div>
 
           <div className="footer_column footer_column--right">
