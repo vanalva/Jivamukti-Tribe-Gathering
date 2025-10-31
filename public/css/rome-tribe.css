@@ -1647,16 +1647,15 @@ strong {
 
 /* Container */
 .hero-collage_content {
-  padding: 0 var(--site--margin);
-  padding-top: calc(var(--_spacing---space--4) * 2 + var(--_spacing---space--6));
+  padding: calc(var(--_spacing---space--4) * 2 + var(--_spacing---space--6)) var(--site--margin) 0 var(--site--margin);
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
   gap: var(--_spacing---space--6);
-  align-items: center;
+  align-items: stretch;
   position: relative;
-  min-height: 100vh;
-  max-height: 100vh;
+  min-height: calc(100vh - (var(--_spacing---space--4) * 2 + var(--_spacing---space--6)));
+  max-height: calc(100vh - (var(--_spacing---space--4) * 2 + var(--_spacing---space--6)));
   overflow: hidden;
 }
 
@@ -1671,7 +1670,6 @@ strong {
   grid-row: 1;
   width: 100%;
   height: 100%;
-  max-height: calc(100vh - (var(--_spacing---space--4) * 2 + var(--_spacing---space--6)));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1689,8 +1687,7 @@ strong {
 
 .hero-collage_image {
   width: 100%;
-  height: auto;
-  max-height: calc(100vh - (var(--_spacing---space--4) * 2 + var(--_spacing---space--6)));
+  height: 100%;
   display: block;
   object-fit: cover;
   object-position: center;
@@ -1712,10 +1709,9 @@ strong {
   grid-column: 2;
   grid-row: 1;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: var(--_spacing---space--4);
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding-bottom: var(--_spacing---space--6);
   z-index: 2;
 }
 
