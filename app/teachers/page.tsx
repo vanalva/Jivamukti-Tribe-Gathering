@@ -134,7 +134,7 @@ export default function TeachersPage() {
           {/* Left Column: Teacher Links */}
           <div className="teachers_list">
             {/* Teacher Item 1: Sharon Gannon */}
-            <div className="teacher_item" data-teacher-image={getAssetPath("/images/teachers/Sharon%20Gannon/_MG_8528_WEB.JPG">
+            <div className="teacher_item" data-teacher-image={getAssetPath("/images/teachers/Sharon%20Gannon/_MG_8528_WEB.JPG")}>
               <div className="teacher_info">
                 <p className="text-body-md teacher_eyebrow">Open Class</p>
                 <h3 className="text-h1 u-text-uppercase">SHARON GANNON</h3>

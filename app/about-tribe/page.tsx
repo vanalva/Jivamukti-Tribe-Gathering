@@ -23,7 +23,7 @@ export default function AboutTribePage() {
 
           {/* Hero Image (Right Side) */}
           <div className="hero-collage_image-wrap">
-            <img src="/images/about/09afe8e0497238bff34238caf01764bc0124c60f.png")} alt="Yoga gathering with harmonium" className="hero-collage_image" />
+            <img src={getAssetPath("/images/about/09afe8e0497238bff34238caf01764bc0124c60f.png")} alt="Yoga gathering with harmonium" className="hero-collage_image" />
           </div>
 
           {/* Bottom Title (Left Side, Overlapping) */}

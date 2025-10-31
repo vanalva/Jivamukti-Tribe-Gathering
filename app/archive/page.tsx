@@ -219,7 +219,7 @@ export default function ArchivePage() {
         <div className="video-detail_content u-position-relative" id="videoDetailContent" style={{ display: 'none' }}>
           <div className="video-detail_layout">
             <div className="video-detail_video">
-              <img id="detailVideoImage" src="")} alt="Video" className="image" />
+              <img id="detailVideoImage" src="" alt="Video" className="image" />
               <div className="video-item_play-button">
                 <img src={getAssetPath("/images/archive/9ba6c4be229aa0df664a9d5ea7e2c590a0a6db3e.svg")} alt="Play" style={{ width: '64px', height: '64px' }} />
               </div>
