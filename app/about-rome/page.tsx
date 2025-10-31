@@ -91,7 +91,7 @@ export default function AboutRomePage() {
                   <img src={getAssetPath("/images/about-rome/4a713401a3c5003f4d6d0eb078f7211df90acebd.png")} alt="Antico Caffè" className="day_row-image-inline__img" />
                 </div>
                 <div className="day_row-item--monolink-content">
-                  <div className="day_row day_row--monolink" data-image="/images/about-rome/4a713401a3c5003f4d6d0eb078f7211df90acebd.png">
+                  <div className="day_row day_row--monolink" data-image={getAssetPath("/images/about-rome/4a713401a3c5003f4d6d0eb078f7211df90acebd.png")}>
                     <div className="day_row-title">
                       <h3 className="text-h3 u-text-uppercase">Antico Caffè</h3>
                     </div>
@@ -118,7 +118,7 @@ export default function AboutRomePage() {
 
               {/* Row 2: Tazza d'Oro */}
               <div className="day_row-item">
-                <div className="day_row" data-image="/images/about-rome/5b99e425860ca2de7aadd16e2b46c27e2f8bb0bd.png">
+                <div className="day_row" data-image={getAssetPath("/images/about-rome/5b99e425860ca2de7aadd16e2b46c27e2f8bb0bd.png")}>
                   <div className="text-body-lg">Near Pantheon</div>
                   <div className="text-h4 u-text-center">Tazza d'Oro</div>
                   <div className="text-body-lg u-text-right">Caffè</div>
@@ -147,7 +147,7 @@ export default function AboutRomePage() {
 
               {/* Row 3: Luminari */}
               <div className="day_row-item">
-                <div className="day_row" data-image="/images/about-rome/7d29901f5346ba603ddea32124ea9e141f10879a.png">
+                <div className="day_row" data-image={getAssetPath("/images/about-rome/7d29901f5346ba603ddea32124ea9e141f10879a.png")}>
                   <div className="text-body-lg">Modern</div>
                   <div className="text-h4 u-text-center">Luminari</div>
                   <div className="text-body-lg u-text-right">Specialty</div>
@@ -176,7 +176,7 @@ export default function AboutRomePage() {
 
               {/* Row 4: Eustachio */}
               <div className="day_row-item">
-                <div className="day_row" data-image="/images/about-rome/cd1552bdfd9a6257407b683a42557f7b73a0364d.png">
+                <div className="day_row" data-image={getAssetPath("/images/about-rome/cd1552bdfd9a6257407b683a42557f7b73a0364d.png")}>
                   <div className="text-body-lg">Neighborhood</div>
                   <div className="text-h4 u-text-center">Eustachio</div>
                   <div className="text-body-lg u-text-right">Traditional</div>
@@ -205,7 +205,7 @@ export default function AboutRomePage() {
 
               {/* Row 5: Caffè Greco */}
               <div className="day_row-item">
-                <div className="day_row" data-image="/images/about-rome/4a713401a3c5003f4d6d0eb078f7211df90acebd.png">
+                <div className="day_row" data-image={getAssetPath("/images/about-rome/4a713401a3c5003f4d6d0eb078f7211df90acebd.png")}>
                   <div className="text-body-lg">Est. 1760</div>
                   <div className="text-h4 u-text-center">Caffè Greco</div>
                   <div className="text-body-lg u-text-right">Via Condotti</div>
@@ -234,7 +234,7 @@ export default function AboutRomePage() {
 
               {/* Row 6: Sant'Eustachio Il Caffè */}
               <div className="day_row-item">
-                <div className="day_row" data-image="/images/about-rome/5b99e425860ca2de7aadd16e2b46c27e2f8bb0bd.png">
+                <div className="day_row" data-image={getAssetPath("/images/about-rome/5b99e425860ca2de7aadd16e2b46c27e2f8bb0bd.png")}>
                   <div className="text-body-lg">Near Senate</div>
                   <div className="text-h4 u-text-center">Sant'Eustachio Il Caffè</div>
                   <div className="text-body-lg u-text-right">Espresso Bar</div>
@@ -263,7 +263,7 @@ export default function AboutRomePage() {
 
               {/* Row 7: Roscioli Caffè */}
               <div className="day_row-item">
-                <div className="day_row" data-image="/images/about-rome/7d29901f5346ba603ddea32124ea9e141f10879a.png">
+                <div className="day_row" data-image={getAssetPath("/images/about-rome/7d29901f5346ba603ddea32124ea9e141f10879a.png")}>
                   <div className="text-body-lg">Bakery & Café</div>
                   <div className="text-h4 u-text-center">Roscioli Caffè</div>
                   <div className="text-body-lg u-text-right">Campo de' Fiori</div>
@@ -292,7 +292,7 @@ export default function AboutRomePage() {
 
               {/* Row 8: Barnum Café */}
               <div className="day_row-item">
-                <div className="day_row" data-image="/images/about-rome/cd1552bdfd9a6257407b683a42557f7b73a0364d.png">
+                <div className="day_row" data-image={getAssetPath("/images/about-rome/cd1552bdfd9a6257407b683a42557f7b73a0364d.png")}>
                   <div className="text-body-lg">Monti District</div>
                   <div className="text-h4 u-text-center">Barnum Café</div>
                   <div className="text-body-lg u-text-right">Modern</div>
@@ -339,7 +339,7 @@ export default function AboutRomePage() {
             <div className="day_table">
               {/* Row 1: Trattoria da Enzo */}
               <div className="day_row-item">
-                <div className="day_row" data-image="/images/about-rome/4a713401a3c5003f4d6d0eb078f7211df90acebd.png">
+                <div className="day_row" data-image={getAssetPath("/images/about-rome/4a713401a3c5003f4d6d0eb078f7211df90acebd.png")}>
                   <div className="text-body-lg">Traditional</div>
                   <div className="text-h4 u-text-center">Trattoria da Enzo</div>
                   <div className="text-body-lg u-text-right">Trastevere</div>
@@ -368,7 +368,7 @@ export default function AboutRomePage() {
 
               {/* Row 2: La Pergola */}
               <div className="day_row-item">
-                <div className="day_row" data-image="/images/about-rome/5b99e425860ca2de7aadd16e2b46c27e2f8bb0bd.png">
+                <div className="day_row" data-image={getAssetPath("/images/about-rome/5b99e425860ca2de7aadd16e2b46c27e2f8bb0bd.png")}>
                   <div className="text-body-lg">Fine Dining</div>
                   <div className="text-h4 u-text-center">La Pergola</div>
                   <div className="text-body-lg u-text-right">3 Michelin Stars</div>
@@ -397,7 +397,7 @@ export default function AboutRomePage() {
 
               {/* Row 3: Felice a Testaccio */}
               <div className="day_row-item">
-                <div className="day_row" data-image="/images/about-rome/7d29901f5346ba603ddea32124ea9e141f10879a.png">
+                <div className="day_row" data-image={getAssetPath("/images/about-rome/7d29901f5346ba603ddea32124ea9e141f10879a.png")}>
                   <div className="text-body-lg">Roman Classics</div>
                   <div className="text-h4 u-text-center">Felice a Testaccio</div>
                   <div className="text-body-lg u-text-right">Testaccio</div>
@@ -426,7 +426,7 @@ export default function AboutRomePage() {
 
               {/* Row 4: Armando al Pantheon */}
               <div className="day_row-item">
-                <div className="day_row" data-image="/images/about-rome/cd1552bdfd9a6257407b683a42557f7b73a0364d.png">
+                <div className="day_row" data-image={getAssetPath("/images/about-rome/cd1552bdfd9a6257407b683a42557f7b73a0364d.png")}>
                   <div className="text-body-lg">Family-Run</div>
                   <div className="text-h4 u-text-center">Armando al Pantheon</div>
                   <div className="text-body-lg u-text-right">Near Pantheon</div>
@@ -455,7 +455,7 @@ export default function AboutRomePage() {
 
               {/* Row 5: Pizzarium Bonci */}
               <div className="day_row-item">
-                <div className="day_row" data-image="/images/about-rome/4a713401a3c5003f4d6d0eb078f7211df90acebd.png">
+                <div className="day_row" data-image={getAssetPath("/images/about-rome/4a713401a3c5003f4d6d0eb078f7211df90acebd.png")}>
                   <div className="text-body-lg">Pizza al Taglio</div>
                   <div className="text-h4 u-text-center">Pizzarium Bonci</div>
                   <div className="text-body-lg u-text-right">Prati</div>
@@ -484,7 +484,7 @@ export default function AboutRomePage() {
 
               {/* Row 6: Flavio al Velavevodetto */}
               <div className="day_row-item">
-                <div className="day_row" data-image="/images/about-rome/5b99e425860ca2de7aadd16e2b46c27e2f8bb0bd.png">
+                <div className="day_row" data-image={getAssetPath("/images/about-rome/5b99e425860ca2de7aadd16e2b46c27e2f8bb0bd.png")}>
                   <div className="text-body-lg">Local Favorite</div>
                   <div className="text-h4 u-text-center">Flavio al Velavevodetto</div>
                   <div className="text-body-lg u-text-right">Testaccio</div>
@@ -513,7 +513,7 @@ export default function AboutRomePage() {
 
               {/* Row 7: Glass Hostaria */}
               <div className="day_row-item">
-                <div className="day_row" data-image="/images/about-rome/7d29901f5346ba603ddea32124ea9e141f10879a.png">
+                <div className="day_row" data-image={getAssetPath("/images/about-rome/7d29901f5346ba603ddea32124ea9e141f10879a.png")}>
                   <div className="text-body-lg">Contemporary</div>
                   <div className="text-h4 u-text-center">Glass Hostaria</div>
                   <div className="text-body-lg u-text-right">1 Michelin Star</div>
@@ -542,7 +542,7 @@ export default function AboutRomePage() {
 
               {/* Row 8: Tonnarello */}
               <div className="day_row-item">
-                <div className="day_row" data-image="/images/about-rome/cd1552bdfd9a6257407b683a42557f7b73a0364d.png">
+                <div className="day_row" data-image={getAssetPath("/images/about-rome/cd1552bdfd9a6257407b683a42557f7b73a0364d.png")}>
                   <div className="text-body-lg">Trastevere Classic</div>
                   <div className="text-h4 u-text-center">Tonnarello</div>
                   <div className="text-body-lg u-text-right">Casual Dining</div>
@@ -589,7 +589,7 @@ export default function AboutRomePage() {
             <div className="day_table">
               {/* Row 1: Hotel Eden */}
               <div className="day_row-item">
-                <div className="day_row" data-image="/images/about-rome/7d29901f5346ba603ddea32124ea9e141f10879a.png">
+                <div className="day_row" data-image={getAssetPath("/images/about-rome/7d29901f5346ba603ddea32124ea9e141f10879a.png")}>
                   <div className="text-body-lg">Luxury</div>
                   <div className="text-h4 u-text-center">Hotel Eden</div>
                   <div className="text-body-lg u-text-right">5 Stars</div>
@@ -618,7 +618,7 @@ export default function AboutRomePage() {
 
               {/* Row 2: Trastevere Boutique */}
               <div className="day_row-item">
-                <div className="day_row" data-image="/images/about-rome/cd1552bdfd9a6257407b683a42557f7b73a0364d.png">
+                <div className="day_row" data-image={getAssetPath("/images/about-rome/cd1552bdfd9a6257407b683a42557f7b73a0364d.png")}>
                   <div className="text-body-lg">Boutique</div>
                   <div className="text-h4 u-text-center">Trastevere Boutique</div>
                   <div className="text-body-lg u-text-right">4 Stars</div>
@@ -647,7 +647,7 @@ export default function AboutRomePage() {
 
               {/* Row 3: Hotel Hassler */}
               <div className="day_row-item">
-                <div className="day_row" data-image="/images/about-rome/4a713401a3c5003f4d6d0eb078f7211df90acebd.png">
+                <div className="day_row" data-image={getAssetPath("/images/about-rome/4a713401a3c5003f4d6d0eb078f7211df90acebd.png")}>
                   <div className="text-body-lg">Spanish Steps</div>
                   <div className="text-h4 u-text-center">Hotel Hassler</div>
                   <div className="text-body-lg u-text-right">5 Stars</div>
@@ -676,7 +676,7 @@ export default function AboutRomePage() {
 
               {/* Row 4: Hotel de Russie */}
               <div className="day_row-item">
-                <div className="day_row" data-image="/images/about-rome/5b99e425860ca2de7aadd16e2b46c27e2f8bb0bd.png">
+                <div className="day_row" data-image={getAssetPath("/images/about-rome/5b99e425860ca2de7aadd16e2b46c27e2f8bb0bd.png")}>
                   <div className="text-body-lg">Piazza del Popolo</div>
                   <div className="text-h4 u-text-center">Hotel de Russie</div>
                   <div className="text-body-lg u-text-right">5 Stars</div>
@@ -705,7 +705,7 @@ export default function AboutRomePage() {
 
               {/* Row 5: Hotel Campo de' Fiori */}
               <div className="day_row-item">
-                <div className="day_row" data-image="/images/about-rome/7d29901f5346ba603ddea32124ea9e141f10879a.png">
+                <div className="day_row" data-image={getAssetPath("/images/about-rome/7d29901f5346ba603ddea32124ea9e141f10879a.png")}>
                   <div className="text-body-lg">Historic Center</div>
                   <div className="text-h4 u-text-center">Hotel Campo de' Fiori</div>
                   <div className="text-body-lg u-text-right">3 Stars</div>
@@ -734,7 +734,7 @@ export default function AboutRomePage() {
 
               {/* Row 6: Palazzo Manfredi */}
               <div className="day_row-item">
-                <div className="day_row" data-image="/images/about-rome/cd1552bdfd9a6257407b683a42557f7b73a0364d.png">
+                <div className="day_row" data-image={getAssetPath("/images/about-rome/cd1552bdfd9a6257407b683a42557f7b73a0364d.png")}>
                   <div className="text-body-lg">Colosseum View</div>
                   <div className="text-h4 u-text-center">Palazzo Manfredi</div>
                   <div className="text-body-lg u-text-right">5 Stars</div>
@@ -763,7 +763,7 @@ export default function AboutRomePage() {
 
               {/* Row 7: The Inn at the Roman Forum */}
               <div className="day_row-item">
-                <div className="day_row" data-image="/images/about-rome/4a713401a3c5003f4d6d0eb078f7211df90acebd.png">
+                <div className="day_row" data-image={getAssetPath("/images/about-rome/4a713401a3c5003f4d6d0eb078f7211df90acebd.png")}>
                   <div className="text-body-lg">Roman Forum</div>
                   <div className="text-h4 u-text-center">The Inn at the Roman Forum</div>
                   <div className="text-body-lg u-text-right">Boutique</div>
@@ -792,7 +792,7 @@ export default function AboutRomePage() {
 
               {/* Row 8: Rome Cavalieri Waldorf Astoria */}
               <div className="day_row-item">
-                <div className="day_row" data-image="/images/about-rome/5b99e425860ca2de7aadd16e2b46c27e2f8bb0bd.png">
+                <div className="day_row" data-image={getAssetPath("/images/about-rome/5b99e425860ca2de7aadd16e2b46c27e2f8bb0bd.png")}>
                   <div className="text-body-lg">Monte Mario</div>
                   <div className="text-h4 u-text-center">Rome Cavalieri</div>
                   <div className="text-body-lg u-text-right">5 Stars</div>
@@ -839,7 +839,7 @@ export default function AboutRomePage() {
             <div className="day_table">
               {/* Row 1: Colosseum */}
               <div className="day_row-item">
-                <div className="day_row" data-image="/images/about-rome/4a713401a3c5003f4d6d0eb078f7211df90acebd.png">
+                <div className="day_row" data-image={getAssetPath("/images/about-rome/4a713401a3c5003f4d6d0eb078f7211df90acebd.png")}>
                   <div className="text-body-lg">Ancient</div>
                   <div className="text-h4 u-text-center">The Colosseum</div>
                   <div className="text-body-lg u-text-right">Iconic</div>
@@ -868,7 +868,7 @@ export default function AboutRomePage() {
 
               {/* Row 2: Vatican Museums */}
               <div className="day_row-item">
-                <div className="day_row" data-image="/images/about-rome/5b99e425860ca2de7aadd16e2b46c27e2f8bb0bd.png">
+                <div className="day_row" data-image={getAssetPath("/images/about-rome/5b99e425860ca2de7aadd16e2b46c27e2f8bb0bd.png")}>
                   <div className="text-body-lg">Art & History</div>
                   <div className="text-h4 u-text-center">Vatican Museums</div>
                   <div className="text-body-lg u-text-right">Sistine Chapel</div>
@@ -897,7 +897,7 @@ export default function AboutRomePage() {
 
               {/* Row 3: Roman Forum */}
               <div className="day_row-item">
-                <div className="day_row" data-image="/images/about-rome/7d29901f5346ba603ddea32124ea9e141f10879a.png">
+                <div className="day_row" data-image={getAssetPath("/images/about-rome/7d29901f5346ba603ddea32124ea9e141f10879a.png")}>
                   <div className="text-body-lg">Ancient Ruins</div>
                   <div className="text-h4 u-text-center">Roman Forum</div>
                   <div className="text-body-lg u-text-right">Historical</div>
@@ -926,7 +926,7 @@ export default function AboutRomePage() {
 
               {/* Row 4: Galleria Borghese */}
               <div className="day_row-item">
-                <div className="day_row" data-image="/images/about-rome/cd1552bdfd9a6257407b683a42557f7b73a0364d.png">
+                <div className="day_row" data-image={getAssetPath("/images/about-rome/cd1552bdfd9a6257407b683a42557f7b73a0364d.png")}>
                   <div className="text-body-lg">Art Museum</div>
                   <div className="text-h4 u-text-center">Galleria Borghese</div>
                   <div className="text-body-lg u-text-right">Masterpieces</div>
@@ -955,7 +955,7 @@ export default function AboutRomePage() {
 
               {/* Row 5: Pantheon */}
               <div className="day_row-item">
-                <div className="day_row" data-image="/images/about-rome/4a713401a3c5003f4d6d0eb078f7211df90acebd.png">
+                <div className="day_row" data-image={getAssetPath("/images/about-rome/4a713401a3c5003f4d6d0eb078f7211df90acebd.png")}>
                   <div className="text-body-lg">Ancient Temple</div>
                   <div className="text-h4 u-text-center">The Pantheon</div>
                   <div className="text-body-lg u-text-right">Architectural Marvel</div>
@@ -984,7 +984,7 @@ export default function AboutRomePage() {
 
               {/* Row 6: Trevi Fountain */}
               <div className="day_row-item">
-                <div className="day_row" data-image="/images/about-rome/5b99e425860ca2de7aadd16e2b46c27e2f8bb0bd.png">
+                <div className="day_row" data-image={getAssetPath("/images/about-rome/5b99e425860ca2de7aadd16e2b46c27e2f8bb0bd.png")}>
                   <div className="text-body-lg">Baroque</div>
                   <div className="text-h4 u-text-center">Trevi Fountain</div>
                   <div className="text-body-lg u-text-right">Iconic</div>
@@ -1013,7 +1013,7 @@ export default function AboutRomePage() {
 
               {/* Row 7: Castel Sant'Angelo */}
               <div className="day_row-item">
-                <div className="day_row" data-image="/images/about-rome/7d29901f5346ba603ddea32124ea9e141f10879a.png">
+                <div className="day_row" data-image={getAssetPath("/images/about-rome/7d29901f5346ba603ddea32124ea9e141f10879a.png")}>
                   <div className="text-body-lg">Castle Museum</div>
                   <div className="text-h4 u-text-center">Castel Sant'Angelo</div>
                   <div className="text-body-lg u-text-right">Fortress</div>
@@ -1042,7 +1042,7 @@ export default function AboutRomePage() {
 
               {/* Row 8: Capitoline Museums */}
               <div className="day_row-item">
-                <div className="day_row" data-image="/images/about-rome/cd1552bdfd9a6257407b683a42557f7b73a0364d.png">
+                <div className="day_row" data-image={getAssetPath("/images/about-rome/cd1552bdfd9a6257407b683a42557f7b73a0364d.png")}>
                   <div className="text-body-lg">Public Museum</div>
                   <div className="text-h4 u-text-center">Capitoline Museums</div>
                   <div className="text-body-lg u-text-right">World's Oldest</div>
