@@ -86,25 +86,22 @@ export default function ArchivePage() {
       <Navigation />
       <FullscreenMenu />
 
-      {/* Hero Section with Collage (Two-Slot) */}
+      {/* Hero Section with Collage - Unified Layout */}
       <section className="hero_wrap u-section u-position-relative">
         <div className="hero_background u-cover-absolute u-zindex-negative"></div>
         <div className="hero_content u-position-relative hero-collage_content u-navbar-offset">
-          {/* Top Title */}
-          <h1 className="hero-collage_title-top">THE</h1>
-
-          {/* Center Image */}
+          {/* Hero Image (Left) */}
           <div className="hero-collage_image-wrap">
             <img src={getAssetPath("/images/archive/eebc30323727acbd7be2d70049cc308de22de498.png")} alt="Archive Collage" className="hero-collage_image" />
           </div>
 
-          {/* Logo Branding */}
+          {/* Title and Logo (Right) */}
           <div className="hero-collage_logo-wrap">
-            <img src={getAssetPath("/images/archive/1dbfeee3dc2337b68e1b97cfac47ef244e8bf49d.svg")} alt="Jivamukti Yoga The Tribe Gathering" className="hero-collage_logo" />
+            <div className="image-wrap image-wrap--freeform" style={{maxWidth: 'clamp(200px, 25vw, 400px)'}}>
+              <img src={getAssetPath("/images/tribe-short-logotype-currentcolor.svg")} alt="Jivamukti Yoga The Tribe Gathering" className="image-wrap__img image-wrap__img--contain" />
+            </div>
           </div>
-
-          {/* Bottom Title */}
-          <h2 className="hero-collage_title-bottom">ARCHIVE</h2>
+          <h1 className="hero-collage_title-bottom">ARCHIVE</h1>
         </div>
       </section>
 

@@ -18,13 +18,18 @@ export default function SchedulePage() {
       {/* Hero Section - Unified Layout */}
       <section className="hero_wrap u-section u-position-relative">
         <div className="hero_background u-cover-absolute u-zindex-negative"></div>
-        <div className="hero_content u-position-relative hero-collage_content hero-collage_content--schedule u-navbar-offset">
+        <div className="hero_content u-position-relative hero-collage_content u-navbar-offset">
           {/* Hero Image (Left) */}
           <div className="hero-collage_image-wrap">
             <img src={getAssetPath("/images/schedule/a442d6830fad7ef1ff33d36fa9a2b8092d9650d2.png")} alt="Schedule planning with notebook" className="hero-collage_image" />
           </div>
 
-          {/* Bottom Title (Overlapping with image) */}
+          {/* Title and Logo (Right) */}
+          <div className="hero-collage_logo-wrap">
+            <div className="image-wrap image-wrap--freeform" style={{maxWidth: 'clamp(200px, 25vw, 400px)'}}>
+              <img src={getAssetPath("/images/tribe-short-logotype-currentcolor.svg")} alt="Jivamukti Yoga The Tribe Gathering" className="image-wrap__img image-wrap__img--contain" />
+            </div>
+          </div>
           <h1 className="hero-collage_title-bottom">SCHEDULE</h1>
         </div>
       </section>

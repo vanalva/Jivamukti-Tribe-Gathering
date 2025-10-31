@@ -9,26 +9,22 @@ export default function AboutTribePage() {
       <Navigation />
       <FullscreenMenu />
 
-      {/* Hero Section with Collage - About Variant */}
+      {/* Hero Section with Collage - Unified Layout */}
       <section className="hero_wrap u-section u-position-relative">
         <div className="hero_background u-cover-absolute u-zindex-negative"></div>
-        <div className="hero_content u-position-relative hero-collage_content hero-collage_content--about u-navbar-offset">
+        <div className="hero_content u-position-relative hero-collage_content u-navbar-offset">
+          {/* Hero Image (Left) */}
+          <div className="hero-collage_image-wrap">
+            <img src={getAssetPath("/images/about/09afe8e0497238bff34238caf01764bc0124c60f.png")} alt="Yoga gathering with harmonium" className="hero-collage_image" />
+          </div>
 
-          {/* Logo Branding (Top Left) */}
+          {/* Title and Logo (Right) */}
           <div className="hero-collage_logo-wrap">
             <div className="image-wrap image-wrap--freeform" style={{maxWidth: 'clamp(200px, 25vw, 400px)'}}>
               <img src={getAssetPath("/images/tribe-short-logotype-currentcolor.svg")} alt="Jivamukti Yoga The Tribe Gathering" className="image-wrap__img image-wrap__img--contain" />
             </div>
           </div>
-
-          {/* Hero Image (Right Side) */}
-          <div className="hero-collage_image-wrap">
-            <img src={getAssetPath("/images/about/09afe8e0497238bff34238caf01764bc0124c60f.png")} alt="Yoga gathering with harmonium" className="hero-collage_image" />
-          </div>
-
-          {/* Bottom Title (Left Side, Overlapping) */}
           <h1 className="hero-collage_title-bottom" data-gsap-slide-up>ABOUT<br />THE TRIBE</h1>
-
         </div>
       </section>
 

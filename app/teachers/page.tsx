@@ -82,20 +82,22 @@ export default function TeachersPage() {
       <Navigation />
       <FullscreenMenu />
 
-      {/* Hero Section with Collage (Two-Slot) */}
+      {/* Hero Section with Collage - Unified Layout */}
       <section className="hero_wrap u-section u-position-relative">
         <div className="hero_background u-cover-absolute u-zindex-negative"></div>
         <div className="hero_content u-position-relative hero-collage_content u-navbar-offset">
-          {/* Top Title */}
-          <h1 className="hero-collage_title-top">THE</h1>
-
-          {/* Center Image */}
+          {/* Hero Image (Left) */}
           <div className="hero-collage_image-wrap">
             <img src={getAssetPath("/images/teachers/46a6be97cb1ecd2a2893d61d7f6bcc3761fa50d5.png")} alt="Teachers" className="hero-collage_image" />
           </div>
 
-          {/* Bottom Title */}
-          <h2 className="hero-collage_title-bottom">LINE UP</h2>
+          {/* Title and Logo (Right) */}
+          <div className="hero-collage_logo-wrap">
+            <div className="image-wrap image-wrap--freeform" style={{maxWidth: 'clamp(200px, 25vw, 400px)'}}>
+              <img src={getAssetPath("/images/tribe-short-logotype-currentcolor.svg")} alt="Jivamukti Yoga The Tribe Gathering" className="image-wrap__img image-wrap__img--contain" />
+            </div>
+          </div>
+          <h1 className="hero-collage_title-bottom">TEACHERS</h1>
         </div>
       </section>
 
