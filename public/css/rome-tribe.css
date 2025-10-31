@@ -2062,11 +2062,26 @@ strong {
   overflow: hidden;
 }
 
-/* Left column: Titles stacked vertically */
+/* Left column: Title container with stacked titles */
+.hero-collage_content--about-rome {
+  grid-template-rows: 1fr;
+}
+
+.hero-collage_content--about-rome::before {
+  content: '';
+  grid-column: 1;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+/* "ABOUT" text at top */
 .hero-collage_content--about-rome .hero-collage_title-top {
   grid-column: 1;
   grid-row: 1;
-  align-self: start;
+  align-self: center;
   justify-self: start;
   margin: 0;
   padding: 0;
@@ -2080,15 +2095,15 @@ strong {
   box-sizing: border-box;
 }
 
-/* "ROME" text below "ABOUT" */
+/* "ROME" text below "ABOUT" - positioned relative to title-top */
 .hero-collage_content--about-rome .hero-collage_title-bottom {
   grid-column: 1;
   grid-row: 1;
-  align-self: start;
+  align-self: center;
   justify-self: start;
   margin: 0;
   padding: 0;
-  padding-top: var(--_spacing---space--4);
+  margin-top: calc(clamp(5rem, 14vw, 17rem) * 0.8 + var(--_spacing---space--4));
   z-index: 2;
   font-size: clamp(5rem, 14vw, 17rem);
   line-height: 0.8;
@@ -2097,9 +2112,6 @@ strong {
   word-break: break-word;
   hyphens: auto;
   box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  gap: var(--_spacing---space--2);
 }
 
 /* Image on right side, vertically centered */
