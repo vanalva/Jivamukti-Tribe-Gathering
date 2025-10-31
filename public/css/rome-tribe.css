@@ -1936,6 +1936,7 @@ strong {
   grid-template-columns: minmax(0, 1fr);
   grid-template-rows: auto 1fr;
   min-height: 100vh;
+  max-height: 100vh;
   gap: 0;
   position: relative;
   overflow: hidden;
@@ -1989,7 +1990,7 @@ strong {
   align-self: end;
   text-align: left;
   margin: 0;
-  padding: 0;
+  padding-bottom: var(--_spacing---section-space--main);
   font-size: clamp(6rem, 15vw, 20rem);
   line-height: 0.8;
   z-index: 2;
@@ -2054,6 +2055,7 @@ strong {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
   min-height: 100vh;
+  max-height: 100vh;
   gap: 0;
   position: relative;
   overflow: hidden;
@@ -2085,11 +2087,12 @@ strong {
   align-self: end;
   justify-self: start;
   margin-left: var(--_spacing---space--6);
-  margin-bottom: var(--_spacing---space--6);
+  margin-bottom: var(--_spacing---section-space--main);
+  padding: 0;
+  padding-bottom: var(--_spacing---space--4);
   z-index: 2;
   font-size: clamp(5rem, 14vw, 17rem);
   line-height: 0.8;
-  padding: 0;
   max-width: 100%;
   overflow-wrap: break-word;
   word-break: break-word;
