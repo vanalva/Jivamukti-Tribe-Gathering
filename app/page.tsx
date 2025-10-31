@@ -132,7 +132,7 @@ export default function Home() {
   )
 
   return (
-    <PageTemplate logoPath={getAssetPath("/images/tribe-isotype.svg")} additionalScripts={additionalScripts}>
+    <PageTemplate logoPath="/images/tribe-isotype.svg" additionalScripts={additionalScripts}>
       {/* Hero Section (Two-Slot Pattern) */}
       <section className="hero_wrap u-section u-position-relative">
         <div className="hero_background u-cover-absolute u-zindex-negative"></div>
