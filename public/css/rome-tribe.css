@@ -1706,13 +1706,10 @@ strong {
 
 /* Logo Branding */
 .hero-collage_logo-wrap {
-  grid-column: 2;
-  grid-row: 1;
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-  padding-bottom: var(--_spacing---space--6);
-  z-index: 2;
+  position: absolute;
+  bottom: 0;
+  right: var(--site--margin);
+  z-index: 10;
 }
 
 /* Logo styling removed - now handled by image-wrap system */
