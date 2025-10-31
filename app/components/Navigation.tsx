@@ -3,12 +3,15 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
+import { getAssetPath } from '../utils/paths'
 
 interface NavigationProps {
   logoPath?: string
 }
 
 export default function Navigation({ logoPath = '/images/tribe-isotype.svg' }: NavigationProps) {
+  // Apply asset path to logoPath if it's provided
+  const logoPathWithBase = logoPath ? getAssetPath(logoPath) : getAssetPath('/images/tribe-isotype.svg')
   const pathname = usePathname()
 
   const isActive = (path: string) => {
@@ -25,22 +28,22 @@ export default function Navigation({ logoPath = '/images/tribe-isotype.svg' }: N
         <div className="nav_menu">
           <Link href="/about-tribe" className={`nav_link link text-nav u-text-uppercase ${isActive('/about-tribe')}`}>
             About
-            <img src="/images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg" alt="" className="nav_arrow-icon" />
+            <img src={getAssetPath("/images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg")} alt="" className="nav_arrow-icon" />
           </Link>
           <Link href="/schedule" className={`nav_link link text-nav u-text-uppercase ${isActive('/schedule')}`}>
             Schedule
-            <img src="/images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg" alt="" className="nav_arrow-icon" />
+            <img src={getAssetPath("/images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg")} alt="" className="nav_arrow-icon" />
           </Link>
           <Link href="/booking" className={`nav_link link text-nav u-text-uppercase ${isActive('/booking')}`}>
             Register
-            <img src="/images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg" alt="" className="nav_arrow-icon" />
+            <img src={getAssetPath("/images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg")} alt="" className="nav_arrow-icon" />
           </Link>
         </div>
 
         <div className="nav_logo">
           <Link href="/">
             <img
-              src={logoPath}
+              src={logoPathWithBase}
               alt="Jivamukti Tribe Gathering"
               className="image image-contain"
             />
@@ -60,11 +63,11 @@ export default function Navigation({ logoPath = '/images/tribe-isotype.svg' }: N
           </button>
           <Link href="/archive" className={`nav_link link text-nav u-text-uppercase ${isActive('/archive')}`}>
             Archive
-            <img src="/images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg" alt="" className="nav_arrow-icon" />
+            <img src={getAssetPath("/images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg")} alt="" className="nav_arrow-icon" />
           </Link>
           <Link href="/about-rome" className={`nav_link link text-nav u-text-uppercase ${isActive('/about-rome')}`}>
             Useful Info
-            <img src="/images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg" alt="" className="nav_arrow-icon" />
+            <img src={getAssetPath("/images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg")} alt="" className="nav_arrow-icon" />
           </Link>
         </div>
       </div>

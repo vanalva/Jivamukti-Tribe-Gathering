@@ -1,6 +1,7 @@
 import Navigation from '@/app/components/Navigation';
 import FullscreenMenu from '@/app/components/FullscreenMenu';
 import Footer from '@/app/components/Footer';
+import { getAssetPath } from '@/app/utils/paths';
 
 export default function BookingPage() {
   return (
@@ -14,7 +15,7 @@ export default function BookingPage() {
         <div className="hero_content u-position-relative hero-collage_content hero-collage_content--schedule u-navbar-offset">
           {/* Center Image (behind text on left) */}
           <div className="hero-collage_image-wrap">
-            <img src="/images/booking/4a713401a3c5003f4d6d0eb078f7211df90acebd.png" alt="Yoga practice" className="hero-collage_image" />
+            <img src={getAssetPath("/images/booking/4a713401a3c5003f4d6d0eb078f7211df90acebd.png")} alt="Yoga practice" className="hero-collage_image" />
           </div>
 
           {/* Main Title */}
@@ -37,7 +38,7 @@ export default function BookingPage() {
           </div>
           {/* Right: Phone Mockup */}
           <div style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
-            <img src="/images/booking/2d80b05e8b5c338dbf6e9da3beaaab42c5b228ea.png" alt="Tribe App Mockup" className="image" style={{ maxWidth: '100%', height: 'auto' }} />
+            <img src={getAssetPath("/images/booking/2d80b05e8b5c338dbf6e9da3beaaab42c5b228ea.png")} alt="Tribe App Mockup" className="image" style={{ maxWidth: '100%', height: 'auto' }} />
           </div>
         </div>
       </section>
@@ -98,7 +99,7 @@ export default function BookingPage() {
           <div className="pricing_title-sticky">
             <h2 className="text-h1 u-text-uppercase">300HR CERTIFIED</h2>
             <div style={{ marginTop: 'var(--_spacing---space--6)' }}>
-              <img src="/images/booking/25bb7dcf5cfa8aca2ea5270273ee7376d9b3094a.svg" alt="300HR Badge" className="logo-300hr" style={{ width: '320px', height: 'auto' }} />
+              <img src={getAssetPath("/images/booking/25bb7dcf5cfa8aca2ea5270273ee7376d9b3094a.svg")} alt="300HR Badge" className="logo-300hr" style={{ width: '320px', height: 'auto' }} />
             </div>
           </div>
           {/* Right: Pricing Cards */}
@@ -149,7 +150,7 @@ export default function BookingPage() {
           <div className="pricing_title-sticky">
             <h2 className="text-h1 u-text-uppercase">75HR GRADUATES</h2>
             <div style={{ marginTop: 'var(--_spacing---space--6)' }}>
-              <img src="/images/booking/cb7eabd9bfccf13f4e03c4f5bd9e130691825a57.svg" alt="75HR Badge" className="logo-75hr" style={{ width: '180px', height: 'auto' }} />
+              <img src={getAssetPath("/images/booking/cb7eabd9bfccf13f4e03c4f5bd9e130691825a57.svg")} alt="75HR Badge" className="logo-75hr" style={{ width: '180px', height: 'auto' }} />
             </div>
           </div>
           {/* Right: Pricing Cards */}

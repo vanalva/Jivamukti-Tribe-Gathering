@@ -4,6 +4,7 @@ import Navigation from '@/app/components/Navigation';
 import FullscreenMenu from '@/app/components/FullscreenMenu';
 import Footer from '@/app/components/Footer';
 import { useScheduleInteractions } from '@/app/hooks/useScheduleInteractions';
+import { getAssetPath } from '@/app/utils/paths';
 
 export default function SchedulePage() {
   // Use the reusable schedule interactions hook
@@ -20,12 +21,12 @@ export default function SchedulePage() {
         <div className="hero_content u-position-relative hero-collage_content hero-collage_content--schedule u-navbar-offset">
           {/* Hero Image (Center-Left) */}
           <div className="hero-collage_image-wrap">
-            <img src="/images/schedule/a442d6830fad7ef1ff33d36fa9a2b8092d9650d2.png" alt="Schedule planning with notebook" className="hero-collage_image" />
+            <img src={getAssetPath("/images/schedule/a442d6830fad7ef1ff33d36fa9a2b8092d9650d2.png")} alt="Schedule planning with notebook" className="hero-collage_image" />
           </div>
 
           {/* Logo Branding (Right) */}
           <div className="hero-collage_logo-wrap">
-            <img src="/images/tribe-short-logotype-currentcolor.svg" alt="Jivamukti Yoga The Tribe Gathering" className="hero-collage_logo" />
+            <img src={getAssetPath("/images/tribe-short-logotype-currentcolor.svg")} alt="Jivamukti Yoga The Tribe Gathering" className="hero-collage_logo" />
           </div>
 
           {/* Bottom Title (Full Width) */}
@@ -60,7 +61,7 @@ export default function SchedulePage() {
             <div className="day_table">
               {/* Row 1: Masterclass */}
               <div className="day_row-item">
-                <div className="day_row" data-image="/images/schedule/friday-photo.png">
+                <div className="day_row" data-image={getAssetPath("/images/schedule/friday-photo.png")}>
                   <div className="text-body-lg">10:00 | 11:30</div>
                   <div className="text-h4 u-text-center">Masterclass</div>
                   <div className="text-body-lg u-text-right">Olga Oskorbina</div>
@@ -68,7 +69,7 @@ export default function SchedulePage() {
                 <div className="day_row-content">
                   <div className="day_row-content-grid">
                     <div className="day_row-content-image image-wrap image-wrap--portrait-tall u-overflow-hidden">
-                      <img src="/images/schedule/friday-photo.png" alt="Masterclass" className="image-wrap__img" />
+                      <img src={getAssetPath("/images/schedule/friday-photo.png")} alt="Masterclass" className="image-wrap__img" />
                     </div>
                     <div className="day_row-content-text">
                       <div className="day_row-content-main">
@@ -89,7 +90,7 @@ export default function SchedulePage() {
 
               {/* Row 2: Open Class */}
               <div className="day_row-item">
-                <div className="day_row" data-image="/images/schedule/saturday-photo.png">
+                <div className="day_row" data-image={getAssetPath("/images/schedule/saturday-photo.png")}>
                   <div className="text-body-lg">12:00 | 13:30</div>
                   <div className="text-h4 u-text-center">Open Class</div>
                   <div className="text-body-lg u-text-right">Jules Fbre</div>
@@ -97,7 +98,7 @@ export default function SchedulePage() {
                 <div className="day_row-content">
                   <div className="day_row-content-grid">
                     <div className="day_row-content-image image-wrap image-wrap--portrait-tall u-overflow-hidden">
-                      <img src="/images/schedule/saturday-photo.png" alt="Open Class" className="image-wrap__img" />
+                      <img src={getAssetPath("/images/schedule/saturday-photo.png")} alt="Open Class" className="image-wrap__img" />
                     </div>
                     <div className="day_row-content-text">
                       <div className="day_row-content-main">
@@ -118,7 +119,7 @@ export default function SchedulePage() {
 
               {/* Row 3: Lecture */}
               <div className="day_row-item">
-                <div className="day_row" data-image="/images/schedule/friday-photo.png">
+                <div className="day_row" data-image={getAssetPath("/images/schedule/friday-photo.png")}>
                   <div className="text-body-lg">14:00 | 15:30</div>
                   <div className="text-h4 u-text-center">Lecture</div>
                   <div className="text-body-lg u-text-right">Sharon Gannon</div>
@@ -126,7 +127,7 @@ export default function SchedulePage() {
                 <div className="day_row-content">
                   <div className="day_row-content-grid">
                     <div className="day_row-content-image image-wrap image-wrap--portrait-tall u-overflow-hidden">
-                      <img src="/images/schedule/friday-photo.png" alt="Lecture" className="image-wrap__img" />
+                      <img src={getAssetPath("/images/schedule/friday-photo.png")} alt="Lecture" className="image-wrap__img" />
                     </div>
                     <div className="day_row-content-text">
                       <div className="day_row-content-main">
@@ -147,7 +148,7 @@ export default function SchedulePage() {
 
               {/* Row 4: Workshop */}
               <div className="day_row-item">
-                <div className="day_row" data-image="/images/schedule/saturday-photo.png">
+                <div className="day_row" data-image={getAssetPath("/images/schedule/saturday-photo.png")}>
                   <div className="text-body-lg">16:00 | 17:30</div>
                   <div className="text-h4 u-text-center">Workshop</div>
                   <div className="text-body-lg u-text-right">Anna Lunegova</div>
@@ -155,7 +156,7 @@ export default function SchedulePage() {
                 <div className="day_row-content">
                   <div className="day_row-content-grid">
                     <div className="day_row-content-image image-wrap image-wrap--portrait-tall u-overflow-hidden">
-                      <img src="/images/schedule/saturday-photo.png" alt="Workshop" className="image-wrap__img" />
+                      <img src={getAssetPath("/images/schedule/saturday-photo.png")} alt="Workshop" className="image-wrap__img" />
                     </div>
                     <div className="day_row-content-text">
                       <div className="day_row-content-main">
@@ -176,7 +177,7 @@ export default function SchedulePage() {
 
               {/* Row 5: Open Class */}
               <div className="day_row-item">
-                <div className="day_row" data-image="/images/schedule/friday-photo.png">
+                <div className="day_row" data-image={getAssetPath("/images/schedule/friday-photo.png")}>
                   <div className="text-body-lg">18:00 | 19:30</div>
                   <div className="text-h4 u-text-center">Open Class</div>
                   <div className="text-body-lg u-text-right">Andrea Kwiatkowski</div>
@@ -184,7 +185,7 @@ export default function SchedulePage() {
                 <div className="day_row-content">
                   <div className="day_row-content-grid">
                     <div className="day_row-content-image image-wrap image-wrap--portrait-tall u-overflow-hidden">
-                      <img src="/images/schedule/friday-photo.png" alt="Open Class" className="image-wrap__img" />
+                      <img src={getAssetPath("/images/schedule/friday-photo.png")} alt="Open Class" className="image-wrap__img" />
                     </div>
                     <div className="day_row-content-text">
                       <div className="day_row-content-main">
@@ -205,7 +206,7 @@ export default function SchedulePage() {
 
               {/* Row 6: Concert */}
               <div className="day_row-item">
-                <div className="day_row" data-image="/images/schedule/saturday-photo.png">
+                <div className="day_row" data-image={getAssetPath("/images/schedule/saturday-photo.png")}>
                   <div className="text-body-lg">20:00 | 21:30</div>
                   <div className="text-h4 u-text-center">Concert</div>
                   <div className="text-body-lg u-text-right">Magali Lehners</div>
@@ -213,7 +214,7 @@ export default function SchedulePage() {
                 <div className="day_row-content">
                   <div className="day_row-content-grid">
                     <div className="day_row-content-image image-wrap image-wrap--portrait-tall u-overflow-hidden">
-                      <img src="/images/schedule/saturday-photo.png" alt="Concert" className="image-wrap__img" />
+                      <img src={getAssetPath("/images/schedule/saturday-photo.png")} alt="Concert" className="image-wrap__img" />
                     </div>
                     <div className="day_row-content-text">
                       <div className="day_row-content-main">
@@ -234,7 +235,7 @@ export default function SchedulePage() {
             </div>
 
             <div className="day_image image-wrap image-wrap--square u-overflow-hidden">
-              <img src="/images/schedule/friday-photo.png" alt="Day 1" className="image-wrap__img" />
+              <img src={getAssetPath("/images/schedule/friday-photo.png")} alt="Day 1" className="image-wrap__img" />
             </div>
 
             <div className="day_cta">
@@ -252,7 +253,7 @@ export default function SchedulePage() {
             <div className="day_table">
               {/* Row 1: Masterclass */}
               <div className="day_row-item">
-                <div className="day_row" data-image="/images/schedule/saturday-photo.png">
+                <div className="day_row" data-image={getAssetPath("/images/schedule/saturday-photo.png")}>
                   <div className="text-body-lg">10:00 | 11:30</div>
                   <div className="text-h4 u-text-center">Masterclass</div>
                   <div className="text-body-lg u-text-right">Rima Rabbath</div>
@@ -260,7 +261,7 @@ export default function SchedulePage() {
                 <div className="day_row-content">
                   <div className="day_row-content-grid">
                     <div className="day_row-content-image image-wrap image-wrap--portrait-tall u-overflow-hidden">
-                      <img src="/images/schedule/saturday-photo.png" alt="Masterclass" className="image-wrap__img" />
+                      <img src={getAssetPath("/images/schedule/saturday-photo.png")} alt="Masterclass" className="image-wrap__img" />
                     </div>
                     <div className="day_row-content-text">
                       <div className="day_row-content-main">
@@ -281,7 +282,7 @@ export default function SchedulePage() {
 
               {/* Row 2: Open Class */}
               <div className="day_row-item">
-                <div className="day_row" data-image="/images/schedule/friday-photo.png">
+                <div className="day_row" data-image={getAssetPath("/images/schedule/friday-photo.png")}>
                   <div className="text-body-lg">12:00 | 13:30</div>
                   <div className="text-h4 u-text-center">Open Class</div>
                   <div className="text-body-lg u-text-right">Dana Sertel</div>
@@ -289,7 +290,7 @@ export default function SchedulePage() {
                 <div className="day_row-content">
                   <div className="day_row-content-grid">
                     <div className="day_row-content-image image-wrap image-wrap--portrait-tall u-overflow-hidden">
-                      <img src="/images/schedule/friday-photo.png" alt="Open Class" className="image-wrap__img" />
+                      <img src={getAssetPath("/images/schedule/friday-photo.png")} alt="Open Class" className="image-wrap__img" />
                     </div>
                     <div className="day_row-content-text">
                       <div className="day_row-content-main">
@@ -310,7 +311,7 @@ export default function SchedulePage() {
 
               {/* Row 3: Lecture */}
               <div className="day_row-item">
-                <div className="day_row" data-image="/images/schedule/saturday-photo.png">
+                <div className="day_row" data-image={getAssetPath("/images/schedule/saturday-photo.png")}>
                   <div className="text-body-lg">14:00 | 15:30</div>
                   <div className="text-h4 u-text-center">Lecture</div>
                   <div className="text-body-lg u-text-right">Moritz Camilla</div>
@@ -318,7 +319,7 @@ export default function SchedulePage() {
                 <div className="day_row-content">
                   <div className="day_row-content-grid">
                     <div className="day_row-content-image image-wrap image-wrap--portrait-tall u-overflow-hidden">
-                      <img src="/images/schedule/saturday-photo.png" alt="Lecture" className="image-wrap__img" />
+                      <img src={getAssetPath("/images/schedule/saturday-photo.png")} alt="Lecture" className="image-wrap__img" />
                     </div>
                     <div className="day_row-content-text">
                       <div className="day_row-content-main">
@@ -339,7 +340,7 @@ export default function SchedulePage() {
 
               {/* Row 4: Workshop */}
               <div className="day_row-item">
-                <div className="day_row" data-image="/images/schedule/friday-photo.png">
+                <div className="day_row" data-image={getAssetPath("/images/schedule/friday-photo.png")}>
                   <div className="text-body-lg">16:00 | 17:30</div>
                   <div className="text-h4 u-text-center">Workshop</div>
                   <div className="text-body-lg u-text-right">Juan Sierra</div>
@@ -347,7 +348,7 @@ export default function SchedulePage() {
                 <div className="day_row-content">
                   <div className="day_row-content-grid">
                     <div className="day_row-content-image image-wrap image-wrap--portrait-tall u-overflow-hidden">
-                      <img src="/images/schedule/friday-photo.png" alt="Workshop" className="image-wrap__img" />
+                      <img src={getAssetPath("/images/schedule/friday-photo.png")} alt="Workshop" className="image-wrap__img" />
                     </div>
                     <div className="day_row-content-text">
                       <div className="day_row-content-main">
@@ -368,7 +369,7 @@ export default function SchedulePage() {
 
               {/* Row 5: Open Class */}
               <div className="day_row-item">
-                <div className="day_row" data-image="/images/schedule/saturday-photo.png">
+                <div className="day_row" data-image={getAssetPath("/images/schedule/saturday-photo.png")}>
                   <div className="text-body-lg">18:00 | 19:30</div>
                   <div className="text-h4 u-text-center">Open Class</div>
                   <div className="text-body-lg u-text-right">Magali Lehners</div>
@@ -376,7 +377,7 @@ export default function SchedulePage() {
                 <div className="day_row-content">
                   <div className="day_row-content-grid">
                     <div className="day_row-content-image image-wrap image-wrap--portrait-tall u-overflow-hidden">
-                      <img src="/images/schedule/saturday-photo.png" alt="Open Class" className="image-wrap__img" />
+                      <img src={getAssetPath("/images/schedule/saturday-photo.png")} alt="Open Class" className="image-wrap__img" />
                     </div>
                     <div className="day_row-content-text">
                       <div className="day_row-content-main">
@@ -397,7 +398,7 @@ export default function SchedulePage() {
 
               {/* Row 6: Concert */}
               <div className="day_row-item">
-                <div className="day_row" data-image="/images/schedule/friday-photo.png">
+                <div className="day_row" data-image={getAssetPath("/images/schedule/friday-photo.png")}>
                   <div className="text-body-lg">20:00 | 21:30</div>
                   <div className="text-h4 u-text-center">Concert</div>
                   <div className="text-body-lg u-text-right">Andrea Kwiatkowski</div>
@@ -405,7 +406,7 @@ export default function SchedulePage() {
                 <div className="day_row-content">
                   <div className="day_row-content-grid">
                     <div className="day_row-content-image image-wrap image-wrap--portrait-tall u-overflow-hidden">
-                      <img src="/images/schedule/friday-photo.png" alt="Concert" className="image-wrap__img" />
+                      <img src={getAssetPath("/images/schedule/friday-photo.png")} alt="Concert" className="image-wrap__img" />
                     </div>
                     <div className="day_row-content-text">
                       <div className="day_row-content-main">
@@ -426,7 +427,7 @@ export default function SchedulePage() {
             </div>
 
             <div className="day_image image-wrap image-wrap--square u-overflow-hidden">
-              <img src="/images/schedule/saturday-photo.png" alt="Day 2" className="image-wrap__img" />
+              <img src={getAssetPath("/images/schedule/saturday-photo.png")} alt="Day 2" className="image-wrap__img" />
             </div>
 
             <div className="day_cta">

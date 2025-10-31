@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import Navigation from '@/app/components/Navigation';
 import FullscreenMenu from '@/app/components/FullscreenMenu';
 import Footer from '@/app/components/Footer';
+import { getAssetPath } from '@/app/utils/paths';
 
 export default function ArchivePage() {
   useEffect(() => {
@@ -94,12 +95,12 @@ export default function ArchivePage() {
 
           {/* Center Image */}
           <div className="hero-collage_image-wrap">
-            <img src="/images/archive/eebc30323727acbd7be2d70049cc308de22de498.png" alt="Archive Collage" className="hero-collage_image" />
+            <img src={getAssetPath("/images/archive/eebc30323727acbd7be2d70049cc308de22de498.png")} alt="Archive Collage" className="hero-collage_image" />
           </div>
 
           {/* Logo Branding */}
           <div className="hero-collage_logo-wrap">
-            <img src="/images/archive/1dbfeee3dc2337b68e1b97cfac47ef244e8bf49d.svg" alt="Jivamukti Yoga The Tribe Gathering" className="hero-collage_logo" />
+            <img src={getAssetPath("/images/archive/1dbfeee3dc2337b68e1b97cfac47ef244e8bf49d.svg")} alt="Jivamukti Yoga The Tribe Gathering" className="hero-collage_logo" />
           </div>
 
           {/* Bottom Title */}
@@ -123,9 +124,9 @@ export default function ArchivePage() {
 
           {/* Right Bottom: Featured Video */}
           <div className="video-hero_video-wrap">
-            <img src="/images/archive/7b358b7b8f1b535e9d59e771d082b75ed3e8ecf0.png" alt="Featured Video" className="image" />
+            <img src={getAssetPath("/images/archive/7b358b7b8f1b535e9d59e771d082b75ed3e8ecf0.png")} alt="Featured Video" className="image" />
             <div className="video-hero_play-button">
-              <img src="/images/archive/9ba6c4be229aa0df664a9d5ea7e2c590a0a6db3e.svg" alt="Play" style={{ width: '64px', height: '64px' }} />
+              <img src={getAssetPath("/images/archive/9ba6c4be229aa0df664a9d5ea7e2c590a0a6db3e.svg")} alt="Play" style={{ width: '64px', height: '64px' }} />
             </div>
           </div>
         </div>
@@ -155,9 +156,9 @@ export default function ArchivePage() {
           {/* Video Item 1 - Paris */}
           <div className="video-item_wrap" data-city="paris">
             <div className="video-item_thumbnail">
-              <img src="/images/archive/634c75fd78b3aa6acf4aee9ff3e8bede6f224649.png" alt="Paris Tribe Gathering" className="image" />
+              <img src={getAssetPath("/images/archive/634c75fd78b3aa6acf4aee9ff3e8bede6f224649.png")} alt="Paris Tribe Gathering" className="image" />
               <div className="video-item_play-button">
-                <img src="/images/archive/9ba6c4be229aa0df664a9d5ea7e2c590a0a6db3e.svg" alt="Play" style={{ width: '48px', height: '48px' }} />
+                <img src={getAssetPath("/images/archive/9ba6c4be229aa0df664a9d5ea7e2c590a0a6db3e.svg")} alt="Play" style={{ width: '48px', height: '48px' }} />
               </div>
             </div>
           </div>
@@ -165,9 +166,9 @@ export default function ArchivePage() {
           {/* Video Item 2 - Barcelona */}
           <div className="video-item_wrap" data-city="barcelona">
             <div className="video-item_thumbnail">
-              <img src="/images/archive/db9dbf040566f8cba1a77b8f33835e4b411baaa1.png" alt="Barcelona Tribe Gathering" className="image" />
+              <img src={getAssetPath("/images/archive/db9dbf040566f8cba1a77b8f33835e4b411baaa1.png")} alt="Barcelona Tribe Gathering" className="image" />
               <div className="video-item_play-button">
-                <img src="/images/archive/9ba6c4be229aa0df664a9d5ea7e2c590a0a6db3e.svg" alt="Play" style={{ width: '48px', height: '48px' }} />
+                <img src={getAssetPath("/images/archive/9ba6c4be229aa0df664a9d5ea7e2c590a0a6db3e.svg")} alt="Play" style={{ width: '48px', height: '48px' }} />
               </div>
             </div>
           </div>
@@ -175,9 +176,9 @@ export default function ArchivePage() {
           {/* Video Item 3 - Berlin */}
           <div className="video-item_wrap" data-city="berlin">
             <div className="video-item_thumbnail">
-              <img src="/images/archive/7daed26c9efac9c483a5692dcacb5545bffe955f.png" alt="Berlin Tribe Gathering" className="image" />
+              <img src={getAssetPath("/images/archive/7daed26c9efac9c483a5692dcacb5545bffe955f.png")} alt="Berlin Tribe Gathering" className="image" />
               <div className="video-item_play-button">
-                <img src="/images/archive/9ba6c4be229aa0df664a9d5ea7e2c590a0a6db3e.svg" alt="Play" style={{ width: '48px', height: '48px' }} />
+                <img src={getAssetPath("/images/archive/9ba6c4be229aa0df664a9d5ea7e2c590a0a6db3e.svg")} alt="Play" style={{ width: '48px', height: '48px' }} />
               </div>
             </div>
           </div>
@@ -185,9 +186,9 @@ export default function ArchivePage() {
           {/* Video Item 4 - Munich */}
           <div className="video-item_wrap" data-city="munich">
             <div className="video-item_thumbnail">
-              <img src="/images/archive/96713e170504cc80e94ca625c77c15f088c6303a.png" alt="Munich Tribe Gathering" className="image" />
+              <img src={getAssetPath("/images/archive/96713e170504cc80e94ca625c77c15f088c6303a.png")} alt="Munich Tribe Gathering" className="image" />
               <div className="video-item_play-button">
-                <img src="/images/archive/9ba6c4be229aa0df664a9d5ea7e2c590a0a6db3e.svg" alt="Play" style={{ width: '48px', height: '48px' }} />
+                <img src={getAssetPath("/images/archive/9ba6c4be229aa0df664a9d5ea7e2c590a0a6db3e.svg")} alt="Play" style={{ width: '48px', height: '48px' }} />
               </div>
             </div>
           </div>
@@ -195,9 +196,9 @@ export default function ArchivePage() {
           {/* Video Item 5 - New York */}
           <div className="video-item_wrap" data-city="newyork">
             <div className="video-item_thumbnail">
-              <img src="/images/archive/514f1859f38c01030ff1fc01dca113c16df7f313.png" alt="New York Tribe Gathering" className="image" />
+              <img src={getAssetPath("/images/archive/514f1859f38c01030ff1fc01dca113c16df7f313.png")} alt="New York Tribe Gathering" className="image" />
               <div className="video-item_play-button">
-                <img src="/images/archive/9ba6c4be229aa0df664a9d5ea7e2c590a0a6db3e.svg" alt="Play" style={{ width: '48px', height: '48px' }} />
+                <img src={getAssetPath("/images/archive/9ba6c4be229aa0df664a9d5ea7e2c590a0a6db3e.svg")} alt="Play" style={{ width: '48px', height: '48px' }} />
               </div>
             </div>
           </div>
@@ -205,9 +206,9 @@ export default function ArchivePage() {
           {/* Video Item 6 - London */}
           <div className="video-item_wrap" data-city="london">
             <div className="video-item_thumbnail">
-              <img src="/images/archive/c234703ee3bfb11a60390c0d6794ddcdabdae215.png" alt="London Tribe Gathering" className="image" />
+              <img src={getAssetPath("/images/archive/c234703ee3bfb11a60390c0d6794ddcdabdae215.png")} alt="London Tribe Gathering" className="image" />
               <div className="video-item_play-button">
-                <img src="/images/archive/9ba6c4be229aa0df664a9d5ea7e2c590a0a6db3e.svg" alt="Play" style={{ width: '48px', height: '48px' }} />
+                <img src={getAssetPath("/images/archive/9ba6c4be229aa0df664a9d5ea7e2c590a0a6db3e.svg")} alt="Play" style={{ width: '48px', height: '48px' }} />
               </div>
             </div>
           </div>
@@ -220,7 +221,7 @@ export default function ArchivePage() {
             <div className="video-detail_video">
               <img id="detailVideoImage" src="" alt="Video" className="image" />
               <div className="video-item_play-button">
-                <img src="/images/archive/9ba6c4be229aa0df664a9d5ea7e2c590a0a6db3e.svg" alt="Play" style={{ width: '64px', height: '64px' }} />
+                <img src={getAssetPath("/images/archive/9ba6c4be229aa0df664a9d5ea7e2c590a0a6db3e.svg")} alt="Play" style={{ width: '64px', height: '64px' }} />
               </div>
             </div>
             <div className="video-detail_info">
