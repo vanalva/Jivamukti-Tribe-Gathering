@@ -1650,10 +1650,10 @@ strong {
   padding: 0 var(--site--margin);
   padding-top: calc(var(--_spacing---space--4) * 2 + var(--_spacing---space--6));
   display: grid;
-  grid-template-columns: auto 1fr auto;
-  grid-template-rows: auto 1fr;
-  gap: var(--_spacing---space--3);
-  align-items: start;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: var(--_spacing---space--6);
+  align-items: center;
   position: relative;
   min-height: 100vh;
   max-height: 100vh;
@@ -1662,34 +1662,19 @@ strong {
 
 /* Top Title */
 .hero-collage_title-top {
-  grid-column: 1;
-  grid-row: 1;
-  font-family: var(--_typography---font--primary-family);
-  font-size: clamp(4rem, 12vw, 15.18rem);
-  font-weight: var(--_typography---font--primary-extrabold);
-  line-height: var(--_typography---line-height--small);
-  letter-spacing: var(--_typography---letter-spacing--tight);
-  text-transform: uppercase;
-  color: var(--swatch--dark-900);
-  margin: 0;
-  align-self: start;
-  max-width: 100%;
-  overflow-wrap: break-word;
-  word-break: keep-all;
-  box-sizing: border-box;
+  display: none;
 }
 
 /* Center Image */
 .hero-collage_image-wrap {
-  grid-column: 2;
+  grid-column: 1;
   grid-row: 1;
   width: 100%;
-  max-width: 900px;
-  justify-self: center;
-  align-self: start;
+  height: 100%;
   max-height: calc(100vh - (var(--_spacing---space--4) * 2 + var(--_spacing---space--6)));
   display: flex;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
 }
 
@@ -1705,9 +1690,9 @@ strong {
 .hero-collage_image {
   width: 100%;
   height: auto;
-  max-height: none;
+  max-height: calc(100vh - (var(--_spacing---space--4) * 2 + var(--_spacing---space--6)));
   display: block;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
 }
 
@@ -1724,20 +1709,22 @@ strong {
 
 /* Logo Branding */
 .hero-collage_logo-wrap {
-  grid-column: 3;
+  grid-column: 2;
   grid-row: 1;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: flex-start;
   justify-content: flex-start;
+  gap: var(--_spacing---space--4);
+  z-index: 2;
 }
 
 /* Logo styling removed - now handled by image-wrap system */
 
 /* Bottom Title */
 .hero-collage_title-bottom {
-  grid-column: 1 / -1;
-  grid-row: 2;
+  grid-column: 2;
+  grid-row: 1;
   font-family: var(--_typography---font--primary-family);
   font-size: clamp(4rem, 12vw, 15.18rem);
   font-weight: var(--_typography---font--primary-extrabold);
@@ -1746,14 +1733,12 @@ strong {
   text-transform: uppercase;
   color: var(--swatch--dark-900);
   margin: 0;
-  text-align: center;
-  margin-top: calc(-1 * var(--_spacing---space--6));
+  text-align: left;
   max-width: 100%;
   overflow-wrap: break-word;
   word-break: keep-all;
   box-sizing: border-box;
-  align-self: end;
-  padding-bottom: var(--_spacing---section-space--main);
+  z-index: 2;
 }
 
 /* Responsive - Mobile/Tablet */
@@ -1799,450 +1784,8 @@ strong {
   }
 }
 
-/* ============================================
-   HERO COLLAGE - ABOUT VARIANT
-   Layout: Logo top-left, Image right, Title bottom-left
-   ============================================ */
 
-.hero-collage_content--about {
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;
-  min-height: 100vh;
-  max-height: 100vh;
-  overflow: hidden;
-  gap: var(--_spacing---space--6);
-  align-items: center;
-}
-
-/* Logo hidden for cleaner layout */
-.hero-collage_content--about .hero-collage_logo-wrap {
-  display: none;
-}
-
-/* Image positioned on right, can overlap title slightly */
-.hero-collage_content--about .hero-collage_image-wrap {
-  grid-column: 2;
-  grid-row: 1;
-  align-self: start;
-  justify-self: stretch;
-  max-width: 100%;
-  width: 100%;
-  height: auto;
-  max-height: calc(100vh - (var(--_spacing---space--4) * 2 + var(--_spacing---space--6)));
-  min-height: 0;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  padding-top: 0;
-  margin-top: 0;
-  box-sizing: border-box;
-  margin-left: calc(-1 * var(--_spacing---space--8));
-  z-index: 1;
-}
-
-/* Tall screens and mobile: maintain aspect ratio */
-@media (min-height: 800px), (max-width: 991px) {
-  .hero-collage_content--about .hero-collage_image-wrap {
-    align-items: center;
-    min-height: 600px;
-  }
-}
-
-.hero-collage_content--about .hero-collage_image {
-  width: 100%;
-  height: auto;
-  max-height: calc(100vh - (var(--_spacing---space--4) * 2 + var(--_spacing---space--6)));
-  object-fit: cover;
-  object-position: center;
-}
-
-/* Tall screens and mobile: maintain aspect ratio */
-@media (min-height: 800px), (max-width: 991px) {
-  .hero-collage_content--about .hero-collage_image {
-    height: auto;
-    max-height: calc(100vh - (var(--_spacing---space--4) * 2 + var(--_spacing---space--6)));
-    min-height: 500px;
-    aspect-ratio: 3 / 4;
-  }
-}
-
-/* Title positioned on left, vertically centered */
-.hero-collage_content--about .hero-collage_title-bottom {
-  grid-column: 1;
-  grid-row: 1;
-  text-align: left;
-  align-self: center;
-  justify-self: start;
-  margin: 0;
-  padding: 0;
-  font-size: clamp(4rem, 10vw, 12.5rem);
-  line-height: 0.8;
-  z-index: 2;
-  position: relative;
-  max-width: 100%;
-  overflow-wrap: break-word;
-  word-break: keep-all;
-  box-sizing: border-box;
-}
-
-/* Hide the top title in about variant */
-.hero-collage_content--about .hero-collage_title-top {
-  display: none;
-}
-
-/* Responsive - Mobile/Tablet */
-@media (max-width: 991px) {
-  .hero-collage_content--about {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto;
-    min-height: auto;
-    gap: var(--_spacing---space--4);
-  }
-
-  .hero-collage_content--about .hero-collage_logo-wrap {
-    grid-column: 1;
-    grid-row: 1;
-    max-width: 100%;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .hero-collage_content--about .hero-collage_image-wrap {
-    grid-column: 1;
-    grid-row: 2;
-    max-width: 100%;
-  }
-
-  .hero-collage_content--about .hero-collage_image {
-    max-height: none;
-    aspect-ratio: 3 / 4;
-    min-height: 400px;
-  }
-
-  .hero-collage_content--about .hero-collage_title-bottom {
-    grid-column: 1;
-    grid-row: 3;
-    text-align: center;
-    font-size: clamp(3rem, 10vw, 8rem);
-    max-width: 100%;
-    overflow-wrap: break-word;
-    word-break: break-word;
-  }
-}
-
-/* ============================================
-   HERO COLLAGE - SCHEDULE VARIANT
-   Layout: Massive title at bottom, image behind it, logo at top-right
-   ============================================ */
-
-.hero-collage_content--schedule {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;
-  min-height: 100vh;
-  max-height: 100vh;
-  gap: var(--_spacing---space--6);
-  align-items: center;
-  position: relative;
-  overflow: hidden;
-}
-
-/* Logo hidden for schedule/booking layout */
-.hero-collage_content--schedule .hero-collage_logo-wrap {
-  display: none;
-}
-
-/* Image on left side, can go under title a bit */
-.hero-collage_content--schedule .hero-collage_image-wrap {
-  grid-column: 1;
-  grid-row: 1;
-  align-self: start;
-  justify-self: stretch;
-  z-index: 1;
-  width: 100%;
-  height: auto;
-  max-height: calc(100vh - (var(--_spacing---space--4) * 2 + var(--_spacing---space--6)));
-  min-height: 0;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  padding-top: 0;
-  margin-top: 0;
-  box-sizing: border-box;
-  margin-right: calc(-1 * var(--_spacing---space--8));
-}
-
-.hero-collage_content--schedule .hero-collage_image {
-  width: 100%;
-  height: auto;
-  max-height: calc(100vh - (var(--_spacing---space--4) * 2 + var(--_spacing---space--6)));
-  object-fit: cover;
-  object-position: center;
-}
-
-/* Tall screens and mobile: maintain aspect ratio */
-@media (min-height: 800px), (max-width: 991px) {
-  .hero-collage_content--schedule .hero-collage_image {
-    height: auto;
-    max-height: calc(100vh - (var(--_spacing---space--4) * 2 + var(--_spacing---space--6)));
-    min-height: 500px;
-    aspect-ratio: 3 / 4;
-  }
-}
-
-/* Title on right side, vertically centered */
-.hero-collage_content--schedule .hero-collage_title-bottom {
-  grid-column: 2;
-  grid-row: 1;
-  align-self: center;
-  justify-self: start;
-  text-align: left;
-  margin: 0;
-  padding: 0;
-  font-size: clamp(6rem, 15vw, 20rem);
-  line-height: 0.8;
-  z-index: 2;
-  max-width: 100%;
-  overflow-wrap: break-word;
-  word-break: keep-all;
-  box-sizing: border-box;
-}
-
-/* Hide the top title in schedule variant */
-.hero-collage_content--schedule .hero-collage_title-top {
-  display: none;
-}
-
-/* Responsive - Mobile/Tablet */
-@media (max-width: 991px) {
-  .hero-collage_content--schedule {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto;
-    min-height: auto;
-    gap: var(--_spacing---space--4);
-  }
-
-  .hero-collage_content--schedule .hero-collage_image-wrap {
-    grid-column: 1;
-    grid-row: 1;
-    max-width: 100%;
-  }
-
-  .hero-collage_content--schedule .hero-collage_image {
-    max-width: 100%;
-    aspect-ratio: 3 / 4;
-    min-height: 400px;
-  }
-
-  .hero-collage_content--schedule .hero-collage_logo-wrap {
-    grid-column: 1;
-    grid-row: 2;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .hero-collage_content--schedule .hero-collage_title-bottom {
-    grid-column: 1;
-    grid-row: 3;
-    text-align: center;
-    font-size: clamp(3rem, 10vw, 8rem);
-    max-width: 100%;
-    overflow-wrap: break-word;
-    word-break: break-word;
-  }
-}
-
-/* ============================================
-   HERO COLLAGE - ABOUT ROME VARIANT
-   Layout: "ABOUT" text overlapping with image center-right, script logo left-center, "ROME" text at bottom
-   ============================================ */
-
-.hero-collage_content--about-rome {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;
-  min-height: 100vh;
-  max-height: 100vh;
-  gap: var(--_spacing---space--6);
-  align-items: center;
-  position: relative;
-  overflow: hidden;
-}
-
-/* Left column: Title container with stacked titles */
-.hero-collage_content--about-rome {
-  grid-template-rows: 1fr;
-}
-
-.hero-collage_content--about-rome::before {
-  content: '';
-  grid-column: 1;
-  grid-row: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-}
-
-/* "ABOUT" text at top */
-.hero-collage_content--about-rome .hero-collage_title-top {
-  grid-column: 1;
-  grid-row: 1;
-  align-self: center;
-  justify-self: start;
-  margin: 0;
-  padding: 0;
-  z-index: 2;
-  font-size: clamp(5rem, 14vw, 17rem);
-  line-height: 0.8;
-  max-width: 100%;
-  overflow-wrap: break-word;
-  word-break: keep-all;
-  box-sizing: border-box;
-}
-
-/* "ROME" text below "ABOUT" - positioned relative to title-top */
-.hero-collage_content--about-rome .hero-collage_title-bottom {
-  grid-column: 1;
-  grid-row: 1;
-  align-self: center;
-  justify-self: start;
-  margin: 0;
-  padding: 0;
-  margin-top: calc(clamp(5rem, 14vw, 17rem) * 0.8 + var(--_spacing---space--4));
-  z-index: 2;
-  font-size: clamp(5rem, 14vw, 17rem);
-  line-height: 0.8;
-  max-width: 100%;
-  overflow-wrap: break-word;
-  word-break: keep-all;
-  box-sizing: border-box;
-}
-
-/* Image on right side, vertically centered */
-.hero-collage_content--about-rome .hero-collage_image-wrap {
-  grid-column: 2;
-  grid-row: 1;
-  align-self: start;
-  justify-self: stretch;
-  margin: 0;
-  z-index: 1;
-  width: 100%;
-  height: auto;
-  max-height: calc(100vh - (var(--_spacing---space--4) * 2 + var(--_spacing---space--6)));
-  min-height: 0;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  padding-top: 0;
-  margin-top: 0;
-  box-sizing: border-box;
-}
-
-/* Tall screens and mobile: allow taller images */
-@media (min-height: 800px), (max-width: 991px) {
-  .hero-collage_content--about-rome .hero-collage_image-wrap {
-    align-items: stretch;
-    min-height: 600px;
-    max-width: 100%;
-  }
-}
-
-.hero-collage_content--about-rome .hero-collage_image {
-  width: 100%;
-  height: auto;
-  max-height: calc(100vh - (var(--_spacing---space--4) * 2 + var(--_spacing---space--6)));
-  object-fit: cover;
-  object-position: center;
-}
-
-/* Tall screens and mobile: maintain aspect ratio */
-@media (min-height: 800px), (max-width: 991px) {
-  .hero-collage_content--about-rome .hero-collage_image {
-    height: auto;
-    max-height: calc(100vh - (var(--_spacing---space--4) * 2 + var(--_spacing---space--6)));
-    min-height: 500px;
-    aspect-ratio: 3 / 4;
-  }
-}
-
-/* Script logo hidden by default for about-rome layout */
-.hero-collage_content--about-rome .hero-collage_logo-wrap {
-  display: none;
-}
-
-/* Responsive - Mobile/Tablet */
-@media (max-width: 991px) {
-  .hero-collage_content--about-rome {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto auto;
-    min-height: auto;
-    gap: var(--_spacing---space--4);
-  }
-
-  .hero-collage_content--about-rome .hero-collage_title-top {
-    grid-column: 1;
-    grid-row: 1;
-    text-align: center;
-    justify-self: center;
-    margin-left: 0;
-    margin-top: 0;
-    font-size: clamp(3rem, 10vw, 8rem);
-    max-width: 100%;
-    overflow-wrap: break-word;
-    word-break: break-word;
-  }
-
-  .hero-collage_content--about-rome .hero-collage_image-wrap {
-    grid-column: 1;
-    grid-row: 2;
-    max-width: 100%;
-    justify-self: center;
-    margin: 0;
-  }
-
-  .hero-collage_content--about-rome .hero-collage_image {
-    max-height: none;
-    aspect-ratio: 3 / 4;
-    min-height: 400px;
-  }
-
-  .hero-collage_content--about-rome .hero-collage_logo-wrap {
-    grid-column: 1;
-    grid-row: 3;
-    justify-self: center;
-    margin: 0;
-  }
-
-  .hero-collage_content--about-rome .hero-collage_title-bottom {
-    grid-column: 1;
-    grid-row: 4;
-    text-align: center;
-    justify-self: center;
-    margin: 0;
-    font-size: clamp(3rem, 10vw, 8rem);
-    max-width: 100%;
-    overflow-wrap: break-word;
-    word-break: break-word;
-  }
-}
-
-/* ============================================
-   HERO COLLAGE - BOOKING VARIANT
-   Layout: Image left, centered title, logo bottom-right
-   ============================================ */
-
-/* Image on left side, behind text */
-
-/* Title centered and large, on top of image */
-
-/* Logo at bottom right */
-
-/* Logo sizing now handled by image-wrap system with clamp() */
-
-/* Hide the top title in booking variant */
-
-/* Responsive - Mobile/Tablet */
+/* Variants removed - using unified base layout */
 
 /* ============================================
    ARCHIVE PAGE CUSTOM CLASSES
