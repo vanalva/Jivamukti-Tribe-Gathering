@@ -1803,76 +1803,76 @@ strong {
 
 .hero-collage_content--about {
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: 1fr;
   min-height: 100vh;
   max-height: 100vh;
   overflow: hidden;
   gap: var(--_spacing---space--6);
-  align-items: stretch;
+  align-items: center;
 }
 
-/* Logo positioned above title */
+/* Logo hidden for cleaner layout */
 .hero-collage_content--about .hero-collage_logo-wrap {
-  grid-column: 1;
-  grid-row: 1;
-  align-items: flex-end;
-  justify-content: center;
-  display: flex;
-  padding-bottom: var(--_spacing---space--4);
+  display: none;
 }
 
-/* Logo sizing now handled by image-wrap system with clamp() */
-
-/* Image positioned at right, spanning both rows */
+/* Image positioned on right, can overlap title slightly */
 .hero-collage_content--about .hero-collage_image-wrap {
   grid-column: 2;
-  grid-row: 1 / -1;
-  justify-self: end;
+  grid-row: 1;
   align-self: center;
+  justify-self: stretch;
   max-width: 100%;
   width: 100%;
+  height: 100%;
+  max-height: calc(100vh - var(--navbar-height, 100px));
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-top: calc((var(--_spacing---space--4) * 2 + var(--_spacing---space--6)) / 2);
+  box-sizing: border-box;
+  margin-left: calc(-1 * var(--_spacing---space--8));
+  z-index: 1;
 }
 
-/* Tall screens and mobile: allow taller images */
+/* Tall screens and mobile: maintain aspect ratio */
 @media (min-height: 800px), (max-width: 991px) {
   .hero-collage_content--about .hero-collage_image-wrap {
-    align-self: stretch;
-    align-items: stretch;
+    align-items: center;
     min-height: 600px;
   }
 }
 
 .hero-collage_content--about .hero-collage_image {
   width: 100%;
-  height: auto;
-  max-height: 70vh;
+  height: 100%;
+  max-height: calc(100vh - var(--navbar-height, 100px));
   object-fit: cover;
   object-position: center;
 }
 
-/* Tall screens and mobile: force portrait orientation and vertical growth */
+/* Tall screens and mobile: maintain aspect ratio */
 @media (min-height: 800px), (max-width: 991px) {
   .hero-collage_content--about .hero-collage_image {
     height: auto;
-    max-height: 80vh;
+    max-height: calc(100vh - var(--navbar-height, 100px));
     min-height: 500px;
     aspect-ratio: 3 / 4;
   }
 }
 
-/* Title positioned at bottom-left */
+/* Title positioned on left, vertically centered */
 .hero-collage_content--about .hero-collage_title-bottom {
   grid-column: 1;
-  grid-row: 2;
+  grid-row: 1;
   text-align: left;
-  align-self: end;
-  margin-top: 0;
+  align-self: center;
+  justify-self: start;
+  margin: 0;
+  padding: 0;
   font-size: clamp(4rem, 10vw, 12.5rem);
   line-height: 0.8;
-  z-index: 1;
+  z-index: 2;
   position: relative;
   max-width: 100%;
   overflow-wrap: break-word;
