@@ -5,6 +5,7 @@ import Script from 'next/script'
 import { useEffect } from 'react'
 import Link from 'next/link'
 import { useScheduleInteractions } from './hooks/useScheduleInteractions'
+import { getAssetPath } from './utils/paths'
 
 export default function Home() {
   // Use the reusable schedule interactions hook
@@ -125,30 +126,30 @@ export default function Home() {
     <>
       <Script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" strategy="lazyOnload" />
       <Script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" strategy="lazyOnload" />
-      <Script src="/js/gsap/config.js" strategy="lazyOnload" />
-      <Script src="/js/gsap/menu.js" strategy="lazyOnload" />
+      <Script src={getAssetPath("/js/gsap/config.js")} strategy="lazyOnload" />
+      <Script src={getAssetPath("/js/gsap/menu.js")} strategy="lazyOnload" />
     </>
   )
 
   return (
-    <PageTemplate logoPath="/images/tribe-isotype.svg" additionalScripts={additionalScripts}>
+    <PageTemplate logoPath={getAssetPath("/images/tribe-isotype.svg")} additionalScripts={additionalScripts}>
       {/* Hero Section (Two-Slot Pattern) */}
       <section className="hero_wrap u-section u-position-relative">
         <div className="hero_background u-cover-absolute u-zindex-negative"></div>
         <div className="hero_content u-position-relative">
           {/* Main Centered Hero Logo */}
           <div className="hero_logo_wrap image-wrap image-wrap--freeform u-position-absolute u-overflow-hidden">
-            <img src="/images/tribe-full-logotype.svg" alt="Rome Tribe Gathering main logo" className="image-wrap__img image-wrap__img--contain" />
+            <img src={getAssetPath("/images/tribe-full-logotype.svg")} alt="Rome Tribe Gathering main logo" className="image-wrap__img image-wrap__img--contain" />
           </div>
 
           {/* Floating Image - Top Left */}
           <div className="hero_floating_image hero_floating_image-topleft image-wrap image-wrap--freeform u-position-absolute u-overflow-hidden u-breakout-left">
-            <img src="/images/home/2da02ff94df3cd60517f142332eb30b6507f41a7.png" alt="Decorative image" className="image-wrap__img" />
+            <img src={getAssetPath("/images/home/2da02ff94df3cd60517f142332eb30b6507f41a7.png")} alt="Decorative image" className="image-wrap__img" />
           </div>
 
           {/* Floating Image - Bottom Right */}
           <div className="hero_floating_image hero_floating_image-bottomright image-wrap image-wrap--freeform u-position-absolute u-overflow-hidden u-breakout-right">
-            <img src="/images/home/a0ae6d2cf367288b9d878ec5a791313fc7726b61.png" alt="Decorative image" className="image-wrap__img" />
+            <img src={getAssetPath("/images/home/a0ae6d2cf367288b9d878ec5a791313fc7726b61.png")} alt="Decorative image" className="image-wrap__img" />
           </div>
         </div>
       </section>
@@ -161,7 +162,7 @@ export default function Home() {
           <div className="home-about_hero-grid">
             {/* Left: Full-bleed Hero Image */}
             <div className="home-about_hero-image-wrap u-breakout-left">
-              <img src="/images/home/06ea1ba9c542368e72407fdb4c53018a67ea6dcb.png" alt="Yoga Festival" className="home-about_hero-image" />
+              <img src={getAssetPath("/images/home/06ea1ba9c542368e72407fdb4c53018a67ea6dcb.png")} alt="Yoga Festival" className="home-about_hero-image" />
             </div>
 
             {/* Right: Title Stack */}
@@ -204,7 +205,7 @@ export default function Home() {
             <div className="day_table">
               {/* Row 1: Masterclass */}
               <div className="day_row-item">
-                <div className="day_row" data-image="/images/home/b2a1fb87cf82c5e5870cd73a5814f50c99da688d.png">
+                <div className="day_row" data-image={getAssetPath("/images/home/b2a1fb87cf82c5e5870cd73a5814f50c99da688d.png")}>
                   <div className="text-body-lg">10:00 | 11:30</div>
                   <div className="text-h4 u-text-center">Masterclass</div>
                   <div className="text-body-lg u-text-right">Moritz Camilla</div>
@@ -212,7 +213,7 @@ export default function Home() {
                 <div className="day_row-content">
                   <div className="day_row-content-grid">
                     <div className="day_row-content-image image-wrap image-wrap--portrait-tall u-overflow-hidden">
-                      <img src="/images/home/b2a1fb87cf82c5e5870cd73a5814f50c99da688d.png" alt="Masterclass" className="image-wrap__img" />
+                      <img src={getAssetPath("/images/home/b2a1fb87cf82c5e5870cd73a5814f50c99da688d.png")} alt="Masterclass" className="image-wrap__img" />
                     </div>
                     <div className="day_row-content-text">
                       <div className="day_row-content-main">
@@ -233,7 +234,7 @@ export default function Home() {
 
               {/* Row 2: Open Class */}
               <div className="day_row-item">
-                <div className="day_row" data-image="/images/home/06ea1ba9c542368e72407fdb4c53018a67ea6dcb.png">
+                <div className="day_row" data-image={getAssetPath("/images/home/06ea1ba9c542368e72407fdb4c53018a67ea6dcb.png")}>
                   <div className="text-body-lg">12:00 | 13:30</div>
                   <div className="text-h4 u-text-center">Open Class</div>
                   <div className="text-body-lg u-text-right">Moritz Camilla</div>
@@ -241,7 +242,7 @@ export default function Home() {
                 <div className="day_row-content">
                   <div className="day_row-content-grid">
                     <div className="day_row-content-image image-wrap image-wrap--portrait-tall u-overflow-hidden">
-                      <img src="/images/home/06ea1ba9c542368e72407fdb4c53018a67ea6dcb.png" alt="Open Class" className="image-wrap__img" />
+                      <img src={getAssetPath("/images/home/06ea1ba9c542368e72407fdb4c53018a67ea6dcb.png")} alt="Open Class" className="image-wrap__img" />
                     </div>
                     <div className="day_row-content-text">
                       <div className="day_row-content-main">
@@ -262,7 +263,7 @@ export default function Home() {
 
               {/* Row 3: Lecture */}
               <div className="day_row-item">
-                <div className="day_row" data-image="/images/home/7daed26c9efac9c483a5692dcacb5545bffe955f.png">
+                <div className="day_row" data-image={getAssetPath("/images/home/7daed26c9efac9c483a5692dcacb5545bffe955f.png")}>
                   <div className="text-body-lg">14:00 | 15:30</div>
                   <div className="text-h4 u-text-center">Lecture</div>
                   <div className="text-body-lg u-text-right">Moritz Camilla</div>
@@ -270,7 +271,7 @@ export default function Home() {
                 <div className="day_row-content">
                   <div className="day_row-content-grid">
                     <div className="day_row-content-image image-wrap image-wrap--portrait-tall u-overflow-hidden">
-                      <img src="/images/home/7daed26c9efac9c483a5692dcacb5545bffe955f.png" alt="Lecture" className="image-wrap__img" />
+                      <img src={getAssetPath("/images/home/7daed26c9efac9c483a5692dcacb5545bffe955f.png")} alt="Lecture" className="image-wrap__img" />
                     </div>
                     <div className="day_row-content-text">
                       <div className="day_row-content-main">
@@ -291,7 +292,7 @@ export default function Home() {
 
               {/* Row 4: Workshop */}
               <div className="day_row-item">
-                <div className="day_row" data-image="/images/home/2da02ff94df3cd60517f142332eb30b6507f41a7.png">
+                <div className="day_row" data-image={getAssetPath("/images/home/2da02ff94df3cd60517f142332eb30b6507f41a7.png")}>
                   <div className="text-body-lg">16:00 | 17:30</div>
                   <div className="text-h4 u-text-center">Workshop</div>
                   <div className="text-body-lg u-text-right">Moritz Camilla</div>
@@ -299,7 +300,7 @@ export default function Home() {
                 <div className="day_row-content">
                   <div className="day_row-content-grid">
                     <div className="day_row-content-image image-wrap image-wrap--portrait-tall u-overflow-hidden">
-                      <img src="/images/home/2da02ff94df3cd60517f142332eb30b6507f41a7.png" alt="Workshop" className="image-wrap__img" />
+                      <img src={getAssetPath("/images/home/2da02ff94df3cd60517f142332eb30b6507f41a7.png")} alt="Workshop" className="image-wrap__img" />
                     </div>
                     <div className="day_row-content-text">
                       <div className="day_row-content-main">
@@ -320,7 +321,7 @@ export default function Home() {
 
               {/* Row 5: Open Class */}
               <div className="day_row-item">
-                <div className="day_row" data-image="/images/home/a0ae6d2cf367288b9d878ec5a791313fc7726b61.png">
+                <div className="day_row" data-image={getAssetPath("/images/home/a0ae6d2cf367288b9d878ec5a791313fc7726b61.png")}>
                   <div className="text-body-lg">18:00 | 19:30</div>
                   <div className="text-h4 u-text-center">Open Class</div>
                   <div className="text-body-lg u-text-right">Moritz Camilla</div>
@@ -328,7 +329,7 @@ export default function Home() {
                 <div className="day_row-content">
                   <div className="day_row-content-grid">
                     <div className="day_row-content-image image-wrap image-wrap--portrait-tall u-overflow-hidden">
-                      <img src="/images/home/a0ae6d2cf367288b9d878ec5a791313fc7726b61.png" alt="Open Class" className="image-wrap__img" />
+                      <img src={getAssetPath("/images/home/a0ae6d2cf367288b9d878ec5a791313fc7726b61.png")} alt="Open Class" className="image-wrap__img" />
                     </div>
                     <div className="day_row-content-text">
                       <div className="day_row-content-main">
@@ -349,7 +350,7 @@ export default function Home() {
 
               {/* Row 6: Concert */}
               <div className="day_row-item">
-                <div className="day_row" data-image="/images/home/7722cfd11034b26e6d4969dcb62baf1375e5a951.png">
+                <div className="day_row" data-image={getAssetPath("/images/home/7722cfd11034b26e6d4969dcb62baf1375e5a951.png")}>
                   <div className="text-body-lg">20:00 | 21:30</div>
                   <div className="text-h4 u-text-center">Concert</div>
                   <div className="text-body-lg u-text-right">Moritz Camilla</div>
@@ -357,7 +358,7 @@ export default function Home() {
                 <div className="day_row-content">
                   <div className="day_row-content-grid">
                     <div className="day_row-content-image image-wrap image-wrap--portrait-tall u-overflow-hidden">
-                      <img src="/images/home/7722cfd11034b26e6d4969dcb62baf1375e5a951.png" alt="Concert" className="image-wrap__img" />
+                      <img src={getAssetPath("/images/home/7722cfd11034b26e6d4969dcb62baf1375e5a951.png")} alt="Concert" className="image-wrap__img" />
                     </div>
                     <div className="day_row-content-text">
                       <div className="day_row-content-main">
@@ -378,7 +379,7 @@ export default function Home() {
             </div>
 
             <div className="day_image image-wrap image-wrap--square u-overflow-hidden">
-              <img src="/images/home/7722cfd11034b26e6d4969dcb62baf1375e5a951.png" alt="Day 1" className="image-wrap__img" />
+              <img src={getAssetPath("/images/home/7722cfd11034b26e6d4969dcb62baf1375e5a951.png")} alt="Day 1" className="image-wrap__img" />
             </div>
 
             <div className="day_cta">
@@ -399,58 +400,58 @@ export default function Home() {
           {/* Left Column: Teacher Links */}
           <div className="teachers_list">
             {/* Teacher Item 1: Sharon Gannon */}
-            <div className="teacher_item" data-teacher-image="/images/teachers/Sharon Gannon/_MG_8528_WEB.JPG" data-teacher-name="SHARON GANNON">
+            <div className="teacher_item" data-teacher-image={getAssetPath("/images/teachers/Sharon Gannon/_MG_8528_WEB.JPG")} data-teacher-name="SHARON GANNON">
               <div className="teacher_info">
                 <p className="text-body-md teacher_eyebrow">Open Class</p>
                 <h3 className="text-h1 u-text-uppercase">SHARON GANNON</h3>
               </div>
               <Link href="/teachers" className="teacher_arrow" aria-label="View Sharon Gannon profile">
-                <img src="/images/home/a6a9d170229ebfdceff4645f9c57d5ba83f93601.svg" alt="" className="teacher_arrow-icon" />
+                <img src={getAssetPath("/images/home/a6a9d170229ebfdceff4645f9c57d5ba83f93601.svg")} alt="" className="teacher_arrow-icon" />
               </Link>
             </div>
 
             {/* Teacher Item 2: Yogeswari */}
-            <div className="teacher_item" data-teacher-image="/images/teachers/Yogeswari/2018.02.27_Jivamukti_TT_Yogeswari-051.jpg" data-teacher-name="YOGESWARI">
+            <div className="teacher_item" data-teacher-image={getAssetPath("/images/teachers/Yogeswari/2018.02.27_Jivamukti_TT_Yogeswari-051.jpg")} data-teacher-name="YOGESWARI">
               <div className="teacher_info teacher_info--offset">
                 <p className="text-body-md teacher_eyebrow">Open Class</p>
                 <h3 className="text-h1 u-text-uppercase">YOGESWARI</h3>
               </div>
               <Link href="/teachers" className="teacher_arrow" aria-label="View Yogeswari profile">
-                <img src="/images/home/a6a9d170229ebfdceff4645f9c57d5ba83f93601.svg" alt="" className="teacher_arrow-icon" />
+                <img src={getAssetPath("/images/home/a6a9d170229ebfdceff4645f9c57d5ba83f93601.svg")} alt="" className="teacher_arrow-icon" />
               </Link>
             </div>
 
             {/* Teacher Item 3: Hachi Yu */}
-            <div className="teacher_item" data-teacher-image="/images/teachers/Hachi/2023.05.18_JYTribe_Day_01_0335.jpg" data-teacher-name="HACHI YU">
+            <div className="teacher_item" data-teacher-image={getAssetPath("/images/teachers/Hachi/2023.05.18_JYTribe_Day_01_0335.jpg")} data-teacher-name="HACHI YU">
               <div className="teacher_info teacher_info--offset-large">
                 <p className="text-body-md teacher_eyebrow">Masterclass</p>
                 <h3 className="text-h1 u-text-uppercase">HACHI YU</h3>
               </div>
               <Link href="/teachers" className="teacher_arrow" aria-label="View Hachi Yu profile">
-                <img src="/images/home/a6a9d170229ebfdceff4645f9c57d5ba83f93601.svg" alt="" className="teacher_arrow-icon" />
+                <img src={getAssetPath("/images/home/a6a9d170229ebfdceff4645f9c57d5ba83f93601.svg")} alt="" className="teacher_arrow-icon" />
               </Link>
             </div>
 
             {/* Teacher Item 4: Jules Febre */}
-            <div className="teacher_item" data-teacher-image="/images/home/b2a1fb87cf82c5e5870cd73a5814f50c99da688d.png" data-teacher-name="JULES FEBRE">
+            <div className="teacher_item" data-teacher-image={getAssetPath("/images/home/b2a1fb87cf82c5e5870cd73a5814f50c99da688d.png")} data-teacher-name="JULES FEBRE">
               <div className="teacher_info teacher_info--offset-medium">
                 <p className="text-body-md teacher_eyebrow">Lecture</p>
                 <h3 className="text-h1 u-text-uppercase">JULES FEBRE</h3>
               </div>
               <Link href="/teachers" className="teacher_arrow" aria-label="View Jules Febre profile">
-                <img src="/images/home/a6a9d170229ebfdceff4645f9c57d5ba83f93601.svg" alt="" className="teacher_arrow-icon" />
+                <img src={getAssetPath("/images/home/a6a9d170229ebfdceff4645f9c57d5ba83f93601.svg")} alt="" className="teacher_arrow-icon" />
               </Link>
             </div>
           </div>
 
           {/* Right Column: Fixed Hero Image */}
           <div className="teachers_image-wrap">
-            <img src="/images/home/b2a1fb87cf82c5e5870cd73a5814f50c99da688d.png" alt="" className="teachers_hero-image" />
+            <img src={getAssetPath("/images/home/b2a1fb87cf82c5e5870cd73a5814f50c99da688d.png")} alt="" className="teachers_hero-image" />
           </div>
 
           {/* Hover Following Pink Circle */}
           <div className="teachers_hover-badge">
-            <img src="/images/home/e75d6dcce06d035f84bcec81be9c4072fcbdea02.svg" alt="" className="teachers_hover-badge-bg" />
+            <img src={getAssetPath("/images/home/e75d6dcce06d035f84bcec81be9c4072fcbdea02.svg")} alt="" className="teachers_hover-badge-bg" />
             <p className="teachers_hover-badge-text">PROFILE &<br/>CLASSES</p>
           </div>
         </div>
@@ -468,7 +469,7 @@ export default function Home() {
           <h2 className="text-display-lg home-lookback_title u-text-uppercase">LOOKING BACK AT THE</h2>
 
           <div className="home-lookback_image-wrap image-wrap image-wrap--portrait-tall u-overflow-hidden">
-            <img src="/images/home/7daed26c9efac9c483a5692dcacb5545bffe955f.png" alt="Tribe Gathering 2025" className="image-wrap__img" />
+            <img src={getAssetPath("/images/home/7daed26c9efac9c483a5692dcacb5545bffe955f.png")} alt="Tribe Gathering 2025" className="image-wrap__img" />
           </div>
 
           <h3 className="text-display-lg home-lookback_subtitle u-text-uppercase">TRIBE GATHERING 2025</h3>
@@ -482,9 +483,9 @@ export default function Home() {
 
           {/* Video with Play Button */}
           <div className="home-rome_video-wrap">
-            <img src="/images/home/316df861ded7b263ef32eb137a4493c780bc65b8.png" alt="Rome Architecture" className="home-rome_video-image" />
+            <img src={getAssetPath("/images/home/316df861ded7b263ef32eb137a4493c780bc65b8.png")} alt="Rome Architecture" className="home-rome_video-image" />
             <button className="home-rome_play-button" aria-label="Play video">
-              <img src="/images/home/784c6eb6959d89300ded47aa5c49463892148c55.svg" alt="" className="home-rome_play-icon" />
+              <img src={getAssetPath("/images/home/784c6eb6959d89300ded47aa5c49463892148c55.svg")} alt="" className="home-rome_play-icon" />
             </button>
           </div>
 

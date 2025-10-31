@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import Navigation from '@/app/components/Navigation';
 import FullscreenMenu from '@/app/components/FullscreenMenu';
 import Footer from '@/app/components/Footer';
+import { getAssetPath } from '@/app/utils/paths';
 
 export default function TeachersPage() {
   useEffect(() => {
@@ -90,7 +91,7 @@ export default function TeachersPage() {
 
           {/* Center Image */}
           <div className="hero-collage_image-wrap">
-            <img src="/images/teachers/46a6be97cb1ecd2a2893d61d7f6bcc3761fa50d5.png" alt="Teachers" className="hero-collage_image" />
+            <img src={getAssetPath("/images/teachers/46a6be97cb1ecd2a2893d61d7f6bcc3761fa50d5.png")} alt="Teachers" className="hero-collage_image" />
           </div>
 
           {/* Bottom Title */}
@@ -133,58 +134,58 @@ export default function TeachersPage() {
           {/* Left Column: Teacher Links */}
           <div className="teachers_list">
             {/* Teacher Item 1: Sharon Gannon */}
-            <div className="teacher_item" data-teacher-image="/images/teachers/Sharon%20Gannon/_MG_8528_WEB.JPG">
+            <div className="teacher_item" data-teacher-image={getAssetPath("/images/teachers/Sharon%20Gannon/_MG_8528_WEB.JPG">
               <div className="teacher_info">
                 <p className="text-body-md teacher_eyebrow">Open Class</p>
                 <h3 className="text-h1 u-text-uppercase">SHARON GANNON</h3>
               </div>
               <a href="#" className="teacher_arrow" aria-label="View Sharon Gannon profile">
-                <img src="/images/teachers/a6a9d170229ebfdceff4645f9c57d5ba83f93601.svg" alt="" className="teacher_arrow-icon" />
+                <img src={getAssetPath("/images/teachers/a6a9d170229ebfdceff4645f9c57d5ba83f93601.svg")} alt="" className="teacher_arrow-icon" />
               </a>
             </div>
 
             {/* Teacher Item 2: Yogeswari */}
-            <div className="teacher_item" data-teacher-image="/images/teachers/Yogeswari/2018.02.27_Jivamukti_TT_Yogeswari-051.jpg">
+            <div className="teacher_item" data-teacher-image={getAssetPath("/images/teachers/Yogeswari/2018.02.27_Jivamukti_TT_Yogeswari-051.jpg")}>
               <div className="teacher_info teacher_info--offset">
                 <p className="text-body-md teacher_eyebrow">Open Class</p>
                 <h3 className="text-h1 u-text-uppercase">YOGESWARI</h3>
               </div>
               <a href="#" className="teacher_arrow" aria-label="View Yogeswari profile">
-                <img src="/images/teachers/a6a9d170229ebfdceff4645f9c57d5ba83f93601.svg" alt="" className="teacher_arrow-icon" />
+                <img src={getAssetPath("/images/teachers/a6a9d170229ebfdceff4645f9c57d5ba83f93601.svg")} alt="" className="teacher_arrow-icon" />
               </a>
             </div>
 
             {/* Teacher Item 3: Hachi Yu */}
-            <div className="teacher_item" data-teacher-image="/images/teachers/Hachi/2023.05.18_JYTribe_Day_01_0335.jpg">
+            <div className="teacher_item" data-teacher-image={getAssetPath("/images/teachers/Hachi/2023.05.18_JYTribe_Day_01_0335.jpg")}>
               <div className="teacher_info teacher_info--offset-large">
                 <p className="text-body-md teacher_eyebrow">Masterclass</p>
                 <h3 className="text-h1 u-text-uppercase">HACHI YU</h3>
               </div>
               <a href="#" className="teacher_arrow" aria-label="View Hachi Yu profile">
-                <img src="/images/teachers/a6a9d170229ebfdceff4645f9c57d5ba83f93601.svg" alt="" className="teacher_arrow-icon" />
+                <img src={getAssetPath("/images/teachers/a6a9d170229ebfdceff4645f9c57d5ba83f93601.svg")} alt="" className="teacher_arrow-icon" />
               </a>
             </div>
 
             {/* Teacher Item 4: Jules Febre */}
-            <div className="teacher_item" data-teacher-image="/images/teachers/Jules/2017.05.30_YogaPalais_Jules-122.jpg">
+            <div className="teacher_item" data-teacher-image={getAssetPath("/images/teachers/Jules/2017.05.30_YogaPalais_Jules-122.jpg")}>
               <div className="teacher_info teacher_info--offset-medium">
                 <p className="text-body-md teacher_eyebrow">Lecture</p>
                 <h3 className="text-h1 u-text-uppercase">JULES FEBRE</h3>
               </div>
               <a href="#" className="teacher_arrow" aria-label="View Jules Febre profile">
-                <img src="/images/teachers/a6a9d170229ebfdceff4645f9c57d5ba83f93601.svg" alt="" className="teacher_arrow-icon" />
+                <img src={getAssetPath("/images/teachers/a6a9d170229ebfdceff4645f9c57d5ba83f93601.svg")} alt="" className="teacher_arrow-icon" />
               </a>
             </div>
           </div>
 
           {/* Right Column: Fixed Hero Image */}
           <div className="teachers_image-wrap">
-            <img src="/images/teachers/Sharon%20Gannon/_MG_8528_WEB.JPG" alt="" className="teachers_hero-image" />
+            <img src={getAssetPath("/images/teachers/Sharon%20Gannon/_MG_8528_WEB.JPG")} alt="" className="teachers_hero-image" />
           </div>
 
           {/* Hover Following Pink Circle */}
           <div className="teachers_hover-badge">
-            <img src="/images/teachers/e75d6dcce06d035f84bcec81be9c4072fcbdea02.svg" alt="" className="teachers_hover-badge-bg" />
+            <img src={getAssetPath("/images/teachers/e75d6dcce06d035f84bcec81be9c4072fcbdea02.svg")} alt="" className="teachers_hover-badge-bg" />
             <p className="teachers_hover-badge-text">PROFILE &<br />CLASSES</p>
           </div>
 

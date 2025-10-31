@@ -1,6 +1,7 @@
 'use client'
 
 import Script from 'next/script'
+import { getAssetPath } from '../utils/paths'
 
 export default function CustomCursor() {
   return (
@@ -18,7 +19,7 @@ export default function CustomCursor() {
           />
         </svg>
       </div>
-      <Script src="/js/custom-cursor.js" strategy="afterInteractive" />
+      <Script src={getAssetPath("/js/custom-cursor.js")} strategy="afterInteractive" />
     </>
   )
 }

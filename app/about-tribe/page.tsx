@@ -1,6 +1,7 @@
 import Navigation from '@/app/components/Navigation'
 import FullscreenMenu from '@/app/components/FullscreenMenu'
 import Footer from '@/app/components/Footer'
+import { getAssetPath } from '@/app/utils/paths'
 
 export default function AboutTribePage() {
   return (
@@ -16,13 +17,13 @@ export default function AboutTribePage() {
           {/* Logo Branding (Top Left) */}
           <div className="hero-collage_logo-wrap">
             <div className="image-wrap image-wrap--freeform" style={{maxWidth: 'clamp(200px, 25vw, 400px)'}}>
-              <img src="/images/tribe-short-logotype-currentcolor.svg" alt="Jivamukti Yoga The Tribe Gathering" className="image-wrap__img image-wrap__img--contain" />
+              <img src={getAssetPath("/images/tribe-short-logotype-currentcolor.svg")} alt="Jivamukti Yoga The Tribe Gathering" className="image-wrap__img image-wrap__img--contain" />
             </div>
           </div>
 
           {/* Hero Image (Right Side) */}
           <div className="hero-collage_image-wrap">
-            <img src="/images/about/09afe8e0497238bff34238caf01764bc0124c60f.png" alt="Yoga gathering with harmonium" className="hero-collage_image" />
+            <img src="/images/about/09afe8e0497238bff34238caf01764bc0124c60f.png")} alt="Yoga gathering with harmonium" className="hero-collage_image" />
           </div>
 
           {/* Bottom Title (Left Side, Overlapping) */}
@@ -45,7 +46,7 @@ export default function AboutTribePage() {
           <div className="plan_content u-position-relative">
             {/* Left: Image */}
             <div className="image-wrap">
-              <img src="/images/5b99e425860ca2de7aadd16e2b46c27e2f8bb0bd.png" alt="Satsang yoga gathering with singing" className="image" />
+              <img src={getAssetPath("/images/5b99e425860ca2de7aadd16e2b46c27e2f8bb0bd.png")} alt="Satsang yoga gathering with singing" className="image" />
             </div>
 
             {/* Right: Text */}
@@ -101,21 +102,21 @@ export default function AboutTribePage() {
             {/* Image 1 */}
             <div className="sticky-scroll_image-block">
               <div className="image-wrap image-wrap--portrait-tall">
-                <img src="/images/b2e6f04b7887b367f983a6110e4a8284e6a68a51.png" alt="Yoga gathering" className="image-wrap__img" />
+                <img src={getAssetPath("/images/b2e6f04b7887b367f983a6110e4a8284e6a68a51.png")} alt="Yoga gathering" className="image-wrap__img" />
               </div>
             </div>
 
             {/* Image 2 */}
             <div className="sticky-scroll_image-block">
               <div className="image-wrap image-wrap--portrait-tall">
-                <img src="/images/591f764ede3428fa1ba9f50bf041b55ae6d899b8.png" alt="Yoga gathering" className="image-wrap__img" />
+                <img src={getAssetPath("/images/591f764ede3428fa1ba9f50bf041b55ae6d899b8.png")} alt="Yoga gathering" className="image-wrap__img" />
               </div>
             </div>
 
             {/* Image 3 */}
             <div className="sticky-scroll_image-block">
               <div className="image-wrap image-wrap--portrait-tall">
-                <img src="/images/74031a8237b7e9853781a8bd6535aaa724fe77c7.png" alt="Yoga gathering" className="image-wrap__img" />
+                <img src={getAssetPath("/images/74031a8237b7e9853781a8bd6535aaa724fe77c7.png")} alt="Yoga gathering" className="image-wrap__img" />
               </div>
             </div>
 
@@ -161,7 +162,7 @@ export default function AboutTribePage() {
           <div className="tribe-grid_row">
             <div className="tribe-grid_left">
               <div className="image-wrap image-wrap--portrait-tall">
-                <img src="/images/092fedd95acea573e490f295ffe91dcd566d4724.png" alt="Rome Gathering" className="image-wrap__img" />
+                <img src={getAssetPath("/images/092fedd95acea573e490f295ffe91dcd566d4724.png")} alt="Rome Gathering" className="image-wrap__img" />
               </div>
             </div>
             <div className="tribe-grid_right">

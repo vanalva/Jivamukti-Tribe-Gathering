@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import { getAssetPath } from '../utils/paths'
 
 export default function Footer() {
   return (
@@ -8,7 +9,7 @@ export default function Footer() {
       <div className="footer_background u-cover-absolute u-zindex-negative"></div>
       <div className="footer_content u-position-relative">
         <div className="footer_logo-wrap">
-          <img src="/images/somple-rome-logotype.svg" alt="ROME" className="footer_logo-image" />
+          <img src={getAssetPath("/images/somple-rome-logotype.svg")} alt="ROME" className="footer_logo-image" />
         </div>
 
         <div className="footer_columns">

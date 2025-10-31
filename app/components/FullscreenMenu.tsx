@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import { getAssetPath } from '../utils/paths'
 
 export default function FullscreenMenu() {
   return (
@@ -11,45 +12,45 @@ export default function FullscreenMenu() {
           <nav className="menu-fullscreen_nav">
             <Link href="/" className="menu-fullscreen_link text-display-xl u-text-uppercase">
               HOME
-              <img src="/images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg" alt="" className="menu-fullscreen_arrow-icon" />
+              <img src={getAssetPath("/images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg")} alt="" className="menu-fullscreen_arrow-icon" />
             </Link>
             <Link href="/about-tribe" className="menu-fullscreen_link text-display-xl u-text-uppercase">
               ABOUT
-              <img src="/images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg" alt="" className="menu-fullscreen_arrow-icon" />
+              <img src={getAssetPath("/images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg")} alt="" className="menu-fullscreen_arrow-icon" />
             </Link>
             <Link href="/schedule" className="menu-fullscreen_link text-display-xl u-text-uppercase">
               SCHEDULE
-              <img src="/images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg" alt="" className="menu-fullscreen_arrow-icon" />
+              <img src={getAssetPath("/images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg")} alt="" className="menu-fullscreen_arrow-icon" />
             </Link>
             <Link href="/teachers" className="menu-fullscreen_link text-display-xl u-text-uppercase">
               TEACHERS
-              <img src="/images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg" alt="" className="menu-fullscreen_arrow-icon" />
+              <img src={getAssetPath("/images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg")} alt="" className="menu-fullscreen_arrow-icon" />
             </Link>
             <Link href="/booking" className="menu-fullscreen_link menu-fullscreen_link--primary text-display-xl u-text-uppercase">
               REGISTER
-              <img src="/images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg" alt="" className="menu-fullscreen_arrow-icon" />
+              <img src={getAssetPath("/images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg")} alt="" className="menu-fullscreen_arrow-icon" />
             </Link>
             <Link href="/about-rome" className="menu-fullscreen_link text-display-xl u-text-uppercase">
               USEFUL INFO
-              <img src="/images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg" alt="" className="menu-fullscreen_arrow-icon" />
+              <img src={getAssetPath("/images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg")} alt="" className="menu-fullscreen_arrow-icon" />
             </Link>
             <Link href="/archive" className="menu-fullscreen_link text-display-xl u-text-uppercase">
               ARCHIVE
-              <img src="/images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg" alt="" className="menu-fullscreen_arrow-icon" />
+              <img src={getAssetPath("/images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg")} alt="" className="menu-fullscreen_arrow-icon" />
             </Link>
           </nav>
           <div className="menu-fullscreen_image-wrap">
             <div className="menu-fullscreen_image-container">
-              <img src="/images/menu/6892fb9a88690f30225eb6d19e7d30458d5c3662.png" alt="Rome Tribe Gathering" className="menu-fullscreen_hero-image" />
+              <img src={getAssetPath("/images/menu/6892fb9a88690f30225eb6d19e7d30458d5c3662.png")} alt="Rome Tribe Gathering" className="menu-fullscreen_hero-image" />
               <div className="menu-fullscreen_badge">
-                <img src="/images/tribe-circular-stamp.svg" alt="Rome Tribe Gathering 25" className="menu-fullscreen_badge-image" />
+                <img src={getAssetPath("/images/tribe-circular-stamp.svg")} alt="Rome Tribe Gathering 25" className="menu-fullscreen_badge-image" />
               </div>
             </div>
           </div>
         </div>
         <div className="menu-fullscreen_footer">
           <div className="menu-fullscreen_footer-left">
-            <img src="/images/menu/0020438c96462729a00595340c6a4efd7b8f7a52.svg" alt="Jivamukti Yoga" className="menu-fullscreen_footer-logo" />
+            <img src={getAssetPath("/images/menu/0020438c96462729a00595340c6a4efd7b8f7a52.svg")} alt="Jivamukti Yoga" className="menu-fullscreen_footer-logo" />
             <p className="text-legal menu-fullscreen_copyright">© 2024 Jivamukti Yoga. All rights reserved.</p>
           </div>
           <div className="menu-fullscreen_footer-right">

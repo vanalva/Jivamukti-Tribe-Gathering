@@ -4,14 +4,14 @@ color 0A
 echo.
 echo ========================================
 echo  JIVAMUKTI TRIBE GATHERING
-echo  Local Server Launcher
+echo  Next.js Development Server
 echo ========================================
 echo.
-echo Starting local web server on port 8000...
+echo Starting Next.js development server...
 echo.
 echo Server will be available at:
-echo   - http://localhost:8000
-echo   - http://127.0.0.1:8000
+echo   - http://localhost:3000
+echo   - http://127.0.0.1:3000
 echo.
 echo Press Ctrl+C to stop the server
 echo.
@@ -19,7 +19,7 @@ echo ========================================
 echo.
 
 cd /d "%~dp0"
-python -m http.server 8000
+npm run dev
 
 pause
 

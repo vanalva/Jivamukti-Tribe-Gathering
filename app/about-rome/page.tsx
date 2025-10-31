@@ -4,6 +4,7 @@ import Navigation from '@/app/components/Navigation';
 import FullscreenMenu from '@/app/components/FullscreenMenu';
 import Footer from '@/app/components/Footer';
 import { useFilteredScheduleInteractions } from '@/app/hooks/useFilteredScheduleInteractions';
+import { getAssetPath } from '@/app/utils/paths';
 
 export default function AboutRomePage() {
   // Use the reusable filtered schedule interactions hook
@@ -23,7 +24,7 @@ export default function AboutRomePage() {
 
           {/* Center-Right Image (vintage café scene) */}
           <div className="hero-collage_image-wrap">
-            <img src="/images/about-rome-hero/cd1552bdfd9a6257407b683a42557f7b73a0364d.png" alt="Vintage Rome café scene" className="hero-collage_image" />
+            <img src={getAssetPath("/images/about-rome-hero/cd1552bdfd9a6257407b683a42557f7b73a0364d.png")} alt="Vintage Rome café scene" className="hero-collage_image" />
           </div>
 
           {/* Bottom Title "ROME" */}
@@ -87,7 +88,7 @@ export default function AboutRomePage() {
               {/* Row 1: Antico Caffè - Monolink Layout */}
               <div className="day_row-item day_row-item--monolink">
                 <div className="day_row-image-inline">
-                  <img src="/images/about-rome/4a713401a3c5003f4d6d0eb078f7211df90acebd.png" alt="Antico Caffè" className="day_row-image-inline__img" />
+                  <img src={getAssetPath("/images/about-rome/4a713401a3c5003f4d6d0eb078f7211df90acebd.png")} alt="Antico Caffè" className="day_row-image-inline__img" />
                 </div>
                 <div className="day_row-item--monolink-content">
                   <div className="day_row day_row--monolink" data-image="/images/about-rome/4a713401a3c5003f4d6d0eb078f7211df90acebd.png">
@@ -125,7 +126,7 @@ export default function AboutRomePage() {
                 <div className="day_row-content">
                   <div className="day_row-content-grid">
                     <div className="day_row-content-image image-wrap image-wrap--portrait-tall u-overflow-hidden">
-                      <img src="/images/about-rome/5b99e425860ca2de7aadd16e2b46c27e2f8bb0bd.png" alt="Tazza d'Oro" className="image-wrap__img" />
+                      <img src={getAssetPath("/images/about-rome/5b99e425860ca2de7aadd16e2b46c27e2f8bb0bd.png")} alt="Tazza d'Oro" className="image-wrap__img" />
                     </div>
                     <div className="day_row-content-text">
                       <div className="day_row-content-main">
@@ -154,7 +155,7 @@ export default function AboutRomePage() {
                 <div className="day_row-content">
                   <div className="day_row-content-grid">
                     <div className="day_row-content-image image-wrap image-wrap--portrait-tall u-overflow-hidden">
-                      <img src="/images/about-rome/7d29901f5346ba603ddea32124ea9e141f10879a.png" alt="Luminari" className="image-wrap__img" />
+                      <img src={getAssetPath("/images/about-rome/7d29901f5346ba603ddea32124ea9e141f10879a.png")} alt="Luminari" className="image-wrap__img" />
                     </div>
                     <div className="day_row-content-text">
                       <div className="day_row-content-main">
@@ -183,7 +184,7 @@ export default function AboutRomePage() {
                 <div className="day_row-content">
                   <div className="day_row-content-grid">
                     <div className="day_row-content-image image-wrap image-wrap--portrait-tall u-overflow-hidden">
-                      <img src="/images/about-rome/cd1552bdfd9a6257407b683a42557f7b73a0364d.png" alt="Eustachio" className="image-wrap__img" />
+                      <img src={getAssetPath("/images/about-rome/cd1552bdfd9a6257407b683a42557f7b73a0364d.png")} alt="Eustachio" className="image-wrap__img" />
                     </div>
                     <div className="day_row-content-text">
                       <div className="day_row-content-main">
@@ -212,7 +213,7 @@ export default function AboutRomePage() {
                 <div className="day_row-content">
                   <div className="day_row-content-grid">
                     <div className="day_row-content-image image-wrap image-wrap--portrait-tall u-overflow-hidden">
-                      <img src="/images/about-rome/4a713401a3c5003f4d6d0eb078f7211df90acebd.png" alt="Caffè Greco" className="image-wrap__img" />
+                      <img src={getAssetPath("/images/about-rome/4a713401a3c5003f4d6d0eb078f7211df90acebd.png")} alt="Caffè Greco" className="image-wrap__img" />
                     </div>
                     <div className="day_row-content-text">
                       <div className="day_row-content-main">
@@ -241,7 +242,7 @@ export default function AboutRomePage() {
                 <div className="day_row-content">
                   <div className="day_row-content-grid">
                     <div className="day_row-content-image image-wrap image-wrap--portrait-tall u-overflow-hidden">
-                      <img src="/images/about-rome/5b99e425860ca2de7aadd16e2b46c27e2f8bb0bd.png" alt="Sant'Eustachio Il Caffè" className="image-wrap__img" />
+                      <img src={getAssetPath("/images/about-rome/5b99e425860ca2de7aadd16e2b46c27e2f8bb0bd.png")} alt="Sant'Eustachio Il Caffè" className="image-wrap__img" />
                     </div>
                     <div className="day_row-content-text">
                       <div className="day_row-content-main">
@@ -270,7 +271,7 @@ export default function AboutRomePage() {
                 <div className="day_row-content">
                   <div className="day_row-content-grid">
                     <div className="day_row-content-image image-wrap image-wrap--portrait-tall u-overflow-hidden">
-                      <img src="/images/about-rome/7d29901f5346ba603ddea32124ea9e141f10879a.png" alt="Roscioli Caffè" className="image-wrap__img" />
+                      <img src={getAssetPath("/images/about-rome/7d29901f5346ba603ddea32124ea9e141f10879a.png")} alt="Roscioli Caffè" className="image-wrap__img" />
                     </div>
                     <div className="day_row-content-text">
                       <div className="day_row-content-main">
@@ -299,7 +300,7 @@ export default function AboutRomePage() {
                 <div className="day_row-content">
                   <div className="day_row-content-grid">
                     <div className="day_row-content-image image-wrap image-wrap--portrait-tall u-overflow-hidden">
-                      <img src="/images/about-rome/cd1552bdfd9a6257407b683a42557f7b73a0364d.png" alt="Barnum Café" className="image-wrap__img" />
+                      <img src={getAssetPath("/images/about-rome/cd1552bdfd9a6257407b683a42557f7b73a0364d.png")} alt="Barnum Café" className="image-wrap__img" />
                     </div>
                     <div className="day_row-content-text">
                       <div className="day_row-content-main">
@@ -320,7 +321,7 @@ export default function AboutRomePage() {
             </div>
 
             <div className="day_image image-wrap image-wrap--square u-overflow-hidden">
-              <img src="/images/about-rome/4a713401a3c5003f4d6d0eb078f7211df90acebd.png" alt="Rome Cafés" className="image-wrap__img" />
+              <img src={getAssetPath("/images/about-rome/4a713401a3c5003f4d6d0eb078f7211df90acebd.png")} alt="Rome Cafés" className="image-wrap__img" />
             </div>
 
             <div className="day_cta">
@@ -346,7 +347,7 @@ export default function AboutRomePage() {
                 <div className="day_row-content">
                   <div className="day_row-content-grid">
                     <div className="day_row-content-image image-wrap image-wrap--portrait-tall u-overflow-hidden">
-                      <img src="/images/about-rome/4a713401a3c5003f4d6d0eb078f7211df90acebd.png" alt="Trattoria da Enzo" className="image-wrap__img" />
+                      <img src={getAssetPath("/images/about-rome/4a713401a3c5003f4d6d0eb078f7211df90acebd.png")} alt="Trattoria da Enzo" className="image-wrap__img" />
                     </div>
                     <div className="day_row-content-text">
                       <div className="day_row-content-main">
@@ -375,7 +376,7 @@ export default function AboutRomePage() {
                 <div className="day_row-content">
                   <div className="day_row-content-grid">
                     <div className="day_row-content-image image-wrap image-wrap--portrait-tall u-overflow-hidden">
-                      <img src="/images/about-rome/5b99e425860ca2de7aadd16e2b46c27e2f8bb0bd.png" alt="La Pergola" className="image-wrap__img" />
+                      <img src={getAssetPath("/images/about-rome/5b99e425860ca2de7aadd16e2b46c27e2f8bb0bd.png")} alt="La Pergola" className="image-wrap__img" />
                     </div>
                     <div className="day_row-content-text">
                       <div className="day_row-content-main">
@@ -404,7 +405,7 @@ export default function AboutRomePage() {
                 <div className="day_row-content">
                   <div className="day_row-content-grid">
                     <div className="day_row-content-image image-wrap image-wrap--portrait-tall u-overflow-hidden">
-                      <img src="/images/about-rome/7d29901f5346ba603ddea32124ea9e141f10879a.png" alt="Felice a Testaccio" className="image-wrap__img" />
+                      <img src={getAssetPath("/images/about-rome/7d29901f5346ba603ddea32124ea9e141f10879a.png")} alt="Felice a Testaccio" className="image-wrap__img" />
                     </div>
                     <div className="day_row-content-text">
                       <div className="day_row-content-main">
@@ -433,7 +434,7 @@ export default function AboutRomePage() {
                 <div className="day_row-content">
                   <div className="day_row-content-grid">
                     <div className="day_row-content-image image-wrap image-wrap--portrait-tall u-overflow-hidden">
-                      <img src="/images/about-rome/cd1552bdfd9a6257407b683a42557f7b73a0364d.png" alt="Armando al Pantheon" className="image-wrap__img" />
+                      <img src={getAssetPath("/images/about-rome/cd1552bdfd9a6257407b683a42557f7b73a0364d.png")} alt="Armando al Pantheon" className="image-wrap__img" />
                     </div>
                     <div className="day_row-content-text">
                       <div className="day_row-content-main">
@@ -462,7 +463,7 @@ export default function AboutRomePage() {
                 <div className="day_row-content">
                   <div className="day_row-content-grid">
                     <div className="day_row-content-image image-wrap image-wrap--portrait-tall u-overflow-hidden">
-                      <img src="/images/about-rome/4a713401a3c5003f4d6d0eb078f7211df90acebd.png" alt="Pizzarium Bonci" className="image-wrap__img" />
+                      <img src={getAssetPath("/images/about-rome/4a713401a3c5003f4d6d0eb078f7211df90acebd.png")} alt="Pizzarium Bonci" className="image-wrap__img" />
                     </div>
                     <div className="day_row-content-text">
                       <div className="day_row-content-main">
@@ -491,7 +492,7 @@ export default function AboutRomePage() {
                 <div className="day_row-content">
                   <div className="day_row-content-grid">
                     <div className="day_row-content-image image-wrap image-wrap--portrait-tall u-overflow-hidden">
-                      <img src="/images/about-rome/5b99e425860ca2de7aadd16e2b46c27e2f8bb0bd.png" alt="Flavio al Velavevodetto" className="image-wrap__img" />
+                      <img src={getAssetPath("/images/about-rome/5b99e425860ca2de7aadd16e2b46c27e2f8bb0bd.png")} alt="Flavio al Velavevodetto" className="image-wrap__img" />
                     </div>
                     <div className="day_row-content-text">
                       <div className="day_row-content-main">
@@ -520,7 +521,7 @@ export default function AboutRomePage() {
                 <div className="day_row-content">
                   <div className="day_row-content-grid">
                     <div className="day_row-content-image image-wrap image-wrap--portrait-tall u-overflow-hidden">
-                      <img src="/images/about-rome/7d29901f5346ba603ddea32124ea9e141f10879a.png" alt="Glass Hostaria" className="image-wrap__img" />
+                      <img src={getAssetPath("/images/about-rome/7d29901f5346ba603ddea32124ea9e141f10879a.png")} alt="Glass Hostaria" className="image-wrap__img" />
                     </div>
                     <div className="day_row-content-text">
                       <div className="day_row-content-main">
@@ -549,7 +550,7 @@ export default function AboutRomePage() {
                 <div className="day_row-content">
                   <div className="day_row-content-grid">
                     <div className="day_row-content-image image-wrap image-wrap--portrait-tall u-overflow-hidden">
-                      <img src="/images/about-rome/cd1552bdfd9a6257407b683a42557f7b73a0364d.png" alt="Tonnarello" className="image-wrap__img" />
+                      <img src={getAssetPath("/images/about-rome/cd1552bdfd9a6257407b683a42557f7b73a0364d.png")} alt="Tonnarello" className="image-wrap__img" />
                     </div>
                     <div className="day_row-content-text">
                       <div className="day_row-content-main">
@@ -570,7 +571,7 @@ export default function AboutRomePage() {
             </div>
 
             <div className="day_image image-wrap image-wrap--square u-overflow-hidden">
-              <img src="/images/about-rome/4a713401a3c5003f4d6d0eb078f7211df90acebd.png" alt="Rome Restaurants" className="image-wrap__img" />
+              <img src={getAssetPath("/images/about-rome/4a713401a3c5003f4d6d0eb078f7211df90acebd.png")} alt="Rome Restaurants" className="image-wrap__img" />
             </div>
 
             <div className="day_cta">
@@ -596,7 +597,7 @@ export default function AboutRomePage() {
                 <div className="day_row-content">
                   <div className="day_row-content-grid">
                     <div className="day_row-content-image image-wrap image-wrap--portrait-tall u-overflow-hidden">
-                      <img src="/images/about-rome/7d29901f5346ba603ddea32124ea9e141f10879a.png" alt="Hotel Eden" className="image-wrap__img" />
+                      <img src={getAssetPath("/images/about-rome/7d29901f5346ba603ddea32124ea9e141f10879a.png")} alt="Hotel Eden" className="image-wrap__img" />
                     </div>
                     <div className="day_row-content-text">
                       <div className="day_row-content-main">
@@ -625,7 +626,7 @@ export default function AboutRomePage() {
                 <div className="day_row-content">
                   <div className="day_row-content-grid">
                     <div className="day_row-content-image image-wrap image-wrap--portrait-tall u-overflow-hidden">
-                      <img src="/images/about-rome/cd1552bdfd9a6257407b683a42557f7b73a0364d.png" alt="Trastevere Boutique" className="image-wrap__img" />
+                      <img src={getAssetPath("/images/about-rome/cd1552bdfd9a6257407b683a42557f7b73a0364d.png")} alt="Trastevere Boutique" className="image-wrap__img" />
                     </div>
                     <div className="day_row-content-text">
                       <div className="day_row-content-main">
@@ -654,7 +655,7 @@ export default function AboutRomePage() {
                 <div className="day_row-content">
                   <div className="day_row-content-grid">
                     <div className="day_row-content-image image-wrap image-wrap--portrait-tall u-overflow-hidden">
-                      <img src="/images/about-rome/4a713401a3c5003f4d6d0eb078f7211df90acebd.png" alt="Hotel Hassler" className="image-wrap__img" />
+                      <img src={getAssetPath("/images/about-rome/4a713401a3c5003f4d6d0eb078f7211df90acebd.png")} alt="Hotel Hassler" className="image-wrap__img" />
                     </div>
                     <div className="day_row-content-text">
                       <div className="day_row-content-main">
@@ -683,7 +684,7 @@ export default function AboutRomePage() {
                 <div className="day_row-content">
                   <div className="day_row-content-grid">
                     <div className="day_row-content-image image-wrap image-wrap--portrait-tall u-overflow-hidden">
-                      <img src="/images/about-rome/5b99e425860ca2de7aadd16e2b46c27e2f8bb0bd.png" alt="Hotel de Russie" className="image-wrap__img" />
+                      <img src={getAssetPath("/images/about-rome/5b99e425860ca2de7aadd16e2b46c27e2f8bb0bd.png")} alt="Hotel de Russie" className="image-wrap__img" />
                     </div>
                     <div className="day_row-content-text">
                       <div className="day_row-content-main">
@@ -712,7 +713,7 @@ export default function AboutRomePage() {
                 <div className="day_row-content">
                   <div className="day_row-content-grid">
                     <div className="day_row-content-image image-wrap image-wrap--portrait-tall u-overflow-hidden">
-                      <img src="/images/about-rome/7d29901f5346ba603ddea32124ea9e141f10879a.png" alt="Hotel Campo de' Fiori" className="image-wrap__img" />
+                      <img src={getAssetPath("/images/about-rome/7d29901f5346ba603ddea32124ea9e141f10879a.png")} alt="Hotel Campo de' Fiori" className="image-wrap__img" />
                     </div>
                     <div className="day_row-content-text">
                       <div className="day_row-content-main">
@@ -741,7 +742,7 @@ export default function AboutRomePage() {
                 <div className="day_row-content">
                   <div className="day_row-content-grid">
                     <div className="day_row-content-image image-wrap image-wrap--portrait-tall u-overflow-hidden">
-                      <img src="/images/about-rome/cd1552bdfd9a6257407b683a42557f7b73a0364d.png" alt="Palazzo Manfredi" className="image-wrap__img" />
+                      <img src={getAssetPath("/images/about-rome/cd1552bdfd9a6257407b683a42557f7b73a0364d.png")} alt="Palazzo Manfredi" className="image-wrap__img" />
                     </div>
                     <div className="day_row-content-text">
                       <div className="day_row-content-main">
@@ -770,7 +771,7 @@ export default function AboutRomePage() {
                 <div className="day_row-content">
                   <div className="day_row-content-grid">
                     <div className="day_row-content-image image-wrap image-wrap--portrait-tall u-overflow-hidden">
-                      <img src="/images/about-rome/4a713401a3c5003f4d6d0eb078f7211df90acebd.png" alt="The Inn at the Roman Forum" className="image-wrap__img" />
+                      <img src={getAssetPath("/images/about-rome/4a713401a3c5003f4d6d0eb078f7211df90acebd.png")} alt="The Inn at the Roman Forum" className="image-wrap__img" />
                     </div>
                     <div className="day_row-content-text">
                       <div className="day_row-content-main">
@@ -799,7 +800,7 @@ export default function AboutRomePage() {
                 <div className="day_row-content">
                   <div className="day_row-content-grid">
                     <div className="day_row-content-image image-wrap image-wrap--portrait-tall u-overflow-hidden">
-                      <img src="/images/about-rome/5b99e425860ca2de7aadd16e2b46c27e2f8bb0bd.png" alt="Rome Cavalieri" className="image-wrap__img" />
+                      <img src={getAssetPath("/images/about-rome/5b99e425860ca2de7aadd16e2b46c27e2f8bb0bd.png")} alt="Rome Cavalieri" className="image-wrap__img" />
                     </div>
                     <div className="day_row-content-text">
                       <div className="day_row-content-main">
@@ -820,7 +821,7 @@ export default function AboutRomePage() {
             </div>
 
             <div className="day_image image-wrap image-wrap--square u-overflow-hidden">
-              <img src="/images/about-rome/7d29901f5346ba603ddea32124ea9e141f10879a.png" alt="Rome Hotels" className="image-wrap__img" />
+              <img src={getAssetPath("/images/about-rome/7d29901f5346ba603ddea32124ea9e141f10879a.png")} alt="Rome Hotels" className="image-wrap__img" />
             </div>
 
             <div className="day_cta">
@@ -846,7 +847,7 @@ export default function AboutRomePage() {
                 <div className="day_row-content">
                   <div className="day_row-content-grid">
                     <div className="day_row-content-image image-wrap image-wrap--portrait-tall u-overflow-hidden">
-                      <img src="/images/about-rome/4a713401a3c5003f4d6d0eb078f7211df90acebd.png" alt="Colosseum" className="image-wrap__img" />
+                      <img src={getAssetPath("/images/about-rome/4a713401a3c5003f4d6d0eb078f7211df90acebd.png")} alt="Colosseum" className="image-wrap__img" />
                     </div>
                     <div className="day_row-content-text">
                       <div className="day_row-content-main">
@@ -875,7 +876,7 @@ export default function AboutRomePage() {
                 <div className="day_row-content">
                   <div className="day_row-content-grid">
                     <div className="day_row-content-image image-wrap image-wrap--portrait-tall u-overflow-hidden">
-                      <img src="/images/about-rome/5b99e425860ca2de7aadd16e2b46c27e2f8bb0bd.png" alt="Vatican Museums" className="image-wrap__img" />
+                      <img src={getAssetPath("/images/about-rome/5b99e425860ca2de7aadd16e2b46c27e2f8bb0bd.png")} alt="Vatican Museums" className="image-wrap__img" />
                     </div>
                     <div className="day_row-content-text">
                       <div className="day_row-content-main">
@@ -904,7 +905,7 @@ export default function AboutRomePage() {
                 <div className="day_row-content">
                   <div className="day_row-content-grid">
                     <div className="day_row-content-image image-wrap image-wrap--portrait-tall u-overflow-hidden">
-                      <img src="/images/about-rome/7d29901f5346ba603ddea32124ea9e141f10879a.png" alt="Roman Forum" className="image-wrap__img" />
+                      <img src={getAssetPath("/images/about-rome/7d29901f5346ba603ddea32124ea9e141f10879a.png")} alt="Roman Forum" className="image-wrap__img" />
                     </div>
                     <div className="day_row-content-text">
                       <div className="day_row-content-main">
@@ -933,7 +934,7 @@ export default function AboutRomePage() {
                 <div className="day_row-content">
                   <div className="day_row-content-grid">
                     <div className="day_row-content-image image-wrap image-wrap--portrait-tall u-overflow-hidden">
-                      <img src="/images/about-rome/cd1552bdfd9a6257407b683a42557f7b73a0364d.png" alt="Galleria Borghese" className="image-wrap__img" />
+                      <img src={getAssetPath("/images/about-rome/cd1552bdfd9a6257407b683a42557f7b73a0364d.png")} alt="Galleria Borghese" className="image-wrap__img" />
                     </div>
                     <div className="day_row-content-text">
                       <div className="day_row-content-main">
@@ -962,7 +963,7 @@ export default function AboutRomePage() {
                 <div className="day_row-content">
                   <div className="day_row-content-grid">
                     <div className="day_row-content-image image-wrap image-wrap--portrait-tall u-overflow-hidden">
-                      <img src="/images/about-rome/4a713401a3c5003f4d6d0eb078f7211df90acebd.png" alt="Pantheon" className="image-wrap__img" />
+                      <img src={getAssetPath("/images/about-rome/4a713401a3c5003f4d6d0eb078f7211df90acebd.png")} alt="Pantheon" className="image-wrap__img" />
                     </div>
                     <div className="day_row-content-text">
                       <div className="day_row-content-main">
@@ -991,7 +992,7 @@ export default function AboutRomePage() {
                 <div className="day_row-content">
                   <div className="day_row-content-grid">
                     <div className="day_row-content-image image-wrap image-wrap--portrait-tall u-overflow-hidden">
-                      <img src="/images/about-rome/5b99e425860ca2de7aadd16e2b46c27e2f8bb0bd.png" alt="Trevi Fountain" className="image-wrap__img" />
+                      <img src={getAssetPath("/images/about-rome/5b99e425860ca2de7aadd16e2b46c27e2f8bb0bd.png")} alt="Trevi Fountain" className="image-wrap__img" />
                     </div>
                     <div className="day_row-content-text">
                       <div className="day_row-content-main">
@@ -1020,7 +1021,7 @@ export default function AboutRomePage() {
                 <div className="day_row-content">
                   <div className="day_row-content-grid">
                     <div className="day_row-content-image image-wrap image-wrap--portrait-tall u-overflow-hidden">
-                      <img src="/images/about-rome/7d29901f5346ba603ddea32124ea9e141f10879a.png" alt="Castel Sant'Angelo" className="image-wrap__img" />
+                      <img src={getAssetPath("/images/about-rome/7d29901f5346ba603ddea32124ea9e141f10879a.png")} alt="Castel Sant'Angelo" className="image-wrap__img" />
                     </div>
                     <div className="day_row-content-text">
                       <div className="day_row-content-main">
@@ -1049,7 +1050,7 @@ export default function AboutRomePage() {
                 <div className="day_row-content">
                   <div className="day_row-content-grid">
                     <div className="day_row-content-image image-wrap image-wrap--portrait-tall u-overflow-hidden">
-                      <img src="/images/about-rome/cd1552bdfd9a6257407b683a42557f7b73a0364d.png" alt="Capitoline Museums" className="image-wrap__img" />
+                      <img src={getAssetPath("/images/about-rome/cd1552bdfd9a6257407b683a42557f7b73a0364d.png")} alt="Capitoline Museums" className="image-wrap__img" />
                     </div>
                     <div className="day_row-content-text">
                       <div className="day_row-content-main">
@@ -1070,7 +1071,7 @@ export default function AboutRomePage() {
             </div>
 
             <div className="day_image image-wrap image-wrap--square u-overflow-hidden">
-              <img src="/images/about-rome/4a713401a3c5003f4d6d0eb078f7211df90acebd.png" alt="Rome Culture" className="image-wrap__img" />
+              <img src={getAssetPath("/images/about-rome/4a713401a3c5003f4d6d0eb078f7211df90acebd.png")} alt="Rome Culture" className="image-wrap__img" />
             </div>
 
             <div className="day_cta">

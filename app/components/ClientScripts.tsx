@@ -2,6 +2,7 @@
 
 import { useEffect } from 'react'
 import Script from 'next/script'
+import { getAssetPath } from '../utils/paths'
 
 export default function ClientScripts() {
   useEffect(() => {
@@ -68,7 +69,7 @@ export default function ClientScripts() {
 
   return (
     <>
-      <Script src="/js/custom-cursor.js" strategy="lazyOnload" />
+      <Script src={getAssetPath("/js/custom-cursor.js")} strategy="lazyOnload" />
     </>
   )
 }
