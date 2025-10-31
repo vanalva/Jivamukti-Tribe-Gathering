@@ -895,7 +895,6 @@ strong {
 
 .nav_link--active .nav_arrow-icon {
   visibility: visible;
-  content: url('/images/menu/arrow-red.svg');
 }
 
 /* Active state for right menu: keep shifted left */

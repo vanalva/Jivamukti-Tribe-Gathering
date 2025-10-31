@@ -28,15 +28,15 @@ export default function Navigation({ logoPath = '/images/tribe-isotype.svg' }: N
         <div className="nav_menu">
           <Link href="/about-tribe" className={`nav_link link text-nav u-text-uppercase ${isActive('/about-tribe')}`}>
             About
-            <img src={getAssetPath("/images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg")} alt="" className="nav_arrow-icon" />
+            <img src={isActive('/about-tribe') ? getAssetPath("/images/menu/arrow-red.svg") : getAssetPath("/images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg")} alt="" className="nav_arrow-icon" />
           </Link>
           <Link href="/schedule" className={`nav_link link text-nav u-text-uppercase ${isActive('/schedule')}`}>
             Schedule
-            <img src={getAssetPath("/images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg")} alt="" className="nav_arrow-icon" />
+            <img src={isActive('/schedule') ? getAssetPath("/images/menu/arrow-red.svg") : getAssetPath("/images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg")} alt="" className="nav_arrow-icon" />
           </Link>
           <Link href="/booking" className={`nav_link link text-nav u-text-uppercase ${isActive('/booking')}`}>
             Register
-            <img src={getAssetPath("/images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg")} alt="" className="nav_arrow-icon" />
+            <img src={isActive('/booking') ? getAssetPath("/images/menu/arrow-red.svg") : getAssetPath("/images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg")} alt="" className="nav_arrow-icon" />
           </Link>
         </div>
 
@@ -63,11 +63,11 @@ export default function Navigation({ logoPath = '/images/tribe-isotype.svg' }: N
           </button>
           <Link href="/archive" className={`nav_link link text-nav u-text-uppercase ${isActive('/archive')}`}>
             Archive
-            <img src={getAssetPath("/images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg")} alt="" className="nav_arrow-icon" />
+            <img src={isActive('/archive') ? getAssetPath("/images/menu/arrow-red.svg") : getAssetPath("/images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg")} alt="" className="nav_arrow-icon" />
           </Link>
           <Link href="/about-rome" className={`nav_link link text-nav u-text-uppercase ${isActive('/about-rome')}`}>
             Useful Info
-            <img src={getAssetPath("/images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg")} alt="" className="nav_arrow-icon" />
+            <img src={isActive('/about-rome') ? getAssetPath("/images/menu/arrow-red.svg") : getAssetPath("/images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg")} alt="" className="nav_arrow-icon" />
           </Link>
         </div>
       </div>
