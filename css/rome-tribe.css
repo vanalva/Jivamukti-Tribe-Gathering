@@ -30,6 +30,8 @@ img {
   max-width: 100%;
   vertical-align: middle;
   display: inline-block;
+  overflow: visible;
+  overflow-clip-margin: 0;
 }
 
 /* Text Selection Styling */
