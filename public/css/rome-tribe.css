@@ -1016,7 +1016,7 @@ strong {
   padding: 0;
   min-height: 100vh;
   max-height: 100vh;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .hero_content {
@@ -2053,7 +2053,7 @@ strong {
 .hero_wrap {
   background-color: var(--swatch--light-100);
   min-height: 100vh;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .hero_background {
