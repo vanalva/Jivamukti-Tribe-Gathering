@@ -43,6 +43,28 @@ img {
   color: var(--swatch--dark-900);
 }
 
+/* Disable hover effects on touch devices */
+@media (hover: none) and (pointer: coarse) {
+  * {
+    cursor: auto !important;
+  }
+
+  .custom-cursor {
+    display: none !important;
+  }
+
+  /* Disable all hover transitions on touch devices */
+  a:hover,
+  button:hover,
+  .teacher_item:hover,
+  .day_row:hover,
+  .nav_menu-link:hover,
+  .teacher_arrow:hover,
+  *:hover {
+    transition: none !important;
+  }
+}
+
 /* Custom Scrollbar - Visible with Custom Styling */
 /* Webkit browsers (Chrome, Safari, Edge) */
 ::-webkit-scrollbar {
@@ -2060,6 +2082,8 @@ strong {
 .hero_floating_image {
   position: absolute;
   z-index: 1;
+  transition: transform 0.15s ease-out;
+  will-change: transform;
 }
 
 /* Top-Left Floating Image */
@@ -2120,8 +2144,8 @@ strong {
   }
 
   .hero_floating_image {
-    width: 30%;
-    max-width: 12rem;
+    width: 45%;
+    max-width: 18rem;
   }
 
   .hero_floating_image-topleft {
@@ -2202,6 +2226,14 @@ strong {
   word-break: break-word;
   hyphens: auto;
   box-sizing: border-box;
+}
+
+.home-about_main-title-word {
+  white-space: nowrap;
+  display: block;
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
 }
 
 .home-about_subtitle {
@@ -2442,6 +2474,43 @@ strong {
   .teachers_hover-badge {
     display: none;
   }
+
+  /* Mobile toggle functionality */
+  .teacher_item {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .teacher_item-header {
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-end;
+    gap: var(--_spacing---space--4);
+    width: 100%;
+  }
+
+  .teacher_item-mobile-image {
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, margin-top 0.4s ease-out;
+  }
+
+  .teacher_item-mobile-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+
+  .teacher_item.is-expanded .teacher_item-mobile-image {
+    max-height: 60vh;
+    margin-top: var(--_spacing---space--4);
+  }
+
+  .teacher_item.is-expanded .teacher_arrow {
+    transform: rotate(90deg);
+  }
 }
 
 /* Home Looking Back Section */
@@ -2562,7 +2631,43 @@ strong {
 /* Responsive Adjustments */
 @media (max-width: 991px) {
 
-  
+  /* Home About Hero - Mobile/Tablet */
+  .home-about_hero-grid {
+    grid-template-columns: 1fr;
+    gap: var(--_spacing---space--4);
+    margin-bottom: var(--_spacing---space--6);
+  }
+
+  .home-about_hero-image-wrap {
+    min-height: 50vh;
+    max-height: 60vh;
+  }
+
+  .home-about_hero-image {
+    min-height: 50vh;
+    max-height: 60vh;
+  }
+
+  .home-about_hero-titles {
+    min-height: auto;
+    gap: var(--_spacing---space--3);
+    width: 100%;
+  }
+
+  .home-about_main-title {
+    font-size: clamp(3rem, 10vw, 5rem);
+    width: 100%;
+  }
+
+  .home-about_subtitle {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+  }
+
+  .home-about_content-grid {
+    grid-template-columns: 1fr;
+    gap: var(--_spacing---space--5);
+  }
+
   .home-about_text-wrap {
     grid-column: 1;
   }

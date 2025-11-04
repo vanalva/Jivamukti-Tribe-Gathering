@@ -6,6 +6,18 @@
 (function() {
     'use strict';
 
+    // Check if device has touch capability
+    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0;
+
+    // Exit early if touch device
+    if (isTouchDevice) {
+        const cursor = document.querySelector('.custom-cursor');
+        if (cursor) {
+            cursor.style.display = 'none';
+        }
+        return;
+    }
+
     const cursor = document.querySelector('.custom-cursor');
 
     if (!cursor) return;
