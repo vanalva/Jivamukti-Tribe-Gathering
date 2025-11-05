@@ -17,7 +17,14 @@
       "Bash(git merge:*)",
       "Bash(git stash:*)",
       "Bash(tasklist:*)",
-      "Bash(taskkill:*)"
+      "Bash(taskkill:*)",
+      "Bash(netstat:*)",
+      "Bash(powershell:*)",
+      "Bash(awk:*)",
+      "Bash(xargs:*)",
+      "Bash(test:*)",
+      "Bash(git log:*)",
+      "Bash(git pull:*)"
     ],
     "deny": [],
     "ask": []
