@@ -120,6 +120,60 @@ export default function Home() {
         }
       }
     }
+
+    // Teacher popup modal functionality
+    const teacherItemsForModal = document.querySelectorAll('.teacher_item')
+    const modal = document.getElementById('teacherModal')
+    const closeModal = document.querySelector('.teacher-modal_close')
+    const body = document.body
+
+    teacherItemsForModal.forEach((item) => {
+      item.addEventListener('click', function(e: Event) {
+        e.preventDefault()
+        const teacherName = item.getAttribute('data-teacher-name')
+        const teacherImage = item.getAttribute('data-teacher-image')
+        const teacherRole = item.querySelector('.teacher_eyebrow')?.textContent
+
+        // Update modal content
+        const modalImage = document.querySelector('.teacher-modal_image') as HTMLImageElement
+        const modalName = document.querySelector('.teacher-modal_name')
+        const modalRole = document.querySelector('.teacher-modal_role')
+
+        if (modalImage && teacherImage) modalImage.src = teacherImage
+        if (modalName && teacherName) modalName.textContent = teacherName
+        if (modalRole && teacherRole) modalRole.textContent = teacherRole
+
+        // Show modal
+        modal?.classList.add('is-visible')
+        body.style.overflow = 'hidden'
+      })
+    })
+
+    closeModal?.addEventListener('click', function() {
+      modal?.classList.remove('is-visible')
+      body.style.overflow = ''
+    })
+
+    // Close on outside click
+    modal?.addEventListener('click', function(e: Event) {
+      if (e.target === modal) {
+        modal.classList.remove('is-visible')
+        body.style.overflow = ''
+      }
+    })
+
+    // Close on ESC key
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && modal?.classList.contains('is-visible')) {
+        modal.classList.remove('is-visible')
+        body.style.overflow = ''
+      }
+    }
+    document.addEventListener('keydown', handleEscape)
+
+    return () => {
+      document.removeEventListener('keydown', handleEscape)
+    }
   }, [])
 
   const additionalScripts = (
@@ -169,21 +223,22 @@ export default function Home() {
             <div className="home-about_hero-titles">
               <p className="text-h4 home-about_date u-text-uppercase">SEPT<br/>2026</p>
               <h2 className="text-display-xl home-about_main-title u-text-uppercase">
-                <span className="home-about_main-title-word">LET&apos;S</span>
-                <span className="home-about_main-title-word">EXPLORE</span>
-                <span className="home-about_main-title-word">ROME</span>
+                <span className="home-about_main-title-word">JOIN</span>
+                <span className="home-about_main-title-word">THE TRIBE</span>
+                <span className="home-about_main-title-word">GATHERING</span>
               </h2>
-              <p className="text-h1 home-about_subtitle u-text-uppercase">WITH THE TRIBE</p>
+              <p className="text-h1 home-about_subtitle u-text-uppercase">in Rome, Italy</p>
             </div>
           </div>
 
           {/* Bottom Grid: Heading + Content */}
           <div className="home-about_content-grid">
             {/* Left: Large Heading */}
-            <h3 className="text-h1 home-about_heading">Jivamukti Tribe Gathering is a four-day yoga festival</h3>
+            <h3 className="text-h1 home-about_heading">Coming Home to Rome</h3>
 
             {/* Right: Description + CTA */}
             <div className="home-about_text-wrap">
+              <h3 className="text-h3 home-about_subheading">Jivamukti Tribe Gathering is a four-day yoga festival</h3>
               <p className="text-body-lg home-about_description">celebrating life and expressing our love and devotion through collective yoga practice, chanting, meditation and satsang. For the first time ever, Rome welcomes the worldwide yoga community to join us at our annual gathering, featuring classes with top Jivamukti Yoga teachers from around the world.</p>
               <Link href="/booking" className="button button--brand">JOIN US</Link>
             </div>
@@ -401,6 +456,9 @@ export default function Home() {
           <div className="teachers_list">
             {/* Teacher Item 1: Sharon Gannon */}
             <div className="teacher_item" data-teacher-image={getAssetPath("/images/teachers/Sharon Gannon/_MG_8528_WEB.JPG")} data-teacher-name="SHARON GANNON">
+              <div className="teacher_item-thumbnail-wrap">
+                <img src={getAssetPath("/images/teachers/Sharon Gannon/_MG_8528_WEB.JPG")} alt="Sharon Gannon" className="teacher_item-thumbnail" />
+              </div>
               <div className="teacher_info">
                 <p className="text-body-md teacher_eyebrow">Open Class</p>
                 <h3 className="text-h1 u-text-uppercase">SHARON GANNON</h3>
@@ -410,9 +468,26 @@ export default function Home() {
               </Link>
             </div>
 
-            {/* Teacher Item 2: Yogeswari */}
-            <div className="teacher_item" data-teacher-image={getAssetPath("/images/teachers/Yogeswari/2018.02.27_Jivamukti_TT_Yogeswari-051.jpg")} data-teacher-name="YOGESWARI">
+            {/* Teacher Item 2: Jules Febre */}
+            <div className="teacher_item" data-teacher-image={getAssetPath("/images/teachers/Jules/2017.05.30_YogaPalais_Jules-122.jpg")} data-teacher-name="JULES FEBRE">
+              <div className="teacher_item-thumbnail-wrap">
+                <img src={getAssetPath("/images/teachers/Jules/2017.05.30_YogaPalais_Jules-122.jpg")} alt="Jules Febre" className="teacher_item-thumbnail" />
+              </div>
               <div className="teacher_info teacher_info--offset">
+                <p className="text-body-md teacher_eyebrow">Lecture</p>
+                <h3 className="text-h1 u-text-uppercase">JULES FEBRE</h3>
+              </div>
+              <Link href="/teachers" className="teacher_arrow" aria-label="View Jules Febre profile">
+                <img src={getAssetPath("/images/home/a6a9d170229ebfdceff4645f9c57d5ba83f93601.svg")} alt="" className="teacher_arrow-icon" />
+              </Link>
+            </div>
+
+            {/* Teacher Item 3: Yogeswari */}
+            <div className="teacher_item" data-teacher-image={getAssetPath("/images/teachers/Yogeswari/2018.02.27_Jivamukti_TT_Yogeswari-051.jpg")} data-teacher-name="YOGESWARI">
+              <div className="teacher_item-thumbnail-wrap">
+                <img src={getAssetPath("/images/teachers/Yogeswari/2018.02.27_Jivamukti_TT_Yogeswari-051.jpg")} alt="Yogeswari" className="teacher_item-thumbnail" />
+              </div>
+              <div className="teacher_info teacher_info--offset-large">
                 <p className="text-body-md teacher_eyebrow">Open Class</p>
                 <h3 className="text-h1 u-text-uppercase">YOGESWARI</h3>
               </div>
@@ -421,24 +496,114 @@ export default function Home() {
               </Link>
             </div>
 
-            {/* Teacher Item 3: Hachi Yu */}
-            <div className="teacher_item" data-teacher-image={getAssetPath("/images/teachers/Hachi/2023.05.18_JYTribe_Day_01_0335.jpg")} data-teacher-name="HACHI YU">
-              <div className="teacher_info teacher_info--offset-large">
-                <p className="text-body-md teacher_eyebrow">Masterclass</p>
-                <h3 className="text-h1 u-text-uppercase">HACHI YU</h3>
+            {/* Teacher Item 4: Rima Rabbath */}
+            <div className="teacher_item" data-teacher-image={getAssetPath("/images/teachers/Rima/2024.05.10_Jivamukti_Tribe_Asana_0308.jpg")} data-teacher-name="RIMA RABBATH">
+              <div className="teacher_item-thumbnail-wrap">
+                <img src={getAssetPath("/images/teachers/Rima/2024.05.10_Jivamukti_Tribe_Asana_0308.jpg")} alt="Rima Rabbath" className="teacher_item-thumbnail" />
               </div>
-              <Link href="/teachers" className="teacher_arrow" aria-label="View Hachi Yu profile">
+              <div className="teacher_info teacher_info--offset-medium">
+                <p className="text-body-md teacher_eyebrow">Workshop</p>
+                <h3 className="text-h1 u-text-uppercase">RIMA RABBATH</h3>
+              </div>
+              <Link href="/teachers" className="teacher_arrow" aria-label="View Rima Rabbath profile">
                 <img src={getAssetPath("/images/home/a6a9d170229ebfdceff4645f9c57d5ba83f93601.svg")} alt="" className="teacher_arrow-icon" />
               </Link>
             </div>
 
-            {/* Teacher Item 4: Jules Febre */}
-            <div className="teacher_item" data-teacher-image={getAssetPath("/images/home/b2a1fb87cf82c5e5870cd73a5814f50c99da688d.png")} data-teacher-name="JULES FEBRE">
-              <div className="teacher_info teacher_info--offset-medium">
-                <p className="text-body-md teacher_eyebrow">Lecture</p>
-                <h3 className="text-h1 u-text-uppercase">JULES FEBRE</h3>
+            {/* Teacher Item 5: Olga Oskorbina */}
+            <div className="teacher_item" data-teacher-image={getAssetPath("/images/teachers/Olga/2023.05.18_JYTribe_Day_01_0369.jpg")} data-teacher-name="OLGA OSKORBINA">
+              <div className="teacher_item-thumbnail-wrap">
+                <img src={getAssetPath("/images/teachers/Olga/2023.05.18_JYTribe_Day_01_0369.jpg")} alt="Olga Oskorbina" className="teacher_item-thumbnail" />
               </div>
-              <Link href="/teachers" className="teacher_arrow" aria-label="View Jules Febre profile">
+              <div className="teacher_info">
+                <p className="text-body-md teacher_eyebrow">Open Class</p>
+                <h3 className="text-h1 u-text-uppercase">OLGA OSKORBINA</h3>
+              </div>
+              <Link href="/teachers" className="teacher_arrow" aria-label="View Olga Oskorbina profile">
+                <img src={getAssetPath("/images/home/a6a9d170229ebfdceff4645f9c57d5ba83f93601.svg")} alt="" className="teacher_arrow-icon" />
+              </Link>
+            </div>
+
+            {/* Teacher Item 6: HaChi Yu */}
+            <div className="teacher_item" data-teacher-image={getAssetPath("/images/teachers/Hachi/2023.05.18_JYTribe_Day_01_0335.jpg")} data-teacher-name="HACHI YU">
+              <div className="teacher_item-thumbnail-wrap">
+                <img src={getAssetPath("/images/teachers/Hachi/2023.05.18_JYTribe_Day_01_0335.jpg")} alt="HaChi Yu" className="teacher_item-thumbnail" />
+              </div>
+              <div className="teacher_info teacher_info--offset">
+                <p className="text-body-md teacher_eyebrow">Masterclass</p>
+                <h3 className="text-h1 u-text-uppercase">HACHI YU</h3>
+              </div>
+              <Link href="/teachers" className="teacher_arrow" aria-label="View HaChi Yu profile">
+                <img src={getAssetPath("/images/home/a6a9d170229ebfdceff4645f9c57d5ba83f93601.svg")} alt="" className="teacher_arrow-icon" />
+              </Link>
+            </div>
+
+            {/* Teacher Item 7: Anna Lunegova */}
+            <div className="teacher_item" data-teacher-image={getAssetPath("/images/teachers/anna-lunegova.jpg")} data-teacher-name="ANNA LUNEGOVA">
+              <div className="teacher_item-thumbnail-wrap">
+                <img src={getAssetPath("/images/teachers/anna-lunegova.jpg")} alt="Anna Lunegova" className="teacher_item-thumbnail" />
+              </div>
+              <div className="teacher_info teacher_info--offset-large">
+                <p className="text-body-md teacher_eyebrow">Workshop</p>
+                <h3 className="text-h1 u-text-uppercase">ANNA LUNEGOVA</h3>
+              </div>
+              <Link href="/teachers" className="teacher_arrow" aria-label="View Anna Lunegova profile">
+                <img src={getAssetPath("/images/home/a6a9d170229ebfdceff4645f9c57d5ba83f93601.svg")} alt="" className="teacher_arrow-icon" />
+              </Link>
+            </div>
+
+            {/* Teacher Item 8: Juan Sierra */}
+            <div className="teacher_item" data-teacher-image={getAssetPath("/images/teachers/juan.sierra.jivamukti.yoga.teacher.jpeg")} data-teacher-name="JUAN SIERRA">
+              <div className="teacher_item-thumbnail-wrap">
+                <img src={getAssetPath("/images/teachers/juan.sierra.jivamukti.yoga.teacher.jpeg")} alt="Juan Sierra" className="teacher_item-thumbnail" />
+              </div>
+              <div className="teacher_info teacher_info--offset-medium">
+                <p className="text-body-md teacher_eyebrow">Open Class</p>
+                <h3 className="text-h1 u-text-uppercase">JUAN SIERRA</h3>
+              </div>
+              <Link href="/teachers" className="teacher_arrow" aria-label="View Juan Sierra profile">
+                <img src={getAssetPath("/images/home/a6a9d170229ebfdceff4645f9c57d5ba83f93601.svg")} alt="" className="teacher_arrow-icon" />
+              </Link>
+            </div>
+
+            {/* Teacher Item 9: Andrea Kwiatkowski */}
+            <div className="teacher_item" data-teacher-image={getAssetPath("/images/teachers/Andrea/DSC07259.jpg")} data-teacher-name="ANDREA KWIATKOWSKI">
+              <div className="teacher_item-thumbnail-wrap">
+                <img src={getAssetPath("/images/teachers/Andrea/DSC07259.jpg")} alt="Andrea Kwiatkowski" className="teacher_item-thumbnail" />
+              </div>
+              <div className="teacher_info">
+                <p className="text-body-md teacher_eyebrow">Lecture</p>
+                <h3 className="text-h1 u-text-uppercase">ANDREA KWIATKOWSKI</h3>
+              </div>
+              <Link href="/teachers" className="teacher_arrow" aria-label="View Andrea Kwiatkowski profile">
+                <img src={getAssetPath("/images/home/a6a9d170229ebfdceff4645f9c57d5ba83f93601.svg")} alt="" className="teacher_arrow-icon" />
+              </Link>
+            </div>
+
+            {/* Teacher Item 10: Magali Lehners */}
+            <div className="teacher_item" data-teacher-image={getAssetPath("/images/teachers/magali.jpg")} data-teacher-name="MAGALI LEHNERS">
+              <div className="teacher_item-thumbnail-wrap">
+                <img src={getAssetPath("/images/teachers/magali.jpg")} alt="Magali Lehners" className="teacher_item-thumbnail" />
+              </div>
+              <div className="teacher_info teacher_info--offset">
+                <p className="text-body-md teacher_eyebrow">Workshop</p>
+                <h3 className="text-h1 u-text-uppercase">MAGALI LEHNERS</h3>
+              </div>
+              <Link href="/teachers" className="teacher_arrow" aria-label="View Magali Lehners profile">
+                <img src={getAssetPath("/images/home/a6a9d170229ebfdceff4645f9c57d5ba83f93601.svg")} alt="" className="teacher_arrow-icon" />
+              </Link>
+            </div>
+
+            {/* Teacher Item 11: Dana Sertel */}
+            <div className="teacher_item" data-teacher-image={getAssetPath("/images/teachers/dana-sertel.png")} data-teacher-name="DANA SERTEL">
+              <div className="teacher_item-thumbnail-wrap">
+                <img src={getAssetPath("/images/teachers/dana-sertel.png")} alt="Dana Sertel" className="teacher_item-thumbnail" />
+              </div>
+              <div className="teacher_info teacher_info--offset-large">
+                <p className="text-body-md teacher_eyebrow">Open Class</p>
+                <h3 className="text-h1 u-text-uppercase">DANA SERTEL</h3>
+              </div>
+              <Link href="/teachers" className="teacher_arrow" aria-label="View Dana Sertel profile">
                 <img src={getAssetPath("/images/home/a6a9d170229ebfdceff4645f9c57d5ba83f93601.svg")} alt="" className="teacher_arrow-icon" />
               </Link>
             </div>
@@ -472,28 +637,64 @@ export default function Home() {
             <img src={getAssetPath("/images/home/7daed26c9efac9c483a5692dcacb5545bffe955f.png")} alt="Tribe Gathering 2025" className="image-wrap__img" />
           </div>
 
-          <h3 className="text-display-lg home-lookback_subtitle u-text-uppercase">TRIBE GATHERING 2025</h3>
+          <h3 className="text-display-lg home-lookback_subtitle u-text-uppercase">Tribe gather­ings of the past</h3>
+
+          <Link href="/archive" className="button button--outline">VIEW MORE</Link>
         </div>
       </section>
 
-      {/* Rome Section (Two-Slot Pattern) */}
-      <section className="rome_wrap u-section u-position-relative">
-        <div className="rome_background u-cover-absolute u-zindex-negative"></div>
-        <div className="rome_content u-position-relative home-rome_content">
+      {/* Teacher Modal */}
+      <div id="teacherModal" className="teacher-modal">
+        <div className="teacher-modal_overlay"></div>
+        <div className="teacher-modal_content">
+          <button className="teacher-modal_close" aria-label="Close modal">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M24 8L8 24M8 8L24 24" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+            </svg>
+          </button>
 
-          {/* Video with Play Button */}
-          <div className="home-rome_video-wrap">
-            <img src={getAssetPath("/images/home/316df861ded7b263ef32eb137a4493c780bc65b8.png")} alt="Rome Architecture" className="home-rome_video-image" />
-            <button className="home-rome_play-button" aria-label="Play video">
-              <img src={getAssetPath("/images/home/784c6eb6959d89300ded47aa5c49463892148c55.svg")} alt="" className="home-rome_play-icon" />
-            </button>
+          <div className="teacher-modal_grid">
+            {/* Left: Teacher Info */}
+            <div className="teacher-modal_info">
+              <p className="text-body-md teacher-modal_role">Open Class</p>
+              <h2 className="text-display-md teacher-modal_name u-text-uppercase">TEACHER NAME</h2>
+
+              {/* Bio Section */}
+              <div className="teacher-modal_section">
+                <h3 className="text-h4 u-text-uppercase u-weight-bold">About</h3>
+                <p className="text-body-md">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+                </p>
+                <p className="text-body-md">
+                  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+                </p>
+              </div>
+
+              {/* Classes Section */}
+              <div className="teacher-modal_section">
+                <h3 className="text-h4 u-text-uppercase u-weight-bold">Classes at Tribe 2026</h3>
+                <ul className="teacher-modal_classes">
+                  <li className="text-body-md">Friday, Sept 09 - 10:00 | Masterclass</li>
+                  <li className="text-body-md">Saturday, Sept 10 - 14:00 | Workshop</li>
+                  <li className="text-body-md">Sunday, Sept 11 - 18:00 | Open Class</li>
+                </ul>
+              </div>
+
+              {/* Action Buttons */}
+              <div className="teacher-modal_actions">
+                <Link href="/booking" className="button button--primary">REGISTER FOR TRIBE</Link>
+                <Link href="/schedule" className="button button--outline">VIEW FULL SCHEDULE</Link>
+              </div>
+            </div>
+
+            {/* Right: Teacher Photo */}
+            <div className="teacher-modal_image-wrap">
+              <img src={getAssetPath("/images/home/b2a1fb87cf82c5e5870cd73a5814f50c99da688d.png")} alt="Teacher" className="teacher-modal_image" />
+            </div>
           </div>
-
-          {/* ITALY Text */}
-          <h2 className="home-rome_title u-text-uppercase">ITALY</h2>
-
         </div>
-      </section>
+      </div>
+
     </PageTemplate>
   )
 }

@@ -22,16 +22,16 @@ export default function FullscreenMenu() {
               SCHEDULE
               <img src={getAssetPath("/images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg")} alt="" className="menu-fullscreen_arrow-icon" />
             </Link>
-            <Link href="/teachers" className="menu-fullscreen_link text-display-xl u-text-uppercase">
-              TEACHERS
-              <img src={getAssetPath("/images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg")} alt="" className="menu-fullscreen_arrow-icon" />
-            </Link>
             <Link href="/booking" className="menu-fullscreen_link menu-fullscreen_link--primary text-display-xl u-text-uppercase">
               REGISTER
               <img src={getAssetPath("/images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg")} alt="" className="menu-fullscreen_arrow-icon" />
             </Link>
             <Link href="/about-rome" className="menu-fullscreen_link text-display-xl u-text-uppercase">
               USEFUL INFO
+              <img src={getAssetPath("/images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg")} alt="" className="menu-fullscreen_arrow-icon" />
+            </Link>
+            <Link href="/teachers" className="menu-fullscreen_link text-display-xl u-text-uppercase">
+              LINEUP
               <img src={getAssetPath("/images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg")} alt="" className="menu-fullscreen_arrow-icon" />
             </Link>
             <Link href="/archive" className="menu-fullscreen_link text-display-xl u-text-uppercase">

@@ -18,12 +18,13 @@ export default function BookingPage() {
             <img src={getAssetPath("/images/booking/4a713401a3c5003f4d6d0eb078f7211df90acebd.png")} alt="Yoga practice" className="hero-collage_image" />
           </div>
 
-          {/* Title and Logo (Right) */}
-          <div className="hero-collage_logo-wrap">
-            <div className="image-wrap image-wrap--freeform" style={{maxWidth: 'clamp(200px, 25vw, 400px)'}}>
+          {/* Logo (Right column on desktop, centered on mobile) */}
+          <div className="hero-collage_logo-wrap hero-collage_logo-wrap--teachers">
+            <div className="image-wrap image-wrap--freeform">
               <img src={getAssetPath("/images/tribe-short-logotype-currentcolor.svg")} alt="Jivamukti Yoga The Tribe Gathering" className="image-wrap__img image-wrap__img--contain" />
             </div>
           </div>
+
           <h1 className="hero-collage_title-bottom">REGISTER</h1>
         </div>
       </section>
@@ -57,7 +58,7 @@ export default function BookingPage() {
             <h2 className="text-h1 u-text-uppercase">FULL 4 DAY PASS</h2>
           </div>
           {/* Right: Pricing Cards */}
-          <div className="u-flex-vertical-nowrap u-gap-8">
+          <div className="pricing-cards-grid">
             {/* Early Bird Card */}
             <div className="card_primary_wrap">
               <div className="card_primary_element u-flex-vertical-nowrap u-gap-4 u-padding-6">
@@ -108,7 +109,7 @@ export default function BookingPage() {
             </div>
           </div>
           {/* Right: Pricing Cards */}
-          <div className="u-flex-vertical-nowrap u-gap-8">
+          <div className="pricing-cards-grid">
             {/* Early Bird Card */}
             <div className="card_primary_wrap">
               <div className="card_primary_element u-flex-vertical-nowrap u-gap-4 u-padding-6">
@@ -159,7 +160,7 @@ export default function BookingPage() {
             </div>
           </div>
           {/* Right: Pricing Cards */}
-          <div className="u-flex-vertical-nowrap u-gap-8">
+          <div className="pricing-cards-grid">
             {/* Early Bird Card */}
             <div className="card_primary_wrap">
               <div className="card_primary_element u-flex-vertical-nowrap u-gap-4 u-padding-6">

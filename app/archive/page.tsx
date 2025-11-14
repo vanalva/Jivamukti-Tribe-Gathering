@@ -95,12 +95,13 @@ export default function ArchivePage() {
             <img src={getAssetPath("/images/archive/eebc30323727acbd7be2d70049cc308de22de498.png")} alt="Archive Collage" className="hero-collage_image" />
           </div>
 
-          {/* Title and Logo (Right) */}
-          <div className="hero-collage_logo-wrap">
-            <div className="image-wrap image-wrap--freeform" style={{maxWidth: 'clamp(200px, 25vw, 400px)'}}>
+          {/* Logo (Right column on desktop, centered on mobile) */}
+          <div className="hero-collage_logo-wrap hero-collage_logo-wrap--teachers">
+            <div className="image-wrap image-wrap--freeform">
               <img src={getAssetPath("/images/tribe-short-logotype-currentcolor.svg")} alt="Jivamukti Yoga The Tribe Gathering" className="image-wrap__img image-wrap__img--contain" />
             </div>
           </div>
+
           <h1 className="hero-collage_title-bottom">ARCHIVE</h1>
         </div>
       </section>
@@ -111,12 +112,9 @@ export default function ArchivePage() {
         <div className="video-hero_content u-position-relative u-navbar-offset">
           {/* Left: Title Group */}
           <div className="video-hero_text-group">
-            <h2 className="text-h1 u-text-uppercase">STAVANGER 2025</h2>
-            <h2 className="text-h1 u-text-uppercase">TRIBE GATHERING</h2>
-            <h2 className="text-h1 u-text-uppercase">VIDEO HIGHLIGHTS</h2>
-            <p className="text-body-lg video-hero_subtitle">
-              to book your ticket and reserve your spot for classes and sessions
-            </p>
+            <h2 className="text-h1 u-text-uppercase">LOOKING BACK AT</h2>
+            <h2 className="text-h1 u-text-uppercase">TRIBE GATHERING 2025</h2>
+            <h2 className="text-h1 u-text-uppercase">IN STAVANGER, NORWAY</h2>
           </div>
 
           {/* Right Bottom: Featured Video */}
@@ -134,13 +132,10 @@ export default function ArchivePage() {
         <div className="filter_background u-cover-absolute u-zindex-negative"></div>
         <div className="filter_content u-position-relative">
           <div className="filter_buttons">
-            <button className="filter_button filter_button--active" data-filter="all">ALL</button>
-            <button className="filter_button" data-filter="paris">PARIS</button>
-            <button className="filter_button" data-filter="barcelona">BARCELONA</button>
-            <button className="filter_button" data-filter="berlin">BERLIN</button>
-            <button className="filter_button" data-filter="munich">MUNICH</button>
-            <button className="filter_button" data-filter="newyork">NEW YORK</button>
-            <button className="filter_button" data-filter="london">LONDON</button>
+            <button className="filter_button filter_button--active" data-filter="all">STAVANGER 2025</button>
+            <button className="filter_button" data-filter="barcelona">BARCELONA 2023</button>
+            <button className="filter_button" data-filter="paris">PARIS 2024</button>
+            <button className="filter_button" data-filter="berlin">BERLIN 2019</button>
           </div>
         </div>
       </section>

@@ -24,12 +24,13 @@ export default function SchedulePage() {
             <img src={getAssetPath("/images/schedule/a442d6830fad7ef1ff33d36fa9a2b8092d9650d2.png")} alt="Schedule planning with notebook" className="hero-collage_image" />
           </div>
 
-          {/* Title and Logo (Right) */}
-          <div className="hero-collage_logo-wrap">
-            <div className="image-wrap image-wrap--freeform" style={{maxWidth: 'clamp(200px, 25vw, 400px)'}}>
+          {/* Logo (Right column on desktop, centered on mobile) */}
+          <div className="hero-collage_logo-wrap hero-collage_logo-wrap--teachers">
+            <div className="image-wrap image-wrap--freeform">
               <img src={getAssetPath("/images/tribe-short-logotype-currentcolor.svg")} alt="Jivamukti Yoga The Tribe Gathering" className="image-wrap__img image-wrap__img--contain" />
             </div>
           </div>
+
           <h1 className="hero-collage_title-bottom">SCHEDULE</h1>
         </div>
       </section>

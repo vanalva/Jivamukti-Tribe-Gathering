@@ -15,22 +15,24 @@ export default function AboutRomePage() {
       <Navigation />
       <FullscreenMenu />
 
-      {/* Hero Section with Collage - Unified Layout */}
+      {/* Hero Section with Collage - Long Title Layout */}
       <section className="hero_wrap u-section u-position-relative">
         <div className="hero_background u-cover-absolute u-zindex-negative"></div>
-        <div className="hero_content u-position-relative hero-collage_content u-navbar-offset">
-          {/* Hero Image (Left) */}
-          <div className="hero-collage_image-wrap">
-            <img src={getAssetPath("/images/about-rome-hero/cd1552bdfd9a6257407b683a42557f7b73a0364d.png")} alt="Vintage Rome café scene" className="hero-collage_image" />
-          </div>
-
-          {/* Title and Logo (Right) */}
+        <div className="hero_content u-position-relative hero-collage_content hero-collage_content--long-title u-navbar-offset">
+          {/* Logo (Top Left) */}
           <div className="hero-collage_logo-wrap">
-            <div className="image-wrap image-wrap--freeform" style={{maxWidth: 'clamp(200px, 25vw, 400px)'}}>
+            <div className="image-wrap image-wrap--freeform">
               <img src={getAssetPath("/images/tribe-short-logotype-currentcolor.svg")} alt="Jivamukti Yoga The Tribe Gathering" className="image-wrap__img image-wrap__img--contain" />
             </div>
           </div>
+
+          {/* Title (Left side, flows naturally) */}
           <h1 className="hero-collage_title-bottom">ABOUT ROME</h1>
+
+          {/* Hero Image (Bottom Right) */}
+          <div className="hero-collage_image-wrap">
+            <img src={getAssetPath("/images/about-rome-hero/DSCF7568_2560w.webp")} alt="Rome scene" className="hero-collage_image" />
+          </div>
         </div>
       </section>
 

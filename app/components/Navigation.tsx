@@ -61,6 +61,10 @@ export default function Navigation({ logoPath = '/images/tribe-isotype.svg' }: N
               <line x1="20" y1="4" x2="4" y2="20" stroke="currentColor" strokeWidth="3" strokeLinecap="square"/>
             </svg>
           </button>
+          <Link href="/teachers" className={`nav_link link text-nav u-text-uppercase ${isActive('/teachers')}`}>
+            Lineup
+            <img src={isActive('/teachers') ? getAssetPath("/images/menu/arrow-red.svg") : getAssetPath("/images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg")} alt="" className="nav_arrow-icon" />
+          </Link>
           <Link href="/archive" className={`nav_link link text-nav u-text-uppercase ${isActive('/archive')}`}>
             Archive
             <img src={isActive('/archive') ? getAssetPath("/images/menu/arrow-red.svg") : getAssetPath("/images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg")} alt="" className="nav_arrow-icon" />
