@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import Navigation from '@/app/components/Navigation';
 import FullscreenMenu from '@/app/components/FullscreenMenu';
 import Footer from '@/app/components/Footer';
+import HeroCollage from '@/app/components/HeroCollage';
 import { getAssetPath } from '@/app/utils/paths';
 
 export default function ArchivePage() {
@@ -86,25 +87,11 @@ export default function ArchivePage() {
       <Navigation />
       <FullscreenMenu />
 
-      {/* Hero Section with Collage - Unified Layout */}
-      <section className="hero_wrap u-section u-position-relative">
-        <div className="hero_background u-cover-absolute u-zindex-negative"></div>
-        <div className="hero_content u-position-relative hero-collage_content u-navbar-offset">
-          {/* Hero Image (Left) */}
-          <div className="hero-collage_image-wrap">
-            <img src={getAssetPath("/images/archive/eebc30323727acbd7be2d70049cc308de22de498.png")} alt="Archive Collage" className="hero-collage_image" />
-          </div>
-
-          {/* Logo (Right column on desktop, centered on mobile) */}
-          <div className="hero-collage_logo-wrap hero-collage_logo-wrap--teachers">
-            <div className="image-wrap image-wrap--freeform">
-              <img src={getAssetPath("/images/tribe-short-logotype-currentcolor.svg")} alt="Jivamukti Yoga The Tribe Gathering" className="image-wrap__img image-wrap__img--contain" />
-            </div>
-          </div>
-
-          <h1 className="hero-collage_title-bottom">ARCHIVE</h1>
-        </div>
-      </section>
+      <HeroCollage
+        imageSrc="/images/latest-photos/_MG_5821.JPG_1024w.webp"
+        imageAlt="Archive Collage"
+        title="ARCHIVE"
+      />
 
       {/* Video Hero Section (Two-Slot) */}
       <section className="video-hero_wrap u-section u-position-relative">

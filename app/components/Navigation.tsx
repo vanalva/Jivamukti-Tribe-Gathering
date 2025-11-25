@@ -30,10 +30,6 @@ export default function Navigation({ logoPath = '/images/tribe-isotype.svg' }: N
             About
             <img src={isActive('/about-tribe') ? getAssetPath("/images/menu/arrow-red.svg") : getAssetPath("/images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg")} alt="" className="nav_arrow-icon" />
           </Link>
-          <Link href="/schedule" className={`nav_link link text-nav u-text-uppercase ${isActive('/schedule')}`}>
-            Schedule
-            <img src={isActive('/schedule') ? getAssetPath("/images/menu/arrow-red.svg") : getAssetPath("/images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg")} alt="" className="nav_arrow-icon" />
-          </Link>
           <Link href="/booking" className={`nav_link link text-nav u-text-uppercase ${isActive('/booking')}`}>
             Register
             <img src={isActive('/booking') ? getAssetPath("/images/menu/arrow-red.svg") : getAssetPath("/images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg")} alt="" className="nav_arrow-icon" />
@@ -68,10 +64,6 @@ export default function Navigation({ logoPath = '/images/tribe-isotype.svg' }: N
           <Link href="/archive" className={`nav_link link text-nav u-text-uppercase ${isActive('/archive')}`}>
             Archive
             <img src={isActive('/archive') ? getAssetPath("/images/menu/arrow-red.svg") : getAssetPath("/images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg")} alt="" className="nav_arrow-icon" />
-          </Link>
-          <Link href="/about-rome" className={`nav_link link text-nav u-text-uppercase ${isActive('/about-rome')}`}>
-            Useful Info
-            <img src={isActive('/about-rome') ? getAssetPath("/images/menu/arrow-red.svg") : getAssetPath("/images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg")} alt="" className="nav_arrow-icon" />
           </Link>
         </div>
       </div>

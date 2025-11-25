@@ -22,7 +22,6 @@ export default function Footer() {
             <ul className="footer_links footer_links--two-col">
               <li><Link href="/" className="link link--light footer_link text-body-md">Home</Link></li>
               <li><Link href="/about-tribe" className="link link--light footer_link text-body-md">About Tribe</Link></li>
-              <li><Link href="/schedule" className="link link--light footer_link text-body-md">Schedule</Link></li>
               <li><Link href="/teachers" className="link link--light footer_link text-body-md">Teachers</Link></li>
               <li><Link href="/booking" className="link link--light footer_link text-body-md">Register</Link></li>
             </ul>
@@ -31,7 +30,6 @@ export default function Footer() {
           <div className="footer_column footer_column--right">
             <h3 className="footer_column-title text-h5">Explore</h3>
             <ul className="footer_links">
-              <li><Link href="/about-rome" className="link link--light footer_link text-body-md">Useful Info</Link></li>
               <li><Link href="/teachers" className="link link--light footer_link text-body-md">Lineup</Link></li>
               <li><Link href="/archive" className="link link--light footer_link text-body-md">Archive</Link></li>
               <li><a href="https://jivamuktiyoga.com" target="_blank" rel="noopener noreferrer" className="link link--light footer_link text-body-md">The Jivamukti Method</a></li>

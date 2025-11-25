@@ -3,6 +3,7 @@
 import Navigation from '@/app/components/Navigation';
 import FullscreenMenu from '@/app/components/FullscreenMenu';
 import Footer from '@/app/components/Footer';
+import HeroCollage from '@/app/components/HeroCollage';
 import { useFilteredScheduleInteractions } from '@/app/hooks/useFilteredScheduleInteractions';
 import { getAssetPath } from '@/app/utils/paths';
 
@@ -15,26 +16,11 @@ export default function AboutRomePage() {
       <Navigation />
       <FullscreenMenu />
 
-      {/* Hero Section with Collage - Long Title Layout */}
-      <section className="hero_wrap u-section u-position-relative">
-        <div className="hero_background u-cover-absolute u-zindex-negative"></div>
-        <div className="hero_content u-position-relative hero-collage_content hero-collage_content--long-title u-navbar-offset">
-          {/* Logo (Top Left) */}
-          <div className="hero-collage_logo-wrap">
-            <div className="image-wrap image-wrap--freeform">
-              <img src={getAssetPath("/images/tribe-short-logotype-currentcolor.svg")} alt="Jivamukti Yoga The Tribe Gathering" className="image-wrap__img image-wrap__img--contain" />
-            </div>
-          </div>
-
-          {/* Title (Left side, flows naturally) */}
-          <h1 className="hero-collage_title-bottom">ABOUT ROME</h1>
-
-          {/* Hero Image (Bottom Right) */}
-          <div className="hero-collage_image-wrap">
-            <img src={getAssetPath("/images/about-rome-hero/DSCF7568_2560w.webp")} alt="Rome scene" className="hero-collage_image" />
-          </div>
-        </div>
-      </section>
+      <HeroCollage
+        imageSrc="/images/about-rome-hero/DSCF7568_2560w.webp"
+        imageAlt="Rome scene"
+        title="ABOUT ROME"
+      />
 
       {/* Plan Experience Section (Two-Slot) */}
       <section className="plan_wrap u-section u-position-relative">
