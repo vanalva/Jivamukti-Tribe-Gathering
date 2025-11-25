@@ -1147,8 +1147,9 @@ strong {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 46.4375rem;
-  height: 36.4375rem;
+  width: clamp(20rem, 35vw + 10rem, 46.4375rem);
+  height: auto;
+  aspect-ratio: 743 / 583;
   z-index: 2;
 }
 
@@ -1164,8 +1165,9 @@ strong {
   position: absolute;
   left: 0;
   top: 11.125rem;
-  width: 24rem;
-  height: 18.078125rem;
+  width: clamp(12rem, 15vw + 5rem, 24rem);
+  height: auto;
+  aspect-ratio: 384 / 289;
   z-index: 1;
   overflow: hidden;
   transition: transform 0.15s ease-out;
@@ -1184,8 +1186,9 @@ strong {
   position: absolute;
   right: 0;
   bottom: 5.625rem;
-  width: 30.73rem;
-  height: 23.1475rem;
+  width: clamp(15rem, 18vw + 6rem, 30.73rem);
+  height: auto;
+  aspect-ratio: 384 / 289;
   z-index: 1;
   overflow: hidden;
   transition: transform 0.15s ease-out;
