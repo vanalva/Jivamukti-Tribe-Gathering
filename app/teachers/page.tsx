@@ -188,7 +188,7 @@ export default function TeachersPage() {
           <div className="home-about_hero-grid">
             {/* Left: Full-bleed Hero Image */}
             <div className="home-about_hero-image-wrap u-breakout-left">
-              <img src={getAssetPath("/images/latest-photos/2023.05.18_JYTribe_Day_01_0300_1024w.webp")} alt="Teachers" className="home-about_hero-image" />
+              <img src={getAssetPath("/images/latest-photos/20190510_DSCF0448_1024w.webp")} alt="Teachers" className="home-about_hero-image" />
             </div>
 
             {/* Right: Title Stack */}
@@ -385,7 +385,7 @@ export default function TeachersPage() {
 
           {/* Right Column: Fixed Hero Image */}
           <div className="teachers_image-wrap">
-            <img src={getAssetPath("/images/teachers/Sharon%20Gannon/_MG_8528_WEB.JPG")} alt="" className="teachers_hero-image" />
+            <img src={getAssetPath("/images/latest-photos/JulesFebre_by_FlorianMaas_08_1024w.webp")} alt="" className="teachers_hero-image" />
           </div>
 
           {/* Hover Following Pink Circle */}

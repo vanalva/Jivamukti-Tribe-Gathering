@@ -753,7 +753,7 @@ export default function Home() {
 
           {/* Right Column: Fixed Hero Image */}
           <div className="teachers_image-wrap">
-            <img src={getAssetPath("/images/home/b2a1fb87cf82c5e5870cd73a5814f50c99da688d.png")} alt="" className="teachers_hero-image" />
+            <img src={getAssetPath("/images/latest-photos/JulesFebre_by_FlorianMaas_08_1024w.webp")} alt="" className="teachers_hero-image" />
           </div>
 
           {/* Hover Following Pink Circle */}
