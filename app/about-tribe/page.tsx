@@ -1,6 +1,7 @@
 import Navigation from '@/app/components/Navigation'
 import FullscreenMenu from '@/app/components/FullscreenMenu'
 import Footer from '@/app/components/Footer'
+import HeroCollage from '@/app/components/HeroCollage'
 import { getAssetPath } from '@/app/utils/paths'
 
 export default function AboutTribePage() {
@@ -9,26 +10,11 @@ export default function AboutTribePage() {
       <Navigation />
       <FullscreenMenu />
 
-      {/* Hero Section with Collage - Long Title Layout */}
-      <section className="hero_wrap u-section u-position-relative">
-        <div className="hero_background u-cover-absolute u-zindex-negative"></div>
-        <div className="hero_content u-position-relative hero-collage_content hero-collage_content--long-title u-navbar-offset">
-          {/* Logo (Top Left) */}
-          <div className="hero-collage_logo-wrap">
-            <div className="image-wrap image-wrap--freeform">
-              <img src={getAssetPath("/images/tribe-short-logotype-currentcolor.svg")} alt="Jivamukti Yoga The Tribe Gathering" className="image-wrap__img image-wrap__img--contain" />
-            </div>
-          </div>
-
-          {/* Title (Left side, flows naturally) */}
-          <h1 className="hero-collage_title-bottom" data-gsap-slide-up>ABOUT<br />THE TRIBE</h1>
-
-          {/* Hero Image (Bottom Right) */}
-          <div className="hero-collage_image-wrap">
-            <img src={getAssetPath("/images/about/09afe8e0497238bff34238caf01764bc0124c60f.png")} alt="Yoga gathering with harmonium" className="hero-collage_image" />
-          </div>
-        </div>
-      </section>
+      <HeroCollage
+        imageSrc="/images/latest-photos/DSCF7795_1024w.webp"
+        imageAlt="Yoga gathering with harmonium"
+        title="ABOUT THE TRIBE"
+      />
 
       {/* Satsang Definition Section */}
       <section className="plan_wrap u-position-relative">
@@ -45,10 +31,10 @@ export default function AboutTribePage() {
             {/* Right: Text */}
             <div>
               <h2 className="text-h1 u-text-uppercase u-weight-bold" style={{lineHeight: '1.1', marginBottom: 'var(--_spacing---space--4)'}}>
-                Hurry home to your real home, which is OM
+                "Hurry home to your real home, which is OM"
               </h2>
               <h3 className="text-h3" style={{marginBottom: 'var(--_spacing---space--6)'}}>
-                Shri Brahmananda Sarasvati
+                - Shri Brahmananda Sarasvati
               </h3>
               <p className="text-body-lg">
                 Jivamukti Tribe Gathering is a four-day yoga festival celebrating life and expressing our love and devotion through collective yoga practice, chanting, meditation and satsang. For the first time ever, Stavanger welcomes the worldwide yoga community to join us at our annual gathering, featuring classes with top Jivamukti Yoga teachers from around the world. Our evening lineup will feature kirtan, concerts and satsang.

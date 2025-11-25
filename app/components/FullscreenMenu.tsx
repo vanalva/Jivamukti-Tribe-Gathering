@@ -1,9 +1,25 @@
 'use client'
 
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { getAssetPath } from '../utils/paths'
 
+const pageImages: Record<string, string> = {
+  '/about-tribe': '/images/latest-photos/DSCF7795_1024w.webp',
+  '/teachers': '/images/latest-photos/2023.05.18_JYTribe_Day_01_0300_1024w.webp',
+  '/booking': '/images/latest-photos/DSCF7174_1024w.webp',
+  '/archive': '/images/latest-photos/_MG_5821.JPG_1024w.webp',
+  '/': '/images/latest-photos/_MG_5975.JPG_1024w.webp'
+}
+
 export default function FullscreenMenu() {
+  const pathname = usePathname()
+  // Normalize pathname by removing trailing slash
+  const normalizedPath = pathname.endsWith('/') && pathname !== '/' ? pathname.slice(0, -1) : pathname
+  const currentImage = pageImages[normalizedPath] || pageImages['/']
+
+  console.log('Current pathname:', pathname, 'Normalized:', normalizedPath, 'Image:', currentImage)
+
   return (
     <div className="fullscreen-menu" id="fullscreenMenu">
       <div className="menu-fullscreen_background u-cover-absolute"></div>
@@ -18,16 +34,8 @@ export default function FullscreenMenu() {
               ABOUT
               <img src={getAssetPath("/images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg")} alt="" className="menu-fullscreen_arrow-icon" />
             </Link>
-            <Link href="/schedule" className="menu-fullscreen_link text-display-xl u-text-uppercase">
-              SCHEDULE
-              <img src={getAssetPath("/images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg")} alt="" className="menu-fullscreen_arrow-icon" />
-            </Link>
             <Link href="/booking" className="menu-fullscreen_link menu-fullscreen_link--primary text-display-xl u-text-uppercase">
               REGISTER
-              <img src={getAssetPath("/images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg")} alt="" className="menu-fullscreen_arrow-icon" />
-            </Link>
-            <Link href="/about-rome" className="menu-fullscreen_link text-display-xl u-text-uppercase">
-              USEFUL INFO
               <img src={getAssetPath("/images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg")} alt="" className="menu-fullscreen_arrow-icon" />
             </Link>
             <Link href="/teachers" className="menu-fullscreen_link text-display-xl u-text-uppercase">
@@ -41,10 +49,10 @@ export default function FullscreenMenu() {
           </nav>
           <div className="menu-fullscreen_image-wrap">
             <div className="menu-fullscreen_image-container">
-              <img src={getAssetPath("/images/menu/6892fb9a88690f30225eb6d19e7d30458d5c3662.png")} alt="Rome Tribe Gathering" className="menu-fullscreen_hero-image" />
-              <div className="menu-fullscreen_badge">
-                <img src={getAssetPath("/images/tribe-circular-stamp.svg")} alt="Rome Tribe Gathering 25" className="menu-fullscreen_badge-image" />
-              </div>
+              <img src={getAssetPath(currentImage)} alt="Rome Tribe Gathering" className="menu-fullscreen_hero-image" />
+            </div>
+            <div className="menu-fullscreen_badge">
+              <img src={getAssetPath("/images/tribe-circular-stamp.svg")} alt="Rome Tribe Gathering 25" className="menu-fullscreen_badge-image" />
             </div>
           </div>
         </div>

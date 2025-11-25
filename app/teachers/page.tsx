@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import Navigation from '@/app/components/Navigation';
 import FullscreenMenu from '@/app/components/FullscreenMenu';
 import Footer from '@/app/components/Footer';
+import HeroCollage from '@/app/components/HeroCollage';
 import { getAssetPath } from '@/app/utils/paths';
 
 export default function TeachersPage() {
@@ -170,25 +171,11 @@ export default function TeachersPage() {
       <Navigation />
       <FullscreenMenu />
 
-      {/* Hero Section with Collage - Unified Layout */}
-      <section className="hero_wrap u-section u-position-relative">
-        <div className="hero_background u-cover-absolute u-zindex-negative"></div>
-        <div className="hero_content u-position-relative hero-collage_content u-navbar-offset">
-          {/* Hero Image (Left) */}
-          <div className="hero-collage_image-wrap">
-            <img src={getAssetPath("/images/teachers/5b99e425860ca2de7aadd16e2b46c27e2f8bb0bd.png")} alt="Teachers" className="hero-collage_image" />
-          </div>
-
-          {/* Logo (Right column on desktop, centered on mobile) */}
-          <div className="hero-collage_logo-wrap hero-collage_logo-wrap--teachers">
-            <div className="image-wrap image-wrap--freeform">
-              <img src={getAssetPath("/images/tribe-short-logotype-currentcolor.svg")} alt="Jivamukti Yoga The Tribe Gathering" className="image-wrap__img image-wrap__img--contain" />
-            </div>
-          </div>
-
-          <h1 className="hero-collage_title-bottom" data-gsap-slide-up>TEACHERS</h1>
-        </div>
-      </section>
+      <HeroCollage
+        imageSrc="/images/latest-photos/2023.05.18_JYTribe_Day_01_0300_1024w.webp"
+        imageAlt="Line Up"
+        title="LINE UP"
+      />
 
       {/* Spacer */}
       <div style={{ height: 'var(--_spacing---space--12)' }}></div>
@@ -201,14 +188,15 @@ export default function TeachersPage() {
           <div className="home-about_hero-grid">
             {/* Left: Full-bleed Hero Image */}
             <div className="home-about_hero-image-wrap u-breakout-left">
-              <img src={getAssetPath("/images/teachers/5b99e425860ca2de7aadd16e2b46c27e2f8bb0bd.png")} alt="Teachers" className="home-about_hero-image" />
+              <img src={getAssetPath("/images/latest-photos/2023.05.18_JYTribe_Day_01_0300_1024w.webp")} alt="Teachers" className="home-about_hero-image" />
             </div>
 
             {/* Right: Title Stack */}
             <div className="home-about_hero-titles">
-              <h2 className="text-display-xl home-about_main-title u-text-uppercase">
+              <h2 className="text-display-LG home-about_main-title u-text-uppercase">
                 <span className="home-about_main-title-word">MEET THE</span>
-                <span className="home-about_main-title-word">LINE-UP OF</span>
+                <span className="home-about_main-title-word">TEACHERS &</span>
+                <span className="home-about_main-title-word">ARTISTS OF</span>
                 <span className="home-about_main-title-word">TRIBE 2026</span>
               </h2>
             </div>
@@ -217,7 +205,7 @@ export default function TeachersPage() {
           {/* Bottom Grid: Heading + Content */}
           <div className="home-about_content-grid">
             {/* Left: Large Heading */}
-            <h3 className="text-h1 home-about_heading">For Tribe 2025 we invite the community to</h3>
+            <h3 className="text-h1 home-about_heading">For Tribe 2026 we invite the community to</h3>
 
             {/* Right: Description + CTA */}
             <div className="home-about_text-wrap">
@@ -241,12 +229,12 @@ export default function TeachersPage() {
           {/* Left Column: Teacher Links */}
           <div className="teachers_list">
             {/* Teacher Item 1: Sharon Gannon */}
-            <div className="teacher_item" data-teacher-image={getAssetPath("/images/teachers/Sharon%20Gannon/_MG_8528_WEB.JPG")} data-teacher-name="SHARON GANNON">
+            <div className="teacher_item" data-teacher-image={getAssetPath("/images/latest-photos/DSCF6955_1024w.webp")} data-teacher-name="SHARON GANNON">
               <div className="teacher_item-thumbnail-wrap">
-                <img src={getAssetPath("/images/teachers/Sharon%20Gannon/_MG_8528_WEB.JPG")} alt="Sharon Gannon" className="teacher_item-thumbnail" />
+                <img src={getAssetPath("/images/latest-photos/DSCF6955_1024w.webp")} alt="Sharon Gannon" className="teacher_item-thumbnail" />
               </div>
               <div className="teacher_info">
-                <p className="text-body-md teacher_eyebrow">Open Class</p>
+                <p className="text-body-md teacher_eyebrow">Founder</p>
                 <h3 className="text-h1 u-text-uppercase">SHARON GANNON</h3>
               </div>
               <a href="#" className="teacher_arrow" aria-label="View Sharon Gannon profile">
@@ -255,12 +243,12 @@ export default function TeachersPage() {
             </div>
 
             {/* Teacher Item 2: Yogeswari */}
-            <div className="teacher_item" data-teacher-image={getAssetPath("/images/teachers/Yogeswari/2018.02.27_Jivamukti_TT_Yogeswari-051.jpg")} data-teacher-name="YOGESWARI">
+            <div className="teacher_item" data-teacher-image={getAssetPath("/images/latest-photos/yogeswari_1024w.webp")} data-teacher-name="YOGESWARI">
               <div className="teacher_item-thumbnail-wrap">
-                <img src={getAssetPath("/images/teachers/Yogeswari/2018.02.27_Jivamukti_TT_Yogeswari-051.jpg")} alt="Yogeswari" className="teacher_item-thumbnail" />
+                <img src={getAssetPath("/images/latest-photos/yogeswari_1024w.webp")} alt="Yogeswari" className="teacher_item-thumbnail" />
               </div>
               <div className="teacher_info teacher_info--offset">
-                <p className="text-body-md teacher_eyebrow">Open Class</p>
+                <p className="text-body-md teacher_eyebrow">Advanced Certified</p>
                 <h3 className="text-h1 u-text-uppercase">YOGESWARI</h3>
               </div>
               <a href="#" className="teacher_arrow" aria-label="View Yogeswari profile">
@@ -269,12 +257,12 @@ export default function TeachersPage() {
             </div>
 
             {/* Teacher Item 3: Hachi Yu */}
-            <div className="teacher_item" data-teacher-image={getAssetPath("/images/teachers/Hachi/2023.05.18_JYTribe_Day_01_0335.jpg")} data-teacher-name="HACHI YU">
+            <div className="teacher_item" data-teacher-image={getAssetPath("/images/latest-photos/SS_DSC07661_IP-Focus_1024w.webp")} data-teacher-name="HACHI YU">
               <div className="teacher_item-thumbnail-wrap">
-                <img src={getAssetPath("/images/teachers/Hachi/2023.05.18_JYTribe_Day_01_0335.jpg")} alt="Hachi Yu" className="teacher_item-thumbnail" />
+                <img src={getAssetPath("/images/latest-photos/SS_DSC07661_IP-Focus_1024w.webp")} alt="Hachi Yu" className="teacher_item-thumbnail" />
               </div>
               <div className="teacher_info teacher_info--offset-large">
-                <p className="text-body-md teacher_eyebrow">Masterclass</p>
+                <p className="text-body-md teacher_eyebrow">Advanced Certified</p>
                 <h3 className="text-h1 u-text-uppercase">HACHI YU</h3>
               </div>
               <a href="#" className="teacher_arrow" aria-label="View Hachi Yu profile">
@@ -283,12 +271,12 @@ export default function TeachersPage() {
             </div>
 
             {/* Teacher Item 4: Jules Febre */}
-            <div className="teacher_item" data-teacher-image={getAssetPath("/images/teachers/Jules/2017.05.30_YogaPalais_Jules-122.jpg")} data-teacher-name="JULES FEBRE">
+            <div className="teacher_item" data-teacher-image={getAssetPath("/images/latest-photos/JulesFebre_by_FlorianMaas_27_1024w.webp")} data-teacher-name="JULES FEBRE">
               <div className="teacher_item-thumbnail-wrap">
-                <img src={getAssetPath("/images/teachers/Jules/2017.05.30_YogaPalais_Jules-122.jpg")} alt="Jules Febre" className="teacher_item-thumbnail" />
+                <img src={getAssetPath("/images/latest-photos/JulesFebre_by_FlorianMaas_27_1024w.webp")} alt="Jules Febre" className="teacher_item-thumbnail" />
               </div>
               <div className="teacher_info teacher_info--offset-medium">
-                <p className="text-body-md teacher_eyebrow">Lecture</p>
+                <p className="text-body-md teacher_eyebrow">Advanced Certified</p>
                 <h3 className="text-h1 u-text-uppercase">JULES FEBRE</h3>
               </div>
               <a href="#" className="teacher_arrow" aria-label="View Jules Febre profile">
@@ -297,12 +285,12 @@ export default function TeachersPage() {
             </div>
 
             {/* Teacher Item 5: Rima Rabbath */}
-            <div className="teacher_item" data-teacher-image={getAssetPath("/images/teachers/Rima/2024.05.10_Jivamukti_Tribe_Asana_0308.jpg")} data-teacher-name="RIMA RABBATH">
+            <div className="teacher_item" data-teacher-image={getAssetPath("/images/latest-photos/_Z7A6422_Padmasana_1024w.webp")} data-teacher-name="RIMA RABBATH">
               <div className="teacher_item-thumbnail-wrap">
-                <img src={getAssetPath("/images/teachers/Rima/2024.05.10_Jivamukti_Tribe_Asana_0308.jpg")} alt="Rima Rabbath" className="teacher_item-thumbnail" />
+                <img src={getAssetPath("/images/latest-photos/_Z7A6422_Padmasana_1024w.webp")} alt="Rima Rabbath" className="teacher_item-thumbnail" />
               </div>
               <div className="teacher_info">
-                <p className="text-body-md teacher_eyebrow">Workshop</p>
+                <p className="text-body-md teacher_eyebrow">Advanced Certified</p>
                 <h3 className="text-h1 u-text-uppercase">RIMA RABBATH</h3>
               </div>
               <a href="#" className="teacher_arrow" aria-label="View Rima Rabbath profile">
@@ -311,12 +299,12 @@ export default function TeachersPage() {
             </div>
 
             {/* Teacher Item 6: Olga Oskorbina */}
-            <div className="teacher_item" data-teacher-image={getAssetPath("/images/teachers/Olga/2023.05.18_JYTribe_Day_01_0369.jpg")} data-teacher-name="OLGA OSKORBINA">
+            <div className="teacher_item" data-teacher-image={getAssetPath("/images/latest-photos/2023.05.18_JYTribe_Day_01_0369_1024w.webp")} data-teacher-name="OLGA OSKORBINA">
               <div className="teacher_item-thumbnail-wrap">
-                <img src={getAssetPath("/images/teachers/Olga/2023.05.18_JYTribe_Day_01_0369.jpg")} alt="Olga Oskorbina" className="teacher_item-thumbnail" />
+                <img src={getAssetPath("/images/latest-photos/2023.05.18_JYTribe_Day_01_0369_1024w.webp")} alt="Olga Oskorbina" className="teacher_item-thumbnail" />
               </div>
               <div className="teacher_info teacher_info--offset">
-                <p className="text-body-md teacher_eyebrow">Open Class</p>
+                <p className="text-body-md teacher_eyebrow">Advanced Certified</p>
                 <h3 className="text-h1 u-text-uppercase">OLGA OSKORBINA</h3>
               </div>
               <a href="#" className="teacher_arrow" aria-label="View Olga Oskorbina profile">
@@ -325,12 +313,12 @@ export default function TeachersPage() {
             </div>
 
             {/* Teacher Item 7: Anna Lunegova */}
-            <div className="teacher_item" data-teacher-image={getAssetPath("/images/teachers/anna-lunegova.jpg")} data-teacher-name="ANNA LUNEGOVA">
+            <div className="teacher_item" data-teacher-image={getAssetPath("/images/latest-photos/DSC06488_1024w.webp")} data-teacher-name="ANNA LUNEGOVA">
               <div className="teacher_item-thumbnail-wrap">
-                <img src={getAssetPath("/images/teachers/anna-lunegova.jpg")} alt="Anna Lunegova" className="teacher_item-thumbnail" />
+                <img src={getAssetPath("/images/latest-photos/DSC06488_1024w.webp")} alt="Anna Lunegova" className="teacher_item-thumbnail" />
               </div>
               <div className="teacher_info teacher_info--offset-large">
-                <p className="text-body-md teacher_eyebrow">Workshop</p>
+                <p className="text-body-md teacher_eyebrow">Advanced Certified</p>
                 <h3 className="text-h1 u-text-uppercase">ANNA LUNEGOVA</h3>
               </div>
               <a href="#" className="teacher_arrow" aria-label="View Anna Lunegova profile">
@@ -339,12 +327,12 @@ export default function TeachersPage() {
             </div>
 
             {/* Teacher Item 8: Juan Sierra */}
-            <div className="teacher_item" data-teacher-image={getAssetPath("/images/teachers/juan.sierra.jivamukti.yoga.teacher.jpeg")} data-teacher-name="JUAN SIERRA">
+            <div className="teacher_item" data-teacher-image={getAssetPath("/images/latest-photos/juan.sierra.jivamukti.yoga.teacher_1024w.webp")} data-teacher-name="JUAN SIERRA">
               <div className="teacher_item-thumbnail-wrap">
-                <img src={getAssetPath("/images/teachers/juan.sierra.jivamukti.yoga.teacher.jpeg")} alt="Juan Sierra" className="teacher_item-thumbnail" />
+                <img src={getAssetPath("/images/latest-photos/juan.sierra.jivamukti.yoga.teacher_1024w.webp")} alt="Juan Sierra" className="teacher_item-thumbnail" />
               </div>
               <div className="teacher_info teacher_info--offset-medium">
-                <p className="text-body-md teacher_eyebrow">Open Class</p>
+                <p className="text-body-md teacher_eyebrow">Advanced Certified</p>
                 <h3 className="text-h1 u-text-uppercase">JUAN SIERRA</h3>
               </div>
               <a href="#" className="teacher_arrow" aria-label="View Juan Sierra profile">
@@ -353,12 +341,12 @@ export default function TeachersPage() {
             </div>
 
             {/* Teacher Item 9: Andrea Kwiatkowski */}
-            <div className="teacher_item" data-teacher-image={getAssetPath("/images/teachers/Andrea/DSC07259.jpg")} data-teacher-name="ANDREA KWIATKOWSKI">
+            <div className="teacher_item" data-teacher-image={getAssetPath("/images/latest-photos/DSC07259_1024w.webp")} data-teacher-name="ANDREA KWIATKOWSKI">
               <div className="teacher_item-thumbnail-wrap">
-                <img src={getAssetPath("/images/teachers/Andrea/DSC07259.jpg")} alt="Andrea Kwiatkowski" className="teacher_item-thumbnail" />
+                <img src={getAssetPath("/images/latest-photos/DSC07259_1024w.webp")} alt="Andrea Kwiatkowski" className="teacher_item-thumbnail" />
               </div>
               <div className="teacher_info">
-                <p className="text-body-md teacher_eyebrow">Lecture</p>
+                <p className="text-body-md teacher_eyebrow">Advanced Certified</p>
                 <h3 className="text-h1 u-text-uppercase">ANDREA KWIATKOWSKI</h3>
               </div>
               <a href="#" className="teacher_arrow" aria-label="View Andrea Kwiatkowski profile">
@@ -367,12 +355,12 @@ export default function TeachersPage() {
             </div>
 
             {/* Teacher Item 10: Magali Lehners */}
-            <div className="teacher_item" data-teacher-image={getAssetPath("/images/teachers/magali.jpg")} data-teacher-name="MAGALI LEHNERS">
+            <div className="teacher_item" data-teacher-image={getAssetPath("/images/latest-photos/Magali_1024w.webp")} data-teacher-name="MAGALI LEHNERS">
               <div className="teacher_item-thumbnail-wrap">
-                <img src={getAssetPath("/images/teachers/magali.jpg")} alt="Magali Lehners" className="teacher_item-thumbnail" />
+                <img src={getAssetPath("/images/latest-photos/Magali_1024w.webp")} alt="Magali Lehners" className="teacher_item-thumbnail" />
               </div>
               <div className="teacher_info teacher_info--offset">
-                <p className="text-body-md teacher_eyebrow">Workshop</p>
+                <p className="text-body-md teacher_eyebrow">Advanced Certified</p>
                 <h3 className="text-h1 u-text-uppercase">MAGALI LEHNERS</h3>
               </div>
               <a href="#" className="teacher_arrow" aria-label="View Magali Lehners profile">
@@ -381,12 +369,12 @@ export default function TeachersPage() {
             </div>
 
             {/* Teacher Item 11: Dana Sertel */}
-            <div className="teacher_item" data-teacher-image={getAssetPath("/images/teachers/dana-sertel.png")} data-teacher-name="DANA SERTEL">
+            <div className="teacher_item" data-teacher-image={getAssetPath("/images/latest-photos/dana 1_1024w.webp")} data-teacher-name="DANA SERTEL">
               <div className="teacher_item-thumbnail-wrap">
-                <img src={getAssetPath("/images/teachers/dana-sertel.png")} alt="Dana Sertel" className="teacher_item-thumbnail" />
+                <img src={getAssetPath("/images/latest-photos/dana 1_1024w.webp")} alt="Dana Sertel" className="teacher_item-thumbnail" />
               </div>
               <div className="teacher_info teacher_info--offset-large">
-                <p className="text-body-md teacher_eyebrow">Open Class</p>
+                <p className="text-body-md teacher_eyebrow">Advanced Certified</p>
                 <h3 className="text-h1 u-text-uppercase">DANA SERTEL</h3>
               </div>
               <a href="#" className="teacher_arrow" aria-label="View Dana Sertel profile">

@@ -1,6 +1,7 @@
 import Navigation from '@/app/components/Navigation';
 import FullscreenMenu from '@/app/components/FullscreenMenu';
 import Footer from '@/app/components/Footer';
+import HeroCollage from '@/app/components/HeroCollage';
 import { getAssetPath } from '@/app/utils/paths';
 
 export default function BookingPage() {
@@ -9,25 +10,11 @@ export default function BookingPage() {
       <Navigation />
       <FullscreenMenu />
 
-      {/* Hero Section - Unified Layout */}
-      <section className="hero_wrap u-section u-position-relative">
-        <div className="hero_background u-cover-absolute u-zindex-negative"></div>
-        <div className="hero_content u-position-relative hero-collage_content u-navbar-offset">
-          {/* Hero Image (Left) */}
-          <div className="hero-collage_image-wrap">
-            <img src={getAssetPath("/images/booking/4a713401a3c5003f4d6d0eb078f7211df90acebd.png")} alt="Yoga practice" className="hero-collage_image" />
-          </div>
-
-          {/* Logo (Right column on desktop, centered on mobile) */}
-          <div className="hero-collage_logo-wrap hero-collage_logo-wrap--teachers">
-            <div className="image-wrap image-wrap--freeform">
-              <img src={getAssetPath("/images/tribe-short-logotype-currentcolor.svg")} alt="Jivamukti Yoga The Tribe Gathering" className="image-wrap__img image-wrap__img--contain" />
-            </div>
-          </div>
-
-          <h1 className="hero-collage_title-bottom">REGISTER</h1>
-        </div>
-      </section>
+      <HeroCollage
+        imageSrc="/images/latest-photos/DSCF7174_1024w.webp"
+        imageAlt="Yoga practice"
+        title="REGISTER"
+      />
 
       {/* Download App Section (Two-Slot) - WITH MAX-WIDTH CONTAINER */}
       <section className="plan_wrap u-position-relative">
@@ -72,8 +59,7 @@ export default function BookingPage() {
                     <p className="text-body-md" style={{ textDecoration: 'line-through', opacity: 0.5 }}>€500</p>
                   </div>
                   <p className="text-body-md">Until February 2nd, 2025</p>
-                  <p className="text-body-md">Registration & Payment via</p>
-                  <a href="#" className="button button--outline button--small u-margin-top-4">OPEN APP</a>
+                  <a href="#" className="button button--outline button--small u-margin-top-4">GET TICKET</a>
                 </div>
               </div>
             </div>
@@ -88,8 +74,7 @@ export default function BookingPage() {
                 <div className="u-flex-vertical-nowrap u-gap-3">
                   <p className="text-body-md" style={{ visibility: 'hidden' }}>Placeholder</p>
                   <p className="text-body-md">From February 2nd, 2025</p>
-                  <p className="text-body-md">Registration & Payment via</p>
-                  <a href="#" className="button button--outline button--small u-margin-top-4">OPEN APP</a>
+                  <a href="#" className="button button--outline button--small u-margin-top-4">GET TICKET</a>
                 </div>
               </div>
             </div>
@@ -123,8 +108,7 @@ export default function BookingPage() {
                     <p className="text-body-md" style={{ textDecoration: 'line-through', opacity: 0.5 }}>€400</p>
                   </div>
                   <p className="text-body-md">Until February 2nd, 2025</p>
-                  <p className="text-body-md">Registration & Payment via</p>
-                  <a href="#" className="button button--outline button--small u-margin-top-4">OPEN APP</a>
+                  <a href="#" className="button button--outline button--small u-margin-top-4">GET TICKET</a>
                 </div>
               </div>
             </div>
@@ -139,8 +123,7 @@ export default function BookingPage() {
                 <div className="u-flex-vertical-nowrap u-gap-3">
                   <p className="text-body-md" style={{ visibility: 'hidden' }}>Placeholder</p>
                   <p className="text-body-md">From February 2nd, 2025</p>
-                  <p className="text-body-md">Registration & Payment via</p>
-                  <a href="#" className="button button--outline button--small u-margin-top-4">OPEN APP</a>
+                  <a href="#" className="button button--outline button--small u-margin-top-4">GET TICKET</a>
                 </div>
               </div>
             </div>
@@ -174,8 +157,7 @@ export default function BookingPage() {
                     <p className="text-body-md" style={{ textDecoration: 'line-through', opacity: 0.5 }}>€400</p>
                   </div>
                   <p className="text-body-md">Until February 2nd, 2025</p>
-                  <p className="text-body-md">Registration & Payment via</p>
-                  <a href="#" className="button button--outline button--small u-margin-top-4">OPEN APP</a>
+                  <a href="#" className="button button--outline button--small u-margin-top-4">GET TICKET</a>
                 </div>
               </div>
             </div>
@@ -190,8 +172,7 @@ export default function BookingPage() {
                 <div className="u-flex-vertical-nowrap u-gap-3">
                   <p className="text-body-md" style={{ visibility: 'hidden' }}>Placeholder</p>
                   <p className="text-body-md">From February 2nd, 2025</p>
-                  <p className="text-body-md">Registration & Payment via</p>
-                  <a href="#" className="button button--outline button--small u-margin-top-4">OPEN APP</a>
+                  <a href="#" className="button button--outline button--small u-margin-top-4">GET TICKET</a>
                 </div>
               </div>
             </div>

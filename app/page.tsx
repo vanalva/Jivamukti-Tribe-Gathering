@@ -12,10 +12,60 @@ export default function Home() {
   useScheduleInteractions()
 
   useEffect(() => {
+    const cleanupFunctions: (() => void)[] = []
 
-    // Teachers hover effect
-    const teachersSection = document.querySelector('.teachers_wrap')
-    if (teachersSection) {
+    // Hero parallax effect
+    const isTouchDevice = 'ontouchstart' in window ||
+                          navigator.maxTouchPoints > 0
+
+    if (!isTouchDevice) {
+      const floatingImages = document.querySelectorAll('.hero_floating_image')
+
+      if (floatingImages.length > 0) {
+        let animationFrame: number | null = null
+        let mouseX = 0
+        let mouseY = 0
+
+        function handleMouseMove(e: MouseEvent) {
+          const normalizedX = (e.clientX / window.innerWidth) * 2 - 1
+          const normalizedY = (e.clientY / window.innerHeight) * 2 - 1
+
+          mouseX = normalizedX
+          mouseY = normalizedY
+
+          if (!animationFrame) {
+            animationFrame = requestAnimationFrame(animate)
+          }
+        }
+
+        function animate() {
+          floatingImages.forEach((image, index) => {
+            const intensity = index === 0 ? 20 : 30
+            const direction = index === 0 ? -1 : 1
+
+            const translateX = mouseX * intensity * direction
+            const translateY = mouseY * intensity * direction
+
+            ;(image as HTMLElement).style.transform = `translate(${translateX}px, ${translateY}px)`
+          })
+
+          animationFrame = null
+        }
+
+        document.addEventListener('mousemove', handleMouseMove)
+
+        cleanupFunctions.push(() => {
+          document.removeEventListener('mousemove', handleMouseMove)
+          if (animationFrame) {
+            cancelAnimationFrame(animationFrame)
+          }
+        })
+      }
+    }
+
+    // Teachers hover effect - select ALL teachers sections
+    const teachersSections = document.querySelectorAll('.teachers_wrap')
+    teachersSections.forEach((teachersSection) => {
       const teacherItems = teachersSection.querySelectorAll('.teacher_item')
       const teachersList = teachersSection.querySelector('.teachers_list')
       const hoverBadge = teachersSection.querySelector('.teachers_hover-badge')
@@ -119,7 +169,7 @@ export default function Home() {
           })
         }
       }
-    }
+    })
 
     // Teacher popup modal functionality
     const teacherItemsForModal = document.querySelectorAll('.teacher_item')
@@ -171,8 +221,13 @@ export default function Home() {
     }
     document.addEventListener('keydown', handleEscape)
 
-    return () => {
+    cleanupFunctions.push(() => {
       document.removeEventListener('keydown', handleEscape)
+    })
+
+    // Return combined cleanup function
+    return () => {
+      cleanupFunctions.forEach(cleanup => cleanup())
     }
   }, [])
 
@@ -203,7 +258,12 @@ export default function Home() {
 
           {/* Floating Image - Bottom Right */}
           <div className="hero_floating_image hero_floating_image-bottomright image-wrap image-wrap--freeform u-position-absolute u-overflow-hidden u-breakout-right">
-            <img src={getAssetPath("/images/home/a0ae6d2cf367288b9d878ec5a791313fc7726b61.png")} alt="Decorative image" className="image-wrap__img" />
+            <img src={getAssetPath("/images/latest-photos/_MG_5975.JPG_1024w.webp")} alt="Decorative image" className="image-wrap__img" />
+          </div>
+
+          {/* Event Date - Bottom Center */}
+          <div className="hero_date u-position-absolute">
+            <p className="text-h4 u-text-uppercase u-weight-bold">September 18-21, 2026</p>
           </div>
         </div>
       </section>
@@ -234,7 +294,7 @@ export default function Home() {
           {/* Bottom Grid: Heading + Content */}
           <div className="home-about_content-grid">
             {/* Left: Large Heading */}
-            <h3 className="text-h1 home-about_heading">Coming Home to Rome</h3>
+            <h3 className="text-h1 home-about_heading">Coming Home in Rome</h3>
 
             {/* Right: Description + CTA */}
             <div className="home-about_text-wrap">
@@ -247,7 +307,7 @@ export default function Home() {
       </section>
 
       {/* Schedule Section (Two-Slot) */}
-      <section className="schedule_wrap u-section u-position-relative">
+      <section className="schedule_wrap u-section u-position-relative u-hidden">
         <div className="schedule_background u-cover-absolute u-zindex-negative"></div>
         <div className="schedule_content u-position-relative">
           {/* Day 1 */}
@@ -444,23 +504,105 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Provisional Schedule 2026 Section */}
+      <section className="schedule_wrap u-position-relative">
+        <div className="schedule_background u-cover-absolute u-zindex-negative"></div>
+        <div className="schedule_content u-position-relative">
+          <div className="day_wrap">
+            <div className="day_header">
+              <h2 className="text-h1 u-text-uppercase">SCHEDULE</h2>
+              <h2 className="text-h1 u-text-uppercase">SEPT. 24-27, 2026</h2>
+            </div>
+
+            <div style={{ paddingTop: 'var(--_spacing---space--6)', paddingBottom: 'var(--_spacing---space--6)' }}>
+              <p className="text-body-lg" style={{ marginBottom: 'var(--_spacing---space--6)' }}>
+                Four days filled with Asana, Pranyama, Meditation, Yoga Philosophy, Satsang, Chanting, delicious vegan food and more!
+              </p>
+
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(4, 1fr)',
+                gap: 'var(--_spacing---space--6)',
+                marginBottom: 'var(--_spacing---space--6)'
+              }}>
+                {/* Thursday */}
+                <div style={{
+                  padding: 'var(--_spacing---space--5)',
+                  border: '1px solid var(--swatch--dark-900-o20)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: 'var(--_spacing---space--3)'
+                }}>
+                  <h3 className="text-h4 u-text-uppercase">Thursday Sep 24</h3>
+                  <p className="text-body-md">3pm Opening Class</p>
+                </div>
+
+                {/* Friday */}
+                <div style={{
+                  padding: 'var(--_spacing---space--5)',
+                  border: '1px solid var(--swatch--dark-900-o20)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: 'var(--_spacing---space--3)'
+                }}>
+                  <h3 className="text-h4 u-text-uppercase">Friday Sep 25</h3>
+                  <p className="text-body-md">all day program</p>
+                </div>
+
+                {/* Saturday */}
+                <div style={{
+                  padding: 'var(--_spacing---space--5)',
+                  border: '1px solid var(--swatch--dark-900-o20)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: 'var(--_spacing---space--3)'
+                }}>
+                  <h3 className="text-h4 u-text-uppercase">Saturday Sep 26</h3>
+                  <p className="text-body-md">all day program</p>
+                </div>
+
+                {/* Sunday */}
+                <div style={{
+                  padding: 'var(--_spacing---space--5)',
+                  border: '1px solid var(--swatch--dark-900-o20)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: 'var(--_spacing---space--3)'
+                }}>
+                  <h3 className="text-h4 u-text-uppercase">Sunday Sep 27</h3>
+                  <p className="text-body-md">Closing ceremony finishes in the early afternoon</p>
+                </div>
+              </div>
+
+              <p className="text-body-md" style={{ fontStyle: 'italic' }}>
+                Detailed schedule to follow.
+              </p>
+            </div>
+
+            <div className="day_cta">
+              <Link href="/booking" className="button button--brand">JOIN US</Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Line Up Section (Two-Slot) - Using Teachers Component */}
       <section className="teachers_wrap u-section u-position-relative">
         <div className="teachers_background u-cover-absolute u-zindex-negative"></div>
 
         {/* Section Title - Full Width Above Content */}
-        <h2 className="text-display-xl u-text-center teachers_title">LINE UP</h2>
+        <h2 className="text-display-lg u-text-center teachers_title">LINE UP</h2>
 
         <div className="teachers_content teachers_content--reversed u-position-relative">
           {/* Left Column: Teacher Links */}
           <div className="teachers_list">
             {/* Teacher Item 1: Sharon Gannon */}
-            <div className="teacher_item" data-teacher-image={getAssetPath("/images/teachers/Sharon Gannon/_MG_8528_WEB.JPG")} data-teacher-name="SHARON GANNON">
+            <div className="teacher_item" data-teacher-image={getAssetPath("/images/latest-photos/DSCF6955_1024w.webp")} data-teacher-name="SHARON GANNON">
               <div className="teacher_item-thumbnail-wrap">
-                <img src={getAssetPath("/images/teachers/Sharon Gannon/_MG_8528_WEB.JPG")} alt="Sharon Gannon" className="teacher_item-thumbnail" />
+                <img src={getAssetPath("/images/latest-photos/DSCF6955_1024w.webp")} alt="Sharon Gannon" className="teacher_item-thumbnail" />
               </div>
               <div className="teacher_info">
-                <p className="text-body-md teacher_eyebrow">Open Class</p>
+                <p className="text-body-md teacher_eyebrow">Founder</p>
                 <h3 className="text-h1 u-text-uppercase">SHARON GANNON</h3>
               </div>
               <Link href="/teachers" className="teacher_arrow" aria-label="View Sharon Gannon profile">
@@ -469,12 +611,12 @@ export default function Home() {
             </div>
 
             {/* Teacher Item 2: Jules Febre */}
-            <div className="teacher_item" data-teacher-image={getAssetPath("/images/teachers/Jules/2017.05.30_YogaPalais_Jules-122.jpg")} data-teacher-name="JULES FEBRE">
+            <div className="teacher_item" data-teacher-image={getAssetPath("/images/latest-photos/JulesFebre_by_FlorianMaas_27_1024w.webp")} data-teacher-name="JULES FEBRE">
               <div className="teacher_item-thumbnail-wrap">
-                <img src={getAssetPath("/images/teachers/Jules/2017.05.30_YogaPalais_Jules-122.jpg")} alt="Jules Febre" className="teacher_item-thumbnail" />
+                <img src={getAssetPath("/images/latest-photos/JulesFebre_by_FlorianMaas_27_1024w.webp")} alt="Jules Febre" className="teacher_item-thumbnail" />
               </div>
               <div className="teacher_info teacher_info--offset">
-                <p className="text-body-md teacher_eyebrow">Lecture</p>
+                <p className="text-body-md teacher_eyebrow">Advanced Certified</p>
                 <h3 className="text-h1 u-text-uppercase">JULES FEBRE</h3>
               </div>
               <Link href="/teachers" className="teacher_arrow" aria-label="View Jules Febre profile">
@@ -483,12 +625,12 @@ export default function Home() {
             </div>
 
             {/* Teacher Item 3: Yogeswari */}
-            <div className="teacher_item" data-teacher-image={getAssetPath("/images/teachers/Yogeswari/2018.02.27_Jivamukti_TT_Yogeswari-051.jpg")} data-teacher-name="YOGESWARI">
+            <div className="teacher_item" data-teacher-image={getAssetPath("/images/latest-photos/yogeswari_1024w.webp")} data-teacher-name="YOGESWARI">
               <div className="teacher_item-thumbnail-wrap">
-                <img src={getAssetPath("/images/teachers/Yogeswari/2018.02.27_Jivamukti_TT_Yogeswari-051.jpg")} alt="Yogeswari" className="teacher_item-thumbnail" />
+                <img src={getAssetPath("/images/latest-photos/yogeswari_1024w.webp")} alt="Yogeswari" className="teacher_item-thumbnail" />
               </div>
               <div className="teacher_info teacher_info--offset-large">
-                <p className="text-body-md teacher_eyebrow">Open Class</p>
+                <p className="text-body-md teacher_eyebrow">Advanced Certified</p>
                 <h3 className="text-h1 u-text-uppercase">YOGESWARI</h3>
               </div>
               <Link href="/teachers" className="teacher_arrow" aria-label="View Yogeswari profile">
@@ -497,12 +639,12 @@ export default function Home() {
             </div>
 
             {/* Teacher Item 4: Rima Rabbath */}
-            <div className="teacher_item" data-teacher-image={getAssetPath("/images/teachers/Rima/2024.05.10_Jivamukti_Tribe_Asana_0308.jpg")} data-teacher-name="RIMA RABBATH">
+            <div className="teacher_item" data-teacher-image={getAssetPath("/images/latest-photos/_Z7A6422_Padmasana_1024w.webp")} data-teacher-name="RIMA RABBATH">
               <div className="teacher_item-thumbnail-wrap">
-                <img src={getAssetPath("/images/teachers/Rima/2024.05.10_Jivamukti_Tribe_Asana_0308.jpg")} alt="Rima Rabbath" className="teacher_item-thumbnail" />
+                <img src={getAssetPath("/images/latest-photos/_Z7A6422_Padmasana_1024w.webp")} alt="Rima Rabbath" className="teacher_item-thumbnail" />
               </div>
               <div className="teacher_info teacher_info--offset-medium">
-                <p className="text-body-md teacher_eyebrow">Workshop</p>
+                <p className="text-body-md teacher_eyebrow">Advanced Certified</p>
                 <h3 className="text-h1 u-text-uppercase">RIMA RABBATH</h3>
               </div>
               <Link href="/teachers" className="teacher_arrow" aria-label="View Rima Rabbath profile">
@@ -511,12 +653,12 @@ export default function Home() {
             </div>
 
             {/* Teacher Item 5: Olga Oskorbina */}
-            <div className="teacher_item" data-teacher-image={getAssetPath("/images/teachers/Olga/2023.05.18_JYTribe_Day_01_0369.jpg")} data-teacher-name="OLGA OSKORBINA">
+            <div className="teacher_item" data-teacher-image={getAssetPath("/images/latest-photos/2023.05.18_JYTribe_Day_01_0369_1024w.webp")} data-teacher-name="OLGA OSKORBINA">
               <div className="teacher_item-thumbnail-wrap">
-                <img src={getAssetPath("/images/teachers/Olga/2023.05.18_JYTribe_Day_01_0369.jpg")} alt="Olga Oskorbina" className="teacher_item-thumbnail" />
+                <img src={getAssetPath("/images/latest-photos/2023.05.18_JYTribe_Day_01_0369_1024w.webp")} alt="Olga Oskorbina" className="teacher_item-thumbnail" />
               </div>
               <div className="teacher_info">
-                <p className="text-body-md teacher_eyebrow">Open Class</p>
+                <p className="text-body-md teacher_eyebrow">Advanced Certified</p>
                 <h3 className="text-h1 u-text-uppercase">OLGA OSKORBINA</h3>
               </div>
               <Link href="/teachers" className="teacher_arrow" aria-label="View Olga Oskorbina profile">
@@ -525,12 +667,12 @@ export default function Home() {
             </div>
 
             {/* Teacher Item 6: HaChi Yu */}
-            <div className="teacher_item" data-teacher-image={getAssetPath("/images/teachers/Hachi/2023.05.18_JYTribe_Day_01_0335.jpg")} data-teacher-name="HACHI YU">
+            <div className="teacher_item" data-teacher-image={getAssetPath("/images/latest-photos/SS_DSC07661_IP-Focus_1024w.webp")} data-teacher-name="HACHI YU">
               <div className="teacher_item-thumbnail-wrap">
-                <img src={getAssetPath("/images/teachers/Hachi/2023.05.18_JYTribe_Day_01_0335.jpg")} alt="HaChi Yu" className="teacher_item-thumbnail" />
+                <img src={getAssetPath("/images/latest-photos/SS_DSC07661_IP-Focus_1024w.webp")} alt="HaChi Yu" className="teacher_item-thumbnail" />
               </div>
               <div className="teacher_info teacher_info--offset">
-                <p className="text-body-md teacher_eyebrow">Masterclass</p>
+                <p className="text-body-md teacher_eyebrow">Advanced Certified</p>
                 <h3 className="text-h1 u-text-uppercase">HACHI YU</h3>
               </div>
               <Link href="/teachers" className="teacher_arrow" aria-label="View HaChi Yu profile">
@@ -539,12 +681,12 @@ export default function Home() {
             </div>
 
             {/* Teacher Item 7: Anna Lunegova */}
-            <div className="teacher_item" data-teacher-image={getAssetPath("/images/teachers/anna-lunegova.jpg")} data-teacher-name="ANNA LUNEGOVA">
+            <div className="teacher_item" data-teacher-image={getAssetPath("/images/latest-photos/DSC06488_1024w.webp")} data-teacher-name="ANNA LUNEGOVA">
               <div className="teacher_item-thumbnail-wrap">
-                <img src={getAssetPath("/images/teachers/anna-lunegova.jpg")} alt="Anna Lunegova" className="teacher_item-thumbnail" />
+                <img src={getAssetPath("/images/latest-photos/DSC06488_1024w.webp")} alt="Anna Lunegova" className="teacher_item-thumbnail" />
               </div>
               <div className="teacher_info teacher_info--offset-large">
-                <p className="text-body-md teacher_eyebrow">Workshop</p>
+                <p className="text-body-md teacher_eyebrow">Advanced Certified</p>
                 <h3 className="text-h1 u-text-uppercase">ANNA LUNEGOVA</h3>
               </div>
               <Link href="/teachers" className="teacher_arrow" aria-label="View Anna Lunegova profile">
@@ -553,12 +695,12 @@ export default function Home() {
             </div>
 
             {/* Teacher Item 8: Juan Sierra */}
-            <div className="teacher_item" data-teacher-image={getAssetPath("/images/teachers/juan.sierra.jivamukti.yoga.teacher.jpeg")} data-teacher-name="JUAN SIERRA">
+            <div className="teacher_item" data-teacher-image={getAssetPath("/images/latest-photos/juan.sierra.jivamukti.yoga.teacher_1024w.webp")} data-teacher-name="JUAN SIERRA">
               <div className="teacher_item-thumbnail-wrap">
-                <img src={getAssetPath("/images/teachers/juan.sierra.jivamukti.yoga.teacher.jpeg")} alt="Juan Sierra" className="teacher_item-thumbnail" />
+                <img src={getAssetPath("/images/latest-photos/juan.sierra.jivamukti.yoga.teacher_1024w.webp")} alt="Juan Sierra" className="teacher_item-thumbnail" />
               </div>
               <div className="teacher_info teacher_info--offset-medium">
-                <p className="text-body-md teacher_eyebrow">Open Class</p>
+                <p className="text-body-md teacher_eyebrow">Advanced Certified</p>
                 <h3 className="text-h1 u-text-uppercase">JUAN SIERRA</h3>
               </div>
               <Link href="/teachers" className="teacher_arrow" aria-label="View Juan Sierra profile">
@@ -567,12 +709,12 @@ export default function Home() {
             </div>
 
             {/* Teacher Item 9: Andrea Kwiatkowski */}
-            <div className="teacher_item" data-teacher-image={getAssetPath("/images/teachers/Andrea/DSC07259.jpg")} data-teacher-name="ANDREA KWIATKOWSKI">
+            <div className="teacher_item" data-teacher-image={getAssetPath("/images/latest-photos/DSC07259_1024w.webp")} data-teacher-name="ANDREA KWIATKOWSKI">
               <div className="teacher_item-thumbnail-wrap">
-                <img src={getAssetPath("/images/teachers/Andrea/DSC07259.jpg")} alt="Andrea Kwiatkowski" className="teacher_item-thumbnail" />
+                <img src={getAssetPath("/images/latest-photos/DSC07259_1024w.webp")} alt="Andrea Kwiatkowski" className="teacher_item-thumbnail" />
               </div>
               <div className="teacher_info">
-                <p className="text-body-md teacher_eyebrow">Lecture</p>
+                <p className="text-body-md teacher_eyebrow">Advanced Certified</p>
                 <h3 className="text-h1 u-text-uppercase">ANDREA KWIATKOWSKI</h3>
               </div>
               <Link href="/teachers" className="teacher_arrow" aria-label="View Andrea Kwiatkowski profile">
@@ -581,12 +723,12 @@ export default function Home() {
             </div>
 
             {/* Teacher Item 10: Magali Lehners */}
-            <div className="teacher_item" data-teacher-image={getAssetPath("/images/teachers/magali.jpg")} data-teacher-name="MAGALI LEHNERS">
+            <div className="teacher_item" data-teacher-image={getAssetPath("/images/latest-photos/Magali_1024w.webp")} data-teacher-name="MAGALI LEHNERS">
               <div className="teacher_item-thumbnail-wrap">
-                <img src={getAssetPath("/images/teachers/magali.jpg")} alt="Magali Lehners" className="teacher_item-thumbnail" />
+                <img src={getAssetPath("/images/latest-photos/Magali_1024w.webp")} alt="Magali Lehners" className="teacher_item-thumbnail" />
               </div>
               <div className="teacher_info teacher_info--offset">
-                <p className="text-body-md teacher_eyebrow">Workshop</p>
+                <p className="text-body-md teacher_eyebrow">Advanced Certified</p>
                 <h3 className="text-h1 u-text-uppercase">MAGALI LEHNERS</h3>
               </div>
               <Link href="/teachers" className="teacher_arrow" aria-label="View Magali Lehners profile">
@@ -595,12 +737,12 @@ export default function Home() {
             </div>
 
             {/* Teacher Item 11: Dana Sertel */}
-            <div className="teacher_item" data-teacher-image={getAssetPath("/images/teachers/dana-sertel.png")} data-teacher-name="DANA SERTEL">
+            <div className="teacher_item" data-teacher-image={getAssetPath("/images/latest-photos/dana 1_1024w.webp")} data-teacher-name="DANA SERTEL">
               <div className="teacher_item-thumbnail-wrap">
-                <img src={getAssetPath("/images/teachers/dana-sertel.png")} alt="Dana Sertel" className="teacher_item-thumbnail" />
+                <img src={getAssetPath("/images/latest-photos/dana 1_1024w.webp")} alt="Dana Sertel" className="teacher_item-thumbnail" />
               </div>
               <div className="teacher_info teacher_info--offset-large">
-                <p className="text-body-md teacher_eyebrow">Open Class</p>
+                <p className="text-body-md teacher_eyebrow">Advanced Certified</p>
                 <h3 className="text-h1 u-text-uppercase">DANA SERTEL</h3>
               </div>
               <Link href="/teachers" className="teacher_arrow" aria-label="View Dana Sertel profile">
