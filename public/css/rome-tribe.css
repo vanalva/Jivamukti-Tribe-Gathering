@@ -343,18 +343,19 @@ body * {
   --swatch--accent-500: #b9302e;
   --swatch--accent-600: color-mix(in srgb, var(--swatch--accent-500), black 20%);
   --_alignment---direction: start;
-  --_typography---font-size--text-small: clamp(.875 * 1rem, ((.875 - ((1 - .875) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((1 - .875) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 1 * 1rem);
-  --_typography---font-size--text-main: clamp(1 * 1rem, ((1 - ((1.125 - 1) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((1.125 - 1) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 1.125 * 1rem);
-  --_typography---font-size--h4: clamp(1.75 * 1rem, ((1.75 - ((2.25 - 1.75) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((2.25 - 1.75) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 2.25 * 1rem);
-  --_typography---font-size--h3: clamp(2.125 * 1rem, ((2.125 - ((2.95 - 2.125) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((2.95 - 2.125) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 2.95 * 1rem);
-  --_typography---font-size--h2: clamp(3 * 1rem, ((3 - ((4.5 - 3) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((4.5 - 3) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 4.5 * 1rem);
-  --_typography---font-size--h1: clamp(3 * 1rem, ((3 - ((5 - 3) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((5 - 3) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 5 * 1rem);
-  --_typography---font-size--display: clamp(4 * 1rem, ((4 - ((7 - 4) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((7 - 4) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 7 * 1rem);
-  --_typography---font-size--display-lg: clamp(8 * 1rem, ((8 - ((12 - 8) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((12 - 8) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 12 * 1rem);
-  --_typography---font-size--display-xl: clamp(10 * 1rem, ((10 - ((15.18 - 10) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((15.18 - 10) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 15.18 * 1rem);
-  --_typography---font-size--menu: clamp(2.5 * 1rem, ((2.5 - ((5 - 2.5) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((5 - 2.5) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 5 * 1rem);
-  --_typography---font-size--nav: clamp(1 * 1rem, ((1 - ((1.32 - 1) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((1.32 - 1) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 1.32 * 1rem);
-  --_typography---font-size--button: clamp(.875 * 1rem, ((.875 - ((1.25 - .875) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((1.25 - .875) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 1.25 * 1rem);
+  /* Fluid typography - properly scaled for 320px to 1440px viewports */
+  --_typography---font-size--text-small: clamp(0.875rem, 0.8rem + 0.2vw, 1rem);
+  --_typography---font-size--text-main: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  --_typography---font-size--h4: clamp(1.25rem, 1rem + 1vw, 2.25rem);
+  --_typography---font-size--h3: clamp(1.5rem, 1.2rem + 1.5vw, 2.95rem);
+  --_typography---font-size--h2: clamp(1.75rem, 1.2rem + 2vw, 4.5rem);
+  --_typography---font-size--h1: clamp(1.75rem, 1rem + 2.5vw, 5rem);
+  --_typography---font-size--display: clamp(2.5rem, 1.5rem + 4vw, 7rem);
+  --_typography---font-size--display-lg: clamp(3rem, 2rem + 5vw, 12rem);
+  --_typography---font-size--display-xl: clamp(3.5rem, 2rem + 6vw, 15rem);
+  --_typography---font-size--menu: clamp(2rem, 1.5rem + 2.5vw, 5rem);
+  --_typography---font-size--nav: clamp(1rem, 0.9rem + 0.3vw, 1.32rem);
+  --_typography---font-size--button: clamp(0.875rem, 0.8rem + 0.4vw, 1.25rem);
   --_typography---text-transform--none: var(--text-transform, none);
 }
 
@@ -408,9 +409,9 @@ strong {
   line-height: var(--_typography---line-height--small);
   letter-spacing: var(--_typography---letter-spacing--tight);
   max-width: 100%;
-  overflow-wrap: break-word;
-  word-break: break-word;
-  hyphens: auto;
+  word-break: normal;
+  overflow-wrap: normal;
+  hyphens: none;
 }
 
 /* Additional Text Styles for Rome Tribe */
@@ -421,9 +422,9 @@ strong {
   line-height: var(--_typography---line-height--small);
   letter-spacing: var(--_typography---letter-spacing--tight);
   max-width: 100%;
-  overflow-wrap: break-word;
-  word-break: break-word;
-  hyphens: auto;
+  word-break: normal;
+  overflow-wrap: normal;
+  hyphens: none;
 }
 
 .text-h1 {
@@ -432,9 +433,9 @@ strong {
   font-size: var(--_typography---font-size--h1);
   line-height: var(--_typography---line-height--medium);
   max-width: 100%;
-  overflow-wrap: break-word;
-  word-break: break-word;
-  hyphens: auto;
+  word-break: normal;
+  overflow-wrap: normal;
+  hyphens: none;
 }
 
 .text-h2 {
@@ -443,9 +444,9 @@ strong {
   font-size: var(--_typography---font-size--h2);
   line-height: var(--_typography---line-height--medium);
   max-width: 100%;
-  overflow-wrap: break-word;
-  word-break: break-word;
-  hyphens: auto;
+  word-break: normal;
+  overflow-wrap: normal;
+  hyphens: none;
 }
 
 .text-h3 {
@@ -454,9 +455,9 @@ strong {
   font-size: var(--_typography---font-size--h3);
   line-height: var(--_typography---line-height--medium);
   max-width: 100%;
-  overflow-wrap: break-word;
-  word-break: break-word;
-  hyphens: auto;
+  word-break: normal;
+  overflow-wrap: normal;
+  hyphens: none;
 }
 
 .text-h4 {
@@ -465,9 +466,9 @@ strong {
   font-size: var(--_typography---font-size--h4);
   line-height: var(--_typography---line-height--huge);
   max-width: 100%;
-  overflow-wrap: break-word;
-  word-break: break-word;
-  hyphens: auto;
+  word-break: normal;
+  overflow-wrap: normal;
+  hyphens: none;
 }
 
 .text-body-lg {
@@ -2734,6 +2735,9 @@ strong {
   line-height: var(--_typography---line-height--medium);
   letter-spacing: var(--_typography---letter-spacing--tight);
   margin: 0;
+  white-space: nowrap;
+  word-break: normal;
+  hyphens: none;
 }
 
 /* Offset variations for visual rhythm */
