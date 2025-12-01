@@ -1359,44 +1359,51 @@ img {
 }
 
 /* ============================================
-   16. TEACHER NAMES - PREVENT CROPPING
+   16. TEACHER NAMES - FIT ALL NAMES
    ============================================ */
 
-/* Remove offsets and ensure consistent left alignment */
+/* Remove offsets */
 .teacher_info--offset,
 .teacher_info--offset-large,
 .teacher_info--offset-medium {
   margin-right: 0 !important;
 }
 
-/* Teacher item layout - left align content, let name shrink if needed */
+/* Teacher item - full width layout */
 .teacher_item {
-  justify-content: flex-start !important;
+  justify-content: space-between !important;
+  gap: 0.5rem !important;
 }
 
 .teacher_info {
   flex: 1;
-  min-width: 0;
 }
 
+/* Smaller arrow */
+.teacher_arrow-icon {
+  width: 32px !important;
+  height: 32px !important;
+}
+
+/* Font sizing that fits all names */
 .teacher_info h3 {
+  font-size: clamp(1.1rem, 2.2vw, 1.8rem) !important;
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
-/* Push arrow to the right */
-.teacher_arrow {
-  margin-left: auto;
-}
-
-/* Smaller font sizing for teacher names */
-.teacher_info h3 {
-  font-size: clamp(1.25rem, 2.5vw, 2rem) !important;
+@media (max-width: 992px) {
+  .teacher_info h3 {
+    font-size: clamp(1rem, 3vw, 1.4rem) !important;
+  }
 }
 
 @media (max-width: 768px) {
   .teacher_info h3 {
-    font-size: clamp(1rem, 4vw, 1.5rem) !important;
+    font-size: clamp(0.9rem, 4vw, 1.2rem) !important;
+  }
+
+  .teacher_arrow-icon {
+    width: 24px !important;
+    height: 24px !important;
   }
 }
