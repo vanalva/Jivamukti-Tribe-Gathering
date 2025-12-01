@@ -423,7 +423,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // ============================================
   // HERO TITLE AUTO-FIT
-  // Dynamically sizes hero titles to fill available space
+  // Dynamically sizes hero titles to fill available width
   // Never breaks into more than 2 lines - uses binary search
   // ============================================
   function fitHeroTitles() {
@@ -433,35 +433,26 @@ document.addEventListener('DOMContentLoaded', function() {
       const parent = title.closest('.hero-collage_content');
       if (!parent) return;
 
-      const logo = parent.querySelector('.hero-collage_logo-wrap');
-      if (!logo) return;
-
-      // Get available dimensions
+      // Get available width (half of container on desktop, full on mobile minus margins)
       const parentRect = parent.getBoundingClientRect();
-      const logoRect = logo.getBoundingClientRect();
+      const availableWidth = window.innerWidth >= 992 ? parentRect.width / 2 - 40 : parentRect.width - 32;
 
-      const availableWidth = window.innerWidth >= 992 ? parentRect.width / 2 - 60 : parentRect.width - 40;
-      const availableHeight = window.innerWidth >= 992 ? parentRect.height - logoRect.height - 80 : parentRect.height * 0.25;
-
-      // Binary search for optimal font size that fits in 2 lines
-      let minSize = 24;
-      let maxSize = window.innerWidth >= 992 ? 200 : 100;
+      // Binary search for largest font that keeps text in max 2 lines
+      let minSize = 32;
+      let maxSize = window.innerWidth >= 992 ? 180 : 100;
       let optimalSize = minSize;
-
-      // Store original styles
-      const originalFontSize = title.style.fontSize;
 
       while (minSize <= maxSize) {
         const midSize = Math.floor((minSize + maxSize) / 2);
         title.style.fontSize = midSize + 'px';
 
-        // Check if it fits: width constraint AND max 2 lines height
-        const titleRect = title.getBoundingClientRect();
-        const lineHeight = midSize * 0.95; // approximate line height
-        const numLines = titleRect.height / lineHeight;
+        // Measure actual rendered height and calculate lines
+        const titleHeight = title.scrollHeight;
+        const lineHeight = midSize * 0.95;
+        const numLines = titleHeight / lineHeight;
 
-        // Check if fits in 2 lines and within available height
-        if (numLines <= 2.1 && titleRect.height <= availableHeight) {
+        // Only constraint: max 2 lines
+        if (numLines <= 2.15) {
           optimalSize = midSize;
           minSize = midSize + 1;
         } else {
