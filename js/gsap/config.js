@@ -31,9 +31,6 @@ ScrollTrigger.config({
   syncInterval: 16
 });
 
-// Normalize scroll to prevent double scrollbar
-ScrollTrigger.normalizeScroll(true);
-
 // Refresh on load to recalculate positions
 window.addEventListener('load', function() {
   ScrollTrigger.refresh();
