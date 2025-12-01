@@ -41,7 +41,7 @@
   .teachers_wrap,
   .plan_wrap {
     min-height: auto;
-    padding-block: var(--site--margin);
+    padding-block: var(--_spacing---space--6) !important;
   }
 }
 
@@ -1068,9 +1068,9 @@ img {
    14. GENERAL SPACING FIXES - MOBILE
    ============================================ */
 @media (max-width: 768px) {
-  /* Reduce section padding on mobile - match site margin */
+  /* Reduce section padding on mobile */
   .u-section:not(.hero_wrap):not(.nav_wrap) {
-    padding-block: var(--site--margin);
+    padding-block: var(--_spacing---space--6) !important;
   }
 
   /* Hero and nav should have no extra padding */
