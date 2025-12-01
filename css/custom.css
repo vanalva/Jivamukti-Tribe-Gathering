@@ -1472,6 +1472,7 @@ img {
   background: var(--swatch--light-200);
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
 .teacher-card:hover {

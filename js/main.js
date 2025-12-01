@@ -225,7 +225,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // ============================================
   // TEACHER MODAL FUNCTIONALITY
   // ============================================
-  const teacherItemsForModal = document.querySelectorAll('.teacher_item');
+  const teacherItemsForModal = document.querySelectorAll('.teacher_item, .teacher-card');
   const modal = document.getElementById('teacherModal');
   const closeModalBtn = document.querySelector('.teacher-modal_close');
 
@@ -234,7 +234,7 @@ document.addEventListener('DOMContentLoaded', function() {
       e.preventDefault();
       const teacherName = item.getAttribute('data-teacher-name');
       const teacherImage = item.getAttribute('data-teacher-image');
-      const teacherRoleEl = item.querySelector('.teacher_eyebrow');
+      const teacherRoleEl = item.querySelector('.teacher_eyebrow') || item.querySelector('.teacher-card_location');
       const teacherRole = teacherRoleEl ? teacherRoleEl.textContent : '';
 
       // Update modal content
