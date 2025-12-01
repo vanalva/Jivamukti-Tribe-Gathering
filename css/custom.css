@@ -1357,3 +1357,48 @@ img {
     width: min(90%, 240px) !important;
   }
 }
+
+/* ============================================
+   16. TEACHER NAMES - PREVENT CROPPING
+   ============================================ */
+
+/* Remove offsets and ensure consistent left alignment */
+.teacher_info--offset,
+.teacher_info--offset-large,
+.teacher_info--offset-medium {
+  margin-right: 0 !important;
+}
+
+/* Teacher item layout - left align content, let name shrink if needed */
+.teacher_item {
+  justify-content: flex-start !important;
+}
+
+.teacher_info {
+  flex: 1;
+  min-width: 0;
+}
+
+.teacher_info h3 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Push arrow to the right */
+.teacher_arrow {
+  margin-left: auto;
+}
+
+/* Responsive font sizing for long names */
+@media (max-width: 1200px) {
+  .teacher_info h3 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .teacher_info h3 {
+    font-size: clamp(1.25rem, 5vw, 1.75rem) !important;
+  }
+}
