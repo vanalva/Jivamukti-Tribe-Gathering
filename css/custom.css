@@ -41,7 +41,7 @@
   .teachers_wrap,
   .plan_wrap {
     min-height: auto;
-    padding-block: var(--_spacing---space--10);
+    padding-block: var(--site--margin);
   }
 }
 
