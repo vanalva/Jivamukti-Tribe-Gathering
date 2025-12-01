@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (videoType === 'youtube') {
       iframe.src = 'https://www.youtube.com/embed/' + videoId + (autoplay ? '?autoplay=1' : '');
     } else if (videoType === 'vimeo') {
-      iframe.src = 'https://player.vimeo.com/embed/' + videoId + (autoplay ? '?autoplay=1' : '');
+      iframe.src = 'https://player.vimeo.com/video/' + videoId + (autoplay ? '?autoplay=1' : '');
     }
 
     return iframe;

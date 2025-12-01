@@ -1147,6 +1147,32 @@ img {
 }
 
 /* ============================================
+   ARCHIVE PAGE - VIDEO THUMBNAILS
+   ============================================ */
+
+/* Change play button to lighter red (accent instead of brand) */
+.video-item_play-button {
+  color: var(--swatch--accent-500) !important;
+}
+
+.video-item_play-button::before {
+  border-color: transparent transparent transparent var(--swatch--accent-500) !important;
+}
+
+/* Mobile: Show overlay by default so it's clear they are videos */
+@media (hover: none) and (pointer: coarse) {
+  .video-item_overlay {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .video-item_overlay {
+    opacity: 1;
+  }
+}
+
+/* ============================================
    ABOUT PAGE - QUOTE SECTION (Image Stretch)
    ============================================ */
 .plan_content--stretch-image {
