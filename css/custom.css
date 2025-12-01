@@ -1172,6 +1172,21 @@ img {
   }
 }
 
+/* Video modal - ensure full screen coverage */
+.video-modal {
+  width: 100vw !important;
+  height: 100vh !important;
+  height: 100dvh !important; /* Dynamic viewport height for mobile */
+  inset: 0 !important;
+}
+
+.video-modal_backdrop {
+  width: 100vw !important;
+  height: 100vh !important;
+  height: 100dvh !important;
+  inset: 0 !important;
+}
+
 /* ============================================
    ABOUT PAGE - QUOTE SECTION (Image Stretch)
    ============================================ */
