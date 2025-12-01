@@ -10,7 +10,10 @@
       "Bash(do cp images/final-media/$size/Pages/Register/*.webp images/pages/register/)",
       "Bash(do if ! grep -rq $f ../../*.html)",
       "Bash(then rm -f $f)",
-      "Bash(fi)"
+      "Bash(fi)",
+      "Bash(npx serve:*)",
+      "Bash(cmd /c \"mklink /J \"\"Jivamukti-Tribe-Gathering\"\" \"\"Jivamukti Tribe Gathering\"\"\")",
+      "Bash(python -m http.server:*)"
     ],
     "deny": [],
     "ask": []

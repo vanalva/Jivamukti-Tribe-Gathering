@@ -1172,29 +1172,56 @@ img {
   }
 }
 
-/* Video modal - ensure full screen coverage relative to body */
+/* Video modal - simple fullscreen lightbox */
 .video-modal {
   position: fixed !important;
   top: 0 !important;
   left: 0 !important;
-  right: 0 !important;
-  bottom: 0 !important;
   width: 100vw !important;
   height: 100vh !important;
-  height: 100dvh !important; /* Dynamic viewport height for mobile */
   z-index: 999999 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: rgba(0, 0, 0, 0.9) !important;
 }
 
 .video-modal_backdrop {
-  position: fixed !important;
+  position: absolute !important;
   top: 0 !important;
   left: 0 !important;
-  right: 0 !important;
-  bottom: 0 !important;
-  width: 100vw !important;
-  height: 100vh !important;
-  height: 100dvh !important;
-  z-index: -1;
+  width: 100% !important;
+  height: 100% !important;
+  background: transparent !important;
+}
+
+.video-modal_content {
+  position: relative !important;
+  width: 90vw !important;
+  height: 80vh !important;
+  max-width: none !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.video-modal_container {
+  width: 100% !important;
+  height: 100% !important;
+  aspect-ratio: unset !important;
+}
+
+.video-modal_container iframe {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.video-modal_close {
+  position: absolute !important;
+  top: 20px !important;
+  right: 20px !important;
+  z-index: 1000000 !important;
 }
 
 /* ============================================
