@@ -600,3 +600,540 @@
     aspect-ratio: 16 / 10;
   }
 }
+
+/* ============================================
+   COMPREHENSIVE RESPONSIVE FIXES
+   ============================================ */
+
+/* ============================================
+   1. DISABLE HOVER STATES ON TOUCH DEVICES
+   ============================================ */
+@media (hover: none) and (pointer: coarse) {
+  /* Schedule day cards - no hover */
+  .schedule-provisional_day:hover {
+    border-color: var(--swatch--dark-900-o20);
+    background-color: transparent;
+    color: inherit;
+  }
+
+  .schedule-provisional_day:hover .schedule-provisional_day-number {
+    opacity: 1;
+  }
+
+  .schedule-provisional_day:hover .schedule-provisional_day-date {
+    color: var(--swatch--accent-500);
+  }
+
+  /* Location cards - no hover transform */
+  .location_card:hover {
+    transform: none;
+  }
+
+  .location_card:hover .location_card-image {
+    transform: none;
+  }
+
+  .location_card:hover .location_card-link {
+    color: inherit;
+  }
+
+  .location_card:hover .location_card-link svg {
+    transform: none;
+  }
+
+  /* Teacher items - no hover effects */
+  .teacher_item:hover {
+    background-color: transparent;
+  }
+
+  .teacher_item:hover .teacher_info h3 {
+    color: inherit;
+  }
+
+  /* Buttons - subtle active state instead of hover */
+  .button:hover {
+    transform: none;
+  }
+
+  .button:active {
+    opacity: 0.8;
+  }
+
+  /* Menu links - no hover arrow movement */
+  .menu-fullscreen_link:hover .menu-fullscreen_arrow-icon {
+    transform: none;
+  }
+}
+
+/* ============================================
+   2. GLOBAL IMAGE OVERFLOW FIX
+   ============================================ */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Ensure images don't overflow their containers */
+.hero-collage_image,
+.home-about_hero-image,
+.teachers_hero-image,
+.location_card-image,
+.schedule-provisional_image,
+.teacher-modal_image,
+.sticky-scroll_image {
+  max-width: 100%;
+  object-fit: cover;
+}
+
+/* ============================================
+   3. MENU ARROW SIZE FIX
+   ============================================ */
+@media (max-width: 1300px) {
+  .menu-fullscreen_arrow-icon {
+    width: 20px !important;
+    height: 20px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-fullscreen_arrow-icon {
+    width: 16px !important;
+    height: 16px !important;
+  }
+
+  .menu-fullscreen_link {
+    font-size: clamp(1.5rem, 8vw, 2.5rem) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu-fullscreen_arrow-icon {
+    width: 14px !important;
+    height: 14px !important;
+  }
+
+  .menu-fullscreen_link {
+    font-size: clamp(1.25rem, 7vw, 2rem) !important;
+  }
+}
+
+/* ============================================
+   4. TEACHER MODAL - FULL RESPONSIVE FIX
+   ============================================ */
+@media (max-width: 991px) {
+  .teacher-modal_content {
+    display: flex !important;
+    flex-direction: column !important;
+    overflow-y: auto;
+    padding: var(--site--margin);
+    padding-top: calc(var(--navbar-height) + var(--_spacing---space--4));
+  }
+
+  /* Override display: contents to allow proper ordering */
+  .teacher-modal_grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: var(--_spacing---space--4);
+    width: 100%;
+  }
+
+  .teacher-modal_info {
+    order: 2;
+    padding-right: 0;
+    max-height: none;
+    overflow-y: visible;
+  }
+
+  .teacher-modal_image-wrap {
+    order: 1;
+    height: auto !important;
+    min-height: 40vh;
+    max-height: 50vh;
+    margin: 0 !important;
+    position: relative !important;
+    width: 100% !important;
+  }
+
+  .teacher-modal_image {
+    height: 100%;
+    min-height: 40vh;
+    max-height: 50vh;
+    width: 100%;
+  }
+
+  .teacher-modal_name {
+    font-size: clamp(2rem, 8vw, 3rem) !important;
+  }
+
+  .teacher-modal_actions {
+    flex-direction: column;
+    gap: var(--_spacing---space--3);
+  }
+
+  .teacher-modal_actions .button {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .teacher-modal_content {
+    padding: var(--_spacing---space--4);
+    padding-top: calc(var(--navbar-height) + var(--_spacing---space--2));
+  }
+
+  .teacher-modal_image-wrap {
+    min-height: 30vh;
+    max-height: 40vh;
+  }
+
+  .teacher-modal_image {
+    min-height: 30vh;
+    max-height: 40vh;
+  }
+
+  .teacher-modal_info {
+    gap: var(--_spacing---space--4);
+  }
+
+  .teacher-modal_bio,
+  .teacher-modal_classes {
+    gap: var(--_spacing---space--2);
+  }
+}
+
+/* ============================================
+   5. HERO SECTION RESPONSIVE FIXES
+   ============================================ */
+@media (max-width: 768px) {
+  .hero_wrap {
+    min-height: 100svh; /* Use small viewport height for mobile */
+  }
+
+  /* Hero floating images - hide on mobile */
+  .hero_floating_image-topleft,
+  .hero_floating_image-bottomright {
+    display: none !important;
+  }
+
+  .hero_logo_wrap {
+    width: min(80%, 280px) !important;
+  }
+
+  .hero_date .text-h1 {
+    font-size: clamp(1.25rem, 5vw, 1.75rem) !important;
+  }
+}
+
+/* Hero collage responsive */
+@media (max-width: 768px) {
+  .hero-collage_image-wrap {
+    min-height: 40vh;
+    max-height: 50vh;
+  }
+
+  .hero-collage_image {
+    min-height: 40vh;
+    max-height: 50vh;
+  }
+
+  .hero-collage_title {
+    font-size: clamp(2rem, 10vw, 3rem) !important;
+  }
+}
+
+/* ============================================
+   6. ABOUT SECTION FIXES
+   ============================================ */
+@media (max-width: 768px) {
+  .about_content {
+    padding-inline: var(--site--margin) !important;
+  }
+
+  .home-about_hero-image-wrap {
+    margin-left: calc(var(--site--margin) * -1);
+    margin-right: calc(var(--site--margin) * -1);
+    width: calc(100% + var(--site--margin) * 2);
+    min-height: 40vh;
+    max-height: 50vh;
+  }
+
+  .home-about_hero-image {
+    min-height: 40vh;
+    max-height: 50vh;
+  }
+
+  .home-about_main-title {
+    font-size: clamp(2.5rem, 12vw, 4rem) !important;
+  }
+
+  .home-about_date {
+    font-size: clamp(1rem, 4vw, 1.5rem) !important;
+  }
+
+  .home-about_subtitle {
+    font-size: clamp(1.25rem, 5vw, 2rem) !important;
+  }
+}
+
+/* ============================================
+   7. SCHEDULE SECTION MOBILE FIXES
+   ============================================ */
+@media (max-width: 480px) {
+  .schedule-provisional_day {
+    padding: var(--_spacing---space--4);
+    min-height: 140px;
+  }
+
+  .schedule-provisional_day-number {
+    font-size: clamp(2.5rem, 12vw, 4rem);
+  }
+
+  .schedule-provisional_day-content h3 {
+    font-size: 0.875rem;
+  }
+
+  .schedule-provisional_day-date {
+    font-size: 1rem;
+  }
+
+  .schedule-provisional_day-content p:last-child {
+    font-size: 0.8rem;
+  }
+
+  .schedule-provisional_image-wrap {
+    max-height: 40vh;
+  }
+}
+
+/* ============================================
+   8. TEACHERS SECTION MOBILE FIXES
+   ============================================ */
+@media (max-width: 768px) {
+  .teachers_wrap {
+    padding-block: var(--_spacing---space--8);
+  }
+
+  .teacher_item {
+    padding-block: var(--_spacing---space--3);
+  }
+
+  .teacher_item-thumbnail-wrap {
+    width: 60px !important;
+    height: 60px !important;
+  }
+
+  .teacher_info h3 {
+    font-size: clamp(1rem, 4vw, 1.25rem) !important;
+  }
+
+  .teacher_arrow-icon {
+    width: 24px !important;
+    height: 24px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .teacher_item {
+    grid-template-columns: 50px 1fr !important;
+    gap: var(--_spacing---space--2) !important;
+    padding-right: 40px !important;
+  }
+
+  .teacher_item-thumbnail-wrap {
+    width: 50px !important;
+    height: 50px !important;
+  }
+
+  .teacher_info h3 {
+    font-size: 0.9rem !important;
+  }
+
+  .teacher_eyebrow {
+    font-size: 0.65rem !important;
+  }
+
+  .teacher_arrow-icon {
+    width: 20px !important;
+    height: 20px !important;
+  }
+}
+
+/* ============================================
+   9. PRICING/PLAN SECTION FIXES
+   ============================================ */
+@media (max-width: 991px) {
+  .plan_content {
+    grid-template-columns: 1fr !important;
+    gap: var(--_spacing---space--6);
+  }
+
+  .pricing_title-sticky {
+    position: static !important;
+    text-align: center;
+  }
+
+  .pricing_title-sticky h2 {
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
+  }
+
+  .pricing-cards-grid {
+    grid-template-columns: 1fr !important;
+    gap: var(--_spacing---space--4);
+  }
+}
+
+@media (max-width: 480px) {
+  .card_primary_element {
+    padding: var(--_spacing---space--4) !important;
+  }
+
+  .card_primary_element .text-h1 {
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
+
+  .limited-tickets-tag {
+    font-size: 0.5rem;
+    padding: 4px 8px;
+  }
+}
+
+/* ============================================
+   10. FOOTER RESPONSIVE FIXES
+   ============================================ */
+@media (max-width: 768px) {
+  .footer_content {
+    padding: var(--_spacing---space--6) var(--site--margin) !important;
+    gap: var(--_spacing---space--6) !important;
+  }
+
+  .footer_grid {
+    grid-template-columns: 1fr !important;
+    gap: var(--_spacing---space--4) !important;
+    text-align: center;
+  }
+
+  .footer_social {
+    justify-content: center;
+  }
+
+  .footer_bottom {
+    flex-direction: column;
+    gap: var(--_spacing---space--2);
+    text-align: center;
+  }
+}
+
+/* ============================================
+   11. LOOKBACK SECTION MOBILE
+   ============================================ */
+@media (max-width: 768px) {
+  .home-lookback_title,
+  .home-lookback_subtitle {
+    font-size: clamp(2rem, 10vw, 3.5rem) !important;
+    text-align: center !important;
+    align-self: center !important;
+  }
+
+  .home-lookback_image-wrap {
+    max-width: 100%;
+  }
+}
+
+/* ============================================
+   12. ROME/VIDEO SECTION MOBILE
+   ============================================ */
+@media (max-width: 991px) {
+  .home-rome_content {
+    grid-template-columns: 1fr !important;
+    gap: var(--_spacing---space--4);
+    min-height: auto;
+  }
+
+  .home-rome_video-wrap {
+    aspect-ratio: 16 / 9;
+    max-height: 50vh;
+  }
+}
+
+/* ============================================
+   13. STICKY SCROLL SECTION MOBILE
+   ============================================ */
+@media (max-width: 768px) {
+  .sticky-scroll_image-container {
+    height: 50vh !important;
+    min-height: 250px;
+    max-height: 400px;
+  }
+
+  .sticky-scroll_text-block {
+    padding: var(--_spacing---space--6) var(--_spacing---space--4) !important;
+  }
+
+  .sticky-scroll_text-block h2 {
+    font-size: clamp(1.5rem, 6vw, 2rem) !important;
+  }
+}
+
+/* ============================================
+   14. GENERAL SPACING FIXES - MOBILE
+   ============================================ */
+@media (max-width: 768px) {
+  /* Reduce section padding on mobile */
+  .u-section {
+    padding-block: var(--_spacing---space--8);
+  }
+
+  /* Ensure consistent side margins */
+  .u-padding-inline-sitemargin {
+    padding-inline: var(--site--margin);
+  }
+
+  /* Text overflow prevention */
+  h1, h2, h3, h4, h5, h6, p {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  }
+
+  /* Large display text sizing */
+  .text-display-LG {
+    font-size: clamp(2rem, 10vw, 4rem) !important;
+  }
+
+  .text-h1 {
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
+  }
+}
+
+/* ============================================
+   15. VERY SMALL SCREENS (< 360px)
+   ============================================ */
+@media (max-width: 360px) {
+  :root {
+    --site--margin: 16px;
+  }
+
+  .teacher_item {
+    grid-template-columns: 40px 1fr !important;
+    padding-right: 32px !important;
+  }
+
+  .teacher_item-thumbnail-wrap {
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  .menu-fullscreen_link {
+    font-size: 1.25rem !important;
+  }
+
+  .menu-fullscreen_arrow-icon {
+    width: 12px !important;
+    height: 12px !important;
+  }
+
+  .hero_logo_wrap {
+    width: min(90%, 240px) !important;
+  }
+}
