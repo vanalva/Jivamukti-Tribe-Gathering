@@ -2,6 +2,12 @@
    ADDITIONAL STYLES FOR HTML SITE
    ============================================ */
 
+/* ============================================
+   GLOBAL OVERFLOW PREVENTION
+   ============================================ */
+html, body {
+  overflow-x: hidden;
+}
 
 /* ============================================
    SECTION MINIMUM HEIGHT - Breathing Room
