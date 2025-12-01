@@ -297,12 +297,6 @@
     font-size: clamp(1.5rem, 4vw, 2rem) !important;
   }
 
-  /* Hide floating images in landscape mobile */
-  .hero_floating_image-topleft,
-  .hero_floating_image-bottomright {
-    display: none !important;
-  }
-
   /* Fullscreen menu - horizontal layout */
   .menu-fullscreen_grid {
     grid-template-columns: 1fr 1fr !important;
