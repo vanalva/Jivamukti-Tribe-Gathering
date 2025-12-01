@@ -1,7 +1,16 @@
 {
   "permissions": {
     "allow": [
-      "Bash(gh api:*)"
+      "Bash(gh api:*)",
+      "Bash(do cp images/final-media/$size/Pages/Home/*.webp images/pages/home/)",
+      "Bash(do cp images/final-media/$size/Pages/Home/Location/*.webp images/pages/home/)",
+      "Bash(do cp images/final-media/$size/Pages/About/*.webp images/pages/about/)",
+      "Bash(do cp images/final-media/$size/Pages/Archive/*.webp images/pages/archive/)",
+      "Bash(do cp images/final-media/$size/Pages/Lineup/*.webp images/pages/lineup/)",
+      "Bash(do cp images/final-media/$size/Pages/Register/*.webp images/pages/register/)",
+      "Bash(do if ! grep -rq $f ../../*.html)",
+      "Bash(then rm -f $f)",
+      "Bash(fi)"
     ],
     "deny": [],
     "ask": []
