@@ -424,7 +424,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // ============================================
   // HERO TITLE AUTO-FIT
   // Dynamically sizes hero titles to fill available space
-  // Never breaks into more than 2 lines
+  // Never breaks into more than 2 lines - uses binary search
   // ============================================
   function fitHeroTitles() {
     const titles = document.querySelectorAll('.hero-collage_title-bottom');
@@ -436,63 +436,59 @@ document.addEventListener('DOMContentLoaded', function() {
       const logo = parent.querySelector('.hero-collage_logo-wrap');
       if (!logo) return;
 
-      // Get available width (half of parent for desktop layout)
+      // Get available dimensions
       const parentRect = parent.getBoundingClientRect();
-      const availableWidth = window.innerWidth >= 992 ? parentRect.width / 2 - 40 : parentRect.width - 40;
-
-      // Get logo height to calculate available vertical space (max 2 lines)
       const logoRect = logo.getBoundingClientRect();
-      const availableHeight = window.innerWidth >= 992 ? parentRect.height - logoRect.height - 60 : parentRect.height * 0.3;
-      const maxHeightFor2Lines = availableHeight;
 
-      // Count words to determine optimal sizing
-      const text = title.textContent.trim();
-      const wordList = text.split(/\s+/);
-      const words = wordList.length;
-      const longestWord = Math.max(...wordList.map(w => w.length));
+      const availableWidth = window.innerWidth >= 992 ? parentRect.width / 2 - 60 : parentRect.width - 40;
+      const availableHeight = window.innerWidth >= 992 ? parentRect.height - logoRect.height - 80 : parentRect.height * 0.25;
 
-      // Calculate font size that ensures max 2 lines
-      let fontSize;
+      // Binary search for optimal font size that fits in 2 lines
+      let minSize = 24;
+      let maxSize = window.innerWidth >= 992 ? 200 : 100;
+      let optimalSize = minSize;
 
-      if (window.innerWidth >= 992) {
-        // Desktop: Calculate based on longest word fitting in width
-        // and 2 lines max fitting in height
-        const fontSizeByWidth = availableWidth / (longestWord * 0.65);
-        const fontSizeByHeight = maxHeightFor2Lines / 2.1; // 2 lines with line-height ~1.05
+      // Store original styles
+      const originalFontSize = title.style.fontSize;
 
-        // Use the smaller of the two to ensure both constraints are met
-        fontSize = Math.min(fontSizeByWidth, fontSizeByHeight);
+      while (minSize <= maxSize) {
+        const midSize = Math.floor((minSize + maxSize) / 2);
+        title.style.fontSize = midSize + 'px';
 
-        // Clamp between reasonable bounds
-        fontSize = Math.max(48, Math.min(fontSize, 180));
-      } else {
-        // Mobile/tablet: center aligned, use viewport width
-        const fontSizeByWidth = availableWidth / (longestWord * 0.65);
-        const fontSizeByHeight = maxHeightFor2Lines / 2.1;
+        // Check if it fits: width constraint AND max 2 lines height
+        const titleRect = title.getBoundingClientRect();
+        const lineHeight = midSize * 0.95; // approximate line height
+        const numLines = titleRect.height / lineHeight;
 
-        fontSize = Math.min(fontSizeByWidth, fontSizeByHeight);
-        fontSize = Math.max(32, Math.min(fontSize, 80));
+        // Check if fits in 2 lines and within available height
+        if (numLines <= 2.1 && titleRect.height <= availableHeight) {
+          optimalSize = midSize;
+          minSize = midSize + 1;
+        } else {
+          maxSize = midSize - 1;
+        }
       }
 
-      title.style.fontSize = fontSize + 'px';
-
-      // Double-check: if still 3+ lines, reduce further
-      requestAnimationFrame(function() {
-        const lineHeight = parseFloat(getComputedStyle(title).lineHeight) || fontSize * 0.95;
-        const actualLines = title.scrollHeight / lineHeight;
-
-        if (actualLines > 2.2) {
-          // Reduce font size to fit in 2 lines
-          const reducedSize = fontSize * (2 / actualLines) * 0.95;
-          title.style.fontSize = Math.max(32, reducedSize) + 'px';
-        }
-      });
+      // Apply optimal size
+      title.style.fontSize = optimalSize + 'px';
     });
   }
 
-  // Run on load and resize
-  fitHeroTitles();
-  window.addEventListener('resize', fitHeroTitles);
+  // Run on load and resize (with debounce for resize)
+  let resizeTimeout;
+  function debouncedFitHeroTitles() {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(fitHeroTitles, 100);
+  }
+
+  // Initial run after fonts load
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(fitHeroTitles);
+  } else {
+    setTimeout(fitHeroTitles, 100);
+  }
+
+  window.addEventListener('resize', debouncedFitHeroTitles);
 
   console.log('Jivamukti Tribe Gathering - All interactions initialized');
 });
