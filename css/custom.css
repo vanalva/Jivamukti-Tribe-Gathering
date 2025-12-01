@@ -408,3 +408,48 @@
     display: none !important;
   }
 }
+
+/* ============================================
+   LIMITED TICKETS TAG - Pricing Cards
+   ============================================ */
+
+.limited-tickets-tag {
+  position: absolute;
+  top: 12px;
+  right: -8px;
+  background-color: #dc2626;
+  color: white;
+  font-family: var(--_typography---font--primary-family);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 6px 12px;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Small ribbon tail effect */
+.limited-tickets-tag::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  right: 0;
+  border-style: solid;
+  border-width: 0 8px 8px 0;
+  border-color: transparent #991b1b transparent transparent;
+}
+
+/* Responsive: smaller tag on mobile */
+@media (max-width: 768px) {
+  .limited-tickets-tag {
+    font-size: 0.6rem;
+    padding: 4px 8px;
+    top: 8px;
+    right: -6px;
+  }
+
+  .limited-tickets-tag::after {
+    border-width: 0 6px 6px 0;
+  }
+}
