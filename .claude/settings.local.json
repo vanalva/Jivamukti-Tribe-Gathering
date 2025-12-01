@@ -13,7 +13,10 @@
       "Bash(fi)",
       "Bash(npx serve:*)",
       "Bash(cmd /c \"mklink /J \"\"Jivamukti-Tribe-Gathering\"\" \"\"Jivamukti Tribe Gathering\"\"\")",
-      "Bash(python -m http.server:*)"
+      "Bash(python -m http.server:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push)"
     ],
     "deny": [],
     "ask": []
