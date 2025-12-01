@@ -424,6 +424,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // ============================================
   // HERO TITLE AUTO-FIT
   // Dynamically sizes hero titles to fill available space
+  // Never breaks into more than 2 lines
   // ============================================
   function fitHeroTitles() {
     const titles = document.querySelectorAll('.hero-collage_title-bottom');
@@ -439,37 +440,53 @@ document.addEventListener('DOMContentLoaded', function() {
       const parentRect = parent.getBoundingClientRect();
       const availableWidth = window.innerWidth >= 992 ? parentRect.width / 2 - 40 : parentRect.width - 40;
 
-      // Get logo height to calculate available vertical space
+      // Get logo height to calculate available vertical space (max 2 lines)
       const logoRect = logo.getBoundingClientRect();
       const availableHeight = window.innerWidth >= 992 ? parentRect.height - logoRect.height - 60 : parentRect.height * 0.3;
+      const maxHeightFor2Lines = availableHeight;
 
       // Count words to determine optimal sizing
       const text = title.textContent.trim();
-      const words = text.split(/\s+/).length;
+      const wordList = text.split(/\s+/);
+      const words = wordList.length;
+      const longestWord = Math.max(...wordList.map(w => w.length));
 
-      // Calculate optimal font size based on text length and available space
+      // Calculate font size that ensures max 2 lines
       let fontSize;
-      const charCount = text.length;
 
       if (window.innerWidth >= 992) {
-        // Desktop: prioritize filling horizontal space
-        // Shorter titles = larger font
-        if (words <= 1) {
-          fontSize = Math.min(availableWidth / (charCount * 0.55), availableHeight / 1.2);
-        } else if (words <= 2) {
-          fontSize = Math.min(availableWidth / (charCount * 0.5), availableHeight / 2.2);
-        } else {
-          fontSize = Math.min(availableWidth / (Math.max(...text.split(/\s+/).map(w => w.length)) * 0.6), availableHeight / (words * 1.1));
-        }
+        // Desktop: Calculate based on longest word fitting in width
+        // and 2 lines max fitting in height
+        const fontSizeByWidth = availableWidth / (longestWord * 0.65);
+        const fontSizeByHeight = maxHeightFor2Lines / 2.1; // 2 lines with line-height ~1.05
+
+        // Use the smaller of the two to ensure both constraints are met
+        fontSize = Math.min(fontSizeByWidth, fontSizeByHeight);
+
         // Clamp between reasonable bounds
         fontSize = Math.max(48, Math.min(fontSize, 180));
       } else {
         // Mobile/tablet: center aligned, use viewport width
-        fontSize = Math.min(availableWidth / (Math.max(...text.split(/\s+/).map(w => w.length)) * 0.65), 80);
+        const fontSizeByWidth = availableWidth / (longestWord * 0.65);
+        const fontSizeByHeight = maxHeightFor2Lines / 2.1;
+
+        fontSize = Math.min(fontSizeByWidth, fontSizeByHeight);
         fontSize = Math.max(32, Math.min(fontSize, 80));
       }
 
       title.style.fontSize = fontSize + 'px';
+
+      // Double-check: if still 3+ lines, reduce further
+      requestAnimationFrame(function() {
+        const lineHeight = parseFloat(getComputedStyle(title).lineHeight) || fontSize * 0.95;
+        const actualLines = title.scrollHeight / lineHeight;
+
+        if (actualLines > 2.2) {
+          // Reduce font size to fit in 2 lines
+          const reducedSize = fontSize * (2 / actualLines) * 0.95;
+          title.style.fontSize = Math.max(32, reducedSize) + 'px';
+        }
+      });
     });
   }
 
