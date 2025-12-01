@@ -859,13 +859,16 @@ img {
 }
 
 .teacher-modal_bio p,
-.teacher-modal_classes li {
+.teacher-modal_classes li,
+.teacher-modal_section p,
+.teacher-modal_section li {
   font-size: clamp(0.875rem, 0.8vw + 0.5rem, 1.125rem);
   line-height: 1.5;
 }
 
 .teacher-modal_bio h3,
-.teacher-modal_classes h3 {
+.teacher-modal_classes h3,
+.teacher-modal_section h3 {
   font-size: clamp(1rem, 1.2vw + 0.5rem, 1.5rem);
 }
 
@@ -876,11 +879,13 @@ img {
 }
 
 /* Responsive button sizing for modal */
-.teacher-modal_links {
+.teacher-modal_links,
+.teacher-modal_actions {
   flex-wrap: wrap;
 }
 
-.teacher-modal_links .button {
+.teacher-modal_links .button,
+.teacher-modal_actions .button {
   font-size: clamp(0.75rem, 1vw + 0.4rem, 1rem);
   padding: clamp(0.5rem, 1vw + 0.25rem, 1rem) clamp(1rem, 2vw + 0.5rem, 2rem);
   white-space: nowrap;
@@ -896,7 +901,8 @@ img {
     padding-top: calc(var(--navbar-height) + var(--_spacing---space--4));
   }
 
-  .teacher-modal_links .button {
+  .teacher-modal_links .button,
+  .teacher-modal_actions .button {
     font-size: clamp(0.7rem, 2.5vw + 0.3rem, 0.9rem);
     padding: clamp(0.4rem, 2vw, 0.75rem) clamp(0.75rem, 3vw, 1.5rem);
   }
@@ -938,12 +944,15 @@ img {
   }
 
   .teacher-modal_bio p,
-  .teacher-modal_classes li {
+  .teacher-modal_classes li,
+  .teacher-modal_section p,
+  .teacher-modal_section li {
     font-size: clamp(0.8rem, 2vw + 0.3rem, 1rem);
   }
 
   .teacher-modal_bio h3,
-  .teacher-modal_classes h3 {
+  .teacher-modal_classes h3,
+  .teacher-modal_section h3 {
     font-size: clamp(0.9rem, 2.5vw + 0.3rem, 1.25rem);
   }
 
