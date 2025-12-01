@@ -1409,20 +1409,28 @@ img {
 }
 
 /* ============================================
-   17. HERO COLLAGE - TITLE SIZING (max 2 lines)
+   17. HERO COLLAGE - TITLE SIZING
+   Reduce font size for long titles to prevent 3 lines
    ============================================ */
 
-/* Use original sizing from rome-tribe.css but cap at 2 lines */
-.hero-collage_title-bottom {
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+/* Long titles (3+ words like "ABOUT THE TRIBE") need smaller font to fit in 2 lines */
+.hero-collage_title-bottom--long {
+  font-size: clamp(2rem, 6vw, 7rem) !important;
+}
+
+@media (max-width: 1200px) {
+  .hero-collage_title-bottom--long {
+    font-size: clamp(1.8rem, 5.5vw, 5rem) !important;
+  }
 }
 
 /* Mobile/tablet: center text */
 @media (max-width: 991px) {
   .hero-collage_title-bottom {
     text-align: center;
+  }
+
+  .hero-collage_title-bottom--long {
+    font-size: clamp(1.5rem, 8vw, 3.5rem) !important;
   }
 }
