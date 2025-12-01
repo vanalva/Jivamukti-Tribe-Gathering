@@ -1068,9 +1068,9 @@ img {
    14. GENERAL SPACING FIXES - MOBILE
    ============================================ */
 @media (max-width: 768px) {
-  /* Reduce section padding on mobile - exclude hero and nav */
+  /* Reduce section padding on mobile - match site margin */
   .u-section:not(.hero_wrap):not(.nav_wrap) {
-    padding-block: var(--_spacing---space--8);
+    padding-block: var(--site--margin);
   }
 
   /* Hero and nav should have no extra padding */
