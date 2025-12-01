@@ -1409,13 +1409,15 @@ img {
 }
 
 /* ============================================
-   17. HERO COLLAGE - DYNAMIC TITLE SIZING
-   JS in main.js calculates optimal size based on available space
+   17. HERO COLLAGE - TITLE SIZING (max 2 lines)
    ============================================ */
 
+/* Use original sizing from rome-tribe.css but cap at 2 lines */
 .hero-collage_title-bottom {
-  line-height: 0.95;
-  transition: font-size 0.2s ease;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 /* Mobile/tablet: center text */
