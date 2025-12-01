@@ -1390,15 +1390,13 @@ img {
   margin-left: auto;
 }
 
-/* Responsive font sizing for long names */
-@media (max-width: 1200px) {
-  .teacher_info h3 {
-    font-size: clamp(1.5rem, 4vw, 2.5rem) !important;
-  }
+/* Smaller font sizing for teacher names */
+.teacher_info h3 {
+  font-size: clamp(1.25rem, 2.5vw, 2rem) !important;
 }
 
 @media (max-width: 768px) {
   .teacher_info h3 {
-    font-size: clamp(1.25rem, 5vw, 1.75rem) !important;
+    font-size: clamp(1rem, 4vw, 1.5rem) !important;
   }
 }
