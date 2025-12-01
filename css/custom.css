@@ -811,12 +811,6 @@ img {
     min-height: 100svh; /* Use small viewport height for mobile */
   }
 
-  /* Hero floating images - hide on mobile */
-  .hero_floating_image-topleft,
-  .hero_floating_image-bottomright {
-    display: none !important;
-  }
-
   .hero_logo_wrap {
     width: min(80%, 280px) !important;
   }
@@ -1080,9 +1074,14 @@ img {
    14. GENERAL SPACING FIXES - MOBILE
    ============================================ */
 @media (max-width: 768px) {
-  /* Reduce section padding on mobile */
-  .u-section {
+  /* Reduce section padding on mobile - exclude hero sections */
+  .u-section:not(.hero_wrap) {
     padding-block: var(--_spacing---space--8);
+  }
+
+  /* Hero should have no extra padding */
+  .hero_wrap.u-section {
+    padding-block: 0 !important;
   }
 
   /* Ensure consistent side margins */
