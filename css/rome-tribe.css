@@ -3349,6 +3349,11 @@ strong {
     position: relative;
     transition: background-color 0.3s ease;
     background-color: var(--swatch--light-100);
+    border-top: 1px solid var(--swatch--dark-900-o20);
+}
+
+.nav-link_wrap:last-child {
+    border-bottom: 1px solid var(--swatch--dark-900-o20);
 }
 
 .nav-link_wrap:hover {

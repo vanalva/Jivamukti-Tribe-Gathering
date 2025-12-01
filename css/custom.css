@@ -1201,10 +1201,10 @@ img {
    14. GENERAL SPACING FIXES - MOBILE
    ============================================ */
 @media (max-width: 768px) {
-  /* Fix hero date positioning - center it and move away from floating image */
+  /* Fix hero date positioning - keep it below logo like desktop */
   .hero_date {
-    top: auto !important;
-    bottom: var(--_spacing---space--6) !important;
+    top: calc(50% + min(70%, 280px) * 0.5 + var(--_spacing---space--4)) !important;
+    bottom: auto !important;
     left: 50% !important;
     transform: translateX(-50%) !important;
     text-align: center;
