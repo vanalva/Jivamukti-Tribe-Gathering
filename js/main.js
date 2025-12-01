@@ -421,5 +421,61 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
+  // ============================================
+  // HERO TITLE AUTO-FIT
+  // Dynamically sizes hero titles to fill available space
+  // ============================================
+  function fitHeroTitles() {
+    const titles = document.querySelectorAll('.hero-collage_title-bottom');
+
+    titles.forEach(function(title) {
+      const parent = title.closest('.hero-collage_content');
+      if (!parent) return;
+
+      const logo = parent.querySelector('.hero-collage_logo-wrap');
+      if (!logo) return;
+
+      // Get available width (half of parent for desktop layout)
+      const parentRect = parent.getBoundingClientRect();
+      const availableWidth = window.innerWidth >= 992 ? parentRect.width / 2 - 40 : parentRect.width - 40;
+
+      // Get logo height to calculate available vertical space
+      const logoRect = logo.getBoundingClientRect();
+      const availableHeight = window.innerWidth >= 992 ? parentRect.height - logoRect.height - 60 : parentRect.height * 0.3;
+
+      // Count words to determine optimal sizing
+      const text = title.textContent.trim();
+      const words = text.split(/\s+/).length;
+
+      // Calculate optimal font size based on text length and available space
+      let fontSize;
+      const charCount = text.length;
+
+      if (window.innerWidth >= 992) {
+        // Desktop: prioritize filling horizontal space
+        // Shorter titles = larger font
+        if (words <= 1) {
+          fontSize = Math.min(availableWidth / (charCount * 0.55), availableHeight / 1.2);
+        } else if (words <= 2) {
+          fontSize = Math.min(availableWidth / (charCount * 0.5), availableHeight / 2.2);
+        } else {
+          fontSize = Math.min(availableWidth / (Math.max(...text.split(/\s+/).map(w => w.length)) * 0.6), availableHeight / (words * 1.1));
+        }
+        // Clamp between reasonable bounds
+        fontSize = Math.max(48, Math.min(fontSize, 180));
+      } else {
+        // Mobile/tablet: center aligned, use viewport width
+        fontSize = Math.min(availableWidth / (Math.max(...text.split(/\s+/).map(w => w.length)) * 0.65), 80);
+        fontSize = Math.max(32, Math.min(fontSize, 80));
+      }
+
+      title.style.fontSize = fontSize + 'px';
+    });
+  }
+
+  // Run on load and resize
+  fitHeroTitles();
+  window.addEventListener('resize', fitHeroTitles);
+
   console.log('Jivamukti Tribe Gathering - All interactions initialized');
 });

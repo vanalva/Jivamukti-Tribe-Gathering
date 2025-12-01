@@ -1409,41 +1409,18 @@ img {
 }
 
 /* ============================================
-   17. HERO COLLAGE - PREVENT TITLE OVERLAP
+   17. HERO COLLAGE - DYNAMIC TITLE SIZING
+   JS in main.js calculates optimal size based on available space
    ============================================ */
 
-/* Ensure title fits in available space without overlapping logo */
 .hero-collage_title-bottom {
-  font-size: clamp(2rem, 6vw, 8rem) !important;
-  max-width: 100%;
-  word-wrap: break-word;
+  line-height: 0.95;
+  transition: font-size 0.2s ease;
 }
 
-/* On desktop, title should max 2 lines */
-@media (min-width: 992px) {
-  .hero-collage_title-bottom {
-    font-size: clamp(2.5rem, 5.5vw, 7rem) !important;
-    max-height: 45%;
-    overflow: hidden;
-  }
-
-  /* Ensure logo has enough space */
-  .hero-collage_logo-wrap {
-    min-height: 20%;
-    z-index: 10;
-  }
-}
-
-/* Tablet adjustments */
+/* Mobile/tablet: center text */
 @media (max-width: 991px) {
   .hero-collage_title-bottom {
-    font-size: clamp(2rem, 8vw, 4rem) !important;
-  }
-}
-
-/* Small screens */
-@media (max-width: 600px) {
-  .hero-collage_title-bottom {
-    font-size: clamp(1.5rem, 10vw, 3rem) !important;
+    text-align: center;
   }
 }
