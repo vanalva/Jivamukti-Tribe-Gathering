@@ -1434,3 +1434,109 @@ img {
     font-size: clamp(1.5rem, 8vw, 3.5rem) !important;
   }
 }
+
+/* ============================================
+   18. TEACHER GRID - 4 columns with cards
+   ============================================ */
+
+.teacher-grid_wrap {
+  background-color: var(--swatch--light-100);
+}
+
+.teacher-grid_content {
+  padding: var(--_spacing---space--12) var(--site--margin);
+  max-width: var(--site--content-max-width);
+  margin: 0 auto;
+}
+
+.teacher-grid_header {
+  text-align: center;
+  margin-bottom: var(--_spacing---space--10);
+}
+
+.teacher-grid_title {
+  color: var(--swatch--dark-900);
+  margin-bottom: var(--_spacing---space--4);
+}
+
+.teacher-grid_grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--_spacing---space--6);
+}
+
+.teacher-card {
+  background: var(--swatch--light-200);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.teacher-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.teacher-card_image-wrap {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.teacher-card_image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.teacher-card:hover .teacher-card_image {
+  transform: scale(1.05);
+}
+
+.teacher-card_info {
+  padding: var(--_spacing---space--4);
+  text-align: center;
+}
+
+.teacher-card_name {
+  color: var(--swatch--dark-900);
+  font-size: var(--_typography---font-size--text-xl);
+  font-weight: var(--_typography---font--primary-bold);
+  margin-bottom: var(--_spacing---space--1);
+  text-transform: uppercase;
+}
+
+.teacher-card_location {
+  color: var(--swatch--dark-500);
+  font-size: var(--_typography---font-size--text-small);
+}
+
+/* Responsive: 3 columns on tablet */
+@media (max-width: 1200px) {
+  .teacher-grid_grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Responsive: 2 columns on smaller tablets */
+@media (max-width: 768px) {
+  .teacher-grid_grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--_spacing---space--4);
+  }
+
+  .teacher-grid_content {
+    padding: var(--_spacing---space--8) var(--site--margin);
+  }
+}
+
+/* Responsive: 2 columns on mobile, smaller cards */
+@media (max-width: 480px) {
+  .teacher-card_info {
+    padding: var(--_spacing---space--3);
+  }
+
+  .teacher-card_name {
+    font-size: var(--_typography---font-size--text-large);
+  }
+}
