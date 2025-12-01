@@ -1147,6 +1147,23 @@ img {
 }
 
 /* ============================================
+   ABOUT PAGE - QUOTE SECTION (Image Stretch)
+   ============================================ */
+.plan_content--stretch-image {
+  align-items: stretch;
+}
+
+.plan_content--stretch-image .image-wrap {
+  height: 100%;
+}
+
+.plan_content--stretch-image .image-wrap .image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ============================================
    11. LOOKBACK SECTION MOBILE
    ============================================ */
 @media (max-width: 768px) {
