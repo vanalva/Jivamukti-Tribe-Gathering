@@ -1,0 +1,2881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jivamukti Tribe Gathering Rome 2026 - Standalone Test</title>
+  <meta name="description" content="Four-day yoga festival celebrating life and expressing our love and devotion through collective yoga practice, chanting, meditation and satsang.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&family=Inter:wght@400&display=swap" rel="stylesheet">
+
+  <!-- Inline Styles -->
+  <style>
+/* ============================================
+   BROWSER RESET & BASE STYLES
+   ============================================ */
+
+/* Box Model Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* HTML & Body Defaults */
+html {
+  height: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100%;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  color: #333;
+  background-color: #fff;
+}
+
+/* Image Defaults */
+img {
+  max-width: 100%;
+  vertical-align: middle;
+  display: inline-block;
+  overflow: visible;
+  overflow-clip-margin: 0;
+}
+
+/* Text Selection Styling */
+::selection {
+  background-color: var(--swatch--accent-500);
+  color: var(--swatch--dark-900);
+}
+
+::-moz-selection {
+  background-color: var(--swatch--accent-500);
+  color: var(--swatch--dark-900);
+}
+
+/* Disable hover effects on touch devices */
+@media (hover: none) and (pointer: coarse) {
+  * {
+    cursor: auto !important;
+  }
+
+  .custom-cursor {
+    display: none !important;
+  }
+
+  /* Disable all hover transitions on touch devices */
+  a:hover,
+  button:hover,
+  .teacher_item:hover,
+  .day_row:hover,
+  .nav_menu-link:hover,
+  .teacher_arrow:hover,
+  *:hover {
+    transition: none !important;
+  }
+}
+
+/* Custom Scrollbar - Visible with Custom Styling */
+/* Webkit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent !important;
+  display: none;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--swatch--accent-500);
+  border-radius: 6px;
+  border: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--swatch--accent-600);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: var(--swatch--accent-500) transparent;
+}
+
+/* Custom Cursor */
+body,
+body * {
+  cursor: none !important;
+}
+
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 28px;
+  height: 28px;
+  pointer-events: none;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
+}
+
+.custom-cursor svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.custom-cursor svg path {
+  fill: #151515;
+  transition: fill 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.custom-cursor.is-hovering {
+  transform: translate(-50%, -50%) scale(1.2);
+}
+
+.custom-cursor.is-hovering svg path {
+  fill: var(--swatch--accent-500);
+}
+
+/* ============================================
+   LUMOS CSS VARIABLES (Rome Tribe Theme)
+   ============================================ */
+
+:root {
+  --_theme---background: var(--swatch--light-100);
+  --_text-style---font-family: var(--_typography---font--primary-family);
+  --_theme---text: var(--swatch--dark-900);
+  --_text-style---font-size: var(--_typography---font-size--text-main);
+  --_text-style---line-height: var(--_typography---line-height--huge);
+  --_text-style---font-weight: var(--_typography---font--primary-regular);
+  --_text-style---letter-spacing: var(--_typography---letter-spacing--normal);
+  --_gap---size: var(--site--gutter);
+  --_spacing---space--6: clamp(2.5 * 1rem, ((2.5 - ((3.5 - 2.5) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((3.5 - 2.5) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 3.5 * 1rem);
+  --_spacing---space--7: clamp(3 * 1rem, ((3 - ((4.5 - 3) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((4.5 - 3) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 4.5 * 1rem);
+  --_typography---line-height--small: 0.8;
+  --_typography---line-height--medium: 1.1;
+  --_typography---line-height--huge: 1.5;
+  --_typography---letter-spacing--tight: -.02em;
+  --_typography---letter-spacing--normal: 0em;
+  --max-width--main: calc(var(--site--viewport-max) * 1rem);
+  --site--margin: clamp(1 * 1rem, ((1 - ((3 - 1) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((3 - 1) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 3 * 1rem);
+  --border-width--main: .094rem;
+  --_spacing---section-space--main: clamp(7 * 1rem, ((7 - ((12 - 7) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((12 - 7) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 12 * 1rem);
+  --_spacing---space--2: clamp(.75 * 1rem, ((.75 - ((1 - .75) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((1 - .75) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 1 * 1rem);
+  --site--gutter: 1rem;
+  --_spacing---space--1: clamp(.5 * 1rem, ((.5 - ((.75 - .5) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((.75 - .5) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), .75 * 1rem);
+  --_spacing---space--3: clamp(1 * 1rem, ((1 - ((1.5 - 1) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((1.5 - 1) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 1.5 * 1rem);
+  --_spacing---space--4: clamp(1.5 * 1rem, ((1.5 - ((2 - 1.5) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((2 - 1.5) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 2 * 1rem);
+  --_spacing---space--5: clamp(2 * 1rem, ((2 - ((2.5 - 2) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((2.5 - 2) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 2.5 * 1rem);
+  --_spacing---space--8: clamp(4 * 1rem, ((4 - ((5.81 - 4) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((5.81 - 4) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 5.81 * 1rem);
+  --navbar-height: calc(var(--_spacing---space--4) * 2 + 4.5625rem + 0.5rem + var(--site--gutter));
+  --_typography---font--primary-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --_typography---font--primary-regular: 400;
+  --_typography---font--primary-medium: 500;
+  --_typography---font--primary-bold: 700;
+  --_typography---font--primary-extrabold: 800;
+  --radius--none: 0;
+  --radius--pill: 80px;
+  --button--height: 4.05rem;
+  --button--padding-x: 3.75rem;
+  --_theme---border: var(--swatch--dark-900-o20);
+  --_typography---font-size--text-large: clamp(1.125 * 1rem, ((1.125 - ((1.32 - 1.125) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((1.32 - 1.125) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 1.32 * 1rem);
+  --_trigger---on: 1;
+  --_trigger---off: 0;
+  --swatch--dark-900: #1e1e1e;
+  --focus--width: .125rem;
+  --_text-style---text-transform: var(--_typography---text-transform--none);
+  --site--viewport-max: 90;
+  --site--viewport-min: 20;
+  --focus--offset-outer: .1875rem;
+  --swatch--light-100: white;
+  --swatch--dark-900-o20: color-mix(in srgb, var(--swatch--dark-900) 20%, transparent);
+  --swatch--brand-500: #781029;
+  --swatch--accent-500: #b9302e;
+  --swatch--accent-600: color-mix(in srgb, var(--swatch--accent-500), black 20%);
+  --_alignment---direction: start;
+  /* Fluid typography - properly scaled for 320px to 1440px viewports */
+  --_typography---font-size--text-small: clamp(0.875rem, 0.8rem + 0.2vw, 1rem);
+  --_typography---font-size--text-main: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  --_typography---font-size--h4: clamp(1.25rem, 1rem + 1vw, 2.25rem);
+  --_typography---font-size--h3: clamp(1.5rem, 1.2rem + 1.5vw, 2.95rem);
+  --_typography---font-size--h2: clamp(1.75rem, 1.2rem + 2vw, 4.5rem);
+  --_typography---font-size--h1: clamp(1.75rem, 1rem + 2.5vw, 5rem);
+  --_typography---font-size--display: clamp(2.5rem, 1.5rem + 4vw, 7rem);
+  --_typography---font-size--display-lg: clamp(3rem, 2rem + 5vw, 12rem);
+  --_typography---font-size--display-xl: clamp(3.5rem, 2rem + 6vw, 15rem);
+  --_typography---font-size--menu: clamp(2rem, 1.5rem + 2.5vw, 5rem);
+  --_typography---font-size--nav: clamp(1rem, 0.9rem + 0.3vw, 1.32rem);
+  --_typography---font-size--button: clamp(0.875rem, 0.8rem + 0.4vw, 1.25rem);
+  --_typography---text-transform--none: var(--text-transform, none);
+}
+
+body {
+  background-color: var(--_theme---background);
+  font-family: var(--_text-style---font-family);
+  color: var(--_theme---text);
+  font-size: var(--_text-style---font-size);
+  line-height: var(--_text-style---line-height);
+  font-weight: var(--_text-style---font-weight);
+  letter-spacing: var(--_text-style---letter-spacing);
+  text-transform: var(--_text-style---text-transform, none);
+}
+
+h1, h2, h3, p {
+  display: flow-root;
+}
+
+a {
+  color: inherit;
+  outline-width: var(--focus--width);
+  outline-offset: var(--focus--offset-outer);
+  text-decoration: none;
+}
+
+ul {
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: "";
+}
+
+li {
+  display: block;
+}
+
+img {
+  object-fit: cover;
+  width: 100%;
+  max-width: 100%;
+}
+
+strong {
+  font-weight: bold;
+}
+
+/* Additional Text Styles for Rome Tribe */
+.text-display-xl {
+  font-family: var(--_typography---font--primary-family);
+  font-weight: var(--_typography---font--primary-extrabold);
+  font-size: var(--_typography---font-size--display-xl);
+  line-height: var(--_typography---line-height--small);
+  letter-spacing: var(--_typography---letter-spacing--tight);
+  max-width: 100%;
+  word-break: normal;
+  overflow-wrap: normal;
+  hyphens: none;
+}
+
+.text-display-lg {
+  font-family: var(--_typography---font--primary-family);
+  font-weight: var(--_typography---font--primary-extrabold);
+  font-size: var(--_typography---font-size--display-lg);
+  line-height: var(--_typography---line-height--small);
+  letter-spacing: var(--_typography---letter-spacing--tight);
+  max-width: 100%;
+  word-break: normal;
+  overflow-wrap: normal;
+  hyphens: none;
+}
+
+.text-h1 {
+  font-family: var(--_typography---font--primary-family);
+  font-weight: var(--_typography---font--primary-extrabold);
+  font-size: var(--_typography---font-size--h1);
+  line-height: var(--_typography---line-height--medium);
+  max-width: 100%;
+  word-break: normal;
+  overflow-wrap: normal;
+  hyphens: none;
+}
+
+.text-h3 {
+  font-family: var(--_typography---font--primary-family);
+  font-weight: var(--_typography---font--primary-medium);
+  font-size: var(--_typography---font-size--h3);
+  line-height: var(--_typography---line-height--medium);
+  max-width: 100%;
+  word-break: normal;
+  overflow-wrap: normal;
+  hyphens: none;
+}
+
+.text-h4 {
+  font-family: var(--_typography---font--primary-family);
+  font-weight: var(--_typography---font--primary-extrabold);
+  font-size: var(--_typography---font-size--h4);
+  line-height: var(--_typography---line-height--huge);
+  max-width: 100%;
+  word-break: normal;
+  overflow-wrap: normal;
+  hyphens: none;
+}
+
+.text-body-lg {
+  font-family: var(--_typography---font--primary-family);
+  font-weight: var(--_typography---font--primary-regular);
+  font-size: var(--_typography---font-size--text-large);
+  line-height: var(--_typography---line-height--huge);
+}
+
+.text-body-md {
+  font-family: var(--_typography---font--primary-family);
+  font-weight: var(--_typography---font--primary-regular);
+  font-size: var(--_typography---font-size--text-main);
+  line-height: var(--_typography---line-height--huge);
+}
+
+.text-nav {
+  font-family: var(--_typography---font--primary-family);
+  font-weight: var(--_typography---font--primary-extrabold);
+  font-size: var(--_typography---font-size--nav);
+  letter-spacing: var(--_typography---letter-spacing--normal);
+  text-transform: uppercase;
+}
+
+.text-legal {
+  font-family: var(--_typography---font--primary-family);
+  font-weight: var(--_typography---font--primary-regular);
+  font-size: var(--_typography---font-size--text-main);
+  opacity: 0.8;
+}
+
+.u-section {
+  background-color: transparent;
+  color: var(--_theme---text);
+  flex-flow: column;
+  justify-content: center;
+  align-items: stretch;
+  display: flex;
+  position: relative;
+  z-index: 1;
+}
+
+.u-overflow-hidden {
+  overflow: hidden;
+}
+
+.u-hidden {
+  display: none !important;
+}
+
+.u-breakout-left {
+  margin-left: calc(-1 * var(--site--margin));
+  width: calc(100% + var(--site--margin));
+}
+
+.u-breakout-right {
+  margin-right: calc(-1 * var(--site--margin));
+  width: calc(100% + var(--site--margin));
+}
+
+.u-zindex-negative {
+  z-index: -1;
+  position: relative;
+}
+
+.u-position-relative {
+  position: relative;
+}
+
+.u-position-absolute {
+  position: absolute;
+}
+
+.u-cover-absolute {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0%;
+}
+
+.u-zindex-high {
+  z-index: 100;
+}
+
+.u-text-uppercase {
+  text-transform: uppercase;
+}
+
+.u-text-center {
+  text-align: center;
+}
+
+.u-weight-bold {
+  font-family: var(--_typography---font--primary-family);
+  font-weight: var(--_typography---font--primary-bold);
+}
+
+.u-padding-inline-sitemargin {
+  padding-right: var(--site--margin);
+  padding-left: var(--site--margin);
+}
+
+/* Image Wrapper System */
+.image-wrap {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  display: block;
+}
+
+.image-wrap--freeform {
+  aspect-ratio: auto;
+  height: 100%;
+}
+
+.image-wrap--portrait-tall {
+  aspect-ratio: 4 / 5;
+}
+
+.image-wrap__img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+.image-wrap__img--contain {
+  object-fit: contain;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-contain {
+  object-fit: contain;
+}
+
+/* Navigation Component */
+.nav_wrap {
+  width: 100%;
+  padding: var(--_spacing---space--4) var(--site--margin);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100000;
+}
+
+.nav_content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+}
+
+.nav_menu {
+  display: flex;
+  flex-direction: column;
+  gap: var(--_spacing---space--2);
+  align-items: flex-start;
+}
+
+.nav_content > .nav_menu:last-of-type {
+  align-items: flex-end;
+}
+
+.nav_link {
+  position: relative;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.nav_arrow-icon {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  right: -20px;
+  top: 50%;
+  transform: translateY(-50%) rotate(180deg);
+  visibility: hidden;
+}
+
+.nav_content > .nav_menu:first-of-type .nav_link:hover {
+  transform: none;
+}
+
+.nav_content > .nav_menu:last-of-type .nav_link:hover {
+  transform: translateX(-20px);
+}
+
+.nav_link:hover .nav_arrow-icon {
+  visibility: visible;
+}
+
+.nav_logo {
+  position: absolute;
+  left: 50%;
+  top: -0.5rem;
+  transform: translateX(-50%);
+  width: 4.3125rem;
+  height: 4.5625rem;
+}
+
+/* Hero Component */
+.hero_wrap {
+  background-color: var(--swatch--light-100);
+  min-height: 100vh;
+  overflow: hidden;
+  padding: 0;
+  width: 100%;
+  position: relative;
+}
+
+.hero_background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--swatch--light-100);
+  z-index: -1;
+}
+
+.hero_content {
+  width: 100%;
+  height: 53.8125rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero_logo_wrap {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: clamp(20rem, 35vw + 10rem, 46.4375rem);
+  height: auto;
+  aspect-ratio: 743 / 583;
+  z-index: 2;
+}
+
+.hero_logo_wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.hero_floating_image-topleft {
+  position: absolute;
+  left: 0;
+  top: 11.125rem;
+  width: clamp(12rem, 15vw + 5rem, 24rem);
+  height: auto;
+  aspect-ratio: 384 / 289;
+  z-index: 1;
+  overflow: hidden;
+  transition: transform 0.15s ease-out;
+  will-change: transform;
+}
+
+.hero_floating_image-topleft img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero_floating_image-bottomright {
+  position: absolute;
+  right: 0;
+  bottom: 5.625rem;
+  width: clamp(15rem, 18vw + 6rem, 30.73rem);
+  height: auto;
+  aspect-ratio: 384 / 289;
+  z-index: 1;
+  overflow: hidden;
+  transition: transform 0.15s ease-out;
+  will-change: transform;
+}
+
+.hero_floating_image-bottomright img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero_date {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+/* Responsive: Tablet */
+@media (max-width: 80rem) {
+  .hero_content {
+    height: auto !important;
+    min-height: 100vh !important;
+  }
+
+  .hero_logo_wrap {
+    width: 60% !important;
+    max-width: 30rem !important;
+    height: auto !important;
+    aspect-ratio: 743 / 583 !important;
+  }
+
+  .hero_floating_image-topleft,
+  .hero_floating_image-bottomright {
+    width: 35% !important;
+    max-width: 18rem !important;
+    height: auto !important;
+    aspect-ratio: 384 / 289;
+  }
+
+  .hero_floating_image-topleft {
+    left: 0 !important;
+    top: 20% !important;
+  }
+
+  .hero_floating_image-bottomright {
+    right: 0 !important;
+    bottom: 15% !important;
+  }
+}
+
+/* Responsive: Mobile */
+@media (max-width: 40rem) {
+  .hero_logo_wrap {
+    width: 70% !important;
+    max-width: 20rem !important;
+  }
+
+  .hero_floating_image-topleft,
+  .hero_floating_image-bottomright {
+    width: 45% !important;
+    max-width: 18rem !important;
+  }
+
+  .hero_floating_image-topleft {
+    top: 15% !important;
+  }
+
+  .hero_floating_image-bottomright {
+    bottom: 10% !important;
+  }
+}
+
+/* Schedule Component */
+.schedule_wrap {
+  width: 100%;
+  padding: var(--_spacing---space--7) var(--site--margin);
+}
+
+.schedule_content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--_spacing---space--8);
+}
+
+.day_wrap {
+  width: 100%;
+}
+
+.day_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--_spacing---space--5);
+  flex-wrap: wrap;
+  gap: var(--_spacing---space--3);
+}
+
+.day_cta {
+  text-align: center;
+  margin-top: var(--_spacing---space--6);
+}
+
+/* Button Styles */
+.button {
+  height: var(--button--height);
+  padding: 0 var(--button--padding-x);
+  border-radius: var(--radius--pill);
+  font-family: var(--_typography---font--primary-family);
+  font-weight: var(--_typography---font--primary-bold);
+  font-size: var(--_typography---font-size--button);
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  white-space: nowrap;
+  border: 2px solid transparent;
+}
+
+.button--brand {
+  background: var(--swatch--accent-500);
+  color: var(--swatch--light-100);
+  border-color: var(--swatch--accent-500);
+}
+
+.button--brand:hover {
+  background: var(--swatch--dark-900);
+  border-color: var(--swatch--dark-900);
+  color: var(--swatch--light-100);
+}
+
+.button--outline {
+  background: transparent;
+  color: var(--swatch--dark-900);
+  border-color: var(--swatch--dark-900);
+}
+
+.button--outline:hover {
+  background: var(--swatch--brand-500);
+  color: var(--swatch--light-100);
+  border-color: var(--swatch--brand-500);
+}
+
+/* Link Styles */
+.link {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+.link:hover {
+  color: var(--swatch--brand-500);
+}
+
+.link--light:hover {
+  opacity: 0.7;
+}
+
+/* Home About Section */
+.home-about_hero-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: var(--_spacing---space--8);
+  margin-bottom: var(--_spacing---space--8);
+  align-items: stretch;
+}
+
+.home-about_hero-image-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.home-about_hero-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+.home-about_hero-titles {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(var(--_spacing---space--2), 3vw, var(--_spacing---space--5));
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.home-about_date {
+  color: var(--swatch--accent-500);
+  line-height: 1;
+  font-size: clamp(1.5rem, 2vw, 2.5rem);
+}
+
+.home-about_main-title {
+  line-height: 0.85;
+  letter-spacing: var(--_typography---letter-spacing--tight);
+  font-size: clamp(3.5rem, 7vw, 8rem);
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+  box-sizing: border-box;
+}
+
+.home-about_main-title-word {
+  white-space: nowrap;
+  display: block;
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
+}
+
+.home-about_subtitle {
+  line-height: 1;
+  font-size: clamp(1.8rem, 3vw, 3.5rem);
+}
+
+.home-about_content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--_spacing---space--8);
+  align-items: start;
+  padding-top: var(--_spacing---space--8);
+  padding-bottom: var(--_spacing---space--8);
+}
+
+.home-about_heading {
+  font-weight: var(--_typography---font--primary-bold);
+  line-height: 1.2;
+}
+
+.home-about_text-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--_spacing---space--5);
+  align-items: flex-start;
+}
+
+.home-about_description {
+  line-height: 1.6;
+}
+
+/* Schedule Provisional Section */
+.schedule-provisional {
+  padding-top: var(--_spacing---space--6);
+  padding-bottom: var(--_spacing---space--6);
+}
+
+.schedule-provisional_intro {
+  margin-bottom: var(--_spacing---space--6);
+}
+
+.schedule-provisional_grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--_spacing---space--6);
+  margin-bottom: var(--_spacing---space--6);
+}
+
+.schedule-provisional_day {
+  padding: var(--_spacing---space--5);
+  border: 1px solid var(--swatch--dark-900-o20);
+  display: flex;
+  flex-direction: column;
+  gap: var(--_spacing---space--3);
+}
+
+.schedule-provisional_note {
+  font-style: italic;
+}
+
+@media (max-width: 1024px) {
+  .schedule-provisional_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .schedule-provisional_grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Teachers Component */
+.teachers_wrap {
+  width: 100%;
+  padding: var(--_spacing---space--7) var(--site--margin);
+  position: relative;
+}
+
+.teachers_background {
+  background-color: var(--swatch--light-100);
+}
+
+.teachers_title {
+  margin-bottom: var(--_spacing---space--8);
+}
+
+.teachers_cta {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--_spacing---space--6);
+}
+
+.teachers_content {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--_spacing---space--8);
+  align-items: start;
+}
+
+.teachers_list {
+  display: flex;
+  flex-direction: column;
+  grid-column: 1;
+  grid-row: 1;
+  max-height: 80vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.teachers_list::-webkit-scrollbar {
+  display: none;
+}
+
+.teachers_image-wrap {
+  position: relative;
+  width: 100%;
+  max-height: 80vh;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  grid-row: 1;
+  grid-column: 2;
+}
+
+.teachers_content--reversed .teachers_list {
+  grid-column: 2;
+}
+
+.teachers_content--reversed .teachers_image-wrap {
+  grid-column: 1;
+}
+
+.teachers_hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: opacity 0.3s ease;
+}
+
+.teacher_item {
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-end;
+  gap: var(--_spacing---space--4);
+  padding-block: var(--_spacing---space--6);
+  border-bottom: 1px solid var(--swatch--dark-900-o20);
+  position: relative;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.teacher_item:hover {
+  opacity: 0.8;
+}
+
+.teacher_item-thumbnail {
+  display: none;
+}
+
+.teacher_info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--_spacing---space--2);
+  text-align: left;
+}
+
+.teacher_eyebrow {
+  color: var(--swatch--dark-900);
+  font-size: var(--_typography---font-size--text-large);
+  margin: 0;
+}
+
+.teacher_info h3 {
+  color: var(--swatch--dark-900);
+  font-weight: var(--_typography---font--primary-extrabold);
+  line-height: var(--_typography---line-height--medium);
+  letter-spacing: var(--_typography---letter-spacing--tight);
+  margin: 0;
+  white-space: nowrap;
+  word-break: normal;
+  hyphens: none;
+}
+
+.teacher_info--offset {
+  margin-right: var(--_spacing---space--8);
+}
+
+.teacher_info--offset-large {
+  margin-right: var(--_spacing---space--10);
+}
+
+.teacher_info--offset-medium {
+  margin-right: var(--_spacing---space--6);
+}
+
+.teacher_arrow {
+  display: block;
+  flex-shrink: 0;
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
+
+.teacher_item:hover .teacher_arrow {
+  transform: rotate(180deg) translateX(8px);
+}
+
+.teacher_arrow-icon {
+  width: 56px;
+  height: 55px;
+  display: block;
+}
+
+.teachers_hover-badge {
+  width: 12.5rem;
+  height: 12.5rem;
+  border-radius: 50%;
+  overflow: hidden;
+  position: fixed;
+  pointer-events: none;
+  z-index: 1000;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.7);
+  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, opacity;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.teachers_hover-badge.is-visible {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.teachers_hover-badge-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.teachers_hover-badge-text {
+  position: relative;
+  z-index: 2;
+  color: var(--swatch--light-100);
+  font-size: 16px;
+  font-weight: var(--_typography---font--primary-bold);
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 1.3;
+}
+
+/* Teachers Component Responsive */
+@media (max-width: 1300px) {
+  .teachers_wrap {
+    padding-inline: var(--site--margin);
+  }
+
+  .teachers_content {
+    grid-template-columns: 1fr;
+    padding-inline: 0;
+    gap: 0;
+  }
+
+  .teachers_image-wrap {
+    display: none;
+  }
+
+  .teacher_info--offset,
+  .teacher_info--offset-large,
+  .teacher_info--offset-medium {
+    margin-right: 0;
+  }
+
+  .teachers_hover-badge {
+    display: none;
+  }
+
+  .teachers_list {
+    max-height: none;
+    padding-right: 0;
+  }
+
+  .teacher_item {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    gap: var(--_spacing---space--3);
+    align-items: start;
+    position: relative;
+    padding-right: 50px;
+  }
+
+  .teacher_item-thumbnail-wrap {
+    width: 70px;
+    height: 70px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .teacher_item-thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .teacher_info {
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .teacher_info h3 {
+    font-size: clamp(1.125rem, 3vw, 1.5rem);
+    line-height: 1.2;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .teacher_eyebrow {
+    font-size: 0.75rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .teacher_arrow {
+    position: absolute;
+    top: var(--_spacing---space--4);
+    right: 0;
+  }
+
+  .teacher_arrow-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .home-about_hero-grid {
+    grid-template-columns: 1fr;
+    gap: var(--_spacing---space--4);
+    margin-bottom: var(--_spacing---space--6);
+  }
+
+  .home-about_hero-image-wrap {
+    min-height: 50vh;
+    max-height: 60vh;
+  }
+
+  .home-about_hero-image {
+    min-height: 50vh;
+    max-height: 60vh;
+  }
+
+  .home-about_hero-titles {
+    min-height: auto;
+    gap: var(--_spacing---space--3);
+    width: 100%;
+  }
+
+  .home-about_main-title {
+    font-size: clamp(3rem, 10vw, 5rem);
+    width: 100%;
+  }
+
+  .home-about_subtitle {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+  }
+
+  .home-about_content-grid {
+    grid-template-columns: 1fr;
+    gap: var(--_spacing---space--5);
+  }
+}
+
+/* Looking Back Section */
+.lookback_wrap {
+  background-color: var(--_theme---background);
+}
+
+.lookback_content {
+  padding: var(--_spacing---section-space--main) var(--site--margin);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--_spacing---space--2);
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.home-lookback_title {
+  text-align: left;
+  align-self: flex-start;
+  font-weight: var(--_typography---font--primary-extrabold);
+  line-height: var(--_typography---line-height--small);
+  letter-spacing: var(--_typography---letter-spacing--tight);
+  margin: 0;
+  font-size: clamp(3rem, 6vw, 6rem);
+  max-width: 600px;
+  max-width: min(600px, 100%);
+  overflow-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+  box-sizing: border-box;
+}
+
+.home-lookback_image-wrap {
+  width: 100%;
+  max-width: 432.75px;
+  transform: rotate(0.354deg);
+  margin: var(--_spacing---space--3) 0;
+}
+
+.home-lookback_subtitle {
+  max-width: min(600px, 100%);
+  overflow-wrap: break-word;
+  word-break: normal;
+  hyphens: none;
+  box-sizing: border-box;
+  text-align: right;
+  align-self: flex-end;
+  font-weight: var(--_typography---font--primary-extrabold);
+  line-height: var(--_typography---line-height--small);
+  letter-spacing: var(--_typography---letter-spacing--tight);
+  margin: 0;
+  font-size: clamp(3rem, 6vw, 6rem);
+}
+
+/* Teacher Modal */
+.teacher-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.teacher-modal.is-visible {
+  display: flex;
+  opacity: 1;
+}
+
+.teacher-modal_overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--swatch--light-100);
+}
+
+.teacher-modal_content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 45%;
+  gap: var(--_spacing---space--8);
+  align-items: stretch;
+  padding: var(--site--margin);
+  padding-right: 0;
+  box-sizing: border-box;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.teacher-modal_close {
+  position: fixed;
+  top: var(--site--margin);
+  right: var(--site--margin);
+  background: transparent;
+  border: none;
+  color: var(--swatch--dark-100);
+  cursor: pointer;
+  z-index: 10;
+  padding: var(--_spacing---space--2);
+  transition: transform 0.2s ease;
+}
+
+.teacher-modal_close:hover {
+  transform: scale(1.1);
+}
+
+.teacher-modal_grid {
+  display: contents;
+}
+
+.teacher-modal_info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--_spacing---space--6);
+  justify-content: center;
+  color: var(--swatch--dark-100);
+  overflow-y: auto;
+  max-height: 100%;
+  padding-right: var(--_spacing---space--4);
+}
+
+.teacher-modal_section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--_spacing---space--3);
+}
+
+.teacher-modal_classes {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--_spacing---space--2);
+}
+
+.teacher-modal_actions {
+  display: flex;
+  gap: var(--_spacing---space--4);
+  margin-top: var(--_spacing---space--4);
+}
+
+.teacher-modal_image-wrap {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin: calc(var(--site--margin) * -1) 0;
+  margin-right: calc(var(--site--margin) * -1);
+  padding-right: var(--site--margin);
+}
+
+.teacher-modal_image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Footer Component */
+.footer_wrap {
+  width: 100%;
+  background: var(--swatch--accent-500);
+}
+
+.footer_background {
+  background: var(--swatch--accent-500);
+}
+
+.footer_content {
+  padding: var(--_spacing---space--5) var(--site--margin);
+  color: var(--swatch--light-100);
+  display: flex;
+  flex-direction: column;
+  gap: var(--_spacing---space--6);
+}
+
+.footer_logo-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.footer_logo-image {
+  width: auto;
+  height: 120px;
+  filter: brightness(0) invert(1);
+  display: block;
+}
+
+.footer_columns {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+}
+
+.footer_column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--_spacing---space--3);
+}
+
+.footer_column--right {
+  text-align: right;
+}
+
+.footer_column-title {
+  color: var(--swatch--light-100);
+  font-weight: var(--_typography---font--primary-regular);
+  margin-bottom: var(--_spacing---space--1);
+}
+
+.footer_links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--_spacing---space--2);
+}
+
+.footer_links--two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: var(--_spacing---space--4);
+  row-gap: var(--_spacing---space--2);
+}
+
+.footer_column--right .footer_links {
+  align-items: flex-end;
+}
+
+.footer_link {
+  color: var(--swatch--light-100);
+  font-size: var(--_typography---font-size--text-main);
+}
+
+.footer_bottom {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: var(--_spacing---space--4);
+  padding-top: var(--_spacing---space--3);
+}
+
+.footer_copyright {
+  color: var(--swatch--light-100);
+  font-size: var(--_typography---font-size--text-small);
+  grid-column: 1;
+}
+
+.footer_social {
+  display: flex;
+  gap: var(--_spacing---space--3);
+  justify-content: center;
+  align-items: center;
+  grid-column: 2;
+}
+
+.footer_social-link {
+  color: var(--swatch--light-100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease;
+  width: 24px;
+  height: 24px;
+}
+
+.footer_social-link:hover {
+  opacity: 0.7;
+}
+
+.footer_social-link svg {
+  width: 100%;
+  height: 100%;
+}
+
+.footer_legal {
+  display: flex;
+  gap: var(--_spacing---space--3);
+  justify-content: flex-end;
+  grid-column: 3;
+}
+
+.footer_legal a {
+  color: var(--swatch--light-100);
+  font-size: var(--_typography---font-size--text-small);
+}
+
+@media (max-width: 1300px) {
+  .footer_content {
+    min-height: auto;
+    gap: var(--_spacing---space--4);
+  }
+
+  .footer_logo-wrap {
+    position: static;
+    transform: none;
+    margin-bottom: var(--_spacing---space--4);
+  }
+
+  .footer_logo-image {
+    height: 80px;
+  }
+
+  .footer_columns {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: var(--_spacing---space--4);
+  }
+
+  .footer_links--two-col {
+    grid-template-columns: 1fr;
+  }
+
+  .footer_bottom {
+    grid-template-columns: 1fr;
+    gap: var(--_spacing---space--3);
+    text-align: center;
+  }
+
+  .footer_copyright {
+    grid-column: 1;
+    order: 3;
+  }
+
+  .footer_social {
+    grid-column: 1;
+    order: 1;
+  }
+
+  .footer_legal {
+    grid-column: 1;
+    order: 2;
+    justify-content: center;
+  }
+}
+
+/* Fullscreen Menu System */
+.nav_wrap.menu-is-open .nav_menu > a,
+.nav_wrap.menu-is-open .nav_background {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+@media (min-width: 992px) {
+    .nav_wrap.menu-is-open .nav_logo {
+        opacity: 1 !important;
+        pointer-events: auto !important;
+        position: absolute !important;
+        left: 50% !important;
+        top: -0.5rem !important;
+        right: auto !important;
+        bottom: auto !important;
+        transform: translateX(-50%) !important;
+        z-index: 100001;
+    }
+}
+
+.nav_logo,
+.nav_menu > a {
+    transition: opacity 0.3s ease;
+}
+
+.nav_background {
+    background-color: transparent !important;
+}
+
+.nav_hamburger {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--swatch--dark-900);
+    width: 24px;
+    height: 24px;
+    position: relative;
+    z-index: 99999;
+    transition: opacity 0.2s ease;
+}
+
+.nav_hamburger:hover {
+    color: var(--swatch--brand-500);
+}
+
+.nav_hamburger svg {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.nav_hamburger .hamburger-icon {
+    opacity: 1;
+}
+
+.nav_hamburger .close-icon {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(-90deg);
+}
+
+.nav_hamburger.is-active .hamburger-icon {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.nav_hamburger.is-active .close-icon {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.fullscreen-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--swatch--light-100);
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.fullscreen-menu.is-open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.menu-fullscreen_background {
+  background-color: var(--swatch--light-100);
+}
+
+.menu-fullscreen_content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: visible;
+  padding: var(--site--margin);
+  padding-top: calc(var(--navbar-height) + var(--site--margin));
+  box-sizing: border-box;
+}
+
+.menu-fullscreen_grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 45%;
+  gap: var(--_spacing---space--8);
+  align-items: center;
+  width: 100%;
+  min-height: 0;
+  overflow: visible;
+}
+
+.menu-fullscreen_nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--_spacing---space--3);
+  justify-content: center;
+}
+
+.menu-fullscreen_link {
+  color: var(--swatch--dark-900);
+  text-decoration: none;
+  font-family: var(--_typography---font--primary-family);
+  font-size: var(--_typography---font-size--menu);
+  line-height: var(--_typography---line-height--small);
+  letter-spacing: var(--_typography---letter-spacing--tight);
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+}
+
+.menu-fullscreen_link:hover {
+  color: var(--swatch--brand-500);
+  transform: translateX(10px);
+}
+
+.menu-fullscreen_link--primary {
+  color: var(--swatch--dark-900);
+  font-weight: var(--_typography---font--primary-extrabold);
+}
+
+.menu-fullscreen_image-wrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  overflow: visible;
+}
+
+.menu-fullscreen_image-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.menu-fullscreen_hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius--none);
+  display: block;
+}
+
+@keyframes rotate-badge {
+  from {
+    transform: translate(-50%, 50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, 50%) rotate(360deg);
+  }
+}
+
+.menu-fullscreen_badge {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 280px;
+  height: 280px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  pointer-events: none;
+  animation: rotate-badge 20s linear infinite;
+}
+
+@media (max-width: 991px) {
+  .menu-fullscreen_badge {
+    display: none;
+  }
+}
+
+.menu-fullscreen_footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: var(--_spacing---space--5);
+  padding-top: var(--_spacing---space--5);
+  margin-top: auto;
+  width: 100%;
+}
+
+.menu-fullscreen_footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: var(--_spacing---space--1);
+  flex-shrink: 0;
+  min-width: 0;
+}
+
+.menu-fullscreen_footer-right {
+  display: flex;
+  align-items: center;
+  gap: var(--_spacing---space--4);
+}
+
+.menu-fullscreen_social-link {
+  color: var(--swatch--dark-900);
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-fullscreen_social-link:hover {
+  color: var(--swatch--brand-500);
+}
+
+.menu-fullscreen_footer-link {
+  color: var(--swatch--dark-900);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.menu-fullscreen_footer-link:hover {
+  color: var(--swatch--brand-500);
+}
+
+.menu-fullscreen_arrow-icon {
+  width: 55px;
+  height: 55px;
+  display: inline-block;
+  margin-left: var(--_spacing---space--3);
+  transform: rotate(180deg);
+  vertical-align: middle;
+  visibility: hidden;
+}
+
+.menu-fullscreen_link:hover .menu-fullscreen_arrow-icon {
+  visibility: visible;
+}
+
+.menu-fullscreen_badge-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+.menu-fullscreen_footer-logo {
+  height: 24px;
+  width: auto;
+  min-width: 150px;
+  margin-bottom: var(--_spacing---space--1);
+  display: block;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.menu-fullscreen_copyright {
+  margin: 0;
+}
+
+@media (max-width: 1300px) {
+  .nav_menu > a {
+    display: none;
+  }
+
+  .nav_hamburger {
+    display: flex;
+  }
+
+  .nav_logo {
+    position: static !important;
+    transform: none !important;
+    margin: 0 !important;
+    left: auto !important;
+    top: auto !important;
+  }
+
+  .nav_content {
+    display: grid !important;
+    grid-template-columns: auto 1fr auto !important;
+    justify-content: start !important;
+    align-items: center !important;
+    gap: var(--_spacing---space--4);
+  }
+
+  .nav_content > .nav_menu:first-of-type {
+    display: none !important;
+  }
+
+  .nav_logo {
+    grid-column: 1;
+    order: 1;
+    z-index: 100001;
+    position: static !important;
+  }
+
+  .nav_wrap.menu-is-open .nav_logo {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    position: fixed !important;
+    top: calc(var(--_spacing---space--4) + var(--site--margin));
+    left: var(--site--margin);
+    right: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+    z-index: 10000;
+  }
+
+  .nav_content > .nav_menu:last-of-type {
+    grid-column: 3;
+    order: 2;
+    justify-self: end;
+    z-index: 100001;
+    position: relative;
+    padding-right: calc(var(--site--margin) - var(--_spacing---space--4));
+  }
+
+  .nav_wrap .nav_background,
+  .nav_background {
+    background-color: transparent !important;
+    opacity: 0 !important;
+  }
+
+  .nav_wrap {
+    background-color: transparent !important;
+  }
+
+  .menu-fullscreen_grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    gap: var(--_spacing---space--6);
+    align-items: start;
+    overflow: hidden;
+    padding: var(--site--margin) var(--site--margin) 0 var(--site--margin);
+  }
+
+  .menu-fullscreen_nav {
+    order: 1;
+    flex-shrink: 0;
+    gap: var(--_spacing---space--2);
+    z-index: 1;
+    position: relative;
+  }
+
+  .menu-fullscreen_image-wrap {
+    order: 2;
+    height: 100%;
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .menu-fullscreen_link {
+    line-height: 1.1;
+  }
+
+  .menu-fullscreen_arrow-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .menu-fullscreen_footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--_spacing---space--4);
+    flex-shrink: 0;
+    padding: var(--_spacing---space--4);
+  }
+}
+
+/* Hide navigation links when fullscreen menu is open */
+.nav_wrap.menu-is-open .nav_link {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+/* Keep hamburger button visible */
+.nav_wrap.menu-is-open .nav_hamburger {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Align footer with menu grid (55% left column) */
+.menu-fullscreen_footer {
+  display: grid;
+  grid-template-columns: 1fr 45%;
+  gap: var(--_spacing---space--8);
+  align-items: end;
+  padding: 0 !important;
+  padding-top: var(--_spacing---space--5) !important;
+}
+
+.menu-fullscreen_footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: var(--_spacing---space--1);
+  align-items: flex-start;
+}
+
+.menu-fullscreen_footer-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--_spacing---space--4);
+}
+
+/* Responsive - stack on mobile */
+@media (max-width: 1300px) {
+  .menu-fullscreen_footer {
+    grid-template-columns: 1fr;
+    gap: var(--_spacing---space--4);
+  }
+
+  .menu-fullscreen_footer-right {
+    justify-content: flex-start;
+  }
+}
+
+/* Utility: body overflow hidden */
+.u-overflow-hidden {
+  overflow: hidden !important;
+}
+  </style>
+</head>
+<body>
+  <!-- Custom Cursor -->
+  <div class="custom-cursor">
+    <svg preserveAspectRatio="xMidYMid meet" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 54.6387H17V29.0205L41.3809 53.4014L53.4014 41.3809L29.0215 17H54.6387V0H0V54.6387Z" fill="#151515"/>
+    </svg>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="nav_wrap u-section u-position-absolute">
+    <div class="nav_background u-cover-absolute u-zindex-negative"></div>
+    <div class="nav_content u-position-relative u-zindex-high">
+      <div class="nav_menu">
+        <a href="about-tribe.html" class="nav_link link text-nav u-text-uppercase">
+          About
+          <img src="images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg" alt="" class="nav_arrow-icon">
+        </a>
+        <a href="booking.html" class="nav_link link text-nav u-text-uppercase">
+          Register
+          <img src="images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg" alt="" class="nav_arrow-icon">
+        </a>
+      </div>
+
+      <div class="nav_logo">
+        <a href="index.html">
+          <img src="images/tribe-isotype.svg" alt="Jivamukti Tribe Gathering" class="image image-contain">
+        </a>
+      </div>
+
+      <div class="nav_menu">
+        <button class="nav_hamburger" id="menuToggle" aria-label="Toggle menu">
+          <svg class="hamburger-icon" width="24" height="14" viewBox="0 0 24 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line x1="0" y1="2" x2="24" y2="2" stroke="currentColor" stroke-width="3" stroke-linecap="square"/>
+            <line x1="0" y1="12" x2="24" y2="12" stroke="currentColor" stroke-width="3" stroke-linecap="square"/>
+          </svg>
+          <svg class="close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line x1="4" y1="4" x2="20" y2="20" stroke="currentColor" stroke-width="3" stroke-linecap="square"/>
+            <line x1="20" y1="4" x2="4" y2="20" stroke="currentColor" stroke-width="3" stroke-linecap="square"/>
+          </svg>
+        </button>
+        <a href="teachers.html" class="nav_link link text-nav u-text-uppercase">
+          Lineup
+          <img src="images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg" alt="" class="nav_arrow-icon">
+        </a>
+        <a href="archive.html" class="nav_link link text-nav u-text-uppercase">
+          Archive
+          <img src="images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg" alt="" class="nav_arrow-icon">
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Fullscreen Menu -->
+  <div class="fullscreen-menu" id="fullscreenMenu">
+    <div class="menu-fullscreen_background u-cover-absolute"></div>
+    <div class="menu-fullscreen_content u-position-relative">
+      <div class="menu-fullscreen_grid">
+        <nav class="menu-fullscreen_nav">
+          <a href="index.html" class="menu-fullscreen_link text-display-xl u-text-uppercase">
+            HOME
+            <img src="images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg" alt="" class="menu-fullscreen_arrow-icon">
+          </a>
+          <a href="about-tribe.html" class="menu-fullscreen_link text-display-xl u-text-uppercase">
+            ABOUT
+            <img src="images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg" alt="" class="menu-fullscreen_arrow-icon">
+          </a>
+          <a href="booking.html" class="menu-fullscreen_link menu-fullscreen_link--primary text-display-xl u-text-uppercase">
+            REGISTER
+            <img src="images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg" alt="" class="menu-fullscreen_arrow-icon">
+          </a>
+          <a href="teachers.html" class="menu-fullscreen_link text-display-xl u-text-uppercase">
+            LINEUP
+            <img src="images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg" alt="" class="menu-fullscreen_arrow-icon">
+          </a>
+          <a href="archive.html" class="menu-fullscreen_link text-display-xl u-text-uppercase">
+            ARCHIVE
+            <img src="images/menu/0ef211aaf5f712ed36dc01291b78d03c02f69d81.svg" alt="" class="menu-fullscreen_arrow-icon">
+          </a>
+        </nav>
+        <div class="menu-fullscreen_image-wrap">
+          <div class="menu-fullscreen_image-container">
+            <img src="images/latest-photos/_MG_5975.JPG_1024w.webp" alt="Rome Tribe Gathering" class="menu-fullscreen_hero-image">
+          </div>
+          <div class="menu-fullscreen_badge">
+            <img src="images/tribe-circular-stamp.svg" alt="Rome Tribe Gathering 25" class="menu-fullscreen_badge-image">
+          </div>
+        </div>
+      </div>
+      <div class="menu-fullscreen_footer">
+        <div class="menu-fullscreen_footer-left">
+          <img src="images/menu/0020438c96462729a00595340c6a4efd7b8f7a52.svg" alt="Jivamukti Yoga" class="menu-fullscreen_footer-logo">
+          <p class="text-legal menu-fullscreen_copyright">&copy; 2025 Jivamukti Yoga. All rights reserved.</p>
+        </div>
+        <div class="menu-fullscreen_footer-right">
+          <a href="#" class="menu-fullscreen_social-link" aria-label="YouTube">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+          </a>
+          <a href="#" class="menu-fullscreen_social-link" aria-label="Instagram">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
+            </svg>
+          </a>
+          <a href="#" class="menu-fullscreen_social-link" aria-label="Facebook">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+          </a>
+          <a href="#" class="link text-legal menu-fullscreen_footer-link">Terms</a>
+          <a href="#" class="link text-legal menu-fullscreen_footer-link">Privacy</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero_wrap u-section u-position-relative">
+    <div class="hero_background u-cover-absolute u-zindex-negative"></div>
+    <div class="hero_content u-position-relative">
+      <!-- Main Centered Hero Logo -->
+      <div class="hero_logo_wrap image-wrap image-wrap--freeform u-position-absolute u-overflow-hidden">
+        <img src="images/tribe-full-logotype.svg" alt="Rome Tribe Gathering main logo" class="image-wrap__img image-wrap__img--contain">
+      </div>
+
+      <!-- Floating Image - Top Left -->
+      <div class="hero_floating_image hero_floating_image-topleft image-wrap image-wrap--freeform u-position-absolute u-overflow-hidden u-breakout-left">
+        <img src="images/home/2da02ff94df3cd60517f142332eb30b6507f41a7.png" alt="Decorative image" class="image-wrap__img">
+      </div>
+
+      <!-- Floating Image - Bottom Right -->
+      <div class="hero_floating_image hero_floating_image-bottomright image-wrap image-wrap--freeform u-position-absolute u-overflow-hidden u-breakout-right">
+        <img src="images/latest-photos/_MG_5975.JPG_1024w.webp" alt="Decorative image" class="image-wrap__img">
+      </div>
+
+      <!-- Event Date - Bottom Center -->
+      <div class="hero_date u-position-absolute">
+        <p class="text-h4 u-text-uppercase u-weight-bold">September 18-21, 2026</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about_wrap u-section u-position-relative">
+    <div class="about_background u-cover-absolute u-zindex-negative"></div>
+    <div class="about_content u-position-relative u-padding-inline-sitemargin">
+      <!-- Top Grid: Image + Title Block -->
+      <div class="home-about_hero-grid">
+        <!-- Left: Full-bleed Hero Image -->
+        <div class="home-about_hero-image-wrap u-breakout-left">
+          <img src="images/home/06ea1ba9c542368e72407fdb4c53018a67ea6dcb.png" alt="Yoga Festival" class="home-about_hero-image">
+        </div>
+
+        <!-- Right: Title Stack -->
+        <div class="home-about_hero-titles">
+          <p class="text-h4 home-about_date u-text-uppercase">SEPT<br>2026</p>
+          <h2 class="text-display-xl home-about_main-title u-text-uppercase">
+            <span class="home-about_main-title-word">JOIN</span>
+            <span class="home-about_main-title-word">THE TRIBE</span>
+            <span class="home-about_main-title-word">GATHERING</span>
+          </h2>
+          <p class="text-h1 home-about_subtitle u-text-uppercase">in Rome, Italy</p>
+        </div>
+      </div>
+
+      <!-- Bottom Grid: Heading + Content -->
+      <div class="home-about_content-grid">
+        <!-- Left: Large Heading -->
+        <h3 class="text-h1 home-about_heading">Coming Home in Rome</h3>
+
+        <!-- Right: Description + CTA -->
+        <div class="home-about_text-wrap">
+          <h3 class="text-h3 home-about_subheading">Jivamukti Tribe Gathering is a four-day yoga festival</h3>
+          <p class="text-body-lg home-about_description">celebrating life and expressing our love and devotion through collective yoga practice, chanting, meditation and satsang. For the first time ever, Rome welcomes the worldwide yoga community to join us at our annual gathering, featuring classes with top Jivamukti Yoga teachers from around the world.</p>
+          <a href="booking.html" class="button button--brand">JOIN US</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Provisional Schedule 2026 Section -->
+  <section class="schedule_wrap u-position-relative">
+    <div class="schedule_background u-cover-absolute u-zindex-negative"></div>
+    <div class="schedule_content u-position-relative">
+      <div class="day_wrap">
+        <div class="day_header">
+          <h2 class="text-h1 u-text-uppercase">SCHEDULE</h2>
+          <h2 class="text-h1 u-text-uppercase">SEPT. 24-27, 2026</h2>
+        </div>
+
+        <div class="schedule-provisional">
+          <p class="text-body-lg schedule-provisional_intro">
+            Four days filled with Asana, Pranyama, Meditation, Yoga Philosophy, Satsang, Chanting, delicious vegan food and more!
+          </p>
+
+          <div class="schedule-provisional_grid">
+            <!-- Thursday -->
+            <div class="schedule-provisional_day">
+              <h3 class="text-h4 u-text-uppercase">Thursday Sep 24</h3>
+              <p class="text-body-md">3pm Opening Class</p>
+            </div>
+
+            <!-- Friday -->
+            <div class="schedule-provisional_day">
+              <h3 class="text-h4 u-text-uppercase">Friday Sep 25</h3>
+              <p class="text-body-md">all day program</p>
+            </div>
+
+            <!-- Saturday -->
+            <div class="schedule-provisional_day">
+              <h3 class="text-h4 u-text-uppercase">Saturday Sep 26</h3>
+              <p class="text-body-md">all day program</p>
+            </div>
+
+            <!-- Sunday -->
+            <div class="schedule-provisional_day">
+              <h3 class="text-h4 u-text-uppercase">Sunday Sep 27</h3>
+              <p class="text-body-md">Closing ceremony finishes in the early afternoon</p>
+            </div>
+          </div>
+
+          <p class="text-body-md schedule-provisional_note">
+            Detailed schedule to follow.
+          </p>
+        </div>
+
+        <div class="day_cta">
+          <a href="booking.html" class="button button--brand">JOIN US</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Line Up Section -->
+  <section class="teachers_wrap u-section u-position-relative">
+    <div class="teachers_background u-cover-absolute u-zindex-negative"></div>
+
+    <!-- Section Title - Full Width Above Content -->
+    <h2 class="text-display-lg u-text-center teachers_title">LINE UP</h2>
+
+    <div class="teachers_content teachers_content--reversed u-position-relative">
+      <!-- Left Column: Teacher Links -->
+      <div class="teachers_list">
+        <!-- Teacher Item 1: Sharon Gannon -->
+        <div class="teacher_item" data-teacher-image="images/latest-photos/DSCF6955_1024w.webp" data-teacher-name="SHARON GANNON">
+          <div class="teacher_item-thumbnail-wrap">
+            <img src="images/latest-photos/DSCF6955_1024w.webp" alt="Sharon Gannon" class="teacher_item-thumbnail">
+          </div>
+          <div class="teacher_info">
+            <p class="text-body-md teacher_eyebrow">Founder</p>
+            <h3 class="text-h1 u-text-uppercase">SHARON GANNON</h3>
+          </div>
+          <a href="teachers.html" class="teacher_arrow" aria-label="View Sharon Gannon profile">
+            <img src="images/home/a6a9d170229ebfdceff4645f9c57d5ba83f93601.svg" alt="" class="teacher_arrow-icon">
+          </a>
+        </div>
+
+        <!-- Teacher Item 2: Jules Febre -->
+        <div class="teacher_item" data-teacher-image="images/latest-photos/JulesFebre_by_FlorianMaas_27_1024w.webp" data-teacher-name="JULES FEBRE">
+          <div class="teacher_item-thumbnail-wrap">
+            <img src="images/latest-photos/JulesFebre_by_FlorianMaas_27_1024w.webp" alt="Jules Febre" class="teacher_item-thumbnail">
+          </div>
+          <div class="teacher_info teacher_info--offset">
+            <p class="text-body-md teacher_eyebrow">Advanced Certified</p>
+            <h3 class="text-h1 u-text-uppercase">JULES FEBRE</h3>
+          </div>
+          <a href="teachers.html" class="teacher_arrow" aria-label="View Jules Febre profile">
+            <img src="images/home/a6a9d170229ebfdceff4645f9c57d5ba83f93601.svg" alt="" class="teacher_arrow-icon">
+          </a>
+        </div>
+
+        <!-- Teacher Item 3: Yogeswari -->
+        <div class="teacher_item" data-teacher-image="images/latest-photos/yogeswari_1024w.webp" data-teacher-name="YOGESWARI">
+          <div class="teacher_item-thumbnail-wrap">
+            <img src="images/latest-photos/yogeswari_1024w.webp" alt="Yogeswari" class="teacher_item-thumbnail">
+          </div>
+          <div class="teacher_info teacher_info--offset-large">
+            <p class="text-body-md teacher_eyebrow">Advanced Certified</p>
+            <h3 class="text-h1 u-text-uppercase">YOGESWARI</h3>
+          </div>
+          <a href="teachers.html" class="teacher_arrow" aria-label="View Yogeswari profile">
+            <img src="images/home/a6a9d170229ebfdceff4645f9c57d5ba83f93601.svg" alt="" class="teacher_arrow-icon">
+          </a>
+        </div>
+
+        <!-- Teacher Item 4: Rima Rabbath -->
+        <div class="teacher_item" data-teacher-image="images/latest-photos/_Z7A6422_Padmasana_1024w.webp" data-teacher-name="RIMA RABBATH">
+          <div class="teacher_item-thumbnail-wrap">
+            <img src="images/latest-photos/_Z7A6422_Padmasana_1024w.webp" alt="Rima Rabbath" class="teacher_item-thumbnail">
+          </div>
+          <div class="teacher_info teacher_info--offset-medium">
+            <p class="text-body-md teacher_eyebrow">Advanced Certified</p>
+            <h3 class="text-h1 u-text-uppercase">RIMA RABBATH</h3>
+          </div>
+          <a href="teachers.html" class="teacher_arrow" aria-label="View Rima Rabbath profile">
+            <img src="images/home/a6a9d170229ebfdceff4645f9c57d5ba83f93601.svg" alt="" class="teacher_arrow-icon">
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Column: Fixed Hero Image -->
+      <div class="teachers_image-wrap">
+        <img src="images/latest-photos/JulesFebre_by_FlorianMaas_08_1024w.webp" alt="" class="teachers_hero-image">
+      </div>
+
+      <!-- Hover Following Pink Circle -->
+      <div class="teachers_hover-badge">
+        <img src="images/home/e75d6dcce06d035f84bcec81be9c4072fcbdea02.svg" alt="" class="teachers_hover-badge-bg">
+        <p class="teachers_hover-badge-text">PROFILE &amp;<br>CLASSES</p>
+      </div>
+    </div>
+
+    <!-- View All Button - Full Width Below Content -->
+    <div class="teachers_cta">
+      <a href="teachers.html" class="button button--outline">VIEW ALL LINE UP</a>
+    </div>
+  </section>
+
+  <!-- Looking Back Section -->
+  <section class="lookback_wrap u-section u-position-relative">
+    <div class="lookback_background u-cover-absolute u-zindex-negative"></div>
+    <div class="lookback_content u-position-relative">
+      <h2 class="text-display-lg home-lookback_title u-text-uppercase">LOOKING BACK AT THE</h2>
+
+      <div class="home-lookback_image-wrap image-wrap image-wrap--portrait-tall u-overflow-hidden">
+        <img src="images/home/7daed26c9efac9c483a5692dcacb5545bffe955f.png" alt="Tribe Gathering 2025" class="image-wrap__img">
+      </div>
+
+      <h3 class="text-display-lg home-lookback_subtitle u-text-uppercase">Tribe gather&shy;ings of the past</h3>
+
+      <a href="archive.html" class="button button--outline">VIEW MORE</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer_wrap u-section u-position-relative">
+    <div class="footer_background u-cover-absolute u-zindex-negative"></div>
+    <div class="footer_content u-position-relative">
+      <div class="footer_logo-wrap">
+        <img src="images/rome-short-block-logotype.svg" alt="ROME" class="footer_logo-image">
+      </div>
+
+      <div class="footer_columns">
+        <div class="footer_column">
+          <h3 class="footer_column-title text-h5">Navigate</h3>
+          <ul class="footer_links footer_links--two-col">
+            <li><a href="index.html" class="link link--light footer_link text-body-md">Home</a></li>
+            <li><a href="about-tribe.html" class="link link--light footer_link text-body-md">About Tribe</a></li>
+            <li><a href="teachers.html" class="link link--light footer_link text-body-md">Teachers</a></li>
+            <li><a href="booking.html" class="link link--light footer_link text-body-md">Register</a></li>
+          </ul>
+        </div>
+
+        <div class="footer_column footer_column--right">
+          <h3 class="footer_column-title text-h5">Explore</h3>
+          <ul class="footer_links">
+            <li><a href="teachers.html" class="link link--light footer_link text-body-md">Lineup</a></li>
+            <li><a href="archive.html" class="link link--light footer_link text-body-md">Archive</a></li>
+            <li><a href="https://jivamuktiyoga.com" target="_blank" rel="noopener noreferrer" class="link link--light footer_link text-body-md">The Jivamukti Method</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer_bottom">
+        <p class="footer_copyright text-legal">&copy; 2025 Jivamukti Yoga. All rights reserved.</p>
+
+        <div class="footer_social">
+          <a href="#" class="footer_social-link" aria-label="YouTube">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" fill="currentColor"/>
+            </svg>
+          </a>
+          <a href="#" class="footer_social-link" aria-label="Instagram">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" fill="currentColor"/>
+            </svg>
+          </a>
+          <a href="#" class="footer_social-link" aria-label="Facebook">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" fill="currentColor"/>
+            </svg>
+          </a>
+        </div>
+
+        <div class="footer_legal">
+          <a href="#" class="link link--light text-legal">Terms</a>
+          <a href="#" class="link link--light text-legal">Privacy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Inline Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script>
+// ===== GSAP CONFIGURATION =====
+// Professional, smooth, non-flashy animations
+// Optimized for modern, snappy feel
+
+// Safety check - ensure GSAP is loaded
+if (typeof gsap === 'undefined') {
+  console.error('GSAP not loaded!');
+} else if (typeof ScrollTrigger === 'undefined') {
+  console.error('ScrollTrigger not loaded!');
+} else {
+  gsap.registerPlugin(ScrollTrigger);
+}
+
+// Set smooth, professional defaults
+gsap.defaults({
+  ease: "power2.out",
+  duration: 1.2
+});
+
+// ScrollTrigger defaults - smooth and gradual
+ScrollTrigger.defaults({
+  start: "top 85%",
+  end: "bottom 15%",
+  toggleActions: "play none none reverse",
+  markers: false
+});
+
+// Smooth scrolling configuration
+ScrollTrigger.config({
+  limitCallbacks: true,
+  syncInterval: 16
+});
+
+// Custom easing for extra smoothness
+gsap.registerEase("smoothOut", "power3.out");
+gsap.registerEase("smoothInOut", "power2.inOut");
+
+// ===== NAVBAR LINK ANIMATIONS ONLY =====
+// Simple cascade animation for top navigation links
+// Professional, smooth entrance
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Safety check
+  if (typeof gsap === 'undefined') {
+    console.warn('GSAP not available for menu animations');
+    return;
+  }
+
+  // === TOP NAVBAR LINKS FADE IN ===
+  // Simple fade in for nav menu links
+  const navMenuLinks = document.querySelectorAll('.nav_menu .link');
+
+  if (navMenuLinks.length > 0) {
+    // Set initial state
+    gsap.set(navMenuLinks, { opacity: 0 });
+
+    // Fade in
+    gsap.to(navMenuLinks, {
+      opacity: 1,
+      stagger: 0.08,
+      duration: 0.8,
+      delay: 0.3,
+      ease: "power2.out"
+    });
+  }
+
+  console.log('GSAP navbar animations initialized');
+});
+
+/**
+ * Custom Cursor
+ * Smooth cursor following with hover effects
+ */
+
+(function() {
+    'use strict';
+
+    const cursor = document.querySelector('.custom-cursor');
+
+    if (!cursor) return;
+
+    let mouseX = 0;
+    let mouseY = 0;
+    let cursorX = 0;
+    let cursorY = 0;
+    let isInitialized = false;
+
+    // Reduced smoothing - higher value = less smooth, more responsive
+    const ease = 0.35; // Changed from typical 0.15 to 0.35 for less smoothing
+
+    // Hide cursor initially
+    cursor.style.opacity = '0';
+
+    // Update mouse position and initialize cursor position on first move
+    document.addEventListener('mousemove', function(e) {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+
+        // Initialize cursor at mouse position on first movement
+        if (!isInitialized) {
+            cursorX = mouseX;
+            cursorY = mouseY;
+            cursor.style.left = cursorX + 'px';
+            cursor.style.top = cursorY + 'px';
+            cursor.style.opacity = '1';
+            isInitialized = true;
+        }
+    });
+
+    // Animate cursor with less smoothing
+    function animate() {
+        // Lerp (linear interpolation) with higher ease value for less smoothing
+        cursorX += (mouseX - cursorX) * ease;
+        cursorY += (mouseY - cursorY) * ease;
+
+        cursor.style.left = cursorX + 'px';
+        cursor.style.top = cursorY + 'px';
+
+        requestAnimationFrame(animate);
+    }
+
+    // Start animation
+    animate();
+
+    // Hover effects on interactive elements
+    // Exclude .teacher_arrow links since they're inside .teachers_wrap where cursor is hidden
+    const interactiveElements = document.querySelectorAll('a:not(.teacher_arrow), button, [role="button"], input, textarea, select, .day_row');
+
+    interactiveElements.forEach(function(element) {
+        element.addEventListener('mouseenter', function() {
+            cursor.classList.add('is-hovering');
+        });
+
+        element.addEventListener('mouseleave', function() {
+            cursor.classList.remove('is-hovering');
+        });
+    });
+
+    // Hide cursor on fullscreen menu links (they have pink circles)
+    // Link box is constrained to fit content with CSS width: fit-content
+    const fullscreenMenuLinks = document.querySelectorAll('.menu-fullscreen_link');
+
+    fullscreenMenuLinks.forEach(function(element) {
+        element.addEventListener('mouseenter', function() {
+            cursor.style.opacity = '0';
+        });
+
+        element.addEventListener('mouseleave', function() {
+            cursor.style.opacity = '1';
+        });
+    });
+
+    // Hide cursor on navigation menu links (same behavior as fullscreen menu)
+    const navLinks = document.querySelectorAll('.nav_link');
+
+    navLinks.forEach(function(element) {
+        element.addEventListener('mouseenter', function() {
+            cursor.style.opacity = '0';
+        });
+
+        element.addEventListener('mouseleave', function() {
+            cursor.style.opacity = '1';
+        });
+    });
+
+    // Hide cursor when pink badge appears (on teacher item hover or hero image hover)
+    // Use instant hide/show with no transition to prevent jumps
+    const teacherItems = document.querySelectorAll('.teacher_item');
+    const heroImageWrap = document.querySelector('.teachers_image-wrap');
+    let isOverTeacher = false;
+    let hideTimeout = null;
+
+    teacherItems.forEach(function(item) {
+        item.addEventListener('mouseenter', function() {
+            isOverTeacher = true;
+            // Clear any pending show timeout
+            if (hideTimeout) {
+                clearTimeout(hideTimeout);
+                hideTimeout = null;
+            }
+            // Instant hide with no transition
+            cursor.style.transition = 'none';
+            cursor.style.opacity = '0';
+        });
+
+        item.addEventListener('mouseleave', function() {
+            isOverTeacher = false;
+            // Tiny delay to prevent flicker when moving between items
+            hideTimeout = setTimeout(function() {
+                if (!isOverTeacher) {
+                    cursor.style.transition = 'none';
+                    cursor.style.opacity = '1';
+                }
+            }, 16); // One frame at 60fps
+        });
+    });
+
+    // Also hide cursor on hero image hover
+    if (heroImageWrap) {
+        heroImageWrap.addEventListener('mouseenter', function() {
+            isOverTeacher = true;
+            if (hideTimeout) {
+                clearTimeout(hideTimeout);
+                hideTimeout = null;
+            }
+            cursor.style.transition = 'none';
+            cursor.style.opacity = '0';
+        });
+
+        heroImageWrap.addEventListener('mouseleave', function() {
+            isOverTeacher = false;
+            hideTimeout = setTimeout(function() {
+                if (!isOverTeacher) {
+                    cursor.style.transition = 'none';
+                    cursor.style.opacity = '1';
+                }
+            }, 16);
+        });
+    }
+
+    // Hide cursor when leaving window
+    document.addEventListener('mouseleave', function() {
+        cursor.style.opacity = '0';
+    });
+
+    document.addEventListener('mouseenter', function() {
+        cursor.style.opacity = '1';
+    });
+
+})();
+
+/**
+ * Main JavaScript for Jivamukti Tribe Gathering HTML Site
+ * Vanilla JS implementation of all interactive features
+ */
+
+document.addEventListener('DOMContentLoaded', function() {
+  // ============================================
+  // MENU TOGGLE FUNCTIONALITY
+  // ============================================
+  const menuToggle = document.getElementById('menuToggle');
+  const fullscreenMenu = document.getElementById('fullscreenMenu');
+  const navWrap = document.querySelector('.nav_wrap');
+
+  function getScrollbarWidth() {
+    return window.innerWidth - document.documentElement.clientWidth;
+  }
+
+  function openMenu() {
+    if (!fullscreenMenu || !menuToggle) return;
+
+    const scrollbarWidth = getScrollbarWidth();
+    fullscreenMenu.classList.add('is-open');
+    menuToggle.classList.add('is-active');
+    if (navWrap) navWrap.classList.add('menu-is-open');
+
+    if (scrollbarWidth > 0) {
+      const currentBodyPadding = parseInt(window.getComputedStyle(document.body).paddingRight) || 0;
+      const currentNavPadding = navWrap ? parseInt(window.getComputedStyle(navWrap).paddingRight) || 0 : 0;
+      document.body.style.paddingRight = (currentBodyPadding + scrollbarWidth) + 'px';
+      if (navWrap) navWrap.style.paddingRight = (currentNavPadding + scrollbarWidth) + 'px';
+    }
+    document.body.classList.add('u-overflow-hidden');
+  }
+
+  function closeMenu() {
+    if (!fullscreenMenu || !menuToggle) return;
+
+    fullscreenMenu.classList.remove('is-open');
+    menuToggle.classList.remove('is-active');
+    if (navWrap) navWrap.classList.remove('menu-is-open');
+    document.body.classList.remove('u-overflow-hidden');
+    document.body.style.paddingRight = '';
+    if (navWrap) navWrap.style.paddingRight = '';
+  }
+
+  if (menuToggle) {
+    menuToggle.addEventListener('click', function() {
+      if (fullscreenMenu && fullscreenMenu.classList.contains('is-open')) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
+  }
+
+  if (fullscreenMenu) {
+    fullscreenMenu.addEventListener('click', function(e) {
+      const target = e.target;
+      if (target.classList.contains('menu-close') || target.closest('.menu-close')) {
+        closeMenu();
+      }
+    });
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && fullscreenMenu && fullscreenMenu.classList.contains('is-open')) {
+      closeMenu();
+    }
+  });
+
+  // ============================================
+  // HERO PARALLAX EFFECT
+  // ============================================
+  const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
+  if (!isTouchDevice) {
+    const floatingImages = document.querySelectorAll('.hero_floating_image');
+
+    if (floatingImages.length > 0) {
+      let animationFrame = null;
+      let mouseX = 0;
+      let mouseY = 0;
+
+      function handleMouseMove(e) {
+        const normalizedX = (e.clientX / window.innerWidth) * 2 - 1;
+        const normalizedY = (e.clientY / window.innerHeight) * 2 - 1;
+
+        mouseX = normalizedX;
+        mouseY = normalizedY;
+
+        if (!animationFrame) {
+          animationFrame = requestAnimationFrame(animateParallax);
+        }
+      }
+
+      function animateParallax() {
+        floatingImages.forEach(function(image, index) {
+          const intensity = index === 0 ? 20 : 30;
+          const direction = index === 0 ? -1 : 1;
+
+          const translateX = mouseX * intensity * direction;
+          const translateY = mouseY * intensity * direction;
+
+          image.style.transform = 'translate(' + translateX + 'px, ' + translateY + 'px)';
+        });
+
+        animationFrame = null;
+      }
+
+      document.addEventListener('mousemove', handleMouseMove);
+    }
+  }
+
+  // ============================================
+  // TEACHERS HOVER EFFECT
+  // ============================================
+  const teachersSections = document.querySelectorAll('.teachers_wrap');
+
+  teachersSections.forEach(function(teachersSection) {
+    const teacherItems = teachersSection.querySelectorAll('.teacher_item');
+    const teachersList = teachersSection.querySelector('.teachers_list');
+    const hoverBadge = teachersSection.querySelector('.teachers_hover-badge');
+    const badgeText = teachersSection.querySelector('.teachers_hover-badge-text');
+    const heroImage = teachersSection.querySelector('.teachers_hero-image');
+    const heroImageWrap = teachersSection.querySelector('.teachers_image-wrap');
+
+    if (hoverBadge && heroImage && badgeText && teachersList) {
+      let mouseX = 0;
+      let mouseY = 0;
+      let currentX = 0;
+      let currentY = 0;
+      let isHovering = false;
+      let animationFrame = null;
+      let currentTeacherName = '';
+
+      const defaultBadgeText = 'PROFILE &<br>CLASSES';
+
+      function animateBadge() {
+        if (!isHovering) return;
+
+        const ease = 0.15;
+        currentX += (mouseX - currentX) * ease;
+        currentY += (mouseY - currentY) * ease;
+
+        hoverBadge.style.left = currentX + 'px';
+        hoverBadge.style.top = currentY + 'px';
+
+        animationFrame = requestAnimationFrame(animateBadge);
+      }
+
+      // Listen to entire teachers list container
+      teachersList.addEventListener('mouseenter', function(e) {
+        isHovering = true;
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        currentX = mouseX;
+        currentY = mouseY;
+
+        hoverBadge.classList.add('is-visible');
+        badgeText.innerHTML = defaultBadgeText;
+        animateBadge();
+      });
+
+      teachersList.addEventListener('mouseleave', function() {
+        isHovering = false;
+        hoverBadge.classList.remove('is-visible');
+        if (animationFrame) {
+          cancelAnimationFrame(animationFrame);
+        }
+      });
+
+      teachersList.addEventListener('mousemove', function(e) {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+      });
+
+      // Individual teacher item hover - update image and name
+      teacherItems.forEach(function(item) {
+        item.addEventListener('mouseenter', function() {
+          const teacherImageUrl = item.getAttribute('data-teacher-image');
+          const teacherName = item.getAttribute('data-teacher-name');
+
+          if (teacherImageUrl) {
+            heroImage.src = teacherImageUrl;
+          }
+          if (teacherName) {
+            currentTeacherName = teacherName;
+          }
+        });
+      });
+
+      // Hero image hover - show badge with teacher name
+      if (heroImageWrap) {
+        heroImageWrap.addEventListener('mouseenter', function(e) {
+          if (currentTeacherName) {
+            isHovering = true;
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            currentX = mouseX;
+            currentY = mouseY;
+
+            hoverBadge.classList.add('is-visible');
+            badgeText.innerHTML = currentTeacherName;
+            animateBadge();
+          }
+        });
+
+        heroImageWrap.addEventListener('mouseleave', function() {
+          isHovering = false;
+          hoverBadge.classList.remove('is-visible');
+          badgeText.innerHTML = defaultBadgeText;
+          if (animationFrame) {
+            cancelAnimationFrame(animationFrame);
+          }
+        });
+
+        heroImageWrap.addEventListener('mousemove', function(e) {
+          mouseX = e.clientX;
+          mouseY = e.clientY;
+        });
+      }
+    }
+  });
+
+  // ============================================
+  // NAVIGATION ACTIVE STATE
+  // ============================================
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  const navLinks = document.querySelectorAll('.nav_link');
+
+  navLinks.forEach(function(link) {
+    const href = link.getAttribute('href');
+    if (href === currentPage) {
+      link.classList.add('nav_link--active');
+      // Update arrow icon to red version
+      const arrowIcon = link.querySelector('.nav_arrow-icon');
+      if (arrowIcon) {
+        arrowIcon.src = 'images/menu/arrow-red.svg';
+      }
+    }
+  });
+
+  console.log('Jivamukti Tribe Gathering - All interactions initialized');
+});
+  </script>
+</body>
+</html>

@@ -1,0 +1,410 @@
+/* ============================================
+   ADDITIONAL STYLES FOR HTML SITE
+   ============================================ */
+
+/* ============================================
+   SCHEDULE PROVISIONAL SECTION - Enhanced
+   Two-column layout with hero image + day cards
+   ============================================ */
+
+.schedule-provisional {
+  padding-top: var(--_spacing---space--6);
+  padding-bottom: var(--_spacing---space--6);
+}
+
+.schedule-provisional_intro {
+  margin-bottom: var(--_spacing---space--6);
+  max-width: 800px;
+}
+
+/* Main two-column layout: Image + Cards */
+.schedule-provisional_layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--_spacing---space--8);
+  align-items: stretch;
+}
+
+/* Left: Hero Image */
+.schedule-provisional_image-wrap {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.schedule-provisional_image-wrap img,
+.schedule-provisional_image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: opacity 0.4s ease;
+}
+
+/* Right: Cards container */
+.schedule-provisional_cards {
+  display: flex;
+  flex-direction: column;
+  gap: var(--_spacing---space--4);
+}
+
+/* 2x2 Grid for day cards */
+.schedule-provisional_grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--_spacing---space--4);
+}
+
+/* Individual day card */
+.schedule-provisional_day {
+  padding: var(--_spacing---space--5);
+  border: 1px solid var(--swatch--dark-900-o20);
+  display: flex;
+  flex-direction: column;
+  gap: var(--_spacing---space--2);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  min-height: 200px;
+}
+
+.schedule-provisional_day:hover {
+  border-color: var(--swatch--accent-500);
+  background-color: var(--swatch--accent-500);
+  color: var(--swatch--light-100);
+}
+
+/* Big day number */
+.schedule-provisional_day-number {
+  font-family: var(--_typography---font--primary-family);
+  font-weight: var(--_typography---font--primary-extrabold);
+  font-size: clamp(4rem, 8vw, 7rem);
+  line-height: 0.85;
+  letter-spacing: var(--_typography---letter-spacing--tight);
+  color: #000000;
+  transition: opacity 0.3s ease;
+  display: block;
+  margin-bottom: var(--_spacing---space--2);
+}
+
+.schedule-provisional_day:hover .schedule-provisional_day-number {
+  opacity: 0.25;
+}
+
+/* Day content */
+.schedule-provisional_day-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--_spacing---space--1);
+  margin-top: auto;
+}
+
+.schedule-provisional_day-content h3 {
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.schedule-provisional_day-date {
+  color: var(--swatch--accent-500);
+  font-weight: var(--_typography---font--primary-bold);
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.schedule-provisional_day:hover .schedule-provisional_day-date {
+  color: var(--swatch--light-100);
+}
+
+.schedule-provisional_day-content p:last-child {
+  margin: 0;
+  opacity: 0.8;
+}
+
+.schedule-provisional_note {
+  font-style: italic;
+  margin-top: var(--_spacing---space--4);
+}
+
+/* ============================================
+   RESPONSIVE: Schedule Provisional
+   ============================================ */
+
+/* Tablet: Stack layout vertically */
+@media (max-width: 1300px) {
+  .schedule-provisional_layout {
+    grid-template-columns: 1fr;
+    gap: var(--_spacing---space--6);
+  }
+
+  .schedule-provisional_image-wrap {
+    position: static;
+    max-height: 50vh;
+    aspect-ratio: 16 / 9;
+  }
+
+  .schedule-provisional_image-wrap img,
+  .schedule-provisional_image {
+    position: relative;
+  }
+
+  .schedule-provisional_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile: Single column cards */
+@media (max-width: 768px) {
+  .schedule-provisional_grid {
+    grid-template-columns: 1fr;
+  }
+
+  .schedule-provisional_day {
+    min-height: 160px;
+  }
+
+  .schedule-provisional_day-number {
+    font-size: clamp(3rem, 15vw, 5rem);
+  }
+}
+
+/* ============================================
+   MENU OPEN STATE - Hide Nav Links
+   ============================================ */
+
+/* Hide navigation links when fullscreen menu is open */
+.nav_wrap.menu-is-open .nav_link {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+/* Keep hamburger button visible */
+.nav_wrap.menu-is-open .nav_hamburger {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ============================================
+   FULLSCREEN MENU FOOTER ALIGNMENT
+   ============================================ */
+
+/* Align footer with menu grid (55% left column) */
+.menu-fullscreen_footer {
+  display: grid;
+  grid-template-columns: 1fr 45%;
+  gap: var(--_spacing---space--8);
+  align-items: end;
+  padding: 0 !important;
+  padding-top: var(--_spacing---space--5) !important;
+}
+
+.menu-fullscreen_footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: var(--_spacing---space--1);
+  align-items: flex-start;
+}
+
+.menu-fullscreen_footer-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--_spacing---space--4);
+}
+
+/* Responsive - stack on mobile */
+@media (max-width: 1300px) {
+  .menu-fullscreen_footer {
+    grid-template-columns: 1fr;
+    gap: var(--_spacing---space--4);
+  }
+
+  .menu-fullscreen_footer-right {
+    justify-content: flex-start;
+  }
+}
+
+/* ============================================
+   LANDSCAPE MOBILE RESPONSIVE
+   For horizontal phone orientation
+   ============================================ */
+
+/* Landscape phones: max-height 500px + landscape orientation */
+@media (max-height: 500px) and (orientation: landscape) {
+  /* Hero section adjustments */
+  .hero_content {
+    height: auto !important;
+    min-height: 100vh !important;
+  }
+
+  .hero_logo_wrap {
+    width: min(40%, 35vh) !important;
+  }
+
+  .hero_date {
+    top: calc(50% + min(40%, 35vh) * 0.4 + var(--_spacing---space--2)) !important;
+  }
+
+  .hero_date .text-h1 {
+    font-size: clamp(1.5rem, 4vw, 2rem) !important;
+  }
+
+  /* Hide floating images in landscape mobile */
+  .hero_floating_image-topleft,
+  .hero_floating_image-bottomright {
+    display: none !important;
+  }
+
+  /* Fullscreen menu - horizontal layout */
+  .menu-fullscreen_grid {
+    grid-template-columns: 1fr 1fr !important;
+    grid-template-rows: 1fr !important;
+    gap: var(--_spacing---space--3) !important;
+    padding: var(--_spacing---space--3) !important;
+    overflow-y: auto !important;
+  }
+
+  .menu-fullscreen_nav {
+    order: 1 !important;
+    gap: 0.25rem !important;
+    justify-content: center !important;
+    overflow-y: auto !important;
+  }
+
+  /* Menu text: use min() to pick smaller of vw or vh based sizing */
+  .menu-fullscreen_link {
+    font-size: min(clamp(1rem, 3vw, 1.5rem), 8vh) !important;
+    line-height: 1.15 !important;
+    padding: 0.15rem 0 !important;
+  }
+
+  .menu-fullscreen_arrow-icon {
+    width: min(24px, 5vh) !important;
+    height: min(24px, 5vh) !important;
+    margin-left: var(--_spacing---space--1) !important;
+  }
+
+  .menu-fullscreen_image-wrap {
+    order: 2 !important;
+    max-height: 60vh !important;
+  }
+
+  .menu-fullscreen_footer {
+    padding: var(--_spacing---space--1) var(--_spacing---space--3) !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: var(--_spacing---space--2) !important;
+  }
+
+  .menu-fullscreen_footer-left {
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: var(--_spacing---space--2) !important;
+  }
+
+  .menu-fullscreen_footer-logo {
+    height: 14px !important;
+    min-width: auto !important;
+    margin-bottom: 0 !important;
+  }
+
+  .menu-fullscreen_copyright {
+    font-size: 0.65rem !important;
+  }
+
+  /* Teachers section */
+  .teachers_content {
+    grid-template-columns: 1fr !important;
+  }
+
+  .teachers_content--reversed .teachers_list {
+    grid-column: 1 !important;
+  }
+
+  .teachers_image-wrap {
+    display: none !important;
+  }
+
+  .teacher_item {
+    padding-block: var(--_spacing---space--3) !important;
+  }
+
+  /* Schedule provisional section */
+  .schedule-provisional_layout {
+    grid-template-columns: 1fr !important;
+  }
+
+  .schedule-provisional_image-wrap {
+    display: none !important;
+  }
+
+  .schedule-provisional_grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .schedule-provisional_day {
+    min-height: 120px !important;
+    padding: var(--_spacing---space--3) !important;
+  }
+
+  .schedule-provisional_day-number {
+    font-size: clamp(2rem, 8vw, 3rem) !important;
+  }
+}
+
+/* Very short landscape (under 400px height) */
+@media (max-height: 400px) and (orientation: landscape) {
+  .menu-fullscreen_grid {
+    grid-template-columns: 1fr !important;
+    padding: var(--_spacing---space--2) !important;
+  }
+
+  .menu-fullscreen_nav {
+    gap: 0 !important;
+    justify-content: flex-start !important;
+  }
+
+  .menu-fullscreen_link {
+    font-size: min(clamp(0.875rem, 2.5vw, 1.25rem), 7vh) !important;
+    line-height: 1.1 !important;
+    padding: 0.1rem 0 !important;
+  }
+
+  .menu-fullscreen_arrow-icon {
+    display: none !important;
+  }
+
+  .menu-fullscreen_image-wrap {
+    display: none !important;
+  }
+
+  .menu-fullscreen_footer {
+    padding: var(--_spacing---space--1) var(--_spacing---space--2) !important;
+  }
+
+  .menu-fullscreen_footer-logo {
+    height: 12px !important;
+  }
+
+  .menu-fullscreen_copyright {
+    font-size: 0.6rem !important;
+  }
+}
+
+/* Extremely short landscape (under 320px height) */
+@media (max-height: 320px) and (orientation: landscape) {
+  .menu-fullscreen_link {
+    font-size: min(0.75rem, 6vh) !important;
+    line-height: 1.05 !important;
+  }
+
+  .menu-fullscreen_footer {
+    display: none !important;
+  }
+}
