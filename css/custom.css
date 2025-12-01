@@ -1172,19 +1172,29 @@ img {
   }
 }
 
-/* Video modal - ensure full screen coverage */
+/* Video modal - ensure full screen coverage relative to body */
 .video-modal {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
   width: 100vw !important;
   height: 100vh !important;
   height: 100dvh !important; /* Dynamic viewport height for mobile */
-  inset: 0 !important;
+  z-index: 999999 !important;
 }
 
 .video-modal_backdrop {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
   width: 100vw !important;
   height: 100vh !important;
   height: 100dvh !important;
-  inset: 0 !important;
+  z-index: -1;
 }
 
 /* ============================================
