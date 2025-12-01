@@ -3,6 +3,48 @@
    ============================================ */
 
 /* ============================================
+   SECTION MINIMUM HEIGHT - Breathing Room
+   ============================================ */
+
+.about_wrap,
+.locations_wrap,
+.schedule_wrap,
+.teachers_wrap,
+.plan_wrap {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Hero sections should remain full height */
+.hero_wrap {
+  min-height: 100vh;
+}
+
+/* Responsive: reduce min-height on smaller screens */
+@media (max-width: 1024px) {
+  .about_wrap,
+  .locations_wrap,
+  .schedule_wrap,
+  .teachers_wrap,
+  .plan_wrap {
+    min-height: 60vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .about_wrap,
+  .locations_wrap,
+  .schedule_wrap,
+  .teachers_wrap,
+  .plan_wrap {
+    min-height: auto;
+    padding-block: var(--_spacing---space--10);
+  }
+}
+
+/* ============================================
    SCHEDULE PROVISIONAL SECTION - Enhanced
    Two-column layout with hero image + day cards
    ============================================ */
