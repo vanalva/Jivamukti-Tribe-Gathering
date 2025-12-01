@@ -1068,14 +1068,24 @@ img {
    14. GENERAL SPACING FIXES - MOBILE
    ============================================ */
 @media (max-width: 768px) {
-  /* Reduce section padding on mobile - exclude hero sections */
-  .u-section:not(.hero_wrap) {
+  /* Reduce section padding on mobile - exclude hero and nav */
+  .u-section:not(.hero_wrap):not(.nav_wrap) {
     padding-block: var(--_spacing---space--8);
   }
 
-  /* Hero should have no extra padding */
-  .hero_wrap.u-section {
+  /* Hero and nav should have no extra padding */
+  .hero_wrap.u-section,
+  .nav_wrap.u-section {
     padding-block: 0 !important;
+  }
+
+  /* Fix hero date positioning - center it and move away from floating image */
+  .hero_date {
+    top: auto !important;
+    bottom: var(--_spacing---space--6) !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    text-align: center;
   }
 
   /* Ensure consistent side margins */
