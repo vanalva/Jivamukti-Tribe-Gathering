@@ -41,7 +41,6 @@
   .teachers_wrap,
   .plan_wrap {
     min-height: auto;
-    padding-block: var(--_spacing---space--6) !important;
   }
 }
 
@@ -173,6 +172,28 @@
   margin-top: var(--_spacing---space--4);
 }
 
+/* Image-based schedule grid */
+.schedule-provisional_grid--images {
+  gap: var(--_spacing---space--3);
+}
+
+.schedule-provisional_day-image {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--swatch--dark-900-o20);
+}
+
+.schedule-provisional_day-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.schedule-provisional_day-image:hover img {
+  transform: scale(1.02);
+}
+
 /* ============================================
    RESPONSIVE: Schedule Provisional
    ============================================ */
@@ -219,17 +240,79 @@
    MENU OPEN STATE - Hide Nav Links
    ============================================ */
 
-/* Hide navigation links when fullscreen menu is open */
-.nav_wrap.menu-is-open .nav_link {
-  opacity: 0;
-  pointer-events: none;
+/* Hide navigation links when fullscreen menu is open (all screen sizes) */
+.nav_wrap.menu-is-open .nav_link,
+.nav_wrap.menu-is-open .nav_menu > a:not(.nav_hamburger) {
+  opacity: 0 !important;
+  pointer-events: none !important;
   transition: opacity 0.3s ease;
 }
 
-/* Keep hamburger button visible */
+/* Keep hamburger button visible when menu opens */
 .nav_wrap.menu-is-open .nav_hamburger {
-  opacity: 1;
+  opacity: 1 !important;
   pointer-events: auto;
+  z-index: 100001;
+}
+
+/* Desktop: Logo fades out/in when fullscreen menu opens (no sliding) */
+@media (min-width: 1301px) {
+  .nav_logo {
+    transition: opacity 0.25s ease;
+  }
+
+  .nav_wrap.menu-is-open .nav_logo {
+    left: 0 !important;
+    transform: none !important;
+    animation: fadeReposition 0.5s ease forwards;
+  }
+}
+
+/* Fade out, reposition, fade in animation */
+@keyframes fadeReposition {
+  0% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Keep nav_wrap fixed when menu is open so logo and hamburger don't jump */
+/* Apply to all non-desktop screens (where hamburger menu appears) */
+@media (max-width: 1300px) {
+  .nav_wrap.menu-is-open {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 100001;
+  }
+
+  /* Keep logo in its normal grid position - don't switch to fixed */
+  .nav_wrap.menu-is-open .nav_logo {
+    position: static !important;
+    transform: none !important;
+    z-index: 100001;
+  }
+
+  /* Keep hamburger in its normal position */
+  .nav_wrap.menu-is-open .nav_hamburger {
+    position: relative !important;
+  }
+
+  /* Force logo to be on the left (not centered) on tablet/mobile */
+  .nav_logo {
+    position: static !important;
+    left: auto !important;
+    transform: none !important;
+  }
 }
 
 /* ============================================
@@ -453,23 +536,73 @@
 .limited-tickets-tag {
   position: absolute;
   bottom: 0;
+  left: 0;
   right: 0;
+  width: 100%;
   background-color: var(--swatch--accent-500);
   color: white;
   font-family: var(--_typography---font--primary-family);
-  font-size: 0.65rem;
+  font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  padding: 8px 12px;
+  letter-spacing: 0.08em;
+  padding: 14px 12px;
+  text-align: center;
   z-index: 10;
+}
+
+/* Pricing card grid layout */
+.card_primary_element {
+  padding-bottom: 60px !important; /* Space for the limited spots tag */
+}
+
+.pricing-card_grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--_spacing---space--4);
+  align-items: end;
+}
+
+.pricing-card_info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--_spacing---space--2);
+}
+
+.pricing-card_info .text-body-md {
+  margin: 0;
+}
+
+.pricing-card_button {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
 }
 
 /* Responsive: smaller tag on mobile */
 @media (max-width: 768px) {
   .limited-tickets-tag {
-    font-size: 0.55rem;
-    padding: 6px 10px;
+    font-size: 0.65rem;
+    padding: 12px 10px;
+  }
+
+  .card_primary_element {
+    padding-bottom: 50px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .pricing-card_grid {
+    grid-template-columns: 1fr;
+    gap: var(--_spacing---space--3);
+  }
+
+  .pricing-card_button {
+    justify-content: flex-start;
+  }
+
+  .card_primary_element {
+    padding-bottom: 55px !important;
   }
 }
 
@@ -1068,17 +1201,6 @@ img {
    14. GENERAL SPACING FIXES - MOBILE
    ============================================ */
 @media (max-width: 768px) {
-  /* Reduce section padding on mobile */
-  .u-section:not(.hero_wrap):not(.nav_wrap) {
-    padding-block: var(--_spacing---space--6) !important;
-  }
-
-  /* Hero and nav should have no extra padding */
-  .hero_wrap.u-section,
-  .nav_wrap.u-section {
-    padding-block: 0 !important;
-  }
-
   /* Fix hero date positioning - center it and move away from floating image */
   .hero_date {
     top: auto !important;

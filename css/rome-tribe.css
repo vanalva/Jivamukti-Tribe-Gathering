@@ -1101,17 +1101,7 @@ strong {
   }
   
   /* Move logo to top-left of fullscreen menu when menu is open on mobile/tablet */
-  .nav_wrap.menu-is-open .nav_logo {
-    opacity: 1 !important;
-    pointer-events: auto !important;
-    position: fixed !important;
-    top: calc(var(--_spacing---space--4) + var(--site--margin));
-    left: var(--site--margin);
-    right: auto !important;
-    bottom: auto !important;
-    transform: none !important;
-    z-index: 10000;
-  }
+  /* Position is now controlled by custom.css to prevent jumping */
 
   /* Right menu with hamburger in last position (right) */
   .nav_content > .nav_menu:last-of-type {
