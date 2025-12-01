@@ -6,13 +6,22 @@
    GLOBAL OVERFLOW PREVENTION
    ============================================ */
 html {
-  overflow-x: hidden;
+  overflow-x: hidden !important;
+  width: 100%;
 }
 
 body {
-  overflow-x: hidden;
-  overflow-y: auto;
+  overflow-x: hidden !important;
+  width: 100%;
+  position: relative;
+}
+
+/* Prevent sections from causing horizontal overflow */
+.u-section,
+section,
+footer {
   max-width: 100vw;
+  overflow-x: clip;
 }
 
 /* ============================================
