@@ -872,6 +872,18 @@ img {
 .teacher-modal_info {
   max-height: 100vh;
   overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Responsive button sizing for modal */
+.teacher-modal_links {
+  flex-wrap: wrap;
+}
+
+.teacher-modal_links .button {
+  font-size: clamp(0.75rem, 1vw + 0.4rem, 1rem);
+  padding: clamp(0.5rem, 1vw + 0.25rem, 1rem) clamp(1rem, 2vw + 0.5rem, 2rem);
+  white-space: nowrap;
 }
 
 @media (max-width: 991px) {
@@ -879,8 +891,14 @@ img {
     display: flex !important;
     flex-direction: column !important;
     overflow-y: auto;
+    overflow-x: hidden;
     padding: var(--site--margin);
     padding-top: calc(var(--navbar-height) + var(--_spacing---space--4));
+  }
+
+  .teacher-modal_links .button {
+    font-size: clamp(0.7rem, 2.5vw + 0.3rem, 0.9rem);
+    padding: clamp(0.4rem, 2vw, 0.75rem) clamp(0.75rem, 3vw, 1.5rem);
   }
 
   /* Override display: contents to allow proper ordering */
