@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // MENU TOGGLE FUNCTIONALITY
   // ============================================
   const menuToggle = document.getElementById('menuToggle');
+  const menuToggleFixedRef = document.getElementById('menuToggleFixed');
   const fullscreenMenu = document.getElementById('fullscreenMenu');
   const navWrap = document.querySelector('.nav_wrap');
 
@@ -21,7 +22,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const scrollbarWidth = getScrollbarWidth();
     fullscreenMenu.classList.add('is-open');
     menuToggle.classList.add('is-active');
+    if (menuToggleFixedRef) menuToggleFixedRef.classList.add('is-active');
     if (navWrap) navWrap.classList.add('menu-is-open');
+
+    // Hide navbar hamburger if fixed hamburger is visible (scrolled state)
+    if (menuToggleFixedRef && menuToggleFixedRef.classList.contains('is-visible')) {
+      menuToggle.style.visibility = 'hidden';
+    }
 
     if (scrollbarWidth > 0) {
       const currentBodyPadding = parseInt(window.getComputedStyle(document.body).paddingRight) || 0;
@@ -30,6 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
       if (navWrap) navWrap.style.paddingRight = (currentNavPadding + scrollbarWidth) + 'px';
     }
     document.body.classList.add('u-overflow-hidden');
+    document.documentElement.classList.add('u-overflow-hidden');
   }
 
   function closeMenu() {
@@ -37,10 +45,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     fullscreenMenu.classList.remove('is-open');
     menuToggle.classList.remove('is-active');
+    if (menuToggleFixedRef) menuToggleFixedRef.classList.remove('is-active');
     if (navWrap) navWrap.classList.remove('menu-is-open');
     document.body.classList.remove('u-overflow-hidden');
+    document.documentElement.classList.remove('u-overflow-hidden');
     document.body.style.paddingRight = '';
     if (navWrap) navWrap.style.paddingRight = '';
+    // Restore navbar hamburger visibility
+    menuToggle.style.visibility = '';
   }
 
   if (menuToggle) {
@@ -67,6 +79,44 @@ document.addEventListener('DOMContentLoaded', function() {
       closeMenu();
     }
   });
+
+  // ============================================
+  // FIXED HAMBURGER ON HOMEPAGE (appears on scroll)
+  // ============================================
+  const heroHomeWrap = document.querySelector('.hero-home_wrap');
+  const menuToggleFixed = document.getElementById('menuToggleFixed');
+
+  if (heroHomeWrap && menuToggleFixed) {
+    function handleFixedHamburger() {
+      // Show fixed hamburger after scrolling past navbar
+      if (window.scrollY > 100) {
+        menuToggleFixed.classList.add('is-visible');
+        // Hide navbar hamburger when fixed one is visible
+        if (menuToggle) menuToggle.style.opacity = '0';
+        if (menuToggle) menuToggle.style.pointerEvents = 'none';
+      } else {
+        menuToggleFixed.classList.remove('is-visible');
+        // Show navbar hamburger when fixed one is hidden
+        if (menuToggle) menuToggle.style.opacity = '';
+        if (menuToggle) menuToggle.style.pointerEvents = '';
+      }
+    }
+
+    // Fixed hamburger also opens/closes the menu
+    menuToggleFixed.addEventListener('click', function() {
+      if (fullscreenMenu && fullscreenMenu.classList.contains('is-open')) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
+
+    window.addEventListener('scroll', handleFixedHamburger, { passive: true });
+    handleFixedHamburger();
+  } else if (menuToggleFixed) {
+    // Hide fixed hamburger on non-homepage pages
+    menuToggleFixed.style.display = 'none';
+  }
 
   // ============================================
   // HERO PARALLAX EFFECT
@@ -234,6 +284,7 @@ document.addEventListener('DOMContentLoaded', function() {
       e.preventDefault();
       const teacherName = item.getAttribute('data-teacher-name');
       const teacherImage = item.getAttribute('data-teacher-image');
+      const teacherBio = item.getAttribute('data-teacher-bio');
       const teacherRoleEl = item.querySelector('.teacher_eyebrow') || item.querySelector('.teacher-card_location');
       const teacherRole = teacherRoleEl ? teacherRoleEl.textContent : '';
 
@@ -241,10 +292,12 @@ document.addEventListener('DOMContentLoaded', function() {
       const modalImage = document.querySelector('.teacher-modal_image');
       const modalName = document.querySelector('.teacher-modal_name');
       const modalRole = document.querySelector('.teacher-modal_role');
+      const modalBio = document.querySelector('.teacher-modal_bio');
 
       if (modalImage && teacherImage) modalImage.src = teacherImage;
       if (modalName && teacherName) modalName.textContent = teacherName;
       if (modalRole && teacherRole) modalRole.textContent = teacherRole;
+      if (modalBio && teacherBio) modalBio.textContent = teacherBio;
 
       // Show modal
       if (modal) {
@@ -418,6 +471,78 @@ document.addEventListener('DOMContentLoaded', function() {
           }, 200);
         }
       });
+    });
+  }
+
+  // ============================================
+  // TEACHER CARD NAME - Dynamic Text Fitting
+  // ============================================
+  function fitTeacherNames() {
+    const teacherNames = document.querySelectorAll('.teacher-card_name');
+
+    teacherNames.forEach(function(nameEl) {
+      const container = nameEl.parentElement;
+      if (!container) return;
+
+      // Get available width (container width minus padding)
+      const containerStyle = window.getComputedStyle(container);
+      const paddingLeft = parseFloat(containerStyle.paddingLeft) || 0;
+      const paddingRight = parseFloat(containerStyle.paddingRight) || 0;
+      const availableWidth = container.clientWidth - paddingLeft - paddingRight;
+
+      if (availableWidth <= 0) return;
+
+      // Reset font size to measure natural width
+      nameEl.style.fontSize = '';
+
+      // Create a temporary span to measure text width
+      const tempSpan = document.createElement('span');
+      tempSpan.style.cssText = 'position:absolute;visibility:hidden;white-space:nowrap;font-weight:inherit;text-transform:uppercase;';
+      tempSpan.textContent = nameEl.textContent;
+      document.body.appendChild(tempSpan);
+
+      // Start with a base font size and calculate the ideal size
+      const minFontSize = 12;
+      const maxFontSize = 32;
+      let fontSize = maxFontSize;
+
+      // Binary search for optimal font size
+      let low = minFontSize;
+      let high = maxFontSize;
+
+      while (low <= high) {
+        fontSize = Math.floor((low + high) / 2);
+        tempSpan.style.fontSize = fontSize + 'px';
+
+        if (tempSpan.offsetWidth <= availableWidth) {
+          low = fontSize + 1;
+        } else {
+          high = fontSize - 1;
+        }
+      }
+
+      // Use the last fitting size
+      fontSize = high;
+
+      // Clamp to min/max
+      fontSize = Math.max(minFontSize, Math.min(maxFontSize, fontSize));
+
+      document.body.removeChild(tempSpan);
+
+      nameEl.style.fontSize = fontSize + 'px';
+    });
+  }
+
+  // Run on load and resize
+  if (document.querySelectorAll('.teacher-card_name').length > 0) {
+    // Initial fit after a short delay to ensure layout is ready
+    setTimeout(fitTeacherNames, 100);
+
+    // Refit on window resize with debounce
+    let resizeTimeout;
+    window.addEventListener('resize', function() {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(fitTeacherNames, 150);
     });
   }
 

@@ -910,8 +910,8 @@ img {
     flex-direction: column !important;
     overflow-y: auto;
     overflow-x: hidden;
-    padding: var(--site--margin);
-    padding-top: calc(var(--navbar-height) + var(--_spacing---space--4));
+    padding: 0;
+    gap: 0;
   }
 
   .teacher-modal_links .button,
@@ -924,13 +924,14 @@ img {
   .teacher-modal_grid {
     display: flex !important;
     flex-direction: column !important;
-    gap: var(--_spacing---space--4);
+    gap: 0;
     width: 100%;
   }
 
   .teacher-modal_info {
     order: 2;
-    padding-right: 0;
+    padding: var(--site--margin);
+    padding-top: var(--_spacing---space--6);
     max-height: none;
     overflow-y: visible;
   }
@@ -938,17 +939,18 @@ img {
   .teacher-modal_image-wrap {
     order: 1;
     height: auto !important;
-    min-height: 40vh;
-    max-height: 50vh;
+    min-height: 45vh;
+    max-height: 55vh;
     margin: 0 !important;
     position: relative !important;
     width: 100% !important;
+    padding: 0 !important;
   }
 
   .teacher-modal_image {
     height: 100%;
-    min-height: 40vh;
-    max-height: 50vh;
+    min-height: 45vh;
+    max-height: 55vh;
     width: 100%;
   }
 
@@ -979,26 +981,31 @@ img {
     text-align: center;
     justify-content: center;
   }
+
+  /* Close button on mobile - fixed at top right over image */
+  .teacher-modal_close {
+    position: fixed;
+    top: var(--site--margin);
+    right: var(--site--margin);
+    z-index: 100;
+  }
 }
 
 @media (max-width: 480px) {
-  .teacher-modal_content {
-    padding: var(--_spacing---space--4);
-    padding-top: calc(var(--navbar-height) + var(--_spacing---space--2));
-  }
-
   .teacher-modal_image-wrap {
-    min-height: 30vh;
-    max-height: 40vh;
+    min-height: 40vh;
+    max-height: 50vh;
   }
 
   .teacher-modal_image {
-    min-height: 30vh;
-    max-height: 40vh;
+    min-height: 40vh;
+    max-height: 50vh;
   }
 
   .teacher-modal_info {
     gap: var(--_spacing---space--4);
+    padding: var(--site--margin);
+    padding-top: var(--_spacing---space--5);
   }
 
   .teacher-modal_bio,
@@ -1513,7 +1520,301 @@ img {
 }
 
 /* ============================================
-   18. TEACHER GRID - 4 columns with cards
+   18. HOMEPAGE HERO - New 2-column layout
+   ============================================ */
+
+.hero-home_wrap {
+  min-height: 100vh;
+  display: flex;
+  align-items: stretch;
+  background-color: var(--swatch--light-100);
+}
+
+/* Navbar overlays hero on homepage - scrolls with the page */
+body:has(.hero-home_wrap) .nav_wrap {
+  position: absolute;
+}
+
+/* But when menu is open, navbar becomes fixed so logo is always visible */
+body:has(.hero-home_wrap) .nav_wrap.menu-is-open {
+  position: fixed;
+}
+
+/* Right side nav links white on homepage (over image) */
+body:has(.hero-home_wrap) .nav_content > .nav_menu:last-child .nav_link,
+body:has(.hero-home_wrap) .nav_content > .nav_menu:last-child .nav_hamburger {
+  color: var(--swatch--light-100);
+}
+
+/* Hamburger back to black when menu is open */
+body:has(.hero-home_wrap) .nav_wrap.menu-is-open .nav_hamburger,
+body:has(.hero-home_wrap) .nav_wrap.menu-is-open .nav_content > .nav_menu:last-child .nav_hamburger {
+  color: var(--swatch--dark-900) !important;
+}
+
+/* Fixed hamburger for homepage - hidden by default, shown on scroll */
+.nav_hamburger--fixed {
+  position: fixed;
+  top: var(--site--margin);
+  right: var(--site--margin);
+  z-index: 999999;
+  color: var(--swatch--light-100);
+  mix-blend-mode: difference;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+/* When menu is open, disable mix-blend-mode so X is visible and clickable */
+.nav_hamburger--fixed.is-active {
+  mix-blend-mode: normal;
+  color: var(--swatch--dark-900);
+}
+
+/* Show fixed hamburger when scrolled (class added by JS) */
+.nav_hamburger--fixed.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Navbar hamburger visibility controlled by JavaScript */
+
+body:has(.hero-home_wrap) .nav_content > .nav_menu:last-child .nav_arrow-icon {
+  filter: brightness(0) invert(1);
+}
+
+/* White cursor on hero image */
+.hero-home_right {
+  cursor: none;
+}
+
+.hero-home_right:hover ~ .custom-cursor,
+.hero-home_right:hover .custom-cursor,
+body:has(.hero-home_right:hover) .custom-cursor svg path {
+  fill: var(--swatch--light-100);
+}
+
+.hero-home_content {
+  display: grid;
+  grid-template-columns: 55% 45%;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Left Column */
+.hero-home_left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: var(--site--margin);
+  position: relative;
+}
+
+.hero-home_logo-wrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 500px;
+  padding-bottom: var(--_spacing---space--12);
+}
+
+.hero-home_logo {
+  width: 100%;
+  height: auto;
+}
+
+.hero-home_date {
+  position: absolute;
+  bottom: var(--site--margin);
+  left: var(--site--margin);
+  right: var(--site--margin);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.hero-home_date-left,
+.hero-home_date-right {
+  color: var(--swatch--dark-900);
+}
+
+/* Right Column */
+.hero-home_right {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-home_image-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-home_image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Rotating Badge */
+.hero-home_badge {
+  position: absolute;
+  bottom: var(--site--margin);
+  right: var(--site--margin);
+  width: clamp(180px, 20vw, 280px);
+  height: clamp(180px, 20vw, 280px);
+  z-index: 10;
+}
+
+.hero-home_badge-img {
+  width: 100%;
+  height: 100%;
+  animation: rotateBadge 20s linear infinite;
+  filter: brightness(0) invert(1);
+}
+
+@keyframes rotateBadge {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive: Tablet */
+@media (max-width: 1200px) {
+  .hero-home_content {
+    grid-template-columns: 50% 50%;
+  }
+
+  .hero-home_logo-wrap {
+    max-width: 400px;
+  }
+}
+
+/* Responsive: Stack on smaller tablets */
+@media (max-width: 991px) {
+  .hero-home_wrap {
+    min-height: auto;
+  }
+
+  .hero-home_content {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .hero-home_left {
+    min-height: 60vh;
+    padding-bottom: var(--_spacing---space--16);
+  }
+
+  .hero-home_logo-wrap {
+    max-width: 350px;
+    padding-bottom: 0;
+  }
+
+  .hero-home_date {
+    bottom: var(--_spacing---space--6);
+  }
+
+  .hero-home_right {
+    min-height: 50vh;
+  }
+
+  .hero-home_badge {
+    bottom: var(--site--margin);
+    right: var(--site--margin);
+    width: clamp(120px, 22vw, 180px);
+    height: clamp(120px, 22vw, 180px);
+  }
+}
+
+/* Responsive: Mobile */
+@media (max-width: 768px) {
+  .hero-home_left {
+    min-height: 50vh;
+    padding: var(--_spacing---space--6) var(--site--margin);
+    padding-bottom: var(--_spacing---space--14);
+  }
+
+  .hero-home_logo-wrap {
+    max-width: 280px;
+  }
+
+  .hero-home_date {
+    bottom: var(--_spacing---space--5);
+  }
+
+  .hero-home_date-left,
+  .hero-home_date-right {
+    font-size: clamp(0.875rem, 3vw, 1.125rem);
+  }
+
+  .hero-home_right {
+    min-height: 40vh;
+  }
+
+  .hero-home_badge {
+    bottom: var(--site--margin);
+    right: var(--site--margin);
+    width: 110px;
+    height: 110px;
+  }
+}
+
+/* Responsive: Small mobile */
+@media (max-width: 480px) {
+  .hero-home_left {
+    min-height: 45vh;
+  }
+
+  .hero-home_logo-wrap {
+    max-width: 240px;
+  }
+
+  .hero-home_right {
+    min-height: 35vh;
+  }
+
+  .hero-home_badge {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+/* Section spacing after homepage hero - override rome-tribe.css default */
+section.hero-home_wrap + section.about_wrap {
+  margin-top: 8rem !important;
+  padding-top: 0 !important;
+}
+
+@media (max-width: 768px) {
+  section.hero-home_wrap + section.about_wrap {
+    margin-top: 5rem !important;
+  }
+}
+
+/* Teacher Modal - inverted close button and hide hamburger */
+.teacher-modal_close {
+  mix-blend-mode: difference;
+  color: var(--swatch--light-100);
+}
+
+/* Hide fixed hamburger when teacher modal is open */
+body:has(.teacher-modal.is-visible) .nav_hamburger--fixed {
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* ============================================
+   19. TEACHER GRID - 4 columns with cards
    ============================================ */
 
 .teacher-grid_wrap {
@@ -1550,6 +1851,7 @@ img {
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
+  border: 1px solid var(--swatch--dark-900-o20);
 }
 
 .teacher-card:hover {
@@ -1580,10 +1882,11 @@ img {
 
 .teacher-card_name {
   color: var(--swatch--dark-900);
-  font-size: var(--_typography---font-size--text-xl);
   font-weight: var(--_typography---font--primary-bold);
   margin-bottom: var(--_spacing---space--1);
   text-transform: uppercase;
+  white-space: nowrap;
+  line-height: 1.1;
 }
 
 .teacher-card_location {
@@ -1614,9 +1917,5 @@ img {
 @media (max-width: 480px) {
   .teacher-card_info {
     padding: var(--_spacing---space--3);
-  }
-
-  .teacher-card_name {
-    font-size: var(--_typography---font-size--text-large);
   }
 }
