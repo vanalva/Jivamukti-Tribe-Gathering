@@ -5,42 +5,9 @@
 /* ============================================
    GLOBAL OVERFLOW PREVENTION
    ============================================ */
-html {
+html, body {
   overflow-x: hidden;
-  scrollbar-gutter: stable;
-}
-
-body {
-  overflow-x: hidden;
-}
-
-/* Only show scrollbar on html, not on body or other elements */
-body, body * {
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-body::-webkit-scrollbar,
-body *::-webkit-scrollbar {
-  display: none;
-  width: 0;
-  height: 0;
-}
-
-/* Keep scrollbar only on html */
-html {
-  scrollbar-width: auto;
-  scrollbar-color: var(--swatch--accent-500) transparent;
-}
-
-html::-webkit-scrollbar {
-  width: 12px;
-  display: block;
-}
-
-html::-webkit-scrollbar-thumb {
-  background-color: var(--swatch--accent-500);
-  border-radius: 6px;
+  max-width: 100%;
 }
 
 /* ============================================
