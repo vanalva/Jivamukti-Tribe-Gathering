@@ -5,8 +5,13 @@
 /* ============================================
    GLOBAL OVERFLOW PREVENTION
    ============================================ */
-html, body {
+html {
   overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+body {
+  overflow: visible;
   max-width: 100%;
 }
 

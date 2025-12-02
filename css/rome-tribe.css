@@ -11,7 +11,8 @@
 
 /* HTML & Body Defaults */
 html {
-  height: 100%;
+  height: auto;
+  min-height: 100%;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
 }
