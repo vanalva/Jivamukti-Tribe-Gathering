@@ -3,24 +3,11 @@
    ============================================ */
 
 /* ============================================
-   GLOBAL OVERFLOW PREVENTION & SINGLE SCROLLBAR
+   GLOBAL OVERFLOW PREVENTION
    ============================================ */
-html {
+html, body {
   overflow-x: hidden;
   max-width: 100%;
-}
-
-body {
-  overflow-x: hidden;
-  overflow-y: initial;
-  max-width: 100%;
-  /* Remove scrollbar from body - only html should scroll */
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-body::-webkit-scrollbar {
-  display: none;
 }
 
 /* ============================================

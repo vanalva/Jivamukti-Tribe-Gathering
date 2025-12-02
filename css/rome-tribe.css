@@ -68,29 +68,28 @@ img {
 }
 
 /* Custom Scrollbar - Visible with Custom Styling */
-/* Webkit browsers (Chrome, Safari, Edge) */
-::-webkit-scrollbar {
+/* Webkit browsers (Chrome, Safari, Edge) - only apply to html */
+html::-webkit-scrollbar {
   width: 12px;
   height: 12px;
 }
 
-::-webkit-scrollbar-track {
+html::-webkit-scrollbar-track {
   background: transparent !important;
-  display: none;
 }
 
-::-webkit-scrollbar-thumb {
+html::-webkit-scrollbar-thumb {
   background-color: var(--swatch--accent-500);
   border-radius: 6px;
   border: 0;
 }
 
-::-webkit-scrollbar-thumb:hover {
+html::-webkit-scrollbar-thumb:hover {
   background-color: var(--swatch--accent-600);
 }
 
-/* Firefox */
-* {
+/* Firefox - only apply scrollbar to html */
+html {
   scrollbar-width: auto;
   scrollbar-color: var(--swatch--accent-500) transparent;
 }
