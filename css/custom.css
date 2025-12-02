@@ -1892,10 +1892,7 @@ body:has(.teacher-modal.is-visible) .nav_hamburger--fixed {
   margin-bottom: var(--_spacing---space--1);
   text-transform: uppercase;
   line-height: 1.2;
-  min-height: 2.4em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  text-align: center;
 }
 
 .teacher-card_location {
