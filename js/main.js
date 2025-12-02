@@ -492,43 +492,90 @@ document.addEventListener('DOMContentLoaded', function() {
 
       if (availableWidth <= 0) return;
 
-      // Reset font size to measure natural width
+      // Reset styles to measure
       nameEl.style.fontSize = '';
 
-      // Create a temporary span to measure text width
-      const tempSpan = document.createElement('span');
-      tempSpan.style.cssText = 'position:absolute;visibility:hidden;white-space:nowrap;font-weight:inherit;text-transform:uppercase;';
-      tempSpan.textContent = nameEl.textContent;
-      document.body.appendChild(tempSpan);
+      const text = nameEl.textContent.trim();
+      const words = text.split(' ');
 
-      // Start with a base font size and calculate the ideal size
-      const minFontSize = 12;
-      const maxFontSize = 32;
+      // Determine min/max font sizes based on screen width
+      const minFontSize = window.innerWidth <= 480 ? 10 : 12;
+      const maxFontSize = window.innerWidth <= 480 ? 18 : (window.innerWidth <= 768 ? 22 : 28);
+
+      // Create a temporary element to measure text
+      const tempEl = document.createElement('span');
+      tempEl.style.cssText = 'position:absolute;visibility:hidden;font-weight:bold;text-transform:uppercase;text-align:center;';
+      document.body.appendChild(tempEl);
+
+      // Try single line first
+      tempEl.style.whiteSpace = 'nowrap';
       let fontSize = maxFontSize;
 
-      // Binary search for optimal font size
+      // Binary search for single line
       let low = minFontSize;
       let high = maxFontSize;
 
       while (low <= high) {
         fontSize = Math.floor((low + high) / 2);
-        tempSpan.style.fontSize = fontSize + 'px';
+        tempEl.style.fontSize = fontSize + 'px';
+        tempEl.textContent = text;
 
-        if (tempSpan.offsetWidth <= availableWidth) {
+        if (tempEl.offsetWidth <= availableWidth) {
           low = fontSize + 1;
         } else {
           high = fontSize - 1;
         }
       }
 
-      // Use the last fitting size
-      fontSize = high;
+      let singleLineFontSize = Math.max(minFontSize, high);
 
-      // Clamp to min/max
-      fontSize = Math.max(minFontSize, Math.min(maxFontSize, fontSize));
+      // If single line font is too small and we have multiple words, try 2 lines
+      if (singleLineFontSize < maxFontSize * 0.6 && words.length >= 2) {
+        // Find the best split point for 2 lines
+        let bestFontSize = singleLineFontSize;
 
-      document.body.removeChild(tempSpan);
+        for (let splitAt = 1; splitAt < words.length; splitAt++) {
+          const line1 = words.slice(0, splitAt).join(' ');
+          const line2 = words.slice(splitAt).join(' ');
 
+          // Find font size that fits both lines
+          low = minFontSize;
+          high = maxFontSize;
+
+          while (low <= high) {
+            fontSize = Math.floor((low + high) / 2);
+            tempEl.style.fontSize = fontSize + 'px';
+
+            // Measure each line
+            tempEl.textContent = line1;
+            const width1 = tempEl.offsetWidth;
+            tempEl.textContent = line2;
+            const width2 = tempEl.offsetWidth;
+
+            const maxLineWidth = Math.max(width1, width2);
+
+            if (maxLineWidth <= availableWidth) {
+              low = fontSize + 1;
+            } else {
+              high = fontSize - 1;
+            }
+          }
+
+          const twoLineFontSize = Math.max(minFontSize, high);
+          if (twoLineFontSize > bestFontSize) {
+            bestFontSize = twoLineFontSize;
+            // Update the element with line break
+            nameEl.innerHTML = line1 + '<br>' + line2;
+          }
+        }
+
+        fontSize = bestFontSize;
+      } else {
+        fontSize = singleLineFontSize;
+        nameEl.textContent = text;
+      }
+
+      document.body.removeChild(tempEl);
       nameEl.style.fontSize = fontSize + 'px';
     });
   }
