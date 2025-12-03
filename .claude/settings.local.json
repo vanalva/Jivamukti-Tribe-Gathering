@@ -22,7 +22,8 @@
       "Bash(copy \"g:\\Juan Carlos\\Trabajo\\Van Alva\\Web Lab\\Jivamukti Tribe Gathering\\images\\pages\\Final Images to replace\\480w\\lineup-hero_480w.webp\" \"g:\\Juan Carlos\\Trabajo\\Van Alva\\Web Lab\\Jivamukti Tribe Gathering\\images\\pages\\lineup\"\" /Y && copy \"g:Juan CarlosTrabajoVan AlvaWeb LabJivamukti Tribe GatheringimagespagesFinal Images to replace768wlineup-hero_768w.webp\" \"g:Juan CarlosTrabajoVan AlvaWeb LabJivamukti Tribe Gatheringimagespageslineup\"\" /Y)",
       "Bash(copy \"g:\\Juan Carlos\\Trabajo\\Van Alva\\Web Lab\\Jivamukti Tribe Gathering\\images\\pages\\Final Images to replace\\1024w\\lineup-hero_1024w.webp\" \"g:\\Juan Carlos\\Trabajo\\Van Alva\\Web Lab\\Jivamukti Tribe Gathering\\images\\pages\\lineup\"\" /Y && copy \"g:Juan CarlosTrabajoVan AlvaWeb LabJivamukti Tribe GatheringimagespagesFinal Images to replace1366wlineup-hero_1366w.webp\" \"g:Juan CarlosTrabajoVan AlvaWeb LabJivamukti Tribe Gatheringimagespageslineup\"\" /Y)",
       "Bash(copy \"g:\\Juan Carlos\\Trabajo\\Van Alva\\Web Lab\\Jivamukti Tribe Gathering\\images\\pages\\Final Images to replace\\1600w\\lineup-hero_1600w.webp\" \"g:\\Juan Carlos\\Trabajo\\Van Alva\\Web Lab\\Jivamukti Tribe Gathering\\images\\pages\\lineup\"\" /Y && copy \"g:Juan CarlosTrabajoVan AlvaWeb LabJivamukti Tribe GatheringimagespagesFinal Images to replace1920wlineup-hero_1920w.webp\" \"g:Juan CarlosTrabajoVan AlvaWeb LabJivamukti Tribe Gatheringimagespageslineup\"\" /Y)",
-      "Bash(cmd /c:*)"
+      "Bash(cmd /c:*)",
+      "Bash(git checkout:*)"
     ],
     "deny": [],
     "ask": []
