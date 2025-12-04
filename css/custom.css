@@ -904,7 +904,8 @@ img {
     flex-direction: column !important;
     overflow-y: auto;
     overflow-x: hidden;
-    padding: 0;
+    padding: var(--site--margin);
+    padding-bottom: 0;
     gap: 0;
   }
 
@@ -924,8 +925,9 @@ img {
 
   .teacher-modal_info {
     order: 2;
-    padding: var(--site--margin);
+    padding: 0;
     padding-top: var(--_spacing---space--6);
+    padding-bottom: var(--site--margin);
     max-height: none;
     overflow-y: visible;
   }
@@ -977,11 +979,11 @@ img {
     justify-content: center;
   }
 
-  /* Close button on mobile - fixed at top right over image */
+  /* Close button on mobile - inside modal content area with proper spacing */
   .teacher-modal_close {
-    position: fixed;
-    top: var(--site--margin);
-    right: var(--site--margin);
+    position: absolute;
+    top: calc(var(--site--margin) + var(--site--margin));
+    right: calc(var(--site--margin) + var(--site--margin));
     z-index: 100;
   }
 }
@@ -999,8 +1001,9 @@ img {
 
   .teacher-modal_info {
     gap: var(--_spacing---space--4);
-    padding: var(--_spacing---space--4);
+    padding: 0;
     padding-top: var(--_spacing---space--5);
+    padding-bottom: var(--site--margin);
   }
 
   .teacher-modal_bio,
