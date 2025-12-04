@@ -1583,6 +1583,20 @@ body:has(.hero-home_wrap) .nav_wrap.menu-is-open .nav_content > .nav_menu:last-c
   pointer-events: auto;
 }
 
+/* On mobile, show fixed hamburger immediately on homepage (navbar scrolls away) */
+@media (max-width: 991px) {
+  body:has(.hero-home_wrap) .nav_hamburger--fixed {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Hide the navbar hamburger on mobile homepage since we use the fixed one */
+  body:has(.hero-home_wrap) .nav_wrap .nav_hamburger {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
 /* Navbar hamburger visibility controlled by JavaScript */
 
 body:has(.hero-home_wrap) .nav_content > .nav_menu:last-child .nav_arrow-icon {
