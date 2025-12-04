@@ -546,11 +546,13 @@ body {
    LIMITED TICKETS TAG - Pricing Cards
    ============================================ */
 
+/* Pricing card wrapper - flex layout to push tag to bottom */
+.card_primary_wrap {
+  display: flex;
+  flex-direction: column;
+}
+
 .limited-tickets-tag {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
   width: 100%;
   background-color: var(--swatch--accent-500);
   color: white;
@@ -561,12 +563,12 @@ body {
   letter-spacing: 0.08em;
   padding: 18px 12px;
   text-align: center;
-  z-index: 10;
+  order: 2; /* Move tag after the card content */
 }
 
-/* Pricing card grid layout */
 .card_primary_element {
-  padding-bottom: 60px !important; /* Space for the limited spots tag */
+  order: 1;
+  flex: 1;
 }
 
 .pricing-card_grid {
@@ -598,10 +600,6 @@ body {
     font-size: 0.85rem;
     padding: 14px 10px;
   }
-
-  .card_primary_element {
-    padding-bottom: 55px !important;
-  }
 }
 
 @media (max-width: 480px) {
@@ -612,10 +610,6 @@ body {
 
   .pricing-card_button {
     justify-content: flex-start;
-  }
-
-  .card_primary_element {
-    padding-bottom: 55px !important;
   }
 }
 
@@ -1205,8 +1199,8 @@ img {
   }
 
   .limited-tickets-tag {
-    font-size: 0.5rem;
-    padding: 4px 8px;
+    font-size: 0.85rem;
+    padding: 14px 10px;
   }
 }
 

@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gh api:*)",
+      "Bash(do cp images/final-media/$size/Pages/Home/*.webp images/pages/home/)",
+      "Bash(do cp images/final-media/$size/Pages/Home/Location/*.webp images/pages/home/)",
+      "Bash(do cp images/final-media/$size/Pages/About/*.webp images/pages/about/)",
+      "Bash(do cp images/final-media/$size/Pages/Archive/*.webp images/pages/archive/)",
+      "Bash(do cp images/final-media/$size/Pages/Lineup/*.webp images/pages/lineup/)",
+      "Bash(do cp images/final-media/$size/Pages/Register/*.webp images/pages/register/)",
+      "Bash(do if ! grep -rq $f ../../*.html)",
+      "Bash(then rm -f $f)",
+      "Bash(fi)",
+      "Bash(npx serve:*)",
+      "Bash(cmd /c \"mklink /J \"\"Jivamukti-Tribe-Gathering\"\" \"\"Jivamukti Tribe Gathering\"\"\")",
+      "Bash(python -m http.server:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push)",
+      "Bash(dir:*)",
+      "Bash(findstr:*)",
+      "Bash(copy \"g:\\Juan Carlos\\Trabajo\\Van Alva\\Web Lab\\Jivamukti Tribe Gathering\\images\\pages\\Final Images to replace\\480w\\lineup-hero_480w.webp\" \"g:\\Juan Carlos\\Trabajo\\Van Alva\\Web Lab\\Jivamukti Tribe Gathering\\images\\pages\\lineup\"\" /Y && copy \"g:Juan CarlosTrabajoVan AlvaWeb LabJivamukti Tribe GatheringimagespagesFinal Images to replace768wlineup-hero_768w.webp\" \"g:Juan CarlosTrabajoVan AlvaWeb LabJivamukti Tribe Gatheringimagespageslineup\"\" /Y)",
+      "Bash(copy \"g:\\Juan Carlos\\Trabajo\\Van Alva\\Web Lab\\Jivamukti Tribe Gathering\\images\\pages\\Final Images to replace\\1024w\\lineup-hero_1024w.webp\" \"g:\\Juan Carlos\\Trabajo\\Van Alva\\Web Lab\\Jivamukti Tribe Gathering\\images\\pages\\lineup\"\" /Y && copy \"g:Juan CarlosTrabajoVan AlvaWeb LabJivamukti Tribe GatheringimagespagesFinal Images to replace1366wlineup-hero_1366w.webp\" \"g:Juan CarlosTrabajoVan AlvaWeb LabJivamukti Tribe Gatheringimagespageslineup\"\" /Y)",
+      "Bash(copy \"g:\\Juan Carlos\\Trabajo\\Van Alva\\Web Lab\\Jivamukti Tribe Gathering\\images\\pages\\Final Images to replace\\1600w\\lineup-hero_1600w.webp\" \"g:\\Juan Carlos\\Trabajo\\Van Alva\\Web Lab\\Jivamukti Tribe Gathering\\images\\pages\\lineup\"\" /Y && copy \"g:Juan CarlosTrabajoVan AlvaWeb LabJivamukti Tribe GatheringimagespagesFinal Images to replace1920wlineup-hero_1920w.webp\" \"g:Juan CarlosTrabajoVan AlvaWeb LabJivamukti Tribe Gatheringimagespageslineup\"\" /Y)",
+      "Bash(cmd /c:*)",
+      "Bash(git checkout:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
