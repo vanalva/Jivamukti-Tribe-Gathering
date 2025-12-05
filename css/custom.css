@@ -1936,3 +1936,111 @@ body:has(.teacher-modal.is-visible) .nav_hamburger--fixed {
     padding: var(--_spacing---space--3);
   }
 }
+
+/* ============================================
+   TERMS PAGE
+   ============================================ */
+
+.terms-page {
+  background-color: var(--swatch--light-100);
+  padding: var(--_spacing---space--12) var(--site--margin);
+  min-height: 100vh;
+}
+
+.terms-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.terms-content h1 {
+  color: var(--swatch--dark-900);
+  margin-bottom: var(--_spacing---space--8);
+}
+
+.terms-section {
+  margin-bottom: var(--_spacing---space--8);
+}
+
+.terms-section h2 {
+  color: var(--swatch--dark-900);
+  margin-bottom: var(--_spacing---space--4);
+}
+
+.terms-section p {
+  color: var(--swatch--dark-700);
+  margin-bottom: var(--_spacing---space--3);
+  line-height: 1.7;
+}
+
+.terms-section p:last-child {
+  margin-bottom: 0;
+}
+
+.terms-section .link {
+  color: var(--swatch--accent-500);
+  text-decoration: underline;
+}
+
+.terms-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.terms-list li {
+  color: var(--swatch--dark-700);
+  margin-bottom: var(--_spacing---space--3);
+  padding-left: var(--_spacing---space--4);
+  position: relative;
+  line-height: 1.7;
+}
+
+.terms-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 6px;
+  height: 6px;
+  background-color: var(--swatch--accent-500);
+  border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+  .terms-page {
+    padding: var(--_spacing---space--8) var(--site--margin);
+  }
+
+  .terms-content h1 {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+  }
+}
+
+/* ============================================
+   TERMS DISCLAIMER (Register page)
+   ============================================ */
+
+.terms-disclaimer-section {
+  background-color: var(--swatch--light-100);
+  padding: 0 var(--site--margin);
+  padding-bottom: var(--_spacing---space--8);
+}
+
+.terms-disclaimer {
+  background-color: var(--swatch--light-200);
+  padding: var(--_spacing---space--6);
+  max-width: var(--site--content-max-width);
+  margin: 0 auto;
+}
+
+.terms-disclaimer p {
+  color: var(--swatch--dark-700);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.terms-disclaimer .link {
+  color: var(--swatch--accent-500);
+  font-weight: 600;
+}
