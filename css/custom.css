@@ -594,6 +594,12 @@ body {
   align-items: flex-end;
 }
 
+.pricing-card_button .button--small {
+  min-width: auto;
+  padding: var(--_spacing---space--2) var(--_spacing---space--4);
+  font-size: 0.875rem;
+}
+
 /* Responsive: smaller tag on mobile */
 @media (max-width: 768px) {
   .limited-tickets-tag {
@@ -1171,6 +1177,26 @@ img {
 /* ============================================
    9. PRICING/PLAN SECTION FIXES
    ============================================ */
+
+/* Give more space to pricing cards (right column) on desktop */
+.plan_wrap .plan_content {
+  grid-template-columns: 1fr 2fr;
+}
+
+/* Pricing section logos - prevent distortion */
+.pricing_title-sticky img,
+.logo-300hr,
+.logo-75hr {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+}
+
+.logo-75hr {
+  max-width: 180px;
+}
+
 @media (max-width: 991px) {
   .plan_content {
     grid-template-columns: 1fr !important;
@@ -1180,10 +1206,23 @@ img {
   .pricing_title-sticky {
     position: static !important;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .pricing_title-sticky h2 {
     font-size: clamp(1.5rem, 6vw, 2.5rem);
+  }
+
+  .pricing_title-sticky > div {
+    display: flex;
+    justify-content: center;
+  }
+
+  .logo-300hr,
+  .logo-75hr {
+    max-width: 200px;
   }
 
   .pricing-cards-grid {
@@ -1944,6 +1983,7 @@ body:has(.teacher-modal.is-visible) .nav_hamburger--fixed {
 .terms-page {
   background-color: var(--swatch--light-100);
   padding: var(--_spacing---space--12) var(--site--margin);
+  padding-top: calc(var(--_spacing---space--12) + 100px);
   min-height: 100vh;
 }
 
