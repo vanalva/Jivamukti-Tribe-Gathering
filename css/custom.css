@@ -910,8 +910,7 @@ img {
     flex-direction: column !important;
     overflow-y: auto;
     overflow-x: hidden;
-    padding: var(--site--margin);
-    padding-bottom: 0;
+    padding: 0;
     gap: 0;
   }
 
@@ -927,13 +926,13 @@ img {
     flex-direction: column !important;
     gap: 0;
     width: 100%;
+    padding: 0 !important;
   }
 
   .teacher-modal_info {
     order: 2;
-    padding: 0;
+    padding: var(--site--margin);
     padding-top: var(--_spacing---space--6);
-    padding-bottom: var(--site--margin);
     max-height: none;
     overflow-y: visible;
   }
@@ -941,8 +940,8 @@ img {
   .teacher-modal_image-wrap {
     order: 1;
     height: auto !important;
-    min-height: 45vh;
-    max-height: 55vh;
+    min-height: 50vh;
+    max-height: none;
     margin: 0 !important;
     position: relative !important;
     width: 100% !important;
@@ -950,10 +949,11 @@ img {
   }
 
   .teacher-modal_image {
-    height: 100%;
-    min-height: 45vh;
-    max-height: 55vh;
+    height: auto;
+    min-height: 50vh;
+    max-height: none;
     width: 100%;
+    object-fit: cover;
   }
 
   .teacher-modal_name {
@@ -985,31 +985,30 @@ img {
     justify-content: center;
   }
 
-  /* Close button on mobile - inside modal content area with proper spacing */
+  /* Close button on mobile - fixed at top right with inverted colors */
   .teacher-modal_close {
-    position: absolute;
-    top: calc(var(--site--margin) + var(--site--margin));
-    right: calc(var(--site--margin) + var(--site--margin));
-    z-index: 100;
+    position: fixed !important;
+    top: var(--site--margin);
+    right: var(--site--margin);
+    z-index: 100001;
+    mix-blend-mode: difference !important;
+    color: var(--swatch--light-100) !important;
   }
 }
 
 @media (max-width: 480px) {
   .teacher-modal_image-wrap {
     min-height: 40vh;
-    max-height: 50vh;
   }
 
   .teacher-modal_image {
     min-height: 40vh;
-    max-height: 50vh;
   }
 
   .teacher-modal_info {
     gap: var(--_spacing---space--4);
-    padding: 0;
+    padding: var(--site--margin);
     padding-top: var(--_spacing---space--5);
-    padding-bottom: var(--site--margin);
   }
 
   .teacher-modal_bio,
@@ -1619,17 +1618,13 @@ body:has(.hero-home_wrap) .nav_wrap.menu-is-open .nav_content > .nav_menu:last-c
   pointer-events: auto;
 }
 
-/* On mobile, show fixed hamburger immediately on homepage (navbar scrolls away) */
-@media (max-width: 991px) {
-  body:has(.hero-home_wrap) .nav_hamburger--fixed {
-    opacity: 1;
-    pointer-events: auto;
-  }
+/* On mobile, let JS control fixed hamburger visibility via .is-visible class */
+/* The fixed hamburger only appears after scrolling past 100px */
 
-  /* Hide the navbar hamburger on mobile homepage since we use the fixed one */
-  body:has(.hero-home_wrap) .nav_wrap .nav_hamburger {
-    opacity: 0;
-    pointer-events: none;
+/* On mobile, navbar hamburger should be black (not over hero image) */
+@media (max-width: 991px) {
+  body:has(.hero-home_wrap) .nav_content > .nav_menu:last-child .nav_hamburger {
+    color: var(--swatch--dark-900);
   }
 }
 
