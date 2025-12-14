@@ -1936,12 +1936,10 @@ body:has(.teacher-modal.is-visible) .nav_hamburger--fixed {
   font-weight: var(--_typography---font--primary-bold);
   margin-bottom: var(--_spacing---space--1);
   text-transform: uppercase;
-  line-height: 1.3;
+  line-height: 1.4;
   text-align: center;
-  word-break: break-word;
-  overflow-wrap: break-word;
-  hyphens: auto;
-  font-size: clamp(0.7rem, 2vw, 1rem);
+  word-spacing: 100vw; /* Forces each word to its own line */
+  font-size: clamp(0.65rem, 1.8vw, 1rem);
 }
 
 .teacher-card_location {
@@ -1975,8 +1973,8 @@ body:has(.teacher-modal.is-visible) .nav_hamburger--fixed {
   }
 
   .teacher-card_name {
-    font-size: 0.7rem;
-    line-height: 1.3;
+    font-size: 0.65rem;
+    line-height: 1.4;
   }
 }
 
