@@ -1966,15 +1966,20 @@ body:has(.teacher-modal.is-visible) .nav_hamburger--fixed {
   }
 }
 
-/* Responsive: 2 columns on mobile, smaller cards */
+/* Responsive: 1 column on mobile */
 @media (max-width: 480px) {
+  .teacher-grid_grid {
+    grid-template-columns: 1fr;
+  }
+
   .teacher-card_info {
-    padding: var(--_spacing---space--3);
+    padding: var(--_spacing---space--4);
   }
 
   .teacher-card_name {
-    font-size: 0.65rem;
-    line-height: 1.4;
+    font-size: 1rem;
+    line-height: 1.3;
+    word-spacing: normal;
   }
 }
 
