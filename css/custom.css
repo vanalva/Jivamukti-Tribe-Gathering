@@ -1900,14 +1900,8 @@ body:has(.teacher-modal.is-visible) .nav_hamburger--fixed {
 .teacher-card {
   background: var(--swatch--light-200);
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
   border: 1px solid var(--swatch--dark-900-o20);
-}
-
-.teacher-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
 }
 
 .teacher-card_image-wrap {
@@ -1919,11 +1913,6 @@ body:has(.teacher-modal.is-visible) .nav_hamburger--fixed {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.teacher-card:hover .teacher-card_image {
-  transform: scale(1.05);
 }
 
 .teacher-card_info {
@@ -1962,7 +1951,8 @@ body:has(.teacher-modal.is-visible) .nav_hamburger--fixed {
   }
 
   .teacher-grid_content {
-    padding: var(--_spacing---space--8) var(--site--margin);
+    padding-top: var(--_spacing---space--8);
+    padding-bottom: var(--_spacing---space--8);
   }
 }
 
