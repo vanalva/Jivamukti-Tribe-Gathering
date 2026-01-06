@@ -1199,19 +1199,16 @@ img {
 /* Single card layout - force consistent grid dimensions */
 .plan_content:has(.pricing-cards-grid--single) {
   display: grid;
-  grid-template-columns: 300px 400px;
+  grid-template-columns: minmax(350px, 1fr) 400px;
   gap: var(--_spacing---space--8);
-  justify-content: center;
+  max-width: 900px;
+  margin-inline: auto;
 }
 
 .plan_content:has(.pricing-cards-grid--single) .pricing_title-sticky {
   position: sticky;
   top: 120px;
   align-self: start;
-}
-
-.pricing-cards-grid--single {
-  width: 400px;
 }
 
 .pricing-cards-grid--single .card_primary_wrap {
