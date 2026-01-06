@@ -1213,10 +1213,12 @@ img {
 
 .pricing-cards-grid--single {
   width: 100%;
+  display: block;
 }
 
 .pricing-cards-grid--single .card_primary_wrap {
   width: 100%;
+  max-width: none;
 }
 
 @media (max-width: 991px) {
