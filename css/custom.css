@@ -1219,17 +1219,109 @@ img {
   width: 100%;
 }
 
-/* Larger text in single card layout */
-.pricing-cards-grid--single .text-h4 {
-  font-size: clamp(1.5rem, 2.5vw, 2rem);
+/* ============================================
+   REDESIGNED PRICING CARDS
+   ============================================ */
+
+.pricing-card-redesign {
+  width: 100%;
+  background: var(--swatch--light-100);
+  border: 1px solid var(--swatch--dark-900);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
-.pricing-cards-grid--single .text-h1 {
-  font-size: clamp(4rem, 8vw, 7rem);
+.pricing-card-redesign_header {
+  background: var(--swatch--accent-500);
+  padding: var(--_spacing---space--3) var(--_spacing---space--6);
+  text-align: center;
 }
 
-.pricing-cards-grid--single .card_primary_element {
-  padding: var(--_spacing---space--8);
+.pricing-card-redesign_badge {
+  color: var(--swatch--light-100);
+  font-family: var(--_typography---font--primary-family);
+  font-weight: var(--_typography---font--primary-bold);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.pricing-card-redesign_body {
+  padding: var(--_spacing---space--10) var(--_spacing---space--8);
+  text-align: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--_spacing---space--4);
+}
+
+.pricing-card-redesign_price-wrap {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  line-height: 1;
+}
+
+.pricing-card-redesign_currency {
+  font-family: var(--_typography---font--primary-family);
+  font-weight: var(--_typography---font--primary-extrabold);
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--swatch--dark-900);
+  margin-top: 0.15em;
+  margin-right: 0.1em;
+}
+
+.pricing-card-redesign_amount {
+  font-family: var(--_typography---font--primary-family);
+  font-weight: var(--_typography---font--primary-extrabold);
+  font-size: clamp(5rem, 10vw, 9rem);
+  color: var(--swatch--dark-900);
+  letter-spacing: -0.02em;
+}
+
+.pricing-card-redesign_label {
+  font-family: var(--_typography---font--primary-family);
+  font-size: 1.125rem;
+  color: var(--swatch--dark-500);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.pricing-card-redesign_footer {
+  padding: var(--_spacing---space--6) var(--_spacing---space--8);
+  padding-top: 0;
+}
+
+.pricing-card-redesign_button {
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  font-size: 1.125rem;
+  padding: var(--_spacing---space--4) var(--_spacing---space--6);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .pricing-card-redesign_body {
+    padding: var(--_spacing---space--8) var(--_spacing---space--6);
+  }
+
+  .pricing-card-redesign_footer {
+    padding: var(--_spacing---space--4) var(--_spacing---space--6);
+    padding-top: 0;
+  }
+
+  .pricing-card-redesign_amount {
+    font-size: clamp(4rem, 15vw, 6rem);
+  }
+
+  .pricing-card-redesign_currency {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+  }
 }
 
 @media (max-width: 991px) {
