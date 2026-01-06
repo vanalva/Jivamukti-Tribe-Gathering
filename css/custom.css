@@ -1209,6 +1209,10 @@ img {
   align-self: start;
 }
 
+.pricing-cards-grid--single {
+  width: 100%;
+}
+
 .pricing-cards-grid--single .card_primary_wrap {
   width: 100%;
 }
