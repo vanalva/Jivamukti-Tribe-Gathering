@@ -1201,7 +1201,7 @@ img {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--_spacing---space--8);
-  max-width: 1200px;
+  max-width: var(--max-width--main);
   margin-inline: auto;
 }
 
