@@ -182,6 +182,7 @@ document.addEventListener('DOMContentLoaded', function() {
       let isHovering = false;
       let animationFrame = null;
       let currentTeacherName = '';
+      const badgeOffset = 100; // Half of 12.5rem (200px) to center on cursor
 
       const defaultBadgeText = 'SCROLL TO<br>SEE MORE';
 
@@ -192,31 +193,47 @@ document.addEventListener('DOMContentLoaded', function() {
         currentX += (mouseX - currentX) * ease;
         currentY += (mouseY - currentY) * ease;
 
-        hoverBadge.style.left = currentX + 'px';
-        hoverBadge.style.top = currentY + 'px';
+        // Center badge on cursor by offsetting by half badge size
+        hoverBadge.style.left = (currentX - badgeOffset) + 'px';
+        hoverBadge.style.top = (currentY - badgeOffset) + 'px';
 
         animationFrame = requestAnimationFrame(animateBadge);
       }
 
       // Listen to entire teachers list container
       teachersList.addEventListener('mouseenter', function(e) {
-        isHovering = true;
+        // Cancel any existing animation FIRST
+        if (animationFrame) {
+          cancelAnimationFrame(animationFrame);
+          animationFrame = null;
+        }
+
+        // Get fresh mouse position
         mouseX = e.clientX;
         mouseY = e.clientY;
         currentX = mouseX;
         currentY = mouseY;
 
+        // FORCE position reset - set directly on style
+        hoverBadge.style.left = (currentX - badgeOffset) + 'px';
+        hoverBadge.style.top = (currentY - badgeOffset) + 'px';
+
+        // Show badge AFTER position is set
         hoverBadge.classList.add('is-visible');
         badgeText.innerHTML = defaultBadgeText;
+
+        // NOW start hovering and animation
+        isHovering = true;
         animateBadge();
       });
 
       teachersList.addEventListener('mouseleave', function() {
         isHovering = false;
-        hoverBadge.classList.remove('is-visible');
         if (animationFrame) {
           cancelAnimationFrame(animationFrame);
+          animationFrame = null;
         }
+        hoverBadge.classList.remove('is-visible');
       });
 
       teachersList.addEventListener('mousemove', function(e) {
@@ -243,25 +260,40 @@ document.addEventListener('DOMContentLoaded', function() {
       if (heroImageWrap) {
         heroImageWrap.addEventListener('mouseenter', function(e) {
           if (currentTeacherName) {
-            isHovering = true;
+            // Cancel any existing animation FIRST
+            if (animationFrame) {
+              cancelAnimationFrame(animationFrame);
+              animationFrame = null;
+            }
+
+            // Get fresh mouse position
             mouseX = e.clientX;
             mouseY = e.clientY;
             currentX = mouseX;
             currentY = mouseY;
 
+            // FORCE position reset - set directly on style
+            hoverBadge.style.left = (currentX - badgeOffset) + 'px';
+            hoverBadge.style.top = (currentY - badgeOffset) + 'px';
+
+            // Show badge AFTER position is set
             hoverBadge.classList.add('is-visible');
             badgeText.innerHTML = currentTeacherName;
+
+            // NOW start hovering and animation
+            isHovering = true;
             animateBadge();
           }
         });
 
         heroImageWrap.addEventListener('mouseleave', function() {
           isHovering = false;
-          hoverBadge.classList.remove('is-visible');
-          badgeText.innerHTML = defaultBadgeText;
           if (animationFrame) {
             cancelAnimationFrame(animationFrame);
+            animationFrame = null;
           }
+          hoverBadge.classList.remove('is-visible');
+          badgeText.innerHTML = defaultBadgeText;
         });
 
         heroImageWrap.addEventListener('mousemove', function(e) {
@@ -341,81 +373,97 @@ document.addEventListener('DOMContentLoaded', function() {
 
   scheduleSections.forEach(function(scheduleSection) {
     const dayRows = scheduleSection.querySelectorAll('.day_row');
-    const dayImage = scheduleSection.querySelector('.day_image img');
     const scheduleHoverBadge = scheduleSection.querySelector('.schedule_hover-badge');
 
-    if (dayRows.length > 0 && dayImage) {
-      let scheduleMouseX = 0;
-      let scheduleMouseY = 0;
-      let scheduleCurrentX = 0;
-      let scheduleCurrentY = 0;
-      let scheduleIsHovering = false;
-      let scheduleAnimationFrame = null;
+    if (dayRows.length > 0) {
+      const badgeSize = 200; // 12.5rem = 200px
+      const offset = 20; // Gap from cursor
 
-      function animateScheduleBadge() {
-        if (!scheduleIsHovering) return;
+      // Simple position: always bottom-right of cursor, clamped to viewport
+      function getBadgePosition(mouseX, mouseY) {
+        const vw = window.innerWidth;
+        const vh = window.innerHeight;
 
-        const ease = 0.15;
-        scheduleCurrentX += (scheduleMouseX - scheduleCurrentX) * ease;
-        scheduleCurrentY += (scheduleMouseY - scheduleCurrentY) * ease;
+        // Default: bottom-right of cursor
+        let posX = mouseX + offset;
+        let posY = mouseY + offset;
 
-        if (scheduleHoverBadge) {
-          scheduleHoverBadge.style.left = scheduleCurrentX + 'px';
-          scheduleHoverBadge.style.top = scheduleCurrentY + 'px';
+        // Clamp to right edge
+        if (posX + badgeSize > vw) {
+          posX = mouseX - badgeSize - offset;
         }
 
-        scheduleAnimationFrame = requestAnimationFrame(animateScheduleBadge);
+        // Clamp to bottom edge
+        if (posY + badgeSize > vh) {
+          posY = mouseY - badgeSize - offset;
+        }
+
+        // Clamp to left edge (in case badge is too big)
+        if (posX < 0) posX = 0;
+
+        // Clamp to top edge
+        if (posY < 0) posY = 0;
+
+        return { x: posX, y: posY };
       }
 
       dayRows.forEach(function(row) {
         row.addEventListener('mouseenter', function(e) {
+          // Find the day_image within the same day_wrap as this row
+          const dayWrap = row.closest('.day_wrap');
+          const dayImage = dayWrap ? dayWrap.querySelector('.day_image img') : null;
+
           const imageUrl = row.getAttribute('data-image');
           if (imageUrl && dayImage) {
             dayImage.src = imageUrl;
           }
 
-          scheduleIsHovering = true;
-          scheduleMouseX = e.clientX;
-          scheduleMouseY = e.clientY;
-          scheduleCurrentX = scheduleMouseX;
-          scheduleCurrentY = scheduleMouseY;
-
           if (scheduleHoverBadge) {
+            // Position badge immediately at cursor
+            const pos = getBadgePosition(e.clientX, e.clientY);
+            scheduleHoverBadge.style.left = pos.x + 'px';
+            scheduleHoverBadge.style.top = pos.y + 'px';
+
+            // Update badge image
+            const badgeImg = scheduleHoverBadge.querySelector('img');
+            if (badgeImg && imageUrl) {
+              badgeImg.src = imageUrl;
+            }
+
+            // Show badge
             scheduleHoverBadge.classList.add('is-visible');
           }
-          animateScheduleBadge();
         });
 
         row.addEventListener('mouseleave', function() {
-          scheduleIsHovering = false;
           if (scheduleHoverBadge) {
             scheduleHoverBadge.classList.remove('is-visible');
-          }
-          if (scheduleAnimationFrame) {
-            cancelAnimationFrame(scheduleAnimationFrame);
           }
         });
 
         row.addEventListener('mousemove', function(e) {
-          scheduleMouseX = e.clientX;
-          scheduleMouseY = e.clientY;
+          if (scheduleHoverBadge && scheduleHoverBadge.classList.contains('is-visible')) {
+            const pos = getBadgePosition(e.clientX, e.clientY);
+            scheduleHoverBadge.style.left = pos.x + 'px';
+            scheduleHoverBadge.style.top = pos.y + 'px';
+          }
         });
 
         // Expandable row functionality
         row.addEventListener('click', function() {
           const rowItem = row.closest('.day_row-item');
           if (rowItem) {
-            const isExpanded = rowItem.classList.contains('is-expanded');
+            const isActive = rowItem.classList.contains('is-active');
 
             // Close all other expanded rows
-            scheduleSection.querySelectorAll('.day_row-item.is-expanded').forEach(function(item) {
+            scheduleSection.querySelectorAll('.day_row-item.is-active').forEach(function(item) {
               if (item !== rowItem) {
-                item.classList.remove('is-expanded');
+                item.classList.remove('is-active');
               }
             });
 
             // Toggle current row
-            rowItem.classList.toggle('is-expanded', !isExpanded);
+            rowItem.classList.toggle('is-active', !isActive);
           }
         });
       });

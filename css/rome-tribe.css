@@ -3002,7 +3002,7 @@ strong {
   pointer-events: none;
   z-index: 1000;
   opacity: 0;
-  transform: translate(-50%, -50%) scale(0.7);
+  transform: scale(0.7);
   transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1),
               transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   will-change: transform, opacity;
@@ -3013,7 +3013,7 @@ strong {
 
 .teachers_hover-badge.is-visible {
   opacity: 1;
-  transform: translate(-50%, -50%) scale(1);
+  transform: scale(1);
 }
 
 .teachers_hover-badge-bg {
