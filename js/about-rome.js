@@ -4,6 +4,34 @@
  */
 
 document.addEventListener('DOMContentLoaded', function() {
+  // ============================================
+  // MOBILE THUMBNAILS - Inject thumbnails for mobile view
+  // ============================================
+  const allDayRows = document.querySelectorAll('.day_wrap .day_row');
+
+  allDayRows.forEach(function(row) {
+    const imageUrl = row.getAttribute('data-image');
+    if (!imageUrl) return;
+
+    // Create thumbnail element
+    const thumbnail = document.createElement('div');
+    thumbnail.className = 'day_row-thumbnail';
+    thumbnail.innerHTML = '<img src="' + imageUrl + '" alt="" loading="lazy">';
+
+    // Wrap existing text content
+    const textWrapper = document.createElement('div');
+    textWrapper.className = 'day_row-text';
+
+    // Move existing children to wrapper
+    while (row.firstChild) {
+      textWrapper.appendChild(row.firstChild);
+    }
+
+    // Add thumbnail and text wrapper to row
+    row.appendChild(thumbnail);
+    row.appendChild(textWrapper);
+  });
+
   // Filter tabs functionality
   const filterTabs = document.querySelectorAll('.filter_tab');
   const categoryWraps = document.querySelectorAll('.day_wrap[data-category]');
@@ -92,6 +120,92 @@ document.addEventListener('DOMContentLoaded', function() {
       console.log('Load more clicked');
     });
   });
+
+  // ============================================
+  // HOVER TOOLTIP - Floating preview card
+  // ============================================
+  const tooltip = document.getElementById('romeHoverTooltip');
+  const tooltipImage = document.getElementById('tooltipImage');
+  const tooltipTitle = document.getElementById('tooltipTitle');
+  const tooltipDescription = document.getElementById('tooltipDescription');
+
+  // Move tooltip to body and force highest z-index via inline style
+  if (tooltip) {
+    if (tooltip.parentElement !== document.body) {
+      document.body.appendChild(tooltip);
+    }
+    // Force z-index inline to override everything
+    tooltip.style.zIndex = '2147483647';
+    tooltip.style.position = 'fixed';
+  }
+
+  if (tooltip && scheduleRows.length > 0) {
+    const tooltipWidth = 280;
+    const tooltipHeight = 220; // Approximate height
+    const offset = 20;
+
+    function positionTooltip(mouseX, mouseY) {
+      const vw = window.innerWidth;
+      const vh = window.innerHeight;
+
+      // Default: position to the right and below cursor
+      let posX = mouseX + offset;
+      let posY = mouseY + offset;
+
+      // If tooltip would overflow right edge, position to left of cursor
+      if (posX + tooltipWidth > vw) {
+        posX = mouseX - tooltipWidth - offset;
+      }
+
+      // If tooltip would overflow bottom, position above cursor
+      if (posY + tooltipHeight > vh) {
+        posY = mouseY - tooltipHeight - offset;
+      }
+
+      // Clamp to viewport
+      if (posX < 10) posX = 10;
+      if (posY < 10) posY = 10;
+
+      tooltip.style.left = posX + 'px';
+      tooltip.style.top = posY + 'px';
+    }
+
+    scheduleRows.forEach(function(row) {
+      row.addEventListener('mouseenter', function(e) {
+        // Get data from the row
+        const imageUrl = this.getAttribute('data-image');
+        const textWrapper = this.querySelector('.day_row-text');
+        const titleEl = textWrapper ? textWrapper.querySelector('.text-h4') : this.querySelector('.text-h4');
+        const title = titleEl ? titleEl.textContent : '';
+
+        // Get description from the expanded content
+        const parent = this.closest('.day_row-item');
+        const descEl = parent ? parent.querySelector('.day_row-content-description p') : null;
+        const description = descEl ? descEl.textContent : '';
+
+        // Only show tooltip if we have content
+        if (imageUrl && title) {
+          tooltipImage.src = imageUrl;
+          tooltipImage.alt = title;
+          tooltipTitle.textContent = title;
+          tooltipDescription.textContent = description || 'Click to view details';
+
+          positionTooltip(e.clientX, e.clientY);
+          tooltip.classList.add('is-visible');
+        }
+      });
+
+      row.addEventListener('mouseleave', function() {
+        tooltip.classList.remove('is-visible');
+      });
+
+      row.addEventListener('mousemove', function(e) {
+        if (tooltip.classList.contains('is-visible')) {
+          positionTooltip(e.clientX, e.clientY);
+        }
+      });
+    });
+  }
 
   console.log('About Rome page interactions initialized');
 });

@@ -9,6 +9,3 @@ Thumbs.db
 # Local/temp files
 html-site/
 .claude/
-
-# Hidden pages (not ready for public)
-schedule.html

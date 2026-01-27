@@ -656,6 +656,7 @@ document.addEventListener('DOMContentLoaded', function() {
       duration: 0.8,
       delay: index * 0.05,
       ease: "power2.out",
+      clearProps: "transform",
       scrollTrigger: {
         trigger: row,
         start: 'top 90%'

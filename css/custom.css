@@ -719,6 +719,38 @@ body {
   transform: translate(2px, -2px);
 }
 
+/* Concert card variant */
+.location_card--concert {
+  display: block;
+}
+
+.location_card-note {
+  margin-top: var(--_spacing---space--2);
+  font-style: italic;
+  opacity: 0.9;
+}
+
+.location_card-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--_spacing---space--4);
+  margin-top: var(--_spacing---space--3);
+}
+
+.location_card-links .location_card-link {
+  margin-top: 0;
+  color: inherit;
+  text-decoration: none;
+}
+
+.location_card-links .location_card-link:hover {
+  color: var(--swatch--accent-500);
+}
+
+.location_card-links .location_card-link:hover svg {
+  transform: translate(2px, -2px);
+}
+
 /* Responsive: Locations */
 @media (max-width: 900px) {
   .locations_grid {
@@ -2110,4 +2142,195 @@ body:has(.teacher-modal.is-visible) .nav_hamburger--fixed {
 .terms-disclaimer .link {
   color: var(--swatch--accent-500);
   font-weight: 600;
+}
+
+/* ============================================
+   SCHEDULE HOVER BADGE - Follows cursor on row hover
+   ============================================ */
+
+.schedule_hover-badge {
+  width: 12.5rem;
+  height: 12.5rem;
+  overflow: hidden;
+  position: fixed;
+  pointer-events: none;
+  z-index: 2147483647 !important;
+  opacity: 0;
+  transform: scale(0.7);
+  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, opacity, left, top;
+  isolation: isolate;
+}
+
+.schedule_hover-badge.is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.schedule_hover-badge-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Hide on touch devices and mobile */
+@media (hover: none) and (pointer: coarse) {
+  .schedule_hover-badge {
+    display: none;
+  }
+}
+
+@media (max-width: 991px) {
+  .schedule_hover-badge {
+    display: none;
+  }
+}
+
+/* ============================================
+   ROME TIPS HOVER TOOLTIP - Floating preview card
+   ============================================ */
+
+/* Force page content below tooltip - remove all stacking contexts */
+.day_wrap,
+.day_row-item,
+.day_row,
+.day_row-text,
+.text-h4,
+.text-body-lg,
+.day_wrap *,
+.schedule_wrap *,
+.u-section {
+  transform: none !important;
+  will-change: auto !important;
+  z-index: auto !important;
+}
+
+.rome-hover-tooltip {
+  position: fixed;
+  width: 280px;
+  background: var(--swatch--background);
+  border: 1px solid var(--swatch--border);
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 2147483647 !important;
+  isolation: isolate;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.rome-hover-tooltip.is-visible {
+  opacity: 1;
+}
+
+.rome-hover-tooltip__image {
+  width: 100%;
+  height: 140px;
+  overflow: hidden;
+}
+
+.rome-hover-tooltip__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.rome-hover-tooltip__content {
+  padding: 1rem;
+}
+
+.rome-hover-tooltip__title {
+  font-family: var(--font-family--heading);
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0 0 0.5rem 0;
+  color: var(--swatch--text);
+}
+
+.rome-hover-tooltip__description {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--swatch--text-muted);
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Hide on touch devices and mobile */
+@media (hover: none) and (pointer: coarse) {
+  .rome-hover-tooltip {
+    display: none;
+  }
+}
+
+@media (max-width: 991px) {
+  .rome-hover-tooltip {
+    display: none;
+  }
+}
+
+/* ============================================
+   ROME TIPS MOBILE THUMBNAIL - Visible on mobile only
+   ============================================ */
+
+.day_row-thumbnail {
+  display: none;
+}
+
+/* Desktop: preserve original 3-column grid inside text wrapper */
+.day_wrap .day_row-text {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: var(--_spacing---space--5);
+  align-items: center;
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 991px) {
+  .day_row-thumbnail {
+    display: block;
+    width: 60px;
+    height: 60px;
+    border-radius: 4px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .day_row-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Adjust day_row layout on mobile to include thumbnail */
+  .day_wrap .day_row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .day_wrap .day_row-text {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
+  }
+
+  .day_wrap .day_row-text .text-body-lg:first-child {
+    font-size: 0.75rem;
+    opacity: 0.7;
+  }
+
+  .day_wrap .day_row-text .text-h4 {
+    text-align: left;
+  }
+
+  .day_wrap .day_row-text .text-body-lg:last-child {
+    font-size: 0.75rem;
+    opacity: 0.7;
+  }
 }
