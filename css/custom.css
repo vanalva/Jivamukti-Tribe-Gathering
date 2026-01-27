@@ -1,0 +1,2113 @@
+/* ============================================
+   ADDITIONAL STYLES FOR HTML SITE
+   ============================================ */
+
+/* ============================================
+   GLOBAL OVERFLOW PREVENTION
+   ============================================ */
+html {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+body {
+  overflow: visible;
+  max-width: 100%;
+}
+
+/* ============================================
+   SECTION MINIMUM HEIGHT - Breathing Room
+   ============================================ */
+
+.about_wrap,
+.locations_wrap,
+.schedule_wrap,
+.teachers_wrap,
+.plan_wrap {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-block: var(--_spacing---space--8);
+}
+
+/* Hero sections should remain full height */
+.hero_wrap {
+  min-height: 100vh;
+}
+
+/* Responsive: reduce min-height on smaller screens */
+@media (max-width: 1024px) {
+  .about_wrap,
+  .locations_wrap,
+  .schedule_wrap,
+  .teachers_wrap,
+  .plan_wrap {
+    min-height: 60vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .about_wrap,
+  .locations_wrap,
+  .schedule_wrap,
+  .teachers_wrap,
+  .plan_wrap {
+    min-height: auto;
+  }
+}
+
+/* ============================================
+   SCHEDULE PROVISIONAL SECTION - Enhanced
+   Two-column layout with hero image + day cards
+   ============================================ */
+
+.schedule-provisional {
+  padding-top: var(--_spacing---space--6);
+  padding-bottom: var(--_spacing---space--6);
+}
+
+.schedule-provisional_intro {
+  margin-bottom: var(--_spacing---space--6);
+  max-width: 800px;
+}
+
+/* Main two-column layout: Image + Cards */
+.schedule-provisional_layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--_spacing---space--8);
+  align-items: stretch;
+}
+
+/* Left: Hero Image */
+.schedule-provisional_image-wrap {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.schedule-provisional_image-wrap img,
+.schedule-provisional_image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: opacity 0.4s ease;
+}
+
+/* Right: Cards container */
+.schedule-provisional_cards {
+  display: flex;
+  flex-direction: column;
+  gap: var(--_spacing---space--4);
+}
+
+/* 2x2 Grid for day cards */
+.schedule-provisional_grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--_spacing---space--4);
+}
+
+/* Individual day card */
+.schedule-provisional_day {
+  padding: var(--_spacing---space--5);
+  border: 1px solid var(--swatch--dark-900-o20);
+  display: flex;
+  flex-direction: column;
+  gap: var(--_spacing---space--2);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  min-height: 200px;
+}
+
+.schedule-provisional_day:hover {
+  border-color: var(--swatch--accent-500);
+  background-color: var(--swatch--accent-500);
+  color: var(--swatch--light-100);
+}
+
+/* Big day number */
+.schedule-provisional_day-number {
+  font-family: var(--_typography---font--primary-family);
+  font-weight: var(--_typography---font--primary-extrabold);
+  font-size: clamp(4rem, 8vw, 7rem);
+  line-height: 0.85;
+  letter-spacing: var(--_typography---letter-spacing--tight);
+  color: #000000;
+  transition: opacity 0.3s ease;
+  display: block;
+  margin-bottom: var(--_spacing---space--2);
+}
+
+.schedule-provisional_day:hover .schedule-provisional_day-number {
+  opacity: 0.25;
+}
+
+/* Day content */
+.schedule-provisional_day-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--_spacing---space--1);
+  margin-top: auto;
+}
+
+.schedule-provisional_day-content h3 {
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.schedule-provisional_day-date {
+  color: var(--swatch--accent-500);
+  font-weight: var(--_typography---font--primary-bold);
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.schedule-provisional_day:hover .schedule-provisional_day-date {
+  color: var(--swatch--light-100);
+}
+
+.schedule-provisional_day-content p:last-child {
+  margin: 0;
+  opacity: 0.8;
+}
+
+.schedule-provisional_note {
+  font-style: italic;
+  margin-top: var(--_spacing---space--4);
+}
+
+/* Image-based schedule grid */
+.schedule-provisional_grid--images {
+  gap: var(--_spacing---space--3);
+}
+
+.schedule-provisional_day-image {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--swatch--dark-900-o20);
+}
+
+.schedule-provisional_day-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.schedule-provisional_day-image:hover img {
+  transform: scale(1.02);
+}
+
+/* ============================================
+   RESPONSIVE: Schedule Provisional
+   ============================================ */
+
+/* Tablet: Stack layout vertically */
+@media (max-width: 1300px) {
+  .schedule-provisional_layout {
+    grid-template-columns: 1fr;
+    gap: var(--_spacing---space--6);
+  }
+
+  .schedule-provisional_image-wrap {
+    position: static;
+    max-height: 50vh;
+    aspect-ratio: 16 / 9;
+  }
+
+  .schedule-provisional_image-wrap img,
+  .schedule-provisional_image {
+    position: relative;
+  }
+
+  .schedule-provisional_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile: Single column cards */
+@media (max-width: 768px) {
+  .schedule-provisional_grid {
+    grid-template-columns: 1fr;
+  }
+
+  .schedule-provisional_day {
+    min-height: 160px;
+  }
+
+  .schedule-provisional_day-number {
+    font-size: clamp(3rem, 15vw, 5rem);
+  }
+}
+
+/* ============================================
+   MENU OPEN STATE - Hide Nav Links
+   ============================================ */
+
+/* Hide navigation links when fullscreen menu is open (all screen sizes) */
+.nav_wrap.menu-is-open .nav_link,
+.nav_wrap.menu-is-open .nav_menu > a:not(.nav_hamburger) {
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transition: opacity 0.3s ease;
+}
+
+/* Keep hamburger button visible when menu opens */
+.nav_wrap.menu-is-open .nav_hamburger {
+  opacity: 1 !important;
+  pointer-events: auto;
+  z-index: 100001;
+}
+
+/* Desktop: Logo fades out/in when fullscreen menu opens (no sliding) */
+@media (min-width: 1301px) {
+  .nav_logo {
+    transition: opacity 0.25s ease;
+  }
+
+  .nav_wrap.menu-is-open .nav_logo {
+    left: 0 !important;
+    transform: none !important;
+    animation: fadeReposition 0.5s ease forwards;
+  }
+}
+
+/* Fade out, reposition, fade in animation */
+@keyframes fadeReposition {
+  0% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Keep nav_wrap fixed when menu is open so logo and hamburger don't jump */
+/* Apply to all non-desktop screens (where hamburger menu appears) */
+@media (max-width: 1300px) {
+  .nav_wrap.menu-is-open {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 100001;
+  }
+
+  /* Keep logo in its normal grid position - don't switch to fixed */
+  .nav_wrap.menu-is-open .nav_logo {
+    position: static !important;
+    transform: none !important;
+    z-index: 100001;
+  }
+
+  /* Keep hamburger in its normal position */
+  .nav_wrap.menu-is-open .nav_hamburger {
+    position: relative !important;
+  }
+
+  /* Force logo to be on the left (not centered) on tablet/mobile */
+  .nav_logo {
+    position: static !important;
+    left: auto !important;
+    transform: none !important;
+  }
+}
+
+/* ============================================
+   FULLSCREEN MENU FOOTER ALIGNMENT
+   ============================================ */
+
+/* Align footer with menu grid (55% left column) */
+.menu-fullscreen_footer {
+  display: grid;
+  grid-template-columns: 1fr 45%;
+  gap: var(--_spacing---space--8);
+  align-items: end;
+  padding: 0 !important;
+  padding-top: var(--_spacing---space--5) !important;
+}
+
+.menu-fullscreen_footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: var(--_spacing---space--1);
+  align-items: flex-start;
+}
+
+.menu-fullscreen_footer-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--_spacing---space--4);
+}
+
+/* Responsive - stack on mobile */
+@media (max-width: 1300px) {
+  .menu-fullscreen_footer {
+    grid-template-columns: 1fr;
+    gap: var(--_spacing---space--4);
+  }
+
+  .menu-fullscreen_footer-right {
+    justify-content: flex-start;
+  }
+}
+
+/* ============================================
+   LANDSCAPE MOBILE RESPONSIVE
+   For horizontal phone orientation
+   ============================================ */
+
+/* Landscape phones: max-height 500px + landscape orientation */
+@media (max-height: 500px) and (orientation: landscape) {
+  /* Hero section adjustments */
+  .hero_content {
+    height: auto !important;
+    min-height: 100vh !important;
+  }
+
+  .hero_logo_wrap {
+    width: min(40%, 35vh) !important;
+  }
+
+  .hero_date {
+    top: calc(50% + min(40%, 35vh) * 0.4 + var(--_spacing---space--2)) !important;
+  }
+
+  .hero_date .text-h1 {
+    font-size: clamp(1.5rem, 4vw, 2rem) !important;
+  }
+
+  /* Fullscreen menu - horizontal layout */
+  .menu-fullscreen_grid {
+    grid-template-columns: 1fr 1fr !important;
+    grid-template-rows: 1fr !important;
+    gap: var(--_spacing---space--3) !important;
+    padding: var(--_spacing---space--3) !important;
+    overflow-y: auto !important;
+  }
+
+  .menu-fullscreen_nav {
+    order: 1 !important;
+    gap: 0.25rem !important;
+    justify-content: center !important;
+    overflow-y: auto !important;
+  }
+
+  /* Menu text: use min() to pick smaller of vw or vh based sizing */
+  .menu-fullscreen_link {
+    font-size: min(clamp(1rem, 3vw, 1.5rem), 8vh) !important;
+    line-height: 1.15 !important;
+    padding: 0.15rem 0 !important;
+  }
+
+  .menu-fullscreen_arrow-icon {
+    width: min(24px, 5vh) !important;
+    height: min(24px, 5vh) !important;
+    margin-left: var(--_spacing---space--1) !important;
+  }
+
+  .menu-fullscreen_image-wrap {
+    order: 2 !important;
+    max-height: 60vh !important;
+  }
+
+  .menu-fullscreen_footer {
+    padding: var(--_spacing---space--1) var(--_spacing---space--3) !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: var(--_spacing---space--2) !important;
+  }
+
+  .menu-fullscreen_footer-left {
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: var(--_spacing---space--2) !important;
+  }
+
+  .menu-fullscreen_footer-logo {
+    height: 14px !important;
+    min-width: auto !important;
+    margin-bottom: 0 !important;
+  }
+
+  .menu-fullscreen_copyright {
+    font-size: 0.65rem !important;
+  }
+
+  /* Teachers section */
+  .teachers_content {
+    grid-template-columns: 1fr !important;
+  }
+
+  .teachers_content--reversed .teachers_list {
+    grid-column: 1 !important;
+  }
+
+  .teachers_image-wrap {
+    display: none !important;
+  }
+
+  .teacher_item {
+    padding-block: var(--_spacing---space--3) !important;
+  }
+
+  /* Schedule provisional section */
+  .schedule-provisional_layout {
+    grid-template-columns: 1fr !important;
+  }
+
+  .schedule-provisional_image-wrap {
+    display: none !important;
+  }
+
+  .schedule-provisional_grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .schedule-provisional_day {
+    min-height: 120px !important;
+    padding: var(--_spacing---space--3) !important;
+  }
+
+  .schedule-provisional_day-number {
+    font-size: clamp(2rem, 8vw, 3rem) !important;
+  }
+}
+
+/* Very short landscape (under 400px height) */
+@media (max-height: 400px) and (orientation: landscape) {
+  .menu-fullscreen_grid {
+    grid-template-columns: 1fr !important;
+    padding: var(--_spacing---space--2) !important;
+  }
+
+  .menu-fullscreen_nav {
+    gap: 0 !important;
+    justify-content: flex-start !important;
+  }
+
+  .menu-fullscreen_link {
+    font-size: min(clamp(0.875rem, 2.5vw, 1.25rem), 7vh) !important;
+    line-height: 1.1 !important;
+    padding: 0.1rem 0 !important;
+  }
+
+  .menu-fullscreen_arrow-icon {
+    display: none !important;
+  }
+
+  .menu-fullscreen_image-wrap {
+    display: none !important;
+  }
+
+  .menu-fullscreen_footer {
+    padding: var(--_spacing---space--1) var(--_spacing---space--2) !important;
+  }
+
+  .menu-fullscreen_footer-logo {
+    height: 12px !important;
+  }
+
+  .menu-fullscreen_copyright {
+    font-size: 0.6rem !important;
+  }
+}
+
+/* Extremely short landscape (under 320px height) */
+@media (max-height: 320px) and (orientation: landscape) {
+  .menu-fullscreen_link {
+    font-size: min(0.75rem, 6vh) !important;
+    line-height: 1.05 !important;
+  }
+
+  .menu-fullscreen_footer {
+    display: none !important;
+  }
+}
+
+/* ============================================
+   LIMITED TICKETS TAG - Pricing Cards
+   ============================================ */
+
+/* Pricing card wrapper - flex layout to push tag to bottom */
+.card_primary_wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.limited-tickets-tag {
+  width: 100%;
+  background-color: var(--swatch--accent-500);
+  color: white;
+  font-family: var(--_typography---font--primary-family);
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 18px 12px;
+  text-align: center;
+  order: 2; /* Move tag after the card content */
+}
+
+.card_primary_element {
+  order: 1;
+  flex: 1;
+}
+
+.pricing-card_grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--_spacing---space--4);
+  align-items: end;
+}
+
+.pricing-card_info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--_spacing---space--2);
+}
+
+.pricing-card_info .text-body-md {
+  margin: 0;
+}
+
+.pricing-card_button {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.pricing-card_button .button--small {
+  min-width: auto;
+  padding: var(--_spacing---space--2) var(--_spacing---space--4);
+  font-size: 0.875rem;
+}
+
+/* Responsive: smaller tag on mobile */
+@media (max-width: 768px) {
+  .limited-tickets-tag {
+    font-size: 0.85rem;
+    padding: 14px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pricing-card_grid {
+    grid-template-columns: 1fr;
+    gap: var(--_spacing---space--3);
+  }
+
+  .pricing-card_button {
+    justify-content: flex-start;
+  }
+}
+
+/* ============================================
+   LOCATIONS SECTION - Homepage Venues
+   ============================================ */
+
+.locations_wrap {
+  padding-block: var(--_spacing---space--12);
+}
+
+.locations_content {
+  width: 100%;
+  padding-inline: var(--site--margin);
+}
+
+.locations_title {
+  margin-bottom: var(--_spacing---space--8);
+}
+
+.locations_grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--_spacing---space--6);
+}
+
+/* Location Card */
+.location_card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.location_card:hover {
+  transform: translateY(-4px);
+}
+
+/* Card Image */
+.location_card-image-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  margin-bottom: var(--_spacing---space--4);
+}
+
+.location_card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.location_card:hover .location_card-image {
+  transform: scale(1.05);
+}
+
+/* Card Content */
+.location_card-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--_spacing---space--1);
+}
+
+.location_card-eyebrow {
+  color: var(--swatch--accent-500);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.location_card-address {
+  opacity: 0.7;
+  margin-top: var(--_spacing---space--1);
+}
+
+.location_card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--_spacing---space--1);
+  margin-top: var(--_spacing---space--3);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+  transition: color 0.3s ease;
+}
+
+.location_card-link svg {
+  transition: transform 0.3s ease;
+}
+
+.location_card:hover .location_card-link {
+  color: var(--swatch--accent-500);
+}
+
+.location_card:hover .location_card-link svg {
+  transform: translate(2px, -2px);
+}
+
+/* Responsive: Locations */
+@media (max-width: 900px) {
+  .locations_grid {
+    grid-template-columns: 1fr;
+    gap: var(--_spacing---space--8);
+  }
+
+  .locations_wrap {
+    padding-block: var(--_spacing---space--8);
+  }
+}
+
+@media (max-width: 768px) {
+  .locations_title {
+    margin-bottom: var(--_spacing---space--6);
+  }
+
+  .location_card-image-wrap {
+    aspect-ratio: 16 / 10;
+  }
+}
+
+/* ============================================
+   COMPREHENSIVE RESPONSIVE FIXES
+   ============================================ */
+
+/* ============================================
+   1. DISABLE HOVER STATES ON TOUCH DEVICES
+   ============================================ */
+@media (hover: none) and (pointer: coarse) {
+  /* Schedule day cards - no hover */
+  .schedule-provisional_day:hover {
+    border-color: var(--swatch--dark-900-o20);
+    background-color: transparent;
+    color: inherit;
+  }
+
+  .schedule-provisional_day:hover .schedule-provisional_day-number {
+    opacity: 1;
+  }
+
+  .schedule-provisional_day:hover .schedule-provisional_day-date {
+    color: var(--swatch--accent-500);
+  }
+
+  /* Location cards - no hover transform */
+  .location_card:hover {
+    transform: none;
+  }
+
+  .location_card:hover .location_card-image {
+    transform: none;
+  }
+
+  .location_card:hover .location_card-link {
+    color: inherit;
+  }
+
+  .location_card:hover .location_card-link svg {
+    transform: none;
+  }
+
+  /* Teacher items - no hover effects */
+  .teacher_item:hover {
+    background-color: transparent;
+  }
+
+  .teacher_item:hover .teacher_info h3 {
+    color: inherit;
+  }
+
+  /* Buttons - subtle active state instead of hover */
+  .button:hover {
+    transform: none;
+  }
+
+  .button:active {
+    opacity: 0.8;
+  }
+
+  /* Menu links - no hover arrow movement */
+  .menu-fullscreen_link:hover .menu-fullscreen_arrow-icon {
+    transform: none;
+  }
+}
+
+/* ============================================
+   2. GLOBAL IMAGE OVERFLOW FIX
+   ============================================ */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Ensure images don't overflow their containers */
+.hero-collage_image,
+.home-about_hero-image,
+.teachers_hero-image,
+.location_card-image,
+.schedule-provisional_image,
+.teacher-modal_image,
+.sticky-scroll_image {
+  max-width: 100%;
+  object-fit: cover;
+}
+
+/* ============================================
+   3. MENU ARROW SIZE FIX
+   ============================================ */
+@media (max-width: 1300px) {
+  .menu-fullscreen_arrow-icon {
+    width: 20px !important;
+    height: 20px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-fullscreen_arrow-icon {
+    width: 16px !important;
+    height: 16px !important;
+  }
+
+  .menu-fullscreen_link {
+    font-size: clamp(1.5rem, 8vw, 2.5rem) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu-fullscreen_arrow-icon {
+    width: 14px !important;
+    height: 14px !important;
+  }
+
+  .menu-fullscreen_link {
+    font-size: clamp(1.25rem, 7vw, 2rem) !important;
+  }
+}
+
+/* ============================================
+   4. TEACHER MODAL - FULL RESPONSIVE FIX
+   ============================================ */
+
+/* Base responsive sizing for modal text */
+.teacher-modal_name {
+  font-size: clamp(1.5rem, 3vw + 1rem, 4rem) !important;
+  line-height: 1.1;
+}
+
+.teacher-modal_role {
+  font-size: clamp(0.75rem, 1vw + 0.5rem, 1rem);
+}
+
+.teacher-modal_bio p,
+.teacher-modal_classes li,
+.teacher-modal_section p,
+.teacher-modal_section li {
+  font-size: clamp(0.875rem, 0.8vw + 0.5rem, 1.125rem);
+  line-height: 1.5;
+}
+
+.teacher-modal_bio h3,
+.teacher-modal_classes h3,
+.teacher-modal_section h3 {
+  font-size: clamp(1rem, 1.2vw + 0.5rem, 1.5rem);
+}
+
+.teacher-modal_info {
+  max-height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Responsive button sizing for modal */
+.teacher-modal_links,
+.teacher-modal_actions {
+  flex-wrap: wrap;
+}
+
+.teacher-modal_links .button,
+.teacher-modal_actions .button {
+  font-size: clamp(0.75rem, 1vw + 0.4rem, 1rem);
+  padding: clamp(0.5rem, 1vw + 0.25rem, 1rem) clamp(1rem, 2vw + 0.5rem, 2rem);
+  white-space: nowrap;
+}
+
+@media (max-width: 991px) {
+  .teacher-modal_content {
+    display: flex !important;
+    flex-direction: column !important;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 0;
+    gap: 0;
+  }
+
+  .teacher-modal_links .button,
+  .teacher-modal_actions .button {
+    font-size: clamp(0.7rem, 2.5vw + 0.3rem, 0.9rem);
+    padding: clamp(0.4rem, 2vw, 0.75rem) clamp(0.75rem, 3vw, 1.5rem);
+  }
+
+  /* Override display: contents to allow proper ordering */
+  .teacher-modal_grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0;
+    width: 100%;
+    padding: 0 !important;
+  }
+
+  .teacher-modal_info {
+    order: 2;
+    padding: var(--site--margin);
+    padding-top: var(--_spacing---space--6);
+    max-height: none;
+    overflow-y: visible;
+  }
+
+  .teacher-modal_image-wrap {
+    order: 1;
+    height: auto !important;
+    min-height: 50vh;
+    max-height: none;
+    margin: 0 !important;
+    position: relative !important;
+    width: 100% !important;
+    padding: 0 !important;
+  }
+
+  .teacher-modal_image {
+    height: auto;
+    min-height: 50vh;
+    max-height: none;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .teacher-modal_name {
+    font-size: clamp(1.25rem, 5vw + 0.5rem, 2.5rem) !important;
+  }
+
+  .teacher-modal_bio p,
+  .teacher-modal_classes li,
+  .teacher-modal_section p,
+  .teacher-modal_section li {
+    font-size: clamp(0.8rem, 2vw + 0.3rem, 1rem);
+  }
+
+  .teacher-modal_bio h3,
+  .teacher-modal_classes h3,
+  .teacher-modal_section h3 {
+    font-size: clamp(0.9rem, 2.5vw + 0.3rem, 1.25rem);
+  }
+
+  .teacher-modal_actions {
+    flex-direction: column;
+    gap: var(--_spacing---space--3);
+    margin-top: var(--_spacing---space--4);
+  }
+
+  .teacher-modal_actions .button {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  /* Close button on mobile - fixed at top right with inverted colors */
+  .teacher-modal_close {
+    position: fixed !important;
+    top: var(--site--margin);
+    right: var(--site--margin);
+    z-index: 100001;
+    mix-blend-mode: difference !important;
+    color: var(--swatch--light-100) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .teacher-modal_image-wrap {
+    min-height: 40vh;
+  }
+
+  .teacher-modal_image {
+    min-height: 40vh;
+  }
+
+  .teacher-modal_info {
+    gap: var(--_spacing---space--4);
+    padding: var(--site--margin);
+    padding-top: var(--_spacing---space--5);
+  }
+
+  .teacher-modal_bio,
+  .teacher-modal_classes {
+    gap: var(--_spacing---space--2);
+  }
+
+  .teacher-modal_actions {
+    gap: var(--_spacing---space--2);
+    margin-top: var(--_spacing---space--3);
+  }
+}
+
+/* ============================================
+   5. HERO SECTION RESPONSIVE FIXES
+   ============================================ */
+@media (max-width: 768px) {
+  .hero_wrap {
+    min-height: 100svh; /* Use small viewport height for mobile */
+  }
+
+  .hero_logo_wrap {
+    width: min(80%, 280px) !important;
+  }
+
+  .hero_date .text-h1 {
+    font-size: clamp(1.25rem, 5vw, 1.75rem) !important;
+  }
+}
+
+/* Hero collage responsive */
+@media (max-width: 768px) {
+  .hero-collage_image-wrap {
+    min-height: 40vh;
+    max-height: 50vh;
+  }
+
+  .hero-collage_image {
+    min-height: 40vh;
+    max-height: 50vh;
+  }
+
+  .hero-collage_title {
+    font-size: clamp(2rem, 10vw, 3rem) !important;
+  }
+}
+
+/* ============================================
+   6. ABOUT SECTION FIXES
+   ============================================ */
+@media (max-width: 768px) {
+  .about_content {
+    padding-inline: var(--site--margin) !important;
+  }
+
+  .home-about_hero-image-wrap {
+    margin-left: calc(var(--site--margin) * -1);
+    margin-right: calc(var(--site--margin) * -1);
+    width: calc(100% + var(--site--margin) * 2);
+    min-height: 40vh;
+    max-height: 50vh;
+  }
+
+  .home-about_hero-image {
+    min-height: 40vh;
+    max-height: 50vh;
+  }
+
+  .home-about_main-title {
+    font-size: clamp(2.5rem, 12vw, 4rem) !important;
+  }
+
+  .home-about_date {
+    font-size: clamp(1rem, 4vw, 1.5rem) !important;
+  }
+
+  .home-about_subtitle {
+    font-size: clamp(1.25rem, 5vw, 2rem) !important;
+  }
+}
+
+/* ============================================
+   7. SCHEDULE SECTION MOBILE FIXES
+   ============================================ */
+@media (max-width: 480px) {
+  .schedule-provisional_day {
+    padding: var(--_spacing---space--4);
+    min-height: 140px;
+  }
+
+  .schedule-provisional_day-number {
+    font-size: clamp(2.5rem, 12vw, 4rem);
+  }
+
+  .schedule-provisional_day-content h3 {
+    font-size: 0.875rem;
+  }
+
+  .schedule-provisional_day-date {
+    font-size: 1rem;
+  }
+
+  .schedule-provisional_day-content p:last-child {
+    font-size: 0.8rem;
+  }
+
+  .schedule-provisional_image-wrap {
+    max-height: 40vh;
+  }
+}
+
+/* ============================================
+   8. TEACHERS SECTION MOBILE FIXES
+   ============================================ */
+@media (max-width: 768px) {
+  .teachers_wrap {
+    padding-block: var(--_spacing---space--8);
+  }
+
+  .teacher_item {
+    padding-block: var(--_spacing---space--3);
+  }
+
+  .teacher_item-thumbnail-wrap {
+    width: 60px !important;
+    height: 60px !important;
+  }
+
+  .teacher_info h3 {
+    font-size: clamp(1rem, 4vw, 1.25rem) !important;
+  }
+
+  .teacher_arrow-icon {
+    width: 24px !important;
+    height: 24px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .teacher_item {
+    grid-template-columns: 50px 1fr !important;
+    gap: var(--_spacing---space--2) !important;
+    padding-right: 40px !important;
+  }
+
+  .teacher_item-thumbnail-wrap {
+    width: 50px !important;
+    height: 50px !important;
+  }
+
+  .teacher_info h3 {
+    font-size: 0.9rem !important;
+  }
+
+  .teacher_eyebrow {
+    font-size: 0.65rem !important;
+  }
+
+  .teacher_arrow-icon {
+    width: 20px !important;
+    height: 20px !important;
+  }
+}
+
+/* ============================================
+   9. PRICING/PLAN SECTION FIXES
+   ============================================ */
+
+/* Give more space to pricing cards (right column) on desktop */
+.plan_wrap .plan_content {
+  grid-template-columns: 1fr 2fr;
+}
+
+/* Pricing section logos - prevent distortion */
+.pricing_title-sticky img,
+.logo-300hr,
+.logo-75hr {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+}
+
+.logo-75hr {
+  max-width: 180px;
+}
+
+/* Single card layout - centered with equal columns */
+.plan_content:has(.pricing-cards-grid--single) {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--_spacing---space--8);
+  max-width: var(--max-width--main);
+  margin-inline: auto;
+}
+
+.plan_content:has(.pricing-cards-grid--single) .pricing_title-sticky {
+  position: sticky;
+  top: 120px;
+  align-self: start;
+}
+
+.pricing-cards-grid--single {
+  width: 100%;
+  display: block;
+}
+
+.pricing-cards-grid--single .card_primary_wrap {
+  width: 100%;
+  max-width: none;
+}
+
+@media (max-width: 991px) {
+  .plan_content {
+    grid-template-columns: 1fr !important;
+    gap: var(--_spacing---space--6);
+  }
+
+  .pricing_title-sticky {
+    position: static !important;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pricing_title-sticky h2 {
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
+  }
+
+  .pricing_title-sticky > div {
+    display: flex;
+    justify-content: center;
+  }
+
+  .logo-300hr,
+  .logo-75hr {
+    max-width: 200px;
+  }
+
+  .pricing-cards-grid {
+    grid-template-columns: 1fr !important;
+    gap: var(--_spacing---space--4);
+  }
+
+  /* Single card layout on mobile - center it */
+  .pricing-cards-grid--single {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .card_primary_element {
+    padding: var(--_spacing---space--4) !important;
+  }
+
+  .card_primary_element .text-h1 {
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
+
+  .limited-tickets-tag {
+    font-size: 0.85rem;
+    padding: 14px 10px;
+  }
+}
+
+/* ============================================
+   10. FOOTER RESPONSIVE FIXES
+   ============================================ */
+@media (max-width: 768px) {
+  .footer_content {
+    padding: var(--_spacing---space--6) var(--site--margin) !important;
+    gap: var(--_spacing---space--6) !important;
+  }
+
+  .footer_grid {
+    grid-template-columns: 1fr !important;
+    gap: var(--_spacing---space--4) !important;
+    text-align: center;
+  }
+
+  .footer_social {
+    justify-content: center;
+  }
+
+  .footer_bottom {
+    flex-direction: column;
+    gap: var(--_spacing---space--2);
+    text-align: center;
+  }
+}
+
+/* ============================================
+   ARCHIVE PAGE - VIDEO THUMBNAILS
+   ============================================ */
+
+/* Change play button to lighter red (accent instead of brand) */
+.video-item_play-button {
+  color: var(--swatch--accent-500) !important;
+}
+
+.video-item_play-button::before {
+  border-color: transparent transparent transparent var(--swatch--accent-500) !important;
+}
+
+/* Mobile: Show overlay by default so it's clear they are videos */
+@media (hover: none) and (pointer: coarse) {
+  .video-item_overlay {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .video-item_overlay {
+    opacity: 1;
+  }
+}
+
+/* Video modal - simple fullscreen lightbox */
+.video-modal {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: 999999 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: rgba(0, 0, 0, 0.9) !important;
+}
+
+.video-modal_backdrop {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: transparent !important;
+}
+
+.video-modal_content {
+  position: relative !important;
+  width: 90vw !important;
+  height: 80vh !important;
+  max-width: none !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.video-modal_container {
+  width: 100% !important;
+  height: 100% !important;
+  aspect-ratio: unset !important;
+}
+
+.video-modal_container iframe {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.video-modal_close {
+  position: absolute !important;
+  top: 20px !important;
+  right: 20px !important;
+  z-index: 1000000 !important;
+}
+
+/* ============================================
+   ABOUT PAGE - QUOTE SECTION (Image Stretch)
+   ============================================ */
+.plan_content--stretch-image {
+  align-items: stretch;
+}
+
+.plan_content--stretch-image .image-wrap {
+  height: 100%;
+}
+
+.plan_content--stretch-image .image-wrap .image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ============================================
+   11. LOOKBACK SECTION MOBILE
+   ============================================ */
+@media (max-width: 768px) {
+  .home-lookback_title,
+  .home-lookback_subtitle {
+    font-size: clamp(2rem, 10vw, 3.5rem) !important;
+    text-align: center !important;
+    align-self: center !important;
+  }
+
+  .home-lookback_image-wrap {
+    max-width: 100%;
+  }
+}
+
+/* ============================================
+   12. ROME/VIDEO SECTION MOBILE
+   ============================================ */
+@media (max-width: 991px) {
+  .home-rome_content {
+    grid-template-columns: 1fr !important;
+    gap: var(--_spacing---space--4);
+    min-height: auto;
+  }
+
+  .home-rome_video-wrap {
+    aspect-ratio: 16 / 9;
+    max-height: 50vh;
+  }
+}
+
+/* ============================================
+   13. STICKY SCROLL SECTION MOBILE
+   ============================================ */
+@media (max-width: 768px) {
+  .sticky-scroll_image-container {
+    height: 50vh !important;
+    min-height: 250px;
+    max-height: 400px;
+  }
+
+  .sticky-scroll_text-block {
+    padding: var(--_spacing---space--6) var(--_spacing---space--4) !important;
+  }
+
+  .sticky-scroll_text-block h2 {
+    font-size: clamp(1.5rem, 6vw, 2rem) !important;
+  }
+}
+
+/* ============================================
+   14. GENERAL SPACING FIXES - MOBILE
+   ============================================ */
+@media (max-width: 768px) {
+  /* Fix hero date positioning - keep it below logo like desktop */
+  .hero_date {
+    top: calc(50% + min(70%, 280px) * 0.5 + var(--_spacing---space--4)) !important;
+    bottom: auto !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    text-align: center;
+  }
+
+  /* Ensure consistent side margins */
+  .u-padding-inline-sitemargin {
+    padding-inline: var(--site--margin);
+  }
+
+  /* Text overflow prevention */
+  h1, h2, h3, h4, h5, h6, p {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  }
+
+  /* Large display text sizing */
+  .text-display-LG {
+    font-size: clamp(2rem, 10vw, 4rem) !important;
+  }
+
+  .text-h1 {
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
+  }
+}
+
+/* ============================================
+   15. VERY SMALL SCREENS (< 360px)
+   ============================================ */
+@media (max-width: 360px) {
+  :root {
+    --site--margin: 16px;
+  }
+
+  .teacher_item {
+    grid-template-columns: 40px 1fr !important;
+    padding-right: 32px !important;
+  }
+
+  .teacher_item-thumbnail-wrap {
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  .menu-fullscreen_link {
+    font-size: 1.25rem !important;
+  }
+
+  .menu-fullscreen_arrow-icon {
+    width: 12px !important;
+    height: 12px !important;
+  }
+
+  .hero_logo_wrap {
+    width: min(90%, 240px) !important;
+  }
+}
+
+/* ============================================
+   16. TEACHER NAMES - FIT ALL NAMES
+   ============================================ */
+
+/* Remove offsets */
+.teacher_info--offset,
+.teacher_info--offset-large,
+.teacher_info--offset-medium {
+  margin-right: 0 !important;
+}
+
+/* Teacher item - full width layout */
+.teacher_item {
+  justify-content: space-between !important;
+  gap: 0.5rem !important;
+}
+
+.teacher_info {
+  flex: 1;
+}
+
+/* Smaller arrow */
+.teacher_arrow-icon {
+  width: 32px !important;
+  height: 32px !important;
+}
+
+/* Font sizing that fits all names */
+.teacher_info h3 {
+  font-size: clamp(1.1rem, 2.2vw, 1.8rem) !important;
+  white-space: nowrap;
+}
+
+@media (max-width: 992px) {
+  .teacher_info h3 {
+    font-size: clamp(1rem, 3vw, 1.4rem) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .teacher_info h3 {
+    font-size: clamp(0.9rem, 4vw, 1.2rem) !important;
+  }
+
+  .teacher_arrow-icon {
+    width: 24px !important;
+    height: 24px !important;
+  }
+}
+
+/* ============================================
+   17. HERO COLLAGE - TITLE SIZING
+   Reduce font size for long titles to prevent 3 lines
+   ============================================ */
+
+/* Long titles (3+ words like "ABOUT THE TRIBE") need smaller font to fit in 2 lines */
+.hero-collage_title-bottom--long {
+  font-size: clamp(2rem, 6vw, 7rem) !important;
+}
+
+@media (max-width: 1200px) {
+  .hero-collage_title-bottom--long {
+    font-size: clamp(1.8rem, 5.5vw, 5rem) !important;
+  }
+}
+
+/* Mobile/tablet: center text */
+@media (max-width: 991px) {
+  .hero-collage_title-bottom {
+    text-align: center;
+  }
+
+  .hero-collage_title-bottom--long {
+    font-size: clamp(1.5rem, 8vw, 3.5rem) !important;
+  }
+}
+
+/* ============================================
+   18. HOMEPAGE HERO - New 2-column layout
+   ============================================ */
+
+.hero-home_wrap {
+  min-height: 100vh;
+  display: flex;
+  align-items: stretch;
+  background-color: var(--swatch--light-100);
+}
+
+/* Navbar overlays hero on homepage - scrolls with the page */
+body:has(.hero-home_wrap) .nav_wrap {
+  position: absolute;
+}
+
+/* But when menu is open, navbar becomes fixed so logo is always visible */
+body:has(.hero-home_wrap) .nav_wrap.menu-is-open {
+  position: fixed;
+}
+
+/* Right side nav links white on homepage (over image) */
+body:has(.hero-home_wrap) .nav_content > .nav_menu:last-child .nav_link,
+body:has(.hero-home_wrap) .nav_content > .nav_menu:last-child .nav_hamburger {
+  color: var(--swatch--light-100);
+}
+
+/* Hamburger back to black when menu is open */
+body:has(.hero-home_wrap) .nav_wrap.menu-is-open .nav_hamburger,
+body:has(.hero-home_wrap) .nav_wrap.menu-is-open .nav_content > .nav_menu:last-child .nav_hamburger {
+  color: var(--swatch--dark-900) !important;
+}
+
+/* Fixed hamburger for homepage - hidden by default, shown on scroll */
+.nav_hamburger--fixed {
+  position: fixed;
+  top: var(--site--margin);
+  right: var(--site--margin);
+  z-index: 999999;
+  color: var(--swatch--light-100);
+  mix-blend-mode: difference;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+/* When menu is open, disable mix-blend-mode so X is visible and clickable */
+.nav_hamburger--fixed.is-active {
+  mix-blend-mode: normal;
+  color: var(--swatch--dark-900);
+}
+
+/* Show fixed hamburger when scrolled (class added by JS) */
+.nav_hamburger--fixed.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* On mobile, let JS control fixed hamburger visibility via .is-visible class */
+/* The fixed hamburger only appears after scrolling past 100px */
+
+/* On mobile, navbar hamburger should be black (not over hero image) */
+@media (max-width: 991px) {
+  body:has(.hero-home_wrap) .nav_content > .nav_menu:last-child .nav_hamburger {
+    color: var(--swatch--dark-900);
+  }
+}
+
+/* Navbar hamburger visibility controlled by JavaScript */
+
+body:has(.hero-home_wrap) .nav_content > .nav_menu:last-child .nav_arrow-icon {
+  filter: brightness(0) invert(1);
+}
+
+/* White cursor on hero image */
+.hero-home_right {
+  cursor: none;
+}
+
+.hero-home_right:hover ~ .custom-cursor,
+.hero-home_right:hover .custom-cursor,
+body:has(.hero-home_right:hover) .custom-cursor svg path {
+  fill: var(--swatch--light-100);
+}
+
+.hero-home_content {
+  display: grid;
+  grid-template-columns: 55% 45%;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Left Column */
+.hero-home_left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: var(--site--margin);
+  position: relative;
+}
+
+.hero-home_logo-wrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 500px;
+  padding-bottom: var(--_spacing---space--12);
+}
+
+.hero-home_logo {
+  width: 100%;
+  height: auto;
+}
+
+.hero-home_date {
+  position: absolute;
+  bottom: var(--site--margin);
+  left: var(--site--margin);
+  right: var(--site--margin);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.hero-home_date-left,
+.hero-home_date-right {
+  color: var(--swatch--dark-900);
+}
+
+/* Right Column */
+.hero-home_right {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-home_image-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-home_image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Rotating Badge */
+.hero-home_badge {
+  position: absolute;
+  bottom: var(--site--margin);
+  right: var(--site--margin);
+  width: clamp(180px, 20vw, 280px);
+  height: clamp(180px, 20vw, 280px);
+  z-index: 10;
+}
+
+.hero-home_badge-img {
+  width: 100%;
+  height: 100%;
+  animation: rotateBadge 20s linear infinite;
+  filter: brightness(0) invert(1);
+}
+
+@keyframes rotateBadge {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive: Tablet */
+@media (max-width: 1200px) {
+  .hero-home_content {
+    grid-template-columns: 50% 50%;
+  }
+
+  .hero-home_logo-wrap {
+    max-width: 400px;
+  }
+}
+
+/* Responsive: Stack on smaller tablets */
+@media (max-width: 991px) {
+  .hero-home_wrap {
+    min-height: auto;
+  }
+
+  .hero-home_content {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .hero-home_left {
+    min-height: 60vh;
+    padding-bottom: var(--_spacing---space--16);
+  }
+
+  .hero-home_logo-wrap {
+    max-width: 350px;
+    padding-bottom: 0;
+  }
+
+  .hero-home_date {
+    bottom: var(--_spacing---space--6);
+  }
+
+  .hero-home_right {
+    min-height: 50vh;
+  }
+
+  .hero-home_badge {
+    bottom: var(--site--margin);
+    right: var(--site--margin);
+    width: clamp(120px, 22vw, 180px);
+    height: clamp(120px, 22vw, 180px);
+  }
+}
+
+/* Responsive: Mobile */
+@media (max-width: 768px) {
+  .hero-home_left {
+    min-height: 50vh;
+    padding: var(--_spacing---space--6) var(--site--margin);
+    padding-bottom: var(--_spacing---space--14);
+  }
+
+  .hero-home_logo-wrap {
+    max-width: 280px;
+  }
+
+  .hero-home_date {
+    bottom: var(--_spacing---space--5);
+  }
+
+  .hero-home_date-left,
+  .hero-home_date-right {
+    font-size: clamp(0.875rem, 3vw, 1.125rem);
+  }
+
+  .hero-home_right {
+    min-height: 40vh;
+  }
+
+  .hero-home_badge {
+    bottom: var(--site--margin);
+    right: var(--site--margin);
+    width: 110px;
+    height: 110px;
+  }
+}
+
+/* Responsive: Small mobile */
+@media (max-width: 480px) {
+  .hero-home_left {
+    min-height: 45vh;
+  }
+
+  .hero-home_logo-wrap {
+    max-width: 240px;
+  }
+
+  .hero-home_right {
+    min-height: 35vh;
+  }
+
+  .hero-home_badge {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+/* Section spacing after homepage hero - override rome-tribe.css default */
+section.hero-home_wrap + section.about_wrap {
+  margin-top: 8rem !important;
+  padding-top: 0 !important;
+}
+
+@media (max-width: 768px) {
+  section.hero-home_wrap + section.about_wrap {
+    margin-top: 5rem !important;
+  }
+}
+
+/* Teacher Modal - inverted close button and hide hamburger */
+.teacher-modal_close {
+  mix-blend-mode: difference;
+  color: var(--swatch--light-100);
+}
+
+/* Hide fixed hamburger when teacher modal is open */
+body:has(.teacher-modal.is-visible) .nav_hamburger--fixed {
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* ============================================
+   19. TEACHER GRID - 4 columns with cards
+   ============================================ */
+
+.teacher-grid_wrap {
+  background-color: var(--swatch--light-100);
+  padding-left: var(--site--margin);
+  padding-right: var(--site--margin);
+}
+
+.teacher-grid_content {
+  padding-top: var(--_spacing---space--12);
+  padding-bottom: var(--_spacing---space--12);
+  max-width: var(--site--content-max-width);
+  margin: 0 auto;
+}
+
+.teacher-grid_header {
+  text-align: center;
+  margin-bottom: var(--_spacing---space--10);
+}
+
+.teacher-grid_title {
+  color: var(--swatch--dark-900);
+  margin-bottom: var(--_spacing---space--4);
+}
+
+.teacher-grid_grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--_spacing---space--6);
+}
+
+.teacher-card {
+  background: var(--swatch--light-200);
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid var(--swatch--dark-900-o20);
+}
+
+.teacher-card_image-wrap {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.teacher-card_image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.teacher-card_info {
+  padding: var(--_spacing---space--4);
+  text-align: center;
+}
+
+.teacher-card_name {
+  color: var(--swatch--dark-900);
+  font-weight: var(--_typography---font--primary-bold);
+  margin-bottom: var(--_spacing---space--1);
+  text-transform: uppercase;
+  line-height: 1.4;
+  text-align: center;
+  word-spacing: 100vw; /* Forces each word to its own line */
+  font-size: clamp(0.65rem, 1.8vw, 1rem);
+}
+
+.teacher-card_location {
+  color: var(--swatch--dark-500);
+  font-size: var(--_typography---font-size--text-small);
+}
+
+/* Responsive: 3 columns on tablet */
+@media (max-width: 1200px) {
+  .teacher-grid_grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Responsive: 2 columns on smaller tablets */
+@media (max-width: 768px) {
+  .teacher-grid_grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--_spacing---space--4);
+  }
+
+  .teacher-grid_content {
+    padding-top: var(--_spacing---space--8);
+    padding-bottom: var(--_spacing---space--8);
+  }
+}
+
+/* Responsive: 1 column on mobile */
+@media (max-width: 480px) {
+  .teacher-grid_grid {
+    grid-template-columns: 1fr;
+  }
+
+  .teacher-card_info {
+    padding: var(--_spacing---space--4);
+  }
+
+  .teacher-card_name {
+    font-size: 1rem;
+    line-height: 1.3;
+    word-spacing: normal;
+  }
+}
+
+/* ============================================
+   TERMS PAGE
+   ============================================ */
+
+.terms-page {
+  background-color: var(--swatch--light-100);
+  padding: var(--_spacing---space--12) var(--site--margin);
+  padding-top: calc(var(--_spacing---space--12) + 100px);
+  min-height: 100vh;
+}
+
+.terms-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.terms-content h1 {
+  color: var(--swatch--dark-900);
+  margin-bottom: var(--_spacing---space--8);
+}
+
+.terms-section {
+  margin-bottom: var(--_spacing---space--8);
+}
+
+.terms-section h2 {
+  color: var(--swatch--dark-900);
+  margin-bottom: var(--_spacing---space--4);
+}
+
+.terms-section p {
+  color: var(--swatch--dark-700);
+  margin-bottom: var(--_spacing---space--3);
+  line-height: 1.7;
+}
+
+.terms-section p:last-child {
+  margin-bottom: 0;
+}
+
+.terms-section .link {
+  color: var(--swatch--accent-500);
+  text-decoration: underline;
+}
+
+.terms-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.terms-list li {
+  color: var(--swatch--dark-700);
+  margin-bottom: var(--_spacing---space--3);
+  padding-left: var(--_spacing---space--4);
+  position: relative;
+  line-height: 1.7;
+}
+
+.terms-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 6px;
+  height: 6px;
+  background-color: var(--swatch--accent-500);
+  border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+  .terms-page {
+    padding: var(--_spacing---space--8) var(--site--margin);
+  }
+
+  .terms-content h1 {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+  }
+}
+
+/* ============================================
+   TERMS DISCLAIMER (Register page)
+   ============================================ */
+
+.terms-disclaimer-section {
+  background-color: var(--swatch--light-100);
+  padding: 0 var(--site--margin);
+  padding-bottom: var(--_spacing---space--8);
+}
+
+.terms-disclaimer {
+  background-color: var(--swatch--light-200);
+  padding: var(--_spacing---space--6);
+  max-width: var(--site--content-max-width);
+  margin: 0 auto;
+}
+
+.terms-disclaimer p {
+  color: var(--swatch--dark-700);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.terms-disclaimer .link {
+  color: var(--swatch--accent-500);
+  font-weight: 600;
+}
