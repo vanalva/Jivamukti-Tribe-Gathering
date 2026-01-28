@@ -1495,6 +1495,17 @@ strong {
   border-left: 3px solid var(--swatch--accent-500);
 }
 
+/* Static items (non-expandable, like lunch breaks) */
+.day_row-item--static .day_row {
+  cursor: default;
+  opacity: 0.6;
+}
+
+.day_row-item--static .day_row:hover {
+  background: transparent;
+  color: inherit;
+}
+
 .day_image {
   /* Image wrapper (image-wrap--square) handles 1:1 aspect ratio and overflow */
   width: 18.234375rem; /* 1.5x of 12.15625rem (0.75x of original 24.3125rem) */
