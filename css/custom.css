@@ -2217,8 +2217,8 @@ section.u-section {
 .rome-hover-tooltip {
   position: fixed !important;
   width: 280px;
-  background: var(--swatch--background);
-  border: 1px solid var(--swatch--border);
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
   overflow: hidden;
   pointer-events: none;
   z-index: 2147483647 !important;
