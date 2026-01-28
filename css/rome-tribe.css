@@ -2456,12 +2456,13 @@ strong {
 /* Override schedule_wrap padding when combined with filter_wrap */
 .filter_wrap.schedule_wrap {
   padding-top: var(--_spacing---space--4);
-  padding-bottom: 0;
+  padding-bottom: var(--_spacing---space--4);
+  min-height: auto !important;
 }
 
 /* Remove top padding from listings section after filters */
 .filter_wrap + .schedule_wrap {
-  padding-top: 0;
+  padding-top: var(--_spacing---space--4);
 }
 
 .filter_content {
