@@ -33,34 +33,58 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // Filter tabs functionality
-  const filterTabs = document.querySelectorAll('.filter_tab');
+  const categoryTabs = document.querySelectorAll('[data-filter-group="category"] .filter_tab');
+  const areaTabs = document.querySelectorAll('[data-filter-group="area"] .filter_tab');
   const categoryWraps = document.querySelectorAll('.day_wrap[data-category]');
 
-  filterTabs.forEach(function(tab) {
-    tab.addEventListener('click', function() {
-      const filter = this.getAttribute('data-filter');
+  // Track current filters
+  let currentCategory = 'all';
+  let currentArea = 'all';
 
-      // Update active tab
-      filterTabs.forEach(function(t) {
+  // Function to apply both filters
+  function applyFilters() {
+    categoryWraps.forEach(function(wrap) {
+      const category = wrap.getAttribute('data-category');
+      const area = wrap.getAttribute('data-area');
+
+      const categoryMatch = currentCategory === 'all' || category === currentCategory;
+      const areaMatch = currentArea === 'all' || area === currentArea;
+
+      if (categoryMatch && areaMatch) {
+        wrap.style.display = '';
+      } else {
+        wrap.style.display = 'none';
+      }
+    });
+  }
+
+  // Category filter click handler
+  categoryTabs.forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      currentCategory = this.getAttribute('data-filter');
+
+      // Update active tab in this group only
+      categoryTabs.forEach(function(t) {
         t.classList.remove('filter_tab--active');
       });
       this.classList.add('filter_tab--active');
 
-      // Filter categories
-      if (filter === 'all') {
-        categoryWraps.forEach(function(wrap) {
-          wrap.style.display = '';
-        });
-      } else {
-        categoryWraps.forEach(function(wrap) {
-          const category = wrap.getAttribute('data-category');
-          if (category === filter) {
-            wrap.style.display = '';
-          } else {
-            wrap.style.display = 'none';
-          }
-        });
-      }
+      applyFilters();
+    });
+  });
+
+  // Area filter click handler
+  areaTabs.forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      currentArea = this.getAttribute('data-filter');
+
+      // Update active tab in this group only
+      areaTabs.forEach(function(t) {
+        t.classList.remove('filter_tab--active');
+      });
+      this.classList.add('filter_tab--active');
+
+      applyFilters();
     });
   });
 
