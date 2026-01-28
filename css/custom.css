@@ -2215,14 +2215,13 @@ section.u-section {
 }
 
 .rome-hover-tooltip {
-  position: fixed;
+  position: fixed !important;
   width: 280px;
   background: var(--swatch--background);
   border: 1px solid var(--swatch--border);
   overflow: hidden;
   pointer-events: none;
   z-index: 2147483647 !important;
-  isolation: isolate;
   opacity: 0;
   transition: opacity 0.25s ease;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
