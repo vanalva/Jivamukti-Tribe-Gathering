@@ -175,7 +175,9 @@ document.addEventListener('DOMContentLoaded', function() {
         // Get data from the row
         const imageUrl = this.getAttribute('data-image');
         const textWrapper = this.querySelector('.day_row-text');
-        const titleEl = textWrapper ? textWrapper.querySelector('.text-h4') : this.querySelector('.text-h4');
+        const titleEl = textWrapper
+          ? (textWrapper.querySelector('.venue-name') || textWrapper.querySelector('.text-h4'))
+          : (this.querySelector('.venue-name') || this.querySelector('.text-h4'));
         const title = titleEl ? titleEl.textContent : '';
 
         // Get description from the expanded content

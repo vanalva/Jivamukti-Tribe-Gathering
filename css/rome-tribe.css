@@ -1441,6 +1441,10 @@ strong {
   line-height: 1.6;
 }
 
+.day_row-content-grid {
+  position: relative;
+}
+
 .day_row-buy-button {
   position: absolute;
   bottom: var(--_spacing---space--6);
@@ -1452,6 +1456,11 @@ strong {
 
 .day_row-buy-button:hover {
   background-color: var(--swatch--accent-600);
+}
+
+/* Multiple buttons - stacked */
+.day_row-buy-button + .day_row-buy-button {
+  bottom: calc(var(--_spacing---space--6) + 4.5rem);
 }
 
 /* Single booking badge and note styles */
@@ -1923,22 +1932,23 @@ strong {
 /* Filter Tabs Section (About Rome page) */
 
 .filter_content {
-  padding: 0 var(--site--margin);
+  padding: var(--_spacing---space--4) var(--site--margin) 0 var(--site--margin);
 }
 
 .filter_tabs {
   display: flex;
   flex-wrap: wrap;
   gap: var(--_spacing---space--2);
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 .filter_tab {
   padding: var(--_spacing---space--3) var(--_spacing---space--5);
-  border: 2px solid var(--swatch--dark-900);
+  border: 2px solid #1e1e1e !important;
   border-radius: var(--radius--pill);
   background: transparent;
-  color: var(--swatch--dark-900);
+  color: #1e1e1e !important;
+  opacity: 1 !important;
   font-family: var(--_typography---font--primary-family);
   font-weight: var(--_typography---font--primary-bold);
   font-size: var(--_typography---font-size--button);
@@ -1949,15 +1959,27 @@ strong {
 }
 
 .filter_tab:hover {
-  background: var(--swatch--brand-500);
-  border-color: var(--swatch--brand-500);
-  color: var(--swatch--light-100);
+  background: var(--swatch--brand-500) !important;
+  border-color: var(--swatch--brand-500) !important;
+  color: var(--swatch--light-100) !important;
 }
 
 .filter_tab--active {
-  background: var(--swatch--brand-500);
-  border-color: var(--swatch--brand-500);
-  color: var(--swatch--light-100);
+  background: var(--swatch--brand-500) !important;
+  border-color: var(--swatch--brand-500) !important;
+  color: var(--swatch--light-100) !important;
+}
+
+/* Second row of filters - areas */
+.filter_tabs--areas {
+  margin-top: var(--_spacing---space--4);
+}
+
+/* Small filter tabs */
+.filter_tab--small {
+  padding: var(--_spacing---space--2) var(--_spacing---space--4);
+  font-size: 0.85rem;
+  border-width: 1px !important;
 }
 
 /* Listings Section */
@@ -2432,7 +2454,7 @@ strong {
 }
 
 .filter_content {
-  padding: var(--_spacing---space--5) var(--site--margin) var(--_spacing---space--3) var(--site--margin);
+  padding: var(--_spacing---space--4) var(--site--margin) 0 var(--site--margin);
 }
 
 .filter_buttons {
@@ -4004,6 +4026,11 @@ strong {
 
 .day_row .venue-name a:hover {
   color: var(--swatch--brand-500);
+}
+
+/* When row is hovered (red bg), link hover should be visible */
+.day_row:hover .venue-name a:hover {
+  color: var(--swatch--dark-100);
 }
 
 .day_row-item.is-active .day_row .venue-name a:hover {
