@@ -2460,9 +2460,11 @@ strong {
   min-height: auto !important;
 }
 
-/* Remove top padding from listings section after filters */
+/* Listings section after filters - align to top, not centered */
 .filter_wrap + .schedule_wrap {
   padding-top: var(--_spacing---space--4);
+  justify-content: flex-start !important;
+  min-height: auto !important;
 }
 
 .filter_content {
