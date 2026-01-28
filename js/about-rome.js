@@ -52,10 +52,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
       if (categoryMatch && areaMatch) {
         wrap.style.display = '';
+        // Force visible - override any GSAP animation states
+        wrap.style.opacity = '1';
+        wrap.style.transform = 'none';
+        // Also fix child elements that might have animations
+        const animatedChildren = wrap.querySelectorAll('.day_header, .day_row, .day_row-item, .text-h1, .text-body-lg, .text-body-md');
+        animatedChildren.forEach(function(child) {
+          child.style.opacity = '1';
+          child.style.transform = 'none';
+        });
       } else {
         wrap.style.display = 'none';
       }
     });
+
+    // Refresh ScrollTrigger to recalculate positions
+    if (typeof ScrollTrigger !== 'undefined') {
+      ScrollTrigger.refresh();
+    }
   }
 
   // Category filter click handler
