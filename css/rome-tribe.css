@@ -1479,10 +1479,6 @@ strong {
   white-space: nowrap;
 }
 
-.single-booking-badge::before {
-  content: '\20AC'; /* Euro symbol */
-  margin-right: 0.1em;
-}
 
 .day_row-item.is-active .single-booking-badge {
   background-color: var(--swatch--light-100);
