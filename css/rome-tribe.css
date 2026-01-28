@@ -2467,6 +2467,12 @@ strong {
   min-height: auto !important;
 }
 
+/* Schedule section after hero - align to top, not centered */
+.hero_wrap + .schedule_wrap {
+  justify-content: flex-start !important;
+  min-height: auto !important;
+}
+
 .filter_content {
   padding: var(--_spacing---space--4) var(--site--margin) 0 var(--site--margin);
 }
