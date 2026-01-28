@@ -245,13 +245,22 @@
     </div>
 
     <div class="filter_content u-position-relative">
-      <div class="filter_tabs">
+      <!-- Category Filters -->
+      <div class="filter_tabs" id="categoryFilters">
         <button class="filter_tab filter_tab--active" data-filter="all">ALL</button>
         <button class="filter_tab" data-filter="accommodations">ACCOMMODATIONS</button>
         <button class="filter_tab" data-filter="food">FOOD & DRINK</button>
         <button class="filter_tab" data-filter="sightseeing">SIGHTSEEING</button>
         <button class="filter_tab" data-filter="nightlife">NIGHTLIFE</button>
         <button class="filter_tab" data-filter="daytrips">DAY TRIPS</button>
+      </div>
+      <!-- Area Filters (shown only for categories with multiple areas) -->
+      <div class="filter_tabs filter_tabs--areas u-hidden" id="areaFilters">
+        <button class="filter_tab filter_tab--small filter_tab--active" data-filter="all" data-area-filter>ALL AREAS</button>
+        <button class="filter_tab filter_tab--small" data-filter="esquilino" data-area-filter data-for-category="accommodations food">ESQUILINO</button>
+        <button class="filter_tab filter_tab--small" data-filter="city-center" data-area-filter data-for-category="accommodations food">CITY CENTER</button>
+        <button class="filter_tab filter_tab--small" data-filter="san-lorenzo" data-area-filter data-for-category="accommodations">SAN LORENZO</button>
+        <button class="filter_tab filter_tab--small" data-filter="jewish-quarter" data-area-filter data-for-category="food">JEWISH QUARTER</button>
       </div>
     </div>
   </section>
