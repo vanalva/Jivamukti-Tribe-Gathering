@@ -2459,6 +2459,11 @@ strong {
   padding-bottom: 0;
 }
 
+/* Remove top padding from listings section after filters */
+.filter_wrap + .schedule_wrap {
+  padding-top: 0;
+}
+
 .filter_content {
   padding: var(--_spacing---space--4) var(--site--margin) 0 var(--site--margin);
 }
