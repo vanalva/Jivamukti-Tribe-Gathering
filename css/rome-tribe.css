@@ -4057,3 +4057,25 @@ strong {
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
+
+/* Venues List */
+.venues-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--_spacing---space--2);
+}
+
+.venues-list_item {
+  display: flex;
+  align-items: center;
+  gap: var(--_spacing---space--2);
+}
+
+.venues-list_icon {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+}
