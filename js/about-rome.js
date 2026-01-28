@@ -26,10 +26,25 @@ document.addEventListener('DOMContentLoaded', function() {
       const areaMatch = currentArea === 'all' || area === currentArea;
 
       if (categoryMatch && areaMatch) {
-        // Show - use class instead of inline style
+        // Show
         wrap.classList.remove('u-hidden');
+        // Force visible - override GSAP animation states
+        wrap.style.opacity = '1';
+        wrap.style.transform = 'none';
+        // Fix all animated children
+        wrap.querySelectorAll('*').forEach(function(el) {
+          el.style.opacity = '';
+          el.style.transform = '';
+        });
+        // Use GSAP to set final state if available
+        if (typeof gsap !== 'undefined') {
+          gsap.set(wrap, { opacity: 1, y: 0, x: 0, clearProps: 'transform' });
+          gsap.set(wrap.querySelectorAll('.day_header, .day_row-item, .text-h1'), {
+            opacity: 1, y: 0, x: 0, clearProps: 'transform'
+          });
+        }
       } else {
-        // Hide - use class instead of inline style
+        // Hide
         wrap.classList.add('u-hidden');
       }
     });
