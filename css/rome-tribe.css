@@ -2453,6 +2453,12 @@ strong {
   background-color: var(--_theme---background);
 }
 
+/* Override schedule_wrap padding when combined with filter_wrap */
+.filter_wrap.schedule_wrap {
+  padding-top: var(--_spacing---space--4);
+  padding-bottom: 0;
+}
+
 .filter_content {
   padding: var(--_spacing---space--4) var(--site--margin) 0 var(--site--margin);
 }
