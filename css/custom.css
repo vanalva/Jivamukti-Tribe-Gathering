@@ -2196,14 +2196,22 @@ body:has(.teacher-modal.is-visible) .nav_hamburger--fixed {
 .day_row-item,
 .day_row,
 .day_row-text,
+.day_header,
+.text-h1,
 .text-h4,
 .text-body-lg,
 .day_wrap *,
 .schedule_wrap *,
-.u-section {
+.schedule_content,
+.schedule_content *,
+.filter_wrap + .schedule_wrap,
+.filter_wrap + .schedule_wrap *,
+section.schedule_wrap,
+section.u-section {
   transform: none !important;
   will-change: auto !important;
   z-index: auto !important;
+  isolation: auto !important;
 }
 
 .rome-hover-tooltip {
