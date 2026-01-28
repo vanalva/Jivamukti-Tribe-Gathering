@@ -8,75 +8,48 @@ document.addEventListener('DOMContentLoaded', function() {
   // ============================================
   // FILTER TABS FUNCTIONALITY
   // ============================================
-  const categoryTabs = document.querySelectorAll('[data-filter-group="category"] .filter_tab');
-  const areaTabs = document.querySelectorAll('[data-filter-group="area"] .filter_tab');
+  const filterTabs = document.querySelectorAll('.filter_tab');
   const allDayWraps = document.querySelectorAll('.day_wrap[data-category]');
 
-  // Track current filters
-  let currentCategory = 'all';
-  let currentArea = 'all';
+  // Filter click handler
+  filterTabs.forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      const filter = this.getAttribute('data-filter');
 
-  // Function to apply both filters
-  function applyFilters() {
-    allDayWraps.forEach(function(wrap) {
-      const category = wrap.getAttribute('data-category');
-      const area = wrap.getAttribute('data-area');
+      // Update active tab
+      filterTabs.forEach(function(t) {
+        t.classList.remove('filter_tab--active');
+      });
+      this.classList.add('filter_tab--active');
 
-      const categoryMatch = currentCategory === 'all' || category === currentCategory;
-      const areaMatch = currentArea === 'all' || area === currentArea;
+      // Apply filter
+      allDayWraps.forEach(function(wrap) {
+        const category = wrap.getAttribute('data-category');
+        const shouldShow = filter === 'all' || category === filter;
 
-      if (categoryMatch && areaMatch) {
-        // Show
-        wrap.classList.remove('u-hidden');
-        // Force visible - override GSAP animation states
-        wrap.style.opacity = '1';
-        wrap.style.transform = 'none';
-        // Fix all animated children
-        wrap.querySelectorAll('*').forEach(function(el) {
-          el.style.opacity = '';
-          el.style.transform = '';
-        });
-        // Use GSAP to set final state if available
-        if (typeof gsap !== 'undefined') {
-          gsap.set(wrap, { opacity: 1, y: 0, x: 0, clearProps: 'transform' });
-          gsap.set(wrap.querySelectorAll('.day_header, .day_row-item, .text-h1'), {
-            opacity: 1, y: 0, x: 0, clearProps: 'transform'
+        if (shouldShow) {
+          // Show
+          wrap.classList.remove('u-hidden');
+          // Force visible - override GSAP animation states
+          wrap.style.opacity = '1';
+          wrap.style.transform = 'none';
+          // Clear inline styles from children
+          wrap.querySelectorAll('*').forEach(function(el) {
+            el.style.opacity = '';
+            el.style.transform = '';
           });
+          // Use GSAP to set final state if available
+          if (typeof gsap !== 'undefined') {
+            gsap.set(wrap, { opacity: 1, y: 0, x: 0, clearProps: 'transform' });
+            gsap.set(wrap.querySelectorAll('.day_header, .day_row-item, .text-h1'), {
+              opacity: 1, y: 0, x: 0, clearProps: 'transform'
+            });
+          }
+        } else {
+          // Hide
+          wrap.classList.add('u-hidden');
         }
-      } else {
-        // Hide
-        wrap.classList.add('u-hidden');
-      }
-    });
-  }
-
-  // Category filter click handler
-  categoryTabs.forEach(function(tab) {
-    tab.addEventListener('click', function() {
-      currentCategory = this.getAttribute('data-filter');
-
-      // Update active tab in this group only
-      categoryTabs.forEach(function(t) {
-        t.classList.remove('filter_tab--active');
       });
-      this.classList.add('filter_tab--active');
-
-      applyFilters();
-    });
-  });
-
-  // Area filter click handler
-  areaTabs.forEach(function(tab) {
-    tab.addEventListener('click', function() {
-      currentArea = this.getAttribute('data-filter');
-
-      // Update active tab in this group only
-      areaTabs.forEach(function(t) {
-        t.classList.remove('filter_tab--active');
-      });
-      this.classList.add('filter_tab--active');
-
-      applyFilters();
     });
   });
 
