@@ -468,6 +468,13 @@ document.addEventListener('DOMContentLoaded', function() {
           const badgeImg = scheduleHoverBadge.querySelector('img');
           if (badgeImg && imageUrl) {
             badgeImg.src = imageUrl;
+            // Check for custom image position (e.g., top alignment for portraits)
+            const imagePosition = row.getAttribute('data-image-position');
+            if (imagePosition === 'top') {
+              badgeImg.style.objectPosition = 'center top';
+            } else {
+              badgeImg.style.objectPosition = 'center';
+            }
           }
 
           // Show badge and start animation

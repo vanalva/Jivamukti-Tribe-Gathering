@@ -2281,6 +2281,19 @@ section.u-section {
 }
 
 /* ============================================
+   IMAGE OBJECT POSITION - Top alignment for portraits
+   ============================================ */
+
+.image-wrap__img--top {
+  object-position: center top !important;
+}
+
+/* Schedule hover badge - top alignment variant */
+.schedule_hover-badge--top .schedule_hover-badge-img {
+  object-position: center top;
+}
+
+/* ============================================
    ROME TIPS MOBILE THUMBNAIL - Visible on mobile only
    ============================================ */
 
