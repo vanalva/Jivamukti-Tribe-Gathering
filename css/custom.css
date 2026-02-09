@@ -2003,6 +2003,11 @@ body:has(.teacher-modal.is-visible) .nav_hamburger--fixed {
   .teacher-grid_grid {
     grid-template-columns: repeat(3, 1fr);
   }
+
+  .teacher-card_name {
+    word-spacing: normal;
+    font-size: clamp(0.7rem, 2vw, 1rem);
+  }
 }
 
 /* Responsive: 2 columns on smaller tablets */
@@ -2015,6 +2020,11 @@ body:has(.teacher-modal.is-visible) .nav_hamburger--fixed {
   .teacher-grid_content {
     padding-top: var(--_spacing---space--8);
     padding-bottom: var(--_spacing---space--8);
+  }
+
+  .teacher-card_name {
+    word-spacing: normal;
+    font-size: clamp(0.75rem, 2.5vw, 1rem);
   }
 }
 
