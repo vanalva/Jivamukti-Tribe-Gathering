@@ -1989,7 +1989,6 @@ body:has(.teacher-modal.is-visible) .nav_hamburger--fixed {
   text-transform: uppercase;
   line-height: 1.4;
   text-align: center;
-  word-spacing: 100vw; /* Forces each word to its own line */
   font-size: clamp(0.65rem, 1.8vw, 1rem);
 }
 
@@ -2005,7 +2004,6 @@ body:has(.teacher-modal.is-visible) .nav_hamburger--fixed {
   }
 
   .teacher-card_name {
-    word-spacing: normal;
     font-size: clamp(0.7rem, 2vw, 1rem);
   }
 }
@@ -2023,7 +2021,6 @@ body:has(.teacher-modal.is-visible) .nav_hamburger--fixed {
   }
 
   .teacher-card_name {
-    word-spacing: normal;
     font-size: clamp(0.75rem, 2.5vw, 1rem);
   }
 }
@@ -2041,7 +2038,6 @@ body:has(.teacher-modal.is-visible) .nav_hamburger--fixed {
   .teacher-card_name {
     font-size: 1rem;
     line-height: 1.3;
-    word-spacing: normal;
   }
 }
 
