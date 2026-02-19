@@ -1261,6 +1261,14 @@ img {
   object-position: center top;
 }
 
+.image-wrap--landscape + .u-flex-vertical-nowrap {
+  padding: var(--_spacing---space--4);
+}
+
+.image-wrap--landscape + .u-flex-vertical-nowrap .text-h4 {
+  line-height: 1.15;
+}
+
 @media (max-width: 991px) {
   .plan_content {
     grid-template-columns: 1fr !important;
