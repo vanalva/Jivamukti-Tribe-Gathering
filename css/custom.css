@@ -1253,6 +1253,15 @@ img {
   max-width: none;
 }
 
+.image-wrap--landscape {
+  aspect-ratio: 16 / 9;
+  max-height: 280px;
+}
+
+.image-wrap--landscape .image-wrap__img {
+  object-position: center top;
+}
+
 @media (max-width: 991px) {
   .plan_content {
     grid-template-columns: 1fr !important;
