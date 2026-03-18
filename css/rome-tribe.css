@@ -1421,11 +1421,22 @@ strong {
 
 .day_row-content-description {
   max-width: var(--max-width--narrow);
+  display: flex;
+  flex-direction: column;
+  gap: var(--_spacing---space--4);
 }
 
 .day_row-content-description p {
   max-width: var(--max-width--narrow);
   margin: 0;
+}
+
+.day_row-content-description ul {
+  margin-top: var(--_spacing---space--2);
+}
+
+.day_row-content-description .single-booking-note {
+  margin-top: calc(var(--_spacing---space--2) * -1);
 }
 
 .day_row-content-details {
