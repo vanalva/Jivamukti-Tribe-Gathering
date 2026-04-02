@@ -2391,5 +2391,11 @@ section.u-section {
     grid-template-columns: auto 1fr auto;
     gap: 0.5rem;
     align-items: center;
+    justify-items: center;
+  }
+
+  /* Prevent expanded content from clipping buttons on mobile */
+  .day_row-item.is-active .day_row-content {
+    max-height: 2000px;
   }
 }
