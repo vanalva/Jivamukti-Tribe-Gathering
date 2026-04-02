@@ -2388,10 +2388,17 @@ section.u-section {
   }
 
   .day_row {
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: 1fr 2fr 1fr;
     gap: 0.5rem;
     align-items: center;
-    justify-items: center;
+  }
+
+  .day_row > *:first-child {
+    text-align: right;
+  }
+
+  .day_row > *:last-child {
+    text-align: left;
   }
 
   /* Prevent expanded content from clipping buttons on mobile */
