@@ -1880,9 +1880,16 @@ strong {
   }
 
   .day_row-buy-button {
-    left: 0;
-    right: 0;
+    position: static;
     width: 100%;
+  }
+
+  .day_row-buy-button + .day_row-buy-button {
+    bottom: auto;
+  }
+
+  .day_row-content-grid {
+    padding-bottom: var(--_spacing---space--4);
   }
 }
 
