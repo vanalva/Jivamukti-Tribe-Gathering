@@ -19,7 +19,7 @@
 .single-class-row__info .text-h5 { margin-bottom: 0.25rem; }
 .single-class-row .button { flex-shrink: 0; white-space: nowrap; }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .single-class-row {
     flex-direction: column;
     align-items: flex-start;
