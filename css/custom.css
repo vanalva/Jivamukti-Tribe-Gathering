@@ -6,11 +6,12 @@
    BOOKING PAGE - COMPACT PRICING SECTIONS
    ============================================ */
 .plan_wrap--compact {
-  padding-top: var(--_spacing---space--8);
-  padding-bottom: var(--_spacing---space--8);
+  min-height: 0 !important;
+  padding-top: var(--_spacing---space--6);
+  padding-bottom: var(--_spacing---space--6);
 }
 .plan_wrap--compact + .plan_wrap--compact {
-  padding-top: var(--_spacing---space--4);
+  padding-top: 0 !important;
 }
 
 /* ============================================
