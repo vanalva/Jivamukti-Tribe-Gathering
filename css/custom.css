@@ -3,6 +3,23 @@
    ============================================ */
 
 /* ============================================
+   SINGLE CLASS LIST ROWS
+   ============================================ */
+.single-class-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+.single-class-row--white { background: #fff; }
+.single-class-row--rose  { background: rgba(120, 16, 41, 0.06); }
+.single-class-row__info  { flex: 1; min-width: 0; }
+.single-class-row__info .text-h5 { margin-bottom: 0.25rem; }
+.single-class-row .button { flex-shrink: 0; white-space: nowrap; }
+
+/* ============================================
    GLOBAL OVERFLOW PREVENTION
    ============================================ */
 html {

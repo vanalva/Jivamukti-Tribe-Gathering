@@ -707,5 +707,80 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
+  // ============================================
+  // BOOKING PAGE - SINGLE CLASS ROW HOVER IMAGE
+  // ============================================
+  const bookingHoverBadge = document.getElementById('bookingHoverBadge');
+  const bookingHoverBadgeImg = document.getElementById('bookingHoverBadgeImg');
+  const singleClassRows = document.querySelectorAll('.single-class-row[data-image]');
+
+  if (bookingHoverBadge && singleClassRows.length > 0 && !isTouchDevice) {
+    document.body.appendChild(bookingHoverBadge);
+    bookingHoverBadge.style.position = 'fixed';
+    bookingHoverBadge.style.zIndex = '2147483647';
+
+    const badgeSize = 200;
+    const offset = 20;
+    let mouseX = 0, mouseY = 0, currentX = 0, currentY = 0;
+    let isHovering = false, animFrame = null;
+
+    function getBadgePos(x, y) {
+      const vw = window.innerWidth, vh = window.innerHeight;
+      let px = x + offset, py = y + offset;
+      if (px + badgeSize > vw) px = x - badgeSize - offset;
+      if (py + badgeSize > vh) py = y - badgeSize - offset;
+      if (px < 0) px = 0;
+      if (py < 0) py = 0;
+      return { x: px, y: py };
+    }
+
+    function animateBadge() {
+      if (!isHovering) return;
+      currentX += (mouseX - currentX) * 0.15;
+      currentY += (mouseY - currentY) * 0.15;
+      const pos = getBadgePos(currentX, currentY);
+      bookingHoverBadge.style.left = pos.x + 'px';
+      bookingHoverBadge.style.top = pos.y + 'px';
+      animFrame = requestAnimationFrame(animateBadge);
+    }
+
+    singleClassRows.forEach(function(row) {
+      row.addEventListener('mouseenter', function(e) {
+        const img = row.getAttribute('data-image');
+        if (!img) return;
+        if (animFrame) { cancelAnimationFrame(animFrame); animFrame = null; }
+        bookingHoverBadgeImg.src = img;
+        mouseX = e.clientX; mouseY = e.clientY;
+        currentX = mouseX; currentY = mouseY;
+        const pos = getBadgePos(currentX, currentY);
+        bookingHoverBadge.style.left = pos.x + 'px';
+        bookingHoverBadge.style.top = pos.y + 'px';
+        bookingHoverBadge.classList.add('is-visible');
+        isHovering = true;
+        animateBadge();
+      });
+
+      row.addEventListener('mousemove', function(e) {
+        mouseX = e.clientX; mouseY = e.clientY;
+      });
+
+      row.addEventListener('mouseleave', function() {
+        isHovering = false;
+        if (animFrame) { cancelAnimationFrame(animFrame); animFrame = null; }
+        bookingHoverBadge.classList.remove('is-visible');
+      });
+
+      const btn = row.querySelector('.button');
+      if (btn) {
+        btn.addEventListener('mouseenter', function() {
+          bookingHoverBadge.classList.remove('is-visible');
+        });
+        btn.addEventListener('mouseleave', function() {
+          bookingHoverBadge.classList.add('is-visible');
+        });
+      }
+    });
+  }
+
   console.log('Jivamukti Tribe Gathering - All interactions initialized');
 });
