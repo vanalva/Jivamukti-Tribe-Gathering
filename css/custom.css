@@ -3,6 +3,17 @@
    ============================================ */
 
 /* ============================================
+   BOOKING PAGE - COMPACT PRICING SECTIONS
+   ============================================ */
+.plan_wrap--compact {
+  padding-top: var(--_spacing---space--8);
+  padding-bottom: var(--_spacing---space--8);
+}
+.plan_wrap--compact + .plan_wrap--compact {
+  padding-top: var(--_spacing---space--4);
+}
+
+/* ============================================
    SINGLE CLASS LIST ROWS
    ============================================ */
 .single-class-row {
