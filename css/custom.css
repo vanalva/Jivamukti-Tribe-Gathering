@@ -44,6 +44,22 @@
 }
 
 /* ============================================
+   SCHEDULE PAGE - 4-DAY PASS NOTICE
+   ============================================ */
+.schedule_notice {
+  border-left: 3px solid #F5A8BD;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 2.5rem;
+  background: rgba(245, 168, 189, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.schedule_notice p {
+  margin: 0;
+}
+
+/* ============================================
    GLOBAL OVERFLOW PREVENTION
    ============================================ */
 html {
