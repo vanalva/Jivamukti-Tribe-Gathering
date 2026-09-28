@@ -24,6 +24,20 @@ document.addEventListener('DOMContentLoaded', function() {
     var menuHero = document.querySelector('.menu-fullscreen_hero-image');
     if (menuImage && menuHero) menuHero.setAttribute('src', menuImage);
   }
+  // Inner-page heroes (hero-collage): the lockup is centred in the band above the page title.
+  // The title's height depends on its line count, so it is measured here and handed to the
+  // CSS as --hero-title-h (project.css: .hero-collage_logo-wrap padding-bottom).
+  var collage = document.querySelector('.hero-collage_content--with-navbar');
+  if (collage) {
+    var setTitleH = function () {
+      var title = collage.querySelector('.hero-collage_title-bottom');
+      if (!title) return;
+      var range = document.createRange(); range.selectNodeContents(title);
+      collage.style.setProperty('--hero-title-h', Math.round(range.getBoundingClientRect().height) + 'px');
+    };
+    setTitleH(); window.addEventListener('resize', setTitleH);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(setTitleH);
+  }
 
   // ============================================
   // MENU TOGGLE FUNCTIONALITY

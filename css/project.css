@@ -6757,6 +6757,49 @@ body:has(.hero-home_wrap) .nav_content > .nav_menu:last-child .nav_arrow-icon {
   }
 }
 
+/* ---- Inner-page heroes (hero-collage): the lockup centred against the photo ----------------
+   Rome parked its small logotype in the top half of the text column (grid row = photo height,
+   logo-wrap height 50%, title in the bottom 50%). The lockup is the primary logo now: it takes
+   the whole row and is centred in the band between the row top and the title's text, which is
+   the photo centre lifted by half the title height (a pure photo centre reads low once the big
+   title sits under it, and would collide with two-line titles on 16:9 screens). The title height
+   comes from js/main.js as --hero-title-h; the clamp is the one-line fallback. The image scales
+   to whichever is smaller, 88% of the column or the band minus two steps of breathing room. */
+[data-flwr].site_wrap .hero-collage_logo-wrap {
+  height: 100%;
+  align-self: stretch;
+  padding-bottom: var(--hero-title-h, clamp(2.5rem, 9vw, 11rem));
+}
+[data-flwr].site_wrap .hero-collage_logo-wrap .image-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 88%;
+  max-width: 88%;
+  height: 100%;
+}
+[data-flwr].site_wrap .hero-collage_logo-wrap .image-wrap__img--contain {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: calc(100% - var(--_spacing---step--4) * 2);
+}
+@media (max-width: 991px) {
+  [data-flwr].site_wrap .hero-collage_logo-wrap {
+    height: auto;
+    padding-bottom: var(--_spacing---step--6);
+  }
+  [data-flwr].site_wrap .hero-collage_logo-wrap .image-wrap {
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+  }
+  [data-flwr].site_wrap .hero-collage_logo-wrap .image-wrap__img--contain {
+    width: 100%;
+    max-height: none;
+  }
+}
+
 /* ---- Priority layer: declarations Rome marked !important. Emitted last in this
    bucket under a (0,3,0) wrapper prefix so they keep winning without the flag. ---- */
 html::-webkit-scrollbar-track {
