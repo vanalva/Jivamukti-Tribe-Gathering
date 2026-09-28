@@ -6502,6 +6502,178 @@ body:has(.hero-home_wrap) .nav_content > .nav_menu:last-child .nav_arrow-icon {
   display: block;
 }
 
+/* ---- Social pack page (edition layer, review only) ---------------------------------
+   /social-pack: one horizontal strip per set, boards as thumbnails linking to the JPEG. */
+[data-flwr] .social_wrap {
+  padding-top: var(--_spacing---step--7);
+  padding-bottom: var(--_spacing---step--8);
+}
+[data-flwr] .social_content {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--_spacing---step--8);
+}
+[data-flwr] .social_set-head {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  column-gap: var(--_spacing---step--6);
+  padding-bottom: var(--_spacing---step--4);
+  margin-bottom: var(--_spacing---step--4);
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: var(--_palette---neutral--900);
+}
+[data-flwr] .social_set-titles {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--_spacing---step--2);
+  max-width: 44rem;
+}
+[data-flwr] .social_eyebrow {
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--_palette---core--500);
+}
+[data-flwr] .social_set-zip {
+  flex-shrink: 0;
+}
+[data-flwr] .social_strip {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  column-gap: var(--_spacing---step--4);
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  padding-bottom: var(--_spacing---step--4);
+  scrollbar-width: thin;
+}
+[data-flwr] .social_board {
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 20rem;
+  width: 20rem;
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  scroll-snap-align: start;
+}
+[data-flwr] .social_board.is-story {
+  flex-basis: 16rem;
+  width: 16rem;
+}
+[data-flwr] .social_board.is-banner {
+  flex-basis: 32rem;
+  width: 32rem;
+}
+[data-flwr] .social_board-link {
+  display: block;
+}
+[data-flwr] .social_board-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+  border-top-style: solid;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-left-style: solid;
+  border-top-color: var(--_palette---neutral--900);
+  border-right-color: var(--_palette---neutral--900);
+  border-bottom-color: var(--_palette---neutral--900);
+  border-left-color: var(--_palette---neutral--900);
+}
+[data-flwr] .social_board-meta {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: var(--_spacing---step--2);
+  padding-top: var(--_spacing---step--2);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+[data-flwr] .social_board-size {
+  font-weight: 500;
+  opacity: 0.6;
+}
+[data-flwr] .social_board-download {
+  color: var(--_palette---core--500);
+  text-decoration-line: underline;
+}
+[data-flwr] .social_caption {
+  padding-top: var(--_spacing---step--2);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+[data-flwr] .social_caption-summary {
+  cursor: pointer;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  opacity: 0.7;
+}
+[data-flwr] .social_caption-text {
+  margin-top: var(--_spacing---step--2);
+  margin-bottom: 0;
+}
+[data-flwr] .social_caption-tags {
+  margin-top: var(--_spacing---step--1);
+  margin-bottom: 0;
+  opacity: 0.6;
+}
+[data-flwr] .social_tbc {
+  display: inline-block;
+  padding-top: 0.1em;
+  padding-right: 0.5em;
+  padding-bottom: 0.1em;
+  padding-left: 0.5em;
+  border-top-width: 2px;
+  border-right-width: 2px;
+  border-bottom-width: 2px;
+  border-left-width: 2px;
+  border-top-style: dashed;
+  border-right-style: dashed;
+  border-bottom-style: dashed;
+  border-left-style: dashed;
+  border-top-color: currentColor;
+  border-right-color: currentColor;
+  border-bottom-color: currentColor;
+  border-left-color: currentColor;
+  font-size: 0.7em;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  vertical-align: middle;
+}
+@media (max-width: 767px) {
+  [data-flwr] .social_set-head {
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: var(--_spacing---step--4);
+  }
+  [data-flwr] .social_board {
+    flex-basis: 16rem;
+    width: 16rem;
+  }
+  [data-flwr] .social_board.is-story {
+    flex-basis: 13rem;
+    width: 13rem;
+  }
+  [data-flwr] .social_board.is-banner {
+    flex-basis: 22rem;
+    width: 22rem;
+  }
+}
+
 /* ---- Priority layer: declarations Rome marked !important. Emitted last in this
    bucket under a (0,3,0) wrapper prefix so they keep winning without the flag. ---- */
 html::-webkit-scrollbar-track {
