@@ -31,11 +31,12 @@
 }
 
 /* ---- top bar (no navigation yet) ------------------------------------------ */
+/* Spans the white column only (the hero photo takes the right 45%), so the eyebrow never sits on the photo */
 [data-flwr] .an_top {
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
+  right: 45%;
   z-index: 20;
   display: flex;
   justify-content: space-between;
@@ -410,6 +411,9 @@
 
 /* ---- breakpoints ------------------------------------------------------------- */
 @media (max-width: 991px) {
+  [data-flwr] .an_top {
+    right: 0;
+  }
   [data-flwr] .an_name {
     grid-template-columns: 3rem 1fr auto;
   }
@@ -434,6 +438,14 @@
   [data-flwr] .an_dates {
     padding-top: var(--_spacing---step--7);
     padding-bottom: var(--_spacing---step--7);
+  }
+  /* smaller day numerals and a smaller stamp on phones, so the fixed stamp clears the headline */
+  [data-flwr] .an_dates-word--days {
+    font-size: var(--_typography---size--display-lg);
+  }
+  [data-flwr].site_wrap .an_stamp {
+    width: 76px;
+    height: 76px;
   }
   [data-flwr] .an_split {
     grid-template-columns: 1fr;
