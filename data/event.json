@@ -119,6 +119,70 @@
     "day3": "assets/images/lux-lotus/lux-lotus-home-day-3.webp",
     "day4": "assets/images/lux-lotus/lux-lotus-home-day-4.webp",
     "menu": "assets/images/lux-lotus/lux-lotus-menu-portrait.webp",
-    "menuAlt": "Walking to the track with a mat (generated placeholder)"
+    "menuAlt": "Walking to the track with a mat (generated placeholder)",
+    "teachersHero": "assets/images/lux-lotus/lux-lotus-teachers-hero.webp",
+    "teachersHeroAlt": "A teacher adjusting a student on the track (generated placeholder)",
+    "community": "assets/images/lux-lotus/lux-lotus-community.webp",
+    "communityAlt": "The crowd on the track after class (generated placeholder)",
+    "storyHands": "assets/images/lux-lotus/lux-lotus-story-hands.webp",
+    "storyHandsAlt": "Hands in a mudra with mala beads (generated placeholder)",
+    "storySound": "assets/images/lux-lotus/lux-lotus-story-sound.webp",
+    "storySoundAlt": "Harmonium and singing bowl on the track (generated placeholder)",
+    "storyStillness": "assets/images/lux-lotus/lux-lotus-story-stillness.webp",
+    "storyStillnessAlt": "One person alone on the track in morning light (generated placeholder)",
+    "storyMats": "assets/images/lux-lotus/lux-lotus-story-mats.webp",
+    "storyMatsAlt": "Rolled mats against the grandstand (generated placeholder)",
+    "interimHero": "assets/images/lux-lotus/lux-lotus-interim-hero.webp",
+    "interimHeroAlt": "The arena track and timber ceiling in late light (generated placeholder)"
+  },
+  "pages": {
+    "_readme": "Per-page metadata and copy. Values in [TBC: ...] are placeholders per the brief.",
+    "teachers": {
+      "title": "Line-up | Jivamukti Yoga Tribe Gathering 2027, Luxembourg Lotus",
+      "description": "The teachers of the Jivamukti Yoga Tribe Gathering 2027 in Luxembourg.",
+      "heading": "For Tribe 2027 we invite the community to practice with",
+      "gridTitle": "The line-up",
+      "localTitle": "Local teachers"
+    },
+    "about": {
+      "title": "About the Tribe | Jivamukti Yoga Tribe Gathering 2027",
+      "description": "What the Jivamukti Yoga Tribe Gathering is, and the theme of the Luxembourg Lotus edition: Nada Through Nadis.",
+      "quote": "\"Hurry home to your real home, which is OM\"",
+      "quoteBy": "- Shri Brahmananda Sarasvati",
+      "intro": "[TBC: COPY - what the Tribe Gathering is, and what Luxembourg 2027 adds]",
+      "themeLine": "[TBC: COPY - the roots of the lotus go deep into the Self; through the channels (nadis) we experience the eternal sound (nadam)]"
+    },
+    "schedule": {
+      "title": "Schedule | Jivamukti Yoga Tribe Gathering 2027",
+      "description": "The programme of the Jivamukti Yoga Tribe Gathering 2027 will be announced.",
+      "heroTitle": "SCHEDULE",
+      "heading": "PROGRAMME TO BE ANNOUNCED",
+      "text": "The day-by-day programme for Luxembourg Lotus 2027 is being put together with the teachers of the line-up.",
+      "note": "[TBC: DATES] · [TBC: SCHEDULE]",
+      "ctaHref": "teachers.html",
+      "ctaLabel": "SEE THE LINE-UP"
+    },
+    "booking": {
+      "title": "Register | Jivamukti Yoga Tribe Gathering 2027",
+      "description": "Registration for the Jivamukti Yoga Tribe Gathering 2027 opens soon.",
+      "heroTitle": "REGISTER",
+      "heading": "REGISTRATION OPENS SOON",
+      "text": "Passes, single classes and prices for Luxembourg Lotus 2027 will be published here.",
+      "note": "[TBC: PRICES] · [TBC: REGISTRATION LINK]",
+      "ctaHref": "teachers.html",
+      "ctaLabel": "SEE THE LINE-UP",
+      "ctaTitle": "REGISTRATION OPENS SOON",
+      "ctaText": "Passes and prices for Luxembourg Lotus 2027 will be published on the register page."
+    },
+    "city": {
+      "title": "Luxembourg | Jivamukti Yoga Tribe Gathering 2027",
+      "description": "Venue and city guide for the Jivamukti Yoga Tribe Gathering 2027 in Luxembourg.",
+      "heroTitle": "ABOUT LUXEMBOURG",
+      "heading": "PLAN YOUR TRIBE EXPERIENCE",
+      "text": "The venue, places to stay and our favourite spots in Luxembourg will be gathered here.",
+      "note": "[TBC: VENUE] · [TBC: CITY GUIDE]",
+      "ctaHref": "about-tribe.html",
+      "ctaLabel": "ABOUT THE TRIBE"
+    }
   }
 }

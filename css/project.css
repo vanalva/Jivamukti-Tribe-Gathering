@@ -6490,6 +6490,17 @@ body:has(.hero-home_wrap) .nav_content > .nav_menu:last-child .nav_arrow-icon {
     height: 100px;
   }
 }
+/* Stamp in the plan sections (replaces Rome's app mockup) */
+[data-flwr] .app-mockup_image.is-stamp {
+  width: 100%;
+  max-width: 22rem;
+  height: auto;
+}
+/* Rome: style="display: block" on the outer .plan_content of the about page (its inner
+   .plan_content is the real grid). A flwr utility at (0,2,0) loses to the bumped grid rule. */
+[data-flwr].site_wrap .plan_content--block {
+  display: block;
+}
 
 /* ---- Priority layer: declarations Rome marked !important. Emitted last in this
    bucket under a (0,3,0) wrapper prefix so they keep winning without the flag. ---- */
