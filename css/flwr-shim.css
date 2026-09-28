@@ -1,0 +1,252 @@
+/* ============================================================================
+   flwr-shim.css — bundled CSS embed for converter-incompatible patterns
+
+   The Flowriter converter routes simple longhand CSS to Webflow's native
+   styleLess (zero embeds). Anything with :has(), :is(), :not(:not(...)),
+   [attr~="..."], @container, @keyframes, or relational selectors must go
+   to a CSS embed. This file consolidates ALL such patterns for flwr into
+   ONE embed so a converted site only ever ships ONE shim instead of 8+.
+
+   Total ~280 lines / well under the 50K char-per-embed cap.
+
+   Loaded as a normal stylesheet outside the converter; routed verbatim
+   as a single embed when shipping through Flowriter.
+   ============================================================================ */
+
+
+/* ============================================================================
+   STATE MANAGER — numeric tokens for declarative state-driven CSS
+   [data-flwr-state] sets baseline 0/1 vars; specific descendants flip them.
+   Components multiply var(--_state---true/false) into any property.
+   v1.1: selectors renamed data-state → data-flwr-state (the manifest's real
+   stateAttribute) — previously dead code that never matched authored markup.
+   ============================================================================ */
+[data-flwr] :where([data-flwr-state]) { /* v1.1: :where() zeroes baseline specificity so state-flip rules always win regardless of embed emission order (Codex review) */
+  --_state---true: 0;
+  --_state---false: 1;
+}
+[data-flwr] [data-flwr-state~="checked"]:is(:checked, :has(:checked)),
+[data-flwr] [data-flwr-state~="current"]:is(.w--current, :has(.w--current)),
+[data-flwr] [data-flwr-state~="open"]:is(.w--open, :has(.w--open)),
+[data-flwr] [data-flwr-state~="expanded"]:is([aria-expanded="true"], :has([aria-expanded="true"])),
+[data-flwr] [data-flwr-state~="external"]:is([target="_blank"], :has([target="_blank"])),
+[data-flwr] .is-active {
+  --_state---true: 1;
+  --_state---false: 0;
+}
+
+
+/* ============================================================================
+   TRIGGER SYSTEM — full hover/focus/group/mobile/preview matrix
+   Components multiply var(--_trigger---on/off) into any animated property.
+   flwr's existing token defaults are ignored when a [data-flwr-trigger] modifier
+   matches one of the conditions below — at which point the on/off vars flip.
+   v1.1: selectors renamed data-trigger → data-flwr-trigger (the manifest's real
+   triggerAttribute) — previously dead code; renaming activates the matrix.
+   ============================================================================ */
+[data-flwr] [data-flwr-trigger] {
+  --_trigger---on: 0;
+  --_trigger---off: 1;
+}
+[data-flwr] .wf-design-mode [data-flwr-trigger~="preview"],
+[data-flwr] [data-flwr-trigger~="focus"]:is(:focus-visible, :has(:focus-visible)),
+[data-flwr] [data-flwr-trigger~="group"]:has([data-flwr-trigger~="focus-other"]:focus-visible, [data-flwr-trigger~="focus-other"] :focus-visible)
+  [data-flwr-trigger~="focus-other"]:not(:focus-visible, :has(:focus-visible)) {
+  --_trigger---on: 1;
+  --_trigger---off: 0;
+}
+@media (hover: hover) {
+  [data-flwr] [data-flwr-trigger~="hover"]:is(a:hover, button:hover, :has(a:hover, button:hover)),
+  [data-flwr] [data-flwr-trigger~="hover"]:hover,
+  [data-flwr] [data-flwr-trigger~="group"]:has([data-flwr-trigger~="hover-other"]:hover) [data-flwr-trigger~="hover-other"]:not(:hover) {
+    --_trigger---on: 1;
+    --_trigger---off: 0;
+  }
+  [data-flwr] [data-flwr-trigger~="hover-other"]:hover {
+    --_trigger---on: 1 !important;
+    --_trigger---off: 0 !important;
+  }
+}
+@media (hover: none) {
+  [data-flwr] [data-flwr-trigger~="mobile"] {
+    --_trigger---on: 1;
+    --_trigger---off: 0;
+  }
+}
+
+
+/* ============================================================================
+   MARGIN TRIM — first/last child margin removal with exclusion classes
+   Skip .w-condition-invisible (Webflow CMS), .u-cover-absolute (positioned
+   covers), .u-ignore-trim (opt-out). Pattern adapted from Alttura.
+   ============================================================================ */
+[data-flwr] :is(.f-margin-trim, .f-rich-text)
+  > :not(:not(.w-condition-invisible, .u-cover-absolute, .u-ignore-trim)
+         ~ :not(.w-condition-invisible, .u-cover-absolute, .u-ignore-trim)),
+[data-flwr] :is(.f-margin-trim, .f-rich-text)
+  > :not(:not(.w-condition-invisible, .u-cover-absolute, .u-ignore-trim)
+         ~ :not(.w-condition-invisible, .u-cover-absolute, .u-ignore-trim)).f-display-contents > :first-child {
+  margin-top: 0;
+}
+[data-flwr] :is(.f-margin-trim, .f-rich-text)
+  > :not(:has(~ :not(.w-condition-invisible, .u-cover-absolute, .u-ignore-trim))),
+[data-flwr] :is(.f-margin-trim, .f-rich-text)
+  > :not(:has(~ :not(.w-condition-invisible, .u-cover-absolute, .u-ignore-trim))).f-display-contents > :last-child {
+  margin-bottom: 0;
+}
+
+
+/* ============================================================================
+   LEADING TRIM — universal half-leading-trim for all f-text-style-* classes
+   Browser-universal fallback for `text-edge: cap`. Reads
+   --_text-style---trim-top / --_text-style---trim-bottom (defaults to 0).
+   Canonical implementation lives in runtime.css (.f-leading-trim); this is the
+   self-contained copy for pages that ship the shim as a single standalone embed.
+   ============================================================================ */
+/* Paragraphs and f-text-style-* wrappers: pseudo-element trim everywhere
+   (runtime.css has no native text-box-trim rule for these). */
+[data-flwr] p:not(.f-text-trim-off, :has([class*="f-text-style-"]))::before,
+[data-flwr] [class*="f-text-style-"]:not(.f-text-trim-off, :has(h1, h2, h3, h4, h5, h6, p))::before {
+  content: "";
+  display: table;
+  margin-bottom: calc(-0.5lh + var(--_text-style---trim-top, 0px));
+}
+[data-flwr] p:not(.f-text-trim-off, :has([class*="f-text-style-"]))::after,
+[data-flwr] [class*="f-text-style-"]:not(.f-text-trim-off, :has(h1, h2, h3, h4, h5, h6, p))::after {
+  content: "";
+  display: table;
+  /* v1.1: bottom trim must pull from margin-top on the ::after (display:table)
+     — was margin-bottom, which trimmed nothing. Matches runtime.css canonical. */
+  margin-top: calc(-0.5lh + var(--_text-style---trim-bottom, 0px));
+}
+/* Headings: v1.2 — guarded so the pseudo-element trim only applies where runtime.css's
+   native text-box-trim rule does NOT. The two blocks are keyed to the SAME @supports
+   condition on purpose and must change together.
+   KNOWN BUG (runtime.css, pending): the condition tests `text-box-trim: both`, but the
+   valid keyword is `trim-both` (none | trim-start | trim-end | trim-both). Every browser
+   therefore reports "not supported", the native block in runtime.css never applies, and
+   this fallback is what renders everywhere. Fix both files to `trim-both` in one pass;
+   fixing only one of them would drop heading trim entirely in Chrome 133+ / Safari 18.2+. */
+@supports not (text-box-trim: both) {
+  [data-flwr] :is(h1, h2, h3, h4, h5, h6):not(.f-text-trim-off, :has([class*="f-text-style-"]))::before,
+  [data-flwr] [class*="f-text-h"]:not(.f-text-trim-off)::before,
+  [data-flwr] [class*="f-text-display"]:not(.f-text-trim-off)::before {
+    content: "";
+    display: table;
+    margin-bottom: calc(-0.5lh + var(--_text-style---trim-top, 0px));
+  }
+  [data-flwr] :is(h1, h2, h3, h4, h5, h6):not(.f-text-trim-off, :has([class*="f-text-style-"]))::after,
+  [data-flwr] [class*="f-text-h"]:not(.f-text-trim-off)::after,
+  [data-flwr] [class*="f-text-display"]:not(.f-text-trim-off)::after {
+    content: "";
+    display: table;
+    margin-top: calc(-0.5lh + var(--_text-style---trim-bottom, 0px));
+  }
+}
+
+
+/* ============================================================================
+   NAMED CONTAINER-QUERY THRESHOLDS — sm/md/lg @ 30/48/62em
+   Paired above/below utilities for declarative responsive without
+   media queries. Container is whichever ancestor has container-type set.
+   v1.2: container names corrected to threshold-sm/md/lg — the names every
+   f-container-* actually declares (utilities.css) and runtime.css queries.
+   The previous threshold-small/medium/large names were declared nowhere, so
+   all six blocks below were dead code since v1.0.
+   v1.1: -below now applies BELOW the threshold, -above ABOVE it (grid-below /
+   grid-above were inverted — grid-below fired above and vice-versa). Semantics
+   now match runtime.css's canonical threshold-md rules. Added flex-direction:
+   column so the collapsed grid actually stacks (was display:flex → row = no
+   stack). Container-query variants of runtime.css's -below/-above utilities. */
+@container threshold-lg (width >= 62em) {
+  [data-flwr] .f-order-unset-above { order: unset !important; }
+  [data-flwr] .f-all-unset-above   { all: unset !important; }
+  [data-flwr] .f-grid-above        { display: flex !important; flex-direction: column !important; }
+}
+@container threshold-md (width >= 48em) {
+  [data-flwr] .f-order-unset-above { order: unset !important; }
+  [data-flwr] .f-all-unset-above   { all: unset !important; }
+  [data-flwr] .f-grid-above        { display: flex !important; flex-direction: column !important; }
+}
+@container threshold-sm (width >= 30em) {
+  [data-flwr] .f-order-unset-above { order: unset !important; }
+  [data-flwr] .f-all-unset-above   { all: unset !important; }
+  [data-flwr] .f-grid-above        { display: flex !important; flex-direction: column !important; }
+}
+@container threshold-lg (width < 62em) {
+  [data-flwr] .f-order-unset-below { order: unset !important; }
+  [data-flwr] .f-all-unset-below   { all: unset !important; }
+  [data-flwr] .f-grid-below        { display: flex !important; flex-direction: column !important; }
+}
+@container threshold-md (width < 48em) {
+  [data-flwr] .f-order-unset-below { order: unset !important; }
+  [data-flwr] .f-all-unset-below   { all: unset !important; }
+  [data-flwr] .f-grid-below        { display: flex !important; flex-direction: column !important; }
+}
+@container threshold-sm (width < 30em) {
+  [data-flwr] .f-order-unset-below { order: unset !important; }
+  [data-flwr] .f-all-unset-below   { all: unset !important; }
+  [data-flwr] .f-grid-below        { display: flex !important; flex-direction: column !important; }
+}
+
+
+/* ============================================================================
+   :has() REACTIVE BASELINE — body-scroll-lock, disabled wraps, status hooks
+   Most useful page-level reactive patterns in one place.
+   ============================================================================ */
+body:has([data-flwr-state~="menu-open"]),
+body:has([data-flwr-state~="dialog-open"]) { overflow: hidden; }
+
+
+/* ============================================================================
+   CMS-FRIENDLY TABS — handles both static + Webflow CMS list children
+   ============================================================================ */
+[data-flwr] .flwr_tabs_panel_list > :is(:not(.w-dyn-list), .w-dyn-list > * > * > *) {
+  display: none;
+}
+[data-flwr] .flwr_tabs_panel_list > :is(:first-child:not(.w-dyn-list), .w-dyn-list > * > :first-child > *) {
+  display: block;
+}
+[data-flwr] :is(.flwr_tabs_panel_list, .flwr_tabs_list)
+  > :is(.w-dyn-list, .w-dyn-list > *, .w-dyn-list > * > *) {
+  display: contents;
+}
+
+
+/* ============================================================================
+   CHILD-CONTAIN — forces direct children to inherit width / reset margins
+   Used to flatten content-wrapper layouts. > * needs an embed.
+   ============================================================================ */
+[data-flwr] .f-child-contain > * {
+  width: 100%;
+  max-width: inherit !important;
+  margin-inline: 0 !important;
+  margin-top: 0 !important;
+}
+
+
+/* ============================================================================
+   BLINK KEYFRAMES — for caret + typewriter effects
+   ============================================================================ */
+@keyframes flwr-rt-blink {
+  0%, 50%      { opacity: 1; }
+  50.01%, 100% { opacity: 0; }
+}
+[data-flwr] .flwr_caret {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  background-color: var(--_theme---accent--main);
+  animation: flwr-rt-blink 0.7s step-end infinite;
+  vertical-align: text-bottom;
+  margin-inline-start: 0.125em;
+}
+
+
+/* ============================================================================
+   HIGHLIGHT GROW — animated text-bg fill (also exists as f-text-highlight
+   utility in styleLess — duplicated here ONLY if the user wants the
+   .is-active state to live in the embed. Otherwise the styleLess version
+   alone is enough. Kept here as documentation, NOT applied.)
+   ============================================================================ */
+/* (intentionally empty — fully covered by utilities.css f-text-highlight) */

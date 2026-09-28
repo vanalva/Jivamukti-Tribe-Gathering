@@ -1,0 +1,106 @@
+/* ============================================================================
+   Lux Lotus (Luxembourg 2027) — edition palette. PROVISIONAL.
+   ----------------------------------------------------------------------------
+   Values observed in the V3 logo exports (references/brand/lux-lotus) and the
+   brief's colour story: deep blue for Luxembourg, orange, yellow/gold, green,
+   white; pink and green accents. No colour guide has been delivered and the V5
+   colour version awaits sign-off, so every seed here is a placeholder to be
+   replaced, not a decision.
+
+   How it is used: loaded AFTER variables.css. For now only src/styleguide.html
+   links it (so the design system can be reviewed in Lux colours) while the
+   migrated pages keep the Rome seeds in variables.css until every page has
+   passed the zero-drift gate. At the edition switch these seeds move into
+   variables.css and this file is retired to notes/archive/.
+
+   Why navy is not the core seed: #0e123a has OKLCH lightness 0.21, darker than
+   the 600–900 stops any flwr ramp derives, so seeding core with it gives a
+   scale whose 500 is darker than its 900. Navy therefore plays the ink
+   (neutral 900, text and dark surfaces) and the lotus blue seeds core.
+
+   Stops generated with: node plugin/frameworks/oklch-seed.js <hex> --name <cat>
+   ============================================================================ */
+
+:root,
+[data-flwr].f-mode-light,
+[data-flwr] .f-mode-light {
+
+  /* core — lotus blue (V3 #3b73b5): primary actions, links, brand surfaces */
+  --_palette---core--seed: oklch(0.549 0.119 254);
+  --_palette---core--50: oklch(from var(--_palette---core--seed) 0.97 calc(c * 0.18) h);
+  --_palette---core--100: oklch(from var(--_palette---core--seed) 0.93 calc(c * 0.35) h);
+  --_palette---core--200: oklch(from var(--_palette---core--seed) 0.85 calc(c * 0.55) h);
+  --_palette---core--300: oklch(from var(--_palette---core--seed) 0.78 calc(c * 0.75) h);
+  --_palette---core--400: oklch(from var(--_palette---core--seed) 0.72 calc(c * 0.92) h);
+  --_palette---core--500: var(--_palette---core--seed);
+  --_palette---core--600: oklch(from var(--_palette---core--seed) 0.55 c h);
+  --_palette---core--700: oklch(from var(--_palette---core--seed) 0.45 c h);
+  --_palette---core--800: oklch(from var(--_palette---core--seed) 0.35 calc(c * 0.85) h);
+  --_palette---core--900: oklch(from var(--_palette---core--seed) 0.25 calc(c * 0.7) h);
+
+  /* alternate — stem green (V3 #8eb575); the brief's green accent */
+  --_palette---alternate--seed: oklch(0.729 0.098 133.8);
+  --_palette---alternate--50: oklch(from var(--_palette---alternate--seed) 0.985 calc(c * 0.2) h);
+  --_palette---alternate--100: oklch(from var(--_palette---alternate--seed) 0.97 calc(c * 0.35) h);
+  --_palette---alternate--200: oklch(from var(--_palette---alternate--seed) 0.95 calc(c * 0.6) h);
+  --_palette---alternate--300: oklch(from var(--_palette---alternate--seed) 0.94 calc(c * 0.8) h);
+  --_palette---alternate--400: oklch(from var(--_palette---alternate--seed) 0.935 calc(c * 0.92) h);
+  --_palette---alternate--500: var(--_palette---alternate--seed);
+  --_palette---alternate--600: oklch(from var(--_palette---alternate--seed) 0.85 c h);
+  --_palette---alternate--700: oklch(from var(--_palette---alternate--seed) 0.72 c h);
+  --_palette---alternate--800: oklch(from var(--_palette---alternate--seed) 0.55 calc(c * 0.95) h);
+  --_palette---alternate--900: oklch(from var(--_palette---alternate--seed) 0.38 calc(c * 0.85) h);
+
+  /* alternate-2 — unused until the brand guide names a third colour; follows core so nothing foreign shows */
+  --_palette---alternate-2--seed: var(--_palette---core--seed);
+
+  /* accent — peach / orange (V3 #efa984) */
+  --_palette---accent--seed: oklch(0.793 0.097 48.7);
+  --_palette---accent--50: oklch(from var(--_palette---accent--seed) 0.985 calc(c * 0.2) h);
+  --_palette---accent--100: oklch(from var(--_palette---accent--seed) 0.97 calc(c * 0.35) h);
+  --_palette---accent--200: oklch(from var(--_palette---accent--seed) 0.95 calc(c * 0.6) h);
+  --_palette---accent--300: oklch(from var(--_palette---accent--seed) 0.94 calc(c * 0.8) h);
+  --_palette---accent--400: oklch(from var(--_palette---accent--seed) 0.935 calc(c * 0.92) h);
+  --_palette---accent--500: var(--_palette---accent--seed);
+  --_palette---accent--600: oklch(from var(--_palette---accent--seed) 0.85 c h);
+  --_palette---accent--700: oklch(from var(--_palette---accent--seed) 0.72 c h);
+  --_palette---accent--800: oklch(from var(--_palette---accent--seed) 0.55 calc(c * 0.95) h);
+  --_palette---accent--900: oklch(from var(--_palette---accent--seed) 0.38 calc(c * 0.85) h);
+
+  /* accent-2 — yellow / gold (V3 #ebbc16) */
+  --_palette---accent-2--seed: oklch(0.814 0.163 90);
+  --_palette---accent-2--50: oklch(from var(--_palette---accent-2--seed) 0.985 calc(c * 0.2) h);
+  --_palette---accent-2--100: oklch(from var(--_palette---accent-2--seed) 0.97 calc(c * 0.35) h);
+  --_palette---accent-2--200: oklch(from var(--_palette---accent-2--seed) 0.95 calc(c * 0.6) h);
+  --_palette---accent-2--300: oklch(from var(--_palette---accent-2--seed) 0.94 calc(c * 0.8) h);
+  --_palette---accent-2--400: oklch(from var(--_palette---accent-2--seed) 0.935 calc(c * 0.92) h);
+  --_palette---accent-2--500: var(--_palette---accent-2--seed);
+  --_palette---accent-2--600: oklch(from var(--_palette---accent-2--seed) 0.85 c h);
+  --_palette---accent-2--700: oklch(from var(--_palette---accent-2--seed) 0.72 c h);
+  --_palette---accent-2--800: oklch(from var(--_palette---accent-2--seed) 0.55 calc(c * 0.95) h);
+  --_palette---accent-2--900: oklch(from var(--_palette---accent-2--seed) 0.38 calc(c * 0.85) h);
+
+  /* alert — no red in the V3 files; flwr's coral default stays until the brand guide says otherwise.
+     Pink accent named in the brief: no value received, nothing set. */
+
+  /* focus ring follows the primary brand */
+  --_palette---focus--seed: var(--_palette---core--seed);
+
+  /* neutral — white canvas, lotus cream as the raised surface, navy ink (V3 #0e123a) for
+     text and dark surfaces, the lockups' near-black (#151515) as the deepest stop. */
+  --_palette---neutral--0:    #ffffff;
+  --_palette---neutral--50:   #fbf3e1;
+  --_palette---neutral--100:  #f1ecdf;
+  --_palette---neutral--200:  #e6e7ed;
+  --_palette---neutral--300:  #c6c9d6;
+  --_palette---neutral--400:  #9ea3b8;
+  --_palette---neutral--500:  #767c96;
+  --_palette---neutral--600:  #545a77;
+  --_palette---neutral--700:  #363c5c;
+  --_palette---neutral--800:  #1f2449;
+  --_palette---neutral--900:  #0e123a;
+  --_palette---neutral--1000: #151515;
+  --_palette---neutral--black: #000000;
+
+  --_theme---border--main: color-mix(in srgb, var(--_palette---neutral--900) 20%, transparent);
+}

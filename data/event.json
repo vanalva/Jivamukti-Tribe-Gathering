@@ -1,0 +1,124 @@
+{
+  "_readme": "Edition facts for the site. Only values confirmed in brief/BRIEF.md are real; everything else is a [TBC: …] placeholder. Rendered into src/pages and src/components by notes/tools/render-pages.py. Do not invent dates, venue, prices, copy or bios.",
+  "edition": {
+    "slug": "lux-lotus-2027",
+    "name": "Luxembourg Lotus",
+    "short": "Lux Lotus",
+    "year": "2027",
+    "theme": "Nada Through Nadis"
+  },
+  "event": {
+    "name": "Jivamukti Yoga Tribe Gathering 2027",
+    "organiser": "Jivamukti Yoga",
+    "country": "Luxembourg",
+    "city": "[TBC: VENUE]",
+    "venue": "[TBC: VENUE]",
+    "venueAddress": "[TBC: VENUE]",
+    "dates": "[TBC: DATES]",
+    "datesShort": "[TBC: DATES]",
+    "placeLine": "in Luxembourg"
+  },
+  "meta": {
+    "title": "Jivamukti Yoga Tribe Gathering 2027 | Luxembourg Lotus",
+    "description": "The Jivamukti Yoga Tribe Gathering comes to Luxembourg in 2027. Dates, venue and programme to be announced.",
+    "keywords": "Jivamukti Yoga, yoga festival, Luxembourg yoga, yoga gathering, Tribe Gathering 2027, Luxembourg Lotus",
+    "url": "https://tribe.jivamuktiyoga.com/",
+    "ogImage": "https://tribe.jivamuktiyoga.com/assets/images/og-lux-lotus.png",
+    "ogWidth": "1200",
+    "ogHeight": "630",
+    "siteName": "Jivamukti Tribe Gathering",
+    "themeColor": "#0e123a"
+  },
+  "brand": {
+    "favicon": "assets/brand/lux-lotus/lux-lotus-favicon.svg",
+    "mark": "assets/brand/lux-lotus/lux-lotus-mark-peach.svg",
+    "markOnDark": "assets/brand/lux-lotus/lux-lotus-mark-peach-on-dark.svg",
+    "logoVertical": "assets/brand/lux-lotus/lux-lotus-logo-badge-peach-on-navy.svg",
+    "logoVerticalOnDark": "assets/brand/lux-lotus/lux-lotus-logo-badge-peach-on-navy.svg",
+    "wordblockOnDark": "assets/brand/lux-lotus/lux-lotus-wordblock-white-peach-on-dark.svg",
+    "stamp": "assets/brand/lux-lotus/lux-lotus-stamp-navy-peach.svg",
+    "stampOnDark": "assets/brand/lux-lotus/lux-lotus-stamp-white-blue.svg",
+    "logoAlt": "Jivamukti Yoga Tribe Gathering 2027, Luxembourg Lotus",
+    "stampAlt": "Luxembourg Lotus, Tribe Gathering 2027",
+    "heroImage": "assets/images/lux-lotus/lux-lotus-home-hero.webp",
+    "heroImageAlt": "Practitioners on the blue track of the arena during a collective class (generated placeholder)",
+    "logoBadge": "assets/brand/lux-lotus/lux-lotus-logo-badge-peach-on-navy.svg",
+    "logoBadgeTransparent": "assets/brand/lux-lotus/lux-lotus-logo-badge-peach-on-navy-transparent.svg",
+    "footerMark": "assets/brand/lux-lotus/lux-lotus-mark-white-on-dark.svg"
+  },
+  "placeholders": {
+    "landscape": "assets/brand/lux-lotus/lux-lotus-placeholder-landscape.svg",
+    "portrait": "assets/brand/lux-lotus/lux-lotus-placeholder-portrait.svg",
+    "square": "assets/brand/lux-lotus/lux-lotus-placeholder-square.svg",
+    "wide": "assets/brand/lux-lotus/lux-lotus-placeholder-wide.svg",
+    "landscapeDark": "assets/brand/lux-lotus/lux-lotus-placeholder-landscape-dark.svg",
+    "portraitDark": "assets/brand/lux-lotus/lux-lotus-placeholder-portrait-dark.svg",
+    "squareDark": "assets/brand/lux-lotus/lux-lotus-placeholder-square-dark.svg",
+    "wideDark": "assets/brand/lux-lotus/lux-lotus-placeholder-wide-dark.svg"
+  },
+  "nav": {
+    "cityLabel": "Luxembourg",
+    "cityHref": "city.html",
+    "registerLabel": "Register"
+  },
+  "menu": {
+    "cityLabel": "LUXEMBOURG",
+    "image": "assets/images/lux-lotus/lux-lotus-menu-portrait.webp",
+    "imageAlt": "Walking to the track with a mat (generated placeholder)"
+  },
+  "sections": {
+    "venues": true,
+    "schedule": false
+  },
+  "copy": {
+    "heroDateLeft": "2027",
+    "heroDateRight": "[TBC: DATES]",
+    "aboutDate": "2027",
+    "aboutTitleWords": [
+      "JOIN",
+      "THE TRIBE",
+      "GATHERING"
+    ],
+    "aboutHeading": "Nada Through Nadis",
+    "aboutSubheading": "[TBC: COPY]",
+    "aboutDescription": "[TBC: COPY — intro paragraph]",
+    "venuesTitle": "VENUES",
+    "venueEyebrow": "Main venue",
+    "lineupTitle": "LINE UP",
+    "lineupCta": "VIEW ALL LINE UP",
+    "lookbackTitle": "LOOKING BACK AT THE",
+    "lookbackSubtitle": "Tribe Gatherings of the past",
+    "lookbackCta": "VIEW MORE",
+    "registerCta": "JOIN US",
+    "hoverBadge": "SCROLL TO<br>SEE MORE"
+  },
+  "links": {
+    "register": "booking.html",
+    "lineup": "teachers.html",
+    "schedule": "schedule.html",
+    "archive": "archive.html",
+    "about": "about-tribe.html",
+    "terms": "terms.html",
+    "jivamukti": "https://jivamuktiyoga.com"
+  },
+  "footer": {
+    "copyright": "&copy; 2025 Jivamukti Yoga. All rights reserved."
+  },
+  "images": {
+    "_readme": "Generated placeholder photography (Nano Banana 2 via Magnific, round 1, 28 Sep 2026; see notes/art-direction/IMAGES.md). Provisional picks, swap by editing these paths. Replace with client photos through /media-intake.",
+    "hero": "assets/images/lux-lotus/lux-lotus-home-hero.webp",
+    "heroAlt": "Practitioners on the blue track of the arena during a collective class (generated placeholder)",
+    "about": "assets/images/lux-lotus/lux-lotus-home-about.webp",
+    "aboutAlt": "Arrivals registering at a wooden table by the track (generated placeholder)",
+    "venue": "assets/images/lux-lotus/lux-lotus-home-venue.webp",
+    "venueAlt": "The empty arena before the gathering (generated placeholder)",
+    "schedule": "assets/images/lux-lotus/lux-lotus-home-schedule.webp",
+    "scheduleAlt": "Feet and hands on adjacent mats (generated placeholder)",
+    "day1": "assets/images/lux-lotus/lux-lotus-home-day-1.webp",
+    "day2": "assets/images/lux-lotus/lux-lotus-home-day-2.webp",
+    "day3": "assets/images/lux-lotus/lux-lotus-home-day-3.webp",
+    "day4": "assets/images/lux-lotus/lux-lotus-home-day-4.webp",
+    "menu": "assets/images/lux-lotus/lux-lotus-menu-portrait.webp",
+    "menuAlt": "Walking to the track with a mat (generated placeholder)"
+  }
+}

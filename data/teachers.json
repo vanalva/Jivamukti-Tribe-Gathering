@@ -1,0 +1,126 @@
+{
+  "_readme": "Lux Lotus 2027 line-up in the exact order the client sent (brief/BRIEF.md). Photos and bios marked rome-2026 are reused from the Rome template as temporary placeholders and must be confirmed by the client. Rendered by notes/tools/render-pages.py.",
+  "teachers": [
+    {
+      "name": "Yogeswari",
+      "displayName": "YOGESWARI",
+      "slug": "yogeswari",
+      "group": "lineup",
+      "city": "",
+      "image": "assets/images/lineup/yogeswari_1024w.webp",
+      "imageSource": "rome-2026 (reused, confirm with client)",
+      "bio": "[TBC: BIO]",
+      "bioSource": "placeholder — [TBC: BIO]"
+    },
+    {
+      "name": "Ruth Lauer Manenti",
+      "displayName": "RUTH LAUER MANENTI",
+      "slug": "ruth-lauer-manenti",
+      "group": "lineup",
+      "city": "",
+      "image": "assets/images/lineup/ruth_1024w.webp",
+      "imageSource": "rome-2026 (reused, confirm with client)",
+      "bio": "[TBC: BIO]",
+      "bioSource": "placeholder — [TBC: BIO]"
+    },
+    {
+      "name": "Camilla Veen",
+      "displayName": "CAMILLA VEEN",
+      "slug": "camilla-veen",
+      "group": "lineup",
+      "city": "",
+      "image": "assets/brand/lux-lotus/lux-lotus-placeholder-portrait.svg",
+      "imageSource": "placeholder — [TBC: PHOTOS]",
+      "bio": "[TBC: BIO]",
+      "bioSource": "placeholder — [TBC: BIO]"
+    },
+    {
+      "name": "Petros Haffenrichter",
+      "displayName": "PETROS HAFFENRICHTER",
+      "slug": "petros-haffenrichter",
+      "group": "lineup",
+      "city": "",
+      "image": "assets/images/lineup/petros_1024w.webp",
+      "imageSource": "rome-2026 (reused, confirm with client)",
+      "bio": "[TBC: BIO]",
+      "bioSource": "placeholder — [TBC: BIO]"
+    },
+    {
+      "name": "Martyna Febre",
+      "displayName": "MARTYNA FEBRE",
+      "slug": "martyna-febre",
+      "group": "lineup",
+      "city": "",
+      "image": "assets/brand/lux-lotus/lux-lotus-placeholder-portrait.svg",
+      "imageSource": "placeholder — [TBC: PHOTOS]",
+      "bio": "[TBC: BIO]",
+      "bioSource": "placeholder — [TBC: BIO]"
+    },
+    {
+      "name": "Anna Lunegova",
+      "displayName": "ANNA LUNEGOVA",
+      "slug": "anna-lunegova",
+      "group": "lineup",
+      "city": "",
+      "image": "assets/images/lineup/anna_1024w.webp",
+      "imageSource": "rome-2026 (reused, confirm with client)",
+      "bio": "[TBC: BIO]",
+      "bioSource": "placeholder — [TBC: BIO]"
+    },
+    {
+      "name": "HaChi Yu",
+      "displayName": "HACHI YU",
+      "slug": "hachi-yu",
+      "group": "lineup",
+      "city": "",
+      "image": "assets/images/lineup/hachi_1024w.webp",
+      "imageSource": "rome-2026 (reused, confirm with client)",
+      "bio": "[TBC: BIO]",
+      "bioSource": "placeholder — [TBC: BIO]"
+    },
+    {
+      "name": "Emma Henry",
+      "displayName": "EMMA HENRY",
+      "slug": "emma-henry",
+      "group": "lineup",
+      "city": "",
+      "image": "assets/images/lineup/emma_1024w.webp",
+      "imageSource": "rome-2026 (reused, confirm with client)",
+      "bio": "Emma Henry joins the Rome Tribe Gathering 2026 teaching team. A full biography will follow shortly.",
+      "bioSource": "rome-2026 (reused, confirm with client)"
+    },
+    {
+      "name": "Moritz Ulrich",
+      "displayName": "MORITZ ULRICH",
+      "slug": "moritz-ulrich",
+      "group": "lineup",
+      "city": "",
+      "image": "assets/images/lineup/moritz_1024w.webp",
+      "imageSource": "rome-2026 (reused, confirm with client)",
+      "bio": "[TBC: BIO]",
+      "bioSource": "placeholder — [TBC: BIO]"
+    },
+    {
+      "name": "Alexandra Colombo",
+      "displayName": "ALEXANDRA COLOMBO",
+      "slug": "alexandra-colombo",
+      "group": "local",
+      "city": "Luxembourg",
+      "image": "assets/brand/lux-lotus/lux-lotus-placeholder-portrait.svg",
+      "imageSource": "placeholder — [TBC: PHOTOS]",
+      "bio": "[TBC: BIO]",
+      "bioSource": "placeholder — [TBC: BIO]"
+    },
+    {
+      "name": "Magali Lehners",
+      "displayName": "MAGALI LEHNERS",
+      "slug": "magali-lehners",
+      "group": "local",
+      "city": "Luxembourg",
+      "image": "assets/images/lineup/magali_1024w.webp",
+      "imageSource": "rome-2026 (reused, confirm with client)",
+      "bio": "Magali Lehners' yoga journey began during high school exams in 1998. She later studied geography, sociology and ethnology in Germany, trained in Sivananda Yoga in India and discovered Jivamukti in Munich. An 800-hour certified teacher (advanced since 2016), she co-founded Dancing Kala Yoga (2014), Yoga Palais (2016) and Jivamukti Yoga Luxembourg (2019). She also has a PhD in Urbanism and views yoga as a path to strength and self-acceptance.",
+      "bioSource": "rome-2026 (reused, confirm with client)"
+    }
+  ]
+}

@@ -1,0 +1,173 @@
+/* ============================================================================
+   Jivamukti Tribe Gathering — flwr project token overrides
+   ----------------------------------------------------------------------------
+   Framework: flwr 1.2.1-alpha (pinned in .flowriter-lock). Loaded AFTER
+   framework.css, so every declaration here overrides the catalog default in
+   .flwr/styles/tokens.css at equal specificity.
+
+   EDITION LAYER. Everything in this file is the Rome 2026 design system, kept
+   exactly as the live site declares it (see references/site/css/rome-tribe.css
+   :root). It is the placeholder until the Lux Lotus (Luxembourg 2027) brand
+   arrives. Replace VALUES, keep NAMES.
+
+   Rules of the file:
+   - Palette: one seed per category. Seeds are the exact Rome hex so the 500 stop
+     matches the live site to the byte; flwr derives the other stops from the seed
+     with oklch(from ...) relative colour. Neutrals are hand-set (flwr does the
+     same) so white and #1e1e1e stay exact.
+   - Spacing/typography: Rome's clamp() formulas override flwr's fluid tokens of
+     the same meaning. Rome's viewport range is 320px → 1440px (--_layout---viewport-*).
+   - Names that flwr does not have (display-lg, menu, nav, button, section--main,
+     component button height) are added under the matching collection, following
+     manifest.naming.variablePattern.
+   ============================================================================ */
+
+/* flwr re-declares tier-2 (theme, text-style) and tier-3 (component) tokens on every
+   mode scope at (0,2,0) so they re-resolve per scope. Overrides therefore live on the
+   same selectors, not only on :root, or the wrapper would keep the catalog values. */
+:root,
+[data-flwr].f-mode-light,
+[data-flwr] .f-mode-light {
+
+  /* ──────────────────────────────────────────────────────────────────────────
+     PALETTE SEEDS
+     ────────────────────────────────────────────────────────────────────────── */
+
+  /* core — primary brand. Rome wine. (oklch(0.33 0.14 9) approx.) */
+  --_palette---core--seed: #781029;
+
+  /* accent — CTA / highlight red. (oklch(0.50 0.17 26) approx.) */
+  --_palette---accent--seed: #b9302e;
+  /* Rome darkened the accent with a 20% black mix for hover; keep that exact
+     value on the 600 stop instead of flwr's lightness-shifted derivation. */
+  --_palette---accent--600: color-mix(in srgb, var(--_palette---accent--seed), black 20%);
+
+  /* accent-2 — soft pink used for status tags ("SOLD OUT", "Few last spots")
+     and the schedule notice border. */
+  --_palette---accent-2--seed: #f5a8bd;
+
+  /* alternate / alternate-2 / alert — NOT used by the Rome site. Re-seeded from
+     the brand so no Flowriter pink, purple or lime can surface through an f-bg-*
+     or flwr_* class. Lux Lotus decides their real values. */
+  --_palette---alternate--seed: var(--_palette---core--seed);
+  --_palette---alternate-2--seed: var(--_palette---accent-2--seed);
+  --_palette---alert--seed: var(--_palette---accent--seed);
+
+  /* focus ring follows the brand (flwr derives it from alternate, which above
+     is core, so this line only makes the intent explicit). */
+  --_palette---focus--seed: var(--_palette---core--seed);
+
+  /* neutral — hand-set ramp anchored to Rome's white canvas and #1e1e1e text.
+     Stops the live site uses: 0 (white), 200 (#e0e0e0 border), 500 (#888 muted
+     italic in booking), 800 (#333 base body colour before the theme override),
+     900 (#1e1e1e text), 1000 (#151515 cursor fill), black (overlays). */
+  --_palette---neutral--0:    #ffffff;
+  --_palette---neutral--50:   #f7f7f7;
+  --_palette---neutral--100:  #efefef;
+  --_palette---neutral--200:  #e0e0e0;
+  --_palette---neutral--300:  #c8c8c8;
+  --_palette---neutral--400:  #a3a3a3;
+  --_palette---neutral--500:  #888888;
+  --_palette---neutral--600:  #666666;
+  --_palette---neutral--700:  #4a4a4a;
+  --_palette---neutral--800:  #333333;
+  --_palette---neutral--900:  #1e1e1e;
+  --_palette---neutral--1000: #151515;
+  --_palette---neutral--black: #000000;
+
+  /* ──────────────────────────────────────────────────────────────────────────
+     TYPOGRAPHY — Montserrat. Rome fluid sizes override flwr's.
+     ────────────────────────────────────────────────────────────────────────── */
+
+  --_typography---family--sans:    "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --_typography---family--display: var(--_typography---family--sans);
+
+  /* Fluid sizes, 320px → 1440px (Rome's formulas, verbatim) */
+  --_typography---size--display:    clamp(2.5rem, 1.5rem + 4vw, 7rem);
+  --_typography---size--display-lg: clamp(3rem, 2rem + 5vw, 12rem);
+  --_typography---size--display-xl: clamp(3.5rem, 2rem + 6vw, 15rem);
+  --_typography---size--h1:         clamp(1.75rem, 1rem + 2.5vw, 5rem);
+  --_typography---size--h2:         clamp(1.75rem, 1.2rem + 2vw, 4.5rem);
+  --_typography---size--h3:         clamp(1.5rem, 1.2rem + 1.5vw, 2.95rem);
+  --_typography---size--h4:         clamp(1.25rem, 1rem + 1vw, 2.25rem);
+  --_typography---size--lead:       clamp(1.125 * 1rem, ((1.125 - ((1.32 - 1.125) / (var(--_layout---viewport-max) - var(--_layout---viewport-min)) * var(--_layout---viewport-min))) * 1rem + ((1.32 - 1.125) / (var(--_layout---viewport-max) - var(--_layout---viewport-min))) * 100vw), 1.32 * 1rem);
+  --_typography---size--body:       clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  --_typography---size--small:      clamp(0.875rem, 0.8rem + 0.2vw, 1rem);
+  --_typography---size--menu:       clamp(2rem, 1.5rem + 2.5vw, 5rem);
+  --_typography---size--nav:        clamp(1rem, 0.9rem + 0.3vw, 1.32rem);
+  --_typography---size--button:     clamp(0.875rem, 0.8rem + 0.4vw, 1.25rem);
+
+  /* Leading. Rome: small 0.8 / medium 1.1 / huge 1.5 */
+  --_typography---leading--squashed: 0.8;
+  --_typography---leading--tight:    1.1;
+  --_typography---leading--normal:   1.5;
+
+  /* Tracking. Rome: tight -0.02em / normal 0 — identical to flwr, stated for clarity */
+  --_typography---tracking--tight:  -0.02em;
+  --_typography---tracking--normal:  0em;
+
+  /* ──────────────────────────────────────────────────────────────────────────
+     SPACING — Rome's 8-step fluid scale overrides flwr's step tokens 1:1, so
+     f-gap-4 / f-padding-6 / f-margin-top-2 render the Rome values.
+     Formulas are Rome's, verbatim, parametrised on the viewport tokens below.
+     ────────────────────────────────────────────────────────────────────────── */
+
+  --_layout---viewport-min: 20;   /* rem, 320px */
+  --_layout---viewport-max: 90;   /* rem, 1440px */
+
+  --_spacing---step--1: clamp(0.5 * 1rem, ((0.5 - ((0.75 - 0.5) / (var(--_layout---viewport-max) - var(--_layout---viewport-min)) * var(--_layout---viewport-min))) * 1rem + ((0.75 - 0.5) / (var(--_layout---viewport-max) - var(--_layout---viewport-min))) * 100vw), 0.75 * 1rem);
+  --_spacing---step--2: clamp(0.75 * 1rem, ((0.75 - ((1 - 0.75) / (var(--_layout---viewport-max) - var(--_layout---viewport-min)) * var(--_layout---viewport-min))) * 1rem + ((1 - 0.75) / (var(--_layout---viewport-max) - var(--_layout---viewport-min))) * 100vw), 1 * 1rem);
+  --_spacing---step--3: clamp(1 * 1rem, ((1 - ((1.5 - 1) / (var(--_layout---viewport-max) - var(--_layout---viewport-min)) * var(--_layout---viewport-min))) * 1rem + ((1.5 - 1) / (var(--_layout---viewport-max) - var(--_layout---viewport-min))) * 100vw), 1.5 * 1rem);
+  --_spacing---step--4: clamp(1.5 * 1rem, ((1.5 - ((2 - 1.5) / (var(--_layout---viewport-max) - var(--_layout---viewport-min)) * var(--_layout---viewport-min))) * 1rem + ((2 - 1.5) / (var(--_layout---viewport-max) - var(--_layout---viewport-min))) * 100vw), 2 * 1rem);
+  --_spacing---step--5: clamp(2 * 1rem, ((2 - ((2.5 - 2) / (var(--_layout---viewport-max) - var(--_layout---viewport-min)) * var(--_layout---viewport-min))) * 1rem + ((2.5 - 2) / (var(--_layout---viewport-max) - var(--_layout---viewport-min))) * 100vw), 2.5 * 1rem);
+  --_spacing---step--6: clamp(2.5 * 1rem, ((2.5 - ((3.5 - 2.5) / (var(--_layout---viewport-max) - var(--_layout---viewport-min)) * var(--_layout---viewport-min))) * 1rem + ((3.5 - 2.5) / (var(--_layout---viewport-max) - var(--_layout---viewport-min))) * 100vw), 3.5 * 1rem);
+  --_spacing---step--7: clamp(3 * 1rem, ((3 - ((4.5 - 3) / (var(--_layout---viewport-max) - var(--_layout---viewport-min)) * var(--_layout---viewport-min))) * 1rem + ((4.5 - 3) / (var(--_layout---viewport-max) - var(--_layout---viewport-min))) * 100vw), 4.5 * 1rem);
+  --_spacing---step--8: clamp(4 * 1rem, ((4 - ((5.81 - 4) / (var(--_layout---viewport-max) - var(--_layout---viewport-min)) * var(--_layout---viewport-min))) * 1rem + ((5.81 - 4) / (var(--_layout---viewport-max) - var(--_layout---viewport-min))) * 100vw), 5.81 * 1rem);
+
+  /* Section rhythm. Rome has one value: 7rem → 12rem */
+  --_spacing---section--main: clamp(7 * 1rem, ((7 - ((12 - 7) / (var(--_layout---viewport-max) - var(--_layout---viewport-min)) * var(--_layout---viewport-min))) * 1rem + ((12 - 7) / (var(--_layout---viewport-max) - var(--_layout---viewport-min))) * 100vw), 12 * 1rem);
+
+  /* Page margin 1rem → 3rem, reaching 3rem at 1440px (flwr's own reaches it at ~1754px) */
+  --_spacing---page-margin: clamp(1 * 1rem, ((1 - ((3 - 1) / (var(--_layout---viewport-max) - var(--_layout---viewport-min)) * var(--_layout---viewport-min))) * 1rem + ((3 - 1) / (var(--_layout---viewport-max) - var(--_layout---viewport-min))) * 100vw), 3 * 1rem);
+
+  /* Layout */
+  --_layout---gutter:      1rem;
+  --_layout---max-content: 90rem;
+
+  /* ──────────────────────────────────────────────────────────────────────────
+     RADIUS / BORDERS / FOCUS
+     ────────────────────────────────────────────────────────────────────────── */
+
+  --_radius---none: 0;
+  --_radius---pill: 80px;
+
+  --_theme---border--width: 0.094rem;   /* Rome --border-width--main (1.5px) */
+
+  --_theme---focus--width:  0.125rem;
+  --_theme---focus--offset: 0.1875rem;
+
+  /* ──────────────────────────────────────────────────────────────────────────
+     COMPONENT TOKENS (tier 3)
+     ────────────────────────────────────────────────────────────────────────── */
+
+  /* Navbar height: 2 × step-4 padding + logo 4.5625rem + 0.5rem + gutter */
+  --_component---navbar--height: calc(var(--_spacing---step--4) * 2 + 4.5625rem + 0.5rem + var(--_layout---gutter));
+
+  --_component---button--height:    4.05rem;
+  --_component---button--padding-x: 3.75rem;
+
+  /* ──────────────────────────────────────────────────────────────────────────
+     TRIGGER — Rome's button border rule multiplies by --_trigger---on with the
+     meaning on=1/off=0. flwr ships the inverse (on=0/off=1) for its own
+     data-flwr-trigger utilities, which this site does not use. Keep Rome's.
+     ────────────────────────────────────────────────────────────────────────── */
+  --_trigger---on:  1;
+  --_trigger---off: 0;
+}
+
+/* Theme (light) — Rome's border colour is a 20% tint of the text colour, not a neutral stop. */
+:root,
+[data-flwr].f-mode-light,
+[data-flwr] .f-mode-light {
+  --_theme---border--main: color-mix(in srgb, var(--_palette---neutral--900) 20%, transparent);
+}
