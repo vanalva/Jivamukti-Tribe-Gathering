@@ -6711,7 +6711,37 @@ body:has(.hero-home_wrap) .nav_content > .nav_menu:last-child .nav_arrow-icon {
 [data-flwr].site_wrap .hero-home_logo.is-vertical {
   width: 100%;
   max-width: 100%;
-  max-height: none;
+  max-height: 62vh;
+}
+/* Home hero: the lockup fills the left column and sits optically centred against the full-height
+   image on the right. Geometric centre = 50vh, but the nav bar weighs on the top of the hero and
+   the lockup is bottom-heavy (lotus + water), so the centred box is lifted by 3.5vh: the wrap keeps
+   its flex centring and gets 7vh of bottom padding. Rome capped the wrap at 500px for its
+   portrait logotype; the landscape lockup needs the whole column. Desktop only: from 991px down
+   the hero stacks and the Rome caps come back. */
+[data-flwr].site_wrap .hero-home_logo-wrap {
+  width: 100%;
+  max-width: none;
+  padding-bottom: 7vh;
+}
+@media (max-width: 991px) {
+  [data-flwr].site_wrap .hero-home_logo-wrap {
+    max-width: 400px;
+    padding-bottom: 0;
+  }
+  [data-flwr].site_wrap .hero-home_logo.is-vertical {
+    max-height: 40vh;
+  }
+}
+@media (max-width: 767px) {
+  [data-flwr].site_wrap .hero-home_logo-wrap {
+    max-width: 350px;
+  }
+}
+@media (max-width: 478px) {
+  [data-flwr].site_wrap .hero-home_logo-wrap {
+    max-width: 280px;
+  }
 }
 /* Room under the footer links so the fixed stamp never covers them at the end of the page */
 [data-flwr].site_wrap .footer_wrap {
