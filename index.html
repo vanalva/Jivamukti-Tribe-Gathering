@@ -110,86 +110,168 @@
     </div>
   </section>
 
-  <!-- Line-up on white: names in the order of the brief; hover shows the placeholder card, phones show the tile inline -->
-  <section class="an_lineup" aria-label="Line-up">
-    <div class="an_lineup-inner">
-      <p class="an_eyebrow an_lineup-eyebrow">The line-up</p>
-      <ol class="an_names">
+  <!-- Line-up: the full site's home section (two columns, image swap, hover circle) with the placeholder tiles.
+       No links yet: the arrows are decorative and the "view all" button is left out. -->
+  <section class="teachers_wrap page_section f-position-relative an_teachers">
+    <div class="teachers_background f-cover-absolute f-z-negative f-position-relative"></div>
 
-        <li class="an_name" data-image="assets/images/announce/teachers/yogeswari.svg">
-          <span class="an_name-index">01</span>
-          <span class="an_name-text">Yogeswari</span>
-          <img src="assets/images/announce/teachers/yogeswari.svg" alt="Yogeswari" class="an_name-tile" width="800" height="1000" loading="lazy">
-        </li>
+    <h2 class="text-display-lg f-text-center teachers_title">LINE UP</h2>
 
-        <li class="an_name" data-image="assets/images/announce/teachers/ruth-lauer-manenti.svg">
-          <span class="an_name-index">02</span>
-          <span class="an_name-text">Ruth Lauer Manenti</span>
-          <img src="assets/images/announce/teachers/ruth-lauer-manenti.svg" alt="Ruth Lauer Manenti" class="an_name-tile" width="800" height="1000" loading="lazy">
-        </li>
+    <div class="teachers_content teachers_content--reversed f-position-relative">
+      <div class="teachers_list">
 
-        <li class="an_name" data-image="assets/images/announce/teachers/camilla-veen.svg">
-          <span class="an_name-index">03</span>
-          <span class="an_name-text">Camilla Veen</span>
-          <img src="assets/images/announce/teachers/camilla-veen.svg" alt="Camilla Veen" class="an_name-tile" width="800" height="1000" loading="lazy">
-        </li>
+        <div class="teacher_item" data-teacher-image="assets/images/announce/teachers/yogeswari.svg" data-teacher-name="YOGESWARI">
+          <div class="teacher_item-thumbnail-wrap">
+            <img src="assets/images/announce/teachers/yogeswari.svg" alt="Yogeswari" class="teacher_item-thumbnail" loading="lazy">
+          </div>
+          <div class="teacher_info ">
+            <p class="text-body-md teacher_eyebrow"></p>
+            <h3 class="text-h1 f-text-uppercase">YOGESWARI</h3>
+          </div>
+          <span class="teacher_arrow" aria-hidden="true">
+            <svg class="teacher_arrow-icon" viewBox="0 0 56 55" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M0 55V0H14.5532V30.1748L45.2766 0L56 10.5319L25.2766 40.7067H56V55H0Z" fill="currentColor"/></svg>
+          </span>
+        </div>
 
-        <li class="an_name" data-image="assets/images/announce/teachers/petros-haffenrichter.svg">
-          <span class="an_name-index">04</span>
-          <span class="an_name-text">Petros Haffenrichter</span>
-          <img src="assets/images/announce/teachers/petros-haffenrichter.svg" alt="Petros Haffenrichter" class="an_name-tile" width="800" height="1000" loading="lazy">
-        </li>
+        <div class="teacher_item" data-teacher-image="assets/images/announce/teachers/ruth-lauer-manenti.svg" data-teacher-name="RUTH LAUER MANENTI">
+          <div class="teacher_item-thumbnail-wrap">
+            <img src="assets/images/announce/teachers/ruth-lauer-manenti.svg" alt="Ruth Lauer Manenti" class="teacher_item-thumbnail" loading="lazy">
+          </div>
+          <div class="teacher_info teacher_info--offset">
+            <p class="text-body-md teacher_eyebrow"></p>
+            <h3 class="text-h1 f-text-uppercase">RUTH LAUER MANENTI</h3>
+          </div>
+          <span class="teacher_arrow" aria-hidden="true">
+            <svg class="teacher_arrow-icon" viewBox="0 0 56 55" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M0 55V0H14.5532V30.1748L45.2766 0L56 10.5319L25.2766 40.7067H56V55H0Z" fill="currentColor"/></svg>
+          </span>
+        </div>
 
-        <li class="an_name" data-image="assets/images/announce/teachers/martyna-febre.svg">
-          <span class="an_name-index">05</span>
-          <span class="an_name-text">Martyna Febre</span>
-          <img src="assets/images/announce/teachers/martyna-febre.svg" alt="Martyna Febre" class="an_name-tile" width="800" height="1000" loading="lazy">
-        </li>
+        <div class="teacher_item" data-teacher-image="assets/images/announce/teachers/camilla-veen.svg" data-teacher-name="CAMILLA VEEN">
+          <div class="teacher_item-thumbnail-wrap">
+            <img src="assets/images/announce/teachers/camilla-veen.svg" alt="Camilla Veen" class="teacher_item-thumbnail" loading="lazy">
+          </div>
+          <div class="teacher_info teacher_info--offset-medium">
+            <p class="text-body-md teacher_eyebrow"></p>
+            <h3 class="text-h1 f-text-uppercase">CAMILLA VEEN</h3>
+          </div>
+          <span class="teacher_arrow" aria-hidden="true">
+            <svg class="teacher_arrow-icon" viewBox="0 0 56 55" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M0 55V0H14.5532V30.1748L45.2766 0L56 10.5319L25.2766 40.7067H56V55H0Z" fill="currentColor"/></svg>
+          </span>
+        </div>
 
-        <li class="an_name" data-image="assets/images/announce/teachers/anna-lunegova.svg">
-          <span class="an_name-index">06</span>
-          <span class="an_name-text">Anna Lunegova</span>
-          <img src="assets/images/announce/teachers/anna-lunegova.svg" alt="Anna Lunegova" class="an_name-tile" width="800" height="1000" loading="lazy">
-        </li>
+        <div class="teacher_item" data-teacher-image="assets/images/announce/teachers/petros-haffenrichter.svg" data-teacher-name="PETROS HAFFENRICHTER">
+          <div class="teacher_item-thumbnail-wrap">
+            <img src="assets/images/announce/teachers/petros-haffenrichter.svg" alt="Petros Haffenrichter" class="teacher_item-thumbnail" loading="lazy">
+          </div>
+          <div class="teacher_info ">
+            <p class="text-body-md teacher_eyebrow"></p>
+            <h3 class="text-h1 f-text-uppercase">PETROS HAFFENRICHTER</h3>
+          </div>
+          <span class="teacher_arrow" aria-hidden="true">
+            <svg class="teacher_arrow-icon" viewBox="0 0 56 55" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M0 55V0H14.5532V30.1748L45.2766 0L56 10.5319L25.2766 40.7067H56V55H0Z" fill="currentColor"/></svg>
+          </span>
+        </div>
 
-        <li class="an_name" data-image="assets/images/announce/teachers/hachi-yu.svg">
-          <span class="an_name-index">07</span>
-          <span class="an_name-text">HaChi Yu</span>
-          <img src="assets/images/announce/teachers/hachi-yu.svg" alt="HaChi Yu" class="an_name-tile" width="800" height="1000" loading="lazy">
-        </li>
+        <div class="teacher_item" data-teacher-image="assets/images/announce/teachers/martyna-febre.svg" data-teacher-name="MARTYNA FEBRE">
+          <div class="teacher_item-thumbnail-wrap">
+            <img src="assets/images/announce/teachers/martyna-febre.svg" alt="Martyna Febre" class="teacher_item-thumbnail" loading="lazy">
+          </div>
+          <div class="teacher_info teacher_info--offset-medium">
+            <p class="text-body-md teacher_eyebrow"></p>
+            <h3 class="text-h1 f-text-uppercase">MARTYNA FEBRE</h3>
+          </div>
+          <span class="teacher_arrow" aria-hidden="true">
+            <svg class="teacher_arrow-icon" viewBox="0 0 56 55" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M0 55V0H14.5532V30.1748L45.2766 0L56 10.5319L25.2766 40.7067H56V55H0Z" fill="currentColor"/></svg>
+          </span>
+        </div>
 
-        <li class="an_name" data-image="assets/images/announce/teachers/emma-henry.svg">
-          <span class="an_name-index">08</span>
-          <span class="an_name-text">Emma Henry</span>
-          <img src="assets/images/announce/teachers/emma-henry.svg" alt="Emma Henry" class="an_name-tile" width="800" height="1000" loading="lazy">
-        </li>
+        <div class="teacher_item" data-teacher-image="assets/images/announce/teachers/anna-lunegova.svg" data-teacher-name="ANNA LUNEGOVA">
+          <div class="teacher_item-thumbnail-wrap">
+            <img src="assets/images/announce/teachers/anna-lunegova.svg" alt="Anna Lunegova" class="teacher_item-thumbnail" loading="lazy">
+          </div>
+          <div class="teacher_info ">
+            <p class="text-body-md teacher_eyebrow"></p>
+            <h3 class="text-h1 f-text-uppercase">ANNA LUNEGOVA</h3>
+          </div>
+          <span class="teacher_arrow" aria-hidden="true">
+            <svg class="teacher_arrow-icon" viewBox="0 0 56 55" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M0 55V0H14.5532V30.1748L45.2766 0L56 10.5319L25.2766 40.7067H56V55H0Z" fill="currentColor"/></svg>
+          </span>
+        </div>
 
-        <li class="an_name" data-image="assets/images/announce/teachers/moritz-ulrich.svg">
-          <span class="an_name-index">09</span>
-          <span class="an_name-text">Moritz Ulrich</span>
-          <img src="assets/images/announce/teachers/moritz-ulrich.svg" alt="Moritz Ulrich" class="an_name-tile" width="800" height="1000" loading="lazy">
-        </li>
+        <div class="teacher_item" data-teacher-image="assets/images/announce/teachers/hachi-yu.svg" data-teacher-name="HACHI YU">
+          <div class="teacher_item-thumbnail-wrap">
+            <img src="assets/images/announce/teachers/hachi-yu.svg" alt="HaChi Yu" class="teacher_item-thumbnail" loading="lazy">
+          </div>
+          <div class="teacher_info teacher_info--offset">
+            <p class="text-body-md teacher_eyebrow"></p>
+            <h3 class="text-h1 f-text-uppercase">HACHI YU</h3>
+          </div>
+          <span class="teacher_arrow" aria-hidden="true">
+            <svg class="teacher_arrow-icon" viewBox="0 0 56 55" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M0 55V0H14.5532V30.1748L45.2766 0L56 10.5319L25.2766 40.7067H56V55H0Z" fill="currentColor"/></svg>
+          </span>
+        </div>
 
-      </ol>
-      <p class="an_eyebrow an_lineup-eyebrow an_lineup-eyebrow--local">Local teachers</p>
-      <ol class="an_names an_names--local">
+        <div class="teacher_item" data-teacher-image="assets/images/announce/teachers/emma-henry.svg" data-teacher-name="EMMA HENRY">
+          <div class="teacher_item-thumbnail-wrap">
+            <img src="assets/images/announce/teachers/emma-henry.svg" alt="Emma Henry" class="teacher_item-thumbnail" loading="lazy">
+          </div>
+          <div class="teacher_info teacher_info--offset-large">
+            <p class="text-body-md teacher_eyebrow"></p>
+            <h3 class="text-h1 f-text-uppercase">EMMA HENRY</h3>
+          </div>
+          <span class="teacher_arrow" aria-hidden="true">
+            <svg class="teacher_arrow-icon" viewBox="0 0 56 55" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M0 55V0H14.5532V30.1748L45.2766 0L56 10.5319L25.2766 40.7067H56V55H0Z" fill="currentColor"/></svg>
+          </span>
+        </div>
 
-        <li class="an_name" data-image="assets/images/announce/teachers/alexandra-colombo.svg">
-          <span class="an_name-index">01</span>
-          <span class="an_name-text">Alexandra Colombo</span>
-          <img src="assets/images/announce/teachers/alexandra-colombo.svg" alt="Alexandra Colombo" class="an_name-tile" width="800" height="1000" loading="lazy">
-        </li>
+        <div class="teacher_item" data-teacher-image="assets/images/announce/teachers/moritz-ulrich.svg" data-teacher-name="MORITZ ULRICH">
+          <div class="teacher_item-thumbnail-wrap">
+            <img src="assets/images/announce/teachers/moritz-ulrich.svg" alt="Moritz Ulrich" class="teacher_item-thumbnail" loading="lazy">
+          </div>
+          <div class="teacher_info teacher_info--offset-medium">
+            <p class="text-body-md teacher_eyebrow"></p>
+            <h3 class="text-h1 f-text-uppercase">MORITZ ULRICH</h3>
+          </div>
+          <span class="teacher_arrow" aria-hidden="true">
+            <svg class="teacher_arrow-icon" viewBox="0 0 56 55" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M0 55V0H14.5532V30.1748L45.2766 0L56 10.5319L25.2766 40.7067H56V55H0Z" fill="currentColor"/></svg>
+          </span>
+        </div>
 
-        <li class="an_name" data-image="assets/images/announce/teachers/magali-lehners.svg">
-          <span class="an_name-index">02</span>
-          <span class="an_name-text">Magali Lehners</span>
-          <img src="assets/images/announce/teachers/magali-lehners.svg" alt="Magali Lehners" class="an_name-tile" width="800" height="1000" loading="lazy">
-        </li>
+        <div class="teacher_item" data-teacher-image="assets/images/announce/teachers/alexandra-colombo.svg" data-teacher-name="ALEXANDRA COLOMBO">
+          <div class="teacher_item-thumbnail-wrap">
+            <img src="assets/images/announce/teachers/alexandra-colombo.svg" alt="Alexandra Colombo" class="teacher_item-thumbnail" loading="lazy">
+          </div>
+          <div class="teacher_info ">
+            <p class="text-body-md teacher_eyebrow">Luxembourg</p>
+            <h3 class="text-h1 f-text-uppercase">ALEXANDRA COLOMBO</h3>
+          </div>
+          <span class="teacher_arrow" aria-hidden="true">
+            <svg class="teacher_arrow-icon" viewBox="0 0 56 55" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M0 55V0H14.5532V30.1748L45.2766 0L56 10.5319L25.2766 40.7067H56V55H0Z" fill="currentColor"/></svg>
+          </span>
+        </div>
 
-      </ol>
-    </div>
-    <div class="an_hover-card" aria-hidden="true">
-      <img src="assets/images/announce/teachers/yogeswari.svg" alt="" class="an_hover-card-img" width="800" height="1000">
+        <div class="teacher_item" data-teacher-image="assets/images/announce/teachers/magali-lehners.svg" data-teacher-name="MAGALI LEHNERS">
+          <div class="teacher_item-thumbnail-wrap">
+            <img src="assets/images/announce/teachers/magali-lehners.svg" alt="Magali Lehners" class="teacher_item-thumbnail" loading="lazy">
+          </div>
+          <div class="teacher_info teacher_info--offset">
+            <p class="text-body-md teacher_eyebrow">Luxembourg</p>
+            <h3 class="text-h1 f-text-uppercase">MAGALI LEHNERS</h3>
+          </div>
+          <span class="teacher_arrow" aria-hidden="true">
+            <svg class="teacher_arrow-icon" viewBox="0 0 56 55" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M0 55V0H14.5532V30.1748L45.2766 0L56 10.5319L25.2766 40.7067H56V55H0Z" fill="currentColor"/></svg>
+          </span>
+        </div>
+
+      </div>
+
+      <div class="teachers_image-wrap">
+        <img src="assets/images/announce/teachers/yogeswari.svg" alt="Yogeswari" class="teachers_hero-image">
+      </div>
+
+      <div class="teachers_hover-badge">
+        <p class="teachers_hover-badge-text">SCROLL TO<br>SEE MORE</p>
+      </div>
     </div>
   </section>
 
@@ -232,6 +314,7 @@
 </div>
 
   <script src="js/custom-cursor.js?v=28b72096"></script>
+  <script src="js/main.js?v=f51d75e4"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   <script src="js/gsap/config.js?v=e219e17c"></script>
