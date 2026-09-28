@@ -14,13 +14,15 @@
     "city": "[TBC: VENUE]",
     "venue": "[TBC: VENUE]",
     "venueAddress": "[TBC: VENUE]",
-    "dates": "[TBC: DATES]",
-    "datesShort": "[TBC: DATES]",
-    "placeLine": "in Luxembourg"
+    "dates": "September 2–5, 2027",
+    "datesShort": "2–5 Sep 2027",
+    "placeLine": "in Luxembourg",
+    "dateStart": "2027-09-02",
+    "dateEnd": "2027-09-05"
   },
   "meta": {
     "title": "Jivamukti Yoga Tribe Gathering 2027 | Luxembourg Lotus",
-    "description": "The Jivamukti Yoga Tribe Gathering comes to Luxembourg in 2027. Dates, venue and programme to be announced.",
+    "description": "The Jivamukti Yoga Tribe Gathering comes to Luxembourg, September 2–5, 2027. Luxembourg Lotus: four days of practice, music and satsang with the global tribe.",
     "keywords": "Jivamukti Yoga, yoga festival, Luxembourg yoga, yoga gathering, Tribe Gathering 2027, Luxembourg Lotus",
     "url": "https://tribe.jivamuktiyoga.com/",
     "ogImage": "https://tribe.jivamuktiyoga.com/assets/images/og-lux-lotus.png",
@@ -75,7 +77,7 @@
   },
   "copy": {
     "heroDateLeft": "2027",
-    "heroDateRight": "[TBC: DATES]",
+    "heroDateRight": "2–5 SEP",
     "aboutDate": "2027",
     "aboutTitleWords": [
       "JOIN",
@@ -170,7 +172,7 @@
       "heroTitle": "SCHEDULE",
       "heading": "PROGRAMME TO BE ANNOUNCED",
       "text": "The day-by-day programme for Luxembourg Lotus 2027 is being put together with the teachers of the line-up.",
-      "note": "[TBC: DATES] · [TBC: SCHEDULE]",
+      "note": "September 2–5, 2027 · [TBC: SCHEDULE]",
       "ctaHref": "teachers.html",
       "ctaLabel": "SEE THE LINE-UP"
     },
@@ -196,5 +198,26 @@
       "ctaHref": "about-tribe.html",
       "ctaLabel": "ABOUT THE TRIBE"
     }
+  },
+  "announce": {
+    "_readme": "Copy for the announcement page (src/templates/index.html). Only facts from the 28 Sep 2026 announcement brief. The theme line is a working line, subject to client approval.",
+    "title": "Jivamukti Yoga Tribe Gathering 2027 · Luxembourg Lotus",
+    "description": "Jivamukti Yoga Tribe Gathering 2027, Luxembourg Lotus: September 2–5, 2027 in Luxembourg. More information coming soon.",
+    "eyebrow": "Jivamukti Yoga Tribe Gathering 2027",
+    "edition": "Luxembourg Lotus",
+    "dates": "September 2–5, 2027",
+    "dateLine1": "September",
+    "dateLine2": "2–5",
+    "dateLine3": "2027",
+    "location": "Luxembourg",
+    "theme": "Nada Through Nadis",
+    "themeNote": "Working line, subject to client approval",
+    "countdownLabel": "Days to go",
+    "lineupEyebrow": "The line-up",
+    "localEyebrow": "Local teachers",
+    "closingLine": "More information coming soon.",
+    "closingEyebrow": "Stay tuned",
+    "countdownTarget": "2027-09-02T00:00:00+02:00",
+    "socialLabel": "Follow Jivamukti Yoga"
   }
 }

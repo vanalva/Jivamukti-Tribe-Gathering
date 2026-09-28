@@ -101,6 +101,10 @@
   /* alert — no red in the V3 files; flwr's coral default stays until the brand guide says otherwise.
      Pink accent named in the brief: no value received, nothing set. */
 
+  /* pink — "a little accent" (client, 28 Sep). No value received: PROVISIONAL pick, replace when the brand guide names it. */
+  --_palette---pink--seed: #f2a6c2;
+  --_palette---pink--500: var(--_palette---pink--seed);
+
   /* focus ring follows the primary brand */
   --_palette---focus--seed: var(--_palette---core--seed);
 

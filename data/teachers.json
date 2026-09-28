@@ -10,7 +10,9 @@
       "image": "assets/images/lineup/yogeswari_1024w.webp",
       "imageSource": "rome-2026 (reused, confirm with client)",
       "bio": "[TBC: BIO]",
-      "bioSource": "placeholder — [TBC: BIO]"
+      "bioSource": "placeholder — [TBC: BIO]",
+      "announceImage": "assets/images/announce/teachers/yogeswari.svg",
+      "initials": "Y"
     },
     {
       "name": "Ruth Lauer Manenti",
@@ -21,7 +23,9 @@
       "image": "assets/images/lineup/ruth_1024w.webp",
       "imageSource": "rome-2026 (reused, confirm with client)",
       "bio": "[TBC: BIO]",
-      "bioSource": "placeholder — [TBC: BIO]"
+      "bioSource": "placeholder — [TBC: BIO]",
+      "announceImage": "assets/images/announce/teachers/ruth-lauer-manenti.svg",
+      "initials": "RLM"
     },
     {
       "name": "Camilla Veen",
@@ -32,7 +36,9 @@
       "image": "assets/brand/lux-lotus/lux-lotus-placeholder-portrait.svg",
       "imageSource": "placeholder — [TBC: PHOTOS]",
       "bio": "[TBC: BIO]",
-      "bioSource": "placeholder — [TBC: BIO]"
+      "bioSource": "placeholder — [TBC: BIO]",
+      "announceImage": "assets/images/announce/teachers/camilla-veen.svg",
+      "initials": "CV"
     },
     {
       "name": "Petros Haffenrichter",
@@ -43,7 +49,9 @@
       "image": "assets/images/lineup/petros_1024w.webp",
       "imageSource": "rome-2026 (reused, confirm with client)",
       "bio": "[TBC: BIO]",
-      "bioSource": "placeholder — [TBC: BIO]"
+      "bioSource": "placeholder — [TBC: BIO]",
+      "announceImage": "assets/images/announce/teachers/petros-haffenrichter.svg",
+      "initials": "PH"
     },
     {
       "name": "Martyna Febre",
@@ -54,7 +62,9 @@
       "image": "assets/brand/lux-lotus/lux-lotus-placeholder-portrait.svg",
       "imageSource": "placeholder — [TBC: PHOTOS]",
       "bio": "[TBC: BIO]",
-      "bioSource": "placeholder — [TBC: BIO]"
+      "bioSource": "placeholder — [TBC: BIO]",
+      "announceImage": "assets/images/announce/teachers/martyna-febre.svg",
+      "initials": "MF"
     },
     {
       "name": "Anna Lunegova",
@@ -65,7 +75,9 @@
       "image": "assets/images/lineup/anna_1024w.webp",
       "imageSource": "rome-2026 (reused, confirm with client)",
       "bio": "[TBC: BIO]",
-      "bioSource": "placeholder — [TBC: BIO]"
+      "bioSource": "placeholder — [TBC: BIO]",
+      "announceImage": "assets/images/announce/teachers/anna-lunegova.svg",
+      "initials": "AL"
     },
     {
       "name": "HaChi Yu",
@@ -76,7 +88,9 @@
       "image": "assets/images/lineup/hachi_1024w.webp",
       "imageSource": "rome-2026 (reused, confirm with client)",
       "bio": "[TBC: BIO]",
-      "bioSource": "placeholder — [TBC: BIO]"
+      "bioSource": "placeholder — [TBC: BIO]",
+      "announceImage": "assets/images/announce/teachers/hachi-yu.svg",
+      "initials": "HY"
     },
     {
       "name": "Emma Henry",
@@ -87,7 +101,9 @@
       "image": "assets/images/lineup/emma_1024w.webp",
       "imageSource": "rome-2026 (reused, confirm with client)",
       "bio": "Emma Henry joins the Rome Tribe Gathering 2026 teaching team. A full biography will follow shortly.",
-      "bioSource": "rome-2026 (reused, confirm with client)"
+      "bioSource": "rome-2026 (reused, confirm with client)",
+      "announceImage": "assets/images/announce/teachers/emma-henry.svg",
+      "initials": "EH"
     },
     {
       "name": "Moritz Ulrich",
@@ -98,7 +114,9 @@
       "image": "assets/images/lineup/moritz_1024w.webp",
       "imageSource": "rome-2026 (reused, confirm with client)",
       "bio": "[TBC: BIO]",
-      "bioSource": "placeholder — [TBC: BIO]"
+      "bioSource": "placeholder — [TBC: BIO]",
+      "announceImage": "assets/images/announce/teachers/moritz-ulrich.svg",
+      "initials": "MU"
     },
     {
       "name": "Alexandra Colombo",
@@ -109,7 +127,9 @@
       "image": "assets/brand/lux-lotus/lux-lotus-placeholder-portrait.svg",
       "imageSource": "placeholder — [TBC: PHOTOS]",
       "bio": "[TBC: BIO]",
-      "bioSource": "placeholder — [TBC: BIO]"
+      "bioSource": "placeholder — [TBC: BIO]",
+      "announceImage": "assets/images/announce/teachers/alexandra-colombo.svg",
+      "initials": "AC"
     },
     {
       "name": "Magali Lehners",
@@ -120,7 +140,9 @@
       "image": "assets/images/lineup/magali_1024w.webp",
       "imageSource": "rome-2026 (reused, confirm with client)",
       "bio": "Magali Lehners' yoga journey began during high school exams in 1998. She later studied geography, sociology and ethnology in Germany, trained in Sivananda Yoga in India and discovered Jivamukti in Munich. An 800-hour certified teacher (advanced since 2016), she co-founded Dancing Kala Yoga (2014), Yoga Palais (2016) and Jivamukti Yoga Luxembourg (2019). She also has a PhD in Urbanism and views yoga as a path to strength and self-acceptance.",
-      "bioSource": "rome-2026 (reused, confirm with client)"
+      "bioSource": "rome-2026 (reused, confirm with client)",
+      "announceImage": "assets/images/announce/teachers/magali-lehners.svg",
+      "initials": "ML"
     }
   ]
 }
