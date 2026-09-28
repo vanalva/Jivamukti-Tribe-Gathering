@@ -62,9 +62,10 @@
   min-height: 100vh;
   min-height: 100svh;
   padding-top: calc(var(--_spacing---page-margin) + 4rem);
-  padding-right: var(--_spacing---page-margin);
+  /* room for the fixed stamp (bottom-right) on both sides, so the row stays centred */
+  padding-right: calc(clamp(110px, 12vw, 170px) + var(--_spacing---page-margin) * 2);
   padding-bottom: var(--_spacing---step--8);
-  padding-left: var(--_spacing---page-margin);
+  padding-left: calc(clamp(110px, 12vw, 170px) + var(--_spacing---page-margin) * 2);
 }
 [data-flwr] .an_hero-inner {
   display: grid;
@@ -487,7 +488,9 @@
   }
   [data-flwr] .an_hero {
     padding-top: calc(var(--_spacing---page-margin) + 3.5rem);
+    padding-right: var(--_spacing---page-margin);
     padding-bottom: var(--_spacing---step--7);
+    padding-left: var(--_spacing---page-margin);
   }
   [data-flwr] .an_hero-inner {
     row-gap: var(--_spacing---step--5);
