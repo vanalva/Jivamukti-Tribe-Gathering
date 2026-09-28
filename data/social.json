@@ -8,7 +8,7 @@
       "slug": "carousel-announcement",
       "kind": "Carousel",
       "title": "General announcement",
-      "description": "The launch carousel: badge, the announcement, the theme, save the date, line-up teaser, past editions, register.",
+      "description": "The launch carousel: the lockup, the announcement, the theme, save the date, line-up teaser, past editions, register.",
       "count": 7,
       "pdf": "assets/social/carousel-announcement/carousel-announcement.pdf",
       "boards": [
@@ -127,7 +127,7 @@
           "thumb": "assets/social/post-announcement/02-square_thumb.webp",
           "download": "assets/social/post-announcement/02-square.jpg",
           "caption": "Caption\nSame as 01-post.",
-          "alt": "Alt text\nThe Luxembourg Lotus badge in a navy-framed box next to a large blue 2027, above the headline \"The Tribe Gathering comes to Luxembourg\", the site address and the theme, Nada through Nadis.",
+          "alt": "Alt text\nThe stacked Luxembourg Lotus logo in a navy-framed box next to a large blue 2027, above the headline \"The Tribe Gathering comes to Luxembourg\", the site address and the theme, Nada through Nadis.",
           "hashtags": "#JivamuktiYoga #TribeGathering2027 #LuxembourgLotus #NadaThroughNadis"
         },
         {
@@ -139,7 +139,7 @@
           "thumb": "assets/social/post-announcement/03-story_thumb.webp",
           "download": "assets/social/post-announcement/03-story.jpg",
           "caption": "Caption (story, no caption field; use as the link sticker text if needed)\nThe Tribe Gathering comes to Luxembourg · tribe.jivamuktiyoga.com Placeholders on the boards: 03 [TBC: DATES].",
-          "alt": "Alt text\nPeach story with the navy Luxembourg Lotus badge, the headline \"The Tribe Gathering comes to Luxembourg\", a placeholder for the dates and a button with tribe.jivamuktiyoga.com.",
+          "alt": "Alt text\nNavy story with the stacked Luxembourg Lotus logo, the headline \"The Tribe Gathering comes to Luxembourg\", a placeholder for the dates and a button with tribe.jivamuktiyoga.com.",
           "hashtags": "#JivamuktiYoga #TribeGathering2027 #LuxembourgLotus #NadaThroughNadis"
         }
       ]
@@ -221,7 +221,7 @@
           "thumb": "assets/social/location-reveal/06-story_thumb.webp",
           "download": "assets/social/location-reveal/06-story.jpg",
           "caption": "Caption / sticker text: The Tribe Gathering is in Luxembourg. Venue to be announced.",
-          "alt": "Navy story with the word \"Luxembourg\" in gold above a photo of an empty arena with a blue track. Venue name to be confirmed.",
+          "alt": "Navy story with the word \"Luxembourg\" in gold above a photo placeholder. Venue name to be confirmed.",
           "hashtags": "#JivamuktiYoga #TribeGathering2027 #LuxembourgLotus #NadaThroughNadis"
         }
       ]
@@ -243,7 +243,7 @@
           "thumb": "assets/social/carousel-teachers/01-cover_thumb.webp",
           "download": "assets/social/carousel-teachers/01-cover.jpg",
           "caption": "The line-up for the Jivamukti Yoga Tribe Gathering 2027, Luxembourg Lotus. Eleven teachers: nine from the line-up and two local teachers from Luxembourg. Swipe through and meet them. Registration opens soon at tribe.jivamuktiyoga.com.",
-          "alt": "Navy board with the Luxembourg Lotus logo and the words \"The line-up\". Eyebrow reads \"11 teachers\".",
+          "alt": "Navy board with the stacked Luxembourg Lotus logo and the words \"The line-up\". Eyebrow reads \"11 teachers\".",
           "hashtags": "#JivamuktiYoga #TribeGathering2027 #LuxembourgLotus #NadaThroughNadis"
         },
         {
@@ -387,7 +387,7 @@
           "thumb": "assets/social/carousel-teachers/13-close_thumb.webp",
           "download": "assets/social/carousel-teachers/13-close.jpg",
           "caption": "Practice with all eleven teachers in Luxembourg in 2027. Registration opens soon. Dates, venue and passes will be published at tribe.jivamuktiyoga.com [TBC: DATES] [TBC: VENUE].",
-          "alt": "Gold board with the Tribe Gathering 2027 stamp, the words \"Practice with them in Luxembourg\", \"Registration opens soon\" and the site address tribe.jivamuktiyoga.com.",
+          "alt": "Cream board with the Tribe Gathering 2027 stamp, the words \"Practice with them in Luxembourg\", \"Registration opens soon\" and the site address tribe.jivamuktiyoga.com.",
           "hashtags": "#JivamuktiYoga #TribeGathering2027 #LuxembourgLotus #NadaThroughNadis"
         }
       ]
@@ -1035,7 +1035,7 @@
           "thumb": "assets/social/schedule/04-story_thumb.webp",
           "download": "assets/social/schedule/04-story.jpg",
           "caption": "Caption / sticker text\nProgramme to be announced · tribe.jivamuktiyoga.com Placeholders on the boards: 02 [TBC: SCHEDULE] [TBC: DATES] · 03 [TBC: SCHEDULE] · 04 [TBC: SCHEDULE] [TBC: DATES].",
-          "alt": "Alt text\nBlue story with a photo of feet on yoga mats, the heading \"Programme to be announced\", the approved sentence about the programme and placeholders for the schedule and the dates.",
+          "alt": "Alt text\nBlue story with a space for a photo still to be supplied, the heading \"Programme to be announced\", the approved sentence about the programme and placeholders for the schedule and the dates.",
           "hashtags": "#JivamuktiYoga #TribeGathering2027 #LuxembourgLotus #NadaThroughNadis"
         }
       ]
@@ -1056,7 +1056,7 @@
           "format": "story",
           "thumb": "assets/social/stories/01-theme_thumb.webp",
           "download": "assets/social/stories/01-theme.jpg",
-          "caption": "The theme of Luxembourg Lotus 2027: Nada Through Nadis.\nAlt text: Peach story with the words \"Nada through Nadis\" in large navy capitals, a cream lotus and tribe.jivamuktiyoga.com.",
+          "caption": "The theme of Luxembourg Lotus 2027: Nada Through Nadis.\nAlt text: Yellow story with the words \"Nada through Nadis\" in large navy capitals, a blue lotus and tribe.jivamuktiyoga.com.",
           "alt": "Story teasers, board 01",
           "hashtags": "#JivamuktiYoga #TribeGathering2027 #LuxembourgLotus #NadaThroughNadis"
         },
@@ -1068,7 +1068,7 @@
           "format": "story",
           "thumb": "assets/social/stories/02-save-the-date_thumb.webp",
           "download": "assets/social/stories/02-save-the-date.jpg",
-          "caption": "Save the date. Tribe Gathering 2027, Luxembourg. Dates on the site soon.\nAlt text: Navy story with \"Save the date\" in large cream capitals, a placeholder for the dates, a peach lotus and tribe.jivamuktiyoga.com.",
+          "caption": "Save the date. Tribe Gathering 2027, Luxembourg. Dates on the site soon.\nAlt text: Navy story with \"Save the date\" in large cream capitals, a placeholder for the dates, a yellow lotus and tribe.jivamuktiyoga.com.",
           "alt": "Story teasers, board 02",
           "hashtags": "#JivamuktiYoga #TribeGathering2027 #LuxembourgLotus #NadaThroughNadis"
         },
@@ -1080,7 +1080,7 @@
           "format": "story",
           "thumb": "assets/social/stories/03-lineup-drop_thumb.webp",
           "download": "assets/social/stories/03-lineup-drop.jpg",
-          "caption": "The line-up is out: 11 teachers. See the line-up on tribe.jivamuktiyoga.com\nAlt text: Grid of black-and-white portraits of Yogeswari, Ruth Lauer Manenti, Petros Haffenrichter, Anna Lunegova, HaChi Yu, Emma Henry, Moritz Ulrich and Magali Lehners around a peach lotus tile, under the heading \"11 teachers\", with a \"See the line-up\" button.",
+          "caption": "The line-up is out: 11 teachers. See the line-up on tribe.jivamuktiyoga.com\nAlt text: Grid of black-and-white portraits of Yogeswari, Ruth Lauer Manenti, Petros Haffenrichter, Anna Lunegova, HaChi Yu, Emma Henry, Moritz Ulrich and Magali Lehners around a yellow lotus tile, under the heading \"11 teachers\", with a \"See the line-up\" button.",
           "alt": "Story teasers, board 03",
           "hashtags": "#JivamuktiYoga #TribeGathering2027 #LuxembourgLotus #NadaThroughNadis"
         },
@@ -1092,7 +1092,7 @@
           "format": "story",
           "thumb": "assets/social/stories/04-register-soon_thumb.webp",
           "download": "assets/social/stories/04-register-soon.jpg",
-          "caption": "Registration opens soon. Join the Tribe Gathering: tribe.jivamuktiyoga.com\nAlt text: Gold story with \"Registration opens soon\" in large navy capitals, the Tribe Gathering 2027 stamp, a button with tribe.jivamuktiyoga.com, a placeholder for the registration link and a cream lotus.",
+          "caption": "Registration opens soon. Join the Tribe Gathering: tribe.jivamuktiyoga.com\nAlt text: Blue story with \"Registration opens soon\" in large cream capitals, the yellow Tribe Gathering 2027 stamp, a button with tribe.jivamuktiyoga.com, a placeholder for the registration link and a cream lotus.",
           "alt": "Story teasers, board 04",
           "hashtags": "#JivamuktiYoga #TribeGathering2027 #LuxembourgLotus #NadaThroughNadis"
         },
@@ -1104,7 +1104,7 @@
           "format": "story",
           "thumb": "assets/social/stories/05-location_thumb.webp",
           "download": "assets/social/stories/05-location.jpg",
-          "caption": "Where the tribe gathers: Luxembourg. Venue to be announced.\nAlt text: Blue story with \"Luxembourg\" in large cream capitals above a framed photo of an empty arena with a blue running track and a timber roof, and a placeholder for the venue.",
+          "caption": "Where the tribe gathers: Luxembourg. Venue to be announced.\nAlt text: White story with \"Luxembourg\" in large navy capitals above a framed space for a venue photo still to be supplied, a placeholder for the venue and a blue lotus.",
           "alt": "Story teasers, board 05",
           "hashtags": "#JivamuktiYoga #TribeGathering2027 #LuxembourgLotus #NadaThroughNadis"
         },
@@ -1116,7 +1116,7 @@
           "format": "story",
           "thumb": "assets/social/stories/06-sound_thumb.webp",
           "download": "assets/social/stories/06-sound.jpg",
-          "caption": "Nada, the sound of the Tribe. Concerts to be announced.\nAlt text: Navy story with a photo of hands on a harmonium beside a singing bowl on the blue track, the heading \"Nada · the sound of the Tribe\" and a placeholder for the concerts. Placeholders on the boards: 02 [TBC: DATES] · 04 [TBC: REGISTRATION LINK] · 05 [TBC: VENUE] · 06 [TBC: CONCERTS].",
+          "caption": "Nada, the sound of the Tribe. Concerts to be announced.\nAlt text: Navy story with a framed space for a photo still to be supplied, the heading \"Nada · the sound of the Tribe\" and a placeholder for the concerts. Placeholders on the boards: 02 [TBC: DATES] · 04 [TBC: REGISTRATION LINK] · 05 [TBC: VENUE] · 06 [TBC: CONCERTS].",
           "alt": "Story teasers, board 06",
           "hashtags": "#JivamuktiYoga #TribeGathering2027 #LuxembourgLotus #NadaThroughNadis"
         }
@@ -1139,7 +1139,7 @@
           "thumb": "assets/social/banners/01-link-preview_thumb.webp",
           "download": "assets/social/banners/01-link-preview.jpg",
           "caption": "Use: link preview / OG image for tribe.jivamuktiyoga.com. It needs no caption: the page title and description come from the site meta (\"Jivamukti Yoga Tribe Gathering 2027 | Luxembourg Lotus\"). If posted with text: The Tribe Gathering comes to Luxembourg in 2027. The theme is Nada Through Nadis. tribe.jivamuktiyoga.com",
-          "alt": "Navy banner with the Luxembourg Lotus Tribe Gathering 2027 badge and the line \"The Tribe Gathering comes to Luxembourg · 2027\", site address tribe.jivamuktiyoga.com.",
+          "alt": "Navy banner with the Luxembourg Lotus Tribe Gathering 2027 logo and the line \"The Tribe Gathering comes to Luxembourg · 2027\", site address tribe.jivamuktiyoga.com.",
           "hashtags": "#JivamuktiYoga #TribeGathering2027 #LuxembourgLotus #NadaThroughNadis"
         },
         {
@@ -1151,7 +1151,7 @@
           "thumb": "assets/social/banners/02-newsletter-header_thumb.webp",
           "download": "assets/social/banners/02-newsletter-header.jpg",
           "caption": "Use: newsletter header image. It needs no caption. If posted with text: Luxembourg Lotus. Nada Through Nadis. Jivamukti Yoga Tribe Gathering 2027.",
-          "alt": "Cream banner with the Luxembourg Lotus wordmark, the theme \"Nada Through Nadis\" and a peach lotus.",
+          "alt": "Cream banner with the Jivamukti Yoga Tribe Gathering, Luxembourg Lotus 2027 logo, the theme \"Nada Through Nadis\" and a blue lotus.",
           "hashtags": "#JivamuktiYoga #TribeGathering2027 #LuxembourgLotus #NadaThroughNadis"
         }
       ]
