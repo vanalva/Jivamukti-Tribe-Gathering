@@ -398,6 +398,18 @@
   outline-offset: 4px;
 }
 
+/* ---- cursor and stamp flip on dark / blue / photo surfaces (js/announce.js sets the classes) --- */
+[data-flwr] .custom-cursor.is-on-dark svg path {
+  fill: var(--_palette---accent-2--500);
+}
+[data-flwr] .custom-cursor.is-on-blue svg path,
+[data-flwr] .custom-cursor.is-on-photo svg path {
+  fill: var(--_palette---neutral--0);
+}
+[data-flwr] .an_stamp {
+  pointer-events: none;
+}
+
 /* ---- motion: js/announce.js fades things in; reduced motion opts out ------- */
 @media (prefers-reduced-motion: reduce) {
   [data-flwr] .an_stamp .site-stamp_ring {

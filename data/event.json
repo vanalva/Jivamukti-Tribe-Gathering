@@ -49,7 +49,8 @@
     "footerMark": "assets/brand/lux-lotus/lux-lotus-mark-white-on-dark.svg",
     "stampRing": "assets/brand/lux-lotus/lux-lotus-stamp-yellow-navy-ring.svg",
     "stampCentre": "assets/brand/lux-lotus/lux-lotus-stamp-yellow-navy-centre.svg",
-    "_readme": "Client feedback 28 Sep 2026: logoVertical = the stacked lockup (primary, yellow lotus centre); stamp = yellow disc, split into stampRing (spins) + stampCentre (static) for the fixed corner stamp; logoBadge = the V5 vertical rectangle, kept in the register sections."
+    "_readme": "Client feedback 28 Sep 2026: logoVertical = the stacked lockup (primary, yellow lotus centre); stamp = yellow disc, split into stampRing (spins) + stampCentre (static) for the fixed corner stamp; logoBadge = the V5 vertical rectangle, kept in the register sections.",
+    "stampRingOnDark": "assets/brand/lux-lotus/lux-lotus-stamp-navy-yellow-ring.svg"
   },
   "placeholders": {
     "landscape": "assets/brand/lux-lotus/lux-lotus-placeholder-landscape.svg",

@@ -71,6 +71,41 @@
     });
   }
 
+  // ---- surface awareness: the cursor and the corner stamp flip colours over dark, blue and photo
+  //      surfaces ([data-cursor] on the sections). The stamp swaps its ring layer (navy text on
+  //      light surfaces, yellow text over dark ones); the centre disc stays as it is.
+  var cursor = document.querySelector('.custom-cursor');
+  var stamp = page.querySelector('.an_stamp');
+  var ring = stamp && stamp.querySelector('.site-stamp_ring');
+  function surfaceAt(x, y) {
+    var el = document.elementFromPoint(x, y);
+    var host = el && el.closest ? el.closest('[data-cursor]') : null;
+    return host ? host.getAttribute('data-cursor') : '';
+  }
+  if (cursor) {
+    document.addEventListener('pointermove', function (e) {
+      var s = surfaceAt(e.clientX, e.clientY);
+      cursor.classList.toggle('is-on-dark', s === 'dark');
+      cursor.classList.toggle('is-on-blue', s === 'blue');
+      cursor.classList.toggle('is-on-photo', s === 'photo');
+    }, { passive: true });
+  }
+  if (stamp && ring) {
+    var ringLight = stamp.getAttribute('data-ring-light'), ringDark = stamp.getAttribute('data-ring-dark');
+    var stampTick = null;
+    var checkStamp = function () {
+      stampTick = null;
+      var r = stamp.getBoundingClientRect();
+      var s = surfaceAt(r.left + r.width / 2, r.top + r.height / 2);
+      var want = (s === 'dark' && ringDark) ? ringDark : ringLight;
+      if (want && ring.getAttribute('src') !== want) ring.setAttribute('src', want);
+    };
+    var queueStamp = function () { if (!stampTick) stampTick = requestAnimationFrame(checkStamp); };
+    window.addEventListener('scroll', queueStamp, { passive: true });
+    window.addEventListener('resize', queueStamp);
+    checkStamp();
+  }
+
   // ---- line-up hover card (pointer devices only; phones show the tile inline) --------
   var card = page.querySelector('.an_hover-card');
   var cardImg = card && card.querySelector('.an_hover-card-img');
