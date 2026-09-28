@@ -71,8 +71,9 @@
   /* alternate-2 — unused until the brand guide names a third colour; follows core so nothing foreign shows */
   --_palette---alternate-2--seed: var(--_palette---core--seed);
 
-  /* accent — peach / orange (V3 #efa984) */
-  --_palette---accent--seed: oklch(0.793 0.097 48.7);
+  /* accent — light (lotus) blue, per the client's 28 Sep feedback: buttons and footer.
+     Peach stays in the logo artwork only; pink is a small accent with no value yet. */
+  --_palette---accent--seed: var(--_palette---core--seed);
   --_palette---accent--50: oklch(from var(--_palette---accent--seed) 0.985 calc(c * 0.2) h);
   --_palette---accent--100: oklch(from var(--_palette---accent--seed) 0.97 calc(c * 0.35) h);
   --_palette---accent--200: oklch(from var(--_palette---accent--seed) 0.95 calc(c * 0.6) h);

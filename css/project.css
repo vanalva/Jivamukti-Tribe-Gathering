@@ -6674,6 +6674,59 @@ body:has(.hero-home_wrap) .nav_content > .nav_menu:last-child .nav_arrow-icon {
   }
 }
 
+/* ---- Fixed corner stamp (client feedback 28 Sep 2026) ------------------------------
+   Bottom-right on every page. The ring layer spins with the hero badge's keyframes; the
+   centre layer stays still so the lettering is readable. */
+[data-flwr] .site-stamp {
+  position: fixed;
+  right: var(--_spacing---page-margin);
+  bottom: var(--_spacing---page-margin);
+  width: clamp(110px, 12vw, 170px);
+  height: clamp(110px, 12vw, 170px);
+  z-index: 40;
+  display: block;
+}
+[data-flwr] .site-stamp_centre,
+[data-flwr] .site-stamp_ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+[data-flwr] .site-stamp_ring {
+  animation-name: rotateBadge;
+  animation-duration: 24s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+[data-flwr] .app-mockup_image.is-badge {
+  width: 100%;
+  max-width: 18rem;
+  height: auto;
+}
+/* The stacked lockup is landscape: let the column width drive it (the earlier vertical badge
+   was capped by height). */
+[data-flwr].site_wrap .hero-home_logo.is-vertical {
+  width: 100%;
+  max-width: 100%;
+  max-height: none;
+}
+/* Room under the footer links so the fixed stamp never covers them at the end of the page */
+[data-flwr].site_wrap .footer_wrap {
+  padding-bottom: calc(var(--_spacing---page-margin) + 190px);
+}
+@media (max-width: 767px) {
+  [data-flwr] .site-stamp {
+    width: 96px;
+    height: 96px;
+  }
+  [data-flwr].site_wrap .footer_wrap {
+    padding-bottom: calc(var(--_spacing---page-margin) + 120px);
+  }
+}
+
 /* ---- Priority layer: declarations Rome marked !important. Emitted last in this
    bucket under a (0,3,0) wrapper prefix so they keep winning without the flag. ---- */
 html::-webkit-scrollbar-track {
