@@ -2,7 +2,8 @@
  * announce.js — motion for the announcement page (src/pages/index.html).
  *
  * Runs after js/gsap/config.js (GSAP + ScrollTrigger registered there, same defaults as the
- * full site). Everything degrades: without GSAP the page is fully visible and static, and
+ * full site). Fades and small vertical rises only, like the full site: no rotations, no skews.
+ * Everything degrades: without GSAP the page is fully visible and static, and
  * prefers-reduced-motion skips every non-essential animation (the countdown still runs).
  */
 (function () {
@@ -20,46 +21,24 @@
   function tick() {
     if (!numberEl || isNaN(target.getTime())) return;
     var ms = target.getTime() - Date.now();
-    var days = Math.max(0, Math.ceil(ms / 86400000));
-    numberEl.textContent = String(days);
+    numberEl.textContent = String(Math.max(0, Math.ceil(ms / 86400000)));
   }
   tick();
   setInterval(tick, 60000);
 
-  // ---- hero reveal: line → geometric lotus (halo) → illustrated lotus → wordmark -----
-  var halo = page.querySelector('.an_lk-halo');
-  var lotus = page.querySelectorAll('.an_lk-lotus');
-  var text = page.querySelectorAll('.an_lk-text');
-  var line = page.querySelector('.an_hero-line');
-  var facts = page.querySelectorAll('.an_hero-dates, .an_hero-location, .an_hero-countdown, .an_top-eyebrow, .an_top-mark');
-
-  if (hasGsap && !reduce && halo) {
-    gsap.set(halo, { transformOrigin: '50% 50%', scaleX: 0.02, opacity: 0 });
-    gsap.set(lotus, { transformOrigin: '50% 60%', opacity: 0, scale: 0.92 });
-    gsap.set(text, { opacity: 0, y: 14 });
-    gsap.set(facts, { opacity: 0, y: 20 });
-    gsap.set(line, { scaleY: 0, opacity: 1 });
-
-    var tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
-    tl.to(line, { scaleY: 1, duration: 0.7, ease: 'power2.inOut' })
-      .to(halo, { opacity: 1, duration: 0.2 }, '-=0.1')
-      .to(halo, { scaleX: 1, duration: 1.2, ease: 'power3.inOut' }, '<')
-      .to(line, { opacity: 0, duration: 0.5 }, '-=0.6')
-      .to(lotus, { opacity: 1, scale: 1, duration: 0.9, stagger: 0.012 }, '-=0.55')
-      .to(text, { opacity: 1, y: 0, duration: 0.7, stagger: 0.012 }, '-=0.5')
-      .to(facts, { opacity: 1, y: 0, duration: 0.8, stagger: 0.12 }, '-=0.3');
-  } else if (line) {
-    line.style.display = 'none';
+  // ---- hero: logo, date row and photo fade in on load --------------------------------
+  if (hasGsap && !reduce) {
+    gsap.from('.an_fade', { opacity: 0, y: 16, duration: 1.2, ease: 'power2.out', stagger: 0.15 });
   }
 
-  // ---- scroll: dates moment, nadis drawing, theme, line-up ---------------------------
+  // ---- scroll reveals (same vocabulary as js/gsap/animations.js) ---------------------
   if (hasST && !reduce) {
-    gsap.from('.an_dates-word', {
-      opacity: 0, y: 60, duration: 1.1, ease: 'power3.out', stagger: 0.14,
+    gsap.from('.an_dates-word, .an_countdown', {
+      opacity: 0, y: 40, duration: 1, ease: 'power3.out', stagger: 0.12,
       scrollTrigger: { trigger: '.an_dates', start: 'top 70%', once: true }
     });
 
-    page.querySelectorAll('.an_nadi').forEach(function (path, i) {
+    page.querySelectorAll('.an_nadi').forEach(function (path) {
       var len = path.getTotalLength();
       path.style.strokeDasharray = len;
       path.style.strokeDashoffset = len;
@@ -69,20 +48,25 @@
       });
     });
 
-    gsap.from('.an_theme-inner > *', {
-      opacity: 0, y: 40, duration: 1, ease: 'power3.out', stagger: 0.12,
+    gsap.from('.an_split > *', {
+      opacity: 0, y: 30, duration: 1, ease: 'power3.out', stagger: 0.15,
       scrollTrigger: { trigger: '.an_theme', start: 'top 75%', once: true }
     });
 
     gsap.utils.toArray('.an_names').forEach(function (list) {
       gsap.from(list.querySelectorAll('.an_name'), {
-        opacity: 0, x: -40, duration: 0.9, ease: 'power3.out', stagger: 0.08,
+        opacity: 0, y: 24, duration: 0.8, ease: 'power3.out', stagger: 0.07,
         scrollTrigger: { trigger: list, start: 'top 80%', once: true }
       });
     });
 
+    gsap.from('.an_past-img', {
+      opacity: 0, y: 30, duration: 0.9, ease: 'power2.out', stagger: 0.1,
+      scrollTrigger: { trigger: '.an_past', start: 'top 75%', once: true }
+    });
+
     gsap.from('.an_footer-inner > *', {
-      opacity: 0, y: 30, duration: 1, ease: 'power2.out', stagger: 0.15,
+      opacity: 0, y: 24, duration: 1, ease: 'power2.out', stagger: 0.15,
       scrollTrigger: { trigger: '.an_footer', start: 'top 80%', once: true }
     });
   }
@@ -95,7 +79,7 @@
     var moveX = hasGsap ? gsap.quickTo(card, 'x', { duration: 0.35, ease: 'power3.out' }) : null;
     var moveY = hasGsap ? gsap.quickTo(card, 'y', { duration: 0.35, ease: 'power3.out' }) : null;
     var show = function (on) {
-      if (hasGsap && !reduce) gsap.to(card, { opacity: on ? 1 : 0, rotate: on ? -4 : -8, duration: 0.35, ease: 'power2.out' });
+      if (hasGsap && !reduce) gsap.to(card, { opacity: on ? 1 : 0, duration: 0.3, ease: 'power2.out' });
       else card.style.opacity = on ? '1' : '0';
     };
     page.querySelectorAll('.an_name').forEach(function (item) {
@@ -108,7 +92,7 @@
     });
     page.addEventListener('pointermove', function (e) {
       if (moveX) { moveX(e.clientX + 40); moveY(e.clientY); }
-      else { card.style.transform = 'translate(' + (e.clientX + 40) + 'px,' + e.clientY + 'px) translate(-50%, -50%) rotate(-4deg)'; }
+      else { card.style.transform = 'translate(' + (e.clientX + 40) + 'px,' + e.clientY + 'px) translate(-50%, -50%)'; }
     }, { passive: true });
   }
 })();
