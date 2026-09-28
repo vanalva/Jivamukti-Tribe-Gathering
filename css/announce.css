@@ -18,7 +18,6 @@
   background-color: var(--_palette---neutral--0);
   color: var(--_palette---neutral--900);
   overflow-x: clip;
-  cursor: auto;
 }
 [data-flwr] .an_eyebrow {
   margin-top: 0;
