@@ -80,8 +80,8 @@
       "GATHERING"
     ],
     "aboutHeading": "Nada Through Nadis",
-    "aboutSubheading": "[TBC: COPY]",
-    "aboutDescription": "[TBC: COPY — intro paragraph]",
+    "aboutSubheading": "The roots of the lotus go deep into the Self. Through the roots, the channels we call nadis, we experience the eternal sound: nadam.",
+    "aboutDescription": "In a world focused on doing, on productivity and on taking sides, we lose the ability to inhabit the body. Once you are at peace, at home in yourself, you can care for others and support your community. In 2027 the Jivamukti Yoga Tribe Gathering brings the tribe to Luxembourg to practice this together.",
     "venuesTitle": "VENUES",
     "venueEyebrow": "Main venue",
     "lineupTitle": "LINE UP",
@@ -90,7 +90,8 @@
     "lookbackSubtitle": "Tribe Gatherings of the past",
     "lookbackCta": "VIEW MORE",
     "registerCta": "JOIN US",
-    "hoverBadge": "SCROLL TO<br>SEE MORE"
+    "hoverBadge": "SCROLL TO<br>SEE MORE",
+    "_provisionalCopy": "aboutSubheading / aboutDescription and pages.about.intro / themeLine are provisional copy assembled only from the client's own moodboard sentences in brief/BRIEF.md (Theme and messaging). Replace when the client sends final copy."
   },
   "links": {
     "register": "booking.html",
@@ -133,7 +134,11 @@
     "storyMats": "assets/images/lux-lotus/lux-lotus-story-mats.webp",
     "storyMatsAlt": "Rolled mats against the grandstand (generated placeholder)",
     "interimHero": "assets/images/lux-lotus/lux-lotus-interim-hero.webp",
-    "interimHeroAlt": "The arena track and timber ceiling in late light (generated placeholder)"
+    "interimHeroAlt": "The arena track and timber ceiling in late light (generated placeholder)",
+    "registerHero": "assets/images/lux-lotus/lux-lotus-register-hero.webp",
+    "registerHeroAlt": "The registration table at the entrance of the arena, wristbands and a list (generated placeholder)",
+    "scheduleHero": "assets/images/lux-lotus/lux-lotus-schedule-hero.webp",
+    "scheduleHeroAlt": "Rows of mats laid out on the blue track before the first class (generated placeholder)"
   },
   "pages": {
     "_readme": "Per-page metadata and copy. Values in [TBC: ...] are placeholders per the brief.",
@@ -149,8 +154,8 @@
       "description": "What the Jivamukti Yoga Tribe Gathering is, and the theme of the Luxembourg Lotus edition: Nada Through Nadis.",
       "quote": "\"Hurry home to your real home, which is OM\"",
       "quoteBy": "- Shri Brahmananda Sarasvati",
-      "intro": "[TBC: COPY - what the Tribe Gathering is, and what Luxembourg 2027 adds]",
-      "themeLine": "[TBC: COPY - the roots of the lotus go deep into the Self; through the channels (nadis) we experience the eternal sound (nadam)]"
+      "intro": "The Tribe Gathering is the Jivamukti Yoga community meeting in one place to practice, listen and sing together: a satsang, the company of like-minded people in pursuit of the truth. In 2027 the tribe gathers in Luxembourg under the theme Nada Through Nadis.",
+      "themeLine": "THE ROOTS OF THE LOTUS GO DEEP INTO THE SELF. THROUGH THE ROOTS, THE CHANNELS WE CALL NADIS, WE EXPERIENCE THE ETERNAL SOUND: NADAM."
     },
     "schedule": {
       "title": "Schedule | Jivamukti Yoga Tribe Gathering 2027",
