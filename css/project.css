@@ -6709,9 +6709,10 @@ body:has(.hero-home_wrap) .nav_content > .nav_menu:last-child .nav_arrow-icon {
 /* The stacked lockup is landscape: let the column width drive it (the earlier vertical badge
    was capped by height). */
 [data-flwr].site_wrap .hero-home_logo.is-vertical {
-  width: 100%;
-  max-width: 100%;
-  max-height: 62vh;
+  width: min(86%, calc((100vh - var(--_component---navbar--height) - var(--_spacing---page-margin) * 3 - 4vh) * 1.3));
+  max-width: 86%;
+  height: auto;
+  max-height: none;
 }
 /* Home hero: the lockup fills the left column and sits optically centred against the full-height
    image on the right. Geometric centre = 50vh, but the nav bar weighs on the top of the hero and
@@ -6763,26 +6764,28 @@ body:has(.hero-home_wrap) .nav_content > .nav_menu:last-child .nav_arrow-icon {
    the whole row and is centred in the band between the row top and the title's text, which is
    the photo centre lifted by half the title height (a pure photo centre reads low once the big
    title sits under it, and would collide with two-line titles on 16:9 screens). The title height
-   comes from js/main.js as --hero-title-h; the clamp is the one-line fallback. The image scales
-   to whichever is smaller, 88% of the column or the band minus two steps of breathing room. */
+   comes from js/main.js as --hero-title-h; the clamp is the one-line fallback.
+   Sizing uses only the column width and viewport units (no percentage heights, which browsers
+   resolve differently inside grid cells and which clipped the wordmark for Juan): the image is
+   76% of the column, or narrower when the band above the title is short. 1.3 = the lockup's
+   width/height ratio (1.56) with breathing room. */
 [data-flwr].site_wrap .hero-collage_logo-wrap {
   height: 100%;
   align-self: stretch;
   padding-bottom: var(--hero-title-h, clamp(2.5rem, 9vw, 11rem));
 }
 [data-flwr].site_wrap .hero-collage_logo-wrap .image-wrap {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 88%;
-  max-width: 88%;
-  height: 100%;
+  width: min(76%, calc((100vh - var(--_component---navbar--height) - var(--hero-title-h, clamp(2.5rem, 9vw, 11rem)) - var(--_spacing---page-margin) * 2 - var(--_spacing---step--6)) * 1.3));
+  max-width: 76%;
+  height: auto;
+  overflow-x: visible;
+  overflow-y: visible;
 }
 [data-flwr].site_wrap .hero-collage_logo-wrap .image-wrap__img--contain {
-  width: auto;
+  width: 100%;
   height: auto;
   max-width: 100%;
-  max-height: calc(100% - var(--_spacing---step--4) * 2);
+  max-height: none;
 }
 @media (max-width: 991px) {
   [data-flwr].site_wrap .hero-collage_logo-wrap {
@@ -6792,11 +6795,6 @@ body:has(.hero-home_wrap) .nav_content > .nav_menu:last-child .nav_arrow-icon {
   [data-flwr].site_wrap .hero-collage_logo-wrap .image-wrap {
     width: 100%;
     max-width: 420px;
-    height: auto;
-  }
-  [data-flwr].site_wrap .hero-collage_logo-wrap .image-wrap__img--contain {
-    width: 100%;
-    max-height: none;
   }
 }
 
