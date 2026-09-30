@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Disallow: /changes.html
+Disallow: /social-pack.html
+Disallow: /announcement.html
+Disallow: /full.html
+Disallow: /styleguide.html
+Disallow: /styleguide-project.html
+
+Sitemap: https://tribe.jivamuktiyoga.com/sitemap.xml

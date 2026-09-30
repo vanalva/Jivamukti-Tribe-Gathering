@@ -732,7 +732,7 @@ document.addEventListener('DOMContentLoaded', function() {
           if (twoLineFontSize > bestFontSize) {
             bestFontSize = twoLineFontSize;
             // Update the element with line break
-            nameEl.innerHTML = line1 + '<br>' + line2;
+            nameEl.innerHTML = line1 + ' <br>' + line2;
           }
         }
 
@@ -840,4 +840,268 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   console.log('Jivamukti Tribe Gathering - All interactions initialized');
+});
+
+// ============================================
+// REVIEW FIXES 30 SEP 2026 (template layer; source: notes/tools/transform-pages.py MAIN_REVIEW_FIXES)
+// ============================================
+document.addEventListener('DOMContentLoaded', function () {
+  var siteWrap = document.querySelector('[data-flwr]');
+
+  // ---- Fullscreen-menu photo alt: pages that swap the photo (data-menu-image) get a matching alt.
+  //      data-menu-image-alt on the wrapper wins; otherwise the file name picks a known alt; any
+  //      other photo keeps the shared alt from the menu component.
+  var MENU_ALTS = {
+    '_MG_5821.JPG_1024w.webp': 'A crowd practising standing yoga with arms raised in a tall brick hall',
+    'DSCF7795_1024w.webp': 'Practitioners in a warmly lit room, arms folded overhead, looking up'
+  };
+  var menuPhoto = document.querySelector('.menu-fullscreen_hero-image');
+  if (siteWrap && menuPhoto) {
+    var menuAlt = siteWrap.getAttribute('data-menu-image-alt') ||
+      MENU_ALTS[(menuPhoto.getAttribute('src') || '').split('/').pop()];
+    if (menuAlt) menuPhoto.setAttribute('alt', menuAlt);
+  }
+
+  // ---- Surface awareness: the corner stamp and the custom cursor flip colours over dark, blue
+  //      and photo surfaces (client, 30 Sep 2026). No attributes needed on sections: the surface is
+  //      read from what is painted under the point (elementsFromPoint): [data-cursor] wins when
+  //      present, then the first photo (img / video / background-image) or opaque background colour.
+  //      Stamp: navy-lettering ring on light surfaces, the on-dark ring (yellow lettering) elsewhere;
+  //      the centre layer never changes. Cursor: .is-on-dark / .is-on-blue / .is-on-photo.
+  var stamp = document.querySelector('.site-stamp');
+  var ring = stamp && stamp.querySelector('.site-stamp_ring');
+  var cursor = document.querySelector('.custom-cursor');
+  var SKIP = '.site-stamp, .custom-cursor, .teachers_hover-badge, .schedule_hover-badge, #bookingHoverBadge';
+  var colourCache = {};
+  var probe = document.createElement('canvas'); probe.width = probe.height = 1;
+  var probeCtx = probe.getContext && probe.getContext('2d', { willReadFrequently: true });
+  function rgba(css) {
+    if (css in colourCache) return colourCache[css];
+    var out = null;
+    var m = /^rgba?\(\s*([\d.]+)[,\s]+([\d.]+)[,\s]+([\d.]+)(?:\s*[,\/]\s*([\d.]+%?))?\s*\)$/.exec(css);
+    if (m) {
+      var a = m[4] === undefined ? 1 : (m[4].slice(-1) === '%' ? parseFloat(m[4]) / 100 : parseFloat(m[4]));
+      out = [+m[1], +m[2], +m[3], a];
+    } else if (probeCtx) {
+      // oklch() / oklab() / color() computed values: let the canvas convert them to sRGB
+      probeCtx.clearRect(0, 0, 1, 1);
+      probeCtx.fillStyle = 'rgba(0,0,0,0)'; probeCtx.fillStyle = css;
+      probeCtx.fillRect(0, 0, 1, 1);
+      var d = probeCtx.getImageData(0, 0, 1, 1).data;
+      out = [d[0], d[1], d[2], d[3] / 255];
+    }
+    colourCache[css] = out;
+    return out;
+  }
+  function classify(c) {
+    var lum = (0.2126 * c[0] + 0.7152 * c[1] + 0.0722 * c[2]) / 255;
+    if (lum < 0.3) return 'dark';
+    if (lum < 0.62 && c[2] > c[0] + 40) return 'blue';
+    return 'light';
+  }
+  function shown(el) {
+    var o = 1;
+    for (var n = el; n && n.nodeType === 1; n = n.parentElement) {
+      var cs = getComputedStyle(n);
+      if (cs.visibility === 'hidden' || cs.display === 'none') return false;
+      o *= parseFloat(cs.opacity);
+      if (o < 0.15) return false;
+    }
+    return true;
+  }
+  function surfaceAt(x, y) {
+    if (x < 0 || y < 0 || x >= window.innerWidth || y >= window.innerHeight) return 'light';
+    var els = document.elementsFromPoint(x, y);
+    var first = true;
+    for (var i = 0; i < els.length; i++) {
+      var el = els[i];
+      if (el.closest(SKIP)) continue;
+      if (first) {
+        first = false;
+        var host = el.closest('[data-cursor]');
+        if (host) return host.getAttribute('data-cursor') || 'light';
+      }
+      if (el === document.documentElement || el === document.body) break;
+      var tag = el.tagName;
+      if (tag === 'IMG') {
+        var src = el.currentSrc || el.getAttribute('src') || '';
+        if (!/\.svg(\?|#|$)/i.test(src) && el.complete && shown(el)) return 'photo';
+        continue;
+      }
+      if (tag === 'VIDEO' || tag === 'IFRAME' || tag === 'CANVAS') { if (shown(el)) return 'photo'; continue; }
+      var cs = getComputedStyle(el);
+      if (/url\(/.test(cs.backgroundImage) && !/\.svg/i.test(cs.backgroundImage) && shown(el)) return 'photo';
+      var c = rgba(cs.backgroundColor);
+      if (c && c[3] >= 0.5 && shown(el)) return classify(c);
+    }
+    var bc = rgba(getComputedStyle(document.body).backgroundColor);
+    return bc && bc[3] >= 0.5 ? classify(bc) : 'light';
+  }
+
+  var ringLight = stamp && (stamp.getAttribute('data-ring-light') || (ring && ring.getAttribute('src')));
+  var ringDark = stamp && (stamp.getAttribute('data-ring-dark') ||
+    (ringLight && ringLight.indexOf('yellow-navy-ring') !== -1 ? ringLight.replace('yellow-navy-ring', 'navy-yellow-ring') : ''));
+  if (ringDark) { var pre = new Image(); pre.src = ringDark; }
+  var pointerX = -1, pointerY = -1, surfaceQueued = false;
+  function updateSurfaces() {
+    surfaceQueued = false;
+    if (stamp && ring && ringLight) {
+      var r = stamp.getBoundingClientRect();
+      if (r.width) {
+        var s = surfaceAt(r.left + r.width / 2, r.top + r.height / 2);
+        var want = (s !== 'light' && ringDark) ? ringDark : ringLight;
+        if (ring.getAttribute('src') !== want) ring.setAttribute('src', want);
+        stamp.setAttribute('data-surface', s);
+      }
+    }
+    if (cursor && pointerX >= 0) {
+      var p = surfaceAt(pointerX, pointerY);
+      cursor.classList.toggle('is-on-dark', p === 'dark');
+      cursor.classList.toggle('is-on-blue', p === 'blue');
+      cursor.classList.toggle('is-on-photo', p === 'photo');
+    }
+  }
+  function queueSurfaces() { if (!surfaceQueued) { surfaceQueued = true; requestAnimationFrame(updateSurfaces); } }
+  if (stamp || cursor) {
+    window.addEventListener('scroll', queueSurfaces, { passive: true });
+    window.addEventListener('resize', queueSurfaces);
+    window.addEventListener('load', queueSurfaces);
+    document.addEventListener('pointermove', function (e) {
+      if (e.pointerType === 'touch') return;
+      pointerX = e.clientX; pointerY = e.clientY; queueSurfaces();
+    }, { passive: true });
+    // Reveals and overlays change what sits under the stamp without a scroll: re-check shortly
+    // after load, and whenever the menu or the teacher pop-up opens or closes (below).
+    setTimeout(queueSurfaces, 400); setTimeout(queueSurfaces, 1600);
+    queueSurfaces();
+  }
+
+  function watchClass(el, cls, cb) {
+    if (!el || !window.MutationObserver) return;
+    var was = el.classList.contains(cls);
+    new MutationObserver(function () {
+      var now = el.classList.contains(cls);
+      if (now !== was) { was = now; cb(now); }
+    }).observe(el, { attributes: true, attributeFilter: ['class'] });
+  }
+  function focusables(root) {
+    return Array.prototype.filter.call(
+      root.querySelectorAll('a[href], button:not([disabled]), input, select, textarea, [tabindex]:not([tabindex="-1"])'),
+      function (el) { return el.getClientRects().length && getComputedStyle(el).visibility !== 'hidden'; });
+  }
+  function trapTab(e, list) {
+    if (e.key !== 'Tab' || !list.length) return;
+    // Tab order is taken over completely: the list is not in DOM order (the toggle sits outside
+    // the menu), so native tabbing would escape to the page behind.
+    e.preventDefault();
+    var i = list.indexOf(document.activeElement);
+    var next = e.shiftKey ? (i <= 0 ? list.length - 1 : i - 1) : (i === -1 || i === list.length - 1 ? 0 : i + 1);
+    list[next].focus();
+  }
+
+  // ---- Fullscreen menu: focus moves into it on open and back to the toggle on close.
+  var menu = document.getElementById('fullscreenMenu');
+  var toggles = [document.getElementById('menuToggle'), document.getElementById('menuToggleFixed')].filter(Boolean);
+  var menuReturn = null;
+  function visibleToggle() {
+    for (var i = toggles.length - 1; i >= 0; i--) {
+      var t = toggles[i], cs = getComputedStyle(t);
+      if (t.getClientRects().length && cs.visibility !== 'hidden' && cs.display !== 'none' && cs.pointerEvents !== 'none') return t;
+    }
+    return toggles[0] || null;
+  }
+  if (menu) {
+    toggles.forEach(function (t) { t.setAttribute('aria-controls', 'fullscreenMenu'); t.setAttribute('aria-expanded', 'false'); });
+    watchClass(menu, 'is-open', function (open) {
+      toggles.forEach(function (t) { t.setAttribute('aria-expanded', open ? 'true' : 'false'); });
+      queueSurfaces();
+      if (open) {
+        menuReturn = toggles.indexOf(document.activeElement) !== -1 ? document.activeElement : visibleToggle();
+        var tries = 0;
+        (function focusFirst() {
+          var link = menu.querySelector('.menu-fullscreen_link');
+          if (!link) return;
+          link.focus();
+          if (document.activeElement !== link && ++tries < 10) setTimeout(focusFirst, 40);
+        })();
+      } else {
+        var back = menuReturn && menuReturn.getClientRects().length ? menuReturn : visibleToggle();
+        if (back) back.focus();
+        menuReturn = null;
+      }
+    });
+    document.addEventListener('keydown', function (e) {
+      if (!menu.classList.contains('is-open')) return;
+      var t = visibleToggle();
+      trapTab(e, focusables(menu).concat(t ? [t] : []));
+    });
+  }
+
+  // ---- Teacher pop-up: dialog semantics, focus in and back, portrait alt, keyboard cards,
+  //      and teachers.html#<slug> opens that teacher (slug = name, lower case, hyphens).
+  var modal = document.getElementById('teacherModal');
+  if (modal) {
+    var modalBox = modal.querySelector('.teacher-modal_content') || modal;
+    var modalName = modal.querySelector('.teacher-modal_name');
+    var modalImg = modal.querySelector('.teacher-modal_image');
+    var modalClose = modal.querySelector('.teacher-modal_close');
+    if (modalName && !modalName.id) modalName.id = 'teacherModalName';
+    modalBox.setAttribute('role', 'dialog');
+    modalBox.setAttribute('aria-modal', 'true');
+    if (modalName) modalBox.setAttribute('aria-labelledby', modalName.id);
+    if (modalClose) modalClose.setAttribute('aria-label', 'Close profile');
+    var trigger = null, modalReturn = null;
+    var properName = function (card) {
+      if (!card) return '';
+      var img = card.querySelector('.teacher-card_image, .teacher_item-thumbnail');
+      return (img && img.getAttribute('alt')) || card.getAttribute('data-teacher-name') || '';
+    };
+    document.addEventListener('click', function (e) {
+      var c = e.target && e.target.closest && e.target.closest('.teacher-card, .teacher_item');
+      if (c) trigger = c;
+    }, true);
+    watchClass(modal, 'is-visible', function (open) {
+      queueSurfaces();
+      if (open) {
+        modalReturn = trigger || (document.activeElement !== document.body ? document.activeElement : null);
+        var name = properName(trigger) || (modalName ? modalName.textContent.trim() : '');
+        if (modalImg && name) modalImg.setAttribute('alt', name);
+        if (modalClose) modalClose.focus();
+      } else {
+        if (modalReturn && document.contains(modalReturn)) modalReturn.focus();
+        modalReturn = null; trigger = null;
+      }
+    });
+    document.addEventListener('keydown', function (e) {
+      if (modal.classList.contains('is-visible')) trapTab(e, focusables(modal));
+    });
+
+    var slugOf = function (s) { return (s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''); };
+    var cards = Array.prototype.slice.call(document.querySelectorAll('.teacher-card'));
+    cards.forEach(function (card) {
+      var name = properName(card);
+      card.setAttribute('role', 'button');
+      card.setAttribute('tabindex', '0');
+      if (name) card.setAttribute('aria-label', 'Open ' + name + ' profile');
+      card.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') { e.preventDefault(); trigger = card; card.click(); }
+      });
+    });
+    var openFromHash = function () {
+      var want = decodeURIComponent((location.hash || '').slice(1)).toLowerCase();
+      if (!want) return;
+      for (var i = 0; i < cards.length; i++) {
+        if (slugOf(cards[i].getAttribute('data-teacher-name')) === want || slugOf(properName(cards[i])) === want) {
+          trigger = cards[i];
+          cards[i].scrollIntoView({ block: 'center' });
+          cards[i].click();
+          return;
+        }
+      }
+    };
+    if (cards.length) {
+      window.addEventListener('hashchange', openFromHash);
+      setTimeout(openFromHash, 150);
+    }
+  }
 });

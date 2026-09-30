@@ -78,3 +78,35 @@ gsap.registerEase("smoothInOut", "power2.inOut");
   }
   ['to', 'from', 'fromTo', 'set'].forEach(wrap);
 })();
+
+// ---- Template layer: reduced motion (review fix, 30 Sep 2026) -----------------------
+// With prefers-reduced-motion: reduce, nothing slides, fades or scrubs: gsap.from() leaves the
+// element in its final (CSS) state, gsap.fromTo() jumps to its end values, gsap.to() applies its
+// non-transform values at once and scroll-scrubbed tweens (parallax) are dropped. Content can
+// never be left hidden. The wrapper gets .is-reduced-motion, which stops the stamp ring spinning
+// (project.css). announce.js checks the query itself and is not affected.
+(function () {
+  if (typeof gsap === 'undefined' || !window.matchMedia) return;
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  Array.prototype.forEach.call(document.querySelectorAll('[data-flwr]'), function (w) { w.classList.add('is-reduced-motion'); });
+  var MOTION = ['x', 'y', 'z', 'scale', 'scaleX', 'scaleY', 'rotation', 'rotate', 'rotationX', 'rotationY',
+    'xPercent', 'yPercent', 'skewX', 'skewY', 'transform'];
+  var TIMING = ['duration', 'delay', 'stagger', 'ease', 'repeat', 'repeatDelay', 'yoyo', 'scrollTrigger', 'immediateRender',
+    'onStart', 'onUpdate', 'onRepeat', 'onReverseComplete'];
+  function still(vars, dropMotion) {
+    var out = {};
+    for (var k in vars) {
+      if (TIMING.indexOf(k) !== -1) continue;
+      if (dropMotion && MOTION.indexOf(k) !== -1) continue;
+      out[k] = vars[k];
+    }
+    return out;
+  }
+  var set = gsap.set.bind(gsap);
+  gsap.from = function (targets) { return set(targets, {}); };
+  gsap.fromTo = function (targets, fromVars, toVars) { return set(targets, still(toVars || {}, false)); };
+  gsap.to = function (targets, vars) {
+    if (vars && vars.scrollTrigger) return set(targets, {});
+    return set(targets, still(vars || {}, true));
+  };
+})();

@@ -6256,7 +6256,7 @@ body:has(.hero-home_wrap) .nav_content > .nav_menu:last-child .nav_arrow-icon {
 }
 [data-flwr].site_wrap .text_note {
   font-style: italic;
-  color: var(--_palette---neutral--500);
+  color: var(--_palette---neutral--600);   /* review 30 Sep: neutral--500 was 4.12:1 on white; 600 is 6.8:1 */
 }
 [data-flwr].site_wrap .day_row-content-subtitle {
   margin-bottom: 0.5em;
@@ -6925,6 +6925,150 @@ body:has(.hero-home_wrap) .nav_content > .nav_menu:last-child .nav_arrow-icon {
 [data-flwr].site_wrap .terms-content {
   min-width: 0;
   overflow-wrap: anywhere;
+}
+
+/* === Review fixes 30 Sep: behaviour === */
+/* Cursor over dark, blue and photo surfaces (js/main.js sets the classes from what is under the
+   pointer): yellow on navy, white on the light-blue footer and on photos. */
+[data-flwr].site_wrap .custom-cursor.is-on-dark svg path {
+  fill: var(--_palette---accent-2--500);
+}
+[data-flwr].site_wrap .custom-cursor.is-on-blue svg path,
+[data-flwr].site_wrap .custom-cursor.is-on-photo svg path {
+  fill: var(--_palette---neutral--0);
+}
+/* prefers-reduced-motion: js/gsap/config.js adds .is-reduced-motion to the wrapper; the ring stays still. */
+[data-flwr].is-reduced-motion .site-stamp_ring {
+  animation-name: none;
+}
+/* Home "Tribe gatherings of the past": the subtitle's reveal starts 80px to the right; with its
+   nowrap words that widened the whole document on phones (453px at 390) and pushed the fixed
+   hamburger and stamp off-screen. The section clips the slide instead (clip, not hidden, so it
+   is not a scroll container and nothing else changes). */
+[data-flwr].site_wrap .lookback_wrap {
+  overflow-x: clip;
+}
+
+/* === Review fixes 30 Sep: layout === */
+/* 1. Fullscreen menu. The portrait menu photo (2560x3841) sized the grid row from its natural
+   height (907px at 1440x900), so the nav was centred in a row taller than the screen and the
+   lower links ran under the footer row and off the bottom. The photo is now absolutely placed
+   in its box (it no longer sizes the row), the link type is sized from the viewport height so
+   all seven links fit between the navbar and the footer row, and when even the floor size does
+   not fit (short windows) the menu content scrolls. The scroll box starts below the navbar, so
+   scrolled links are clipped there instead of passing under the logo. At rest nothing moves:
+   margin-top + padding-top = the old padding-top (navbar height + page margin). */
+[data-flwr].site_wrap .menu-fullscreen_content {
+  margin-top: var(--_component---navbar--height);
+  height: calc(100% - var(--_component---navbar--height));
+  padding-top: var(--_spacing---page-margin);
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+[data-flwr].site_wrap .menu-fullscreen_grid {
+  min-height: auto;
+}
+/* The navbar's own links stayed visible over the open menu (About sat on the logo at 48,32):
+   the entrance animation leaves an inline opacity: 1 on them, which beats the opacity: 0 rule.
+   visibility is not set inline, so it hides them. */
+[data-flwr].site_wrap .nav_wrap.menu-is-open .nav_link,
+[data-flwr].site_wrap .nav_wrap.menu-is-open .nav_menu > a:not(.nav_hamburger) {
+  visibility: hidden;
+}
+[data-flwr].site_wrap .menu-fullscreen_hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+/* 7 links, each ~0.93em tall, 6 row gaps; 7.5rem = the footer row (step--5 padding + logo/copyright). */
+[data-flwr].site_wrap .menu-fullscreen_link {
+  font-size: clamp(2rem, calc((100vh - var(--_component---navbar--height) - var(--_spacing---page-margin) * 2 - 7.5rem - var(--_spacing---step--3) * 6) / 6.6), var(--_typography---size--menu));
+}
+/* The hover arrow (hidden until hover, but inline) was a fixed 55px and set each link's height
+   whatever the type size; it now follows the type, capped at its old 55px. (0,2,0) on purpose:
+   the tablet and phone arrow sizes (0,3,0, from 991 down) still win. */
+[data-flwr] .menu-fullscreen_arrow-icon {
+  width: min(55px, 0.92em);
+  height: min(55px, 0.92em);
+}
+/* 2b. The menu badge is the site stamp's two layers (js-free): the ring spins with the site
+   stamp's rotateBadge keyframes (.site-stamp_ring), the centre stays still. The wrapper keeps
+   the old corner placement as a static transform. */
+[data-flwr].site_wrap .menu-fullscreen_badge {
+  animation-name: none;
+  transform: translate(-50%, 50%);
+}
+/* 2a. No tilt: Rome's 0.354deg rotation on the home look-back photo. */
+[data-flwr].site_wrap .home-lookback_image-wrap {
+  transform: none;
+}
+/* 3. Footer links: .link:hover turned them core--500, the footer's own blue (1.00:1). White
+   stays white and the hover is an underline. .link--light is only used in the footer. */
+[data-flwr].site_wrap .link--light:hover {
+  color: var(--_palette---neutral--0);
+  opacity: 1;
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+/* Same check in the menu footer: Terms/Privacy went core--500 at the text-legal 0.8 opacity
+   (3.36:1 on white). They keep their navy and underline instead. */
+[data-flwr].site_wrap .menu-fullscreen_footer-link:hover {
+  color: var(--_palette---neutral--900);
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+/* 8. Phone tap targets: a transparent ::before widens the hit area to ~40px without moving
+   anything (the hamburger and the teacher arrow are 24px, the legal links 21px tall). */
+[data-flwr].site_wrap .nav_hamburger::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  bottom: -8px;
+  left: -8px;
+}
+@media (max-width: 991px) {
+  /* The teacher arrow is absolutely placed from 991 down (and 56px, so fine, above it). */
+  [data-flwr].site_wrap .teacher_arrow::before {
+    content: "";
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    bottom: -8px;
+    left: -8px;
+  }
+  [data-flwr].site_wrap .menu-fullscreen_content {
+    padding-top: var(--_spacing---step--4);
+  }
+  /* Stacked menu: links, then the photo, then a column footer (~10rem). 6rem keeps a strip of photo. */
+  [data-flwr].site_wrap .menu-fullscreen_link {
+    font-size: clamp(1.75rem, calc((100vh - var(--_component---navbar--height) - var(--_spacing---step--4) * 2 - var(--_spacing---page-margin) - 10rem - 6rem - var(--_spacing---step--2) * 6) / 6.6), var(--_typography---size--menu));
+  }
+}
+@media (max-width: 767px) {
+  /* Phones keep their earlier sizes (the viewport-height formula above is for 768 and up). */
+  [data-flwr].site_wrap .menu-fullscreen_link {
+    font-size: clamp(1.5rem, 8vw, 2.5rem);
+  }
+  [data-flwr].site_wrap .footer_legal a {
+    position: relative;
+  }
+  [data-flwr].site_wrap .footer_legal a::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    right: 0;
+    bottom: -10px;
+    left: 0;
+  }
+}
+@media (max-width: 478px) {
+  [data-flwr].site_wrap .menu-fullscreen_link {
+    font-size: clamp(1.25rem, 7vw, 2rem);
+  }
 }
 
 /* ---- Priority layer: declarations Rome marked !important. Emitted last in this

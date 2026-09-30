@@ -28,7 +28,7 @@
     "ogImage": "https://tribe.jivamuktiyoga.com/assets/images/og-lux-lotus.png",
     "ogWidth": "1200",
     "ogHeight": "630",
-    "siteName": "Jivamukti Tribe Gathering",
+    "siteName": "Jivamukti Yoga Tribe Gathering",
     "themeColor": "#0e123a"
   },
   "brand": {
@@ -90,8 +90,8 @@
     "aboutDescription": "In a world focused on doing, on productivity and on taking sides, we lose the ability to inhabit the body. Once you are at peace, at home in yourself, you can care for others and support your community. In 2027 the Jivamukti Yoga Tribe Gathering brings the tribe to Luxembourg to practice this together.",
     "venuesTitle": "VENUE",
     "venueEyebrow": "The venue",
-    "lineupTitle": "LINE UP",
-    "lineupCta": "VIEW ALL LINE UP",
+    "lineupTitle": "Line-up",
+    "lineupCta": "See the full line-up",
     "lookbackTitle": "LOOKING BACK AT THE",
     "lookbackSubtitle": "Tribe Gatherings of the past",
     "lookbackCta": "VIEW MORE",
@@ -171,13 +171,13 @@
       "title": "About the Tribe | Jivamukti Yoga Tribe Gathering 2027",
       "description": "What the Jivamukti Yoga Tribe Gathering is, and the theme of the Luxembourg Lotus edition: Nada Through Nadis.",
       "quote": "\"Hurry home to your real home, which is OM\"",
-      "quoteBy": "- Shri Brahmananda Sarasvati",
+      "quoteBy": "Shri Brahmananda Sarasvati",
       "intro": "The Tribe Gathering is the Jivamukti Yoga community meeting in one place to practice, listen and sing together: a satsang, the company of like-minded people in pursuit of the truth. In 2027 the tribe gathers in Luxembourg under the theme Nada Through Nadis.",
       "themeLine": "THE ROOTS OF THE LOTUS GO DEEP INTO THE SELF. THROUGH THE ROOTS, THE CHANNELS WE CALL NADIS, WE EXPERIENCE THE ETERNAL SOUND: NADAM."
     },
     "schedule": {
       "title": "Schedule | Jivamukti Yoga Tribe Gathering 2027",
-      "description": "The programme of the Jivamukti Yoga Tribe Gathering 2027 will be announced.",
+      "description": "Schedule available soon. The programme for Luxembourg Lotus, 2–5 September 2027 at Coque Luxembourg, will be published here.",
       "heroTitle": "SCHEDULE",
       "heading": "SCHEDULE AVAILABLE SOON",
       "text": "The programme for Luxembourg Lotus 2027 will be published here.",
@@ -187,14 +187,14 @@
     },
     "booking": {
       "title": "Register | Jivamukti Yoga Tribe Gathering 2027",
-      "description": "Register for the Jivamukti Yoga Tribe Gathering 2027, Luxembourg Lotus: September 2–5, 2027 at Coque Luxembourg. Early-bird passes are on sale now.",
+      "description": "Register for the Jivamukti Yoga Tribe Gathering 2027, Luxembourg Lotus: September 2–5, 2027 at Coque Luxembourg. Early bird passes are on sale now.",
       "heroTitle": "REGISTER",
       "heading": "REGISTRATION IS OPEN",
       "text": "Book your tickets in the OPEN app and reserve your spot for classes and sessions.",
       "note": "September 2–5, 2027 · Coque Luxembourg",
       "ctaLabel": "GET TICKETS",
       "ctaTitle": "REGISTRATION IS OPEN",
-      "ctaText": "Early-bird passes for Luxembourg Lotus 2027 are on sale now.",
+      "ctaText": "Early bird passes for Luxembourg Lotus 2027 are on sale now.",
       "_prices": "Client, 30 Sep 2026: \"Prices to list for now: Full 4 day pass at €450 early bird (reg 500), 75HR graduates at €400 (reg 450), and 300HR graduates at €350 (reg 400). No day passes or any other passes.\" Single classes, workshops and the concert: \"Do not list for now\" / \"Do not mention concert for now\". No early-bird deadline: early-bird places are limited in number (earlyBirdNote, the client's wording).",
       "earlyBirdNote": "The discounted early bird price is only offered to a limited number of people, on a first-come, first-served basis. These will sell out fast!",
       "buyLabel": "GET TICKETS",
@@ -204,7 +204,7 @@
           "text": "September 2–5, 2027. Every Tribe class from Thursday to Sunday.",
           "tiers": [
             { "label": "EARLY BIRD", "price": "€450", "note": "First-come, first-served", "tag": "EARLY BIRD" },
-            { "label": "REGULAR", "price": "€500", "note": "Once early-bird places sell out", "tag": "" }
+            { "label": "REGULAR", "price": "€500", "note": "Once early bird places sell out", "tag": "" }
           ]
         },
         {
@@ -212,7 +212,7 @@
           "text": "Full 4 day pass for teachers certified in the Jivamukti 75-hour foundational teacher training.",
           "tiers": [
             { "label": "EARLY BIRD", "price": "€400", "note": "First-come, first-served", "tag": "EARLY BIRD" },
-            { "label": "REGULAR", "price": "€450", "note": "Once early-bird places sell out", "tag": "" }
+            { "label": "REGULAR", "price": "€450", "note": "Once early bird places sell out", "tag": "" }
           ]
         },
         {
@@ -220,17 +220,17 @@
           "text": "Full 4 day pass for teachers certified in the Jivamukti 300-hour teacher training.",
           "tiers": [
             { "label": "EARLY BIRD", "price": "€350", "note": "First-come, first-served", "tag": "EARLY BIRD" },
-            { "label": "REGULAR", "price": "€400", "note": "Once early-bird places sell out", "tag": "" }
+            { "label": "REGULAR", "price": "€400", "note": "Once early bird places sell out", "tag": "" }
           ]
         }
       ],
       "graduateNote": "Graduate prices apply automatically in the OPEN app when you register with the email address you used for your teacher training.",
-      "disclaimer": "By purchasing a ticket, you agree to our terms and conditions. Tickets are transferable to another person if you cannot attend - please contact us with the details of the new attendee. By attending, you consent to being photographed or filmed. Please bring your own mat, props, and water bottle.",
+      "disclaimer": "By purchasing a ticket, you agree to our terms and conditions. Tickets are transferable to another person if you cannot attend. Please email events@jivamuktiyoga.com with the new attendee's details. By attending, you consent to being photographed or filmed. Please bring your own mat, props, and water bottle.",
       "disclaimerLink": "Read full Terms & Conditions"
     },
     "city": {
       "title": "Luxembourg | Jivamukti Yoga Tribe Gathering 2027",
-      "description": "Venue and city guide for the Jivamukti Yoga Tribe Gathering 2027 in Luxembourg.",
+      "description": "Coque Luxembourg, 2 rue Léon Hengen, is the venue of the Jivamukti Yoga Tribe Gathering 2027. City tips available soon.",
       "heroTitle": "ABOUT LUXEMBOURG",
       "heading": "CITY TIPS AVAILABLE SOON",
       "text": "How to get to Coque Luxembourg, where to stay and our favourite places will be shared here.",

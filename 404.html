@@ -3,82 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Redirecting... | Jivamukti Tribe Gathering</title>
-  <script>
-    // Handle clean URLs for GitHub Pages
-    // If URL doesn't have .html extension, try adding it
-    (function() {
-      var path = window.location.pathname;
-
-      // Don't redirect if already has extension or is root
-      if (path === '/' || path.indexOf('.') !== -1) {
-        // Show 404 content
-        document.addEventListener('DOMContentLoaded', function() {
-          document.getElementById('redirect-message').style.display = 'none';
-          document.getElementById('not-found').style.display = 'block';
-        });
-        return;
-      }
-
-      // Remove trailing slash if present
-      if (path.endsWith('/')) {
-        path = path.slice(0, -1);
-      }
-
-      // Try redirecting to .html version
-      window.location.replace(path + '.html');
-    })();
-  </script>
+  <meta name="robots" content="noindex">
+  <title>Page not found | Jivamukti Yoga Tribe Gathering 2027</title>
   <style>
-    body {
-      font-family: 'Montserrat', sans-serif;
-      background-color: #0a0a0a;
-      color: #ffffff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      margin: 0;
-      text-align: center;
-    }
-    .container {
-      padding: 2rem;
-    }
-    h1 {
-      color: #781029;
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-    p {
-      font-size: 1rem;
-      margin-bottom: 2rem;
-    }
-    a {
-      color: #781029;
-      text-decoration: none;
-      border: 1px solid #781029;
-      padding: 0.75rem 1.5rem;
-      transition: all 0.3s ease;
-    }
-    a:hover {
-      background-color: #781029;
-      color: #ffffff;
-    }
-    #not-found {
-      display: none;
-    }
+    body { font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif; background-color: #ffffff; color: #0e123a; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; text-align: center; }
+    .box { padding: 2rem; }
+    h1 { font-size: 2rem; margin: 0 0 1rem 0; }
+    p { font-size: 1rem; margin: 0 0 1.5rem 0; }
+    a { color: #3b73b5; }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div id="redirect-message">
-      <p>Redirecting...</p>
-    </div>
-    <div id="not-found">
-      <h1>Page Not Found</h1>
-      <p>The page you're looking for doesn't exist.</p>
-      <a href="/">Return to Home</a>
-    </div>
-  </div>
+  <main class="box">
+    <h1>Page not found</h1>
+    <p>This page doesn't exist.</p>
+    <p><a id="home" href="/">Back to the home page</a></p>
+  </main>
+  <script>
+    (function () {
+      var seg = location.pathname.split("/")[1];
+      var base = seg === "Jivamukti-Tribe-Gathering" ? "/Jivamukti-Tribe-Gathering/" : "/";
+      document.getElementById("home").setAttribute("href", base);
+    })();
+  </script>
 </body>
 </html>
