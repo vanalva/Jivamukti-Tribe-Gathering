@@ -6981,9 +6981,16 @@ body:has(.hero-home_wrap) .nav_content > .nav_menu:last-child .nav_arrow-icon {
   top: 0;
   left: 0;
 }
-/* 7 links, each ~0.93em tall, 6 row gaps; 7.5rem = the footer row (step--5 padding + logo/copyright). */
+/* 6 links (About left the menu on 30 Sep), each ~0.93em tall, 5 row gaps; 7.5rem = the footer
+   row (step--5 padding + logo/copyright). If the link count changes, change 5.6 and the gap count. */
 [data-flwr].site_wrap .menu-fullscreen_link {
-  font-size: clamp(2rem, calc((100vh - var(--_component---navbar--height) - var(--_spacing---page-margin) * 2 - 7.5rem - var(--_spacing---step--3) * 6) / 6.6), var(--_typography---size--menu));
+  font-size: clamp(2rem, calc((100vh - var(--_component---navbar--height) - var(--_spacing---page-margin) * 2 - 7.5rem - var(--_spacing---step--3) * 5) / 5.6), var(--_typography---size--menu));
+}
+/* The menu's height follows the visible viewport: 100vh on iOS Safari is the height with the
+   toolbars hidden, so the menu's bottom row sat under the browser bar. dvh where supported. */
+[data-flwr].site_wrap .fullscreen-menu {
+  height: 100vh;
+  height: 100dvh;
 }
 /* The hover arrow (hidden until hover, but inline) was a fixed 55px and set each link's height
    whatever the type size; it now follows the type, capped at its old 55px. (0,2,0) on purpose:
@@ -7040,12 +7047,29 @@ body:has(.hero-home_wrap) .nav_content > .nav_menu:last-child .nav_arrow-icon {
     bottom: -8px;
     left: -8px;
   }
+  /* Stacked menu rhythm (owner, 30 Sep: the wordmark sat hard on the bottom row / browser bar).
+     One step between the blocks: links | photo | wordmark + copyright | social + legal row, and
+     the same step under the last row, plus the home-indicator inset where the browser reports one. */
   [data-flwr].site_wrap .menu-fullscreen_content {
     padding-top: var(--_spacing---step--4);
+    padding-bottom: calc(var(--_spacing---step--5) + env(safe-area-inset-bottom, 0px));
   }
-  /* Stacked menu: links, then the photo, then a column footer (~10rem). 6rem keeps a strip of photo. */
+  [data-flwr].site_wrap .menu-fullscreen_grid {
+    row-gap: var(--_spacing---step--5);
+  }
+  [data-flwr].site_wrap .menu-fullscreen_footer {
+    padding-top: var(--_spacing---step--5);
+    row-gap: var(--_spacing---step--5);
+  }
+  [data-flwr].site_wrap .menu-fullscreen_footer-left {
+    row-gap: var(--_spacing---step--2);
+  }
+  [data-flwr].site_wrap .menu-fullscreen_footer-logo {
+    margin-bottom: 0;
+  }
+  /* Stacked menu: 6 links, then the photo, then a column footer (~10rem). 6rem keeps a strip of photo. */
   [data-flwr].site_wrap .menu-fullscreen_link {
-    font-size: clamp(1.75rem, calc((100vh - var(--_component---navbar--height) - var(--_spacing---step--4) * 2 - var(--_spacing---page-margin) - 10rem - 6rem - var(--_spacing---step--2) * 6) / 6.6), var(--_typography---size--menu));
+    font-size: clamp(1.75rem, calc((100vh - var(--_component---navbar--height) - var(--_spacing---step--4) * 2 - var(--_spacing---page-margin) - 10rem - 6rem - var(--_spacing---step--2) * 5) / 5.6), var(--_typography---size--menu));
   }
 }
 @media (max-width: 767px) {
