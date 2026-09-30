@@ -6921,6 +6921,12 @@ body:has(.hero-home_wrap) .nav_content > .nav_menu:last-child .nav_arrow-icon {
   }
 }
 
+/* Terms: long unbroken strings (the hashtag list) must wrap inside the text column, not widen the page on phones. */
+[data-flwr].site_wrap .terms-content {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
 /* ---- Priority layer: declarations Rome marked !important. Emitted last in this
    bucket under a (0,3,0) wrapper prefix so they keep winning without the flag. ---- */
 html::-webkit-scrollbar-track {
