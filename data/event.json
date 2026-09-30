@@ -101,8 +101,7 @@
   },
   "links": {
     "register": "booking.html",
-    "registerUrl": "#",
-    "_registerUrl": "[TBC: REGISTRATION LINK] The OPEN app booking URL. Every GET TICKETS button on booking.html points here; replace \"#\" with the URL (Rome used https://jivamukti.openclient.app/studio/<id>).",
+    "registerUrl": "https://openclient.app/studio/28437",
     "lineup": "teachers.html",
     "schedule": "schedule.html",
     "archive": "archive.html",
@@ -177,9 +176,9 @@
       "title": "Schedule | Jivamukti Yoga Tribe Gathering 2027",
       "description": "The programme of the Jivamukti Yoga Tribe Gathering 2027 will be announced.",
       "heroTitle": "SCHEDULE",
-      "heading": "PROGRAMME TO BE ANNOUNCED",
-      "text": "The day-by-day programme for Luxembourg Lotus 2027 is being put together with the teachers of the line-up.",
-      "note": "September 2–5, 2027 · [TBC: SCHEDULE]",
+      "heading": "SCHEDULE AVAILABLE SOON",
+      "text": "The programme for Luxembourg Lotus 2027 will be published here.",
+      "note": "",
       "ctaHref": "teachers.html",
       "ctaLabel": "SEE THE LINE-UP"
     },
@@ -193,63 +192,36 @@
       "ctaLabel": "GET TICKETS",
       "ctaTitle": "REGISTRATION IS OPEN",
       "ctaText": "Early-bird passes for Luxembourg Lotus 2027 are on sale now.",
-      "_prices": "Client, 30 Sep 2026: \"prices are exact same as for Rome, please list early birds\". Pass prices come from the Rome planning sheet (references/_archive/rome-2026/Tribe 2026 Schedule Planning, rows 52-68); single-ticket prices from the Rome booking and schedule pages. Early-bird deadline not given.",
-      "earlyBirdDeadline": "[TBC: EARLY BIRD DEADLINE]",
+      "_prices": "Client, 30 Sep 2026: \"Prices to list for now: Full 4 day pass at €450 early bird (reg 500), 75HR graduates at €400 (reg 450), and 300HR graduates at €350 (reg 400). No day passes or any other passes.\" Single classes, workshops and the concert: \"Do not list for now\" / \"Do not mention concert for now\". No early-bird deadline: early-bird places are limited in number (earlyBirdNote, the client's wording).",
+      "earlyBirdNote": "The discounted early bird price is only offered to a limited number of people, on a first-come, first-served basis. These will sell out fast!",
       "buyLabel": "GET TICKETS",
-      "buyLabelSingle": "GET TICKET",
       "passGroups": [
         {
           "title": "FULL 4 DAY PASS",
-          "text": "September 2–5, 2027. Every Tribe class from Thursday to Sunday, plus the concert.",
+          "text": "September 2–5, 2027. Every Tribe class from Thursday to Sunday.",
           "tiers": [
-            { "label": "EARLY BIRD", "price": "€400", "note": "Until [TBC: EARLY BIRD DEADLINE]", "tag": "EARLY BIRD" },
-            { "label": "REGULAR", "price": "€500", "note": "After the early-bird deadline", "tag": "" }
+            { "label": "EARLY BIRD", "price": "€450", "note": "First-come, first-served", "tag": "EARLY BIRD" },
+            { "label": "REGULAR", "price": "€500", "note": "Once early-bird places sell out", "tag": "" }
           ]
         },
         {
           "title": "75HR GRADUATES",
           "text": "Full 4 day pass for teachers certified in the Jivamukti 75-hour foundational teacher training.",
           "tiers": [
-            { "label": "EARLY BIRD", "price": "€350", "note": "Until [TBC: EARLY BIRD DEADLINE]", "tag": "EARLY BIRD" },
-            { "label": "REGULAR", "price": "€450", "note": "After the early-bird deadline", "tag": "" }
+            { "label": "EARLY BIRD", "price": "€400", "note": "First-come, first-served", "tag": "EARLY BIRD" },
+            { "label": "REGULAR", "price": "€450", "note": "Once early-bird places sell out", "tag": "" }
           ]
         },
         {
           "title": "300HR GRADUATES",
           "text": "Full 4 day pass for teachers certified in the Jivamukti 300-hour teacher training.",
           "tiers": [
-            { "label": "EARLY BIRD", "price": "€300", "note": "Until [TBC: EARLY BIRD DEADLINE]", "tag": "EARLY BIRD" },
-            { "label": "REGULAR", "price": "€350", "note": "After the early-bird deadline", "tag": "" }
+            { "label": "EARLY BIRD", "price": "€350", "note": "First-come, first-served", "tag": "EARLY BIRD" },
+            { "label": "REGULAR", "price": "€400", "note": "Once early-bird places sell out", "tag": "" }
           ]
         }
       ],
       "graduateNote": "Graduate prices apply automatically in the OPEN app when you register with the email address you used for your teacher training.",
-      "dayPassTitle": "DAY PASSES",
-      "dayPassText": "One day of the Tribe Gathering.",
-      "dayPasses": [
-        { "day": "THURSDAY", "date": "September 2, 2027", "price": "€79", "note": "All Tribe classes that day" },
-        { "day": "FRIDAY", "date": "September 3, 2027", "price": "€180", "note": "All Tribe classes that day" },
-        { "day": "SATURDAY", "date": "September 4, 2027", "price": "€180", "note": "All Tribe classes that day" },
-        { "day": "SUNDAY", "date": "September 5, 2027", "price": "€90", "note": "All Tribe classes that day" }
-      ],
-      "concertTitle": "CONCERT",
-      "concertText": "[TBC: CONCERT]",
-      "concertCardTitle": "Concert",
-      "concertVenue": "Coque Luxembourg",
-      "concertDetail": "Concert included for all 4 day pass holders.",
-      "concertPrice": "€49",
-      "concertPriceNote": "For friends",
-      "classesTitle": "INDIVIDUAL CLASSES",
-      "classesText": "Teachers, days and times: [TBC: SCHEDULE]",
-      "classes": [
-        { "tone": "white", "name": "Jivamukti Sequencing", "detail": "Teachers' workshop · [TBC: SCHEDULE]", "price": "€108", "note": "For certified teachers (min. 300HR)" },
-        { "tone": "rose", "name": "Pranayama & Meditation", "detail": "[TBC: SCHEDULE]", "price": "€19", "note": "" },
-        { "tone": "white", "name": "45-minute lecture", "detail": "[TBC: SCHEDULE]", "price": "€19", "note": "", "_source": "Rome schedule page: the €19 lecture ran 45 min" },
-        { "tone": "rose", "name": "75-minute lecture", "detail": "[TBC: SCHEDULE]", "price": "€29", "note": "", "_source": "Rome schedule page: the €29 lecture ran 75 min" },
-        { "tone": "white", "name": "Satsang", "detail": "[TBC: SCHEDULE]", "price": "€39", "note": "" },
-        { "tone": "rose", "name": "Teachers Mixer", "detail": "[TBC: SCHEDULE]", "price": "€39", "note": "" },
-        { "tone": "white", "name": "Advanced Board Prep Workshop", "detail": "[TBC: SCHEDULE]", "price": "€69", "note": "For all 75HR/300HR/800HR/Advanced Certified teachers" }
-      ],
       "disclaimer": "By purchasing a ticket, you agree to our terms and conditions. Tickets are transferable to another person if you cannot attend - please contact us with the details of the new attendee. By attending, you consent to being photographed or filmed. Please bring your own mat, props, and water bottle.",
       "disclaimerLink": "Read full Terms & Conditions"
     },
@@ -257,9 +229,9 @@
       "title": "Luxembourg | Jivamukti Yoga Tribe Gathering 2027",
       "description": "Venue and city guide for the Jivamukti Yoga Tribe Gathering 2027 in Luxembourg.",
       "heroTitle": "ABOUT LUXEMBOURG",
-      "heading": "PLAN YOUR TRIBE EXPERIENCE",
-      "text": "The venue, places to stay and our favourite spots in Luxembourg will be gathered here.",
-      "note": "Coque Luxembourg · [TBC: CITY GUIDE]",
+      "heading": "CITY TIPS AVAILABLE SOON",
+      "text": "How to get to Coque Luxembourg, where to stay and our favourite places will be shared here.",
+      "note": "Coque Luxembourg",
       "ctaHref": "about-tribe.html",
       "ctaLabel": "ABOUT THE TRIBE"
     }

@@ -67,7 +67,7 @@
     </div>
 
     <div class="nav_logo">
-      <a href="full.html">
+      <a href="index.html">
         <img src="assets/brand/lux-lotus/lux-lotus-mark-peach.svg" alt="Jivamukti Yoga Tribe Gathering 2027, Luxembourg Lotus" class="image image-contain">
       </a>
     </div>
@@ -108,7 +108,7 @@
   <div class="menu-fullscreen_content f-position-relative">
     <div class="menu-fullscreen_grid">
       <nav class="menu-fullscreen_nav">
-        <a href="full.html" class="menu-fullscreen_link text-display-xl f-text-uppercase">
+        <a href="index.html" class="menu-fullscreen_link text-display-xl f-text-uppercase">
           HOME
           <svg class="menu-fullscreen_arrow-icon" viewBox="0 0 55 55" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M54.6387 54.6387H37.6387V29.0205L13.2578 53.4014L1.2373 41.3809L25.6172 17H0V0H54.6387V54.6387Z" fill="currentColor"/></svg>
         </a>
@@ -194,10 +194,9 @@
   <!--
     Register page, rebuilt from the Rome 2026 booking page (references/site/booking.html) for Lux Lotus 2027.
     Prices, passes and copy: src/data/event.json → pages.booking.*
-    [TBC: REGISTRATION LINK] Every GET TICKETS / GET TICKET button uses links.registerUrl (currently "#").
-    Set it to the OPEN app booking URL once the client sends it; one edit wires every button.
-    Rome used https://jivamukti.openclient.app/studio/28437 for all OPEN tickets and a separate
-    Brightstar Events link for the concert. If Lux needs separate links, add links.registerConcertUrl.
+    Every GET TICKETS button uses links.registerUrl (the OPEN studio link the client sent on 30 Sep 2026).
+    Client, 30 Sep 2026: three passes only (full 4 day, 75HR, 300HR); no day passes, single classes,
+    workshops or concert for now. Re-add those sections from git history if the client asks.
   -->
 
   <!-- Registration open (Rome: "Download the official Tribe app") -->
@@ -207,9 +206,10 @@
       <div class="f-flex f-flex-column f-flex-nowrap f-justify-center f-gap-4">
         <h2 class="text-h1 f-text-uppercase">REGISTRATION IS OPEN</h2>
         <p class="text-body-lg">Book your tickets in the OPEN app and reserve your spot for classes and sessions.</p>
+        <p class="text-body-md">The discounted early bird price is only offered to a limited number of people, on a first-come, first-served basis. These will sell out fast!</p>
         <p class="text-body-md text_note">September 2–5, 2027 · Coque Luxembourg</p>
         <div class="f-margin-top-2">
-          <a href="#" target="_blank" rel="noopener noreferrer" class="button button--primary">GET TICKETS</a>
+          <a href="https://openclient.app/studio/28437" target="_blank" rel="noopener noreferrer" class="button button--primary">GET TICKETS</a>
         </div>
       </div>
       <div class="app-mockup_wrap">
@@ -225,7 +225,7 @@
     <div class="plan_content f-position-relative">
       <div class="pricing_title-sticky">
         <h2 class="text-h1 f-text-uppercase">FULL 4 DAY PASS</h2>
-        <p class="text-body-md spacing_mt-4">September 2–5, 2027. Every Tribe class from Thursday to Sunday, plus the concert.</p>
+        <p class="text-body-md spacing_mt-4">September 2–5, 2027. Every Tribe class from Thursday to Sunday.</p>
       </div>
       <div class="pricing-cards-grid">
         
@@ -235,13 +235,13 @@
                element; centred content then sat ~30px lower on the tagless Regular card. Top-aligned, the pair lines up. -->
           <div class="card_primary_element f-flex f-flex-column f-flex-nowrap f-justify-start f-gap-4 f-padding-6">
             <h3 class="text-h4 f-text-uppercase">EARLY BIRD</h3>
-            <p class="text-h1">€400</p>
+            <p class="text-h1">€450</p>
             <div class="pricing-card_grid">
               <div class="pricing-card_info">
-                <p class="text-body-sm f-text-italic">Until [TBC: EARLY BIRD DEADLINE]</p>
+                <p class="text-body-sm f-text-italic">First-come, first-served</p>
               </div>
               <div class="pricing-card_button">
-                <a href="#" target="_blank" rel="noopener noreferrer" class="button button--outline button--small">GET TICKETS</a>
+                <a href="https://openclient.app/studio/28437" target="_blank" rel="noopener noreferrer" class="button button--outline button--small">GET TICKETS</a>
               </div>
             </div>
           </div>
@@ -256,10 +256,10 @@
             <p class="text-h1">€500</p>
             <div class="pricing-card_grid">
               <div class="pricing-card_info">
-                <p class="text-body-sm f-text-italic">After the early-bird deadline</p>
+                <p class="text-body-sm f-text-italic">Once early-bird places sell out</p>
               </div>
               <div class="pricing-card_button">
-                <a href="#" target="_blank" rel="noopener noreferrer" class="button button--outline button--small">GET TICKETS</a>
+                <a href="https://openclient.app/studio/28437" target="_blank" rel="noopener noreferrer" class="button button--outline button--small">GET TICKETS</a>
               </div>
             </div>
           </div>
@@ -284,13 +284,13 @@
                element; centred content then sat ~30px lower on the tagless Regular card. Top-aligned, the pair lines up. -->
           <div class="card_primary_element f-flex f-flex-column f-flex-nowrap f-justify-start f-gap-4 f-padding-6">
             <h3 class="text-h4 f-text-uppercase">EARLY BIRD</h3>
-            <p class="text-h1">€350</p>
+            <p class="text-h1">€400</p>
             <div class="pricing-card_grid">
               <div class="pricing-card_info">
-                <p class="text-body-sm f-text-italic">Until [TBC: EARLY BIRD DEADLINE]</p>
+                <p class="text-body-sm f-text-italic">First-come, first-served</p>
               </div>
               <div class="pricing-card_button">
-                <a href="#" target="_blank" rel="noopener noreferrer" class="button button--outline button--small">GET TICKETS</a>
+                <a href="https://openclient.app/studio/28437" target="_blank" rel="noopener noreferrer" class="button button--outline button--small">GET TICKETS</a>
               </div>
             </div>
           </div>
@@ -305,10 +305,10 @@
             <p class="text-h1">€450</p>
             <div class="pricing-card_grid">
               <div class="pricing-card_info">
-                <p class="text-body-sm f-text-italic">After the early-bird deadline</p>
+                <p class="text-body-sm f-text-italic">Once early-bird places sell out</p>
               </div>
               <div class="pricing-card_button">
-                <a href="#" target="_blank" rel="noopener noreferrer" class="button button--outline button--small">GET TICKETS</a>
+                <a href="https://openclient.app/studio/28437" target="_blank" rel="noopener noreferrer" class="button button--outline button--small">GET TICKETS</a>
               </div>
             </div>
           </div>
@@ -333,13 +333,13 @@
                element; centred content then sat ~30px lower on the tagless Regular card. Top-aligned, the pair lines up. -->
           <div class="card_primary_element f-flex f-flex-column f-flex-nowrap f-justify-start f-gap-4 f-padding-6">
             <h3 class="text-h4 f-text-uppercase">EARLY BIRD</h3>
-            <p class="text-h1">€300</p>
+            <p class="text-h1">€350</p>
             <div class="pricing-card_grid">
               <div class="pricing-card_info">
-                <p class="text-body-sm f-text-italic">Until [TBC: EARLY BIRD DEADLINE]</p>
+                <p class="text-body-sm f-text-italic">First-come, first-served</p>
               </div>
               <div class="pricing-card_button">
-                <a href="#" target="_blank" rel="noopener noreferrer" class="button button--outline button--small">GET TICKETS</a>
+                <a href="https://openclient.app/studio/28437" target="_blank" rel="noopener noreferrer" class="button button--outline button--small">GET TICKETS</a>
               </div>
             </div>
           </div>
@@ -351,13 +351,13 @@
                element; centred content then sat ~30px lower on the tagless Regular card. Top-aligned, the pair lines up. -->
           <div class="card_primary_element f-flex f-flex-column f-flex-nowrap f-justify-start f-gap-4 f-padding-6">
             <h3 class="text-h4 f-text-uppercase">REGULAR</h3>
-            <p class="text-h1">€350</p>
+            <p class="text-h1">€400</p>
             <div class="pricing-card_grid">
               <div class="pricing-card_info">
-                <p class="text-body-sm f-text-italic">After the early-bird deadline</p>
+                <p class="text-body-sm f-text-italic">Once early-bird places sell out</p>
               </div>
               <div class="pricing-card_button">
-                <a href="#" target="_blank" rel="noopener noreferrer" class="button button--outline button--small">GET TICKETS</a>
+                <a href="https://openclient.app/studio/28437" target="_blank" rel="noopener noreferrer" class="button button--outline button--small">GET TICKETS</a>
               </div>
             </div>
           </div>
@@ -368,200 +368,12 @@
   </section>
   
 
-  <!-- Graduate price note (Rome terms: discount applied automatically on the platform) -->
+  <!-- Graduate price note (Rome terms: discount applied automatically on the platform) + terms disclaimer.
+       One block: two back-to-back disclaimer sections read as a stutter once the day-pass, concert and
+       single-class sections were removed (client, 30 Sep 2026). -->
   <section class="terms-disclaimer-section page_section">
-    <div class="terms-disclaimer">
+    <div class="terms-disclaimer f-flex f-flex-column f-flex-nowrap f-gap-4">
       <p>Graduate prices apply automatically in the OPEN app when you register with the email address you used for your teacher training.</p>
-    </div>
-  </section>
-
-  <!-- Day passes (Rome Thu–Sun → Lux Thu 2 – Sun 5 September 2027) -->
-  <section class="plan_wrap plan_wrap--compact f-position-relative">
-    <div class="f-cover-absolute f-z-negative f-position-relative"></div>
-    <div class="plan_content f-position-relative">
-      <div class="pricing_title-sticky">
-        <h2 class="text-h1 f-text-uppercase">DAY PASSES</h2>
-        <p class="text-body-md spacing_mt-4">One day of the Tribe Gathering.</p>
-      </div>
-      <div class="pricing-cards-grid">
-        
-        <div class="card_primary_wrap f-position-relative">
-          <div class="card_primary_element f-flex f-flex-column f-flex-nowrap f-justify-center f-gap-4 f-padding-6">
-            <h3 class="text-h4 f-text-uppercase">THURSDAY</h3>
-            <p class="text-body-md">September 2, 2027</p>
-            <p class="text-h1">€79</p>
-            <div class="pricing-card_grid">
-              <div class="pricing-card_info">
-                <p class="text-body-sm f-text-italic">All Tribe classes that day</p>
-              </div>
-              <div class="pricing-card_button">
-                <a href="#" target="_blank" rel="noopener noreferrer" class="button button--outline button--small">GET TICKETS</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="card_primary_wrap f-position-relative">
-          <div class="card_primary_element f-flex f-flex-column f-flex-nowrap f-justify-center f-gap-4 f-padding-6">
-            <h3 class="text-h4 f-text-uppercase">FRIDAY</h3>
-            <p class="text-body-md">September 3, 2027</p>
-            <p class="text-h1">€180</p>
-            <div class="pricing-card_grid">
-              <div class="pricing-card_info">
-                <p class="text-body-sm f-text-italic">All Tribe classes that day</p>
-              </div>
-              <div class="pricing-card_button">
-                <a href="#" target="_blank" rel="noopener noreferrer" class="button button--outline button--small">GET TICKETS</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="card_primary_wrap f-position-relative">
-          <div class="card_primary_element f-flex f-flex-column f-flex-nowrap f-justify-center f-gap-4 f-padding-6">
-            <h3 class="text-h4 f-text-uppercase">SATURDAY</h3>
-            <p class="text-body-md">September 4, 2027</p>
-            <p class="text-h1">€180</p>
-            <div class="pricing-card_grid">
-              <div class="pricing-card_info">
-                <p class="text-body-sm f-text-italic">All Tribe classes that day</p>
-              </div>
-              <div class="pricing-card_button">
-                <a href="#" target="_blank" rel="noopener noreferrer" class="button button--outline button--small">GET TICKETS</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="card_primary_wrap f-position-relative">
-          <div class="card_primary_element f-flex f-flex-column f-flex-nowrap f-justify-center f-gap-4 f-padding-6">
-            <h3 class="text-h4 f-text-uppercase">SUNDAY</h3>
-            <p class="text-body-md">September 5, 2027</p>
-            <p class="text-h1">€90</p>
-            <div class="pricing-card_grid">
-              <div class="pricing-card_info">
-                <p class="text-body-sm f-text-italic">All Tribe classes that day</p>
-              </div>
-              <div class="pricing-card_button">
-                <a href="#" target="_blank" rel="noopener noreferrer" class="button button--outline button--small">GET TICKETS</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-      </div>
-    </div>
-  </section>
-
-  <!-- Concert Ticket Section -->
-  <section class="plan_wrap plan_wrap--compact f-position-relative">
-    <div class="f-cover-absolute f-z-negative f-position-relative"></div>
-    <div class="plan_content f-position-relative">
-      <div class="pricing_title-sticky">
-        <h2 class="text-h1 f-text-uppercase">CONCERT</h2>
-        <p class="text-body-md spacing_mt-4">Concert included for all 4 day pass holders.</p>
-      </div>
-      <div class="pricing-cards-grid pricing-cards-grid--single">
-        <!-- Same anatomy as the pass and day-pass cards (title, detail lines, price, note + button), no nested wrapper. -->
-        <div class="card_primary_wrap f-position-relative">
-          <div class="card_primary_element f-flex f-flex-column f-flex-nowrap f-justify-start f-gap-4 f-padding-6">
-            <h3 class="text-h4 f-text-uppercase">Concert</h3>
-            <p class="text-body-md">[TBC: CONCERT]<br>Coque Luxembourg</p>
-            <p class="text-h1">€49</p>
-            <div class="pricing-card_grid">
-              <div class="pricing-card_info">
-                <p class="text-body-sm f-text-italic">For friends</p>
-              </div>
-              <div class="pricing-card_button">
-                <a href="#" target="_blank" rel="noopener noreferrer" class="button button--outline button--small">GET TICKETS</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Single Classes List -->
-  <section class="plan_wrap plan_wrap--compact f-position-relative">
-    <div class="f-cover-absolute f-z-negative f-position-relative"></div>
-    <div class="plan_content f-position-relative">
-      <div class="pricing_title-sticky">
-        <h2 class="text-h1 f-text-uppercase">INDIVIDUAL CLASSES</h2>
-        <p class="text-body-md spacing_mt-4">Teachers, days and times: [TBC: SCHEDULE]</p>
-      </div>
-      <div class="flex_fill">
-        
-        <div class="single-class-row single-class-row--white">
-          <div class="single-class-row__info">
-            <p class="text-h5 f-text-uppercase">Jivamukti Sequencing</p>
-            <p class="text-body-sm">Teachers' workshop · [TBC: SCHEDULE] &middot; <strong>€108</strong></p>
-            <p class="text-body-sm text_note">For certified teachers (min. 300HR)</p>
-          </div>
-          <a href="#" target="_blank" rel="noopener noreferrer" class="button button--outline button--small">GET TICKET</a>
-        </div>
-        
-        <div class="single-class-row single-class-row--rose">
-          <div class="single-class-row__info">
-            <p class="text-h5 f-text-uppercase">Pranayama &amp; Meditation</p>
-            <p class="text-body-sm">[TBC: SCHEDULE] &middot; <strong>€19</strong></p>
-            
-          </div>
-          <a href="#" target="_blank" rel="noopener noreferrer" class="button button--outline button--small">GET TICKET</a>
-        </div>
-        
-        <div class="single-class-row single-class-row--white">
-          <div class="single-class-row__info">
-            <p class="text-h5 f-text-uppercase">45-minute lecture</p>
-            <p class="text-body-sm">[TBC: SCHEDULE] &middot; <strong>€19</strong></p>
-            
-          </div>
-          <a href="#" target="_blank" rel="noopener noreferrer" class="button button--outline button--small">GET TICKET</a>
-        </div>
-        
-        <div class="single-class-row single-class-row--rose">
-          <div class="single-class-row__info">
-            <p class="text-h5 f-text-uppercase">75-minute lecture</p>
-            <p class="text-body-sm">[TBC: SCHEDULE] &middot; <strong>€29</strong></p>
-            
-          </div>
-          <a href="#" target="_blank" rel="noopener noreferrer" class="button button--outline button--small">GET TICKET</a>
-        </div>
-        
-        <div class="single-class-row single-class-row--white">
-          <div class="single-class-row__info">
-            <p class="text-h5 f-text-uppercase">Satsang</p>
-            <p class="text-body-sm">[TBC: SCHEDULE] &middot; <strong>€39</strong></p>
-            
-          </div>
-          <a href="#" target="_blank" rel="noopener noreferrer" class="button button--outline button--small">GET TICKET</a>
-        </div>
-        
-        <div class="single-class-row single-class-row--rose">
-          <div class="single-class-row__info">
-            <p class="text-h5 f-text-uppercase">Teachers Mixer</p>
-            <p class="text-body-sm">[TBC: SCHEDULE] &middot; <strong>€39</strong></p>
-            
-          </div>
-          <a href="#" target="_blank" rel="noopener noreferrer" class="button button--outline button--small">GET TICKET</a>
-        </div>
-        
-        <div class="single-class-row single-class-row--white">
-          <div class="single-class-row__info">
-            <p class="text-h5 f-text-uppercase">Advanced Board Prep Workshop</p>
-            <p class="text-body-sm">[TBC: SCHEDULE] &middot; <strong>€69</strong></p>
-            <p class="text-body-sm text_note">For all 75HR/300HR/800HR/Advanced Certified teachers</p>
-          </div>
-          <a href="#" target="_blank" rel="noopener noreferrer" class="button button--outline button--small">GET TICKET</a>
-        </div>
-        
-      </div>
-    </div>
-  </section>
-
-  <!-- Terms Disclaimer -->
-  <section class="terms-disclaimer-section page_section">
-    <div class="terms-disclaimer">
       <p>By purchasing a ticket, you agree to our terms and conditions. Tickets are transferable to another person if you cannot attend - please contact us with the details of the new attendee. By attending, you consent to being photographed or filmed. Please bring your own mat, props, and water bottle. <a href="terms.html" class="link">Read full Terms &amp; Conditions</a></p>
     </div>
   </section>
@@ -586,7 +398,7 @@
       <div class="footer_column">
         <h3 class="footer_column-title text-h5">Navigate</h3>
         <ul class="footer_links footer_links--two-col">
-          <li><a href="full.html" class="link link--light footer_link text-body-md">Home</a></li>
+          <li><a href="index.html" class="link link--light footer_link text-body-md">Home</a></li>
           <li><a href="about-tribe.html" class="link link--light footer_link text-body-md">About Tribe</a></li>
           <li><a href="teachers.html" class="link link--light footer_link text-body-md">Teachers</a></li>
           <li><a href="booking.html" class="link link--light footer_link text-body-md">Register</a></li>
