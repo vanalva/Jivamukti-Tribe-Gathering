@@ -309,7 +309,11 @@ document.addEventListener('DOMContentLoaded', function() {
   // ============================================
 
   const pricingCards = document.querySelectorAll('.card_primary_wrap');
-  pricingCards.forEach((card, index) => {
+  pricingCards.forEach((card) => {
+    // Stagger within the card's own grid, so every row starts from zero (the register page
+    // has 11 cards; a page-wide index kept the last ones hidden for up to a second).
+    const grid = card.closest('.pricing-cards-grid');
+    const index = grid ? Array.prototype.indexOf.call(grid.querySelectorAll('.card_primary_wrap'), card) : 0;
     gsap.from(card, {
       y: 50,
       opacity: 0,

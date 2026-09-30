@@ -27,12 +27,30 @@ document.addEventListener('DOMContentLoaded', function() {
   // Inner-page heroes (hero-collage): the lockup is centred in the band above the page title.
   // The title's height depends on its line count, so it is measured here and handed to the
   // CSS as --hero-title-h (project.css: .hero-collage_logo-wrap padding-bottom).
+  // Desktop, text column on the right: project.css reserves the fixed stamp's corner with the
+  // title's padding-right. The title keeps the line breaks it has in the full column and is
+  // scaled down until its widest line fits what is left (.is-stamp-fit + --hero-title-fit), so
+  // "REGISTER" stays one line and "ABOUT THE / TRIBE" stays two instead of wrapping to three.
   var collage = document.querySelector('.hero-collage_content--with-navbar');
   if (collage) {
+    var stacked = window.matchMedia('(max-width: 991px)');
     var setTitleH = function () {
       var title = collage.querySelector('.hero-collage_title-bottom');
       if (!title) return;
       var range = document.createRange(); range.selectNodeContents(title);
+      title.classList.remove('is-stamp-fit'); title.style.removeProperty('--hero-title-fit');
+      if (!stacked.matches && !collage.classList.contains('hero-collage_content--inverted')) {
+        var cs = getComputedStyle(title);
+        var room = title.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
+        title.style.setProperty('padding-right', '0px');
+        var widest = 0;
+        Array.prototype.forEach.call(range.getClientRects(), function (r) { widest = Math.max(widest, r.width); });
+        title.style.removeProperty('padding-right');
+        if (room > 0 && widest > room) {
+          title.style.setProperty('--hero-title-fit', Math.floor(parseFloat(cs.fontSize) * room / widest) + 'px');
+          title.classList.add('is-stamp-fit');
+        }
+      }
       collage.style.setProperty('--hero-title-h', Math.round(range.getBoundingClientRect().height) + 'px');
     };
     setTitleH(); window.addEventListener('resize', setTitleH);
