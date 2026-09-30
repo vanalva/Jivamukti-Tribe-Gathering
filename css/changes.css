@@ -8,8 +8,8 @@
    White page, navy section bands with a yellow eyebrow, a card grid
    (3 / 2 / 1 columns). Every card has ONE 4:3 image area (object-fit cover);
    before/after images are pre-split into two halves, side by side or stacked,
-   and the Before / Now tags sit on those halves. The two phone rows span the
-   full grid and scroll sideways on small screens.
+   and the Before / Now tags sit on those halves. The last three cards are
+   full-width rows; on phones the mock-ups wrap two per row, never cut.
    No script, no rotations. Longhand properties, max-width 991 / 767 / 478 only.
    ============================================================================ */
 
@@ -512,10 +512,20 @@
   grid-column-start: 1;
   grid-column-end: -1;
   display: grid;
-  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
   align-items: center;
-  column-gap: var(--_spacing---step--6);
+  column-gap: var(--_spacing---step--7);
   row-gap: var(--_spacing---step--3);
+}
+[data-flwr] .ch_body--wide {
+  row-gap: var(--_spacing---step--3);
+  max-width: 30rem;
+}
+[data-flwr] .ch_body--wide .ch_title {
+  font-size: var(--_typography---size--h3);
+}
+[data-flwr] .ch_body--wide .ch_text {
+  font-size: var(--_typography---size--lead);
 }
 [data-flwr] .ch_phones {
   display: flex;
@@ -695,21 +705,44 @@
     max-width: 24rem;
   }
   [data-flwr] .ch_phones {
-    justify-content: flex-start;
+    flex-wrap: wrap;
     column-gap: var(--_spacing---step--3);
+    row-gap: var(--_spacing---step--4);
     padding-top: var(--_spacing---step--4);
-    padding-right: var(--_spacing---step--4);
+    padding-right: var(--_spacing---step--3);
     padding-bottom: var(--_spacing---step--4);
-    padding-left: var(--_spacing---step--4);
-    overflow-x: auto;
-    overflow-y: hidden;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: thin;
+    padding-left: var(--_spacing---step--3);
   }
   [data-flwr] .ch_phone-wrap {
-    flex-shrink: 0;
-    flex-basis: 13.5rem;
-    scroll-snap-align: start;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: calc(50% - var(--_spacing---step--3));
+    max-width: 12rem;
+  }
+  [data-flwr] .ch_phone {
+    padding-top: 0.35rem;
+    padding-right: 0.35rem;
+    padding-bottom: 0.35rem;
+    padding-left: 0.35rem;
+    border-top-left-radius: 1.25rem;
+    border-top-right-radius: 1.25rem;
+    border-bottom-left-radius: 1.25rem;
+    border-bottom-right-radius: 1.25rem;
+  }
+  [data-flwr] .ch_phone-shot {
+    border-top-left-radius: 0.95rem;
+    border-top-right-radius: 0.95rem;
+    border-bottom-left-radius: 0.95rem;
+    border-bottom-right-radius: 0.95rem;
+  }
+  [data-flwr] .ch_body--wide {
+    max-width: none;
+  }
+  [data-flwr] .ch_body--wide .ch_title {
+    font-size: 1.25rem;
+  }
+  [data-flwr] .ch_body--wide .ch_text {
+    font-size: 1rem;
   }
   [data-flwr] .ch_footer {
     flex-direction: column;
@@ -724,9 +757,6 @@
   }
   [data-flwr] .ch_stats {
     column-gap: var(--_spacing---step--3);
-  }
-  [data-flwr] .ch_phone-wrap {
-    flex-basis: 12.5rem;
   }
   [data-flwr] .ch_need {
     column-gap: var(--_spacing---step--3);
