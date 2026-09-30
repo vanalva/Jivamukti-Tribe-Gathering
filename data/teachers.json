@@ -1,6 +1,19 @@
 {
-  "_readme": "Lux Lotus 2027 line-up in the exact order the client sent (brief/BRIEF.md). Photos and bios marked rome-2026 are reused from the Rome template as temporary placeholders and must be confirmed by the client. Rendered by notes/tools/render-pages.py.",
+  "_readme": "Lux Lotus 2027 line-up. Order follows the client's 30 Sep 2026 update: Sharon Gannon first, Ruth Lauer Manenti removed, everyone in one list with no local group and no city. Photos and bios marked rome-2026 are reused from the Rome template as temporary placeholders and must be confirmed by the client. Rendered by notes/tools/render-pages.py.",
   "teachers": [
+    {
+      "name": "Sharon Gannon",
+      "displayName": "SHARON GANNON",
+      "slug": "sharon-gannon",
+      "group": "lineup",
+      "city": "",
+      "image": "assets/images/lineup/sharon_1024w.webp",
+      "imageSource": "rome-2026 (reused, confirm with client)",
+      "bio": "Sharon Gannon co-founded the Jivamukti Yoga method with David Life. A student of revered teachers such as Brahmananda Sarasvati, Swami Nirmalananda and K. Pattabhi Jois, she pioneered 'yoga as spiritual activism.' Gannon is also an artist, musician and writer and has authored fourteen books, including Yoga and Veganism. Born in Washington, D.C., she studied dance at the University of Washington and moved to New York in 1983, later becoming known for making yoga 'cool and hip.'",
+      "bioSource": "rome-2026 (reused, confirm with client)",
+      "announceImage": "assets/images/announce/teachers/sharon-gannon.svg",
+      "initials": "SG"
+    },
     {
       "name": "Yogeswari",
       "displayName": "YOGESWARI",
@@ -13,19 +26,6 @@
       "bioSource": "placeholder — [TBC: BIO]",
       "announceImage": "assets/images/announce/teachers/yogeswari.svg",
       "initials": "Y"
-    },
-    {
-      "name": "Ruth Lauer Manenti",
-      "displayName": "RUTH LAUER MANENTI",
-      "slug": "ruth-lauer-manenti",
-      "group": "lineup",
-      "city": "",
-      "image": "assets/images/lineup/ruth_1024w.webp",
-      "imageSource": "rome-2026 (reused, confirm with client)",
-      "bio": "[TBC: BIO]",
-      "bioSource": "placeholder — [TBC: BIO]",
-      "announceImage": "assets/images/announce/teachers/ruth-lauer-manenti.svg",
-      "initials": "RLM"
     },
     {
       "name": "Camilla Veen",
@@ -100,8 +100,8 @@
       "city": "",
       "image": "assets/images/lineup/emma_1024w.webp",
       "imageSource": "rome-2026 (reused, confirm with client)",
-      "bio": "Emma Henry joins the Rome Tribe Gathering 2026 teaching team. A full biography will follow shortly.",
-      "bioSource": "rome-2026 (reused, confirm with client)",
+      "bio": "[TBC: BIO]",
+      "bioSource": "placeholder — [TBC: BIO]",
       "announceImage": "assets/images/announce/teachers/emma-henry.svg",
       "initials": "EH"
     },
@@ -122,8 +122,8 @@
       "name": "Alexandra Colombo",
       "displayName": "ALEXANDRA COLOMBO",
       "slug": "alexandra-colombo",
-      "group": "local",
-      "city": "Luxembourg",
+      "group": "lineup",
+      "city": "",
       "image": "assets/brand/lux-lotus/lux-lotus-placeholder-portrait.svg",
       "imageSource": "placeholder — [TBC: PHOTOS]",
       "bio": "[TBC: BIO]",
@@ -135,8 +135,8 @@
       "name": "Magali Lehners",
       "displayName": "MAGALI LEHNERS",
       "slug": "magali-lehners",
-      "group": "local",
-      "city": "Luxembourg",
+      "group": "lineup",
+      "city": "",
       "image": "assets/images/lineup/magali_1024w.webp",
       "imageSource": "rome-2026 (reused, confirm with client)",
       "bio": "Magali Lehners' yoga journey began during high school exams in 1998. She later studied geography, sociology and ethnology in Germany, trained in Sivananda Yoga in India and discovered Jivamukti in Munich. An 800-hour certified teacher (advanced since 2016), she co-founded Dancing Kala Yoga (2014), Yoga Palais (2016) and Jivamukti Yoga Luxembourg (2019). She also has a PhD in Urbanism and views yoga as a path to strength and self-acceptance.",
