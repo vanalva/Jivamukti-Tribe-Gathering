@@ -15,21 +15,24 @@
     "venue": "Coque Luxembourg",
     "venueAddress": "2 rue Léon Hengen, L-1745 Luxembourg",
     "dates": "September 2–5, 2027",
-    "datesShort": "2–5 Sep 2027",
+    "datesShort": "2–5 September 2027",
     "placeLine": "in Luxembourg",
     "dateStart": "2027-09-02",
     "dateEnd": "2027-09-05"
   },
   "meta": {
     "title": "Jivamukti Yoga Tribe Gathering 2027 | Luxembourg Lotus",
-    "description": "The Jivamukti Yoga Tribe Gathering comes to Coque Luxembourg, September 2–5, 2027. Luxembourg Lotus: four days of practice, music and satsang with the global tribe.",
+    "description": "The Jivamukti Yoga Tribe Gathering 2027, Luxembourg Lotus: four days with eleven teachers at Coque Luxembourg, 2–5 September 2027. Registration is open.",
     "keywords": "Jivamukti Yoga, yoga festival, Luxembourg yoga, yoga gathering, Tribe Gathering 2027, Luxembourg Lotus",
     "url": "https://tribe.jivamuktiyoga.com/",
-    "ogImage": "https://tribe.jivamuktiyoga.com/assets/images/og-lux-lotus.png",
+    "ogImage": "https://tribe.jivamuktiyoga.com/assets/images/og-home.jpg",
+    "ogAlt": "Jivamukti Yoga Tribe Gathering, Luxembourg Lotus 2027: 2–5 September 2027, Coque Luxembourg",
     "ogWidth": "1200",
     "ogHeight": "630",
+    "locale": "en_GB",
     "siteName": "Jivamukti Yoga Tribe Gathering",
-    "themeColor": "#0e123a"
+    "themeColor": "#0e123a",
+    "_seo": "SEO/AEO pass 30 Sep 2026: every page's title, description, ogImage and ogAlt live here (meta = home, pages.* = the rest). Share cards: launch/og/render-og.py → src/static/assets/images/og-*.jpg. JSON-LD, sitemap.xml and llms.txt are generated from this file and teachers.json by launch/seo/build-seo.py: rerun it after changing facts, prices or the line-up."
   },
   "brand": {
     "favicon": "assets/brand/lux-lotus/lux-lotus-favicon.svg",
@@ -69,8 +72,8 @@
   },
   "menu": {
     "cityLabel": "LUXEMBOURG",
-    "image": "assets/images/lux-lotus-2027/tribe-rome-2026-triangle-silhouette.webp",
-    "imageAlt": "A practitioner in triangle pose against a bright window at the Tribe Gathering in Rome, 2026"
+    "image": "assets/images/lux-lotus-2027/tribe-rome-2026-rotunda-arms-raised.webp",
+    "imageAlt": "Practitioners standing with their arms raised under the balconies at the Tribe Gathering in Rome, 2026"
   },
   "sections": {
     "venues": true,
@@ -78,7 +81,7 @@
   },
   "copy": {
     "heroDateLeft": "2027",
-    "heroDateRight": "2–5 SEP",
+    "heroDateRight": "2–5 SEPTEMBER",
     "aboutDate": "2027",
     "aboutTitleWords": [
       "JOIN",
@@ -129,8 +132,8 @@
     "day2": "assets/images/lux-lotus-2027/tribe-rome-2026-kirtan-harmonium.webp",
     "day3": "assets/images/lux-lotus-2027/tribe-rome-2026-satsang.webp",
     "day4": "assets/images/lux-lotus-2027/tribe-rome-2026-friends-resting.webp",
-    "menu": "assets/images/lux-lotus-2027/tribe-rome-2026-triangle-silhouette.webp",
-    "menuAlt": "A practitioner in triangle pose against a bright window at the Tribe Gathering in Rome, 2026",
+    "menu": "assets/images/lux-lotus-2027/tribe-rome-2026-rotunda-arms-raised.webp",
+    "menuAlt": "Practitioners standing with their arms raised under the balconies at the Tribe Gathering in Rome, 2026",
     "teachersHero": "assets/images/lux-lotus-2027/tribe-rome-2026-teachers-on-stage.webp",
     "teachersHeroAlt": "Two teachers leading a class from the stage at the Tribe Gathering in Rome, 2026",
     "community": "assets/images/lux-lotus-2027/tribe-rome-2026-group-photo.webp",
@@ -149,8 +152,8 @@
     "aboutHeroAlt": "A practitioner sitting on a rug by the stage, looking out over the hall at the Tribe Gathering in Rome, 2026",
     "interimHero": "assets/images/lux-lotus-2027/coque-gymnase-3.webp",
     "interimHeroAlt": "Coque Luxembourg, one of the sports halls",
-    "registerHero": "assets/images/lux-lotus-2027/tribe-rome-2026-two-friends-altar.webp",
-    "registerHeroAlt": "Two friends by the altar at the Tribe Gathering in Rome, 2026",
+    "registerHero": "assets/images/lux-lotus-2027/tribe-rome-2026-hall-seated-harmonium-square.webp",
+    "registerHeroAlt": "A full hall seated on mats around a harmonium player at the Tribe Gathering in Rome, 2026",
     "scheduleHero": "assets/images/lux-lotus-2027/tribe-rome-2026-mats-from-above.webp",
     "scheduleHeroAlt": "Rows of mats seen from above at the Tribe Gathering in Rome, 2026",
     "day1Alt": "A full hall in practice at the Tribe Gathering in Rome, 2026",
@@ -161,15 +164,22 @@
   "pages": {
     "_readme": "Per-page metadata and copy. Values in [TBC: ...] are placeholders per the brief.",
     "teachers": {
-      "title": "Line-up | Jivamukti Yoga Tribe Gathering 2027, Luxembourg Lotus",
+      "title": "Line-up | Jivamukti Yoga Tribe Gathering 2027",
       "description": "The teachers of the Jivamukti Yoga Tribe Gathering 2027 in Luxembourg.",
+      "metaDescription": "The eleven teachers of the Jivamukti Yoga Tribe Gathering 2027 in Luxembourg, 2–5 September 2027: Sharon Gannon, Yogeswari, Camilla Veen and more.",
+      "_metaDescription": "description is visible page copy (the intro under the heading); metaDescription is the search/share snippet.",
+      "ogImage": "https://tribe.jivamuktiyoga.com/assets/images/og-lineup.jpg",
+      "ogAlt": "Line-up, Jivamukti Yoga Tribe Gathering, Luxembourg Lotus 2027: 2–5 September 2027, Coque Luxembourg",
       "heading": "The teachers of Tribe 2027",
       "gridTitle": "The line-up",
       "localTitle": "Local teachers"
     },
     "about": {
       "title": "About the Tribe | Jivamukti Yoga Tribe Gathering 2027",
-      "description": "What the Jivamukti Yoga Tribe Gathering is, and the theme of the Luxembourg Lotus edition: Nada Through Nadis.",
+      "description": "What the Jivamukti Yoga Tribe Gathering is, and the theme of Luxembourg Lotus 2027: Nada Through Nadis. 2–5 September 2027 at Coque Luxembourg.",
+      "ogImage": "https://tribe.jivamuktiyoga.com/assets/images/og-home.jpg",
+      "ogAlt": "Jivamukti Yoga Tribe Gathering, Luxembourg Lotus 2027: 2–5 September 2027, Coque Luxembourg",
+      "_hidden": "Hidden from 30 Sep 2026 at the client's request (copy and images being reworked): noindex, not in sitemap/llms.txt/JSON-LD, disallowed in robots.txt, no links to it. og-about.jpg exists but is unused.",
       "quote": "\"Hurry home to your real home, which is OM\"",
       "quoteBy": "Shri Brahmananda Sarasvati",
       "intro": "The Tribe Gathering is the Jivamukti Yoga community meeting in one place to practice, listen and sing together: a satsang, the company of like-minded people in pursuit of the truth. In 2027 the tribe gathers in Luxembourg under the theme Nada Through Nadis.",
@@ -177,7 +187,9 @@
     },
     "schedule": {
       "title": "Schedule | Jivamukti Yoga Tribe Gathering 2027",
-      "description": "Schedule available soon. The programme for Luxembourg Lotus, 2–5 September 2027 at Coque Luxembourg, will be published here.",
+      "description": "Schedule available soon. The programme for the Jivamukti Yoga Tribe Gathering, 2–5 September 2027 at Coque Luxembourg, will be published here.",
+      "ogImage": "https://tribe.jivamuktiyoga.com/assets/images/og-schedule.jpg",
+      "ogAlt": "Schedule, Jivamukti Yoga Tribe Gathering, Luxembourg Lotus 2027: 2–5 September 2027, Coque Luxembourg",
       "heroTitle": "SCHEDULE",
       "heading": "SCHEDULE AVAILABLE SOON",
       "text": "The programme for Luxembourg Lotus 2027 will be published here.",
@@ -187,7 +199,9 @@
     },
     "booking": {
       "title": "Register | Jivamukti Yoga Tribe Gathering 2027",
-      "description": "Register for the Jivamukti Yoga Tribe Gathering 2027, Luxembourg Lotus: September 2–5, 2027 at Coque Luxembourg. Early bird passes are on sale now.",
+      "description": "Register for the Jivamukti Yoga Tribe Gathering, 2–5 September 2027 in Luxembourg. Full 4 day pass €450 early bird, €500 regular; graduate passes from €350.",
+      "ogImage": "https://tribe.jivamuktiyoga.com/assets/images/og-register.jpg",
+      "ogAlt": "Register, Jivamukti Yoga Tribe Gathering, Luxembourg Lotus 2027: 2–5 September 2027, Coque Luxembourg",
       "heroTitle": "REGISTER",
       "heading": "REGISTRATION IS OPEN",
       "text": "Book your tickets in the OPEN app and reserve your spot for classes and sessions.",
@@ -230,13 +244,27 @@
     },
     "city": {
       "title": "Luxembourg | Jivamukti Yoga Tribe Gathering 2027",
-      "description": "Coque Luxembourg, 2 rue Léon Hengen, is the venue of the Jivamukti Yoga Tribe Gathering 2027. City tips available soon.",
+      "description": "City tips available soon. The Jivamukti Yoga Tribe Gathering takes place 2–5 September 2027 at Coque Luxembourg, 2 rue Léon Hengen, L-1745 Luxembourg.",
+      "ogImage": "https://tribe.jivamuktiyoga.com/assets/images/og-luxembourg.jpg",
+      "ogAlt": "Luxembourg, Jivamukti Yoga Tribe Gathering, Luxembourg Lotus 2027: 2–5 September 2027, Coque Luxembourg",
       "heroTitle": "ABOUT LUXEMBOURG",
       "heading": "CITY TIPS AVAILABLE SOON",
       "text": "How to get to Coque Luxembourg, where to stay and our favourite places will be shared here.",
       "note": "Coque Luxembourg",
       "ctaHref": "about-tribe.html",
       "ctaLabel": "ABOUT THE TRIBE"
+    },
+    "archive": {
+      "title": "Archive | Jivamukti Yoga Tribe Gathering 2027",
+      "description": "Films from past Jivamukti Yoga Tribe Gatherings: Rome 2026, Stavanger 2025, Paris 2024, Barcelona 2023, New York 2013. Next: Luxembourg, 2–5 September 2027.",
+      "ogImage": "https://tribe.jivamuktiyoga.com/assets/images/og-archive.jpg",
+      "ogAlt": "Archive, Jivamukti Yoga Tribe Gathering, Luxembourg Lotus 2027: 2–5 September 2027, Coque Luxembourg"
+    },
+    "terms": {
+      "title": "Terms & Conditions | Jivamukti Yoga Tribe Gathering 2027",
+      "description": "Terms and conditions for the Jivamukti Yoga Tribe Gathering 2027 in Luxembourg: ticket transfers, photography and filming, event guidelines and contact.",
+      "ogImage": "https://tribe.jivamuktiyoga.com/assets/images/og-home.jpg",
+      "ogAlt": "Jivamukti Yoga Tribe Gathering, Luxembourg Lotus 2027: 2–5 September 2027, Coque Luxembourg"
     }
   },
   "announce": {

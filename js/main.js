@@ -22,7 +22,12 @@ document.addEventListener('DOMContentLoaded', function() {
     if (window.matchMedia('(hover: none) and (pointer: coarse)').matches) siteWrap.classList.add('is-touch');
     var menuImage = siteWrap.getAttribute('data-menu-image');
     var menuHero = document.querySelector('.menu-fullscreen_hero-image');
-    if (menuImage && menuHero) menuHero.setAttribute('src', menuImage);
+    // The menu component ships a responsive srcset for the shared photo; a page with its own photo
+    // drops that srcset (it would win over src) and shows its single file instead.
+    if (menuImage && menuHero && menuHero.getAttribute('src') !== menuImage) {
+      menuHero.removeAttribute('srcset'); menuHero.removeAttribute('sizes');
+      menuHero.setAttribute('src', menuImage);
+    }
   }
   // Inner-page heroes (hero-collage): the lockup is centred in the band above the page title.
   // The title's height depends on its line count, so it is measured here and handed to the

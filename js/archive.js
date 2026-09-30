@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
       videoId: '0I6BtYeuJyc',
       videoType: 'youtube',
       title: 'Stavanger Tribe Gathering 2025',
-      description: 'Our most recent gathering in the stunning fjords of Norway. Experience the Nordic spirit combined with the transformative power of yoga.'
+      description: 'Our gathering in the stunning fjords of Norway. Experience the Nordic spirit combined with the transformative power of yoga.'
     }
   };
 
