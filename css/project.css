@@ -6871,6 +6871,56 @@ body:has(.hero-home_wrap) .nav_content > .nav_menu:last-child .nav_arrow-icon {
   }
 }
 
+/* ---- Booking: pricing cards fit their column from 992 up ---------------------------
+   The card grid was repeat(2, 1fr), i.e. minmax(auto, 1fr): each track could not go below
+   its card's min-content. Inside each card, .pricing-card_grid (1fr 1fr) put the nowrap
+   "Get tickets" button (~155px) in one half, so a card could not shrink below ~320px and the
+   pair needed ~718px. Between 992 and ~1150px the 2fr column is narrower than that, the grid
+   pushed past the viewport and the right-hand card was clipped by html overflow-x: hidden.
+   Fix: minmax(0, 1fr) tracks, and the note + button row becomes a wrapping flex row. While
+   both fit side by side it splits 50/50 like 1fr 1fr (1440 unchanged); when they no longer
+   fit the button drops under the note instead of overflowing the card.
+   At 991 and below the stacked layout keeps its old rules (grid restored below). */
+[data-flwr].site_wrap .pricing-cards-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+[data-flwr].site_wrap .card_primary_wrap,
+[data-flwr].site_wrap .card_primary_element {
+  min-width: 0;
+}
+[data-flwr].site_wrap .pricing-card_grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+/* Equal bases + equal grow = the old 50/50 split. The 6.5rem basis (the widest note word,
+   "DEADLINE]", is ~103px) makes every card wrap at the same width, so a pair never shows
+   one button beside its note and the other below it. */
+[data-flwr].site_wrap .pricing-card_info,
+[data-flwr].site_wrap .pricing-card_button {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 6.5rem;
+}
+/* The single concert card sits in a 1fr 1fr row whose width it drives through its
+   min-content; it never overflowed, so it keeps the original grid (1440 look unchanged). */
+[data-flwr].site_wrap .pricing-cards-grid--single .pricing-card_grid {
+  display: grid;
+}
+/* "75HR/300HR/800HR/Advanced" has no break opportunity and is wider than the class-row
+   info column at 992–1110px; let it break instead of running under the button. */
+[data-flwr].site_wrap .single-class-row__info .text-body-sm {
+  overflow-wrap: break-word;
+}
+@media (max-width: 991px) {
+  [data-flwr].site_wrap .pricing-cards-grid {
+    grid-template-columns: 1fr;
+  }
+  [data-flwr].site_wrap .pricing-card_grid {
+    display: grid;
+  }
+}
+
 /* ---- Priority layer: declarations Rome marked !important. Emitted last in this
    bucket under a (0,3,0) wrapper prefix so they keep winning without the flag. ---- */
 html::-webkit-scrollbar-track {
