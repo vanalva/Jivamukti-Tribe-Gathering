@@ -7094,6 +7094,18 @@ body:has(.hero-home_wrap) .nav_content > .nav_menu:last-child .nav_arrow-icon {
     font-size: clamp(1.25rem, 7vw, 2rem);
   }
 }
+/* Archive filter detail view (owner, 30 Sep: "video sections look weird on mobile"). Rome had no
+   responsive rule for .video-detail_layout, so its 1fr 1fr grid held down to phones and the
+   16:9 video shrank to a 106x60 thumbnail beside a narrow text column. From 991 down it stacks
+   like the archive hero above it (.video-hero_content goes to one column at 991): video full
+   width at 16:9, then heading, text and button, one step apart as inside .video-detail_info. */
+@media (max-width: 991px) {
+  [data-flwr].site_wrap .video-detail_layout {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: var(--_spacing---step--5);
+    align-items: start;
+  }
+}
 
 /* === Archive: self-hosted video (Rome 2026) === */
 /* The hero, the filter detail view and the modal size their iframes by absolute fill; the

@@ -54,45 +54,6 @@
       "initials": "PH"
     },
     {
-      "name": "Martyna Febre",
-      "displayName": "MARTYNA FEBRE",
-      "slug": "martyna-febre",
-      "group": "lineup",
-      "city": "",
-      "image": "assets/images/lineup/martyna_1024w.webp",
-      "imageSource": "martynafebre.com (30 Sep 2026): https://www.martynafebre.com/events/d1ntpggej5skmlp5ly6ibvmwoi9aj8",
-      "bio": "Martyna Dharmina Febre is an Advanced Certified Jivamukti Yoga teacher and co-founder of the online platform Liberation Lab. Before she completely dedicated her life to practising and teaching yoga, she worked as an actress. Martyna is part of the Jivamukti Yoga Teacher Training faculty and has served as a mentor in the Jivamukti Yoga Apprenticeship Program numerous times. Currently based in Berlin, she teaches classes at Peace Yoga Berlin as well as retreats and workshops all over the world.",
-      "bioSource": "https://www.martynafebre.com/about (martynafebre.com, retrieved 30 Sep 2026)",
-      "announceImage": "assets/images/announce/teachers/martyna-febre.svg",
-      "initials": "MF"
-    },
-    {
-      "name": "Anna Lunegova",
-      "displayName": "ANNA LUNEGOVA",
-      "slug": "anna-lunegova",
-      "group": "lineup",
-      "city": "",
-      "image": "assets/images/lineup/anna_1024w.webp",
-      "imageSource": "client album JY TRIBE 2027 (30 Sep 2026): Anna L.jpeg",
-      "bio": "Yoga arose in Anna Lunegova's life when she was a student in the modern dance branch of the State Academy of Arts and Culture. She was interested in studying the diverse possibilities of the physical body in classical, folk and modern dance, and yoga. At the time, her interest in yoga was not strong and the idea of yoga was soon forgotten. However, her return to it later on was involuntary. Power, strength, endurance – these are the qualities that were necessary for her as a contemporary dancer of the Moscow Ballet troupe, and yoga helped her to cope with gruelling physical activities as a dancer and ultimately instilled in her a respect for Chaturanga Dandasana.",
-      "bioSource": "https://jivamuktiyoga.com/teachers-global/anna-lunegova/ (jivamuktiyoga.com, retrieved 30 Sep 2026)",
-      "announceImage": "assets/images/announce/teachers/anna-lunegova.svg",
-      "initials": "AL"
-    },
-    {
-      "name": "HaChi Yu",
-      "displayName": "HACHI YU",
-      "slug": "hachi-yu",
-      "group": "lineup",
-      "city": "",
-      "image": "assets/images/lineup/hachi_1024w.webp",
-      "imageSource": "client album JY TRIBE 2027 (30 Sep 2026): HaChi s:w07f12d08-27bd-4b6a-96b3-d8818ae2e764.jpg",
-      "bio": "HaChi Yu was born and raised on the Lower East Side of NYC. She grew up dancing in the parks, sidewalks and theatres of the city, which she has been blessed to be doing in some form ever since. She was a professional ballet dancer in NYC for over 20 years. HaChi is an Advanced Certified Jivamukti Yoga teacher and serves as a facilitator for Jivamukti Yoga Teacher Training programmes. She was the founder and director of LaLaLå! Jivamukti Yoga Los Angeles, the first and only Jivamukti centre on the West Coast (which sadly closed during the pandemic). HaChi is also a certified teacher in Gyrotonic, the Pilates method and other movement modalities.",
-      "bioSource": "https://jivamuktiyoga.com/teachers-global/hachi-yu/ (jivamuktiyoga.com, retrieved 30 Sep 2026)",
-      "announceImage": "assets/images/announce/teachers/hachi-yu.svg",
-      "initials": "HY"
-    },
-    {
       "name": "Emma Henry",
       "displayName": "EMMA HENRY",
       "slug": "emma-henry",
@@ -119,17 +80,43 @@
       "initials": "MU"
     },
     {
-      "name": "Alexandra Colombo",
-      "displayName": "ALEXANDRA COLOMBO",
-      "slug": "alexandra-colombo",
+      "name": "Martyna Febre",
+      "displayName": "MARTYNA FEBRE",
+      "slug": "martyna-febre",
       "group": "lineup",
       "city": "",
-      "image": "assets/images/lineup/alexandra_1024w.webp",
-      "imageSource": "client album JY TRIBE 2027 (30 Sep 2026): Alexandrada66a09b-5aab-4592-96f9-ae1dbf9adc3d.png",
-      "bio": "Alexandra Colombo's yoga journey began during her pregnancy: she was amazed at how the practice helped her achieve physical and mental balance during this special period of life. Over time, she realised that yoga offered her the ability to grow into a more compassionate, strong and balanced human being. The more she immersed herself in yoga, the more she discovered its power to soothe her physical, mental and emotional state, no matter the circumstances. It was within Jivamukti Yoga that she found the method that truly resonated with her. She completed her 300-hour Jivamukti teacher training in India in 2015. In 2019, she co-founded Jivamukti Yoga Luxembourg, the first official Jivamukti centre in the country.",
-      "bioSource": "https://jivamuktiyoga.com/teachers-global/alexandra-colombo/ (jivamuktiyoga.com, retrieved 30 Sep 2026)",
-      "announceImage": "assets/images/announce/teachers/alexandra-colombo.svg",
-      "initials": "AC"
+      "image": "assets/images/lineup/martyna_1024w.webp",
+      "imageSource": "martynafebre.com (30 Sep 2026): https://www.martynafebre.com/events/d1ntpggej5skmlp5ly6ibvmwoi9aj8",
+      "bio": "Martyna Dharmina Febre is an Advanced Certified Jivamukti Yoga teacher and co-founder of the online platform Liberation Lab. Before she completely dedicated her life to practising and teaching yoga, she worked as an actress. Martyna is part of the Jivamukti Yoga Teacher Training faculty and has served as a mentor in the Jivamukti Yoga Apprenticeship Program numerous times. Currently based in Berlin, she teaches classes at Peace Yoga Berlin as well as retreats and workshops all over the world.",
+      "bioSource": "https://www.martynafebre.com/about (martynafebre.com, retrieved 30 Sep 2026)",
+      "announceImage": "assets/images/announce/teachers/martyna-febre.svg",
+      "initials": "MF"
+    },
+    {
+      "name": "HaChi Yu",
+      "displayName": "HACHI YU",
+      "slug": "hachi-yu",
+      "group": "lineup",
+      "city": "",
+      "image": "assets/images/lineup/hachi_1024w.webp",
+      "imageSource": "client album JY TRIBE 2027 (30 Sep 2026): HaChi s:w07f12d08-27bd-4b6a-96b3-d8818ae2e764.jpg",
+      "bio": "HaChi Yu was born and raised on the Lower East Side of NYC. She grew up dancing in the parks, sidewalks and theatres of the city, which she has been blessed to be doing in some form ever since. She was a professional ballet dancer in NYC for over 20 years. HaChi is an Advanced Certified Jivamukti Yoga teacher and serves as a facilitator for Jivamukti Yoga Teacher Training programmes. She was the founder and director of LaLaLå! Jivamukti Yoga Los Angeles, the first and only Jivamukti centre on the West Coast (which sadly closed during the pandemic). HaChi is also a certified teacher in Gyrotonic, the Pilates method and other movement modalities.",
+      "bioSource": "https://jivamuktiyoga.com/teachers-global/hachi-yu/ (jivamuktiyoga.com, retrieved 30 Sep 2026)",
+      "announceImage": "assets/images/announce/teachers/hachi-yu.svg",
+      "initials": "HY"
+    },
+    {
+      "name": "Anna Lunegova",
+      "displayName": "ANNA LUNEGOVA",
+      "slug": "anna-lunegova",
+      "group": "lineup",
+      "city": "",
+      "image": "assets/images/lineup/anna_1024w.webp",
+      "imageSource": "client album JY TRIBE 2027 (30 Sep 2026): Anna L.jpeg",
+      "bio": "Yoga arose in Anna Lunegova's life when she was a student in the modern dance branch of the State Academy of Arts and Culture. She was interested in studying the diverse possibilities of the physical body in classical, folk and modern dance, and yoga. At the time, her interest in yoga was not strong and the idea of yoga was soon forgotten. However, her return to it later on was involuntary. Power, strength, endurance – these are the qualities that were necessary for her as a contemporary dancer of the Moscow Ballet troupe, and yoga helped her to cope with gruelling physical activities as a dancer and ultimately instilled in her a respect for Chaturanga Dandasana.",
+      "bioSource": "https://jivamuktiyoga.com/teachers-global/anna-lunegova/ (jivamuktiyoga.com, retrieved 30 Sep 2026)",
+      "announceImage": "assets/images/announce/teachers/anna-lunegova.svg",
+      "initials": "AL"
     },
     {
       "name": "Magali Lehners",
@@ -143,6 +130,19 @@
       "bioSource": "https://jivamuktiyoga.com/teachers-global/magali-lehners/ (jivamuktiyoga.com, retrieved 30 Sep 2026)",
       "announceImage": "assets/images/announce/teachers/magali-lehners.svg",
       "initials": "ML"
+    },
+    {
+      "name": "Alexandra Colombo",
+      "displayName": "ALEXANDRA COLOMBO",
+      "slug": "alexandra-colombo",
+      "group": "lineup",
+      "city": "",
+      "image": "assets/images/lineup/alexandra_1024w.webp",
+      "imageSource": "client album JY TRIBE 2027 (30 Sep 2026): Alexandrada66a09b-5aab-4592-96f9-ae1dbf9adc3d.png",
+      "bio": "Alexandra Colombo's yoga journey began during her pregnancy: she was amazed at how the practice helped her achieve physical and mental balance during this special period of life. Over time, she realised that yoga offered her the ability to grow into a more compassionate, strong and balanced human being. The more she immersed herself in yoga, the more she discovered its power to soothe her physical, mental and emotional state, no matter the circumstances. It was within Jivamukti Yoga that she found the method that truly resonated with her. She completed her 300-hour Jivamukti teacher training in India in 2015. In 2019, she co-founded Jivamukti Yoga Luxembourg, the first official Jivamukti centre in the country.",
+      "bioSource": "https://jivamuktiyoga.com/teachers-global/alexandra-colombo/ (jivamuktiyoga.com, retrieved 30 Sep 2026)",
+      "announceImage": "assets/images/announce/teachers/alexandra-colombo.svg",
+      "initials": "AC"
     }
   ]
 }
