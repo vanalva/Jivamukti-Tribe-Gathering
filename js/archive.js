@@ -15,6 +15,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Video data for each city
   const videoData = {
+    rome: {
+      videoId: 'rome',
+      videoType: 'file',
+      src: 'assets/videos/tribe-rome-2026-recap.mp4',
+      poster: 'assets/videos/tribe-rome-2026-recap-poster.webp',
+      title: 'Rome Tribe Gathering 2026',
+      description: 'Four days of practice, kirtan and satsang in Rome, 24–27 September 2026.'
+    },
     newyork: {
       videoId: '1SL6dgEvA80',
       videoType: 'youtube',
@@ -41,8 +49,36 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   };
 
+  // Self-hosted film (videoType 'file'): a <video> with controls, never autoplay on page load.
+  // autoplay is only true after a click on a grid item (same as the YouTube ?autoplay=1 modal).
+  function createVideoFile(videoId, autoplay) {
+    const data = videoData[videoId] || {};
+    const video = document.createElement('video');
+    video.setAttribute('controls', '');
+    video.setAttribute('playsinline', '');
+    video.setAttribute('preload', 'metadata');
+    if (data.poster) video.setAttribute('poster', data.poster);
+    if (data.title) video.setAttribute('aria-label', data.title);
+    const source = document.createElement('source');
+    source.src = data.src;
+    source.type = 'video/mp4';
+    video.appendChild(source);
+    if (autoplay) {
+      const p = video.play();
+      if (p && p.catch) p.catch(function () {});
+    }
+    return video;
+  }
+
+  // Pause any self-hosted film before its container is emptied, so no audio keeps playing.
+  function stopMedia(container) {
+    if (!container) return;
+    container.querySelectorAll('video').forEach(function (v) { v.pause(); });
+  }
+
   // Helper function to create video iframe
   function createVideoIframe(videoId, videoType, autoplay) {
+    if (videoType === 'file') return createVideoFile(videoId, autoplay);
     const iframe = document.createElement('iframe');
     iframe.setAttribute('allowfullscreen', '');
     iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
@@ -80,6 +116,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.body.style.overflow = '';
 
     // Clear iframe to stop video
+    stopMedia(videoModalContainer);
     videoModalContainer.innerHTML = '';
   }
 
@@ -135,6 +172,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Clear detail video iframe to stop playback
         if (detailVideoContainer) {
+          stopMedia(detailVideoContainer);
           detailVideoContainer.innerHTML = '';
         }
 
@@ -157,6 +195,7 @@ document.addEventListener('DOMContentLoaded', function() {
           if (descEl) descEl.textContent = data.description;
 
           // Clear and add video iframe
+          stopMedia(detailVideoContainer);
           detailVideoContainer.innerHTML = '';
           const iframe = createVideoIframe(data.videoId, data.videoType, false);
           detailVideoContainer.appendChild(iframe);

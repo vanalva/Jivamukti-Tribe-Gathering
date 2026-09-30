@@ -7071,6 +7071,27 @@ body:has(.hero-home_wrap) .nav_content > .nav_menu:last-child .nav_arrow-icon {
   }
 }
 
+/* === Archive: self-hosted video (Rome 2026) === */
+/* The hero, the filter detail view and the modal size their iframes by absolute fill; the
+   self-hosted <video> takes the same box so nothing moves when the Rome film replaces the
+   YouTube embed. The film is 16:9 like the box; contain keeps it whole if a box ever differs. */
+[data-flwr].site_wrap .video-hero_video-wrap video,
+[data-flwr].site_wrap .video-detail_video video,
+[data-flwr].site_wrap .video-modal_container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  background-color: var(--_palette---neutral--black);
+  border-top-style: none;
+  border-right-style: none;
+  border-bottom-style: none;
+  border-left-style: none;
+}
+
 /* ---- Priority layer: declarations Rome marked !important. Emitted last in this
    bucket under a (0,3,0) wrapper prefix so they keep winning without the flag. ---- */
 html::-webkit-scrollbar-track {
