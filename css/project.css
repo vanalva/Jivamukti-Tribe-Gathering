@@ -6748,10 +6748,12 @@ body:has(.hero-home_wrap) .nav_content > .nav_menu:last-child .nav_arrow-icon {
 [data-flwr].site_wrap .footer_wrap {
   padding-bottom: calc(var(--_spacing---page-margin) + 190px);
 }
+/* 76px on phones, the same size as the announcement page's .an_stamp (announce.css); the
+   inner-page hero reserves exactly this corner (see "Stacked hero" below). */
 @media (max-width: 767px) {
   [data-flwr] .site-stamp {
-    width: 96px;
-    height: 96px;
+    width: 76px;
+    height: 76px;
   }
   [data-flwr].site_wrap .footer_wrap {
     padding-bottom: calc(var(--_spacing---page-margin) + 120px);
@@ -6787,14 +6789,47 @@ body:has(.hero-home_wrap) .nav_content > .nav_menu:last-child .nav_arrow-icon {
   max-width: 100%;
   max-height: none;
 }
+/* Stacked hero (991px down): photo, lockup, title in one 100svh screen (30 Sep 2026 fix).
+   The Rome base capped the lockup's wrap at max-height 150px while the image inside kept its
+   natural 210-270px, so the image spilled out of its grid row and its water sat on the title.
+   Now the wrap takes the image's real height, the row gap alone separates lockup and title,
+   and the lockup width is whatever fits the budget left on the first screen:
+     100svh - navbar (top padding) - bottom padding - 2 row gaps - 30vh photo floor - title height
+   times 1.5 (the lockup is 1.56 wide per unit of height, rounded down for air), capped at the
+   column width and 420px, floored at 8rem so it never vanishes on a landscape phone.
+   Bottom padding also reserves the fixed .site-stamp's corner (its size + a small gap), so the
+   title always ends above the stamp: clamp(110px, 12vw, 170px) on tablet, 76px on phones.
+   Keep these two numbers in sync with the .site-stamp rules above. */
 @media (max-width: 991px) {
+  [data-flwr].site_wrap .hero-collage_content--with-navbar {
+    height: 100svh;
+    min-height: 100svh;
+    max-height: 100svh;
+    --hero-stack-bottom: calc(var(--_spacing---page-margin) + clamp(110px, 12vw, 170px) + var(--_spacing---step--2));
+    padding-bottom: var(--hero-stack-bottom);
+  }
   [data-flwr].site_wrap .hero-collage_logo-wrap {
     height: auto;
-    padding-bottom: var(--_spacing---step--6);
+    padding-top: 0;
+    padding-bottom: 0;
   }
   [data-flwr].site_wrap .hero-collage_logo-wrap .image-wrap {
-    width: 100%;
+    width: min(100%, 420px, max(8rem, calc((100svh - var(--_component---navbar--height) - var(--hero-stack-bottom) - var(--_spacing---step--4) * 2 - 30vh - var(--hero-title-h, 3rem)) * 1.5)));
     max-width: 420px;
+    max-height: none;
+  }
+  [data-flwr].site_wrap .hero-collage_title-bottom {
+    padding-bottom: 0;
+  }
+}
+@media (max-width: 767px) {
+  [data-flwr].site_wrap .hero-collage_content--with-navbar {
+    --hero-stack-bottom: calc(var(--_spacing---page-margin) + 76px + var(--_spacing---step--2));
+    padding-bottom: var(--hero-stack-bottom);
+  }
+  [data-flwr].site_wrap .hero-collage_image-wrap,
+  [data-flwr].site_wrap .hero-collage_image {
+    min-height: 30vh;
   }
 }
 

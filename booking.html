@@ -34,7 +34,7 @@
   <link rel="stylesheet" href="css/framework.css?v=e0cfce08">
   <link rel="stylesheet" href="css/variables.css?v=577f7e82">
   <link rel="stylesheet" href="css/palette-lux-lotus.css?v=31d50f10">
-  <link rel="stylesheet" href="css/project.css?v=5f0253ca">
+  <link rel="stylesheet" href="css/project.css?v=767b5b5d">
 </head>
 <body>
 <div data-flwr class="f-mode-light site_wrap" data-menu-image="assets/images/lux-lotus-2027/tribe-rome-2026-triangle-silhouette.webp">
@@ -149,7 +149,7 @@
     <div class="menu-fullscreen_footer">
       <div class="menu-fullscreen_footer-left">
         <img src="assets/images/menu/0020438c96462729a00595340c6a4efd7b8f7a52.svg" alt="Jivamukti Yoga" class="menu-fullscreen_footer-logo">
-        <p class="text-legal menu-fullscreen_copyright">&copy; 2025 Jivamukti Yoga. All rights reserved.</p>
+        <p class="text-legal menu-fullscreen_copyright">&copy; 2026 Jivamukti Yoga. All rights reserved.</p>
       </div>
       <div class="menu-fullscreen_footer-right">
         <a href="#" class="menu-fullscreen_social-link" aria-label="YouTube">
@@ -231,7 +231,9 @@
         
         <div class="card_primary_wrap f-position-relative">
           <span class="limited-tickets-tag">EARLY BIRD</span>
-          <div class="card_primary_element f-flex f-flex-column f-flex-nowrap f-justify-center f-gap-4 f-padding-6">
+          <!-- f-justify-start, not center: only the early-bird card has the tag strip, which shortens its
+               element; centred content then sat ~30px lower on the tagless Regular card. Top-aligned, the pair lines up. -->
+          <div class="card_primary_element f-flex f-flex-column f-flex-nowrap f-justify-start f-gap-4 f-padding-6">
             <h3 class="text-h4 f-text-uppercase">EARLY BIRD</h3>
             <p class="text-h1">€400</p>
             <div class="pricing-card_grid">
@@ -247,7 +249,9 @@
         
         <div class="card_primary_wrap f-position-relative">
           
-          <div class="card_primary_element f-flex f-flex-column f-flex-nowrap f-justify-center f-gap-4 f-padding-6">
+          <!-- f-justify-start, not center: only the early-bird card has the tag strip, which shortens its
+               element; centred content then sat ~30px lower on the tagless Regular card. Top-aligned, the pair lines up. -->
+          <div class="card_primary_element f-flex f-flex-column f-flex-nowrap f-justify-start f-gap-4 f-padding-6">
             <h3 class="text-h4 f-text-uppercase">REGULAR</h3>
             <p class="text-h1">€500</p>
             <div class="pricing-card_grid">
@@ -276,7 +280,9 @@
         
         <div class="card_primary_wrap f-position-relative">
           <span class="limited-tickets-tag">EARLY BIRD</span>
-          <div class="card_primary_element f-flex f-flex-column f-flex-nowrap f-justify-center f-gap-4 f-padding-6">
+          <!-- f-justify-start, not center: only the early-bird card has the tag strip, which shortens its
+               element; centred content then sat ~30px lower on the tagless Regular card. Top-aligned, the pair lines up. -->
+          <div class="card_primary_element f-flex f-flex-column f-flex-nowrap f-justify-start f-gap-4 f-padding-6">
             <h3 class="text-h4 f-text-uppercase">EARLY BIRD</h3>
             <p class="text-h1">€350</p>
             <div class="pricing-card_grid">
@@ -292,7 +298,9 @@
         
         <div class="card_primary_wrap f-position-relative">
           
-          <div class="card_primary_element f-flex f-flex-column f-flex-nowrap f-justify-center f-gap-4 f-padding-6">
+          <!-- f-justify-start, not center: only the early-bird card has the tag strip, which shortens its
+               element; centred content then sat ~30px lower on the tagless Regular card. Top-aligned, the pair lines up. -->
+          <div class="card_primary_element f-flex f-flex-column f-flex-nowrap f-justify-start f-gap-4 f-padding-6">
             <h3 class="text-h4 f-text-uppercase">REGULAR</h3>
             <p class="text-h1">€450</p>
             <div class="pricing-card_grid">
@@ -321,7 +329,9 @@
         
         <div class="card_primary_wrap f-position-relative">
           <span class="limited-tickets-tag">EARLY BIRD</span>
-          <div class="card_primary_element f-flex f-flex-column f-flex-nowrap f-justify-center f-gap-4 f-padding-6">
+          <!-- f-justify-start, not center: only the early-bird card has the tag strip, which shortens its
+               element; centred content then sat ~30px lower on the tagless Regular card. Top-aligned, the pair lines up. -->
+          <div class="card_primary_element f-flex f-flex-column f-flex-nowrap f-justify-start f-gap-4 f-padding-6">
             <h3 class="text-h4 f-text-uppercase">EARLY BIRD</h3>
             <p class="text-h1">€300</p>
             <div class="pricing-card_grid">
@@ -337,7 +347,9 @@
         
         <div class="card_primary_wrap f-position-relative">
           
-          <div class="card_primary_element f-flex f-flex-column f-flex-nowrap f-justify-center f-gap-4 f-padding-6">
+          <!-- f-justify-start, not center: only the early-bird card has the tag strip, which shortens its
+               element; centred content then sat ~30px lower on the tagless Regular card. Top-aligned, the pair lines up. -->
+          <div class="card_primary_element f-flex f-flex-column f-flex-nowrap f-justify-start f-gap-4 f-padding-6">
             <h3 class="text-h4 f-text-uppercase">REGULAR</h3>
             <p class="text-h1">€350</p>
             <div class="pricing-card_grid">
@@ -447,20 +459,21 @@
     <div class="plan_content f-position-relative">
       <div class="pricing_title-sticky">
         <h2 class="text-h1 f-text-uppercase">CONCERT</h2>
-        <p class="text-body-md spacing_mt-4">[TBC: CONCERT]</p>
+        <p class="text-body-md spacing_mt-4">Concert included for all 4 day pass holders.</p>
       </div>
       <div class="pricing-cards-grid pricing-cards-grid--single">
+        <!-- Same anatomy as the pass and day-pass cards (title, detail lines, price, note + button), no nested wrapper. -->
         <div class="card_primary_wrap f-position-relative">
-          <div class="card_primary_element f-flex f-flex-column f-flex-nowrap f-justify-center f-gap-0">
-            <div class="f-flex f-flex-column f-flex-nowrap f-justify-center f-gap-4 f-padding-6">
-              <h3 class="text-h4 f-text-uppercase">COQUE LUXEMBOURG</h3>
-              <div class="pricing-card_grid">
-                <div class="pricing-card_info">
-                  <p class="text-body-sm f-text-italic">Concert included for all 4 day pass holders &middot; <strong>€49</strong> for friends</p>
-                </div>
-                <div class="pricing-card_button">
-                  <a href="#" target="_blank" rel="noopener noreferrer" class="button button--outline button--small">GET TICKETS</a>
-                </div>
+          <div class="card_primary_element f-flex f-flex-column f-flex-nowrap f-justify-start f-gap-4 f-padding-6">
+            <h3 class="text-h4 f-text-uppercase">Concert</h3>
+            <p class="text-body-md">[TBC: CONCERT]<br>Coque Luxembourg</p>
+            <p class="text-h1">€49</p>
+            <div class="pricing-card_grid">
+              <div class="pricing-card_info">
+                <p class="text-body-sm f-text-italic">For friends</p>
+              </div>
+              <div class="pricing-card_button">
+                <a href="#" target="_blank" rel="noopener noreferrer" class="button button--outline button--small">GET TICKETS</a>
               </div>
             </div>
           </div>
@@ -499,7 +512,7 @@
         
         <div class="single-class-row single-class-row--white">
           <div class="single-class-row__info">
-            <p class="text-h5 f-text-uppercase">Lecture</p>
+            <p class="text-h5 f-text-uppercase">45-minute lecture</p>
             <p class="text-body-sm">[TBC: SCHEDULE] &middot; <strong>€19</strong></p>
             
           </div>
@@ -508,7 +521,7 @@
         
         <div class="single-class-row single-class-row--rose">
           <div class="single-class-row__info">
-            <p class="text-h5 f-text-uppercase">Lecture</p>
+            <p class="text-h5 f-text-uppercase">75-minute lecture</p>
             <p class="text-body-sm">[TBC: SCHEDULE] &middot; <strong>€29</strong></p>
             
           </div>
@@ -591,7 +604,7 @@
     </div>
 
     <div class="footer_bottom">
-      <p class="footer_copyright text-legal">&copy; 2025 Jivamukti Yoga. All rights reserved.</p>
+      <p class="footer_copyright text-legal">&copy; 2026 Jivamukti Yoga. All rights reserved.</p>
 
       <div class="footer_social">
         <a href="#" class="footer_social-link" aria-label="YouTube">

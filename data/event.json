@@ -111,7 +111,7 @@
     "jivamukti": "https://jivamuktiyoga.com"
   },
   "footer": {
-    "copyright": "&copy; 2025 Jivamukti Yoga. All rights reserved."
+    "copyright": "&copy; 2026 Jivamukti Yoga. All rights reserved."
   },
   "images": {
     "_readme": "The client's real photos, delivered 30 Sep 2026: event photos from the Tribe Gathering in Rome 2026 and location photos of Coque Luxembourg (venue, interimHero). No AI-generated images. Selection and sources: notes/art-direction/PHOTO-SELECTION-2026-09-30.md. Masters in references/library/lux-lotus-2027/. Orientation per slot: landscape / portrait / wide.",
@@ -141,6 +141,10 @@
     "storyStillnessAlt": "A practitioner sitting still in window light at the Tribe Gathering in Rome, 2026",
     "storyMats": "assets/images/lux-lotus-2027/tribe-rome-2026-mats.webp",
     "storyMatsAlt": "Yoga mats laid out side by side at the Tribe Gathering in Rome, 2026",
+    "storyCommunity": "assets/images/lux-lotus-2027/tribe-rome-2026-two-friends-arm-in-arm.webp",
+    "storyCommunityAlt": "Two practitioners standing arm in arm in the hall at the Tribe Gathering in Rome, 2026",
+    "aboutHero": "assets/images/lux-lotus-2027/tribe-rome-2026-seated-on-rug.webp",
+    "aboutHeroAlt": "A practitioner sitting on a rug by the stage, looking out over the hall at the Tribe Gathering in Rome, 2026",
     "interimHero": "assets/images/lux-lotus-2027/coque-gymnase-3.webp",
     "interimHeroAlt": "Coque Luxembourg, one of the sports halls",
     "registerHero": "assets/images/lux-lotus-2027/tribe-rome-2026-two-friends-altar.webp",
@@ -157,7 +161,7 @@
     "teachers": {
       "title": "Line-up | Jivamukti Yoga Tribe Gathering 2027, Luxembourg Lotus",
       "description": "The teachers of the Jivamukti Yoga Tribe Gathering 2027 in Luxembourg.",
-      "heading": "For Tribe 2027 we invite the community to practice with",
+      "heading": "The teachers of Tribe 2027",
       "gridTitle": "The line-up",
       "localTitle": "Local teachers"
     },
@@ -230,17 +234,18 @@
       ],
       "concertTitle": "CONCERT",
       "concertText": "[TBC: CONCERT]",
-      "concertVenue": "COQUE LUXEMBOURG",
-      "concertDetail": "Concert included for all 4 day pass holders",
+      "concertCardTitle": "Concert",
+      "concertVenue": "Coque Luxembourg",
+      "concertDetail": "Concert included for all 4 day pass holders.",
       "concertPrice": "€49",
-      "concertPriceNote": "for friends",
+      "concertPriceNote": "For friends",
       "classesTitle": "INDIVIDUAL CLASSES",
       "classesText": "Teachers, days and times: [TBC: SCHEDULE]",
       "classes": [
         { "tone": "white", "name": "Jivamukti Sequencing", "detail": "Teachers' workshop · [TBC: SCHEDULE]", "price": "€108", "note": "For certified teachers (min. 300HR)" },
         { "tone": "rose", "name": "Pranayama & Meditation", "detail": "[TBC: SCHEDULE]", "price": "€19", "note": "" },
-        { "tone": "white", "name": "Lecture", "detail": "[TBC: SCHEDULE]", "price": "€19", "note": "" },
-        { "tone": "rose", "name": "Lecture", "detail": "[TBC: SCHEDULE]", "price": "€29", "note": "" },
+        { "tone": "white", "name": "45-minute lecture", "detail": "[TBC: SCHEDULE]", "price": "€19", "note": "", "_source": "Rome schedule page: the €19 lecture ran 45 min" },
+        { "tone": "rose", "name": "75-minute lecture", "detail": "[TBC: SCHEDULE]", "price": "€29", "note": "", "_source": "Rome schedule page: the €29 lecture ran 75 min" },
         { "tone": "white", "name": "Satsang", "detail": "[TBC: SCHEDULE]", "price": "€39", "note": "" },
         { "tone": "rose", "name": "Teachers Mixer", "detail": "[TBC: SCHEDULE]", "price": "€39", "note": "" },
         { "tone": "white", "name": "Advanced Board Prep Workshop", "detail": "[TBC: SCHEDULE]", "price": "€69", "note": "For all 75HR/300HR/800HR/Advanced Certified teachers" }
