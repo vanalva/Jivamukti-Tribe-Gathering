@@ -22,11 +22,12 @@ Early bird: The discounted early bird price is only offered to a limited number 
 
 ## Teachers
 
-Sharon Gannon, Yogeswari, Camilla Veen, Petros Haffenrichter, Emma Henry, Moritz Ulrich, Martyna Febre, HaChi Yu, Anna Lunegova, Magali Lehners, Alexandra Colombo.
+Sharon Gannon, Yogeswari, Ruth Lauer Manenti, Camilla Veen, Petros Haffenrichter, Emma Henry, Moritz Ulrich, Martyna Febre, Anna Lunegova, Magali Lehners, Alexandra Colombo.
 
 ## Pages
 
 - [Home](https://tribe.jivamuktiyoga.com/): The event at a glance: dates, venue, line-up and registration.
+- [About the Tribe](https://tribe.jivamuktiyoga.com/about-tribe.html): What the Tribe Gathering is, and the theme of this edition.
 - [Line-up](https://tribe.jivamuktiyoga.com/teachers.html): The 11 teachers, each with a short biography.
 - [Register](https://tribe.jivamuktiyoga.com/booking.html): Passes and prices, and the link to register in the OPEN app.
 - [Schedule](https://tribe.jivamuktiyoga.com/schedule.html): Schedule available soon.

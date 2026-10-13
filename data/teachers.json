@@ -1,5 +1,5 @@
 {
-  "_readme": "Lux Lotus 2027 line-up. Order follows the client's 30 Sep 2026 update: Sharon Gannon first, Ruth Lauer Manenti removed, everyone in one list with no local group and no city. Photos and bios marked rome-2026 are reused from the Rome template as temporary placeholders and must be confirmed by the client. Rendered by notes/tools/render-pages.py.",
+  "_readme": "Lux Lotus 2027 line-up. Order follows the client's 4 Oct 2026 update: Sharon Gannon, Yogeswari, Ruth Lauer Manenti, Camilla Veen, Petros Haffenrichter, Emma Henry, Moritz Ulrich, Martyna Febre, Anna Lunegova, Magali Lehners, Alexandra Colombo. Everyone is in one list with no local group and no city. Photos marked rome-2026 are reused from the Rome site and must be confirmed by the client. Rendered by notes/tools/render-pages.py.",
   "teachers": [
     {
       "name": "Sharon Gannon",
@@ -26,6 +26,19 @@
       "bioSource": "https://jivamuktiyoga.com/teachers-global/yogeswari/ (jivamuktiyoga.com, retrieved 30 Sep 2026)",
       "announceImage": "assets/images/announce/teachers/yogeswari.svg",
       "initials": "Y"
+    },
+    {
+      "name": "Ruth Lauer Manenti",
+      "displayName": "RUTH LAUER MANENTI",
+      "slug": "ruth-lauer-manenti",
+      "group": "lineup",
+      "city": "",
+      "image": "assets/images/lineup/ruth_1024w.webp",
+      "imageSource": "Rome 2026 site repository: images/lineup/ruth_1024w.webp (restored 4 Oct 2026)",
+      "bio": "Ruth Lauer-Manenti began practising yoga after a serious car accident in her early twenties. After training in India, she became a student of Sharon Gannon and David Life and later an Advanced Certified Jivamukti Yoga teacher. She has facilitated teacher trainings in the United States and India, studied Ashtanga Yoga with Sri K. Pattabhi Jois and his family, and studied Sanskrit with Dr. M. A. Jayashree and Professor H. V. Nagaraja Rao. Ruth teaches internationally and is also an author, photographer and graduate of the Yale School of Art.",
+      "bioSource": "https://jivamuktiyoga.com/teachers-global/ruth-lauer-manenti/ (jivamuktiyoga.com, retrieved 4 Oct 2026)",
+      "announceImage": "assets/images/announce/teachers/ruth-lauer-manenti.svg",
+      "initials": "RLM"
     },
     {
       "name": "Camilla Veen",
@@ -91,19 +104,6 @@
       "bioSource": "https://www.martynafebre.com/about (martynafebre.com, retrieved 30 Sep 2026)",
       "announceImage": "assets/images/announce/teachers/martyna-febre.svg",
       "initials": "MF"
-    },
-    {
-      "name": "HaChi Yu",
-      "displayName": "HACHI YU",
-      "slug": "hachi-yu",
-      "group": "lineup",
-      "city": "",
-      "image": "assets/images/lineup/hachi_1024w.webp",
-      "imageSource": "client album JY TRIBE 2027 (30 Sep 2026): HaChi s:w07f12d08-27bd-4b6a-96b3-d8818ae2e764.jpg",
-      "bio": "HaChi Yu was born and raised on the Lower East Side of NYC. She grew up dancing in the parks, sidewalks and theatres of the city, which she has been blessed to be doing in some form ever since. She was a professional ballet dancer in NYC for over 20 years. HaChi is an Advanced Certified Jivamukti Yoga teacher and serves as a facilitator for Jivamukti Yoga Teacher Training programmes. She was the founder and director of LaLaLå! Jivamukti Yoga Los Angeles, the first and only Jivamukti centre on the West Coast (which sadly closed during the pandemic). HaChi is also a certified teacher in Gyrotonic, the Pilates method and other movement modalities.",
-      "bioSource": "https://jivamuktiyoga.com/teachers-global/hachi-yu/ (jivamuktiyoga.com, retrieved 30 Sep 2026)",
-      "announceImage": "assets/images/announce/teachers/hachi-yu.svg",
-      "initials": "HY"
     },
     {
       "name": "Anna Lunegova",

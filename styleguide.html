@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Zalando+Sans+Expanded:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/framework.css?v=e0cfce08">
-  <link rel="stylesheet" href="css/variables.css?v=577f7e82">
+  <link rel="stylesheet" href="css/variables.css?v=264b7aec">
   <link rel="stylesheet" href="css/project.css?v=6ba5bdf9">
   <link rel="stylesheet" href="css/styleguide.css?v=eba631d6">
 
@@ -295,12 +295,12 @@
 
     <!-- ===== PALETTE ===== -->
     <section id="palette" class="flwr-styleguide_section">
-      <h2 class="flwr-styleguide_section_heading">Palette <span class="flwr-styleguide_badge">5 categories + extensible</span></h2>
-      <p class="flwr-styleguide_section_intro">flwr ships <strong>five palette categories</strong> — <code>core</code> (primary brand), <code>alternate</code> (secondary brand), <code>accent</code> (visual highlights / spot color), <code>alert</code> (destructive / errors), <code>neutral</code> (grays). Each is a 9-stop OKLCH-derived ramp from a single seed. <strong>Both alternates and accents are extensible</strong> — add <code>alternate-2</code>, <code>alternate-3</code>, <code>accent-2</code>, <code>accent-3</code>, etc. following the same pattern. No "secondary / tertiary / quaternary" naming required. Status palettes (<code>success</code>, <code>warning</code>, <code>info</code>, <code>focus</code>) ship separately for semantic state.</p>
+      <h2 class="flwr-styleguide_section_heading">Palette <span class="flwr-styleguide_badge" data-brand-wording="count">7 categories + status</span></h2>
+      <p class="flwr-styleguide_section_intro" data-brand-wording="intro">The palette of <strong>Tribe Gathering 2027 · Lux Lotus</strong>. The brand seeds <code>core</code>, <code>alternate</code> and <code>accent-2</code> from Light blue and Yellow and sets the <code>neutral</code> stops by hand. <code>alternate-2</code> and <code>accent</code> follow <code>core</code>, so they move with it. <code>alert</code> is the flwr 1.2.1-alpha default (the brand does not set it). Each seeded category is a ramp derived from one seed. Also set in brand.json, with no row here: <code>pink</code> (provisional).</p>
 
       <div class="flwr-styleguide_subsection">
-        <h3 class="flwr-styleguide_subheading">core <span class="flwr-styleguide_badge">primary brand</span></h3>
-        <p class="flwr-styleguide_subheading_meta">Derived from <code>--_palette---core--seed</code> = <code>oklch(0.77 0.20 322)</code> ≈ <code>#f085ff</code> — Flowriter pink. Change the seed and all 9 stops re-derive perceptually-uniform.</p>
+        <h3 class="flwr-styleguide_subheading">core <span class="flwr-styleguide_badge" data-brand-wording="badge:core">brand colour</span></h3>
+        <p class="flwr-styleguide_subheading_meta" data-brand-wording="core">Derived from <code>--_palette---core--seed</code> = <code>oklch(0.549 0.119 254)</code> ≈ <code>#3b73b5</code> — brand colour <strong>Light blue</strong> (<code>lotus-blue</code>): buttons and footer. Ramp <code>lux-core</code> derives the stops from the seed; change the seed and they re-derive.</p>
         <!-- Swatch chips keep their inline background: the chip's whole job is to
              render one exact computed colour. See the exemption note near the top. -->
         <div class="flwr-styleguide_swatches">
@@ -318,8 +318,8 @@
       </div>
 
       <div class="flwr-styleguide_subsection">
-        <h3 class="flwr-styleguide_subheading">alternate <span class="flwr-styleguide_badge is-purple">Pro / secondary brand</span></h3>
-        <p class="flwr-styleguide_subheading_meta">Derived from <code>--_palette---alternate--seed</code> = <code>oklch(0.60 0.25 285)</code> ≈ <code>#8255ff</code> — Flowriter's vibrant purple, used for Pro features and aspirational brand moments.</p>
+        <h3 class="flwr-styleguide_subheading">alternate <span class="flwr-styleguide_badge is-purple" data-brand-wording="badge:alternate">brand colour</span></h3>
+        <p class="flwr-styleguide_subheading_meta" data-brand-wording="alternate">Derived from <code>--_palette---alternate--seed</code> = <code>oklch(0.549 0.119 254)</code> ≈ <code>#3b73b5</code> — brand colour <strong>Light blue</strong> (<code>lotus-blue</code>): buttons and footer. Ramp <code>lux-tint</code> derives the stops from the seed; change the seed and they re-derive.</p>
         <div class="flwr-styleguide_swatches">
           <div class="flwr-styleguide_swatch"><div class="flwr-styleguide_swatch_chip" style="background: var(--_palette---alternate--50)"></div><div class="flwr-styleguide_swatch_label"><strong>alternate-50</strong></div></div>
           <div class="flwr-styleguide_swatch"><div class="flwr-styleguide_swatch_chip" style="background: var(--_palette---alternate--100)"></div><div class="flwr-styleguide_swatch_label"><strong>alternate-100</strong></div></div>
@@ -335,8 +335,8 @@
       </div>
 
       <div class="flwr-styleguide_subsection">
-        <h3 class="flwr-styleguide_subheading">alternate-2 <span class="flwr-styleguide_badge" style="background: color-mix(in oklch, var(--_palette---alternate-2--500) 22%, transparent); color: var(--_palette---alternate-2--200); border-color: color-mix(in oklch, var(--_palette---alternate-2--500) 40%, transparent);">third brand color</span></h3>
-        <p class="flwr-styleguide_subheading_meta">Flowriter's original lime <code>#beff0d</code> ≈ <code>oklch(0.93 0.22 125)</code> — the legacy brand, kept as the third brand color for energy / accent moments. To add more brand colors, define <code>--_palette---alternate-3--seed</code>, <code>--_palette---alternate-4--seed</code>, etc. — same 10-stop OKLCH ramp shape.</p>
+        <h3 class="flwr-styleguide_subheading">alternate-2 <span class="flwr-styleguide_badge" style="background: color-mix(in oklch, var(--_palette---alternate-2--500) 22%, transparent); color: var(--_palette---alternate-2--200); border-color: color-mix(in oklch, var(--_palette---alternate-2--500) 40%, transparent);" data-brand-wording="badge:alternate-2">follows core</span></h3>
+        <p class="flwr-styleguide_subheading_meta" data-brand-wording="alternate-2">Follows <code>core</code>: <code>--_palette---alternate-2--seed</code> is a reference to it, so the seed is the same value, <code>oklch(0.549 0.119 254)</code> ≈ <code>#3b73b5</code> — brand colour <strong>Light blue</strong> (<code>lotus-blue</code>): buttons and footer. Change <code>core</code> and this ramp moves too.</p>
         <div class="flwr-styleguide_swatches">
           <div class="flwr-styleguide_swatch"><div class="flwr-styleguide_swatch_chip" style="background: var(--_palette---alternate-2--50)"></div><div class="flwr-styleguide_swatch_label"><strong>alternate-2-50</strong></div></div>
           <div class="flwr-styleguide_swatch"><div class="flwr-styleguide_swatch_chip" style="background: var(--_palette---alternate-2--100)"></div><div class="flwr-styleguide_swatch_label"><strong>alternate-2-100</strong></div></div>
@@ -352,8 +352,8 @@
       </div>
 
       <div class="flwr-styleguide_subsection">
-        <h3 class="flwr-styleguide_subheading">accent <span class="flwr-styleguide_badge" style="background: color-mix(in oklch, var(--_palette---accent--500) 20%, transparent); color: var(--_palette---accent--800); border-color: color-mix(in oklch, var(--_palette---accent--500) 35%, transparent);">visual highlights / spot color</span></h3>
-        <p class="flwr-styleguide_subheading_meta">Derived from <code>--_palette---accent--seed</code> = <code>oklch(0.80 0.17 195)</code> — bright cyan. Sits opposite pink/purple/lime in the color wheel for maximum visual distinction. Different from <code>alternate</code>: alternates are SECOND BRAND colors, accents are SPOT colors used for callouts, charts, decorative highlights — never load-bearing brand identity.</p>
+        <h3 class="flwr-styleguide_subheading">accent <span class="flwr-styleguide_badge" style="background: color-mix(in oklch, var(--_palette---accent--500) 20%, transparent); color: var(--_palette---accent--800); border-color: color-mix(in oklch, var(--_palette---accent--500) 35%, transparent);" data-brand-wording="badge:accent">follows core</span></h3>
+        <p class="flwr-styleguide_subheading_meta" data-brand-wording="accent">Follows <code>core</code>: <code>--_palette---accent--seed</code> is a reference to it, so the seed is the same value, <code>oklch(0.549 0.119 254)</code> ≈ <code>#3b73b5</code> — brand colour <strong>Light blue</strong> (<code>lotus-blue</code>): buttons and footer. Change <code>core</code> and this ramp moves too. Ramp <code>lux-tint</code>.</p>
         <div class="flwr-styleguide_swatches">
           <div class="flwr-styleguide_swatch"><div class="flwr-styleguide_swatch_chip" style="background: var(--_palette---accent--50)"></div><div class="flwr-styleguide_swatch_label"><strong>accent-50</strong></div></div>
           <div class="flwr-styleguide_swatch"><div class="flwr-styleguide_swatch_chip" style="background: var(--_palette---accent--100)"></div><div class="flwr-styleguide_swatch_label"><strong>accent-100</strong></div></div>
@@ -369,8 +369,8 @@
       </div>
 
       <div class="flwr-styleguide_subsection">
-        <h3 class="flwr-styleguide_subheading">accent-2 <span class="flwr-styleguide_badge" style="background: color-mix(in oklch, var(--_palette---accent-2--500) 22%, transparent); color: var(--_palette---accent-2--800); border-color: color-mix(in oklch, var(--_palette---accent-2--500) 40%, transparent);">second accent</span></h3>
-        <p class="flwr-styleguide_subheading_meta">Pattern demo. Currently a warm orange placeholder <code>oklch(0.78 0.18 60)</code>. To add more accents: <code>--_palette---accent-3--seed</code>, <code>--_palette---accent-4--seed</code>, etc.</p>
+        <h3 class="flwr-styleguide_subheading">accent-2 <span class="flwr-styleguide_badge" style="background: color-mix(in oklch, var(--_palette---accent-2--500) 22%, transparent); color: var(--_palette---accent-2--800); border-color: color-mix(in oklch, var(--_palette---accent-2--500) 40%, transparent);" data-brand-wording="badge:accent-2">brand colour</span></h3>
+        <p class="flwr-styleguide_subheading_meta" data-brand-wording="accent-2">Derived from <code>--_palette---accent-2--seed</code> = <code>oklch(0.814 0.163 90)</code> ≈ <code>#ebbc15</code> — brand colour <strong>Yellow</strong> (<code>yellow</code>): in the round stamp and the heart of the lotus. Ramp <code>lux-tint</code> derives the stops from the seed; change the seed and they re-derive.</p>
         <div class="flwr-styleguide_swatches">
           <div class="flwr-styleguide_swatch"><div class="flwr-styleguide_swatch_chip" style="background: var(--_palette---accent-2--50)"></div><div class="flwr-styleguide_swatch_label"><strong>accent-2-50</strong></div></div>
           <div class="flwr-styleguide_swatch"><div class="flwr-styleguide_swatch_chip" style="background: var(--_palette---accent-2--100)"></div><div class="flwr-styleguide_swatch_label"><strong>accent-2-100</strong></div></div>
@@ -386,8 +386,8 @@
       </div>
 
       <div class="flwr-styleguide_subsection">
-        <h3 class="flwr-styleguide_subheading">alert <span class="flwr-styleguide_badge" style="background: color-mix(in oklch, var(--_palette---alert--500) 20%, transparent); color: var(--_palette---alert--300); border-color: color-mix(in oklch, var(--_palette---alert--500) 35%, transparent);">destructive / errors</span></h3>
-        <p class="flwr-styleguide_subheading_meta">Derived from <code>--_palette---alert--seed</code> = <code>oklch(0.65 0.22 27)</code> ≈ <code>#ef4444</code> — for errors, destructive actions, alert states. Used by <code>flwr_alert_wrap.is-alert</code>, <code>flwr_button_alert</code>, <code>f-text-color-alert</code>.</p>
+        <h3 class="flwr-styleguide_subheading">alert <span class="flwr-styleguide_badge" style="background: color-mix(in oklch, var(--_palette---alert--500) 20%, transparent); color: var(--_palette---alert--300); border-color: color-mix(in oklch, var(--_palette---alert--500) 35%, transparent);" data-brand-wording="badge:alert">flwr default</span></h3>
+        <p class="flwr-styleguide_subheading_meta" data-brand-wording="alert">Not set by the brand: flwr 1.2.1-alpha default. <code>--_palette---alert--seed</code> = <code>oklch(0.62 0.20 22)</code> ≈ <code>#e6424c</code>.</p>
         <div class="flwr-styleguide_swatches">
           <div class="flwr-styleguide_swatch"><div class="flwr-styleguide_swatch_chip" style="background: var(--_palette---alert--50)"></div><div class="flwr-styleguide_swatch_label"><strong>alert-50</strong></div></div>
           <div class="flwr-styleguide_swatch"><div class="flwr-styleguide_swatch_chip" style="background: var(--_palette---alert--100)"></div><div class="flwr-styleguide_swatch_label"><strong>alert-100</strong></div></div>
@@ -404,7 +404,7 @@
 
       <div class="flwr-styleguide_subsection">
         <h3 class="flwr-styleguide_subheading">neutral</h3>
-        <p class="flwr-styleguide_subheading_meta">Anchored to Flowriter's canvas <code>#161516</code> (<code>neutral-900</code>) and text <code>#efedf4</code> (<code>neutral-0</code>). Slight warm hue at 30° — pure black/white feel too clinical against the lime brand.</p>
+        <p class="flwr-styleguide_subheading_meta" data-brand-wording="neutral">No seed: the brand sets the stops one by one. <code>neutral-0</code> White, <code>neutral-50</code> Lotus cream, <code>neutral-900</code> Navy and <code>neutral-1000</code> Near black from the brand colours; <code>neutral-100</code> <code>#f1ecdf</code>, <code>neutral-200</code> <code>#e6e7ed</code>, <code>neutral-300</code> <code>#c6c9d6</code>, <code>neutral-400</code> <code>#9ea3b8</code>, <code>neutral-500</code> <code>#767c96</code>, <code>neutral-600</code> <code>#545a77</code>, <code>neutral-700</code> <code>#363c5c</code>, <code>neutral-800</code> <code>#1f2449</code> and <code>neutral-black</code> <code>#000000</code> hand-picked.</p>
         <div class="flwr-styleguide_swatches">
           <div class="flwr-styleguide_swatch"><div class="flwr-styleguide_swatch_chip" style="background: var(--_palette---neutral--0); border-color: var(--_theme---border--main);"></div><div class="flwr-styleguide_swatch_label"><strong>neutral-0</strong> text</div></div>
           <div class="flwr-styleguide_swatch"><div class="flwr-styleguide_swatch_chip" style="background: var(--_palette---neutral--50)"></div><div class="flwr-styleguide_swatch_label"><strong>neutral-50</strong></div></div>
@@ -423,7 +423,7 @@
 
       <div class="flwr-styleguide_subsection">
         <h3 class="flwr-styleguide_subheading">Status palettes</h3>
-        <p class="flwr-styleguide_subheading_meta">Semantic colors for system state, separate from the 5 brand categories above. Destructive / error use the <code>alert</code> category from above instead of a separate <code>danger</code> palette.</p>
+        <p class="flwr-styleguide_subheading_meta" data-brand-wording="status">Semantic colours for system state. <code>success</code> <code>oklch(0.74 0.15 150)</code> ≈ <code>#5ac576</code>, <code>warning</code> <code>oklch(0.82 0.13 75)</code> ≈ <code>#f5b75b</code> and <code>info</code> <code>oklch(0.70 0.13 250)</code> ≈ <code>#5aa3ec</code> are flwr 1.2.1-alpha defaults, not set by the brand; <code>focus</code> follows <code>core</code>. Errors and destructive states use the <code>alert</code> category above.</p>
         <div class="flwr-styleguide_swatches">
           <div class="flwr-styleguide_swatch"><div class="flwr-styleguide_swatch_chip" style="background: var(--_palette---success--main)"></div><div class="flwr-styleguide_swatch_label"><strong>success</strong></div></div>
           <div class="flwr-styleguide_swatch"><div class="flwr-styleguide_swatch_chip" style="background: var(--_palette---warning--main)"></div><div class="flwr-styleguide_swatch_label"><strong>warning</strong></div></div>

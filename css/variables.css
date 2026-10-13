@@ -22,27 +22,13 @@
      manifest.naming.variablePattern.
    ============================================================================ */
 
-/* flwr re-declares tier-2 (theme, text-style) and tier-3 (component) tokens on every
-   mode scope at (0,2,0) so they re-resolve per scope. Overrides therefore live on the
-   same selectors, not only on :root, or the wrapper would keep the catalog values. */
+/* brand:begin · generated from brand/brand.json by plugin/scripts/brand (schema 2, flwr 1.2.1-alpha, block e33ed8a1f7296731). Edit brand.json, not this block. */
 :root,
 [data-flwr].f-mode-light,
 [data-flwr] .f-mode-light {
+  --_typography---viewport-min: 20;
+  --_typography---viewport-max: 90;
 
-  /* ──────────────────────────────────────────────────────────────────────────
-     PALETTE SEEDS
-     ────────────────────────────────────────────────────────────────────────── */
-
-  /* Lux Lotus (Luxembourg 2027) palette. PROVISIONAL until the brand guide lands.
-     Seeds observed in the V3 logo exports (references/brand/lux-lotus) and the brief's
-     colour story. Navy is not the core seed: at OKLCH L 0.21 it would derive a ramp
-     whose 500 is darker than its 900, so navy is the ink (neutral 900) and the lotus
-     blue seeds core. Stops from: node plugin/frameworks/oklch-seed.js <hex> --name <cat>.
-     Merged here from src/css/palette-lux-lotus.css at the edition switch (28 Sep 2026)
-     so every page, including ones without that link, renders the edition palette. */
-
-
-  /* core — lotus blue (V3 #3b73b5): primary actions, links, brand surfaces */
   --_palette---core--seed: oklch(0.549 0.119 254);
   --_palette---core--50: oklch(from var(--_palette---core--seed) 0.97 calc(c * 0.18) h);
   --_palette---core--100: oklch(from var(--_palette---core--seed) 0.93 calc(c * 0.35) h);
@@ -55,8 +41,7 @@
   --_palette---core--800: oklch(from var(--_palette---core--seed) 0.35 calc(c * 0.85) h);
   --_palette---core--900: oklch(from var(--_palette---core--seed) 0.25 calc(c * 0.7) h);
 
-  /* alternate — stem green (V3 #8eb575); the brief's green accent */
-  --_palette---alternate--seed: oklch(0.729 0.098 133.8);
+  --_palette---alternate--seed: oklch(0.549 0.119 254);
   --_palette---alternate--50: oklch(from var(--_palette---alternate--seed) 0.985 calc(c * 0.2) h);
   --_palette---alternate--100: oklch(from var(--_palette---alternate--seed) 0.97 calc(c * 0.35) h);
   --_palette---alternate--200: oklch(from var(--_palette---alternate--seed) 0.95 calc(c * 0.6) h);
@@ -68,11 +53,8 @@
   --_palette---alternate--800: oklch(from var(--_palette---alternate--seed) 0.55 calc(c * 0.95) h);
   --_palette---alternate--900: oklch(from var(--_palette---alternate--seed) 0.38 calc(c * 0.85) h);
 
-  /* alternate-2 — unused until the brand guide names a third colour; follows core so nothing foreign shows */
   --_palette---alternate-2--seed: var(--_palette---core--seed);
 
-  /* accent — light (lotus) blue, per the client's 28 Sep feedback: buttons and footer.
-     Peach stays in the logo artwork only; pink is a small accent with no value yet. */
   --_palette---accent--seed: var(--_palette---core--seed);
   --_palette---accent--50: oklch(from var(--_palette---accent--seed) 0.985 calc(c * 0.2) h);
   --_palette---accent--100: oklch(from var(--_palette---accent--seed) 0.97 calc(c * 0.35) h);
@@ -85,7 +67,6 @@
   --_palette---accent--800: oklch(from var(--_palette---accent--seed) 0.55 calc(c * 0.95) h);
   --_palette---accent--900: oklch(from var(--_palette---accent--seed) 0.38 calc(c * 0.85) h);
 
-  /* accent-2 — yellow / gold (V3 #ebbc16) */
   --_palette---accent-2--seed: oklch(0.814 0.163 90);
   --_palette---accent-2--50: oklch(from var(--_palette---accent-2--seed) 0.985 calc(c * 0.2) h);
   --_palette---accent-2--100: oklch(from var(--_palette---accent-2--seed) 0.97 calc(c * 0.35) h);
@@ -98,97 +79,79 @@
   --_palette---accent-2--800: oklch(from var(--_palette---accent-2--seed) 0.55 calc(c * 0.95) h);
   --_palette---accent-2--900: oklch(from var(--_palette---accent-2--seed) 0.38 calc(c * 0.85) h);
 
-  /* alert — no red in the V3 files; flwr's coral default stays until the brand guide says otherwise.
-     Pink accent named in the brief: no value received, nothing set. */
-
-  /* pink — "a little accent" (client, 28 Sep). No value received: PROVISIONAL pick, replace when the brand guide names it. */
   --_palette---pink--seed: #f2a6c2;
   --_palette---pink--500: var(--_palette---pink--seed);
 
-  /* focus ring follows the primary brand */
   --_palette---focus--seed: var(--_palette---core--seed);
 
-  /* neutral — white canvas, lotus cream as the raised surface, navy ink (V3 #0e123a) for
-     text and dark surfaces, the lockups' near-black (#151515) as the deepest stop. */
-  --_palette---neutral--0:    #ffffff;
-  --_palette---neutral--50:   #fbf3e1;
-  --_palette---neutral--100:  #f1ecdf;
-  --_palette---neutral--200:  #e6e7ed;
-  --_palette---neutral--300:  #c6c9d6;
-  --_palette---neutral--400:  #9ea3b8;
-  --_palette---neutral--500:  #767c96;
-  --_palette---neutral--600:  #545a77;
-  --_palette---neutral--700:  #363c5c;
-  --_palette---neutral--800:  #1f2449;
-  --_palette---neutral--900:  #0e123a;
+  --_palette---neutral--0: #ffffff;
+  --_palette---neutral--50: #fbf3e1;
+  --_palette---neutral--100: #f1ecdf;
+  --_palette---neutral--200: #e6e7ed;
+  --_palette---neutral--300: #c6c9d6;
+  --_palette---neutral--400: #9ea3b8;
+  --_palette---neutral--500: #767c96;
+  --_palette---neutral--600: #545a77;
+  --_palette---neutral--700: #363c5c;
+  --_palette---neutral--800: #1f2449;
+  --_palette---neutral--900: #0e123a;
   --_palette---neutral--1000: #151515;
   --_palette---neutral--black: #000000;
 
-  /* ──────────────────────────────────────────────────────────────────────────
-     TYPOGRAPHY — Montserrat. Rome fluid sizes override flwr's.
-     ────────────────────────────────────────────────────────────────────────── */
-
-  --_typography---family--sans:    "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --_typography---family--sans: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --_typography---family--display: var(--_typography---family--sans);
 
-  /* Fluid sizes, 320px → 1440px (Rome's formulas, verbatim) */
-  --_typography---size--display:    clamp(2.5rem, 1.5rem + 4vw, 7rem);
+  --_typography---size--display: clamp(2.5rem, 1.5rem + 4vw, 7rem);
   --_typography---size--display-lg: clamp(3rem, 2rem + 5vw, 12rem);
   --_typography---size--display-xl: clamp(3.5rem, 2rem + 6vw, 15rem);
-  --_typography---size--h1:         clamp(1.75rem, 1rem + 2.5vw, 5rem);
-  --_typography---size--h2:         clamp(1.75rem, 1.2rem + 2vw, 4.5rem);
-  --_typography---size--h3:         clamp(1.5rem, 1.2rem + 1.5vw, 2.95rem);
-  --_typography---size--h4:         clamp(1.25rem, 1rem + 1vw, 2.25rem);
-  --_typography---size--lead:       clamp(1.125 * 1rem, ((1.125 - ((1.32 - 1.125) / (var(--_layout---viewport-max) - var(--_layout---viewport-min)) * var(--_layout---viewport-min))) * 1rem + ((1.32 - 1.125) / (var(--_layout---viewport-max) - var(--_layout---viewport-min))) * 100vw), 1.32 * 1rem);
-  --_typography---size--body:       clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
-  --_typography---size--small:      clamp(0.875rem, 0.8rem + 0.2vw, 1rem);
-  --_typography---size--menu:       clamp(2rem, 1.5rem + 2.5vw, 5rem);
-  --_typography---size--nav:        clamp(1rem, 0.9rem + 0.3vw, 1.32rem);
-  --_typography---size--button:     clamp(0.875rem, 0.8rem + 0.4vw, 1.25rem);
+  --_typography---size--h1: clamp(1.75rem, 1rem + 2.5vw, 5rem);
+  --_typography---size--h2: clamp(1.75rem, 1.2rem + 2vw, 4.5rem);
+  --_typography---size--h3: clamp(1.5rem, 1.2rem + 1.5vw, 2.95rem);
+  --_typography---size--h4: clamp(1.25rem, 1rem + 1vw, 2.25rem);
+  --_typography---size--lead: clamp(1.125 * 1rem, ((1.125 - ((1.32 - 1.125) / (var(--_typography---viewport-max) - var(--_typography---viewport-min)) * var(--_typography---viewport-min))) * 1rem + ((1.32 - 1.125) / (var(--_typography---viewport-max) - var(--_typography---viewport-min))) * 100vw), 1.32 * 1rem);
+  --_typography---size--body: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  --_typography---size--small: clamp(0.875rem, 0.8rem + 0.2vw, 1rem);
+  --_typography---size--menu: clamp(2rem, 1.5rem + 2.5vw, 5rem);
+  --_typography---size--nav: clamp(1rem, 0.9rem + 0.3vw, 1.32rem);
+  --_typography---size--button: clamp(0.875rem, 0.8rem + 0.4vw, 1.25rem);
 
-  /* Leading. Rome: small 0.8 / medium 1.1 / huge 1.5 */
   --_typography---leading--squashed: 0.8;
-  --_typography---leading--tight:    1.1;
-  --_typography---leading--normal:   1.5;
+  --_typography---leading--tight: 1.1;
+  --_typography---leading--normal: 1.5;
 
-  /* Tracking. Rome: tight -0.02em / normal 0 — identical to flwr, stated for clarity */
-  --_typography---tracking--tight:  -0.02em;
-  --_typography---tracking--normal:  0em;
+  --_typography---tracking--tight: -0.02em;
+  --_typography---tracking--normal: 0em;
 
-  /* ──────────────────────────────────────────────────────────────────────────
-     SPACING — Rome's 8-step fluid scale overrides flwr's step tokens 1:1, so
-     f-gap-4 / f-padding-6 / f-margin-top-2 render the Rome values.
-     Formulas are Rome's, verbatim, parametrised on the viewport tokens below.
-     ────────────────────────────────────────────────────────────────────────── */
+  --_spacing---step--1: clamp(0.5 * 1rem, ((0.5 - ((0.75 - 0.5) / (var(--_typography---viewport-max) - var(--_typography---viewport-min)) * var(--_typography---viewport-min))) * 1rem + ((0.75 - 0.5) / (var(--_typography---viewport-max) - var(--_typography---viewport-min))) * 100vw), 0.75 * 1rem);
+  --_spacing---step--2: clamp(0.75 * 1rem, ((0.75 - ((1 - 0.75) / (var(--_typography---viewport-max) - var(--_typography---viewport-min)) * var(--_typography---viewport-min))) * 1rem + ((1 - 0.75) / (var(--_typography---viewport-max) - var(--_typography---viewport-min))) * 100vw), 1 * 1rem);
+  --_spacing---step--3: clamp(1 * 1rem, ((1 - ((1.5 - 1) / (var(--_typography---viewport-max) - var(--_typography---viewport-min)) * var(--_typography---viewport-min))) * 1rem + ((1.5 - 1) / (var(--_typography---viewport-max) - var(--_typography---viewport-min))) * 100vw), 1.5 * 1rem);
+  --_spacing---step--4: clamp(1.5 * 1rem, ((1.5 - ((2 - 1.5) / (var(--_typography---viewport-max) - var(--_typography---viewport-min)) * var(--_typography---viewport-min))) * 1rem + ((2 - 1.5) / (var(--_typography---viewport-max) - var(--_typography---viewport-min))) * 100vw), 2 * 1rem);
+  --_spacing---step--5: clamp(2 * 1rem, ((2 - ((2.5 - 2) / (var(--_typography---viewport-max) - var(--_typography---viewport-min)) * var(--_typography---viewport-min))) * 1rem + ((2.5 - 2) / (var(--_typography---viewport-max) - var(--_typography---viewport-min))) * 100vw), 2.5 * 1rem);
+  --_spacing---step--6: clamp(2.5 * 1rem, ((2.5 - ((3.5 - 2.5) / (var(--_typography---viewport-max) - var(--_typography---viewport-min)) * var(--_typography---viewport-min))) * 1rem + ((3.5 - 2.5) / (var(--_typography---viewport-max) - var(--_typography---viewport-min))) * 100vw), 3.5 * 1rem);
+  --_spacing---step--7: clamp(3 * 1rem, ((3 - ((4.5 - 3) / (var(--_typography---viewport-max) - var(--_typography---viewport-min)) * var(--_typography---viewport-min))) * 1rem + ((4.5 - 3) / (var(--_typography---viewport-max) - var(--_typography---viewport-min))) * 100vw), 4.5 * 1rem);
+  --_spacing---step--8: clamp(4 * 1rem, ((4 - ((5.81 - 4) / (var(--_typography---viewport-max) - var(--_typography---viewport-min)) * var(--_typography---viewport-min))) * 1rem + ((5.81 - 4) / (var(--_typography---viewport-max) - var(--_typography---viewport-min))) * 100vw), 5.81 * 1rem);
+  --_spacing---section--main: clamp(7 * 1rem, ((7 - ((12 - 7) / (var(--_typography---viewport-max) - var(--_typography---viewport-min)) * var(--_typography---viewport-min))) * 1rem + ((12 - 7) / (var(--_typography---viewport-max) - var(--_typography---viewport-min))) * 100vw), 12 * 1rem);
+  --_spacing---page-margin: clamp(1 * 1rem, ((1 - ((3 - 1) / (var(--_typography---viewport-max) - var(--_typography---viewport-min)) * var(--_typography---viewport-min))) * 1rem + ((3 - 1) / (var(--_typography---viewport-max) - var(--_typography---viewport-min))) * 100vw), 3 * 1rem);
 
-  --_layout---viewport-min: 20;   /* rem, 320px */
-  --_layout---viewport-max: 90;   /* rem, 1440px */
+  --_radius---none: 0;
+  --_radius---pill: 80px;
+}
+/* brand:end */
 
-  --_spacing---step--1: clamp(0.5 * 1rem, ((0.5 - ((0.75 - 0.5) / (var(--_layout---viewport-max) - var(--_layout---viewport-min)) * var(--_layout---viewport-min))) * 1rem + ((0.75 - 0.5) / (var(--_layout---viewport-max) - var(--_layout---viewport-min))) * 100vw), 0.75 * 1rem);
-  --_spacing---step--2: clamp(0.75 * 1rem, ((0.75 - ((1 - 0.75) / (var(--_layout---viewport-max) - var(--_layout---viewport-min)) * var(--_layout---viewport-min))) * 1rem + ((1 - 0.75) / (var(--_layout---viewport-max) - var(--_layout---viewport-min))) * 100vw), 1 * 1rem);
-  --_spacing---step--3: clamp(1 * 1rem, ((1 - ((1.5 - 1) / (var(--_layout---viewport-max) - var(--_layout---viewport-min)) * var(--_layout---viewport-min))) * 1rem + ((1.5 - 1) / (var(--_layout---viewport-max) - var(--_layout---viewport-min))) * 100vw), 1.5 * 1rem);
-  --_spacing---step--4: clamp(1.5 * 1rem, ((1.5 - ((2 - 1.5) / (var(--_layout---viewport-max) - var(--_layout---viewport-min)) * var(--_layout---viewport-min))) * 1rem + ((2 - 1.5) / (var(--_layout---viewport-max) - var(--_layout---viewport-min))) * 100vw), 2 * 1rem);
-  --_spacing---step--5: clamp(2 * 1rem, ((2 - ((2.5 - 2) / (var(--_layout---viewport-max) - var(--_layout---viewport-min)) * var(--_layout---viewport-min))) * 1rem + ((2.5 - 2) / (var(--_layout---viewport-max) - var(--_layout---viewport-min))) * 100vw), 2.5 * 1rem);
-  --_spacing---step--6: clamp(2.5 * 1rem, ((2.5 - ((3.5 - 2.5) / (var(--_layout---viewport-max) - var(--_layout---viewport-min)) * var(--_layout---viewport-min))) * 1rem + ((3.5 - 2.5) / (var(--_layout---viewport-max) - var(--_layout---viewport-min))) * 100vw), 3.5 * 1rem);
-  --_spacing---step--7: clamp(3 * 1rem, ((3 - ((4.5 - 3) / (var(--_layout---viewport-max) - var(--_layout---viewport-min)) * var(--_layout---viewport-min))) * 1rem + ((4.5 - 3) / (var(--_layout---viewport-max) - var(--_layout---viewport-min))) * 100vw), 4.5 * 1rem);
-  --_spacing---step--8: clamp(4 * 1rem, ((4 - ((5.81 - 4) / (var(--_layout---viewport-max) - var(--_layout---viewport-min)) * var(--_layout---viewport-min))) * 1rem + ((5.81 - 4) / (var(--_layout---viewport-max) - var(--_layout---viewport-min))) * 100vw), 5.81 * 1rem);
+/* flwr re-declares tier-2 (theme, text-style) and tier-3 (component) tokens on every
+   mode scope at (0,2,0) so they re-resolve per scope. Overrides therefore live on the
+   same selectors, not only on :root, or the wrapper would keep the catalog values. */
+:root,
+[data-flwr].f-mode-light,
+[data-flwr] .f-mode-light {
 
-  /* Section rhythm. Rome has one value: 7rem → 12rem */
-  --_spacing---section--main: clamp(7 * 1rem, ((7 - ((12 - 7) / (var(--_layout---viewport-max) - var(--_layout---viewport-min)) * var(--_layout---viewport-min))) * 1rem + ((12 - 7) / (var(--_layout---viewport-max) - var(--_layout---viewport-min))) * 100vw), 12 * 1rem);
-
-  /* Page margin 1rem → 3rem, reaching 3rem at 1440px (flwr's own reaches it at ~1754px) */
-  --_spacing---page-margin: clamp(1 * 1rem, ((1 - ((3 - 1) / (var(--_layout---viewport-max) - var(--_layout---viewport-min)) * var(--_layout---viewport-min))) * 1rem + ((3 - 1) / (var(--_layout---viewport-max) - var(--_layout---viewport-min))) * 100vw), 3 * 1rem);
+  /* The palette, typography, spacing and radius declarations moved to the brand block above
+     (generated from brand/brand.json). What stays here is not brand: layout, border width,
+     focus, component tokens and the trigger pair. */
 
   /* Layout */
   --_layout---gutter:      1rem;
   --_layout---max-content: 90rem;
-
-  /* ──────────────────────────────────────────────────────────────────────────
-     RADIUS / BORDERS / FOCUS
-     ────────────────────────────────────────────────────────────────────────── */
-
-  --_radius---none: 0;
-  --_radius---pill: 80px;
 
   --_theme---border--width: 0.094rem;   /* Rome --border-width--main (1.5px) */
 
