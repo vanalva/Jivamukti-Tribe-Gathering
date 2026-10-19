@@ -7128,6 +7128,164 @@ body:has(.hero-home_wrap) .nav_content > .nav_menu:last-child .nav_arrow-icon {
   border-left-style: none;
 }
 
+/* === Raffle page (win.html) === */
+/* Two columns on desktop: the raffle copy on the left, the entry form on the right. Fields reuse the
+   framework flwr_field_* classes; only layout, the checkboxes, the honeypot and the [TBC] chip are new. */
+[data-flwr].site_wrap .raffle_grid {
+  align-items: start;
+}
+[data-flwr].site_wrap .raffle_single {
+  grid-template-columns: minmax(0, 1fr);
+  min-width: 0;
+}
+[data-flwr].site_wrap .raffle_copy {
+  min-width: 0;
+}
+[data-flwr].site_wrap .raffle_subhead {
+  margin-top: var(--_spacing---step--4);
+}
+[data-flwr].site_wrap .raffle_steps {
+  list-style-type: decimal;
+  list-style-position: outside;
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  padding-top: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+  padding-left: var(--_spacing---step--6);
+}
+[data-flwr].site_wrap .raffle_steps li {
+  margin-bottom: var(--_spacing---step--2);
+}
+[data-flwr].site_wrap .raffle_tbc {
+  display: inline-block;
+  padding-top: 0.1em;
+  padding-right: 0.6em;
+  padding-bottom: 0.1em;
+  padding-left: 0.6em;
+  background-color: var(--_palette---neutral--100);
+  border-top-left-radius: var(--_radius---pill);
+  border-top-right-radius: var(--_radius---pill);
+  border-bottom-right-radius: var(--_radius---pill);
+  border-bottom-left-radius: var(--_radius---pill);
+  font-size: 0.9em;
+  font-style: italic;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+[data-flwr].site_wrap .raffle_form-wrap {
+  min-width: 0;
+  padding-top: var(--_spacing---step--7);
+  padding-right: var(--_spacing---step--7);
+  padding-bottom: var(--_spacing---step--7);
+  padding-left: var(--_spacing---step--7);
+  background-color: var(--_palette---neutral--50);
+  border-top-left-radius: var(--_radius---lg);
+  border-top-right-radius: var(--_radius---lg);
+  border-bottom-right-radius: var(--_radius---lg);
+  border-bottom-left-radius: var(--_radius---lg);
+}
+[data-flwr].site_wrap .raffle_form-title {
+  margin-top: 0;
+  margin-bottom: var(--_spacing---step--5);
+}
+[data-flwr].site_wrap .raffle_form {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--_spacing---step--5);
+  column-gap: var(--_spacing---step--5);
+}
+[data-flwr].site_wrap .raffle_field {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+[data-flwr].site_wrap .raffle_checks {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--_spacing---step--3);
+  column-gap: var(--_spacing---step--3);
+}
+[data-flwr].site_wrap .raffle_check {
+  display: flex;
+  align-items: flex-start;
+  row-gap: var(--_spacing---step--3);
+  column-gap: var(--_spacing---step--3);
+  margin-top: 0;
+  margin-bottom: 0;
+  cursor: pointer;
+}
+[data-flwr].site_wrap .raffle_check-input {
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: auto;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-top: 0.2em;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  accent-color: var(--_palette---neutral--900);
+}
+[data-flwr].site_wrap .raffle_check-input:focus-visible {
+  outline-width: 2px;
+  outline-style: solid;
+  outline-color: var(--_palette---core--500);
+  outline-offset: 2px;
+}
+[data-flwr].site_wrap .raffle_actions {
+  display: flex;
+  justify-content: flex-end;
+}
+[data-flwr].site_wrap .raffle_actions .button[disabled] {
+  opacity: 0.6;
+  cursor: default;
+}
+[data-flwr].site_wrap .raffle_status {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+[data-flwr].site_wrap .raffle_status[hidden] {
+  display: none;
+}
+/* Honeypot: off-screen rather than display:none, so simple bots still see and fill it. People never reach it. */
+[data-flwr].site_wrap .raffle_hp {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+@media (max-width: 991px) {
+  [data-flwr].site_wrap .raffle_form-wrap {
+    padding-top: var(--_spacing---step--6);
+    padding-right: var(--_spacing---step--6);
+    padding-bottom: var(--_spacing---step--6);
+    padding-left: var(--_spacing---step--6);
+  }
+}
+@media (max-width: 767px) {
+  [data-flwr].site_wrap .raffle_actions {
+    justify-content: stretch;
+  }
+  [data-flwr].site_wrap .raffle_actions .button {
+    width: 100%;
+  }
+}
+@media (max-width: 478px) {
+  [data-flwr].site_wrap .raffle_form-wrap {
+    padding-top: var(--_spacing---step--5);
+    padding-right: var(--_spacing---step--4);
+    padding-bottom: var(--_spacing---step--5);
+    padding-left: var(--_spacing---step--4);
+  }
+}
+
 /* ---- Priority layer: declarations Rome marked !important. Emitted last in this
    bucket under a (0,3,0) wrapper prefix so they keep winning without the flag. ---- */
 html::-webkit-scrollbar-track {

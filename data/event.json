@@ -266,6 +266,153 @@
       "description": "Terms and conditions for the Jivamukti Yoga Tribe Gathering 2027 in Luxembourg: ticket transfers, photography and filming, event guidelines and contact.",
       "ogImage": "https://tribe.jivamuktiyoga.com/assets/images/og-home.jpg",
       "ogAlt": "Jivamukti Yoga Tribe Gathering, Luxembourg Lotus 2027: 2–5 September 2027, Luxembourg"
+    },
+    "win": {
+      "_readme": "Raffle page (src/templates/win.html) and its thank-you page (win-thanks.html), rebuilt from references/_archive/raffle-2025-template/win-stavanger-2025.html. NOT LAUNCHED: hidden=true means noindex, no JSON-LD, not in sitemap.xml or llms.txt (launch/seo/build-seo.py). The page is never linked from the nav, menu or footer; link it yourself when it goes live. Placeholders: winners, closeDate, announceDate (each has a *Tbc flag: set it to false when you replace the [TBC: ...] text with the confirmed fact, and the chip styling goes away).",
+      "hidden": true,
+      "title": "Win a ticket | Jivamukti Yoga Tribe Gathering 2027",
+      "description": "Enter the raffle for a ticket to the Jivamukti Yoga Tribe Gathering 2027, Luxembourg Lotus, 2–5 September 2027 in Luxembourg.",
+      "ogImage": "https://tribe.jivamuktiyoga.com/assets/images/og-home.jpg",
+      "ogAlt": "Jivamukti Yoga Tribe Gathering, Luxembourg Lotus 2027: 2–5 September 2027, Luxembourg",
+      "heroTitle": "WIN A TICKET",
+      "heading": "Join the Jivamukti Tribe Gathering Raffle – Luxembourg 2027",
+      "intro": "Experience the magic of the Jivamukti Yoga Tribe Gathering 2027 in Luxembourg. This is your chance to join fellow yogis from around the world for four days of practice, connection and transformation.",
+      "spotHeading": "Win Your Spot!",
+      "spotBefore": "We're offering",
+      "winners": "[TBC: winners]",
+      "winnersTbc": true,
+      "spotAfter": "lucky winners from each Jivamukti studio worldwide the opportunity to win full access to the Tribe Gathering. Simply enter the raffle by filling out the form below and selecting your home studio.",
+      "howHeading": "How to Enter",
+      "steps": [
+        "Fill out the form with your details.",
+        "Select the Jivamukti studio where you practice (in-person or online)."
+      ],
+      "datesHeading": "Important Dates",
+      "closeLabel": "Raffle closes:",
+      "closeDate": "[TBC: raffle close date]",
+      "closeDateTbc": true,
+      "announceLabel": "Winners announced:",
+      "announceDate": "[TBC: announcement date]",
+      "announceDateTbc": true,
+      "closing": "Don't miss out on this opportunity to deepen your practice and connect with the global Jivamukti community. Enter now and good luck!",
+      "formHeading": "Enter the raffle",
+      "formAction": "https://jivamuktiyoga.com/form_handler/send.php?send_to=tribe.jivamuktiyoga.com&subject=Tribe+2027+Raffle+Form",
+      "_formNote": "Field names, option values and the shared i_agree_newsletter checkbox name are identical to the 2025 form so the handler receives the same payload. Exceptions: the 2025 option values for Cambridge, Cologne, Duesseldorf and Rome were copy-paste errors (they submitted Roots Hamburg / Paris), now equal to their labels; `website` is a new honeypot field. send.php sends no CORS headers, so raffle.js posts with mode no-cors and cannot read the reply.",
+      "labels": {
+        "name": "Name",
+        "country": "City/Country",
+        "email": "Email Address",
+        "role": "I am a",
+        "studio": "The studio where I practice is",
+        "teacher": "The Jivamukti teacher I practice with is",
+        "select": "--select--",
+        "newsletter": "Add me to the newsletter.",
+        "termsBefore": "I agree to the",
+        "termsLink": "terms & conditions",
+        "submit": "Submit",
+        "honeypot": "Leave this field empty"
+      },
+      "roles": [
+        {
+          "value": "Yoga Teacher",
+          "label": "Yoga Teacher"
+        },
+        {
+          "value": "Jivamukti Yoga Teacher",
+          "label": "Jivamukti Yoga Teacher"
+        },
+        {
+          "value": "Yoga Student/practitioner",
+          "label": "Yoga Student/practitioner"
+        },
+        {
+          "value": "Yoga Beginner",
+          "label": "Yoga Beginner"
+        }
+      ],
+      "studios": [
+        {
+          "value": "Jivamukti Yoga Barcelona",
+          "label": "Jivamukti Yoga Barcelona"
+        },
+        {
+          "value": "Jivamukti Yoga Peace Yoga Berlin",
+          "label": "Jivamukti Yoga Peace Yoga Berlin"
+        },
+        {
+          "value": "Jivamukti Yoga Hrdayam Bern",
+          "label": "Jivamukti Yoga Hrdayam Bern"
+        },
+        {
+          "value": "Jivamukti Yoga Cambridge",
+          "label": "Jivamukti Yoga Cambridge"
+        },
+        {
+          "value": "Jivamukti Yoga Cologne",
+          "label": "Jivamukti Yoga Cologne"
+        },
+        {
+          "value": "Jivamukti Yoga Duesseldorf",
+          "label": "Jivamukti Yoga Duesseldorf"
+        },
+        {
+          "value": "Jivamukti Yoga Roots Hamburg",
+          "label": "Jivamukti Yoga Roots Hamburg"
+        },
+        {
+          "value": "Jivamukti Yoga Lisbon",
+          "label": "Jivamukti Yoga Lisbon"
+        },
+        {
+          "value": "Jivamukti Yoga Luxembourg",
+          "label": "Jivamukti Yoga Luxembourg"
+        },
+        {
+          "value": "Jivamukti Yoga Marbella",
+          "label": "Jivamukti Yoga Marbella"
+        },
+        {
+          "value": "Jivamukti Yoga Material Moscow",
+          "label": "Jivamukti Yoga Material Moscow"
+        },
+        {
+          "value": "Jivamukti Yoga Munich",
+          "label": "Jivamukti Yoga Munich"
+        },
+        {
+          "value": "Jivamukti Yoga NYC Collective",
+          "label": "Jivamukti Yoga NYC Collective"
+        },
+        {
+          "value": "Jivamukti Yoga Paris",
+          "label": "Jivamukti Yoga Paris"
+        },
+        {
+          "value": "Jivamukti Yoga Rome",
+          "label": "Jivamukti Yoga Rome"
+        },
+        {
+          "value": "Jivamukti Yoga Stavanger",
+          "label": "Jivamukti Yoga Stavanger"
+        },
+        {
+          "value": "Jivamukti Yoga Tijuana",
+          "label": "Jivamukti Yoga Tijuana"
+        },
+        {
+          "value": "Jivamukti Digital / General",
+          "label": "Jivamukti Digital / General"
+        }
+      ],
+      "sending": "Sending…",
+      "success": "Thank you, you're in the raffle. We will email the winners.",
+      "error": "Sorry, your entry could not be sent. Please try again, or write to events@jivamuktiyoga.com.",
+      "thanksTitle": "Thank you | Jivamukti Yoga Tribe Gathering 2027",
+      "thanksDescription": "Thank you, you're in the raffle for the Jivamukti Yoga Tribe Gathering 2027.",
+      "thanksHeroTitle": "THANK YOU",
+      "thanksHeading": "Thank you, you're in the raffle",
+      "thanksText": "Your entry has been received. Good luck!",
+      "thanksCta": "Back to home"
     }
   },
   "announce": {
