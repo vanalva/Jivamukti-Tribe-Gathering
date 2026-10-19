@@ -7286,6 +7286,150 @@ body:has(.hero-home_wrap) .nav_content > .nav_menu:last-child .nav_arrow-icon {
   }
 }
 
+/* === Raffle: custom dropdown === */
+/* The real <select> stays in the form (hidden, still validated and submitted); src/js/raffle-select.js adds the
+   trigger button and the listbox panel. The trigger reuses flwr_field_select, so field ground, border, type and
+   caret come from the framework. Rows: navy text on the field ground, light blue with white text on hover and
+   keyboard focus. Square panel, hairline border, no shadow, a short fade. */
+[data-flwr].site_wrap .raffle_select {
+  position: relative;
+}
+[data-flwr].site_wrap .raffle_select .raffle_select_native {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+}
+[data-flwr].site_wrap .raffle_select .raffle_select_trigger {
+  text-align: left;
+  cursor: pointer;
+  min-height: 3rem;
+}
+[data-flwr].site_wrap .raffle_select .raffle_select_trigger.is-open {
+  border-top-color: var(--_palette---neutral--900);
+  border-right-color: var(--_palette---neutral--900);
+  border-bottom-color: var(--_palette---neutral--900);
+  border-left-color: var(--_palette---neutral--900);
+}
+[data-flwr].site_wrap .raffle_select .raffle_select_trigger.is-error {
+  border-top-color: var(--_palette---alert--500);
+  border-right-color: var(--_palette---alert--500);
+  border-bottom-color: var(--_palette---alert--500);
+  border-left-color: var(--_palette---alert--500);
+}
+[data-flwr].site_wrap .raffle_select .raffle_select_value {
+  display: block;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+[data-flwr].site_wrap .raffle_select .raffle_select_value.is-placeholder {
+  color: var(--_component---field--placeholder);
+}
+[data-flwr].site_wrap .raffle_select .raffle_select_list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  z-index: 30;
+  box-sizing: border-box;
+  max-height: var(--raffle-select-max, 20rem);
+  margin-top: -1px;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  padding-top: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  list-style-type: none;
+  list-style-position: outside;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior-x: contain;
+  overscroll-behavior-y: contain;
+  background-color: var(--_component---field--surface);
+  color: var(--_palette---neutral--900);
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+  border-top-style: solid;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-left-style: solid;
+  border-top-color: var(--_palette---neutral--900);
+  border-right-color: var(--_palette---neutral--900);
+  border-bottom-color: var(--_palette---neutral--900);
+  border-left-color: var(--_palette---neutral--900);
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition-property: opacity, visibility;
+  transition-duration: 0.12s, 0s;
+  transition-timing-function: ease, linear;
+  transition-delay: 0s, 0.12s;
+}
+[data-flwr].site_wrap .raffle_select.is-up .raffle_select_list {
+  top: auto;
+  bottom: 100%;
+  margin-top: 0;
+  margin-bottom: -1px;
+}
+[data-flwr].site_wrap .raffle_select.is-open .raffle_select_list {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0s, 0s;
+}
+[data-flwr].site_wrap .raffle_select .raffle_select_list:focus {
+  outline-style: none;
+}
+[data-flwr].site_wrap .raffle_select .raffle_select_option {
+  display: flex;
+  align-items: center;
+  min-height: 2.75rem;
+  box-sizing: border-box;
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  padding-top: 0.5rem;
+  padding-right: var(--_component---field--padding-inline);
+  padding-bottom: 0.5rem;
+  padding-left: var(--_component---field--padding-inline);
+  font-family: var(--_typography---family--sans);
+  font-size: var(--_typography---size--body);
+  font-weight: 400;
+  line-height: var(--_typography---leading--snug);
+  color: var(--_palette---neutral--900);
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: var(--_theme---border--main);
+  cursor: pointer;
+}
+[data-flwr].site_wrap .raffle_select .raffle_select_option:last-child {
+  border-bottom-width: 0;
+}
+[data-flwr].site_wrap .raffle_select .raffle_select_option.is-selected {
+  font-weight: 700;
+}
+[data-flwr].site_wrap .raffle_select .raffle_select_option.is-active {
+  background-color: var(--_palette---core--500);
+  color: #ffffff;
+}
+@media (max-width: 767px) {
+  [data-flwr].site_wrap .raffle_select .raffle_select_trigger {
+    min-height: 2.75rem;
+  }
+}
+
 /* ---- Priority layer: declarations Rome marked !important. Emitted last in this
    bucket under a (0,3,0) wrapper prefix so they keep winning without the flag. ---- */
 html::-webkit-scrollbar-track {
