@@ -100,7 +100,7 @@
     "lookbackCta": "VIEW MORE",
     "registerCta": "JOIN US",
     "hoverBadge": "SCROLL TO<br>SEE MORE",
-    "_provisionalCopy": "aboutSubheading / aboutDescription and pages.about.intro / themeLine are provisional copy assembled only from the client's own moodboard sentences in brief/BRIEF.md (Theme and messaging). Replace when the client sends final copy."
+    "_provisionalCopy": "aboutSubheading / aboutDescription (home page only) are provisional copy assembled only from the client's own moodboard sentences in brief/BRIEF.md (Theme and messaging). Replace when the client sends final copy."
   },
   "links": {
     "register": "booking.html",
@@ -176,15 +176,35 @@
     },
     "about": {
       "title": "About the Tribe | Jivamukti Yoga Tribe Gathering 2027",
-      "description": "What the Jivamukti Yoga Tribe Gathering is, and the theme of Luxembourg Lotus 2027: Nada Through Nadis. 2–5 September 2027 in Luxembourg.",
+      "description": "In 2027, the Jivamukti Yoga community gathers in Luxembourg under the theme of Nada Yoga, and an exploration of the Nadis.",
       "ogImage": "https://tribe.jivamuktiyoga.com/assets/images/og-home.jpg",
       "ogAlt": "Jivamukti Yoga Tribe Gathering, Luxembourg Lotus 2027: 2–5 September 2027, Luxembourg",
       "hidden": false,
       "_hidden": "SWITCH: pages.about.hidden (true = hidden, false = shown and linked; staging preview). While true: Hidden from 30 Sep 2026 at the client's request (copy and images being reworked): noindex, not in sitemap/llms.txt/JSON-LD, disallowed in robots.txt, no links to it. og-about.jpg exists but is unused.",
-      "quote": "\"Hurry home to your real home, which is OM\"",
-      "quoteBy": "Shri Brahmananda Sarasvati",
-      "intro": "The Tribe Gathering is the Jivamukti Yoga community meeting in one place to practice, listen and sing together: a satsang, the company of like-minded people in pursuit of the truth. In 2027 the tribe gathers in Luxembourg under the theme Nada Through Nadis.",
-      "themeLine": "THE ROOTS OF THE LOTUS GO DEEP INTO THE SELF. THROUGH THE ROOTS, THE CHANNELS WE CALL NADIS, WE EXPERIENCE THE ETERNAL SOUND: NADAM."
+      "nadaTitle": "Nada Yoga",
+      "nadaQuote": "One who desires complete mastery of yoga should thus explore the nada with an attentive mind and abandon all thoughts.",
+      "nadaQuoteBy": "—Hatha Yoga Pradipika IV:93",
+      "nadaIntro": "In 2027, the Jivamukti Yoga community gathers in Luxembourg under the theme <strong>of Nada Yoga, and an exploration of the Nadis</strong>. Inspired by the lotus, we come together to explore sound as an intricate tool that drives us inwards, through the complex network of roots within - through practice, chanting, silence and our satsang.",
+      "nadaBody": "The practice of Nada yoga invites us to listen with our whole attention. As we become quiet, we begin to notice what the constant movement of thought can obscure. Nada, the inner sound, becomes an object of discipline and focus for meditation: a way of drawing the attention towards the source from which the unstruck sound and stillness arise.",
+      "verse": "Namah Sivaya Gurave Nada-Bindu-Kalatmane, Niranjna-Padam Yati Nityam Yatra Prayanah.",
+      "verseCite": "HYP - IV.1",
+      "verseQuote": "\"Salutations to the Nadam, which is the inner guide and the inner life, the dispenser of happiness to all! It is the inner guru appearing as nada (sound), bindu (the point of immortality), and kala (time). One who is devoted to the inner guru, the nada, the inner music, obtains the highest bliss.\"",
+      "verseQuoteBy": "— Shri Brahmananda Sarasvati",
+      "nadisTitle": "The power of Nadis",
+      "nadisParagraphs": [
+        "Where there is life, there is prana. In Sanskrit, pra means moving and na means always. Prana is like electricity, in that electricity exists in the natural world in wild and unpredictable forms. Lightning strikes here and there; you never know where it's going to hit. But if you capture that same electricity inside a wire, its movements become predictable and controllable. The electricity can be conducted via wire from point A to point B. The difference between electricity that will strike anywhere and electricity flowing through a wire is that the latter is useful for turning on lights. (Sharon Gannon & David Life - Jivamukti Yoga, Practices for Liberation).",
+        "Nadi is the Sanskrit term for the wires that conduct prana throughout the body. The difference between prana that flows randomly and prana that is consciously directed through the nadis is that the latter is illuminating.",
+        "We'll explore the ramifications of the nadis into the body and their role in our self-realization through the metaphor of the Lotus, Padma, which is able to grow and reach the Earth and survive despite the mud and the challenges for it to be in existence."
+      ],
+      "gatheringTitle": "The Tribe Gathering",
+      "gatheringBody": "Jivamukti Tribe Gathering is a four-day Yoga festival celebrating Life and expressing our love and devotion through collective yoga practice, chanting, meditation and satsang. For the first time ever Luxembourg welcomes the worldwide yoga community to join us at our annual Gathering, featuring classes with top Jivamukti Yoga teachers from around the world. Our evening lineup will feature Kirtan, Concerts, Satsang and amazing food! For Jivamukti Students, Teachers, and Yoga Lovers from all across the world! EVERYONE, regardless of age or level, if you are student, teacher, many years practitioner, or new to Yoga, is welcome! Join us!",
+      "tribeTitle": "About Tribe",
+      "tribeStatement": "SATSANG IS OFTEN DEFINED AS THE COMPANY OF LIKE-MINDED PEOPLE IN PURSUIT OF THE TRUTH. WHEN A TRIBE'S COMMON INTEREST IS PURSUIT OF TRUTH – THEN IT IS A SATSANG. THE JIVAMUKTI YOGA GLOBAL SATSANG IS A TRIBE.",
+      "tribeParagraphs": [
+        "Satsang, or the company of like-minded individuals, is a powerful tool for personal and collective growth. By gathering with others who share our interests and values, we can create a supportive and inspiring environment that helps us overcome obstacles, deepen our understanding, and cultivate positive qualities.",
+        "In the context of Jivamukti Yoga Global Satsang, this means gathering with fellow practitioners who are committed to the pursuit of truth, liberation from suffering, and the creation of a more peaceful and harmonious world.",
+        "Through the experience of satsang, we can also tap into the wisdom and insights of others, and benefit from their perspectives, experiences, and expertise. This can expand our horizons, challenge our assumptions, and help us see things from a new and more enlightened perspective. Moreover, the bonds that we form through satsang can be transformative, fostering a sense of community, belonging, and shared purpose that can sustain us through the challenges of life. Ultimately, satsang is about creating a space where we can connect with others on a deeper level, share our journey, and support each other in becoming the best version of ourselves."
+      ]
     },
     "schedule": {
       "title": "Schedule | Jivamukti Yoga Tribe Gathering 2027",
