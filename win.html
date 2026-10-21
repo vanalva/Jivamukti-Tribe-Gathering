@@ -197,7 +197,8 @@
     Raffle page, rebuilt from the Stavanger 2025 WordPress raffle page (references/_archive/raffle-2025-template/).
     All copy and form options: src/data/event.json -> pages.win.*. Unconfirmed facts are [TBC: ...] chips (.raffle_tbc);
     set the matching *Tbc flag to false when the real fact replaces the placeholder.
-    The form posts to the client's send.php handler (no CORS, so src/js/raffle.js sends it with fetch mode no-cors).
+    The form posts natively to the client's send.php handler, which redirects to the hidden `redirect` URL (win-thanks.html).
+    The handler only accepts requests from jivamuktiyoga.com or its subdomains, so the form cannot be tested from staging or locally.
   -->
   <section class="plan_wrap f-position-relative">
     <div class="f-cover-absolute f-z-negative f-position-relative"></div>
@@ -207,7 +208,8 @@
         <p class="text-body-lg">Experience the magic of the Jivamukti Yoga Tribe Gathering 2027 in Luxembourg. This is your chance to join fellow yogis from around the world for four days of practice, connection and transformation.</p>
 
         <h3 class="text-h4 f-text-uppercase raffle_subhead">Win Your Spot!</h3>
-        <p class="text-body-md">We're offering <span class="text_note raffle_tbc">[TBC: winners]</span> lucky winners from each Jivamukti studio worldwide the opportunity to win full access to the Tribe Gathering. Simply enter the raffle by filling out the form below and selecting your home studio.</p>
+        <p class="text-body-md">We're offering <strong>two</strong> lucky winners from each Jivamukti studio worldwide the opportunity to win full access to the Tribe Gathering. Simply enter the raffle by filling out the form below and selecting your home studio.</p>
+        <p class="text-body-md"><strong>If you have already purchased a Tribe ticket, it will be fully refunded.</strong></p>
 
         <h3 class="text-h4 f-text-uppercase raffle_subhead">How to Enter</h3>
         <ol class="raffle_steps text-body-md">
@@ -220,8 +222,8 @@
 
         <h3 class="text-h4 f-text-uppercase raffle_subhead">Important Dates</h3>
         <ul class="terms-list raffle_dates text-body-md">
-          <li><strong>Raffle closes:</strong> <span class="text_note raffle_tbc">[TBC: raffle close date]</span></li>
-          <li><strong>Winners announced:</strong> <span class="text_note raffle_tbc">[TBC: announcement date]</span></li>
+          <li><strong>Raffle closes:</strong> 30 November 2026</li>
+          <li><strong>Winners announced:</strong> 6 December 2026</li>
         </ul>
 
         <p class="text-body-md">Don't miss out on this opportunity to deepen your practice and connect with the global Jivamukti community. Enter now and good luck!</p>
@@ -229,7 +231,8 @@
 
       <div class="raffle_form-wrap">
         <h2 class="text-h3 f-text-uppercase raffle_form-title">Enter the raffle</h2>
-        <form class="raffle_form" action="https://jivamuktiyoga.com/form_handler/send.php?send_to=tribe.jivamuktiyoga.com&amp;subject=Tribe+2027+Raffle+Form" method="post" data-raffle-form data-sending="Sending…" data-success="Thank you, you're in the raffle. We will email the winners." data-error="Sorry, your entry could not be sent. Please try again, or write to events@jivamuktiyoga.com.">
+        <form class="raffle_form" action="https://jivamuktiyoga.com/form_handler/send.php?send_to=tribe.jivamuktiyoga.com&amp;subject=Tribe+2027+Raffle+Form" method="post" accept-charset="utf-8" data-raffle-form>
+          <input type="hidden" name="redirect" value="https://tribe.jivamuktiyoga.com/win-thanks.html">
           <div class="flwr_field_wrap raffle_field">
             <label class="flwr_field_label" for="raffle-fullname">Name</label>
             <input class="flwr_field_text" type="text" id="raffle-fullname" name="fullname" placeholder="Name" autocomplete="name" required>
@@ -264,37 +267,45 @@
 
               <option value="Jivamukti Yoga Barcelona">Jivamukti Yoga Barcelona</option>
 
-              <option value="Jivamukti Yoga Peace Yoga Berlin">Jivamukti Yoga Peace Yoga Berlin</option>
-
-              <option value="Jivamukti Yoga Hrdayam Bern">Jivamukti Yoga Hrdayam Bern</option>
+              <option value="Jivamukti Yoga Berlin">Jivamukti Yoga Berlin</option>
 
               <option value="Jivamukti Yoga Cambridge">Jivamukti Yoga Cambridge</option>
 
               <option value="Jivamukti Yoga Cologne">Jivamukti Yoga Cologne</option>
 
-              <option value="Jivamukti Yoga Duesseldorf">Jivamukti Yoga Duesseldorf</option>
+              <option value="Jivamukti Yoga Düsseldorf">Jivamukti Yoga Düsseldorf</option>
 
-              <option value="Jivamukti Yoga Roots Hamburg">Jivamukti Yoga Roots Hamburg</option>
+              <option value="Jivamukti Yoga Hamburg">Jivamukti Yoga Hamburg</option>
 
               <option value="Jivamukti Yoga Lisbon">Jivamukti Yoga Lisbon</option>
 
               <option value="Jivamukti Yoga Luxembourg">Jivamukti Yoga Luxembourg</option>
 
-              <option value="Jivamukti Yoga Marbella">Jivamukti Yoga Marbella</option>
+              <option value="Jivamukti Yoga Madrid">Jivamukti Yoga Madrid</option>
 
-              <option value="Jivamukti Yoga Material Moscow">Jivamukti Yoga Material Moscow</option>
+              <option value="Jivamukti Yoga Milan">Jivamukti Yoga Milan</option>
+
+              <option value="Jivamukti Yoga Moscow">Jivamukti Yoga Moscow</option>
 
               <option value="Jivamukti Yoga Munich">Jivamukti Yoga Munich</option>
 
-              <option value="Jivamukti Yoga NYC Collective">Jivamukti Yoga NYC Collective</option>
+              <option value="Jivamukti Yoga NYC">Jivamukti Yoga NYC</option>
 
               <option value="Jivamukti Yoga Paris">Jivamukti Yoga Paris</option>
 
+              <option value="Jivamukti Yoga Riga">Jivamukti Yoga Riga</option>
+
               <option value="Jivamukti Yoga Rome">Jivamukti Yoga Rome</option>
+
+              <option value="Jivamukti Yoga Poznań">Jivamukti Yoga Poznań</option>
 
               <option value="Jivamukti Yoga Stavanger">Jivamukti Yoga Stavanger</option>
 
+              <option value="Jivamukti Yoga Stuttgart">Jivamukti Yoga Stuttgart</option>
+
               <option value="Jivamukti Yoga Tijuana">Jivamukti Yoga Tijuana</option>
+
+              <option value="Jivamukti Yoga Vienna">Jivamukti Yoga Vienna</option>
 
               <option value="Jivamukti Digital / General">Jivamukti Digital / General</option>
 
@@ -310,18 +321,17 @@
           </div>
           <div class="raffle_checks">
             <label class="raffle_check text-body-md">
-              <input class="raffle_check-input" type="checkbox" name="i_agree_newsletter" value="Yes" checked required>
+              <input class="raffle_check-input" type="checkbox" name="i_agree_newsletter" value="Yes">
               <span>Add me to the newsletter.</span>
             </label>
             <label class="raffle_check text-body-md">
-              <input class="raffle_check-input" type="checkbox" name="i_agree_newsletter" value="Yes" checked required>
-              <span>I agree to the <a href="terms.html" target="_blank" rel="noopener noreferrer" class="link">terms &amp; conditions</a></span>
+              <input class="raffle_check-input" type="checkbox" name="i_agree_terms" value="Yes" required>
+              <span>I agree to the <a href="win-terms.html" target="_blank" rel="noopener noreferrer" class="link">terms &amp; conditions</a></span>
             </label>
           </div>
           <div class="raffle_actions">
             <button type="submit" class="button button--primary">Submit</button>
           </div>
-          <p class="flwr_field_message raffle_status" data-raffle-status role="status" aria-live="polite" hidden></p>
         </form>
       </div>
     </div>
@@ -399,7 +409,7 @@
   <script src="js/gsap/menu.js?v=43aa2f2e"></script>
   <script src="js/gsap/animations.js?v=a7fd38f6"></script>
   <script src="js/main.js?v=00905405"></script>
-  <script src="js/raffle.js?v=997f7670"></script>
+  <script src="js/raffle.js?v=87dbbbf7"></script>
   <script src="js/raffle-select.js?v=775c5942"></script>
 </body>
 </html>

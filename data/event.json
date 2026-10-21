@@ -110,6 +110,7 @@
     "archive": "archive.html",
     "about": "about-tribe.html",
     "terms": "terms.html",
+    "winTerms": "win-terms.html",
     "instagram": "https://www.instagram.com/jivamuktiyoga/",
     "facebook": "https://www.facebook.com/JivamuktiYoga/",
     "privacy": "https://jivamuktiyoga.com/privacy-policy/",
@@ -287,6 +288,14 @@
       "ogImage": "https://tribe.jivamuktiyoga.com/assets/images/og-home.jpg",
       "ogAlt": "Jivamukti Yoga Tribe Gathering, Luxembourg Lotus 2027: 2–5 September 2027, Luxembourg"
     },
+    "winTerms": {
+      "title": "Ticket giveaway official rules | Jivamukti Yoga Tribe Gathering 2027",
+      "description": "Official rules of the Jivamukti Yoga Tribe Gathering 2027 ticket giveaway.",
+      "ogImage": "https://tribe.jivamuktiyoga.com/assets/images/og-home.jpg",
+      "ogAlt": "Jivamukti Yoga Tribe Gathering, Luxembourg Lotus 2027: 2–5 September 2027, Luxembourg",
+      "heading": "Ticket giveaway official rules",
+      "body": "[TBC: official rules text]"
+    },
     "win": {
       "_readme": "Raffle page (src/templates/win.html) and its thank-you page (win-thanks.html), rebuilt from references/_archive/raffle-2025-template/win-stavanger-2025.html. NOT LAUNCHED: hidden=true means noindex, no JSON-LD, not in sitemap.xml or llms.txt (launch/seo/build-seo.py). The page is never linked from the nav, menu or footer; link it yourself when it goes live. Placeholders: winners, closeDate, announceDate (each has a *Tbc flag: set it to false when you replace the [TBC: ...] text with the confirmed fact, and the chip styling goes away).",
       "hidden": true,
@@ -299,9 +308,10 @@
       "intro": "Experience the magic of the Jivamukti Yoga Tribe Gathering 2027 in Luxembourg. This is your chance to join fellow yogis from around the world for four days of practice, connection and transformation.",
       "spotHeading": "Win Your Spot!",
       "spotBefore": "We're offering",
-      "winners": "[TBC: winners]",
-      "winnersTbc": true,
+      "winners": "two",
+      "winnersTbc": false,
       "spotAfter": "lucky winners from each Jivamukti studio worldwide the opportunity to win full access to the Tribe Gathering. Simply enter the raffle by filling out the form below and selecting your home studio.",
+      "refundNote": "If you have already purchased a Tribe ticket, it will be fully refunded.",
       "howHeading": "How to Enter",
       "steps": [
         "Fill out the form with your details.",
@@ -309,15 +319,16 @@
       ],
       "datesHeading": "Important Dates",
       "closeLabel": "Raffle closes:",
-      "closeDate": "[TBC: raffle close date]",
-      "closeDateTbc": true,
+      "closeDate": "30 November 2026",
+      "closeDateTbc": false,
       "announceLabel": "Winners announced:",
-      "announceDate": "[TBC: announcement date]",
-      "announceDateTbc": true,
+      "announceDate": "6 December 2026",
+      "announceDateTbc": false,
       "closing": "Don't miss out on this opportunity to deepen your practice and connect with the global Jivamukti community. Enter now and good luck!",
       "formHeading": "Enter the raffle",
       "formAction": "https://jivamuktiyoga.com/form_handler/send.php?send_to=tribe.jivamuktiyoga.com&subject=Tribe+2027+Raffle+Form",
-      "_formNote": "Field names, option values and the shared i_agree_newsletter checkbox name are identical to the 2025 form so the handler receives the same payload. Exceptions: the 2025 option values for Cambridge, Cologne, Duesseldorf and Rome were copy-paste errors (they submitted Roots Hamburg / Paris), now equal to their labels; `website` is a new honeypot field. send.php sends no CORS headers, so raffle.js posts with mode no-cors and cannot read the reply.",
+      "redirectUrl": "https://tribe.jivamuktiyoga.com/win-thanks.html",
+      "_formNote": "Field names, option values and the shared i_agree_newsletter checkbox name are identical to the 2025 form so the handler receives the same payload. Exceptions: the studio list was replaced by the client on 21 Oct 2026 (values equal labels); `website` is a new honeypot field; `redirect` is a hidden field holding the thank-you URL. The handler redirects after sending, so the form submits natively and raffle.js only validates. The newsletter box is optional, the terms box is required; the newsletter box is i_agree_newsletter, the terms box is i_agree_terms; neither is pre-checked.",
       "labels": {
         "name": "Name",
         "country": "City/Country",
@@ -356,12 +367,8 @@
           "label": "Jivamukti Yoga Barcelona"
         },
         {
-          "value": "Jivamukti Yoga Peace Yoga Berlin",
-          "label": "Jivamukti Yoga Peace Yoga Berlin"
-        },
-        {
-          "value": "Jivamukti Yoga Hrdayam Bern",
-          "label": "Jivamukti Yoga Hrdayam Bern"
+          "value": "Jivamukti Yoga Berlin",
+          "label": "Jivamukti Yoga Berlin"
         },
         {
           "value": "Jivamukti Yoga Cambridge",
@@ -372,12 +379,12 @@
           "label": "Jivamukti Yoga Cologne"
         },
         {
-          "value": "Jivamukti Yoga Duesseldorf",
-          "label": "Jivamukti Yoga Duesseldorf"
+          "value": "Jivamukti Yoga Düsseldorf",
+          "label": "Jivamukti Yoga Düsseldorf"
         },
         {
-          "value": "Jivamukti Yoga Roots Hamburg",
-          "label": "Jivamukti Yoga Roots Hamburg"
+          "value": "Jivamukti Yoga Hamburg",
+          "label": "Jivamukti Yoga Hamburg"
         },
         {
           "value": "Jivamukti Yoga Lisbon",
@@ -388,36 +395,56 @@
           "label": "Jivamukti Yoga Luxembourg"
         },
         {
-          "value": "Jivamukti Yoga Marbella",
-          "label": "Jivamukti Yoga Marbella"
+          "value": "Jivamukti Yoga Madrid",
+          "label": "Jivamukti Yoga Madrid"
         },
         {
-          "value": "Jivamukti Yoga Material Moscow",
-          "label": "Jivamukti Yoga Material Moscow"
+          "value": "Jivamukti Yoga Milan",
+          "label": "Jivamukti Yoga Milan"
+        },
+        {
+          "value": "Jivamukti Yoga Moscow",
+          "label": "Jivamukti Yoga Moscow"
         },
         {
           "value": "Jivamukti Yoga Munich",
           "label": "Jivamukti Yoga Munich"
         },
         {
-          "value": "Jivamukti Yoga NYC Collective",
-          "label": "Jivamukti Yoga NYC Collective"
+          "value": "Jivamukti Yoga NYC",
+          "label": "Jivamukti Yoga NYC"
         },
         {
           "value": "Jivamukti Yoga Paris",
           "label": "Jivamukti Yoga Paris"
         },
         {
+          "value": "Jivamukti Yoga Riga",
+          "label": "Jivamukti Yoga Riga"
+        },
+        {
           "value": "Jivamukti Yoga Rome",
           "label": "Jivamukti Yoga Rome"
+        },
+        {
+          "value": "Jivamukti Yoga Poznań",
+          "label": "Jivamukti Yoga Poznań"
         },
         {
           "value": "Jivamukti Yoga Stavanger",
           "label": "Jivamukti Yoga Stavanger"
         },
         {
+          "value": "Jivamukti Yoga Stuttgart",
+          "label": "Jivamukti Yoga Stuttgart"
+        },
+        {
           "value": "Jivamukti Yoga Tijuana",
           "label": "Jivamukti Yoga Tijuana"
+        },
+        {
+          "value": "Jivamukti Yoga Vienna",
+          "label": "Jivamukti Yoga Vienna"
         },
         {
           "value": "Jivamukti Digital / General",
