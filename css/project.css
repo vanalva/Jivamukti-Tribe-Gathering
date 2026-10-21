@@ -7501,6 +7501,15 @@ body:has(.hero-home_wrap) .nav_content > .nav_menu:last-child .nav_arrow-icon {
   }
 }
 
+/* Raffle hero photo (21 Oct 2026): the client photo is a 1066 x 1600 WhatsApp file, so the slot never draws it
+   larger than its own pixels (1066 wide, 1600 tall at DPR 1). Below that the box crops it with cover; the
+   focus point sits low enough to keep the raised hands in the narrow phone band. */
+[data-flwr].site_wrap .hero-collage_image--raffle {
+  max-width: 1066px;
+  max-height: 1600px;
+  object-position: 50% 62%;
+}
+
 /* ---- Priority layer: declarations Rome marked !important. Emitted last in this
    bucket under a (0,3,0) wrapper prefix so they keep winning without the flag. ---- */
 html::-webkit-scrollbar-track {

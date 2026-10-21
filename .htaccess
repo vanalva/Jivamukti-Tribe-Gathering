@@ -1,3 +1,11 @@
 # tribe.jivamuktiyoga.com is served by Apache from a checkout of the html-site branch.
 # GitHub Pages ignores this file. Only honoured if the vhost allows overrides.
 ErrorDocument 404 /404.html
+
+# The official rules name the entry address tribe.jivamuktiyoga.com/win. The page is win.html.
+# Redirect (not an internal rewrite) so the browser lands on /win.html and the page's relative links resolve.
+# If mod_rewrite is missing, the block is skipped and /win/ falls through to win/index.html (a meta-refresh).
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule ^win/?$ /win.html [R=302,L]
+</IfModule>
