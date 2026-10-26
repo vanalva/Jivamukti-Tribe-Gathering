@@ -7540,6 +7540,110 @@ body:has(.hero-home_wrap) .nav_content > .nav_menu:last-child .nav_arrow-icon {
   }
 }
 
+/* ============================================================================
+   ICP PAGE + FREE PHOTOSHOOT BLOCK (preview, 26 Oct 2026)
+   icp.html (hidden, pages.icp) and the photoshoot component on schedule.html
+   (pages.schedule.photoshoot). The ICP cards reuse the teacher grid look but are
+   .icp_card, not .teacher-card: main.js makes every .teacher-card a pop-up trigger
+   and cancels its clicks, which would swallow the Book Now mailto.
+   ============================================================================ */
+[data-flwr].site_wrap .plan_content--single {
+  grid-template-columns: 1fr;
+}
+[data-flwr].site_wrap .icp_grid-wrap {
+  padding-top: var(--_spacing---step--8);
+  padding-bottom: var(--_spacing---step--8);
+}
+[data-flwr].site_wrap .icp_note-wrap {
+  margin-top: 0;
+  margin-bottom: var(--_spacing---step--6);
+  text-align: center;
+}
+[data-flwr].site_wrap .icp_note {
+  white-space: normal;
+}
+[data-flwr].site_wrap .icp_card {
+  overflow-x: hidden;
+  overflow-y: hidden;
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: var(--_theme---border--main);
+  border-right-width: 1px;
+  border-right-style: solid;
+  border-right-color: var(--_theme---border--main);
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: var(--_theme---border--main);
+  border-left-width: 1px;
+  border-left-style: solid;
+  border-left-color: var(--_theme---border--main);
+}
+[data-flwr].site_wrap .icp_card .teacher-card_info {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  row-gap: var(--_spacing---step--2);
+}
+[data-flwr].site_wrap .icp_card .teacher-card_name {
+  margin-bottom: 0;
+}
+[data-flwr].site_wrap .icp_book {
+  width: 100%;
+}
+[data-flwr].site_wrap .photoshoot {
+  padding-top: var(--_spacing---step--6);
+  padding-right: var(--_spacing---step--6);
+  padding-bottom: var(--_spacing---step--6);
+  padding-left: var(--_spacing---step--6);
+  border-top-width: 2px;
+  border-top-style: solid;
+  border-top-color: var(--_palette---neutral--900);
+  border-right-width: 2px;
+  border-right-style: solid;
+  border-right-color: var(--_palette---neutral--900);
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-bottom-color: var(--_palette---neutral--900);
+  border-left-width: 2px;
+  border-left-style: solid;
+  border-left-color: var(--_palette---neutral--900);
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+[data-flwr].site_wrap .photoshoot_heading {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+[data-flwr].site_wrap .photoshoot_actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: var(--_spacing---step--4);
+  row-gap: var(--_spacing---step--2);
+}
+[data-flwr].site_wrap .photoshoot_button.is-disabled {
+  opacity: 0.6;
+  cursor: default;
+  pointer-events: none;
+}
+[data-flwr].site_wrap .photoshoot_note {
+  white-space: normal;
+}
+@media (max-width: 767px) {
+  [data-flwr].site_wrap .icp_grid-wrap {
+    padding-top: var(--_spacing---step--6);
+    padding-bottom: var(--_spacing---step--6);
+  }
+  [data-flwr].site_wrap .photoshoot {
+    padding-top: var(--_spacing---step--4);
+    padding-right: var(--_spacing---step--4);
+    padding-bottom: var(--_spacing---step--4);
+    padding-left: var(--_spacing---step--4);
+  }
+}
+
 /* ---- Priority layer: declarations Rome marked !important. Emitted last in this
    bucket under a (0,3,0) wrapper prefix so they keep winning without the flag. ---- */
 html::-webkit-scrollbar-track {
