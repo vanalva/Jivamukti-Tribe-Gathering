@@ -281,13 +281,35 @@
     },
     "city": {
       "title": "Luxembourg | Jivamukti Yoga Tribe Gathering 2027",
-      "description": "City tips available soon. The Jivamukti Yoga Tribe Gathering takes place 2–5 September 2027 at Coque Luxembourg, 2 rue Léon Hengen, L-1745 Luxembourg.",
+      "description": "Where to stay, eat and explore in Luxembourg for the Jivamukti Yoga Tribe Gathering, 2–5 September 2027: hotels, vegan-friendly food, cafés, culture, parks and transport.",
       "ogImage": "https://tribe.jivamuktiyoga.com/assets/images/og-luxembourg.jpg",
       "ogAlt": "Luxembourg, Jivamukti Yoga Tribe Gathering, Luxembourg Lotus 2027: 2–5 September 2027, Luxembourg",
+      "hidden": false,
       "heroTitle": "ABOUT LUXEMBOURG",
-      "heading": "CITY TIPS AVAILABLE SOON",
-      "text": "How to get to Coque Luxembourg, where to stay and our favourite places will be shared here.",
+      "heading": "Your Luxembourg guide",
+      "intro": [
+        { "text": "You can find vegan options a little bit everywhere, but there aren't that many exclusively vegan restaurants in Luxembourg." },
+        { "text": "The first restaurants on the list are close to the Tribe location, but I would say the city centre is a better area overall, with more options and a nicer atmosphere." }
+      ],
       "note": "Coque Luxembourg",
+      "gettingAround": {
+        "before": "Getting around: see ",
+        "link1Label": "Mobiliteit.lu",
+        "link1Href": "https://www.mobiliteit.lu/",
+        "between": " for public transport and the ",
+        "link2Label": "Transport & practical information",
+        "link2Href": "#city-transport",
+        "after": " section at the end of the guide."
+      },
+      "notice": {
+        "heading": "Schueberfouer",
+        "before": "During those days, the famous ",
+        "linkLabel": "Schueberfouer",
+        "href": "https://www.vdl.lu/en/visiting/leisure-and-recreation/festivals-fairs-and-events/schueberfouer",
+        "after": " will be taking place near the city centre. It's a huge traditional funfair with lots of rides, games and food stalls (although vegan options are unfortunately very limited). It's a really popular event, so the city will be particularly lively and busy around that time!"
+      },
+      "mapsListUrl": "",
+      "mapsListLabel": "Open the guide on Google Maps",
       "ctaHref": "about-tribe.html",
       "ctaLabel": "ABOUT THE TRIBE"
     },
@@ -427,7 +449,7 @@
       ]
     },
     "icp": {
-      "_readme": "In-Class-Private (ICP) page (src/templates/icp.html), rebuilt from the Stavanger 2025 page (references/_archive/stavanger-2025-icp-photos/icp.html). Copy is the 2025 text word for word; only the place changed (Tribe Stavanger to Tribe Luxembourg). NOT LAUNCHED: hidden=true means noindex, no JSON-LD, not in sitemap.xml or llms.txt (launch/seo/build-seo.py), never linked from the nav, menu or footer. The 2027 ICP teachers are not known: `teachers` holds the seven 2025 teachers as a preview and `teachersTbc` shows the chip note above the grid. Replace the array when the line-up is confirmed (name + image path), then set teachersTbc to false.",
+      "_readme": "In-Class-Private (ICP) page (src/templates/icp.html), rebuilt from the Stavanger 2025 page (references/_archive/stavanger-2025-icp-photos/icp.html). Copy is the 2025 text word for word; only the place changed (Tribe Stavanger to Tribe Luxembourg). NOT LAUNCHED: hidden=true means noindex, no JSON-LD, not in sitemap.xml or llms.txt (launch/seo/build-seo.py), never linked from the nav, menu or footer. The 2027 ICP teachers are not known: `teachers` lists the confirmed 2027 ICP teachers (name, image, imageAlt, assistingImage, assistingAlt; client 2 Nov 2026). The card shows `image` and crossfades to `assistingImage` on hover, focus or tap; an empty `assistingImage` means portrait only, so adding the second photo later is one line. Portraits are greyscale and tone-matched to the line-up (notes/tools/build-icp-portraits.py). The template no longer shows a TBC chip (teachersTbc/teachersNote are unused).",
       "hidden": true,
       "title": "In-Class-Private (ICP) | Jivamukti Yoga Tribe Gathering 2027",
       "description": "Book your In-Class-Private™ (ICP) for any of the Asana classes on schedule at Tribe Luxembourg via email here!",
@@ -440,8 +462,7 @@
       "intro": "Book your In-Class-Private™ (ICP) for any of the Asana classes on schedule at Tribe Luxembourg via email here! An ICP may be the best yoga class you’ve ever taken. During the class, another teacher individually assists you throughout, refining and adding depth to your practice. In the hands of a certified Jivamukti teacher, you are comfortably guided through each and every movement of the class experience.",
       "availableHeading": "AVAILABLE ONLY AT TRIBE IN LUXEMBOURG:",
       "availableText": "ICPs with 800HR and Advanced Certified Jivamukti Yoga teachers from all over the world!",
-      "teachersTbc": true,
-      "teachersNote": "[TBC: 2027 ICP teachers – the 2025 line-up is shown as a preview]",
+      "teachersTbc": false,
       "bookLabel": "Book Now",
       "bookEmail": "events@jivamuktiyoga.com",
       "bookSubject": "ICP booking – Tribe 2027",
@@ -451,13 +472,8 @@
       "closingEmail": "tribe@jivamuktiyoga.com",
       "closingAfter": "for more information and registration.",
       "teachers": [
-        {"name": "Claudia Schettini", "image": "assets/images/icp-2025/claudia-schettini.webp"},
-        {"name": "Kamila Mogileva", "image": "assets/images/icp-2025/kamila-mogileva.webp"},
-        {"name": "Nathalie Wahlberg", "image": "assets/images/icp-2025/nathalie-wahlberg.webp"},
-        {"name": "Ninya Lehreuer", "image": "assets/images/icp-2025/ninya-lehreuer.webp"},
-        {"name": "Nadine Felden", "image": "assets/images/icp-2025/nadine-felden.webp"},
-        {"name": "Rebecca Munro", "image": "assets/images/icp-2025/rebecca-munro.webp"},
-        {"name": "Yana Li", "image": "assets/images/icp-2025/yana-li.webp"}
+        {"name": "Tatiana Koshkarova", "image": "assets/images/icp-2027/tatiana-koshkarova.webp", "imageAlt": "Tatiana Koshkarova", "assistingImage": "assets/images/icp-2027/tatiana-koshkarova-assisting.webp", "assistingAlt": "Tatiana Koshkarova assisting a student"},
+        {"name": "Jessina O'Connell", "image": "assets/images/icp-2027/jessina-oconnell.webp", "imageAlt": "Jessina O'Connell", "assistingImage": "", "assistingAlt": "Jessina O'Connell assisting a student"}
       ]
     },
     "win": {

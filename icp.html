@@ -40,7 +40,7 @@
   <link rel="stylesheet" href="css/framework.css?v=e0cfce08">
   <link rel="stylesheet" href="css/variables.css?v=264b7aec">
   <link rel="stylesheet" href="css/palette-lux-lotus.css?v=31d50f10">
-  <link rel="stylesheet" href="css/project.css?v=7dde909a">
+  <link rel="stylesheet" href="css/project.css?v=e302d50e">
 </head>
 <body>
 <div data-flwr class="f-mode-light site_wrap" data-menu-image="assets/images/lux-lotus-2027/tribe-rome-2026-rotunda-arms-raised.webp">
@@ -124,8 +124,9 @@
 
   <!--
     In-Class-Private (ICP) page, rebuilt from the Stavanger 2025 WordPress page (references/_archive/stavanger-2025-icp-photos/icp.html).
-    All copy and the teacher list: src/data/event.json -> pages.icp.*. The 2027 ICP teachers are not known yet, so the grid shows the
-    2025 line-up behind a [TBC] chip (pages.icp.teachersTbc). The cards reuse the teachers page grid styles but are NOT .teacher-card:
+    All copy and the teacher list: src/data/event.json -> pages.icp.*. Each teacher has a portrait (image) and an optional photo of
+    them assisting (assistingImage, empty = portrait only). Hover, keyboard focus or a tap on touch crossfades between them (js/icp.js).
+    The cards reuse the teachers page grid styles but are NOT .teacher-card:
     main.js turns every .teacher-card into a pop-up trigger and prevents the default click, which would swallow the mailto.
   -->
   <section class="plan_wrap f-position-relative">
@@ -143,79 +144,28 @@
   <!-- ICP teacher grid (same grid and card look as the teachers page, no pop-up) -->
   <section class="teacher-grid_wrap icp_grid-wrap page_section f-position-relative">
     <div class="teacher-grid_content">
-
-      <div class="teacher-grid_header">
-        <p class="text-body-md icp_note-wrap"><span class="text_note raffle_tbc icp_note">[TBC: 2027 ICP teachers – the 2025 line-up is shown as a preview]</span></p>
-      </div>
-
       <div class="teacher-grid_grid">
 
         <div class="icp_card">
-          <div class="teacher-card_image-wrap">
-            <img src="assets/images/icp-2025/claudia-schettini.webp" alt="Claudia Schettini" class="teacher-card_image" width="577" height="750" loading="lazy" decoding="async">
+          <div class="teacher-card_image-wrap icp_photo" data-icp-swap>
+            <img src="assets/images/icp-2027/tatiana-koshkarova.webp" alt="Tatiana Koshkarova" class="teacher-card_image" width="827" height="827" srcset="assets/images/icp-2027/160w/tatiana-koshkarova-160w.webp 160w, assets/images/icp-2027/320w/tatiana-koshkarova-320w.webp 320w, assets/images/icp-2027/480w/tatiana-koshkarova-480w.webp 480w, assets/images/icp-2027/tatiana-koshkarova.webp 827w" sizes="(max-width: 478px) 91vw, (max-width: 767px) 44vw, (max-width: 991px) 28vw, 21.5vw" loading="lazy" decoding="async">
+
+            <img src="assets/images/icp-2027/tatiana-koshkarova-assisting.webp" alt="Tatiana Koshkarova assisting a student" class="teacher-card_image icp_img icp_img--assist" loading="eager" decoding="async" width="853" height="853" srcset="assets/images/icp-2027/160w/tatiana-koshkarova-assisting-160w.webp 160w, assets/images/icp-2027/320w/tatiana-koshkarova-assisting-320w.webp 320w, assets/images/icp-2027/480w/tatiana-koshkarova-assisting-480w.webp 480w, assets/images/icp-2027/tatiana-koshkarova-assisting.webp 853w" sizes="(max-width: 478px) 91vw, (max-width: 767px) 44vw, (max-width: 991px) 28vw, 21.5vw">
+
           </div>
           <div class="teacher-card_info">
-            <h3 class="teacher-card_name">Claudia Schettini</h3>
+            <h3 class="teacher-card_name">Tatiana Koshkarova</h3>
             <a href="mailto:events@jivamuktiyoga.com?subject=ICP%20booking%20%E2%80%93%20Tribe%202027" class="button button--primary icp_book">Book Now</a>
           </div>
         </div>
 
         <div class="icp_card">
-          <div class="teacher-card_image-wrap">
-            <img src="assets/images/icp-2025/kamila-mogileva.webp" alt="Kamila Mogileva" class="teacher-card_image" width="577" height="748" loading="lazy" decoding="async">
-          </div>
-          <div class="teacher-card_info">
-            <h3 class="teacher-card_name">Kamila Mogileva</h3>
-            <a href="mailto:events@jivamuktiyoga.com?subject=ICP%20booking%20%E2%80%93%20Tribe%202027" class="button button--primary icp_book">Book Now</a>
-          </div>
-        </div>
+          <div class="teacher-card_image-wrap icp_photo">
+            <img src="assets/images/icp-2027/jessina-oconnell.webp" alt="Jessina O'Connell" class="teacher-card_image" width="1024" height="1024" srcset="assets/images/icp-2027/160w/jessina-oconnell-160w.webp 160w, assets/images/icp-2027/320w/jessina-oconnell-320w.webp 320w, assets/images/icp-2027/480w/jessina-oconnell-480w.webp 480w, assets/images/icp-2027/jessina-oconnell.webp 1024w" sizes="(max-width: 478px) 91vw, (max-width: 767px) 44vw, (max-width: 991px) 28vw, 21.5vw" loading="lazy" decoding="async">
 
-        <div class="icp_card">
-          <div class="teacher-card_image-wrap">
-            <img src="assets/images/icp-2025/nathalie-wahlberg.webp" alt="Nathalie Wahlberg" class="teacher-card_image" width="577" height="748" loading="lazy" decoding="async">
           </div>
           <div class="teacher-card_info">
-            <h3 class="teacher-card_name">Nathalie Wahlberg</h3>
-            <a href="mailto:events@jivamuktiyoga.com?subject=ICP%20booking%20%E2%80%93%20Tribe%202027" class="button button--primary icp_book">Book Now</a>
-          </div>
-        </div>
-
-        <div class="icp_card">
-          <div class="teacher-card_image-wrap">
-            <img src="assets/images/icp-2025/ninya-lehreuer.webp" alt="Ninya Lehreuer" class="teacher-card_image" width="577" height="750" loading="lazy" decoding="async">
-          </div>
-          <div class="teacher-card_info">
-            <h3 class="teacher-card_name">Ninya Lehreuer</h3>
-            <a href="mailto:events@jivamuktiyoga.com?subject=ICP%20booking%20%E2%80%93%20Tribe%202027" class="button button--primary icp_book">Book Now</a>
-          </div>
-        </div>
-
-        <div class="icp_card">
-          <div class="teacher-card_image-wrap">
-            <img src="assets/images/icp-2025/nadine-felden.webp" alt="Nadine Felden" class="teacher-card_image" width="577" height="748" loading="lazy" decoding="async">
-          </div>
-          <div class="teacher-card_info">
-            <h3 class="teacher-card_name">Nadine Felden</h3>
-            <a href="mailto:events@jivamuktiyoga.com?subject=ICP%20booking%20%E2%80%93%20Tribe%202027" class="button button--primary icp_book">Book Now</a>
-          </div>
-        </div>
-
-        <div class="icp_card">
-          <div class="teacher-card_image-wrap">
-            <img src="assets/images/icp-2025/rebecca-munro.webp" alt="Rebecca Munro" class="teacher-card_image" width="577" height="752" loading="lazy" decoding="async">
-          </div>
-          <div class="teacher-card_info">
-            <h3 class="teacher-card_name">Rebecca Munro</h3>
-            <a href="mailto:events@jivamuktiyoga.com?subject=ICP%20booking%20%E2%80%93%20Tribe%202027" class="button button--primary icp_book">Book Now</a>
-          </div>
-        </div>
-
-        <div class="icp_card">
-          <div class="teacher-card_image-wrap">
-            <img src="assets/images/icp-2025/yana-li.webp" alt="Yana Li" class="teacher-card_image" width="577" height="748" loading="lazy" decoding="async">
-          </div>
-          <div class="teacher-card_info">
-            <h3 class="teacher-card_name">Yana Li</h3>
+            <h3 class="teacher-card_name">Jessina O'Connell</h3>
             <a href="mailto:events@jivamuktiyoga.com?subject=ICP%20booking%20%E2%80%93%20Tribe%202027" class="button button--primary icp_book">Book Now</a>
           </div>
         </div>
@@ -303,5 +253,6 @@
   <script src="js/gsap/menu.js?v=43aa2f2e"></script>
   <script src="js/gsap/animations.js?v=a7fd38f6"></script>
   <script src="js/main.js?v=00905405"></script>
+  <script src="js/icp.js?v=5245daa6"></script>
 </body>
 </html>
