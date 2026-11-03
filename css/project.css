@@ -7660,6 +7660,11 @@ body:has(.hero-home_wrap) .nav_content > .nav_menu:last-child .nav_arrow-icon {
 [data-flwr].site_wrap .photoshoot_note {
   white-space: normal;
 }
+/* ICP closing call-out: a compact plan_wrap (the 80vh min-height of plan_wrap left a void under the cards) that starts
+   right under the grid section, so the gap after the last card row is the grid section's own bottom padding. */
+[data-flwr].site_wrap .icp_closing {
+  padding-top: 0;
+}
 @media (max-width: 767px) {
   [data-flwr].site_wrap .icp_grid-wrap {
     padding-top: var(--_spacing---step--6);

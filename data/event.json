@@ -471,6 +471,9 @@
       "closingBefore": "Please write to",
       "closingEmail": "tribe@jivamuktiyoga.com",
       "closingAfter": "for more information and registration.",
+      "closingHeading": "Teachers: offer an ICP at Tribe",
+      "closingButtonLabel": "Write to us",
+      "closingSubjectEncoded": "Offering%20ICPs%20at%20Tribe%202027",
       "teachers": [
         {"name": "Tatiana Koshkarova", "image": "assets/images/icp-2027/tatiana-koshkarova.webp", "imageAlt": "Tatiana Koshkarova", "assistingImage": "assets/images/icp-2027/tatiana-koshkarova-assisting.webp", "assistingAlt": "Tatiana Koshkarova assisting a student"},
         {"name": "Jessina O'Connell", "image": "assets/images/icp-2027/jessina-oconnell.webp", "imageAlt": "Jessina O'Connell", "assistingImage": "", "assistingAlt": "Jessina O'Connell assisting a student"}
