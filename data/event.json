@@ -227,8 +227,8 @@
         "text": "Elevate your experience and enjoy a complimentary photo session with the talented yoga photographer.",
         "text2": "Capture your journey and create lasting memories!",
         "registerLabel": "Register here",
-        "registerHref": "[TBC: 2027 registration form]",
-        "registerTbc": true,
+        "registerHref": "https://docs.google.com/forms/d/e/1FAIpQLSdU-UHg3BWOLpBh2PWPsSxM-6A969X12DY24B-gErxsV9AKEQ/viewform?usp=publish-editor",
+        "registerTbc": false,
         "workBefore": "Discover Richard’s work",
         "workLinkLabel": "here",
         "workHref": "https://www.yogaphotography.com/"
