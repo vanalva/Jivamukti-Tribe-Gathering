@@ -7550,8 +7550,11 @@ body:has(.hero-home_wrap) .nav_content > .nav_menu:last-child .nav_arrow-icon {
 [data-flwr].site_wrap .plan_content--single {
   grid-template-columns: 1fr;
 }
+/* padding-top: 0 — the preceding .plan_wrap already contributes a full section-main
+   bottom padding, so the step--8 top padding here doubled up into the void Larissa
+   flagged (WhatsApp, 9 Nov 2026) between the intro text and the teacher photos. */
 [data-flwr].site_wrap .icp_grid-wrap {
-  padding-top: var(--_spacing---step--8);
+  padding-top: 0;
   padding-bottom: var(--_spacing---step--8);
 }
 [data-flwr].site_wrap .icp_note-wrap {
@@ -7667,7 +7670,7 @@ body:has(.hero-home_wrap) .nav_content > .nav_menu:last-child .nav_arrow-icon {
 }
 @media (max-width: 767px) {
   [data-flwr].site_wrap .icp_grid-wrap {
-    padding-top: var(--_spacing---step--6);
+    padding-top: 0;
     padding-bottom: var(--_spacing---step--6);
   }
   [data-flwr].site_wrap .photoshoot {

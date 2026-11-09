@@ -23,10 +23,6 @@
     <lastmod>2026-09-30</lastmod>
   </url>
   <url>
-    <loc>https://tribe.jivamuktiyoga.com/about-tribe.html</loc>
-    <lastmod>2026-09-30</lastmod>
-  </url>
-  <url>
     <loc>https://tribe.jivamuktiyoga.com/archive.html</loc>
     <lastmod>2026-09-30</lastmod>
     <video:video>
@@ -37,6 +33,10 @@
       <video:duration>58</video:duration>
       <video:publication_date>2026-09-30</video:publication_date>
     </video:video>
+  </url>
+  <url>
+    <loc>https://tribe.jivamuktiyoga.com/photoshoot.html</loc>
+    <lastmod>2026-09-30</lastmod>
   </url>
   <url>
     <loc>https://tribe.jivamuktiyoga.com/terms.html</loc>

@@ -263,7 +263,7 @@
   <link rel="stylesheet" href="css/framework.css?v=e0cfce08">
   <link rel="stylesheet" href="css/variables.css?v=264b7aec">
   <link rel="stylesheet" href="css/palette-lux-lotus.css?v=31d50f10">
-  <link rel="stylesheet" href="css/project.css?v=027827f7">
+  <link rel="stylesheet" href="css/project.css?v=414b7db4">
 </head>
 <body>
 <div data-flwr class="f-mode-light site_wrap" data-menu-image="assets/images/lux-lotus-2027/tribe-rome-2026-rotunda-arms-raised.webp">
@@ -281,10 +281,7 @@
   <div class="nav_background f-cover-absolute f-z-negative f-position-relative"></div>
   <div class="nav_content f-position-relative layer_top">
     <div class="nav_menu">
-      <a href="about-tribe.html" class="nav_link link text-nav f-text-uppercase">
-        About
-        <svg class="nav_arrow-icon" viewBox="0 0 55 55" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M54.6387 54.6387H37.6387V29.0205L13.2578 53.4014L1.2373 41.3809L25.6172 17H0V0H54.6387V54.6387Z" fill="currentColor"/></svg>
-      </a>
+      <!-- About link removed 30 Sep 2026 (client: About page hidden while its copy is reworked). To restore, re-add the links.about entry here, in menu.html and in footer.html. -->
       <a href="schedule.html" class="nav_link link text-nav f-text-uppercase">
         Schedule
         <svg class="nav_arrow-icon" viewBox="0 0 55 55" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M54.6387 54.6387H37.6387V29.0205L13.2578 53.4014L1.2373 41.3809L25.6172 17H0V0H54.6387V54.6387Z" fill="currentColor"/></svg>
@@ -320,6 +317,10 @@
         Archive
         <svg class="nav_arrow-icon" viewBox="0 0 55 55" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M54.6387 54.6387H37.6387V29.0205L13.2578 53.4014L1.2373 41.3809L25.6172 17H0V0H54.6387V54.6387Z" fill="currentColor"/></svg>
       </a>
+      <a href="photoshoot.html" class="nav_link link text-nav f-text-uppercase">
+        Photo shoot
+        <svg class="nav_arrow-icon" viewBox="0 0 55 55" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M54.6387 54.6387H37.6387V29.0205L13.2578 53.4014L1.2373 41.3809L25.6172 17H0V0H54.6387V54.6387Z" fill="currentColor"/></svg>
+      </a>
       <a href="city.html" class="nav_link link text-nav f-text-uppercase">
         Luxembourg
         <svg class="nav_arrow-icon" viewBox="0 0 55 55" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M54.6387 54.6387H37.6387V29.0205L13.2578 53.4014L1.2373 41.3809L25.6172 17H0V0H54.6387V54.6387Z" fill="currentColor"/></svg>
@@ -341,10 +342,7 @@
           HOME
           <svg class="menu-fullscreen_arrow-icon" viewBox="0 0 55 55" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M54.6387 54.6387H37.6387V29.0205L13.2578 53.4014L1.2373 41.3809L25.6172 17H0V0H54.6387V54.6387Z" fill="currentColor"/></svg>
         </a>
-        <a href="about-tribe.html" class="menu-fullscreen_link text-display-xl f-text-uppercase">
-          ABOUT
-          <svg class="menu-fullscreen_arrow-icon" viewBox="0 0 55 55" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M54.6387 54.6387H37.6387V29.0205L13.2578 53.4014L1.2373 41.3809L25.6172 17H0V0H54.6387V54.6387Z" fill="currentColor"/></svg>
-        </a>
+        <!-- ABOUT link removed 30 Sep 2026 (client: About page hidden while its copy is reworked). -->
         <a href="schedule.html" class="menu-fullscreen_link text-display-xl f-text-uppercase">
           SCHEDULE
           <svg class="menu-fullscreen_arrow-icon" viewBox="0 0 55 55" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M54.6387 54.6387H37.6387V29.0205L13.2578 53.4014L1.2373 41.3809L25.6172 17H0V0H54.6387V54.6387Z" fill="currentColor"/></svg>
@@ -359,6 +357,10 @@
         </a>
         <a href="archive.html" class="menu-fullscreen_link text-display-xl f-text-uppercase">
           ARCHIVE
+          <svg class="menu-fullscreen_arrow-icon" viewBox="0 0 55 55" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M54.6387 54.6387H37.6387V29.0205L13.2578 53.4014L1.2373 41.3809L25.6172 17H0V0H54.6387V54.6387Z" fill="currentColor"/></svg>
+        </a>
+        <a href="photoshoot.html" class="menu-fullscreen_link text-display-xl f-text-uppercase">
+          PHOTO SHOOT
           <svg class="menu-fullscreen_arrow-icon" viewBox="0 0 55 55" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M54.6387 54.6387H37.6387V29.0205L13.2578 53.4014L1.2373 41.3809L25.6172 17H0V0H54.6387V54.6387Z" fill="currentColor"/></svg>
         </a>
         <a href="city.html" class="menu-fullscreen_link text-display-xl f-text-uppercase">
@@ -423,14 +425,15 @@
       <div class="f-flex f-flex-column f-flex-nowrap f-justify-center f-gap-4">
         <h2 class="text-h1 f-text-uppercase">Your Luxembourg guide</h2>
 
-        <p class="text-body-lg">You can find vegan options a little bit everywhere, but there aren't that many exclusively vegan restaurants in Luxembourg.</p>
+        <p class="text-body-lg">Whether it's your first time in Luxembourg or you're back for more, we've gathered trusted hotels, vegan-friendly food, culture and parks to help you plan your stay for the Tribe Gathering.</p>
 
-        <p class="text-body-lg">The first restaurants on the list are close to the Tribe location, but I would say the city centre is a better area overall, with more options and a nicer atmosphere.</p>
+        <p class="text-body-lg">Vegan options are available across the city, though only a few restaurants are exclusively vegan. The listings closest to Coque Luxembourg are convenient if you're staying nearby, but the city centre has more choice and a livelier atmosphere overall.</p>
 
         <p class="text-body-md text_note">Coque Luxembourg, 2 rue Léon Hengen, L-1745 Luxembourg</p>
         <p class="text-body-md cityg_around">Getting around: see <a href="https://www.mobiliteit.lu/" class="cityg_link" target="_blank" rel="noopener">Mobiliteit.lu<span class="cityg_sr"> (opens in a new tab)</span></a> for public transport and the <a href="#city-transport" class="cityg_link" data-cityg-jump>Transport &amp; practical information</a> section at the end of the guide.</p>
 
-        <div class="f-margin-top-2"><a href="about-tribe.html" class="button button--primary">ABOUT THE TRIBE</a></div>
+        <!-- ABOUT THE TRIBE button (pages.city.ctaHref / ctaLabel) removed 30 Sep 2026: the About page is hidden. Restore this wrapper to bring it back:
+             <div class="f-margin-top-2"><a href="{ { pages.city.ctaHref } }" class="button button--primary">{ { pages.city.ctaLabel } }</a></div> -->
       </div>
       <div class="app-mockup_wrap">
         <img src="assets/brand/lux-lotus/lux-lotus-logo-badge-peach-on-navy.svg" alt="Jivamukti Yoga Tribe Gathering 2027, Luxembourg Lotus" class="image app-mockup_image is-badge">
@@ -440,7 +443,7 @@
 
   <!-- City guide. Works as a plain grouped list without JavaScript; js/city-guide.js reveals the toolbar and
        filters the cards (data-* attributes below). Data: src/data/city.json (the client's list). -->
-  <section class="cityg_wrap f-position-relative" data-city-guide data-total="57">
+  <section class="cityg_wrap f-position-relative" data-city-guide data-total="51">
     <div class="cityg_inner">
       <aside class="cityg_notice" aria-labelledby="cityg-notice-title">
         <h2 class="cityg_notice-title" id="cityg-notice-title">Schueberfouer</h2>
@@ -460,13 +463,11 @@
         <div class="cityg_row cityg_row--cats">
           <span class="cityg_label cityg_label--cats" id="cityg-label-cats">Category</span>
           <div class="cityg_chips cityg_chips--scroll" role="group" aria-labelledby="cityg-label-cats" data-cityg-group="cats">
-            <button type="button" class="cityg_chip" data-value="all" aria-pressed="true">All <span class="cityg_chip-count" data-count>57</span></button>
+            <button type="button" class="cityg_chip" data-value="all" aria-pressed="true">All <span class="cityg_chip-count" data-count>51</span></button>
 
             <button type="button" class="cityg_chip" data-value="hotels" aria-pressed="false">Hotels <span class="cityg_chip-count" data-count>12</span></button>
 
             <button type="button" class="cityg_chip" data-value="food" aria-pressed="false">Restaurants <span class="cityg_chip-count" data-count>13</span></button>
-
-            <button type="button" class="cityg_chip" data-value="cafes" aria-pressed="false">Cafés <span class="cityg_chip-count" data-count>8</span></button>
 
             <button type="button" class="cityg_chip" data-value="shops" aria-pressed="false">Shops <span class="cityg_chip-count" data-count>2</span></button>
 
@@ -503,7 +504,7 @@
       </div>
 
       <div class="cityg_status">
-        <p class="cityg_count" data-cityg-count role="status" aria-live="polite" aria-atomic="true">57 places</p>
+        <p class="cityg_count" data-cityg-count role="status" aria-live="polite" aria-atomic="true">51 places</p>
         <button type="button" class="cityg_reset" data-cityg-reset hidden>Reset</button>
       </div>
 
@@ -1032,129 +1033,6 @@
           </div>
         </section>
 
-        <section class="cityg_group" id="city-cafes" data-group="cafes" aria-labelledby="city-cafes-title">
-          <h2 class="cityg_group-title" id="city-cafes-title">Cafés &amp; coffee shops (city centre) <span class="cityg_group-count" data-group-count>6</span></h2>
-          <div class="cityg_cards">
-
-            <article class="cityg_card" data-name="Intense coffee" data-category="cafes" data-area="near centre" data-tags="near-venue vegan" data-catlabel="Cafés">
-              <h3 class="cityg_card-name">Intense coffee</h3>
-
-              <p class="cityg_card-area">City centre</p>
-
-
-              <ul class="cityg_tags" aria-label="Tags">
-
-                <li class="cityg_tag cityg_tag--near-venue">Near the venue</li>
-
-                <li class="cityg_tag cityg_tag--vegan">Vegan</li>
-
-              </ul>
-
-
-              <p class="cityg_card-note">close to the studio</p>
-
-              <div class="cityg_card-actions">
-
-                <a class="cityg_btn cityg_btn--primary" href="https://www.intensecoffee.lu/" target="_blank" rel="noopener">Website<span class="cityg_sr"> for Intense coffee (opens in a new tab)</span></a>
-
-
-                <a class="cityg_btn cityg_btn--secondary" href="https://www.google.com/maps/search/?api=1&amp;query=Intense%20coffee%20Luxembourg" target="_blank" rel="noopener">Map<span class="cityg_sr"> for Intense coffee on Google Maps (opens in a new tab)</span></a>
-
-              </div>
-            </article>
-
-            <article class="cityg_card" data-name="Market ByJérémy" data-category="cafes" data-area="centre" data-tags="vegan" data-catlabel="Cafés">
-              <h3 class="cityg_card-name">Market ByJérémy</h3>
-
-              <p class="cityg_card-area">City centre</p>
-
-
-              <ul class="cityg_tags" aria-label="Tags">
-
-                <li class="cityg_tag cityg_tag--vegan">Vegan</li>
-
-              </ul>
-
-
-              <div class="cityg_card-actions">
-
-                <a class="cityg_btn cityg_btn--primary" href="https://www.byjeremy.com/" target="_blank" rel="noopener">Website<span class="cityg_sr"> for Market ByJérémy (opens in a new tab)</span></a>
-
-
-                <a class="cityg_btn cityg_btn--secondary" href="https://www.google.com/maps/search/?api=1&amp;query=Market%20ByJ%C3%A9r%C3%A9my%20Luxembourg" target="_blank" rel="noopener">Map<span class="cityg_sr"> for Market ByJérémy on Google Maps (opens in a new tab)</span></a>
-
-              </div>
-            </article>
-
-            <article class="cityg_card" data-name="Bloom Specialty Coffee" data-category="cafes" data-area="centre" data-tags="" data-catlabel="Cafés">
-              <h3 class="cityg_card-name">Bloom Specialty Coffee</h3>
-
-              <p class="cityg_card-area">City centre</p>
-
-
-
-              <div class="cityg_card-actions">
-
-                <a class="cityg_btn cityg_btn--primary" href="https://www.bloomluxembourgcoffee.com/" target="_blank" rel="noopener">Website<span class="cityg_sr"> for Bloom Specialty Coffee (opens in a new tab)</span></a>
-
-
-                <a class="cityg_btn cityg_btn--secondary" href="https://www.google.com/maps/search/?api=1&amp;query=Bloom%20Specialty%20Coffee%20Luxembourg" target="_blank" rel="noopener">Map<span class="cityg_sr"> for Bloom Specialty Coffee on Google Maps (opens in a new tab)</span></a>
-
-              </div>
-            </article>
-
-            <article class="cityg_card" data-name="Knopes Coffee" data-category="cafes" data-area="centre" data-tags="" data-catlabel="Cafés">
-              <h3 class="cityg_card-name">Knopes Coffee</h3>
-
-              <p class="cityg_card-area">City centre</p>
-
-
-
-              <div class="cityg_card-actions">
-
-                <a class="cityg_btn cityg_btn--primary" href="https://www.knopes.com/" target="_blank" rel="noopener">Website<span class="cityg_sr"> for Knopes Coffee (opens in a new tab)</span></a>
-
-
-                <a class="cityg_btn cityg_btn--secondary" href="https://www.google.com/maps/search/?api=1&amp;query=Knopes%20Coffee%20Luxembourg" target="_blank" rel="noopener">Map<span class="cityg_sr"> for Knopes Coffee on Google Maps (opens in a new tab)</span></a>
-
-              </div>
-            </article>
-
-            <article class="cityg_card" data-name="Konrad Café &amp; Bar" data-category="cafes" data-area="centre" data-tags="" data-catlabel="Cafés">
-              <h3 class="cityg_card-name">Konrad Café &amp; Bar</h3>
-
-              <p class="cityg_card-area">City centre</p>
-
-
-
-              <div class="cityg_card-actions">
-
-
-                <a class="cityg_btn cityg_btn--secondary" href="https://www.google.com/maps/search/?api=1&amp;query=Konrad%20Caf%C3%A9%20%26%20Bar%20Luxembourg" target="_blank" rel="noopener">Map<span class="cityg_sr"> for Konrad Café &amp; Bar on Google Maps (opens in a new tab)</span></a>
-
-              </div>
-            </article>
-
-            <article class="cityg_card" data-name="Coffee Fellows" data-category="cafes" data-area="centre" data-tags="" data-catlabel="Cafés">
-              <h3 class="cityg_card-name">Coffee Fellows</h3>
-
-              <p class="cityg_card-area">City centre</p>
-
-
-
-              <div class="cityg_card-actions">
-
-                <a class="cityg_btn cityg_btn--primary" href="https://www.coffee-fellows.com/" target="_blank" rel="noopener">Website<span class="cityg_sr"> for Coffee Fellows (opens in a new tab)</span></a>
-
-
-                <a class="cityg_btn cityg_btn--secondary" href="https://www.google.com/maps/search/?api=1&amp;query=Coffee%20Fellows%20Luxembourg" target="_blank" rel="noopener">Map<span class="cityg_sr"> for Coffee Fellows on Google Maps (opens in a new tab)</span></a>
-
-              </div>
-            </article>
-
-          </div>
-        </section>
-
         <section class="cityg_group" id="city-shops" data-group="shops" aria-labelledby="city-shops-title">
           <h2 class="cityg_group-title" id="city-shops-title">Organic &amp; health food stores <span class="cityg_group-count" data-group-count>2</span></h2>
           <div class="cityg_cards">
@@ -1613,18 +1491,19 @@
         <h3 class="footer_column-title text-h5">Navigate</h3>
         <ul class="footer_links footer_links--two-col">
           <li><a href="index.html" class="link link--light footer_link text-body-md">Home</a></li>
-          <li><a href="about-tribe.html" class="link link--light footer_link text-body-md">About Tribe</a></li>
           <li><a href="schedule.html" class="link link--light footer_link text-body-md">Schedule</a></li>
           <li><a href="booking.html" class="link link--light footer_link text-body-md">Register</a></li>
+          <!-- About Tribe removed 30 Sep 2026 (client: About page hidden); Line-up moved here from Explore so this 2x2 grid stays full. -->
+          <li><a href="teachers.html" class="link link--light footer_link text-body-md">Line-up</a></li>
         </ul>
       </div>
 
       <div class="footer_column footer_column--right">
         <h3 class="footer_column-title text-h5">Explore</h3>
         <ul class="footer_links">
-          <li><a href="teachers.html" class="link link--light footer_link text-body-md">Line-up</a></li>
           <li><a href="city.html" class="link link--light footer_link text-body-md">Luxembourg</a></li>
           <li><a href="archive.html" class="link link--light footer_link text-body-md">Archive</a></li>
+          <li><a href="photoshoot.html" class="link link--light footer_link text-body-md">Photo shoot</a></li>
           <li><a href="https://jivamuktiyoga.com" target="_blank" rel="noopener noreferrer" class="link link--light footer_link text-body-md">The Jivamukti Method</a></li>
         </ul>
       </div>

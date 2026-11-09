@@ -1,5 +1,5 @@
 {
-  "_readme": "City guide data (src/templates/city.html, src/js/city-guide.js). Source: notes/city-list-2026-10-27.md, the client's list verbatim. name/url/note are hers; do not add descriptions, hours, prices or addresses. area: kirchberg = near the venue, centre = city centre, other = explicitly elsewhere (client note), null = not placed (shown under All only, no label). areaSource: client | well-known location (no entry was checked against its official site). tags: near-venue, vegan, vegan-options, some-vegan-options, also-cafe, budget. linkCheck: true = one of her link slips or doubtful, review before relying on it. mapsQuery: name + Luxembourg, used for a Google Maps search link (null = an online resource, no map button). Glow and Seed are listed once (restaurants) with the also-cafe tag; the Cafes chip includes them.",
+  "_readme": "City guide data (src/templates/city.html, src/js/city-guide.js). Source: notes/city-list-2026-10-27.md, the client's list verbatim. name/url/note are hers; do not add descriptions, hours, prices or addresses. area: kirchberg = near the venue, centre = city centre, other = explicitly elsewhere (client note), null = not placed (shown under All only, no label). areaSource: client | well-known location (no entry was checked against its official site). tags: near-venue, vegan, vegan-options, some-vegan-options, also-cafe, budget. linkCheck: true = one of her link slips or doubtful, review before relying on it. mapsQuery: name + Luxembourg, used for a Google Maps search link (null = an online resource, no map button). The Cafés & coffee shops category was removed on Larissa's request (WhatsApp, 9 Nov 2026); Glow and Seed keep the also-cafe tag on their restaurant entries (it's still a true fact about them), it just has no dedicated chip or section to feed any more.",
   "areas": [
     {"id": "near", "label": "Near the venue", "card": "Near the venue"},
     {"id": "centre", "label": "City centre", "card": "City centre"},
@@ -47,17 +47,6 @@
         {"id": "nirvana-cafe", "name": "Nirvana Café", "category": "food", "area": "centre", "areaSource": "client", "tags": ["vegan"], "url": "https://www.nirvanacafeluxembourg.com/", "mapsQuery": "Nirvana Café Luxembourg", "note": null, "linkCheck": false},
         {"id": "rawdish", "name": "Rawdish", "category": "food", "area": "centre", "areaSource": "client", "tags": ["vegan-options"], "url": "https://www.rawdish.lu/", "mapsQuery": "Rawdish Luxembourg", "note": null, "linkCheck": false},
         {"id": "glow-meal-by-meal", "name": "Glow – Meal by Meal", "category": "food", "area": "other", "areaSource": "client", "tags": ["vegan", "also-cafe"], "url": "https://www.glow-food.lu/", "mapsQuery": "Glow – Meal by Meal Luxembourg", "note": "not really in the city center but it depends where people sleep", "linkCheck": false}
-      ]
-    },
-    {
-      "id": "cafes", "short": "Cafés", "label": "Cafés & coffee shops (city centre)",
-      "entries": [
-        {"id": "intense-coffee", "name": "Intense coffee", "category": "cafes", "area": "centre", "areaSource": "client", "tags": ["near-venue", "vegan"], "url": "https://www.intensecoffee.lu/", "mapsQuery": "Intense coffee Luxembourg", "note": "close to the studio", "linkCheck": false},
-        {"id": "market-byjeremy", "name": "Market ByJérémy", "category": "cafes", "area": "centre", "areaSource": "client", "tags": ["vegan"], "url": "https://www.byjeremy.com/", "mapsQuery": "Market ByJérémy Luxembourg", "note": null, "linkCheck": false},
-        {"id": "bloom-specialty-coffee", "name": "Bloom Specialty Coffee", "category": "cafes", "area": "centre", "areaSource": "client", "tags": [], "url": "https://www.bloomluxembourgcoffee.com/", "mapsQuery": "Bloom Specialty Coffee Luxembourg", "note": null, "linkCheck": false},
-        {"id": "knopes-coffee", "name": "Knopes Coffee", "category": "cafes", "area": "centre", "areaSource": "client", "tags": [], "url": "https://www.knopes.com/", "mapsQuery": "Knopes Coffee Luxembourg", "note": null, "linkCheck": false},
-        {"id": "konrad-cafe-bar", "name": "Konrad Café & Bar", "category": "cafes", "area": "centre", "areaSource": "client", "tags": [], "url": null, "mapsQuery": "Konrad Café & Bar Luxembourg", "note": null, "linkCheck": false},
-        {"id": "coffee-fellows", "name": "Coffee Fellows", "category": "cafes", "area": "centre", "areaSource": "client", "tags": [], "url": "https://www.coffee-fellows.com/", "mapsQuery": "Coffee Fellows Luxembourg", "note": null, "linkCheck": false}
       ]
     },
     {

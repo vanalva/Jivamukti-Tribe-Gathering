@@ -108,6 +108,7 @@
     "lineup": "teachers.html",
     "schedule": "schedule.html",
     "archive": "archive.html",
+    "photoshoot": "photoshoot.html",
     "about": "about-tribe.html",
     "terms": "terms.html",
     "winTerms": "win-terms.html",
@@ -159,6 +160,8 @@
     "registerHeroAlt": "A full hall seated on mats around a harmonium player at the Tribe Gathering in Rome, 2026",
     "scheduleHero": "assets/images/lux-lotus-2027/tribe-rome-2026-mats-from-above.webp",
     "scheduleHeroAlt": "Rows of mats seen from above at the Tribe Gathering in Rome, 2026",
+    "photoshootHero": "assets/images/lux-lotus-2027/photoshoot-2027-placeholder.webp",
+    "photoshootHeroAlt": "A yoga practitioner in a seated backbend, photographed by Richard Pilnick",
     "day1Alt": "A full hall in practice at the Tribe Gathering in Rome, 2026",
     "day2Alt": "Kirtan with harmonium at the Tribe Gathering in Rome, 2026",
     "day3Alt": "A satsang talk on stage at the Tribe Gathering in Rome, 2026",
@@ -182,7 +185,7 @@
       "description": "In 2027, the Jivamukti Yoga community gathers in Luxembourg under the theme of Nada Yoga, and an exploration of the Nadis.",
       "ogImage": "https://tribe.jivamuktiyoga.com/assets/images/og-home.jpg",
       "ogAlt": "Jivamukti Yoga Tribe Gathering, Luxembourg Lotus 2027: 2–5 September 2027, Luxembourg",
-      "hidden": false,
+      "hidden": true,
       "_hidden": "SWITCH: pages.about.hidden (true = hidden, false = shown and linked; staging preview). While true: Hidden from 30 Sep 2026 at the client's request (copy and images being reworked): noindex, not in sitemap/llms.txt/JSON-LD, disallowed in robots.txt, no links to it. og-about.jpg exists but is unused.",
       "nadaTitle": "Nada Yoga",
       "nadaQuote": "One who desires complete mastery of yoga should thus explore the nada with an attentive mind and abandon all thoughts.",
@@ -233,6 +236,24 @@
         "workLinkLabel": "here",
         "workHref": "https://www.yogaphotography.com/"
       }
+    },
+    "photoshoot": {
+      "_readme": "Standalone Photo shoot page (src/templates/photoshoot.html), added 9 Nov 2026 at Larissa's request (WhatsApp): it was only a block on schedule.html, she wants it as its own page linked from the nav. Copy reuses pages.schedule.photoshoot word for word (that block still shows on schedule.html too; nothing there changed). heroImage is the single sample photo Larissa shared as a placeholder (Google Photos album 'Jivamukti Web Editor', one of Richard Pilnick's own shots) — she said the full collection follows by the end of that week; swap images.photoshootHero/photoshootHeroAlt for it then, same pattern as every other page.",
+      "hidden": false,
+      "title": "Photo Shoot | Jivamukti Yoga Tribe Gathering 2027",
+      "description": "Free photoshoot with yoga photographer Richard Pilnick for all 4-day ticket holders at the Jivamukti Yoga Tribe Gathering 2027, Luxembourg Lotus.",
+      "ogImage": "https://tribe.jivamuktiyoga.com/assets/images/og-home.jpg",
+      "ogAlt": "Jivamukti Yoga Tribe Gathering, Luxembourg Lotus 2027: 2–5 September 2027, Luxembourg",
+      "heroTitle": "PHOTO SHOOT",
+      "heading": "Free Photoshoot with Richard Pilnick for all 4-day ticket holders",
+      "text": "Elevate your experience and enjoy a complimentary photo session with the talented yoga photographer.",
+      "text2": "Capture your journey and create lasting memories!",
+      "registerLabel": "Register here",
+      "registerHref": "https://docs.google.com/forms/d/e/1FAIpQLSdU-UHg3BWOLpBh2PWPsSxM-6A969X12DY24B-gErxsV9AKEQ/viewform?usp=publish-editor",
+      "registerTbc": false,
+      "workBefore": "Discover Richard’s work",
+      "workLinkLabel": "here",
+      "workHref": "https://www.yogaphotography.com/"
     },
     "booking": {
       "title": "Register | Jivamukti Yoga Tribe Gathering 2027",
@@ -288,8 +309,8 @@
       "heroTitle": "ABOUT LUXEMBOURG",
       "heading": "Your Luxembourg guide",
       "intro": [
-        { "text": "You can find vegan options a little bit everywhere, but there aren't that many exclusively vegan restaurants in Luxembourg." },
-        { "text": "The first restaurants on the list are close to the Tribe location, but I would say the city centre is a better area overall, with more options and a nicer atmosphere." }
+        { "text": "Whether it's your first time in Luxembourg or you're back for more, we've gathered trusted hotels, vegan-friendly food, culture and parks to help you plan your stay for the Tribe Gathering." },
+        { "text": "Vegan options are available across the city, though only a few restaurants are exclusively vegan. The listings closest to Coque Luxembourg are convenient if you're staying nearby, but the city centre has more choice and a livelier atmosphere overall." }
       ],
       "note": "Coque Luxembourg",
       "gettingAround": {
