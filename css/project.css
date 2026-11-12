@@ -7580,11 +7580,18 @@ body:has(.hero-home_wrap) .nav_content > .nav_menu:last-child .nav_arrow-icon {
    rule — min-height: 80vh + justify-content: center — meant for sections that are their
    own full-viewport pause between other content. Right under a hero-collage, that forces
    a tall box and centers the short intro text inside it, reading as dead space above and
-   below. This section doesn't need that pacing: let it size to its own content, top-aligned. */
+   below. This section doesn't need that pacing: let it size to its own content, top-aligned.
+   padding-bottom: the icp_grid-wrap fix below already zeroed the teacher grid's own
+   padding-top, so once padding-top here was fixed, the ONLY thing still separating the
+   "available ICPs" text from the teacher photos was this section's own full section-main
+   padding-bottom (~77-192px) — exactly the second gap Juan flagged (WhatsApp 12 Nov 2026,
+   "big space between the title and the teachers"). step--8 matches the reduced gap used
+   between stacked .plan_wrap sections elsewhere on this page. */
 [data-flwr].site_wrap .icp_intro {
   min-height: auto;
   justify-content: flex-start;
   padding-top: 0;
+  padding-bottom: var(--_spacing---step--8);
 }
 /* Required attribution for the Luxembourg city-guide hero photo (CC BY-SA 3.0,
    Wikimedia Commons, 12 Nov 2026). Small and low-contrast on purpose, bottom-right
