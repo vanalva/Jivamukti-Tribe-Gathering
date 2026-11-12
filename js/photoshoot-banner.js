@@ -34,6 +34,8 @@
     slidesPerView: 1,
     grabCursor: true,
     watchOverflow: true,
+    observer: true,
+    observeParents: true,
     slideActiveClass: 'is-active',
     slideDuplicateActiveClass: 'is-active',
     keyboard: { enabled: true, onlyInViewport: true }

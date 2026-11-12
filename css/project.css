@@ -6969,6 +6969,22 @@ body:has(.hero-home_wrap) .nav_content > .nav_menu:last-child .nav_arrow-icon {
 [data-flwr].site_wrap .menu-fullscreen_grid {
   min-height: auto;
 }
+/* align-items: center (harvested) sizes both grid cells to their own content height instead
+   of stretching them to the row — harmless for nav (it centers its own links internally via
+   flex), but .menu-fullscreen_image-wrap's height: 100% then has no definite row height to
+   resolve against, so the menu photo silently renders at zero height on desktop (≥992; found
+   while chasing Juan's WhatsApp report of the same photo looking flat on mobile, 12 Nov 2026). */
+[data-flwr].site_wrap .menu-fullscreen_grid {
+  align-items: stretch;
+}
+/* .text-legal (harvested) sets font-size to the BODY token, not a small/fine-print size —
+   that's wrong everywhere it's used (footer copyright on every page, terms/privacy links),
+   most visible in the cramped mobile fullscreen menu where Juan flagged the copyright line
+   as "gigantic" (WhatsApp 12 Nov 2026). No dedicated tiny/legal token exists in this project
+   (variables.css only has body and small), so small is the correct, closest fix. */
+[data-flwr].site_wrap .text-legal {
+  font-size: var(--_typography---size--small);
+}
 /* The navbar's own links stayed visible over the open menu (About sat on the logo at 48,32):
    the entrance animation leaves an inline opacity: 1 on them, which beats the opacity: 0 rule.
    visibility is not set inline, so it hides them. */
@@ -6981,10 +6997,11 @@ body:has(.hero-home_wrap) .nav_content > .nav_menu:last-child .nav_arrow-icon {
   top: 0;
   left: 0;
 }
-/* 6 links (About left the menu on 30 Sep), each ~0.93em tall, 5 row gaps; 7.5rem = the footer
-   row (step--5 padding + logo/copyright). If the link count changes, change 5.6 and the gap count. */
+/* 7 links (About left the menu 30 Sep; Photo shoot added 12 Nov), each ~0.93em tall, 6 row
+   gaps; 7.5rem = the footer row (step--5 padding + logo/copyright). If the link count
+   changes, change the divisor (5.6 * new-line-count / 7) and the gap count to match. */
 [data-flwr].site_wrap .menu-fullscreen_link {
-  font-size: clamp(2rem, calc((100vh - var(--_component---navbar--height) - var(--_spacing---page-margin) * 2 - 7.5rem - var(--_spacing---step--3) * 5) / 5.6), var(--_typography---size--menu));
+  font-size: clamp(2rem, calc((100vh - var(--_component---navbar--height) - var(--_spacing---page-margin) * 2 - 7.5rem - var(--_spacing---step--3) * 6) / 6.53), var(--_typography---size--menu));
 }
 /* The menu's height follows the visible viewport: 100vh on iOS Safari is the height with the
    toolbars hidden, so the menu's bottom row sat under the browser bar. dvh where supported. */
@@ -7067,15 +7084,23 @@ body:has(.hero-home_wrap) .nav_content > .nav_menu:last-child .nav_arrow-icon {
   [data-flwr].site_wrap .menu-fullscreen_footer-logo {
     margin-bottom: 0;
   }
-  /* Stacked menu: 6 links, then the photo, then a column footer (~10rem). 6rem keeps a strip of photo. */
+  /* Stacked menu: 7 links, then the photo, then a column footer (~10rem). 6rem keeps a strip of photo. */
   [data-flwr].site_wrap .menu-fullscreen_link {
-    font-size: clamp(1.75rem, calc((100vh - var(--_component---navbar--height) - var(--_spacing---step--4) * 2 - var(--_spacing---page-margin) - 10rem - 6rem - var(--_spacing---step--2) * 5) / 5.6), var(--_typography---size--menu));
+    font-size: clamp(1.75rem, calc((100vh - var(--_component---navbar--height) - var(--_spacing---step--4) * 2 - var(--_spacing---page-margin) - 10rem - 6rem - var(--_spacing---step--2) * 6) / 6.53), var(--_typography---size--menu));
+  }
+  /* Give the photo a real floor instead of letting the "auto 1fr" rows squeeze it to ~nothing
+     under 7 links + an oversized footer row (Juan, WhatsApp 12 Nov 2026: "almost unnoticeable,
+     completely horizontal"). */
+  [data-flwr].site_wrap .menu-fullscreen_grid {
+    grid-template-rows: auto minmax(28vh, 1fr);
   }
 }
 @media (max-width: 767px) {
-  /* Phones keep their earlier sizes (the viewport-height formula above is for 768 and up). */
+  /* Phones keep their earlier sizes (the viewport-height formula above is for 768 and up).
+     Tightened 12 Nov 2026 (Juan: "menu items smaller, more room for the image") — 7 links at
+     the old clamp left very little height for the photo row on short phones. */
   [data-flwr].site_wrap .menu-fullscreen_link {
-    font-size: clamp(1.5rem, 8vw, 2.5rem);
+    font-size: clamp(1.25rem, 6.5vw, 2rem);
   }
   [data-flwr].site_wrap .footer_legal a {
     position: relative;
@@ -7091,7 +7116,7 @@ body:has(.hero-home_wrap) .nav_content > .nav_menu:last-child .nav_arrow-icon {
 }
 @media (max-width: 478px) {
   [data-flwr].site_wrap .menu-fullscreen_link {
-    font-size: clamp(1.25rem, 7vw, 2rem);
+    font-size: clamp(1.1rem, 5.5vw, 1.6rem);
   }
 }
 /* Archive filter detail view (owner, 30 Sep: "video sections look weird on mobile"). Rome had no
@@ -7567,10 +7592,18 @@ body:has(.hero-home_wrap) .nav_content > .nav_menu:last-child .nav_arrow-icon {
 /* Photo shoot page rotating banner (Larissa, WhatsApp 12 Nov 2026): the swiper fills the
    same hero-collage_image-wrap box the single static hero image used to fill, so every
    layer in the chain needs an explicit height, and the base flwr swiper CSS only sets width. */
+/* Absolutely filling .hero-collage_image-wrap, not height: 100%, on purpose: at mobile
+   breakpoints that wrap only gets min-height/max-height (no explicit height — see
+   .hero-collage_image-wrap's own 767/478 rules), so a percentage height here had nothing
+   definite to resolve against and the swiper rendered at a wrong/zero size (Juan, WhatsApp
+   12 Nov 2026: "displaces, not fluid at all"). An absolutely positioned box sizes to the
+   parent's actual rendered box regardless of how that box got its height. */
 [data-flwr].site_wrap .photoshoot_banner {
-  position: relative;
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 [data-flwr].site_wrap .photoshoot_banner .flwr_swiper_wrap {
   height: 100%;
