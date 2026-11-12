@@ -29,6 +29,7 @@ Sharon Gannon, Yogeswari, Ruth Lauer Manenti, Camilla Veen, Petros Haffenrichter
 - [Home](https://tribe.jivamuktiyoga.com/): The event at a glance: dates, venue, line-up and registration.
 - [Line-up](https://tribe.jivamuktiyoga.com/teachers.html): The 11 teachers, each with a short biography.
 - [Register](https://tribe.jivamuktiyoga.com/booking.html): Passes and prices, and the link to register in the OPEN app.
+- [In-Class-Private (ICP)](https://tribe.jivamuktiyoga.com/icp.html): Book an In-Class-Private class with an Advanced Certified teacher.
 - [Schedule](https://tribe.jivamuktiyoga.com/schedule.html): Schedule available soon.
 - [Luxembourg](https://tribe.jivamuktiyoga.com/city.html): The venue. Your Luxembourg guide.
 - [Archive](https://tribe.jivamuktiyoga.com/archive.html): Films from past gatherings: Rome 2026, Stavanger 2025, Paris 2024, Barcelona 2023 and New York 2013.

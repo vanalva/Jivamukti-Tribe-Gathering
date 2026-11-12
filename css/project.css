@@ -6997,11 +6997,11 @@ body:has(.hero-home_wrap) .nav_content > .nav_menu:last-child .nav_arrow-icon {
   top: 0;
   left: 0;
 }
-/* 7 links (About left the menu 30 Sep; Photo shoot added 12 Nov), each ~0.93em tall, 6 row
-   gaps; 7.5rem = the footer row (step--5 padding + logo/copyright). If the link count
-   changes, change the divisor (5.6 * new-line-count / 7) and the gap count to match. */
+/* 8 links (About left the menu 30 Sep; Photo shoot added 12 Nov; ICP added 12 Nov), each
+   ~0.93em tall, 7 row gaps; 7.5rem = the footer row (step--5 padding + logo/copyright). If
+   the link count changes, change the divisor (5.6 * new-line-count / 6) and the gap count. */
 [data-flwr].site_wrap .menu-fullscreen_link {
-  font-size: clamp(2rem, calc((100vh - var(--_component---navbar--height) - var(--_spacing---page-margin) * 2 - 7.5rem - var(--_spacing---step--3) * 6) / 6.53), var(--_typography---size--menu));
+  font-size: clamp(2rem, calc((100vh - var(--_component---navbar--height) - var(--_spacing---page-margin) * 2 - 7.5rem - var(--_spacing---step--3) * 7) / 7.47), var(--_typography---size--menu));
 }
 /* The menu's height follows the visible viewport: 100vh on iOS Safari is the height with the
    toolbars hidden, so the menu's bottom row sat under the browser bar. dvh where supported. */
@@ -7084,12 +7084,12 @@ body:has(.hero-home_wrap) .nav_content > .nav_menu:last-child .nav_arrow-icon {
   [data-flwr].site_wrap .menu-fullscreen_footer-logo {
     margin-bottom: 0;
   }
-  /* Stacked menu: 7 links, then the photo, then a column footer (~10rem). 6rem keeps a strip of photo. */
+  /* Stacked menu: 8 links, then the photo, then a column footer (~10rem). 6rem keeps a strip of photo. */
   [data-flwr].site_wrap .menu-fullscreen_link {
-    font-size: clamp(1.75rem, calc((100vh - var(--_component---navbar--height) - var(--_spacing---step--4) * 2 - var(--_spacing---page-margin) - 10rem - 6rem - var(--_spacing---step--2) * 6) / 6.53), var(--_typography---size--menu));
+    font-size: clamp(1.75rem, calc((100vh - var(--_component---navbar--height) - var(--_spacing---step--4) * 2 - var(--_spacing---page-margin) - 10rem - 6rem - var(--_spacing---step--2) * 7) / 7.47), var(--_typography---size--menu));
   }
   /* Give the photo a real floor instead of letting the "auto 1fr" rows squeeze it to ~nothing
-     under 7 links + an oversized footer row (Juan, WhatsApp 12 Nov 2026: "almost unnoticeable,
+     under 8 links + an oversized footer row (Juan, WhatsApp 12 Nov 2026: "almost unnoticeable,
      completely horizontal"). */
   [data-flwr].site_wrap .menu-fullscreen_grid {
     grid-template-rows: auto minmax(28vh, 1fr);
