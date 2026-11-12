@@ -7550,6 +7550,84 @@ body:has(.hero-home_wrap) .nav_content > .nav_menu:last-child .nav_arrow-icon {
 [data-flwr].site_wrap .plan_content--single {
   grid-template-columns: 1fr;
 }
+/* The real cause of the gap Larissa flagged (WhatsApp, 12 Nov 2026) between the hero and
+   the IN-CLASS-PRIVATE heading: every .plan_wrap (including this one) picks up a shared
+   rule — min-height: 80vh + justify-content: center — meant for sections that are their
+   own full-viewport pause between other content. Right under a hero-collage, that forces
+   a tall box and centers the short intro text inside it, reading as dead space above and
+   below. This section doesn't need that pacing: let it size to its own content, top-aligned. */
+[data-flwr].site_wrap .icp_intro {
+  min-height: auto;
+  justify-content: flex-start;
+  padding-top: 0;
+}
+/* Required attribution for the Luxembourg city-guide hero photo (CC BY-SA 3.0,
+   Wikimedia Commons, 12 Nov 2026). Small and low-contrast on purpose, bottom-right
+   corner of the hero image, never blocking the title/logo overlay. */
+/* Photo shoot page rotating banner (Larissa, WhatsApp 12 Nov 2026): the swiper fills the
+   same hero-collage_image-wrap box the single static hero image used to fill, so every
+   layer in the chain needs an explicit height, and the base flwr swiper CSS only sets width. */
+[data-flwr].site_wrap .photoshoot_banner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+[data-flwr].site_wrap .photoshoot_banner .flwr_swiper_wrap {
+  height: 100%;
+}
+[data-flwr].site_wrap .photoshoot_banner .flwr_swiper_track {
+  height: 100%;
+}
+[data-flwr].site_wrap .photoshoot_banner .flwr_swiper_slide {
+  width: 100%;
+  height: 100%;
+  flex-shrink: 0;
+}
+[data-flwr].site_wrap .photoshoot_banner-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+[data-flwr].site_wrap .photoshoot_banner-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+[data-flwr].site_wrap .photoshoot_banner-arrow--prev {
+  left: var(--_spacing---step--2);
+}
+[data-flwr].site_wrap .photoshoot_banner-arrow--next {
+  right: var(--_spacing---step--2);
+}
+[data-flwr].site_wrap .photoshoot_banner-pagination {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: var(--_spacing---step--2);
+  margin-block-start: 0;
+  z-index: 1;
+}
+[data-flwr].site_wrap .cityg_hero-credit {
+  position: absolute;
+  right: var(--_spacing---step--2);
+  bottom: var(--_spacing---step--2);
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0.15em;
+  padding-right: 0.5em;
+  padding-bottom: 0.15em;
+  padding-left: 0.5em;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.35);
+  color: rgba(255, 255, 255, 0.75);
+  z-index: 1;
+}
 /* padding-top: 0 — the preceding .plan_wrap already contributes a full section-main
    bottom padding, so the step--8 top padding here doubled up into the void Larissa
    flagged (WhatsApp, 9 Nov 2026) between the intro text and the teacher photos. */

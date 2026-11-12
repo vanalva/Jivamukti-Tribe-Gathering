@@ -6,9 +6,9 @@
     {"id": "other", "label": "Other areas", "card": "Other area"}
   ],
   "tags": [
-    {"id": "vegan", "label": "Vegan"},
-    {"id": "vegan-options", "label": "Vegan options"},
-    {"id": "some-vegan-options", "label": "Some vegan options"},
+    {"id": "vegan", "label": "100% Vegan"},
+    {"id": "vegan-options", "label": "Vegan friendly"},
+    {"id": "some-vegan-options", "label": "Vegan friendly"},
     {"id": "near-venue", "label": "Near the venue"},
     {"id": "also-cafe", "label": "Also a café"},
     {"id": "budget", "label": "Budget"}

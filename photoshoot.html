@@ -111,7 +111,9 @@
   <link rel="stylesheet" href="css/framework.css?v=e0cfce08">
   <link rel="stylesheet" href="css/variables.css?v=264b7aec">
   <link rel="stylesheet" href="css/palette-lux-lotus.css?v=31d50f10">
-  <link rel="stylesheet" href="css/project.css?v=20a24eae">
+  <link rel="stylesheet" href="css/project.css?v=5f13409a">
+  <!-- Swiper, for the rotating photo banner (.flwr_swiper_*) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8.4.7/swiper-bundle.min.css">
 </head>
 <body>
 <div data-flwr class="f-mode-light site_wrap" data-menu-image="assets/images/lux-lotus-2027/tribe-rome-2026-rotunda-arms-raised.webp">
@@ -255,7 +257,52 @@
     <div class="hero_background f-cover-absolute f-z-negative f-position-relative"></div>
     <div class="hero_content f-position-relative hero-collage_content hero-collage_content--with-navbar">
       <div class="hero-collage_image-wrap">
-        <img src="assets/images/lux-lotus-2027/photoshoot-2027-placeholder.webp" alt="A yoga practitioner in a seated backbend, photographed by Richard Pilnick" class="hero-collage_image">
+        <!-- Rotating banner, Larissa's request (WhatsApp, 12 Nov 2026): 6 photos from her
+             "Rotating Banner Tribe" Google Photos album, each pre-cropped to cut the empty
+             backdrop above the practitioner. Data: event.json -> images.photoshootBanner.
+             Markup follows the flwr swiper component contract (.flwr/styles/components.css). -->
+        <div data-flwr="swiper" data-flwr-swiper-loop="true" data-flwr-swiper-autoplay="true" data-flwr-swiper-autoplay-delay="5000" data-flwr-swiper-speed="700" class="photoshoot_banner">
+          <div class="flwr_swiper_wrap">
+            <div class="flwr_swiper_track">
+
+              <div class="flwr_swiper_slide">
+                <img src="assets/images/photoshoot-banner-2027/banner-1.webp" alt="A practitioner in a backbend during the photo shoot" class="photoshoot_banner-image">
+              </div>
+
+              <div class="flwr_swiper_slide">
+                <img src="assets/images/photoshoot-banner-2027/banner-2.webp" alt="A practitioner in a standing balance, holding one foot overhead, during the photo shoot" class="photoshoot_banner-image">
+              </div>
+
+              <div class="flwr_swiper_slide">
+                <img src="assets/images/photoshoot-banner-2027/banner-3.webp" alt="A practitioner in a seated twist during the photo shoot" class="photoshoot_banner-image">
+              </div>
+
+              <div class="flwr_swiper_slide">
+                <img src="assets/images/photoshoot-banner-2027/banner-4.webp" alt="A practitioner in triangle pose, one arm reaching overhead, during the photo shoot" class="photoshoot_banner-image">
+              </div>
+
+              <div class="flwr_swiper_slide">
+                <img src="assets/images/photoshoot-banner-2027/banner-5.webp" alt="A practitioner in the splits during the photo shoot" class="photoshoot_banner-image">
+              </div>
+
+              <div class="flwr_swiper_slide">
+                <img src="assets/images/photoshoot-banner-2027/banner-6.webp" alt="A practitioner seated with one leg raised overhead during the photo shoot" class="photoshoot_banner-image">
+              </div>
+
+            </div>
+            <div class="flwr_swiper_pagination photoshoot_banner-pagination" data-flwr-target="pagination"></div>
+          </div>
+          <div data-flwr-target="prev" class="photoshoot_banner-arrow photoshoot_banner-arrow--prev">
+            <button type="button" aria-label="Previous photo">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>
+            </button>
+          </div>
+          <div data-flwr-target="next" class="photoshoot_banner-arrow photoshoot_banner-arrow--next">
+            <button type="button" aria-label="Next photo">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+            </button>
+          </div>
+        </div>
       </div>
       <div class="hero-collage_logo-wrap">
         <div class="image-wrap image-wrap--freeform">
@@ -276,7 +323,7 @@
     <div class="f-cover-absolute f-z-negative f-position-relative"></div>
     <div class="plan_content plan_content--contained plan_content--single f-position-relative">
       <div class="photoshoot f-flex f-flex-column f-flex-nowrap f-gap-4">
-        <h2 class="text-h3 photoshoot_heading">Free Photoshoot with Richard Pilnick for all 4-day ticket holders</h2>
+        <h2 class="text-h3 photoshoot_heading">Exclusive Photoshoot with Richard Pilnick for all 4-day ticket holders</h2>
         <p class="text-body-md">Elevate your experience and enjoy a complimentary photo session with the talented yoga photographer.</p>
         <p class="text-body-md">Capture your journey and create lasting memories!</p>
         <div class="photoshoot_actions">
@@ -374,6 +421,10 @@
 
   <!-- Scripts -->
   <script src="js/custom-cursor.js?v=28b72096"></script>
+  <!-- Swiper, for the rotating photo banner (.flwr_swiper_*). This project has no flwr runtime.js
+       hydration script, so js/photoshoot-banner.js does the init by hand — see that file's header. -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8.4.7/swiper-bundle.min.js"></script>
+  <script src="js/photoshoot-banner.js?v=02a3a3b7"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   <script src="js/gsap/config.js?v=52c433c3"></script>
