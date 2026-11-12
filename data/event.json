@@ -250,7 +250,7 @@
       "_readme": "Standalone Photo shoot page (src/templates/photoshoot.html), added 9 Nov 2026 at Larissa's request (WhatsApp): it was only a block on schedule.html, she wants it as its own page linked from the nav. Copy reuses pages.schedule.photoshoot word for word (that block still shows on schedule.html too; nothing there changed). heroImage is the single sample photo Larissa shared as a placeholder (Google Photos album 'Jivamukti Web Editor', one of Richard Pilnick's own shots) — she said the full collection follows by the end of that week; swap images.photoshootHero/photoshootHeroAlt for it then, same pattern as every other page.",
       "hidden": false,
       "title": "Photo Shoot | Jivamukti Yoga Tribe Gathering 2027",
-      "description": "Free photoshoot with yoga photographer Richard Pilnick for all 4-day ticket holders at the Jivamukti Yoga Tribe Gathering 2027, Luxembourg Lotus.",
+      "description": "Exclusive photoshoot with yoga photographer Richard Pilnick for all 4-day ticket holders at the Jivamukti Yoga Tribe Gathering 2027, Luxembourg Lotus.",
       "ogImage": "https://tribe.jivamuktiyoga.com/assets/images/og-home.jpg",
       "ogAlt": "Jivamukti Yoga Tribe Gathering, Luxembourg Lotus 2027: 2–5 September 2027, Luxembourg",
       "heroTitle": "PHOTO SHOOT",
