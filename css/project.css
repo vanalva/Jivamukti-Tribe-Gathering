@@ -7630,18 +7630,8 @@ body:has(.hero-home_wrap) .nav_content > .nav_menu:last-child .nav_arrow-icon {
   object-fit: cover;
   object-position: center;
 }
-[data-flwr].site_wrap .photoshoot_banner-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 1;
-}
-[data-flwr].site_wrap .photoshoot_banner-arrow--prev {
-  left: var(--_spacing---step--2);
-}
-[data-flwr].site_wrap .photoshoot_banner-arrow--next {
-  right: var(--_spacing---step--2);
-}
+/* .photoshoot_banner-arrow* rules removed 16 Nov 2026: the arrow buttons they styled are gone
+   from src/templates/photoshoot.html (Larissa, WhatsApp: "remove the arrows, make a rotating banner"). */
 [data-flwr].site_wrap .photoshoot_banner-pagination {
   position: absolute;
   left: 0;
