@@ -510,7 +510,8 @@
       "closingSubjectEncoded": "Offering%20ICPs%20at%20Tribe%202027",
       "teachers": [
         {"name": "Tatiana Koshkarova", "image": "assets/images/icp-2027/tatiana-koshkarova.webp", "imageAlt": "Tatiana Koshkarova", "assistingImage": "assets/images/icp-2027/tatiana-koshkarova-assisting.webp", "assistingAlt": "Tatiana Koshkarova assisting a student"},
-        {"name": "Jessina O'Connell", "image": "assets/images/icp-2027/jessina-oconnell.webp", "imageAlt": "Jessina O'Connell", "assistingImage": "", "assistingAlt": "Jessina O'Connell assisting a student"}
+        {"name": "Jessina O'Connell", "image": "assets/images/icp-2027/jessina-oconnell.webp", "imageAlt": "Jessina O'Connell", "assistingImage": "", "assistingAlt": "Jessina O'Connell assisting a student"},
+        {"name": "Nadine Felden", "image": "assets/images/icp-2027/nadine-felden-placeholder.webp", "imageAlt": "Nadine Felden", "assistingImage": "", "assistingAlt": "Nadine Felden assisting a student", "_placeholder": "Larissa, WhatsApp 17 Nov 2026: her real portrait is coming shortly. Until then this reuses images.icp.heroImage (the hero/assist photo), tone-matched the same way (notes/tools/build-icp-portraits.py's tone(), mean 140 for the assisting-photo type) and saved as nadine-felden-placeholder.webp. Swap this `image` for her real portrait when it arrives; delete this field then."}
       ]
     },
     "win": {
