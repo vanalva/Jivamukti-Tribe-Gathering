@@ -7590,8 +7590,17 @@ body:has(.hero-home_wrap) .nav_content > .nav_menu:last-child .nav_arrow-icon {
 [data-flwr].site_wrap .icp_intro {
   min-height: auto;
   justify-content: flex-start;
-  padding-top: 0;
+  /* A small top gap, not the full section pacing zeroed out above (Juan, 17 Nov 2026: the heading
+     sat flush against the hero photo with literally nothing between them - "too close" - but don't
+     reopen the big gap Larissa and Juan both asked to close earlier in this same section). */
+  padding-top: var(--_spacing---step--4);
   padding-bottom: var(--_spacing---step--8);
+}
+/* Two unequal columns (Juan, 17 Nov 2026): the ICP intro runs noticeably longer than the "available
+   only" blurb, so an even 1fr/1fr split left the right column looking short and the left one tall.
+   3fr/2fr gives the longer copy more room to breathe without the two blocks reading as mismatched. */
+[data-flwr].site_wrap .icp_intro .plan_content {
+  grid-template-columns: 3fr 2fr;
 }
 /* Required attribution for the Luxembourg city-guide hero photo (CC BY-SA 3.0,
    Wikimedia Commons, 12 Nov 2026). Small and low-contrast on purpose, bottom-right
@@ -7664,6 +7673,30 @@ body:has(.hero-home_wrap) .nav_content > .nav_menu:last-child .nav_arrow-icon {
 [data-flwr].site_wrap .icp_grid-wrap {
   padding-top: 0;
   padding-bottom: var(--_spacing---step--8);
+}
+/* ICP's teacher-grid_grid reuses the teachers-page grid (.teacher-grid_grid: repeat(4, 1fr), full
+   container width) but ICP only ever lists a handful of teachers (Juan, 17 Nov 2026: "centered in
+   the entire width" — with 3 cards filling 3 of 4 stretched columns, the leftover 4th column reads
+   as a lopsided gap on the right). Columns size to content and the row centers instead of stretching,
+   so it looks right whether there are 2 teachers or 7. Scoped to .icp_grid-wrap so teachers.html's
+   own grid (built for a full line-up) is untouched.
+   .teacher-grid_wrap is itself `display: flex`, so without an explicit width .teacher-grid_content
+   shrank to the content's own max-content size as a flex item (no flex-grow) — collapsing auto-fit
+   to a single column instead of centering a row of three. width: 100% makes it fill the flex row
+   first, so auto-fit then has the real available width to lay the row out across. */
+[data-flwr].site_wrap .icp_grid-wrap .teacher-grid_content {
+  width: 100%;
+  /* Match .plan_content--contained's own cap (var(--site--content-max-width), the base rule's
+     var, isn't defined anywhere in this project, so max-width was silently falling back to none
+     and the grid's effective width came only from .teacher-grid_wrap's padding). Juan, 17 Nov
+     2026: the card row read narrower than the two-column intro above it — same cap, same width. */
+  max-width: var(--_layout---max-content);
+  margin-left: auto;
+  margin-right: auto;
+}
+[data-flwr].site_wrap .icp_grid-wrap .teacher-grid_grid {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 300px));
+  justify-content: center;
 }
 [data-flwr].site_wrap .icp_note-wrap {
   margin-top: 0;

@@ -111,7 +111,7 @@
   <link rel="stylesheet" href="css/framework.css?v=e0cfce08">
   <link rel="stylesheet" href="css/variables.css?v=264b7aec">
   <link rel="stylesheet" href="css/palette-lux-lotus.css?v=31d50f10">
-  <link rel="stylesheet" href="css/project.css?v=9dd0961f">
+  <link rel="stylesheet" href="css/project.css?v=d81369d0">
 </head>
 <body>
 <div data-flwr class="f-mode-light site_wrap" data-menu-image="assets/images/lux-lotus-2027/tribe-rome-2026-rotunda-arms-raised.webp">
@@ -283,12 +283,17 @@
     The cards reuse the teachers page grid styles but are NOT .teacher-card:
     main.js turns every .teacher-card into a pop-up trigger and prevents the default click, which would swallow the mailto.
   -->
+  <!-- Two columns since 17 Nov 2026 (Juan): the intro and the "available only" blurb side by side
+       instead of stacked (reuses the base .plan_content 2-col grid, collapsing to 1 column at
+       ≤991px — same pattern as photoshoot.html's text+photo split). -->
   <section class="plan_wrap icp_intro f-position-relative">
     <div class="f-cover-absolute f-z-negative f-position-relative"></div>
-    <div class="plan_content plan_content--contained plan_content--single f-position-relative">
+    <div class="plan_content plan_content--contained f-position-relative">
       <div class="f-flex f-flex-column f-flex-nowrap f-gap-4">
         <h2 class="text-h3 f-text-uppercase">In-Class-Private™ (ICP)</h2>
         <p class="text-body-lg">Book your In-Class-Private™ (ICP) for any of the Asana classes on schedule at Tribe Luxembourg via email here! An ICP may be the best yoga class you’ve ever taken. During the class, another teacher individually assists you throughout, refining and adding depth to your practice. In the hands of a certified Jivamukti teacher, you are comfortably guided through each and every movement of the class experience.</p>
+      </div>
+      <div class="f-flex f-flex-column f-flex-nowrap f-gap-4">
         <h3 class="text-h4 f-text-uppercase">AVAILABLE ONLY AT TRIBE IN LUXEMBOURG:</h3>
         <p class="text-body-md">ICPs with 800HR and Advanced Certified Jivamukti Yoga teachers from all over the world!</p>
       </div>
