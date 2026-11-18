@@ -511,7 +511,7 @@
       "teachers": [
         {"name": "Tatiana Koshkarova", "image": "assets/images/icp-2027/tatiana-koshkarova.webp", "imageAlt": "Tatiana Koshkarova", "assistingImage": "assets/images/icp-2027/tatiana-koshkarova-assisting.webp", "assistingAlt": "Tatiana Koshkarova assisting a student"},
         {"name": "Jessina O'Connell", "image": "assets/images/icp-2027/jessina-oconnell.webp", "imageAlt": "Jessina O'Connell", "assistingImage": "", "assistingAlt": "Jessina O'Connell assisting a student"},
-        {"name": "Nadine Felden", "image": "assets/images/icp-2027/nadine-felden.webp", "imageAlt": "Nadine Felden", "assistingImage": "", "assistingAlt": "Nadine Felden assisting a student"}
+        {"name": "Nadine Felden", "image": "assets/images/icp-2027/nadine-felden.webp", "imageAlt": "Nadine Felden", "assistingImage": "assets/images/icp-2027/nadine-felden-assisting.webp", "assistingAlt": "Nadine Felden assisting a student", "_unconfirmed": "Larissa flagged (WhatsApp, 18 Nov 2026) that Nadine's 'second photo' was missing. Best guess, NOT confirmed with the client: the generic assisting shot already used as images.icp.heroImage (nobody has attributed that photo to a specific teacher) reused here as her second/assisting photo, matching the portrait+assist pattern Tatiana already has. Confirm with Larissa whose photo this actually is; swap or remove assistingImage if it isn't Nadine."}
       ]
     },
     "win": {

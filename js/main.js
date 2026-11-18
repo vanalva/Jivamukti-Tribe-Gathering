@@ -652,54 +652,75 @@ document.addEventListener('DOMContentLoaded', function() {
   function fitTeacherNames() {
     const teacherNames = document.querySelectorAll('.teacher-card_name');
 
-    teacherNames.forEach(function(nameEl) {
-      const container = nameEl.parentElement;
-      if (!container) return;
+    // Determine min/max font sizes based on screen width (shared by every card below).
+    const minFontSize = window.innerWidth <= 480 ? 10 : 12;
+    const maxFontSize = window.innerWidth <= 480 ? 18 : (window.innerWidth <= 768 ? 22 : 28);
 
-      // Get available width (container width minus padding)
-      const containerStyle = window.getComputedStyle(container);
-      const paddingLeft = parseFloat(containerStyle.paddingLeft) || 0;
-      const paddingRight = parseFloat(containerStyle.paddingRight) || 0;
-      const availableWidth = container.clientWidth - paddingLeft - paddingRight;
+    const tempEl = document.createElement('span');
+    tempEl.style.cssText = 'position:absolute;visibility:hidden;font-weight:bold;text-transform:uppercase;text-align:center;';
+    document.body.appendChild(tempEl);
 
-      if (availableWidth <= 0) return;
-
-      // Reset styles to measure
-      nameEl.style.fontSize = '';
-
-      const text = nameEl.textContent.trim();
-      const words = text.split(' ');
-
-      // Determine min/max font sizes based on screen width
-      const minFontSize = window.innerWidth <= 480 ? 10 : 12;
-      const maxFontSize = window.innerWidth <= 480 ? 18 : (window.innerWidth <= 768 ? 22 : 28);
-
-      // Create a temporary element to measure text
-      const tempEl = document.createElement('span');
-      tempEl.style.cssText = 'position:absolute;visibility:hidden;font-weight:bold;text-transform:uppercase;text-align:center;';
-      document.body.appendChild(tempEl);
-
-      // Try single line first
+    // Largest size (down to minFontSize) at which `text` fits container width `availableWidth`
+    // on one line. Shared by both the per-card and the unified-group fit below.
+    function singleLineFit(text, availableWidth) {
       tempEl.style.whiteSpace = 'nowrap';
-      let fontSize = maxFontSize;
-
-      // Binary search for single line
-      let low = minFontSize;
-      let high = maxFontSize;
-
+      let low = minFontSize, high = maxFontSize, fontSize = maxFontSize;
       while (low <= high) {
         fontSize = Math.floor((low + high) / 2);
         tempEl.style.fontSize = fontSize + 'px';
         tempEl.textContent = text;
-
-        if (tempEl.offsetWidth <= availableWidth) {
-          low = fontSize + 1;
-        } else {
-          high = fontSize - 1;
-        }
+        if (tempEl.offsetWidth <= availableWidth) { low = fontSize + 1; } else { high = fontSize - 1; }
       }
+      return Math.max(minFontSize, high);
+    }
 
-      let singleLineFontSize = Math.max(minFontSize, high);
+    function availableWidthOf(nameEl) {
+      const container = nameEl.parentElement;
+      if (!container) return 0;
+      const containerStyle = window.getComputedStyle(container);
+      const paddingLeft = parseFloat(containerStyle.paddingLeft) || 0;
+      const paddingRight = parseFloat(containerStyle.paddingRight) || 0;
+      return container.clientWidth - paddingLeft - paddingRight;
+    }
+
+    // ICP cards (icp.html): same font size across the whole row instead of each name fitted to
+    // its own width (Juan/Larissa, WhatsApp 18 Nov 2026 - "Nadine Felden" rendering at 28px next
+    // to smaller "Tatiana Koshkarova"/"Jessina O'Connell" read as inconsistent). The row only ever
+    // holds a handful of names, each on one line, so the group's smallest single-line fit is safe
+    // to use for all of them - by construction every other name already fits at a size that large
+    // or larger. Scoped to .icp_card only: teachers.html's full line-up keeps its existing
+    // per-card fit (untouched, not part of this request, and that grid has a wider range of name
+    // lengths where unifying could force everything down to a much smaller size).
+    const icpNames = [];
+    teacherNames.forEach(function(nameEl) {
+      if (nameEl.closest('.icp_card')) icpNames.push(nameEl);
+    });
+
+    if (icpNames.length) {
+      let groupFontSize = maxFontSize;
+      icpNames.forEach(function(nameEl) {
+        nameEl.style.fontSize = '';
+        nameEl.textContent = nameEl.textContent.trim();
+        const fit = singleLineFit(nameEl.textContent, availableWidthOf(nameEl));
+        if (fit < groupFontSize) groupFontSize = fit;
+      });
+      icpNames.forEach(function(nameEl) {
+        nameEl.style.fontSize = groupFontSize + 'px';
+      });
+    }
+
+    teacherNames.forEach(function(nameEl) {
+      if (nameEl.closest('.icp_card')) return; // handled above, unified across the row
+
+      const availableWidth = availableWidthOf(nameEl);
+      if (availableWidth <= 0) return;
+
+      nameEl.style.fontSize = '';
+      const text = nameEl.textContent.trim();
+      const words = text.split(' ');
+
+      let singleLineFontSize = singleLineFit(text, availableWidth);
+      let fontSize;
 
       // If single line font is too small and we have multiple words, try 2 lines
       if (singleLineFontSize < maxFontSize * 0.6 && words.length >= 2) {
@@ -711,12 +732,11 @@ document.addEventListener('DOMContentLoaded', function() {
           const line2 = words.slice(splitAt).join(' ');
 
           // Find font size that fits both lines
-          low = minFontSize;
-          high = maxFontSize;
+          let low = minFontSize, high = maxFontSize, fs = maxFontSize;
 
           while (low <= high) {
-            fontSize = Math.floor((low + high) / 2);
-            tempEl.style.fontSize = fontSize + 'px';
+            fs = Math.floor((low + high) / 2);
+            tempEl.style.fontSize = fs + 'px';
 
             // Measure each line
             tempEl.textContent = line1;
@@ -727,9 +747,9 @@ document.addEventListener('DOMContentLoaded', function() {
             const maxLineWidth = Math.max(width1, width2);
 
             if (maxLineWidth <= availableWidth) {
-              low = fontSize + 1;
+              low = fs + 1;
             } else {
-              high = fontSize - 1;
+              high = fs - 1;
             }
           }
 
@@ -747,9 +767,10 @@ document.addEventListener('DOMContentLoaded', function() {
         nameEl.textContent = text;
       }
 
-      document.body.removeChild(tempEl);
       nameEl.style.fontSize = fontSize + 'px';
     });
+
+    document.body.removeChild(tempEl);
   }
 
   // Run on load and resize
